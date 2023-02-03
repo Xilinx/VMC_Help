@@ -23,7 +23,7 @@ simulation. To configure, select Simulation → Model Configuration
 Parameters → Diagnostics → Data Validity for your model in the Simulink
 Editor, then set the Wrap on overflow or Saturate on overflow parameter.
 
-## Data Type Support
+### Data Type Support
 
 The block supports all data types except Boolean.
 
@@ -40,13 +40,13 @@ complex.
 
 ## Parameters
 
-Gain
+#### Gain
 
 Specifies the constant gain factor. The Gain can be any valid MATLAB
 expression that evaluates to a real or complex scalar, vector, or
 matrix.
 
-Gain data type
+#### Gain data type
 
 This parameter specifies the type of conversion to be applied to the
 Gain factor constant before multiplication. If fixed is specified more
@@ -68,9 +68,7 @@ Settings for the Gain data type parameter are:
 | half                 | half precision floating-point                                                                                                                                                                                                                                       |
 | data type expression | A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
 
-Table 1. Gain Data Type Parameter
-
-Unless the Output data type same as input parameter is enabled, the
+Unless the **Output data type same as input** parameter is enabled, the
 output data type will be a function of the input type and the specified
 Gain data type.
 
@@ -86,7 +84,7 @@ Gain data type.
   will be the larger of either input or Gain data type, and will be a
   signed integer if either one is signed.
 
-Output data type same as input
+#### Output data type same as input
 
 This parameter specifies the way the output data type is determined.
 
@@ -94,7 +92,7 @@ If disabled (unchecked) the output type is computed via built-in type
 promotion rules. If enabled (checked), the output data type is the same
 as the input type.
 
-Saturate on integer overflow
+#### Saturate on integer overflow
 
 This parameter specifies the behavior in case of integer overflow. By
 default the option is disabled and overflow would result in value wrap.
@@ -108,7 +106,6 @@ Settings for the Saturate on integer overflow parameter are:
 | Unchecked | Wrap around |
 | Checked   | Saturation  |
 
-Table 2. Saturate On Integer Overflow Parameter
 
 When overflow is detected, the Diagnostic Viewer displays messages that
 depend on the diagnostic action you specify in the Simulink Editor. To
