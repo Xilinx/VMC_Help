@@ -18,24 +18,22 @@ output signal is the same as that of the input signal. The dimension of
 the output signals depends on whether the reduction takes place over all
 dimensions or over a specified dimension.
 
-Reduce over all dimensions  
+- Reduce over all dimensions  
 The output is a scalar and it is the bitwise AND of the elements of the
 input signal.
 
-Reduce over dimension 1  
+- Reduce over dimension 1  
 The output is a row vector (2-D) with as many elements as the number of
 columns of the input. Each element in the output is the bitwise AND
 reduction of the elements of the corresponding column of the input.
 
-Reduce over dimension 2  
+- Reduce over dimension 2  
 The output is a column vector (2-D) containing as many elements as the
 number of rows of the input. Each element in the output is the bitwise
 AND reduction of the elements of the corresponding row of the input.
 
 In the example below a 2x3 input signal of type int8 feeds into three
 different configurations of the Reduction AND block.
-
-Figure: Reduction AND Block
 
 ![](./Images/lju1532104004155.png)
 
@@ -50,7 +48,7 @@ Figure: Reduction AND Block
 
 ## Parameters
 
-Reduce over
+#### Reduce over
 
 This parameter specifies whether reduction takes place over all
 dimensions or over a specified dimension. If reduction is specified over
@@ -67,7 +65,7 @@ Note: The dimension specified will be the one that gets reduced to
 size 1. For example, a 2-D M x N input matrix specifying Dimension 1
 (number of rows M) will result in a 1 x N row vector.
 
-Dimension
+#### Dimension
 
 If the Reduce over parameter is set to Specified dimension, the
 Dimension parameter specifies over which dimension reduction takes
@@ -86,7 +84,6 @@ Following are the settings for the Dimension parameter.
 | 1       | Reduce over row dimension.    |
 | 2       | Reduce over column dimension. |
 
-Table 1. Dimension Parameter
 
 Note: If the reduce Dimension is specified to be 2 the input signal must
 be two-dimensional.
