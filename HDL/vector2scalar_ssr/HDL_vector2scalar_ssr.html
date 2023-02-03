@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector2scalar">Vector2Scalar</h1>
+<p>The Vector2Scalar block converts vector type input to scalar type
+output.</p>
+<h2 id="description">Description</h2>
+<p>The Vector2Scalar block does the bit level concatenation of all the
+elements of the input vector to produce a scalar output.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>For example, if the input vector is [0 1 2 7] of type
+<code>Ufix_3_0</code>, and the SSR parameter is 4, it produces Scalar
+output 3720 of type <code>Ufix_12_0</code>, whose binary value is 111
+010 001 000. This value represents input vector when you split it into
+four groups each of 3 bits.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<ul>
+<li>The inputs must be Boolean or unsigned fixed-point signal.</li>
+<li>All inputs must have binary set to 0.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.</p>
+</body>
+</html>

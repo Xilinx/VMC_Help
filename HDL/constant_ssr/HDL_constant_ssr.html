@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-constant">Vector Constant</h1>
+<p>The Vector Constant Block generates vector constant values.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.</p>
+<p>The Vector Constant block generates a constant that can be a
+fixed-point value, a Boolean value, or a DSP48 instruction. This block
+is similar to the Simulink® Vector Constant block, but can be used to
+directly drive the inputs on HDL blocks.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Open the Block Parameters dialog box by double-clicking the icon in
+your Simulink model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows:</p>
+<p>Constant Value<br />
+Specifies the value of the constant. When changed, the new value appears
+on the block icon. If the constant data type is specified as fixed-point
+and cannot be expressed exactly in the specified fixed-point type, its
+value is rounded and saturated as needed. A positive value is
+implemented as an unsigned number, a negative value as signed.</p>
+<p>Output Type<br />
+Specifies the data type of the output.</p>
+<ul>
+<li>Boolean</li>
+<li>Fixed-point</li>
+<li>Floating-point</li>
+</ul>
+<p>Arithmetic Type<br />
+If the Output Type is specified as Fixed-point.</p>
+<ul>
+<li>Signed (2’s comp)</li>
+<li>Unsigned</li>
+<li>DSP48 instruction</li>
+</ul>
+<p>Fixed-point Precision<br />
+Number of bits<br />
+Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+<p>Binary point<br />
+Position of the binary point. in the fixed-point output.</p>
+<p>Floating-point Precision<br />
+Single<br />
+Specifies single precision (32 bits).</p>
+<p>Double<br />
+Specifies double precision (64 bits).</p>
+<p>Custom<br />
+Activates the field below so you can specify the Exponent width and the
+Fraction width.</p>
+<p>Exponent width<br />
+Specifies the exponent width.</p>
+<p>Fraction width<br />
+Specifies the fraction width.</p>
+<p>Sample Period<br />
+Sampled Constant<br />
+Allows a sample period to be associated with the constant output and
+inherited by blocks that the Constant block drives. This is useful
+mainly because the blocks eventually target hardware and the Simulink
+sample periods are used to establish hardware clock periods.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</body>
+</html>

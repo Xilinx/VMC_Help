@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="exp">Exp</h1>
+<p>Perform an element-wise exponential value of the input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Exp block returns the exponential e^(x) for each element in
+array <code>x</code>. The block supports all data types except Boolean.
+The input can be scalar, vector or matrix.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector, or matrix.</li>
+<li>Data Types:  Input supports signal of integer, fixed point, and
+floating point data type. It does not support Boolean inputs.</li>
+<li>Complex numbers are not supported.</li>
+</ul>
+<p>The output has the same dimension and type as the input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Exponential block has no parameters to set.</p>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="register">Register</h1>
+<p>The Xilinx Register block models a D flip-flop-based register, having
+latency of one sample period.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-interface">Block Interface</h2>
+<p>The block has one input port for the data and an optional input reset
+port. The initial output value is specified by you in the block
+parameters dialog box (below). Data presented at the input will appear
+at the output after one sample period. Upon reset, the register assumes
+the initial value specified in the parameters dialog box.</p>
+<p>The Register block differs from the Xilinx Delay block by providing
+an optional reset port and a user specifiable initial value.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The block parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows. Initial value<br />
+specifies the initial value in the register.</p>
+<p>Optional Ports<br />
+Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="xilinx-logicore">Xilinx LogiCORE</h2>
+<p>The Register block is implemented as a synthesizable VHDL module. It
+does not use a Xilinx LogiCORE™™.</p>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="sum">Sum</h1>
+<p>Perform element-wise addition of two input signals</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Sum block performs element-wise addition of two input
+signals.</p>
+<p>The block warns or errors out when an integer output overflows during
+simulation. To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are as follows.</p>
+<ul>
+<li>This block supports all data types supported by Vitis Model
+Composer. The block supports real and complex numbers.</li>
+<li>The input signals can be real or complex numbers of scalar, vector
+or matrix type. When both inputs are non-scalar then their dimensions
+must match.</li>
+</ul>
+<p>Output data types are as follows.</p>
+<ul>
+<li>If the data type of one input is a floating point type, the data
+type of the output is the floating point type among the data types of
+the inputs with the most precision.</li>
+<li>Otherwise, if the data type of one input is a fixed-point type, the
+data type of the output is the smallest fixed-point type capable of
+representing the result without any loss of precision.</li>
+<li>Otherwise, if the data type of both inputs is Boolean the output is
+Boolean as well.</li>
+<li>Finally, if one input is integral and the other is also integral or
+Boolean, the output is integral. If both inputs are unsigned the output
+is unsigned, otherwise it is signed. The bit width of the output is
+largest among the bit widths of the inputs.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Saturate on integer overflow</p>
+<p>This parameter specifies whether integer overflow is handled by
+wrapping (default) or by saturating. This parameter is relevant only if
+the output is integral (int8, int16, int32, uint8, uint16, uint32).</p>
+<p>Settings for the Saturate on integer overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not selected</td>
+<td>Integer overflow is handled by wrapping.</td>
+</tr>
+<tr class="even">
+<td>Selected</td>
+<td>Integer overflow is handled by saturation.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Saturate On Integer Overflow Parameter</p>
+<p>When overflow is detected, the Diagnostic Viewer displays messages
+that depend on the diagnostic action you specify in the Simulink Editor.
+To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+</body>
+</html>

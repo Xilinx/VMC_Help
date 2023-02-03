@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="pow">Pow</h1>
+<p>Compute the element-wise power function</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Pow block computes the value of a base raised to the power
+exponent. Z = X^(y) raises each element of X to the corresponding power
+in y. If one of inputs is a matrix and the other is a scalar, the scalar
+input is expanded to match the dimension of the non-scalar input to
+perform the operation. If both inputs are non-scalar, they must agree in
+dimension.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support for the block is:</p>
+<ul>
+<li>Dimension: Inputs can be scalar, vector, or matrix. If one of the
+inputs is scalar and the other is a vector or matrix then the scalar
+input is expanded to match the other input dimension and the operation
+will be performed element-wise. If both inputs are non-scalar, then they
+must match in dimension.</li>
+<li>Data Types: Input supports signals of integer type, floating point
+data type (double, single, and half), and signed and unsigned
+fixed-point type. Both inputs must be of the same data type.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>A negative base value raised to a fractional power will result in a
+Not A Number (NAN) value.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Pow block has no parameters to set.</p>
+</body>
+</html>

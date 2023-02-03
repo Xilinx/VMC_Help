@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="signum">Signum</h1>
+<p>Performs signum function (sign extraction) on the input.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions/Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Signum block returns the sign for each element of the real input.
+The block returns 1, 0, or -1 if the number is positive, equal to 0, or
+negative, respectively.</p>
+<p>When the input s is complex, the block output is calculated as:</p>
+<pre class="pre"><code>sign(s) = s./ abs(s) </code></pre>
+<p>Where sign is the MATLAB® signum function, and <code>./</code>
+indicates element-wise division.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Signum block supports signals of integer type, floating-point
+type (double, single and half), and fixed-point type for real inputs.
+The complex inputs are supported only for floating point data types.</p>
+<p>The output data type, and dimension are the same as those of the
+input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Signum block has no parameters to set.</p>
+</body>
+</html>

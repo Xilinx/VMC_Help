@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="bit-slice">Bit Slice</h1>
+<p>Extract a range of bits from a value</p>
+<h2 id="library">Library</h2>
+<p>Logic and Bit Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Bit Slice block allows the element-wise extraction of a
+contiguous set of bits from the input values. The extracted bits are
+returned as unsigned fixed point values of an all-integer range, and you
+specify the width of the specified extraction range. The block dialog
+box allows you to specify the range of bits using one of these
+methods:</p>
+<ul>
+<li>Bottom bit + width - You specify the bottom bit and the number of
+bits to be extracted (Slice width).</li>
+<li>Top bit + width - You specify the top bit and the number of bits to
+be extracted (Slice width).</li>
+<li>Top and bottom bit - You specify the top and bottom bits and the
+number of bits to be extracted is implied.</li>
+</ul>
+<p>The top and bottom bit specifications have multiple ways of
+specifying the position in relation to either the Least Significant Bit
+(LSB), the Binary Point of a fixed-point value, or the Most Significant
+Bit (MSB). In case of integer inputs the Binary Point and Least
+Significant Bit options are equivalent. Offsets to specify the position
+relative to these anchors can be positive or negative. However, an error
+will occur during simulation and/or code generation if the extraction
+range lies outside of the input type bit range.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Bit Slice block accepts any real-valued integer or fixed-point
+type of any dimension N ≤ 2. Floating point values and complex numeric
+types are not supported.</p>
+<p>The output data type is always a real-valued unsigned fixed-point
+type with integer-only range. The output data has the same width as the
+extraction range you specify.</p>
+<p>The output dimensions are the same as the input dimensions.</p>
+<h2 id="parameters">Parameters</h2>
+<p>Specify range as</p>
+<p>The Specify range as parameter specifies the extraction range.</p>
+<ul>
+<li>If you select Bottom bit + width, parameters in the Bottom of bit
+range section are enabled and parameters in the Top of bit range section
+are disabled.</li>
+<li>If you select Top bit + width, parameters in the Top of bit range
+section are enabled and parameters in the Bottom of bit range section
+are disabled.</li>
+<li>If you select Top and Bottom bit, parameters in both the Top of bit
+range section and the Bottom of bit range section are enabled, and the
+Slice width parameter is disabled.</li>
+</ul>
+<p>Following are the settings for the Specify range as parameter.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bottom bit + width</td>
+<td>The width specifies the number of bits to extract. The Bottom bit of
+the range specifies the offset at which the range begins (offset of the
+least significant bit to be extracted).</td>
+</tr>
+<tr class="even">
+<td>Top bit + width</td>
+<td>The width specifies the number of bits to extract. The Top bit of
+the range specifies the offset at which the range begins (offset of the
+most significant bit to be extracted).</td>
+</tr>
+<tr class="odd">
+<td>Top and bottom bit</td>
+<td>The Top bit of the range specifies the offset of the most
+significant bit to be extracted. The bottom bit of the range gives the
+offset of the least significant bit to be extracted. The width of the
+extracted range is given implicitly.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Specify Range As Parameter</p>
+<p>Slice width</p>
+<p>Specifies the width of the bit range to be extracted. Slice width is
+only enabled if the Specify range as parameter is set to Top bit + width
+or Bottom bit + width.</p>
+<p>Enter a scalar positive integer value for Slice width.</p>
+<p>Bit position relative to</p>
+<p>Defines the basis for offset specifications in both Top of bit range
+and Bottom of bit range sections of the block dialog box.</p>
+<p>Following are the settings for the Bit position relative to
+parameter.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Least Significant Bit</td>
+<td>Defines the offset parameter as counting from the LSB of the input
+value, with offset 0 denoting the LSB, offset 1 denoting the bit to the
+left of the LSB, etc. If the Least Significant Bit setting is selected,
+the With offset parameter cannot specify a negative offset.</td>
+</tr>
+<tr class="even">
+<td>Binary point</td>
+<td>Defines the offset parameter as counting from the binary point of a
+fixed point value, with offset 0 denoting the least significant integer
+bit. A negative offset denotes a range starting in the fractional bits
+with offset -1 being the most significant fractional bit. A positive
+offset denotes a range starting in the integer portion of the
+value.</td>
+</tr>
+<tr class="odd">
+<td>Most Significant Bit</td>
+<td>Defines the offset parameter as counting from the MSB of the input
+value, with offset 0 denoting the MSB, offset -1 denoting the bit to the
+right of the MSB, etc. If the Most Significant Bit stetting is selected,
+the With offset parameter cannot specify a positive offset.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Bit Position Relative To Parameter</p>
+<p>With offset</p>
+<p>Specifies the offset to be applied to the basis specified by the
+corresponding Bit position relative to parameter. The With offset
+parameter is available in both Top of bit range and Bottom of bit range
+sections of the block dialog box.</p>
+<p>Negative offsets specify bit positions to the right of the anchor
+(zero offset basis). Positive offsets specify bit positions to the left
+of the anchor.</p>
+</body>
+</html>

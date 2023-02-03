@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="logical">Logical</h1>
+<p>The Xilinx Logical block performs bitwise logical operations on
+fixed-point numbers. Operands are zero padded and sign extended as
+necessary to make binary point positions coincide; then the logical
+operation is performed and the result is delivered at the output
+port.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>In hardware this block is implemented as synthesizable VHDL. If you
+build a tree of logical gates, this synthesizable implementation is best
+as it facilitates logic collapsing in synthesis and mapping.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows:</p>
+<p>Logical function<br />
+Specifies one of the following bitwise logical operators: AND, NAND, OR,
+NOR, XOR, XNOR.</p>
+<p>Number of inputs<br />
+Specifies the number of inputs (1 - 1024).</p>
+<p>Logical Reduction Operation<br />
+When the number of inputs is specified as 1, a unary logical reduction
+operation performs a bit-wise operation on the single operand to produce
+a single bit result. The first step of the operation applies the logical
+operator between the least significant bit of the operand and the next
+most significant bit. The second and subsequent steps apply the operator
+between the one-bit result of the prior step and the next bit of the
+operand using the same logical operator. The logical reduction operator
+implements the same functionality as that of the logical reduction
+operation in HDLs. The output of the logical reduction operation is
+always Boolean.</p>
+<p> </p>
+<p>Output Type tab<br />
+Parameters specific to the Output Type tab are as follows.</p>
+<p>Align binary point<br />
+Specifies that the block must align binary points automatically. If not
+selected, all inputs must have the same binary point position.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</body>
+</html>

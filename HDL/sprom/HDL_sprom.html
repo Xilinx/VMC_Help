@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="rom">ROM</h1>
+<p>The Xilinx ROM block is a single port read-only memory (ROM).</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>Values are stored by word and all words have the same arithmetic
+type, width, and binary point position. Each word is associated with
+exactly one address. An address can be any unsigned fixed-point integer
+from 0 to d-1, where d denotes the ROM depth (number of words). The
+memory contents are specified through a block parameter. The block has
+one input port for the memory address and one output port for data out.
+The address port must be an unsigned fixed-point integer. The block has
+two possible Xilinx LogiCORE™™ implementations, using either distributed
+or block memory.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows. Depth<br />
+Specifies the number of words stored; must be a positive integer.</p>
+<p>Initial value vector<br />
+Specifies the initial value. When the vector is longer than the ROM
+depth, the vector&#39;s trailing elements are discarded. When the ROM is
+deeper than the vector length, the ROM&#39;s trailing words are set to zero.
+The initial value vector is saturated or rounded according to the data
+precision specified for the ROM.</p>
+<p>Memory Type<br />
+Specifies whether the ROM will be implemented using Distributed ROM or
+Block ROM. Depending on your selection, the ROM will be inferred or
+implemented as follows when the design is compiled:</p>
+<ul>
+<li>If the block will be implemented in Distributed memory, the
+Distributed Memory Generator v8.0 LogiCORE IP will be inferred or
+implemented when the design is compiled. This is described in
+Distributed Memory Generator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf">PG063</a>).</li>
+<li>If the block will be implemented in block RAM, the XPM_MEMORY_SPROM
+(Single Port ROM) macro will be inferred or implemented when the design
+is compiled. For information on the XPM_MEMORY_SPROM Xilinx
+Parameterized Macro (XPM), refer to UltraScale Architecture Libraries
+Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug974-vivado-ultrascale-libraries">UG974</a>).</li>
+</ul>
+<p>Optional Ports<br />
+Provide reset port for output register<br />
+When selected, allows access to the reset port available on the output
+register of the Block ROM. The reset port is available only when the
+latency of the Block ROM is set to 1.</p>
+<p>Initial value for output register<br />
+Specifies the initial value for output register. The initial value is
+saturated and rounded according to the data precision specified for the
+ROM.</p>
+<p> </p>
+<p>Output tab<br />
+Parameters specific to the Output tab are as follows.</p>
+<p>Output Type<br />
+Specify the data type of the output.</p>
+<ul>
+<li>Boolean</li>
+<li>Fixed-point</li>
+<li>Floating-point</li>
+</ul>
+<p>Arithmetic Type<br />
+If the Output Type is specified as Fixed-point, you can select Signed
+(2’s comp) or Unsigned as the Arithmetic Type.</p>
+<p>Fixed-point Precision<br />
+Number of bits<br />
+Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+<p>Binary point<br />
+Position of the binary point. in the fixed-point output.</p>
+<p>Floating-point Precision<br />
+Single<br />
+Specifies single precision (32 bits).</p>
+<p>Double<br />
+Specifies double precision (64 bits).</p>
+<p>Custom<br />
+Activates the field below so you can specify the Exponent width and the
+Fraction width.</p>
+<p>Exponent width<br />
+Specify the exponent width.</p>
+<p>Fraction width<br />
+Specify the fraction width.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+<p>Distributed Memory Generator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf">PG063</a>)</p>
+<p>UltraScale Architecture Memory Resources User Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf">UG573</a>)
+- XPM_MEMORY_SPROM Macro (UltraRAM)</p>
+<p>For the block memory, the address width must be equal to
+ceil(log2(d)) where d denotes the memory depth. The maximum width of
+data words in the block memory depends on the depth specified; the
+maximum depth is depends on the device family targeted. The tables below
+provide the maximum data word width for a given block memory depth.</p>
+</body>
+</html>

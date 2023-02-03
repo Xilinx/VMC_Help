@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="subtract">Subtract</h1>
+<p>Perform element-wise subtraction</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Subtract block performs element-wise subtraction of two input
+signals.</p>
+<p>The block warns or errors out when an integer output overflows during
+simulation. To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Subtract block supports any floating point, fixed-point, integer
+or Boolean data type. The block can perform element-wise subtraction on
+real and complex inputs. The input signals can be scalars, vectors or
+matrices. When both inputs have non-scalar dimensions, the dimensions
+must match each other.</p>
+<h2 id="parameters">Parameters</h2>
+<p>Saturate on integer overflow</p>
+<p>This parameter specifies whether integer overflow is handled by
+wrapping (default) or by saturating. This parameter is relevant only if
+the output is integral (int8, int16, int32, uint8, uint16, uint32).</p>
+<p>Settings for the Saturate on integer overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not selected</td>
+<td>Integer overflow is handled by wrapping.</td>
+</tr>
+<tr class="even">
+<td>Selected</td>
+<td>Integer overflow is handled by saturation.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Saturate On Integer Overflow Parameter</p>
+<p>When overflow is detected, the Diagnostic Viewer displays messages
+that depend on the diagnostic action you specify in the Simulink Editor.
+To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+</body>
+</html>

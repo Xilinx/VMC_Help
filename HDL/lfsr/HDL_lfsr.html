@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="lfsr">LFSR</h1>
+<p>The Xilinx LFSR block implements a Linear Feedback Shift Register
+(LFSR). This block supports both the Galois and Fibonacci structures
+using either the XOR or XNOR gate and allows a re-loadable input to
+change the current value of the register at any time. The LFSR output
+and re-loadable input can be configured as either serial or parallel
+ports.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-interface">Block Interface</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Port Name</th>
+<th>Port Description</th>
+<th>Port Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>din</td>
+<td>Data input for re-loadable seed</td>
+<td>Optional serial or parallel input</td>
+</tr>
+<tr class="even">
+<td>load</td>
+<td>Load signal for din</td>
+<td>Optional boolean input</td>
+</tr>
+<tr class="odd">
+<td>rst</td>
+<td>Reset signal</td>
+<td>Optional boolean input</td>
+</tr>
+<tr class="even">
+<td>en</td>
+<td>Enable signal</td>
+<td>Optional boolean input</td>
+</tr>
+<tr class="odd">
+<td>dout</td>
+<td>Data output of LFSR</td>
+<td>Required serial or parallel output</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Block Interface</p>
+<p>As shown in the table above, there can be between 0 and 4 block input
+ports and exactly one output port. If the configuration selected
+requires 0 inputs, the LFSR is set up to start at a specified initial
+seed value and will step through a repeatable sequence of states
+determined by the LFSR structure type, gate type, and initial seed.</p>
+<p>The optional din and load ports provide the ability to change the
+current value of the LFSR at runtime. After the load completes, the LFSR
+behaves as with the 0 input case, and starts up a new sequence based
+upon the newly loaded seed, and the statically configured LFSR options
+for structure and gate type.</p>
+<p>The optional rst port will reload the statically specified initial
+seed of the LFSR and continue on as before after the rst signal goes
+low. And when the optional en port goes low, the LFSR will remain at its
+current value with no change until the en port goes high again.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows:</p>
+<p>Type<br />
+Fibonacci or Galois. This field specifies the structure of the feedback.
+Fibonacci has one XOR (or XNOR) gate at the beginning of the register
+chain that XORs (or XNORs) the taps together with the result going into
+the first register. Galois has one XOR (or XNOR) gate for each tap and
+gates the last register in the chains output with the input to the
+register at that tap.</p>
+<p>Gate type<br />
+XOR or XNOR. This field specifies the gate used by the feedback
+signals.</p>
+<p>Number of bits in LFSR<br />
+This field specifies the number of registers in the LFSR chain. As a
+result, this number specifies the size of the input and output when
+selected to be parallel.</p>
+<p>Feedback polynomial<br />
+This field specifies the tap points of the feedback chain and the value
+must be entered in hex with single quotes. The lsb of this polynomial
+always must be set to 1 and the msb is an implied 1 and is not specified
+in the hex input. Please see the Xilinx application note titled <a href="https://www.xilinx.com/support/documentation/application_notes/xapp052.pdf">Efficient
+Shift Registers, LFSR Counters, and Long Pseudo- Random Sequence
+Generators</a> for more information on how to specify this equation and
+for optimal settings for the maximum repeating sequence.</p>
+<p>Initial value<br />
+This field specifies the initial seed value where the LFSR begins its
+repeating sequence. The initial value might not be all zeroes when
+choosing the XOR gate type and might not be all ones when choosing XNOR,
+as those values will stall the LFSR.</p>
+<p> </p>
+<p>Advanced tab<br />
+Parameters specific to the Advanced tab are as follows:</p>
+<p>Use reloadable seed value<br />
+This field specifies whether or not an input is needed to reload a
+dynamic LFSR seed value at run time.</p>
+<p>Parallel input<br />
+This field specifies whether the reloadable input seed is shifted in one
+bit at a time or if it happens in parallel.</p>
+<p>Parallel output<br />
+This field specifies whether all of the bits in the LFSR chain are
+connected to the output or just the last register in the chain (serial
+or parallel).</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</body>
+</html>

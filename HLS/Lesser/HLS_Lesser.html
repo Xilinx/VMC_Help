@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="lesser">Lesser</h1>
+<p>Performs element-wise less than relational operation on the inputs.
+The top input corresponds to the first operand.</p>
+<h2 id="library">Library</h2>
+<p>Relational Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Lesser block has two input signals and one output signal. The
+block compares two inputs using element-wise lesser relational
+operation. The first input corresponds to the top input port and the
+second input to the bottom input port. The dimension of the output
+signal matches the dimensions of the input signals. An element of the
+output signal is true if the corresponding element of the first input
+signal is less than the corresponding element of the second signal;
+otherwise the element is false.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types support for the Lesser block is:</p>
+<ul>
+<li>The data types of the input signals can be integer, fixed-point,
+boolean, or floating point data type.</li>
+<li>The input signals can be scalars, vectors, or matrices. If both
+inputs are not scalar, their dimensions must match.</li>
+<li>The input signals must be real.</li>
+<li>The output signal is boolean.</li>
+<li>The dimension of the output signal is scalar if both inputs are
+scalar. Otherwise it matches the dimensions of the non-scalar
+input.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>The Lesser block has no parameters to set.</p>
+</body>
+</html>

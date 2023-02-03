@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="complex-to-polar">Complex to Polar</h1>
+<p>Perform an element-wise conversion of complex input signals into
+magnitude and radiant phase angle</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Complex to Polar block accepts a complex-valued signal of
+floating point data types such as double, single and half. It outputs
+the magnitude and phase angle of the input signal. The outputs are real
+values of the same data type as the block input. The input can be a
+scalar, vector or matrix of complex signals, in which case the output
+signals are also scalar, vector or matrix. The magnitude signal array
+contains the magnitudes of the corresponding complex input elements. The
+angle output similarly contains the angles of the input elements in
+radian.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support for the input port is:</p>
+<ul>
+<li>Dimension: The input can be scalar, vector or matrix. If the input
+is not scalar then the outputs have the same dimension as the
+input.</li>
+<li>Data Types: Input supports complex signal of floating point data
+type such as double, single, and half.</li>
+</ul>
+<p>The outputs are always real-valued signals of floating point data
+type such as double, single, and half.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Complex to Polar block has no parameters to set.</p>
+</body>
+</html>

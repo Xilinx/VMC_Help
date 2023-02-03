@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="fifo">FIFO</h1>
+<p>The Xilinx FIFO block implements an FIFO memory queue.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>Values presented at the module&#39;s data-input port are written to the
+next available empty memory location when the write-enable input is one.
+By asserting the read-enable input port, data can be read out of the
+FIFO using the data output port (<code>dout</code>) in the order in
+which they were written. The FIFO can be implemented using block RAM,
+distributed RAM, SRL, or built-in FIFO.</p>
+<p>The <code>full</code> output port is asserted to one when no unused
+locations remain in the module&#39;s internal memory. The
+<code>percent_full</code> output port indicates the percentage of the
+FIFO that is full, represented with user-specified precision. When the
+<code>empty</code> output port is asserted the FIFO is empty.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows. FIFO
+Implementation<br />
+Memory Type<br />
+This block implements FIFOs built from block RAM, distributed RAM, shift
+registers, or the 7 series built-in FIFOs. Memory primitives are
+arranged in an optimal configuration based on the selected width and
+depth of the FIFO. The following table provides best-use recommendations
+for specific design requirements.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"> </th>
+<th style="text-align: center;">Independent Clocks</th>
+<th style="text-align: center;">Common Clock</th>
+<th style="text-align: center;">Small Buffering</th>
+<th style="text-align: center;">Medium-Large Buffering</th>
+<th style="text-align: center;">High Performance</th>
+<th style="text-align: center;">Minimal Resources</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">7 series, with Built-In FIFO</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Block RAM</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Shift Register</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Distributed RAM</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Memory Type</p>
+<p>Performance Options<br />
+Standard FIFO<br />
+FIFO will operate in Standard Mode.</p>
+<p>First Word Fall Through<br />
+FIFO will operate in First-Word Fall-Through (FWFT) mode. The First-Word
+Fall-Through feature provides the ability to look-ahead to the next word
+available from the FIFO without issuing a read operation. When data is
+available in the FIFO, the first word falls through the FIFO and appears
+automatically on the output. FWFT is useful in applications that require
+low-latency access to data and to applications that require throttling
+based on the contents of the data that are read. FWFT support is
+included in FIFOs created with block RAM, distributed RAM, or built-in
+FIFOs in 7 series devices.</p>
+<p>Implementation Options<br />
+Use Embedded Registers (when possible)<br />
+In 7 series FPGA block RAM and FIFO macros, embedded output registers
+are available to increase performance and add a pipeline register to the
+macros. This feature can be leveraged to add one additional cycle of
+latency to the FIFO core (DOUT bus and VALID outputs) or implement the
+output registers for FWFT FIFOs. The embedded registers available in 7
+series FPGAs can be reset (DOUT) to a default or user programmed value
+for common clock built-in FIFOs. See the topic &#39;Embedded Registers in
+block RAM and FIFO Macros&#39; in the FIFO Generator LogiCORE IP Product
+Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fifo_generator;v=latest;d=pg057-fifo-generator.pdf">PG057</a>).</p>
+<p>Depth<br />
+Specifies the number of words that can be stored. Range 16-4M.</p>
+<p>Specify custom dout width<br />
+Allows specification of asymmetric data widths for input and output.
+When this option is enabled, the input din must be of type Unsigned
+int.</p>
+<p>Dout Width<br />
+Specifies the custom width of dout . The default value is
+<code>32</code>. The ratio between width of din and dout should be one
+of 1:1, 1:2, 1: 4, 1:8, 2:1, 4:1, or 8:1.</p>
+<p>For example, if the width of the din is <code>32</code>. Then the
+dout can be 4, 8, 16, 32, 64, 128, or 256.</p>
+<p>IMPORTANT: Asymmetric data-widths are supported only for Versal
+devices with Block RAM configuration.</p>
+<p>IMPORTANT: The total size of the memory (depth*width) should not
+exceed 150M.</p>
+<p>Bits of precision to use for %full signal<br />
+Specifies the bit width of the %full port. The binary point for this
+unsigned output is always at the top of the word. Thus, if for example
+precision is set to one, the output can take two values: 0.0 and 0.5,
+the latter indicating the FIFO is at least 50% full.</p>
+<p>Optional Ports<br />
+Provide reset port<br />
+Add a reset port to the block.</p>
+<p>Reset Latency<br />
+Creates a latency on the reset by adding registers. The default is
+1.</p>
+<p>Note: For UltraScale™ devices, after the reset gets asserted, the
+FIFO will remain disable for the next 20 cycles. During this 20 cycle
+period, all read and write operations are ignored.</p>
+<p>Provide enable port<br />
+Add enable port to the block.</p>
+<p>Provide data count port<br />
+Add data count port to the block. Provides the number of words in the
+FIFO.</p>
+<p>Provide percent full port<br />
+Add a percent full output port to the block. Indicates the percentage of
+the FIFO that is full using the user-specified precision. This optional
+port is turned on by default for backward compatibility reasons.</p>
+<p>Provide almost empty port<br />
+Add almost empty (ae) port to the block.</p>
+<p>Provide almost full port<br />
+Add almost efull (af) port to the block.</p>
+<p>Following are some general guidelines to use Reset, Write enable,
+Read enable for the &#39;built-in FIFO&#39; Memory type:</p>
+<p>7 series devices<br />
+Without Reset port, it is required to run at least 8 clock cycles
+latency before asserting WE/RE signals.</p>
+<p>With Reset port, it is required to run Reset signal ON for at least
+three clock cycles. During this time no WE or RE signals should be
+asserted. To be consistent across all built-in FIFO configurations, it
+is recommended to give reset pulse of at least five clock cycles.</p>
+<p>After Reset de-assertion, run at least 30 clock cycles (reset
+duration +30 clock cycles duration is defined as a no access zone)
+before asserting WE/RE signals.</p>
+<p>UltraScale devices<br />
+The built-in FIFO requires a reset pulse of at least one clock
+cycle.</p>
+<p>Versal Devices<br />
+Read enable (rd_en) and Write enable (wr_en) signals can be made high
+only when rd_rst_busy and wr_rst_busy signals are low.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+<p>FIFO Generator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fifo_generator;v=latest;d=pg057-fifo-generator.pdf">PG057</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</body>
+</html>

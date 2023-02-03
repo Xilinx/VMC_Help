@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="multadd">MultAdd</h1>
+<p>The Xilinx MultAdd block performs both fixed-point and floating-point
+multiply and addition with the a and b inputs used for the
+multiplication and the c input for addition or subtraction.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>If the MultAdd inputs are floating point, then inputs a,b, and c must
+be of the same data type. If the inputs are fixed point, then the port c
+binary point must be aligned to the sum of the port a and port b binary
+points.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows.</p>
+<p>Operation<br />
+Addition<br />
+Specifies that an addition will be performed after multiplication.</p>
+<p>Subtraction<br />
+Specifies that a subtraction will be performed after multiplication.</p>
+<p>Addition or subtraction<br />
+Adds a subtract port to the block, which controls whether the operation
+following multiplication is addition or subtraction (subtract High =
+subtraction, subtract Low = addition).</p>
+<p>Optional Ports<br />
+Provide enable port<br />
+Adds an active-High enable port to the block interface.</p>
+<p>Latency<br />
+This defines the number of sample periods by which the block&#39;s output is
+delayed. The latency values you can set depend on whether you are
+performing fixed point or floating point arithmetic:</p>
+<ul>
+<li>For fixed point arithmetic, you can only specify a latency of 0 (for
+no latency) or -1 (for maximum/optimal latency). If you have added an
+enable port to the block interface, you can only specify a latency of -1
+for fixed point arithmetic.</li>
+<li>For floating point arithmetic, you can only specify a latency of 0
+(for no latency) or a positive integer. If you have added an enable port
+to the block interface, you can only specify a positive integer for
+floating point arithmetic.</li>
+</ul>
+<p>See the Multiply Adder LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xbip_multadd;v=latest;d=pg192-multadd.pdf">PG192</a>)
+for details on latency in the block.</p>
+<p> </p>
+<p>Output tab<br />
+Parameters specific to the Output tab are as follows.</p>
+<p>Precision<br />
+This parameter allows you to specify the output precision for
+fixed-point arithmetic. Floating point arithmetic output will always be
+Full precision.</p>
+<p>Full<br />
+The block uses sufficient precision to represent the result without
+error.</p>
+<p>User Defined<br />
+If you do not need full precision, this option allows you to specify a
+reduced number of total bits and/or fractional bits.</p>
+<p>Fixed-point Output Type<br />
+Arithmetic type</p>
+<p>Signed (2’s comp)<br />
+The output is a Signed (2’s complement) number.</p>
+<p>Unsigned<br />
+The output is an Unsigned number.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+<p>Multiply Adder LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xbip_multadd;v=latest;d=pg192-multadd.pdf">PG192</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</body>
+</html>

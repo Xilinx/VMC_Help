@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="atan2">atan2</h1>
+<p>Compute element-wise four-quadrant inverse tangent of input
+signal.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAABtCAYAAACGJgKpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAABMMSURBVHhe7Z15fBbFGce5TAgEFOSSIkdRFASUCigIiDQKIhWUo4pAAoRgsUosJBIRSCsql4KAtFAVFEwhCKUQMFDKLXdCIuQid/LmIieK/jud36yz7Lvv7Hsku+/F/vH9JDsz717Pb2eeeXZmttEvv/xCTO5sTBGYuCaCn376idTV1ZGqqipSUVFBSktLSXFxMSkoKDDxMLAD7FFeXs7sU1tby+wlsqMal0Swfv160qhRI9KpUyeZjh07mngBwcHBJCgoiBw/fpwUFRUxMUAIP//8s9CWSlwSwfLly5kIpk7tS6ZP72fiRXTu3IrZZv/+/SQzM5MJobKyUn8RvP/+++xAP/wwl6Sl/cnEi9iwYQyzTVxcHElOTibZ2dmsNtBdBLGxsaYIvBQugi1btpAzZ86Qq1evEovFQm7duiW0pRKXRLBs2TJTBF4KF8HatWvJ4cOHSVJSEnMYdRfBkiVLTBF4KVwEaLL37dtHzp49S3Jzc53qIZgi8BNMEZiYIjC5A0SQlfUe7fdudRvFxV9TdtD/t9nkuYdtJCMjWngvtPBrEeTkfEjq6vLJzZuWO4ry8iPC+6GF34rgThUAKC3dJ7wnWvilCDwhgLo66W9JyV56A1fQ7UKbMu6gvPwEvQdv2NwTe/idCDwtgLS0eew88vLW07TiX7H9jRFUV1+l/sBfrO6HM/iVCLxFAJzCwi9syhsFrvv69aVWx3cWvxGBtwmAY7Hssvmdvkg1DWoe0fGdQRcR4K3T1q1b2V9lASVGisBbBSAxj5SVJdj8Xk8slnjBcZ2nwSKA4Vu3bs12gr8nTpwQFjZKBN4tAIn09DeYw6bejx7UxxFU02ARoAbADjhaQjBCBL4gAE56+luksvKCzf4aQn0dQTW61gT2hKC3CHxJAJzMzAXUcKk2+60PuPb6OoJqdPEJYHBHQtBTBL4oAE5mZgypqcm02b/zNNwRVKOLCIAjIeglAl8WAOf69WWktjbX5jjO0lBHUI1uIgD2hKCHCPxBAJz6RhX1cATV6CoCoCWEWbNmNUgE/iQAjqtRRb0cQTW6iwCIhBAYGKgpgldeeYSMHNmN5r1uk/fHP/YhU6YM9DsBcJyNKuL69XIE1RgiAiASgpYIIiOfYHn/+McLVumHD08jjRs3JtHRbwpvjFG4SwAc+1FF/R1BNYaJAIiEIBLB8eMzSJMmjcnYsQ9apUdGhrDfpKR8r7oxxuFuAUjYjyrq7QiqMVQEYPXq1Q5FAIYNu58EBTUjly+Hs234AD179iBDhgwW3hgj8IwAJLSiikY4gmq8oiYAH3/8LMv/8MNRrC999Oh+tr1hwyqbG2MknhAARx1VNMoRVOMVPgG4ciWClg+kT34XkpW1iISHh9KaoTmtCjOsjGQkVVVJ9KYvEJ6fu0BUsbLyEqmtzTDMEVRjiAhc7R1w0Eto2rQx+f77maRd+3vIyxNDSMWNE26hvOIYrXoTaU3wLX0i5wvPz1/RXQQiAWDbmTjBrl0TWZkpU/qwv9/EvcsM426KLXH0fP5sc37+iq4i0BIA0p2NGD7wQBvaLWxEOnQIptvzSUnpHqGhjKaoeButETzjG7gb3URgTwDId1YECxcOYeXCwwewbbTRZWX/ERrKaAoLN9Nz8H8h6CICRwIAzopg8eJhrFxCwqtyWiZ1FMvKE4SGMpr8gg1W5+ePNFgEeo4nSE6OYM3BoEGdbfKyrr9HhXBIaCijyc1bY3M+/kSDRaDHyKL9+19h7w66dpXE9MUXf7ApA65n/5Ua5TsbI7mDnJwPhOfkD+haE2gJANgTwZkzYeT++1uztXOWLn3aJl9JTu6KXw3jXjGU0eNhHIDonHwdXXwCCMGdo43z8tYKDWU8B0lW1rvCc/JldBGBM+gpAnjs+QWbBEYyntIyrPDl2qxfb8dHRSBRWPS50FBGU1q2zy0xfXfh0yJAMKfY8rXQUEbjT+FlnxYBSE9/k1hKdgoNZTT+El72eRGAjIxIM7zcAPxCBMAML9cfLoKFCxf6rgj4AFWjw8uIFfz736vJylVvktjYCLL72xXUSZSimKLw8kcf/Z4sXjzcJl1v3n13GFm5MkSY5wxcBM2bN2e1gc+JYMeOl8hjj3WSt40KL1+58g0ZMOAhdg2BgXeRgIBm7P/+/R8kKalxrIwyvJyY+Bpp0eIuKpopcppR7N49ibRsGUCOHJkmzHcEFwFo1qwZW4zcp0QwalQP0qpVgFWaEeHlIUP7MeNv3rKY+h+HqDN6kKxeM58NkH3qqUflcjy8/OSTXcgLL1gPnDWS0aN70vO4X5jnCKUIAEZ4Yy1qnxYB0DO8fOHiNnbu4XMm2OS9+OIIlpeSItUGYNeucJaGWkp9XkYRF/cyO+bOnROF+fZQi4ATHR3tcKVzQ0Vw4cJs8sYbg8gjj7Qn997bgg0ywfjDTZvGymWg/jZtgkjTpk3YkxcTM0zO27ZtPBkz5lHStWsn0rZta9KrV1cyJ+IlkpH5rWysDRuiyMiRvyNp6fFk+vTnSZcuHUjHTm3JuHHDyZnvbweiLl3+iiyKCSOHvlsvp3HCw8ez6zp5crOc9vzYp0inTsHk2jXpXDCCGk/p7NnSGAklPA+v0JXp+O3kyX3YNeMFmzJv5szHWLq6qenW7W56zQ9YpTkDF0G7du1kAXBCQ0PJjz/+KLQpMEwEKSkRpHfvdrTdbcqGmkVFDSVhYY+Su+9uzvaBYWgo9/rrj1PDtSZ33dWUfbzhk0+eY+kYuYzRSX37PkCdpnn0Bs8hz4waxH4bEjJEHlcYFRVGq/Mm9Fg9SL/+vUhk5DQyecpzLK1z5/a02j8qlxVhKfkv6d69M2ndOpgUW/7L0nLz9tF2tSmZMaO/1TXB0Lie8+dnWaV/8MEodl5ffvmiVTrA040xl/B5rl6VnF84gCg/eXJvm/KvvdaP3YukpDk2efbgIoiJiSEPPST5PUrGjBnDPosjsqthIli9WrpQtWe9ffsElj5tWj85TdQcdO9+NzViO/pUZluNJh45UhqwUlh4jW3HxPyFbU+YMI7U1hbJ5aKj57P0+Piv5DQRkZF/YuXeey9aTtu1awtLW7XK2ltfs0a6pthY67ekTzzxG/b2lNcaaubOfZz9Dvfi6NHp7Fox5kJkaAzXR9l//lP8Kl4LLgL0DHbu3EmGDh3KtpUMHjyYfStJbVfDRIAqcs+eyTYXeuzYDLaPl156WE4TieDs2Q30t6eoUawneoaGTmW/T0uTxvZzEezfbz0NbN++OJZub84DDI8yISHPkJoaaXYxpptHR0vGjo+fZHVOGDCDIfWPP36fnPa//0kzr2BoZVkluF99+3YgwcEBtCfSkXbjmtk0D5x//UvyCxYtekqYr4VSBIgTnDp1ikyaNImlKenVqxfB53GUdjXUJ0D1t3Hj8yQi4nesnXv44XtZ1Yh9jB+vLYKioi+ZQdLSztMnYylth2fQMiNoe9dWvpirV8+xMlwESUknZeOCxMS9LH3duhVW6QAGnzt3JssfPfr3tLbJYemYZo5ZU2ivkffdd6/J58TB5Fo0U7wr9/bbT2qWVXLw4FQ2OwtllywZISwDUA5l5syhfo4gXwu1CBAnyMnJYY4h0pXgA2YXL16U7WqYCM6enUlVJxmtQ4eW5Omnu7GnBU4h0rREkJ+/kRnk448/YP3dgIAA2p7iY0+vkPXrV5FXX5XUrRbBlStnZCMDLoK1az+ySi8tzaKClJ70sLCppLq64Ne8YpKXt46dQ2hof5Z/+LCtYeG5I++ttwaz7Z4925ABA27HOLSADwTnF7+FsygqAxCbQBkIUZSvhUgEPE6Ar6Ggy4h8DgYPJSYmMrsaJgIYGWXV7SdvDkQiyM1dzZ7G1NSzzLHr27c3TbNeH2jGjFfZ7+sjgpKSTDJw4AB2Q5YvX0LTbjc1BQUIG0vns2CBNFpaq6sGw6NWQ5WOcrGxI4XlOGgS4eO0a9eCdkclp03ZQ1LCu4nvvNOw5kAdMYyMjGT5Stq3b09u3LhhnAjgDaOtTE21LovwKPYxblwvOe3ZZ39L28tAKgBp/QLensO540YCZWXXqQN2H8vjRndFBGPHPsfSPvtsDdvmk1ctlm+szpE7gJ9+OtoqncOH1KPXg/YdXWFROQ7KofzGjWOYrwQnsm3bIHL6dJhN2XXrRrOy+KvOs4c9EWiNJIffALsaJgJ0B1EWVSvWKDh0aCprP3HTmjVrQp/+7nLZyZOlNnjBgj+TvXt30LYshZYLpF3H35ADB+KpI3OZPnU7qRc+kKWj7OnTicyAzopg9+6v2Tb8ijlzwmTCwp5n33kE8NxxPjAO2n2tKvnkyTDm26CMcir+xYuzmYGHD+8qp/HmT1kOnj/Snnnm9j3g4L6h2UBzqs6zh5YIjh07JhSAchypYSK4dGk28wOUB0e3CKOQR4zoRk8kkHnb+LjDkSNxstM3fPgQZrRt2zbRp6WN/NvAwADqYIaRhITdbHvZshhWzlkRYHIs35cWyt4AvHh49MprUsKvbfPmcXIa4gdIQ1OBbQy+RZAMT73aqBMn9mZl1c1lnz7thcP1HSESwZ49exwKABgmAs6pU2Hs5opejGRkvE2qqpKZkeCgZWUl0e3bS9rcuJFHxXScPfXqeEFDqag4TdLTtQeTLF8u9deVE2iUhIT8lkVA1cvzoFus7EK6AvcxECgT5dtDLQJ8H7FVK+mrqRyRAIDhItACo4lu3JCcO3dTWXmZCtD+sDJcI6p2UZMADx5RvXnzBlql4zcTJjxM5s9/wirdWdAU9OhxjxxZdAWlCFauXElatmzplACAR0SAFT0qKo4JDWQ01dU/UB9jofC81Kxd+xx7vcsdOERBMcHmnnuCWPgb1b2yPJxghMfrc39OnAhlr621eg2O4CKIiIig+2nhtACAB0SAtX0OCA1kNDU1WVQArs05QJeO1wabN7/AYh54J4Lwt7psQ4AD/fLLtu8SnIWLAINKXBEAkEXgrsknt1f5cm7dP71AONhfZx8BLgIl8AnQOxDZUgkTgR7T0JyBh4PdLQAeDhadk7+gFgF8AvQOnB5U4o6l7nk42P3cDgf7M0oRwCdA78Cl4WXKmoAjEkJ9RcDDwWIjGYE4HOzPKH0C9A7UYWN7yD4BDO5ICPURQXb23+RwsLvQCgf7M1wEUVFRNmFjbj8tZBEAR0JwVQRZWYupR37dxkjuQPq45J2xXhHgIhC9O1DaWISVCIA9IbgigszMKKFx3EF5+WF6Dp4VAIJRmFUlyjMCXUUAtITgylL3WMxSZCCjkVYQdd/NF5GVFcMGq4Ls7PeFZfRGdxEAkRDsLWaJ8XMYLYzXsNiGIRAW/vvf/0ZGjBjE/lZVXTaUysqLpLziCJtkirC0+hzdAaKRWP+AiwCLYmRmvSMsqyeGiACIhKAlgnPnZrEXKng7iFetSEtMDKPdleZsJHBBofLGGI8nhCBNqt1rcy5IM3oKvGEiACIhaDUHn3/+B/aOHYNEUAavYhEPP3nKdqy/O3CnEKTp9buE5wGKir+m5YzzUwwVAXB2qXuAsfooM3RoF/YXr2TxythT087dIQRpoY3twuMrMXI9Ra+pCQBWOn/wQWmAiHImjT8LwZUld4xyFL3CJ+BgvN1990mDGTDaGKLgef4ohIKCz4TH08YYR9EQEbjaO+BgACkGmPKx+xgoocz3JyFgGrvoOI4wwlHUXQQiAWDbUZyAf/mEz+HDECw4ilu3Ws/R8wchYPo69lem2r+z6O0o6ioCLQEg3V7EEPMJ0D3EsrZ86hnGF2IEDmb3qidx+rIQMC5BWkSjYVPm9XQUdROBPQEgX0sEmIiJQBGe+q++Gm+Vt2KFNIZf/ZU04ItCQDRQz+V09HIUdRGBIwGA+rxFdIQvCcE2GqgH+jiKDRaB0eMJHOELQtCKBuqBHo5ig0XgjpFFjvBmISDPXjRQDxrqKOpaE2gJABgpAuCNQnA2GqgHDXEUdfEJIAR3LnWvhbcJwd0LcNfXUdRFBM7gDhEAbxGC69FAPaifo+h3IgCeFkJe/ifCPHdQH0fRL0UAPCkET1Ns2SG8J1r4rQiAJITb6xbeKeTnfyq8H1r4tQgAPPTMzEVuBZFBUbq7SLMzbV6E34vAxDGmCExMEZiYIjChmCIwMUVgYorAhOI2ESxdutQUgZfCRbBq1Spy8OBBcunSJZKfn6+/CPBNHRwIX//AYtUm3gMWCoVtNm3axIYCpKamsm8b3Lp1S2hLJS6JACtg4EDBwcEMrIuDpVGCgoJMPAzsArZv386Wscc3DcrKyhx+/wi4JILKykpSUFBAq580Vt1AcQkJCSQ+Pt7Ewxw4cICtVHbhwgVy7do11hRgBXPdRVBTU8PUhQNkZGSQlJQUcv78eSYGE89y7tw5kpyczOySl5dHSktLmb10F8HNmzdJdXU1KS8vJyUlJaxWwNc1cGATz4IRYbCHxYKVWsoJPnoFe4nsqMYlEUBVcDTgceIAdXV1pLa2linOxLPADrAH7ILP38FGztQCwCURmPgjv5D/Ax0rhbwwhXNNAAAAAElFTkSuQmCC" /></p>
+<h2 id="description">Description</h2>
+<p>The atan2 block returns the output of the function
+atan2(<code>y</code>,<code>x</code>).</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>Dimension: Inputs can be scalar, vector, or matrix. If one of the
+inputs is scalar and the other is a vector or matrix then the scalar
+input is expanded to match the other input dimension, and operation will
+be performed element wise. If both inputs are non-scalar, then they must
+match in dimension.</li>
+<li>Data Types: Input supports signals of integer type, floating point
+type (double, single, and half) and signed and unsigned fixed point
+type. Both inputs must be of the same data type.</li>
+<li>Complex Number Support: No</li>
+</ul>
+<p>Except for fixed-point input data type, output has the same data type
+as the input. For fixed point input, the output data type will be signed
+fixed-point with a 3-bit integer width, to be able to represent numbers
+between –π and π.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The atan2 block has no parameters to set.</p>
+</body>
+</html>

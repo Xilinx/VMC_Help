@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="max">Max</h1>
+<p>Outputs the maximum value of an input or element-wise maximum value
+of multiple inputs.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions/Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Max block with a single scalar or vector input, outputs the
+maximum value of the input.</p>
+<p>If the block has more than one input, the non-scalar inputs must have
+the same dimensions. Any scalar input is expanded to the dimensions of
+the non-scalar inputs, and the block outputs element-wise maximum value
+of the inputs.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<ul>
+<li>The block supports floating-point, integer, and fixed-point data
+types.</li>
+<li>The block supports real valued inputs.</li>
+<li>For Number of Inputs = 1.
+<ul>
+<li>The block supports a scalar or vector (1-D or 2-D) input when it has
+only one input port. The output is a scalar.</li>
+</ul></li>
+<li>For Number of Inputs &gt; 1.
+<ul>
+<li>The block supports scalar, vector, or matrix inputs when it has more
+than one input port.</li>
+<li>The output has the same dimensions as those of the inputs when all
+the inputs have the same dimensions.</li>
+<li>The block supports mixed dimensions for inputs when it has more than
+one input port, provided all the non-scalar inputs have the same
+dimensions. Any scalar input is expanded to the dimensions of non-scalar
+inputs, and the block outputs element-wise maximum value of the inputs.
+The output has the same dimensions as those of the non-scalar
+inputs.</li>
+</ul></li>
+<li>The block supports inputs having different data types. The output
+data type in this case is defined by the following set of rules.
+<ul>
+<li>If the data type of one of the inputs is a floating-point type, the
+data type of the output is the floating-point type among the data types
+of the inputs with the most precision.</li>
+<li>If the data type of one of the inputs is a fixed-point type, the
+data type of the output is the smallest fixed-point type capable of
+representing the result without any loss of precision.</li>
+<li>If the inputs are integral, the output is integral. If any input is
+signed, the output is signed. The bit width of the output is the largest
+among the bit widths of the inputs.</li>
+</ul></li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Number of inputs<br />
+This parameter determines the number of inputs.</p>
+<p>[TABLE]</p>
+<p>Table 1. Number of Inputs</p>
+</body>
+</html>

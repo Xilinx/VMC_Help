@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosh">cosh</h1>
+<p>Element-wise computation of the hyperbolic cosine for a given
+argument</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The cosh block returns the output of the function cosh(x), which is
+the hyperbolic cosine, for each element in array x.</p>
+<p>The hyperbolic cosine of <code>x</code> is:</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAAfCAYAAAAlfqlKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOLSURBVGhD7dixrw1BFMfxxx9AglrhH6BApRQSEp2Q+AN0ShIqBQmNTq2R6HRCQ6OjVxCFHvEXcD733iPzNuvdu/v2Pnv3zTf5ZWd2dnZnz5lzZna3KpVKpVKp4FzoRehS6Hboaeh/czRkLMZ1cnE0zspAPAj9Do3JqJxuTK9ntYKDi2OlP98Wx/eL417DqakTTgTfQz9Db2e1ymCIJIbOCE+D/wvXygjr5mboSyjT+l9qhK+OdZquz2rzdfJ56E7oY+hZaN2YUMbAoW2TyzmT6njoVuha6GKo0gER8iHE0YwtmrdFTQd2E+H66S+rGI/oHSUGuCzVjRXj/hFi7DQ0o/elr8P1MQ7jMfGUTb7RYXAiYtlLMqYUuWxiiKw+BuuLz6wcv3Km81XhYP130rL3YRPXmWz56TfqAFr2UrnxWfUl8tt3LzD23UR0kz4RzsnGMchn3xg2bTY+L0NfZ7Xl+PyR0mxc1o1PGxMy8cy9/t7+tTgeWhwFxqBZTtqUNswsW3vHxLohutrapDt110g/ubHJKHFPfSjbHLVndDMuozqXf4hc39yVeganr5tcL43BeLqm9CZ9IjwzYNpk0JTu5l4wHZLGV2d8bfkwR/V8AeU0iGNuKnKg2Y/xMk2aICZHGUXwUvq5j3IT12tvizb31LaTBo2QDvRx+KAcWBwTTrofOjOrzWFUaZThnS/bOPJC6EjIy5wNXQl9Ch0OSdMM/DB0LwTXcZj7lOUS5z7Pi1unQ23p3n19Az+e1YbFBD81L04CfwPfKTQdLjquhpoOQJtzXP8odGxWm6/HPvTfhG6E/OLr43CIhLuhy6FXTjRo3ndIzoc8dypw+JN5cTuZwjkhkYrN+EyzJWVKzvSa657ohz5lGuNkfeCeWS7xvLzOEtCG+3p+kzGn9NHBuQzCWZyozvCOHKrNpEg4JI3OyYlz+qFp4NLh7lX2S7TnvqHNQTnOtjW80hERKqoYlHNKo1rjtXEAcWxmA+dFrGu06afsPtpy0nAwcai+2pWhnlGvTMquyQ0hchz57E3D+PO9qC1TTRYvm+l/VUxERttETPzMYDnBOX1T36cXmRlWwTJQLiubhrFnRgOnc3hz2Zo8It3s3wlLQpnapwKHb/IkrnRAtNvTLJvslYlgPzLFrFVpgaP31Q59P8PZNqub+mlZ6UCbs9XL3XtlIvj8zB8upbr+i6hUKpVtbG39AWD59uZXlTySAAAAAElFTkSuQmCC" /></p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector, or matrix.</li>
+<li>Data Types: Input supports signals of integer type, floating point
+data types (double, single, and half) and fixed point type.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>Output has the same dimension and data type as the input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The cosh block has no parameters to set.</p>
+</body>
+</html>

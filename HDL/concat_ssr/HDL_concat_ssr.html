@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-concat">Vector Concat</h1>
+<p>The Vector Concat block concatenates two or more inputs of type
+vector. The output is cast to an unsigned value with the binary point at
+zero.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The <a href="vectorreinterpret.html">Vector Reinterpret</a> block
+provides capabilities that can extend the functionality of the Vector
+Concat block.</p>
+<h2 id="block-interface">Block Interface</h2>
+<p>The block has n input ports, where n is a value between 2 and 1024,
+inclusively, and one output port. The first and last input ports are
+labeled <code>hi</code> and <code>low</code>, respectively. Input ports
+between these two ports are not labeled. The input to the
+<code>hi</code> port occupies the most significant bits of the output,
+and the input to the <code>lo</code> port occupies the least significant
+bits of the output.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Double-click the icon in your Simulink® model to open the Block
+Parameter dialog box.</p>
+<p>Parameters specific to this block are as follows:</p>
+<ul>
+<li>Number of Inputs: Specifies number of inputs, between 2 and 1024,
+inclusively, to concatenate together.</li>
+</ul>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>The Vector Concat block does not use a Xilinx LogiCORE™™.</p>
+</body>
+</html>

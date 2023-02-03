@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="reinterpret">Reinterpret</h1>
+<p>The Xilinx Reinterpret block forces its output to a new type without
+any regard for retaining the numerical value represented by the
+input.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The binary representation is passed through unchanged, so in hardware
+this block consumes no resources. The number of bits in the output will
+always be the same as the number of bits in the input.</p>
+<p>The block allows for unsigned data to be reinterpreted as signed
+data, or, conversely, for signed data to be reinterpreted as unsigned.
+It also allows for the reinterpretation of the data&#39;s scaling, through
+the repositioning of the binary point within the data. The Xilinx Scale
+block provides an analogous capability.</p>
+<p>An example of this block&#39;s use is as follows: if the input type is 6
+bits wide and signed, with 2 fractional bits and the output type is
+forced to be unsigned with 0 fractional bits, then an input of -2.0
+(1110.00 in binary, two&#39;s complement) would be translated into an output
+of 56 (111000 in binary).</p>
+<p>This block can be particularly useful in applications that combine it
+with the Xilinx Slice block or the Xilinx Concat block. To illustrate
+the block&#39;s use, consider the following scenario:</p>
+<p>Given two signals, one carrying signed data and the other carrying
+two unsigned bits (a UFix_2_0), you should design a system that
+concatenates the two bits from the second signal onto the tail (least
+significant bits) of the signed signal.</p>
+<p>You can do so using two Reinterpret blocks and one Concat block. The
+first Reinterpret block is used to force the signed input signal to be
+treated as an unsigned value with its binary point at zero. The result
+is then fed through the Concat block along with the other signal&#39;s
+UFix_2_0. The Concat operation is then followed by a second Reinterpret
+that forces the output of the Concat block back into a signed
+interpretation with the binary point appropriately repositioned.</p>
+<p>Though three blocks are required in this construction, the hardware
+implementation is realized as simply a bus concatenation, which has no
+cost in hardware.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Parameters specific to the block are as follows.</p>
+<p>Force Arithmetic Type<br />
+When checked, the Output Arithmetic Type parameter can be set and the
+output type is forced to the arithmetic type chosen according to the
+setting of the Output Arithmetic Type parameter. When unchecked, the
+arithmetic type of the output is unchanged from the arithmetic type of
+the input.</p>
+<p>Output Arithmetic Type<br />
+The arithmetic type (unsigned or signed, 2&#39;s complement, Floating-point)
+to which the output is to be forced.</p>
+<p>Force Binary Point<br />
+When checked, the Output Binary Point parameter can be set and the
+binary point position of the output is forced to the position supplied
+in the Output Binary Point parameter. When unchecked, the arithmetic
+type of the output is unchanged from the arithmetic type of the
+input.</p>
+<p>Output Binary Point<br />
+The position to which the output&#39;s binary point is to be forced. The
+supplied value must be an integer between zero and the number of bits in
+the input (inclusive).</p>
+<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf">LogiCORE
+IP Floating-Point Operator v7.1</a></p>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="scale">Scale</h1>
+<p>The Xilinx Scale block scales its input by a power of two. The power
+can be either positive or negative. The block has one input and one
+output. The scale operation has the effect of moving the binary point
+without changing the bits in the container</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The block parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>The only parameter that is specific to the Scale block is Scale
+factor s. It can be a positive or negative integer. The output of the
+block is i*2^k, where i is the input value and k is the scale factor.
+The effect of scaling is to move the binary point, which in hardware has
+no cost (a shift, on the other hand, might add logic).</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="xilinx-logicore">Xilinx LogiCORE</h2>
+<p>The Scale block does not use a Xilinx LogiCORE™.</p>
+</body>
+</html>

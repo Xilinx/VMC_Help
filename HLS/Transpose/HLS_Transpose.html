@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="transpose">Transpose</h1>
+<p>Perform an element-wise transpose operation on the input signal</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Matrices and Linear Algebra</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Transpose block performs a transpose operation on the input
+signal.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>This block supports all data types supported by Vitis Model Composer.
+The input signal can be real or a complex number of scalar, vector, or
+matrix type. The output type is always the same as that of the
+input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Transpose block has no parameters to set.</p>
+</body>
+</html>

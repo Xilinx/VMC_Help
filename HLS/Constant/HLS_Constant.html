@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="constant">Constant</h1>
+<p>Provides constant value as a source.</p>
+<h2 id="library">Library</h2>
+<p>Source</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABECAYAAAAiL3M8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAYLSURBVHhe7ZzbSyNXGMBtU/ZBxZdSKKwUioXqi7heUFBYXVy6Qumy/gN9brpLKKUXtl2oha67tYXSq25LaSntg4sWbIvrBdaKK4gVsWhiriaZXEw0Jl5fv57vpNNOJmeSmcmZiRvz8CPRybn9nPm+c2biqTg5OYEyylBBh4eHkEqlYHd3F2KxGEQiERAEAfx+f0kQDAbpmLa3t+kYk8kkHBwcwPHxMVOKFCooFApBa2srNDc3Q1tbGwV/bmlpKRkaGxvBZrNRWShqb29PvSCfzwcVFRWUS5eeL0lwbH19feBwOOhZFY/H4ejoiClFChXkdrtpBQMD3bCx8VpJUl//NPT29sLKygo4nU6IRqM0tMiFyKGC0OpZENTd3Q3z8/OwtrZGLzWMQ3Ihcqig9fX1MyGos7MTJicnYXl5mYaV/f19phQpVBAaPQuCMPmMjY3BwsICuFwumrnlQuSUBcmEyOEqaHPzXXLqfqaLra3PySvCPq4Fr/duVt+KLsjjuU0a3CLXdehU4HS+l9G/ogo6bXIQj+ejjD4WTRAvOcHgD2SGO808ppZUKv0aCNzL6mdRBPGUg/XZ7TdgZ2eZ+Rm1hMO/ZvUTMV0Qbzkim5tvkcWkg/nZfMRifxLJr2fUJ2KqIKPkiLjdA6R+P7OMEonEGlkRvMGsDzFNkNFyRDDls8qxSCY9WVlLjimCzJIjEgr98m8ZIaP8/+Dvg2Tec4dZXorhgsyWk8aqmNlyZSwWhgoqjpw0uTKbUsZiYZggr/djZue0okeOCCuz5cpYLAwTJO2UXgThx6x6tYKZTawvkfg7Z8ZiYZigePwR7VQy6dbFzu4SBIXvNf21lcBgLAg/kYx1k3k8Fyiorq4ORkZG+ArCv1Q4MkaC5YOC4CVJLygIx1hZWQnDw8N8g3QpSBIFIVVVVTA6OspPEPK4S5IKQqqrq2FmZoYpRYpqQQhvSQ8fvgo2WzuzLd6gIIvFkiGppqYG5ubmmGJENAlCeEny+r6Frq7nSKefYLbDGxTU0NBAY5AWSZoFIYVKcrnH4fLldtqmmYIwzQ8ODtIYpFaSLkGIXknDIzfh/Pln4Ny5p+irxfKkKTFJFITzIMxiGIPUSNItCNEjqaamCpqaXoTpma/g6tWLVJAZgVsqCOdBmMVQSj5JBQlCtEoaG78L0e1J+l4UhO+NliQXhPMgzGL5JBUsCNF7uUkFIYHAMLN+HrAE4TwIZeSSxEWQ3X6dDHAGYvG5/warBrmgcPg+s34eKAnC8Q8NDWUIQmpra8lSKVm4IFFOeiEpkEYDqunvf5kIstD3iYSDrNrfZrbBg6KcQZlytNPf/woVhPeT8ZYGqw1emB6DCpWDiIKMloPIBRmaxXjIQa5de4kIMneiiIIMnQfxkoOXVV9fvemCDJ1J85SDl9WVKy+YKsjQtRhvOaw2jAQFGbaaf9zlIChIKofb/aBSkINIBXG9o7iz8xdzwFrgJQeXNOlHzNezjuVDFMT9nnQisc4ctFpSKS94vLez6tWKw2Eji9zfyNn8AARB+zM2FGTIUw1/4B7E44s6eQTbsWkyqD/A6Xo/q2612O1WCIV+pnJEtvxfMD+rBApiLTXkQuSoCtJe36cZndOHXklW+vydVSc+EmeXycZQQUixJHl9nzDqSYP3lVyu3F97ETFcEGK2JLf7A/L59M01JSLRCRKf3mSWl2KKIMQsSZvOd8gZ8jujbDbhyH0Sp24w6xExTRBitCTMWJHoOKOMMvm+PWKqIMQoSayMpZZcmc10QQh/ScoZSy1Kma0oghCeknJlLLUoZbaiCUL4SOKLPLMVVRBy2iS5XLcy+ld0QYjb8yH4/V/rAh8cBgLfMY9pIvANCdZfkv5YM/p2KgSdZsqC8lAWlIeyoDwUJKj8b+HKUEHixgLIhQvPliQ4Nt0bC+BeFrhtQ09PD3R1dUFHRwfd3KSpqakkwM1N2tvbwWq16tuaAreMwe1wsODq6iosLi7C7OwsTExMlARTU1M07qAcXZubYLDCfYNQksfjIdfsBhW1tLRUEqAYjLO4iYuu7XHKGywpQwWVUeIE/gFPR4EsUzmxnwAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>The Constant block generates a constant output of the value specified
+by the Constant value parameter. If you select Interpret vector
+parameters as 1-D parameter and specify the constant value as a scalar,
+row matrix, or column matrix, then the output is a 1-D array. Otherwise,
+the output is always two-dimensional. The Constant block supports real
+or complex constant values.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>By default, the Constant block outputs a signal with double data type
+and the same complexity as the Constant value parameter. However, you
+can specify the output to be any data type that Model Composer supports,
+including fixed-point and half data types by selecting the Output data
+type parameter.</p>
+<h2 id="parameters">Parameters</h2>
+<p>Constant value<br />
+The Constant value parameter specifies the constant value output of the
+block.</p>
+<p>You can enter any expression that MATLAB® evaluates as a scalar or
+matrix.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.0</td>
+<td>Constant Value</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Settings</p>
+<p> </p>
+<p>Interpret vector parameters as 1-D<br />
+Specifies whether the constant value should be interpreted as a 1-D
+array. | Choices | Description |
+|---------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| On | If the specified constant value is a scalar, row matrix, or
+column matrix, then the output is a 1-D array. Otherwise, the output is
+a 2-D matrix. | | Off | The output is a 2-D scalar or matrix. |</p>
+<p>Table 2. Settings</p>
+<p> </p>
+<p>Sample time<br />
+Specifies block sample time as a numerical value. The sample time of a
+block indicates when, during simulation, the block generates outputs or
+updates its internal state.</p>
+<p>The block allows you to specify a block sample time directly as a
+numerical value. For example, to generate output at every two seconds,
+you can directly set the discrete sample time by specifying the
+numerical value of 2 as the Sample time parameter.</p>
+<p>Settings for Sample time are:</p>
+<p>[TABLE]</p>
+<p>Table 3. Sample Time Parameter</p>
+<p>For additional details for simulating sample time, see <a href="https://in.mathworks.com/help/simulink/ug/types-of-sample-time.html">Types
+of Sample time</a> in the Simulink documentation.</p>
+<p> </p>
+<p>Output data type<br />
+This parameter specifies the data type of the output signal.</p>
+<p>If the output data type is one of the integer types, then the
+Constant value is rounded off as explained below.</p>
+<p>A value with the fractional part less than 0.5 is rounded towards
+zero, the fractional part more than 0.5 is rounded away from zero.</p>
+<p>In case of a tie (fractional part is 0.5), the Constant value is
+rounded up, i.e. the negative Constant value, is rounded towards zero
+and the positive Constant value is rounded away from zero.</p>
+<p> </p>
+<p>Settings<br />
+The following data types are supported:</p>
+<p>[TABLE]</p>
+<p>Table 4. Output Data Type Parameter</p>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-delay-delta">Vector Delay Delta</h1>
+<p>The Vector Delay Delta Block delays each vector element differently
+based on the given latency and delay latency values.</p>
+<p>Hardware notes: A delay line is a chain, each link of which is an
+SRL16 followed by a flip-flop.</p>
+<h2 id="description">Description</h2>
+<p>The delta latency parameter is used to generate each parallel path
+with different latency (for example, [Latency + Delta Latency * (i-1)],
+where i represents the channel number in a range from 1 to the SSR
+value).</p>
+<p>The delta latency should be an integer and greater than or equal to
+-Latency/(SSR-1).</p>
+<p>For example when SSR is set to &#39;4&#39;, Latency is set to &#39;1&#39;, and Delta
+Latency is set to &#39;3&#39; then the four channels from 1 to 4 are delayed by
+1,4,7, and 10 sample times respectively.</p>
+<p>Note: In the Vector Delay Delta block, all the parallel channels are
+delayed by an equal number of sample times provided by Latency
+parameter.</p>
+<p>The Vector Delay Delta block implements a fixed delay of L
+cycles.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This blocks enable 1-D vector and/or complex data support for
+the primary block operation.</p>
+<p>See the Xilinx® <a href="vectordelay.html">Vector Delay</a> block for
+further information on using this block.</p>
+</body>
+</html>

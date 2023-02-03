@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="conditional">Conditional</h1>
+<p>Pass through input T when control input C satisfies a selected
+criteria; otherwise, pass through input F. The first and third input
+ports are data ports, and the second input port is the control port.</p>
+<h2 id="library">Library</h2>
+<p>Signal Routing</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABiCAYAAACvUNYzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAs/SURBVHhe7Z19bNTmHceBCiTeIgZCg/2xDQa0VAVNqmDS1tGVDSWs6+joto6WAu1e2GAbKWWBlRGJrBRlItAyRsRGoAwISqNkhYwRmjABg0xBiQAFcnm5hFxyec+uAQL//ubvY55g3z0+P/bZd5fEf3x0ubP92P5+bD+P7cfOqIcPH5JH4rAlIBQK0enTp6m4uJgKCwupoKCA8vPz6cSJEyOGkydP0qlTp9i6d3V1sUzu3r1LAwMDwsyMsCUgEAjQqFGjPB7R2NhIHR0d1NfXR/fu3RNmZoQtAc3NzWzGr732DBUV/WjEsmLFUyyHGzduUFNTE3V2dlJ/f78wMyNsCYBxzHjnzm/R7du/GrFs2/YNlsOVK1fo1q1b1Nrayg5FosyMsCXA5/N5AhS4gNLSUqqqqiK/388OQ6LMjLAlALY9AY8FFBUVsb0AG2ZPT48wMyNsCbh586YnQIELOHbsGJWVlbFc0CISZWZEhICGhgY6cuQI+wwfxvEEqDguAKGnpKSwQvGJY5t2OMcToOK4AGz5KJAzbtw4dsKhHQd4AlRc3QM4o0ePpn379ukm8gSouFIHXLt2jWbMmKGTALZu3UoPHjxg45gJyMlZRtu3f9OU7OzvCKcfKrgiANTV1dG8efN0AsDatWvZqbaZgKefnh4xrYhZs6YIpx8quCYABINBWrx4cURoaWlpbC/B30YCysreoJKSVYOkp3+Njb9+/bO638+fXy2cfqjgqgDQ29vLAufhcxYuXMg+ZeuAXbuWsvFx2BENH6q4LgDgEuuaNWsGw9fiCYiDAIDKF5WwNnzgCYiTAA6ao2iWegJU4i4ApKenOy6gtnYj+XxvJy21tb8WLnfcBVy8eFF3ouaEgPr6P1AoVKvUNcGkpaPjdMRyg7gKCA/fCQFq+PWalW2LAX1osZcHHpelXW5O3ASIwgexCIgM3wlaqb39jOB3+3z2WRNbVu36cOIiQBT+pEmT2KddAW6F39z8Z6X8DUoInwqGWwV7QCs1NWXr1kWL6wJE4eM7umXgbzsC3A1fnZ/Pt1mZR+z1SkvLId16hOOqAKPw8TtmhO9WBezYkep6+By//31lmP44Loc6TTD4cUSZ4bgmIFr4GG5VAIjHlh9OMFggmMYcHMJwKBOVqcUVAWbhA6sCEhE+QPu9t/eaYFpjensrlel+IywvHMcFoL+PWfjAioBEhc+pr9+utGTuCMqIJBS6RXV1W4TliHBcwNGjR03DB7ICEh0+p6UlV1COnmjNTSNc3QOMwgcyApIlfJVoTVPz5qYRrtQBkIA9AZ/hwzhmApIrfJVoTVOz5qYRrgiQIZqAZAyfI2qayjQ3jUhKAdqVc4Y2R8LnaJumss1NI5JSQF9fFVu5/v6AA9yhnt4K5XD4XsR87IKmKbb69vYi6eamEUkpoK4ugzo6zygLUuog5xyV4BSuCHCib+hIkcAFfPDBB84IcLJv6EiQwAWMHz+e9uzZE7sAp/uGDncJXAAYO3Ys5eTkKMvn0B7AibVv6HCWoBXAs9q9e7cuKzMi6gAn+oaGc+HCetqxYx2tXfsivfqTZfT7d9fR1Yo8QbBWSLyEcAEcbVZmRAgAsfYN5VRX/5xeeWW+smWo06ekTKTJkyewv8eMGU1btqwWBGuFxErgAmbOnMk+tfCsRPlqEQoAsfQNBTU1v6RFi77Axnv55adYP1B+OCor/wstXDiXDcvM/JkgWCskTgIXcPDgQZo/fz77WwuyMntoz1AAiKVvKF+4119/Rvc7l1DrK6SpU1PYXuFv+ocgWCskRgJfR5wHlJSU0JIlSwYz4mAjbmtrE+YLogoAdvuGzp49hSZMGEuVlT+NGMYlfPjhO0rdoAyv/VgQqlXiL0ErAOcB1dXVtGrVqoiccDjHYV2Ur6kAYLVvaHn5G2z4c899UTgcDIfWUbgAfh4gygoNGxy6w7OVEsCR7Rt64sQP2PDVqxcIh3PckVCqlPuOcH5OYyRAlBUQndxaEgBk+obm5b3Ehr/55leFwzk+3ybq6blKXd0XIkKMhfr6d4Xzc5poAsKz4kyfPl33MLclAeE37I0EfPLJq2w4Wj+i4UAN/7+PLg23Ca6E2qOzs0Qp3/4lZitEExCeFcD3y5cv6zKVFiAq0EjA9eu/YBXwnDmfEw7n4Z87V0ybN29UKuoLj0TYo79f/WxvL1bKj0/4wEiAUfiiW7xSAkQFAiMBYNmy2WycwsIf6n7XbvkrV36fjZOff1gXqBUSFT4QCTh79qx0+MBUgCh8mb6hxcU/pieeGE1PPjmNLl1ax37Thn/kyEFWxty5X6FQKKALVZZEhg/CBRw/flw50588mBOIFj6IKkAUPr7L9g3NyPg6G2/KlPH01lvP0qFDWbR//59oxYoXB8u6fPlcRLAyJDp8oBWwf//+wQ2TYxY+MBRgFD5+x66G72YCwIEDabRgwed15YwZM4ZSU7+tnLhcighWhmQIH3ABmZmZNHHiRN06yoQPhAKihY/hVgTww04gcIsqKj5VDkf/Uk7N7fdcTpbwAReAGzJGWZkRIcAsfCArQN/UjJ1kCh9wAVpQB8iGD3QCnOwbOtzDB+ECUAegFaTNygydAKf6ho6E8IFWAOoAtIK0Z8IyGO4BRuGDaAJGSvhAWwegFYRcYhIAYu0b6sYjp06H39CQSQ2NO5W/YyuTC3CsW4os0QT8L1QjDNEufX3VVFe3NWI+dvH731NCUi/aNTXnCMeRhQsQXQuSxXEBWKnunouO0NX9bxYULlnj0nX4vKyCHtKdXf8cFKDeP8gSjitDUgoAuCmClXu8orETu4QNFAyeFJR91vbl66QVAJJNQnPzPmGZAOX6fNZv4rgiINZKWEuySMAWbrYc7e2FVFv7W+H0RjguwIlmaDiJloAu6O0dcr0u2oJ/V8bfKCxHhOMCnH5Ij5NICYHA34TTG9ESwONKcs1TV/eAaBKsCgCJkMCbnJ1h05kh2zx1pQ5A2GYSZATk5n6XvRtCS2bm92jX+xsG+c8Va1unCCMJkU1OOVRZcs1TVwQAMwkyApYunaWbXgQ6ZolCsEqkBKMmpxXMm6euCQDRJFgRkJ+/UveuUFBamq5s/X+lhsbisJW2j1ZCtCanFVBmtOapqwKAkQSZW5JcwNWr6v3gcNyqE9TjvnPlRmueui4AiCTI3JQ3EwDckOAG7R1FwuWPiwAgkgBiFQBUCeIVTxaCwXzhssdNABBJkBHwwgtfZn2EwvnooxWD49bV/Y4a/VnO0PhH8e8xUOt7W7dunLgKAOESZARMnTqepk2bEAFecS+abigRdwFg06ZNlgSYHYKGMnEXsHfvXqnu6cATIIeUADygkZGRMRg8xxMQBwF2H1HyBMgRVQAe0ktNTdWFDmQe0vMEyGEoAE/2LVq0aDB0zvLly6UeU/UEyCEUgP+J6MSD2sMdVwQYvapg27Zttl9VMFxxXIDRyzrQ8Ug7nidAxXEBotfV4H/Fa8cBngAVV/cAfJ4/f143MscToOJKHQAJ2BOc6JYy3HFFgAyeABVPQILxBCSYhAng/9Q/LW0OHT780ojl+ee/xHKI+z/1x4wwYw8VvAGlqqqK/H6/6RuywrEloLOzk86cOUMFBQWUl5dHBw4coOzsbPa87EghKyuLvSs0NzeXKioq2FGhtbWVQqGQMDMjbAmAZVysq6+vp+vXr7MFKC8vZ1JGCngaErdoKysrqaamhpqamtiG2d/fL8zMCFsCMJPu7m4mAbvd7du3mQgszEgBhxxUungV2Z07d6ijo4NtmDJvStRiS8D9+/eZBMwQIjBzyGhpaRkxBAIB9mZJbPWoeHHowc2rgYEBYWZG2BLg4RQP6f/D4gYpJHq2XwAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>The Conditional block passes through input T when control input C
+satisfies the selected criteria; otherwise, it passes through input F.
+The first and third input ports are data ports, and the second (or
+middle) input port is the control port.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support for the Conditional block is:</p>
+<ul>
+<li>Inputs T and F should either be both complex or real, and can be
+scalar, vector, or matrix. For non fixed-point data types, inputs T and
+F do not necessarily have the same data type. But, for fixed point data
+types, both these inputs should be of fixed-point type. In that case the
+output data type will be fixed-point, and the number of integer and
+fractional bits will be set to accommodate both inputs without loss of
+precision. For example, if one of the inputs is x_sfix16_En10 (1 signed
+bit, 5 integer bits and 10 fractional bits), and the other is
+x_sfix16_En5 (1 signed bit, 10 integer bits, and 5 fractional bits), the
+output will be x_sfix21_En10 (1 signed bit, 10 integer bits, and 10
+fractional bits).</li>
+<li>Input C can be a scalar, vector, or matrix if inputs T and F are
+scalars and Threshold parameter is scalar. In this case, the output
+dimension matches with the input C dimension. Input C must match the
+dimension of input T and F if they are non scalars. Input C should be
+real and can be of any data type.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Criteria for passing first input<br />
+This parameter is used to select the condition under which the block
+passes the first input (T). If the control input C meets the condition
+set in the Criteria for passing first input parameter, the block passes
+the first input (T). Otherwise, the block passes the third input
+(F).</p>
+<p>Settings for the Criteria for passing first input parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C &gt;= Threshold</td>
+<td>Select input T if control input C is greater than or equal to the
+Threshold parameter.</td>
+</tr>
+<tr class="even">
+<td>C &gt; Threshold</td>
+<td>Select input T if control input C is greater than the Threshold
+parameter.</td>
+</tr>
+<tr class="odd">
+<td>C ~= 0</td>
+<td>Select input T if control input C is not equal to 0. Selecting C ~=
+0 disables the Threshold parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Criteria for Passing First Input Settings</p>
+<p>Threshold<br />
+This parameter assigns the switch threshold that determines which input
+the block passes to the output. Threshold parameter is rounded to the
+same data type as that of the C input.</p>
+<p>Settings<br />
+| Settings | Description |
+|--------------------------------------|-----------------------------------|
+| 0 | default value | | <code>real number</code>, <code>vector</code>,
+or <code>matrix</code> | any real scalar, vector or matrix |</p>
+<p>Table 2. Supported Threshold Settings</p>
+<p>TIP: To specify a non-scalar threshold, use brackets. For example,
+the following entries are valid: [1 3 5].</p>
+<p>For a non-scalar threshold, the inputs must be scalars. In that case,
+the output dimension is the same as the threshold dimension, and input 2
+is compared to each element of the threshold, and depending on the
+criteria, either T or F is selected to populate the output signal.</p>
+<p>Dependencies<br />
+Setting Criteria for passing first input to C ~= 0 disables this
+parameter.</p>
+</body>
+</html>

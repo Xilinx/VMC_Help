@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="not-equals">Not Equals</h1>
+<p>Perform element-wise not equal to relational operation on the inputs.
+The top input corresponds to the first operand.</p>
+<h2 id="library">Library</h2>
+<p>Relational Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Not Equals block has two input signals and one output signal. The
+block compares two inputs using element-wise not equals relational
+operation. The first input corresponds to the top input port and the
+second input to the bottom input port. The dimension of the output
+signal matches the dimensions of the input signals. An element of the
+output signal is true if the corresponding element of the first input
+signal is not equal to the corresponding element of the second signal;
+otherwise the element is false.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support for the block is:</p>
+<ul>
+<li>The data types of the input signals can be of any integer,
+fixed-point, boolean, or floating-point data type.</li>
+<li>The input signals can be a scalars, vectors, or matrices. If both
+inputs are not scalar, their dimension must match.</li>
+<li>The input signals can be complex.</li>
+<li>The output signal is boolean.</li>
+<li>The dimension of the output signal is scalar if both inputs are
+scalar. Otherwise, it matches the dimensions of the non-scalar
+input.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>The Not Equals block has no parameters to set.</p>
+</body>
+</html>

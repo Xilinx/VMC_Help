@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-logical">Vector Logical</h1>
+<p>The Vector Logical block supports logical operation for vector type
+inputs.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control the processing of multiple data samples on every sample
+period. This blocks enable 1-D vector data support for the primary block
+operation.</p>
+<p>The Vector Logical Block performs bitwise logical operations on
+fixed-point numbers. Operands are zero padded and sign extended as
+necessary to make binary point positions coincide. The logical operation
+is performed and the result is delivered at the output port.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>In hardware this block is implemented as synthesizable VHDL. If you
+build a tree of logical gates, this synthesizable implementation is best
+as it facilitates logic collapsing in synthesis and mapping.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Double-click the icon in your Simulink® model to open the Block
+Parameters dialog box.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows:</p>
+<p>Logical function<br />
+Specifies one of the following bitwise logical operators: AND, NAND, OR,
+NOR, XOR, XNOR.</p>
+<p>Number of inputs<br />
+Specifies the number of inputs (1 - 1024).</p>
+<p>Logical Reduction Operation<br />
+When the number of inputs is specified as 1, a unary logical reduction
+operation performs a bit-wise operation on the single operand to produce
+a single bit result. The first step of the operation applies the logical
+operator between the least significant bit of the operand and the next
+most significant bit. The second and subsequent steps apply the operator
+between the one-bit result of the prior step and the next bit of the
+operand using the same logical operator. The logical reduction operator
+implements the same functionality as that of the logical reduction
+operation in HDLs. The output of the logical reduction operation is
+always Boolean.</p>
+<p>Output Type tab<br />
+Parameters specific to the Output Type tab are as follows:</p>
+<ul>
+<li>Align binary point: Specifies that the block must align binary
+points automatically. If not selected, all inputs must have the same
+binary point position.</li>
+</ul>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</body>
+</html>

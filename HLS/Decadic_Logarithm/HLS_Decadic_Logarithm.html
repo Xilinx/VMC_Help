@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="log10">Log10</h1>
+<p>Compute element-wise base 10 logarithm of input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Log10 block returns the base 10 logarithm value for the input.
+The block supports input of all data types except Boolean. The input can
+be scalar, vector, or matrix.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>Data Types:  Input supports signals of integer, fixed-point, and
+floating-point data type. The block does not support Boolean
+inputs.</li>
+<li>Complex Number Support: No</li>
+</ul>
+<p>The output has the same dimension and type as the input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Log10 block has no parameters to set.</p>
+</body>
+</html>

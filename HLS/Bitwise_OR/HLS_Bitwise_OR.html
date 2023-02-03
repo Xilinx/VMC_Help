@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="bitwise-or">Bitwise OR</h1>
+<p>Perform element and bitwise Boolean OR operation on the inputs</p>
+<h2 id="library">Library</h2>
+<p>Logic and Bit Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Bitwise OR block has two input signals and one output signal. The
+block performs element and bit-wise boolean OR operation on the inputs.
+The first input corresponds to the top input port and the second input
+to the bottom input port. The dimension of the output signal matches the
+dimensions of the input signals.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Bitwise OR block supports native and fixed-point types except the
+floating point types (double, single, and half). If one of the inputs is
+scalar, the output dimension is non-scalar. If both inputs are
+non-scalar, they must have the same dimension. The dimension can be
+scalar, vector, or matrix.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Bitwise OR block has no parameters to set.</p>
+</body>
+</html>

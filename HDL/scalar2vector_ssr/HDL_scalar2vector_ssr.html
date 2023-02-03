@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="scalar2vector">Scalar2Vector</h1>
+<p>The Scalar2Vector block converts scalar type input to vector type
+output.</p>
+<h2 id="description">Description</h2>
+<p>The Xilinx® Scalar2Vector block slices the binary value of the input
+scalar based on the Width parameter to produce a vector output. For
+example, if the input is 3720 ( binary value 111 010 001 000 ) of type
+<code>Ufix_12_0</code>, SSR is 4, and the Width parameter value is 3,
+then this block slices the input binary value into 4 groups, each of 3
+bits, so that it produces the output [0 1 2 7].</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The input must be a Boolean or unsigned fixed-point signal. The
+output type is normally unsigned with binary point at zero, but can be
+Boolean when the Width parameter is 1.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Width: This parameter defines the number of bits for each element of
+output vector. This parameter is decided by:</p>
+<p>Width = Input data width (bits)/SSR</p>
+<p>This formula must be satisfied when setting up the block
+parameters.</p>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control the processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.</p>
+</body>
+</html>

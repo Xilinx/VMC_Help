@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="abs">Abs</h1>
+<p>Compute element-wise absolute value of input signal</p>
+<h2 id="library">Library</h2>
+<p>Math Functions/Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Abs block computes element-wise absolute value on the input
+data.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li><p>Dimension: Input can be scalar, vector, or matrix.</p></li>
+<li><p>Data Types: Input supports signals of integer type, floating
+point data type (double, single, and half), and signed and unsigned
+fixed point type.</p></li>
+<li><p>Complex Numbers Support: Yes.</p></li>
+</ul>
+<p>Output has the same dimension and data type as the input. Output of
+the Abs block is always real.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Abs block has no parameters to set.</p>
+</body>
+</html>

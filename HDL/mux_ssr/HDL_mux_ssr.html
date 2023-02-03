@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-mux">Vector Mux</h1>
+<p>The Vector Multiplexer block supports the Multiplexing feature for
+input of vector types.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.</p>
+<p>The Vector Mux block implements a multiplexer. The block has one
+select input (type unsigned) and a user-configurable number of data bus
+inputs, ranging from 2 to 1024.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Open the Block Parameters dialog box by double-clicking the icon in
+your Simulink® model.</p>
+<p>Basic tab<br />
+Number of inputs<br />
+Specify a number between 2 and 32.</p>
+<p>Optional Ports<br />
+Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Output tab<br />
+Precision<br />
+This parameter allows you to specify the output precision for
+fixed-point arithmetic. Floating-point arithmetic output will always be
+Full precision.</p>
+<p>Full<br />
+The block uses sufficient precision to represent the result without
+error.</p>
+<p>User Defined<br />
+If you do not need full precision, this option allows you to specify a
+reduced number of total bits and/or fractional bits.</p>
+<p>Fixed-point Output Type<br />
+Arithmetic type<br />
+Signed (2’s comp)<br />
+The output is a Signed (2’s complement) number.</p>
+<p>Unsigned<br />
+The output is an Unsigned number.</p>
+<p>Fixed-Point Precision<br />
+Number of bits<br />
+Specifies the bit location of the binary point of the output number
+where bit zero is the least significant bit.</p>
+<p>Binary point<br />
+Position of the binary point. in the fixed-point output.</p>
+<p>Quantization<br />
+Refer to the section Overflow and Quantization in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Overflow<br />
+Refer to the section Overflow and Quantization in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</body>
+</html>

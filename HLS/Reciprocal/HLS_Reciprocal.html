@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="reciprocal">Reciprocal</h1>
+<p>Element-wise computation of the reciprocal for a given argument</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Reciprocal block returns the output of the function
+inv(<code>x</code>) for each element in array <code>x</code>. The block
+supports input of all data types except Boolean. The input can be
+scalar, vector or matrix.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block:</p>
+<ul>
+<li><p>Dimension: Input can be scalar, vector, or matrix.</p></li>
+<li><p>Data Types:  Input supports signals of integer, fixed-point, and
+floating-point data type. The block does not support Boolean
+inputs.</p></li>
+<li><p>Complex Number Support: No</p>
+<p>The output has the same dimension and type as the input.</p></li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>The Reciprocal block has no parameters to set.</p>
+</body>
+</html>

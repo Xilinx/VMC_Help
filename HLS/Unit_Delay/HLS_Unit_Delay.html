@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="unit-delay">Unit Delay</h1>
+<p>Provides a delay of one sample period</p>
+<h2 id="library">Library</h2>
+<p>Signal Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Unit Delay block provides a delay of one sample period. The
+output has the same sample time as the input. The output dimension is
+the same as the initial condition dimension if the input is scalar.
+Otherwise, the output dimension is the same as the input dimension and
+should match the dimension of the initial condition.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>All data types are supported.</li>
+<li>Input can be a vector or a matrix. If input is a vector or a matrix
+and the initial value is a scalar, the scalar value will apply to all
+the elements of the input during the first cycle.</li>
+<li>Output is complex if the input is complex.</li>
+<li>If the initial value is complex but the input signal is type real,
+the block gives an error indicating that the input type must be
+complex.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Initial Condition</p>
+<p>Specifies the initial value.</p>
+<p>The Initial Condition can be scalar, vector, or matrix, of real or
+complex type.</p>
+</body>
+</html>

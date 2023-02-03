@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="hls-kernel">HLS Kernel</h1>
+<p>This block lets you import an HLS kernel code with a streaming
+interface.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="library">Library</h2>
+<p>HLS/User-Defined Functions</p>
+<h2 id="description">Description</h2>
+<p>The HLS Kernel block allows you to import an HLS kernel, which is a
+proper HLS IP (an IP with interface specification using HLS pragmas).
+The primary use of this block is to co-simulate AI Engine domain with
+HLS.</p>
+<p>Note: This block does not participate in HLS code generation and
+should not be part of the HLS subsystem in a design.</p>
+<p>Note: Use this block to connect with AI Engine blocks using the AIE
+to HLS Kernel or HLS to AIE blocks and co-simulate a design with both AI
+Engines and PL components.</p>
+<p>The block also accepts templatized HLS functions.</p>
+<p>Function arguments can be either of <code>hls::stream</code> type or
+of <code>scalar</code> or <code>vector</code> types. For example the
+following is a valid HLS function signature:</p>
+<pre class="pre"><code>void func(hls::stream&lt;unsigned int&gt; &amp;in, const ap_uint&lt;8&gt; (&amp;param_in)[32], hls::stream&lt;unsigned int&gt; &amp;out, ap_uint&lt;8&gt; param_out);</code></pre>
+<p>For stream inputs and outputs, this block accepts variable size
+signals and produces variable size outputs. For stream inputs and
+outputs, the data width can only be 32, 64, or 128 bit wide.</p>
+<h2 id="parameters">Parameters</h2>
+<p>[TABLE]</p>
+</body>
+</html>

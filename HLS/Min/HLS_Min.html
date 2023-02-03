@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="min">Min</h1>
+<p>Outputs the minimum value of an input or element-wise minimum value
+of multiple inputs.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions/Math Operation</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Min block with a single scalar or vector input outputs the
+minimum value of the input.</p>
+<p>If the block has more than one input, the non-scalar inputs must have
+the same dimensions. Any scalar input is expanded to the dimensions of
+non-scalar inputs and the block outputs element-wise minimum value of
+the inputs.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<ul>
+<li>The block supports floating-point, integer, and fixed-point data
+types.</li>
+<li>The block supports real valued inputs.</li>
+<li>Number of inputs = 1.
+<ul>
+<li>The block supports a scalar or vector (1-D or 2-D) input when it has
+only one input port. The output is a scalar.</li>
+</ul></li>
+<li>Number of inputs &gt; 1.
+<ul>
+<li>The block supports scalar, vector, or matrix inputs when it has more
+than one input port.</li>
+<li>The output has the same dimensions as those of the inputs when all
+the inputs have the same dimensions.</li>
+<li>The block supports mixed dimensions for inputs when it has more than
+one input port, provided all the non-scalar inputs have the same
+dimensions. Any scalar input is expanded to the dimensions of non-scalar
+inputs and the block outputs element-wise minimum value of the inputs.
+The output has the same dimensions as those of the non-scalar
+inputs.</li>
+</ul></li>
+<li>The block supports inputs that have different data types. The output
+data type in this case is defined by the following set of rules.
+<ul>
+<li>If the data type of one of the inputs is a floating point type, the
+data type of the output is the floating point type among the data types
+of the inputs with the most precision.</li>
+<li>Otherwise, if the data type of one of the inputs is a fixed-point
+type, the data type of the output is the smallest fixed-point type
+capable of representing the result without any loss of precision.</li>
+<li>Otherwise, if the inputs are integral, the output is integral. If
+any input is signed, the output is signed. The bit width of the output
+is the largest among the bit widths of the inputs.</li>
+</ul></li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Number of inputs<br />
+This parameter determines the number of inputs.</p>
+<p>[TABLE]</p>
+<p>Table 1. Number of Inputs</p>
+</body>
+</html>

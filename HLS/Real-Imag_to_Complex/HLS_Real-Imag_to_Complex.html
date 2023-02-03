@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="real-imag-to-complex">Real-Imag to Complex</h1>
+<p>Computes the complex output from real and imaginary input.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABBCAYAAABPcIPpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAvqSURBVHhe7ZwLUBRHGsdVRORpMIqioIgikoAgywkaI+pRVsp4SDQxkbo6o+edb0KiSRnxiUai5SlqyscZHykjllfqqYh6OQVLiY8Q4wu5EgKCyMNd3gYFX9/118vs7uz0zM7CzKrEr+pfu9Pd0zP9257++rXTBl6ZovYKqMJmNdAnT55AY2Mj1NfXQ11dHVRVVYFOp4Py8vJWIa1WS8tUW1tLy9jQ0ACPHz+GZ8+eNRGQNquBIszY2FgICgoCjUZDFRoaCoMGDWoVwrIEBgZCZGQkhVtTUwMPHz5UDyj+an379oU2bdpAVJRvqxSWDXX79m1aa+/fvw9Pnz5tIiBtVgPFxzwkJATefdcP8vPntkpNmzYIOnfuDNnZ2VBUVATV1dW0qZNjVgPF9uX3ANTd3R0uXboEt27doo8+tqNyzGqg6ICCg4NbPdBOnTpBeno6XL9+HUpLS+HRo0dNBKRNALS4uBj27t1LP1mGbcrAgQNbDLSg4DO4c2dlM/VVk1hx1qmoaJng3hCom5sbpKamQlZWFkl3hzpjOcYDihDxl8EGGTO8cOFCU4zRlABaVLSceM5C8qtXvBC6fXsh7/4UA4o1k/NwYlBbClQPs4hZsOelkpL1vHtUtIZiRlJQWwK0pTAbG/WflZVppLeRJYhvjnS6g4L7VAwoGsKTgioH6ObNY2Dp0kieEhPHwDffJEFKyreQk/MTs3BSMsI8Rq4RRx7TL+DBgzxBOmtUW3uW5mV+/4oCRZOCKgeoRuPJO5el6OgxpMOM3pNdWFOZw+SugzW+oaFEkF6OfvstmzpG0/vmpDhQNDGoaWlpsoFevTqd1MYE8ljlkP5rEel+3IKMjGMwbFgEjV+w4FNmYU0lBpNTSUkyidfyzrEkdIiFhQmCvDipAhSNBdXV1RUCAgJkAc3PX8psM7XafLC3t4devbwFcaayBJOTVruHl15KjY33iK9IYubDSTWgaCyonp6esoDev5/PLBSqW7euZHjnzgurqSkm7e0CCAp6E7p27UJGZEHkeAoZrcxhXseoOPIEnOTlJaaysq2M8/lSFSiaOdTu3btLAg0L60XTPXhQzizUwYN7aPw770QZwurqSmDwYA20bdsW3n8/BlauXAwxMW/TdJGRvSEvTxpqQUG8Rc/P8ugsqQ4UzRSqFFB0FEOGhNF0CQnzYfHiLwyaP38uOW802NnZQZcur5Nh3XlDYTEez9m0aS095h7z5ctH0PDVq6ME1zKXlOcX8+gs2QQoWnJysiRQrp85dGg4TcdS//79YN68OaQd+x+vwP36+YKHR1f63bTNzM2dA05O9jB8eG/etcTE8vxSHp2lF6aGcgXggOp0BdS7oxPCx9zTsztVevoxXoGxacD0zs5OEBzcDwIDPXjq0MEOvL07Ca4nJr3n1+eNP7CUR2fphWlD6+tv0EIMHTqYpquvLyE3cs+gK1fOUmiuri7kcc80hFdXF9L0Pj5eMHPmaFKgUFooU8XHhwuuJ6Wysn+SH/M/Fj06S6oCtcbLFxYuhKrqkxAREUjTVVSegpraDJ7+sS6exoWE9IfKqtOGcDc3Z/Dz86bfy8u3k/yM7d3PP0+DX3/lX0tNqQaUBdNSPxShhoe/KQq0uiYdIoYE0fjExOmG8Pfe0zufY2nr6TEH9cSJWOL528CYMf0E11JLqgBlwcRjOSOlsDAvmp4FFPVT1nfg4GAPHR0d4Oq1FBp28dJucCTH7u6usD75M8j88VvYsWMmaTvdoGPH9nD06EfMa6khxYGKwcRwa8byWl2aACanRYv/StNERoYawk6nbyF5+/Gu6+/fA/buHc+8jlpSFKgUTDRrpu+4NtUUpBzdzNkP6Rlb6Cc2EeZtqtpCoI6OjrBr166WAVVjPrS5UM1lS6gIFMvu5OQEO3fubD5QtWbsXzaoHFCUs7MzHD58uPk1VK01pZcJqilQlIuLC5w9e7aJgLQJ2lCEqtaqp62h4nzsqlWjYMqUENItGwAzZmggJcWyg0OgOEljClWsgpmbAKglawlQlFJQy8qlp+GWLBlOu1sIw8HBjnTHHA1wRo70gZs3ZzLPQyFQfNSxDeXOQcmBanOgWLOqqo5Dbd05Jii5qqw8wshbr9mz/0ABhIZ6woEDHxhGWRcuTIVx4/wNUM3P44RAEd7atWspWGug2hhoHJ1JwvF+Q4OW6G6zhbNKrGscOfIhtGvXltxjN2YtxHnVIUP0A499+9iPPwcU+6Ho5bENlQvVhkCNMOUsVYgJZ4/EYKImTdLPI+zZE8OMR2GtnTUrjA5rWfGmQLEfil4ej+VAtRFQ28BE4VAV509zc2cz4+XIHCj2Q9HLy4EqAKq8l7cdTGwr7e3tYMCALsx4uWIBxX4owrMElQdU+X6o7WCisFbizBS2n6x4uRIDiiYG9eLFizSeB1TZkZJtYXJ67bWO4OXlxoyTKymgaPPmzeNxQnl4eNCdzoIayqJvClUe0OcDE/XWW960lmZlTWPGo3755e8QGxsIu3aNY8ZLAd20aZOg049PdUZGBo0XtKFiVZqDahloHMl8AyQnf03atKtMUHLUHJgo3EeF9/zll8OY8agVK0bSNB9/HMyMZwHFf4MsXLiQxwXVo0cPuimXMwFQNCmo0kD1NRPX1PGc1NT9TFiW1FyYqOzsmeDp6UL6jh1o98g8/ocf/kzK4kAX/jIy/iKIR5kDLSgogMmTJ/N4oPz9/cnIr7CJmt6YQNHEoErN2NfWZlIgLQHaEpicsMPu7NyBevzx4wNgzZooWLduNK2ROBzFJiEp6Y/Mc1GmQLG7NGrUKB4HVEREBFRUVDTRMpooUDQWVKk1pYcN+l3JzQXa2FgOd++uFeRrveLh3LmNMPZPb4OdXTve/QcEdCFtZzTjHKM4oOik8T9Lpuejxo4dS/9exDJJoGgsqGKrnrqKQ1D/IBsSE/Urm4cPb6FLy6gRI8LJMO5r2L17DWg0gcQrvg7Dhmng9Ok9UFd3DZYtjwM/v17EQ3uQG34DMjOnCPKXK63ue8OYv7z8JIGbAIcOTYTz56cy05sLgeJws2fPnrxyo6ZOnSr5jxCLQNHMoYpvxYkjBdgOS5f9jaY7cHC1oWB4HPBGH+IRXWD69PEwe84HZETTkdR4J5gwYRT4+vaE+PhJ8NGk0dSLajRejPwtq7Rss+GaqOoa/EwnjmUFMz1LCNTck6MWLVpk8R91soCimUKV2tuEUBMSxtN05kDbt7eDH8/vMIQlJc2m4VgrS8tOGMInToyi4VeufMrIX1x3764x5GGu6pr/0qlD1nnmQqB4fU4Id8OGDU0kpE02UDRLe5s4ff75UJrOHCiu15sW8mjqOho+N+5DXjhXw89lbpENoahoCYFm3DjBUmVVqqw9TqZAcR/r1q1beR17KVOhhhqBpqR8YigMHsfEjOAV8OTJjTR81apZvPAVK2bQ8HOZ2+lktCWouOuuqtpYw4VKN3zXVfyLQP2EmQ8nDihOMG/btk0wUpIyhdtQvTigOBLBNhULgsf4KBsLaQSKj75puClQPJaGGg8Vlf/mnW9J5fd2kPPEl1AQqCLLyCyzxstzMgLF7oneUeFxc4GixKCaenQ5qm76xB165nlxQqBYZrGxvJRJAmXBlLPHng8Uw+LocUuAosyhmnt0ubLk+VUByoKJx3L2NgmBzqXHEyaE8wpmLVAUB1XKo8uVmOdXHKgYTAyXM9skBhQXyLg2FdUcoGrI3PMrClQKJpr8+VAx6dtUVsGel4qLv+Ldo2JAlZsPtaQ4KCndCFptitXS6VJIfzKN6Aj9zkojV7qK/cSp7RPcn2JA1drb9LJJ0Rpqi//Lv+hStA1FqGrtbXpZpChQS/YKqLRZDfT39BKXU6dOwbVr11r2EhdLhq8Z6tOnD21nEWprFOeU0Yeo/pohfCdcdHQ0eHl5gZ+fH/j6+oKPjw94e3u3CvXu3ZuuZOK7qXA1ExfhsBKp9iIsXEvBXwwvlJOTQ9uYM2fOwPHjx1uF8F1NuAvkxo0b5PHPpz4D36amGlBcn8ZailCxJ5CXl0dfaXb58uVWIQSZm5sL+Io2hImvaZP/MkGA/wMxXQYlRNMRuQAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>The Real-Imag to Complex block converts the real and imaginary inputs
+to a complex-valued output signal. The input signal can be of any data
+type except boolean. The complex output has the same data type as that
+of the block input. The input can be a scalar, 1-D vector, or matrix of
+real signals. It is possible to specify the constant real or imaginary
+part from the block dialog.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support for the input port is as follows.</p>
+<ul>
+<li>The block supports all data types except boolean. If the &#39;Input&#39; is
+&#39;Real and Imag&#39;, both the inputs must have the same data type.
+Otherwise, &#39;Real part&#39; or &#39;Imag part&#39; parameter is converted to the same
+data type as that of the block input.</li>
+<li>Real and imaginary parts specified using inputs or block dialog must
+be real.</li>
+<li>The input can be a scalar, 1-D vector, or matrix.</li>
+<li>The output is always complex, and has the same data type as that of
+the input.</li>
+<li>Dimensions:
+<ul>
+<li>The output has the same dimensions as that of the input when both
+real and imaginary parts have the same dimensions.</li>
+<li>The block supports mixed dimensions for real and imaginary inputs
+(specified as inputs or using block dialog). Any scalar input is
+expanded to the dimensions of non-scalar input, and the block has the
+same dimensions as those of the non-scalar input. If both the inputs are
+non-scalar, they must agree on dimensions.</li>
+</ul></li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Input<br />
+Input is a drop down menu parameter which specifies whether real,
+imaginary, or both of the parts of the output signal are specified as
+inputs. Settings<br />
+Following are settings for the Input parameter.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Real and imag</td>
+<td>Real and imaginary parts of the output signal are specified using Re
+and Im inputs of the block, respectively.</td>
+</tr>
+<tr class="even">
+<td>Real</td>
+<td>The block has only Re input in this case. Real part of the output
+signal is specified using the Re input of the block, while its imaginary
+part is specified using the Imag part parameter.</td>
+</tr>
+<tr class="odd">
+<td>Imag</td>
+<td>The block has only Im input in this case. Imaginary part of the
+output signal is specified using the Im input of the block, while its
+real part is specified using the Real part parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Input Parameter</p>
+<p>Real part<br />
+Specify the constant real part of the output signal when Input is set to
+Imag. This parameter is visible only when you set Input to Imag.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>The value of the Real part parameter must be a numeric, real-valued
+scalar, vector, or matrix.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Real Part Parameter</p>
+<p>Imag part<br />
+Specify the constant imaginary part of the output signal when Input is
+set to Real. This parameter is visible only when you set Input to
+Real.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>The value of the Imag part parameter must be a numeric, real-valued
+scalar, vector, or matrix.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 3. Imag Part Parameter</p>
+</body>
+</html>

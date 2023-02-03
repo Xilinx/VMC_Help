@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="indeterminate-probe">Indeterminate Probe</h1>
+<p>The output of the Xilinx Indeterminate Probe indicates whether the
+input data is indeterminate (MATLAB value NaN). An indeterminate data
+value corresponds to a VHDL indeterminate logic data value of &#39;X&#39;.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The probe accepts any Xilinx signal as input and produces a double
+signal as output. Indeterminate data on the probe input will result in
+an assertion of the output signal indicated by a value one. Otherwise,
+the probe output is zero.</p>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="atan">atan</h1>
+<p>Compute element-wise arctangent function of an argument.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The atan block returns the output of the atan (<code>x</code>)
+function for each element in array <code>x</code>.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector, or matrix.</li>
+<li>Data Types: Input supports signals of integer type, floating point
+type (double, single and half) and fixed point type.</li>
+<li>Complex Number Support: No</li>
+</ul>
+<p>Output has the same dimension and type as the input. However, If the
+data type of the input is a fixed point type, the data type of the
+output is fixed point type with integer width fixed as 2. The reason for
+this is that the output of the atan function is between -π/2 and π/2.
+Use the atan2 function if you need the output of the function to be
+between -π and π.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Atan block has no parameters to set.</p>
+</body>
+</html>

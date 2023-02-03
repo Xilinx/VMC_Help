@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="log">Log</h1>
+<p>Compute element-wise natural logarithm of input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABECAYAAAD5lNkeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAoNSURBVHhe7Zx/UBXHHcD5obQCIVVBMDbGmlFgTB21o9YSx9Eggh1kghgjjoDFYko1tlMKNKET22lVjFFaRUWjEhM0VanJKx1Q0VgxJKCE2OCDBw948JDfCP7899v9Lt3z7t7evXePBz6QPz5zvL3dvb0Pu/vd+zHn8vjxYxhlYGiS+ODBA+jr64Pu7m7o6OiA1tZWMJvNYDKZRgTNzc30nNrb2+k59vb2wv379+HRo0dcHwxNEvPz88Hd3R0mTpwIAQEBFH9//xGDn58fuLi4wN69e6lQlHn37l3HSjx58iQ9yJIlL8GGDT8ecURFBdHzy8jIgOrqato7Ozs74eHDh1wfDE0Sc3Nz6UEKC9fD7du/GnF8/fUv6PmlpKRARUUFGAwGaGtro9MYzwdDk8Rjx449ExK3bNkC165dg1u3btFhjfMizwdDk8SjR48+ExITExPJORbCjRs3oKGhAe7du8f1wdAkMScn55mQuH79ehpEr1+/DrW1tXRFwvPBGJUoYthIrKlJJ0Mkyy4aG/9Otgh/vxbq6zMt2jYsJBqNO0iDGskc0+IUGAzvStrn9BKdTSBiNP5V0kanlugogc3NueQq4iJ3n6309fVvm5qOWLTTaSU6UiDWp9dvha6uG9w8tnLnznmLdiJOKdHRAhk1Nb+H3t5qbl5rdHT8h/wjfi2pj+F0EgdLIKOu7k+kfhO3jBI9PbfINfFvufUhTiVxsAUycLnDK8ejt9doEY3lOI3EoRLIaGk59f8yZkn5J2B6M1kX7uKWF+MUEodaYD/JihFbLRLzeOoSn47AftQitlIk5vFUJdbX7+aegFbsEcjgRWy1SMxjwBIx8/Hjx+lWnEGMkkRxw+3FbP5IUqc9YMRm9fX0/Fc1EvNgEkNCQui5apKIGX18fGgFuC0vL+dmVpLY2fklbXhvb51ddHWXQbP5uKZeowQGELP5YxKJ3+HuV4NJRLy8vOidfJslYg9khZHJkyeT4VFjkVlJIv7H77Tmkwm+aEA4SqS9iCUivr6+cPXqVe09kTFz5kyyfGiRZFaSiIwEkXKJyPTp08l6tEHiQY4wJxYVFYGHh4ekggULFpCo1yVkVpOIDHeRTKKbm5vEw/z58yUe5AgSkby8PHB1dZVUEB4eLjyosSYRGc4imcTFixerepAjkYjgg2txYSQ+Pp4+wLZFIjJcRTKJuMTBh1ViBwjzIHdmIRFJTU21qCAtLc1michwFCmWiOvEuLg4iQMEPch9cSWibbQuryA2NpZubZFYXLwBMjKWQsn1/Vw5trJ161r49B+pNov84os4WLUqEG7e3MTdr4ZcYklJCcTExEgcIPv27ZP44kpEcPzjPCAuzOYJWyTm5Pyc5t29O9zuHnnwUDpZbvmCyaTT1COXLp0G69bN4u5TQy4RF9t6vR7CwsIEBwh6wPjBXClKRPDNKIzQ4goQLRJ37Qq1a2jXGM7BhAk+sOeDbUKarSI//3wtuLu7wiefvM7drwRPIi7/8FUSuQdcyeCKBj2pSkTw1TlcM4or0CoRf2sVmf6HBPD29gRTk06S3tR02OJYPF599UXCVO4+JZQk4mKb54Fd3VmViLC3wRj2SDx//k2ydJgLl698CO+8mwCBgVPBz+8H8NNFr8Cp03+RiGo2F8CkSeNh9eplQpq++iyEhs6HiIiF8M03ScJxcO577bUfkX3TJfPg7t2hZNi5gE73ppBmDTWJPA9IUFCQdYl42SO/mtEqUa/fQiTuob9nzQqGgAB/SE5OpDz/vA995/Grry6SxjZR8vM/onlPnToqpCHvvZdC0zdtmiscJyYmmKahNPHxS0s3UombN/9Ekq6GmkSeB/yNLz6pSuQVRLRIzMxcTnrSJSgoOEt/T5s2lQwNvXC3Raf7lKa//fZmIW3btrdomsFQIaTh8xG9PoVcPbxApLuRk1wDBw70B77o6GBuG6ZM8YE5cwK4+3goSbx06RJXIPpBT4oSeQLHjRtHt1okZmenUwlMYlrabwQxSHd3I01/443XhbSwsGXg5eUp/EaBeL8Q68Wl03PPeUBwsC+MHz8OXn55PFRU/NLi+AjOiZiXt48HT+KZM2dUBSJciUpdNz09nf5tm8RImvfIkf6HSUxiVtYuQQ4Dh/Pq1auE33PnziZLmwD6t1ggIzMzlNaFPfKzz9ZK9olZuXIGzfftt0/mUDXkEg8fPkyCmzdNY8gFIhYSlQRiuq1XLDgHnj69g+aVS9y/3/IuOEqMjn4icfbsWWQovsAViKSlhQhte/996VwoJjKyP5oq9VQ5Yok7d+6k9xTZcRCeQEQiUU0g7rdFIgrEOTA//2Oa1x6Jy5cvI1PH97kCcQ3o4eEOISEv0iHt4/M9uHIlziIfgsscb2/tw3nFihXg6elJ/2YoCUQEidYEItYkMoEoYiASExLW0LwYYcX147AMDJxIxVy+HAfnzq2hQ3rhwilQVSVtCzJjxgSKPF0JJnHs2LF0y1ATiFCJdXV1VgUiahLFAhF7JeIQzspaRfMePLhScoyNG+fQ9O3blwhpSUnzaFpq6s8kecvKEsHNzRXi42dL0tVgEsXgnIjRWexBDpV44sQJSUEl80oS5QIReySyObC8PBHGjHGj0tgxcnOjqJRFi34oOXZlZRKN0DjExUEG/wF4PCwnzq+GXCLOiRidbXo8IO6Jal1XSWJX100LMVqRBxG8E+Pv7w3fffeW5FjWwMtLfF0kPHwGlcsb5kqIJeKciNFZfMWihDAnokjskbgVZxCjJLGnp4orxlb6+urBWL9DUmdBwTra8w4dkg5pNaqrt0Fb+7/gtv4M6Zlj6FKIl08JJtGuR6a2oiTR1HQEOjtL7eRLaO+4SKaDf4OhNkNSb2zsK2S54y9JU0KvT4aWljxSTxEkbY6GefOCyD/mb9y8SjCJvMs+ng+GQyQi9Q0f0BMYGFKReEMBh2R2doTkWJYk0/dtsI7Kyjx68+JaSf9vfL2FX8aSpy4RGQyRtlDfsIdTTz9t7YVEhPordQynkIgMtci6uu0kf6GsvJTWNh2ZL3/HLS/GaSQiQyWyxpBGeloBp6wld1rPknlzK7cehlNJRAZbJEbi1rZ/csooY+2tM6eTiAyWSHEk1kqjab+kLjFOKRFxvMgnkdhelCK200pEHClSLRLbilLEdmqJiGNEOhZ5xHZ6iYiziayt/aOkfcNCIlJn/DOYTAftAh/eNzV9yN2niaZDJMAcIO1JlrRt2Eh0ZkYlOoBRiQ5gVKIDGBKJo5904aNJIvu4EDJpkveIw8ur/8X/Qf24ED57SUhIoN0d3yCNioqCiIgICA0NHRHg8+bIyEjIzs4evM9c4Uuf+J4eVl5ZWQmlpaVQXFwMOp1uRHDhwgU6D6LAQfvgGk6w+N1EFGk0Gsk8cpvKLCsrGxGgvKqqKvqwbtA+/Tf6EUo+miSOwuMx/A+DP3m/5xNYuAAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>The Log block returns the logarithm value for the provided input. The
+block supports input of all data types except Boolean. The input can be
+scalar, vector, or matrix.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li><p>Data Types: Input supports signals of integer, fixed-point, and
+floating-point data type. The block does not support Boolean
+inputs.</p></li>
+<li><p>Complex Number Support: No</p>
+<p>The output has the same dimension and type as the input.</p></li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>The Log block has no parameters to set.</p>
+</body>
+</html>

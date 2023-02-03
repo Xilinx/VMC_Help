@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="constant">Constant</h1>
+<p>The Xilinx Constant block generates a constant that can be a
+fixed-point value, or a Boolean value. This block is similar to the
+Simulink® constant block, but can be used to directly drive the inputs
+on HDL blocks.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="dsp48-instruction-mode">DSP48 Instruction Mode</h2>
+<p>The constant block, when set to create a DSP48 instruction, is useful
+for generating DSP48 control sequences. The following figure shows an
+example. The example implements a 35x35-bit multiplier using a sequence
+of four instructions in a DSP48 block. The constant blocks supply the
+desired instructions to a multiplexer that selects each instruction in
+the desired sequence.</p>
+<p>Figure: Example of Constant Block Creating a DSP48 Instruction</p>
+<p><img src="data:image/png;base64,R0lGODlhtAHeAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8AQEBLzE5Pz07Pz8/P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAAAAAAALAAAAAC0Ad4AhwAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8AQEBLzE5Pz07Pz8/P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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" /></p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The block parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows:</p>
+<p> </p>
+<p>Constant Value<br />
+Specifies the value of the constant. When changed, the new value appears
+on the block icon. If the constant data type is specified as fixed-point
+and cannot be expressed exactly in the specified fixed-point type, its
+value is rounded and saturated as needed. A positive value is
+implemented as an unsigned number, a negative value as signed.</p>
+<p> </p>
+<p>Output Type<br />
+Specifies the data type of the output. Can be Boolean, Fixed-point, or
+Floating-point.</p>
+<p>Arithmetic Type<br />
+If the Output Type is specified as Fixed-point, you can select Signed
+(2’s comp), Unsigned, or DSP48 instruction as the Arithmetic Type.</p>
+<p>Fixed-point Precision<br />
+Number of bits<br />
+Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+<p>Binary point<br />
+Position of the binary point in the fixed-point output.</p>
+<p>Floating-point Precision<br />
+Single<br />
+Specifies single precision (32 bits).</p>
+<p>Double<br />
+Specifies double precision (64 bits)</p>
+<p>Custom<br />
+Activates the field below so you can specify the Exponent width and the
+Fraction width.</p>
+<p>Exponent width<br />
+Specifies the exponent width.</p>
+<p>Fraction width<br />
+Specifies the fraction width.</p>
+<p>Sample Period<br />
+Sampled Constant<br />
+Allows a sample period to be associated with the constant output and
+inherited by blocks that the constant block drives. (This is useful
+mainly because the blocks eventually target hardware and the Simulink
+sample periods are used to establish hardware clock periods.)</p>
+<p> </p>
+<p>DSP48 tab<br />
+DSP48 Instruction<br />
+The use of this block for DSP48 instructions is deprecated. Please use
+the Opmode block.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</body>
+</html>

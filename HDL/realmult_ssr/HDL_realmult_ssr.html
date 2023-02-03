@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-real-mult">Vector Real Mult</h1>
+<p>The Vector Real Multiplier block supports the multiplication feature
+for vector type inputs.</p>
+<p>Hardware notes: To check for the optimum internal pipeline stages of
+the dedicated multiplier select Test for optimum pipelining.</p>
+<p>Optimization Goal: For implementation into device fabric (LUTs), the
+Speed or Area optimization takes effect only if it is supported by IP
+for the particular device family. Otherwise, the results will be
+identical regardless of the selection.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.</p>
+<p>The Vector Real Mult block implements a multiplier. It computes the
+product of the data on its two input ports, producing the result on its
+output port.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Open the Block Parameters dialog box by double-clicking the icon in
+your Simulink® model.</p>
+<p>Basic tab<br />
+Parameters specific to the Basic tab are as follows.</p>
+<p>Precision<br />
+This parameter allows you to specify the output precision for
+fixed-point arithmetic. Floating-point output always has Full
+precision.</p>
+<p>Full<br />
+The block uses sufficient precision to represent the result without
+error.</p>
+<p>User Defined<br />
+If you do not need full precision, this option allows you to specify a
+reduced number of total bits and/or fractional bits.</p>
+<p>User-Defined Precision<br />
+Fixed-point Precision<br />
+Signed (2’s comp)<br />
+The output is a Signed (2’s complement) number.</p>
+<p>Unsigned<br />
+The output is an Unsigned number.</p>
+<p>Number of bits<br />
+Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+<p>Binary point<br />
+Position of the binary point in the fixed-point output.</p>
+<p>Quantization<br />
+Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a> topic.</p>
+<p>Overflow<br />
+Refer to the Overflow and Quantization section inthe <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a> topic.</p>
+<p>Optional Port<br />
+Provide enable port.</p>
+<p>Latency<br />
+This defines the number of sample periods by which the block&#39;s output is
+delayed.</p>
+<p>Saturation and Rounding of User Data Types in a Multiplier<br />
+When saturation or rounding is selected on the user data type of a
+multiplier, latency is also distributed so as to pipeline the
+saturation/rounding logic first, and then additional registers are added
+to the core. For example, if a latency of three is selected, and
+rounding/saturation is selected, then the first register is placed after
+the rounding or saturation logic, and two registers are placed to
+pipeline the core. Registers are added to the core until optimum
+pipelining is reached and then further registers are placed after the
+rounding/saturation logic. However, if the data type you select does not
+require additional saturation/rounding logic, then all the registers are
+used to pipeline the core.</p>
+<p> </p>
+<p>Implementation tab<br />
+Parameters specific to the Implementation tab are as follows: Use
+behavioral HDL (otherwise use core)<br />
+The block is implemented using behavioral HDL. This gives the downstream
+logic synthesis tool maximum freedom to optimize for performance or
+area.</p>
+<p>Note: For Floating-point operations, the block always uses the
+Floating-point Operator core.</p>
+<p>Core Parameters<br />
+Optimize for Speed|Area<br />
+Directs the block to be optimized for either Speed or Area.</p>
+<p>Use embedded multipliers<br />
+This field specifies that if possible, use the XtremeDSP slice (DSP48
+type embedded multiplier) in the target device.</p>
+<p>Test for optimum pipelining<br />
+Checks if the Latency provided is at least equal to the optimum pipeline
+length. Latency values that pass this test imply that the core produced
+is optimized for speed.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="logicore-documentation">LogiCORE™™ Documentation</h2>
+<p>Multiplier LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=mult_gen;v=latest;d=pg108-mult-gen.pdf">PG108</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="qr-inverse">QR Inverse</h1>
+<p>Compute the inverse of a matrix using QR factorization</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Matrices and Linear Algebra</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The QR Inverse block provides the inverse of the input matrix A by
+performing QR factorization.</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAAAbCAYAAACOY/p9AAADjklEQVRoBe1ZTUgqURQ+PVqp67aFIAi6E3IXBm6EdmrtQjeiVBAktKpAIailP7QUWqbtFJdqy8SFYBAIUbizrbX18V24w8x7Os51mnnTaw6Yd+5c7/n5zvnOnWllOp1OyRbLReCX5SyyDWIRsIGxaCLYwFgUmFUz7RoOh+TxeMxUOVfXeDym5+fnmfe3trZmzuuZFPXdFGBqtRpVq1UKhUKWAQagXF1dkdvtppeXF3K5XORwOOj19ZVarZYeDBS/XdZ3w6ms1+vR2toabW5uKgz+1xdOp5MODw+pWCwycJA0lUqFdnd3v8w0Pb4LV0wul6P393fmEDyYRwlwPBAIsA/WPT09fZnDWjdqNpt0d3fHqgDVEAwGKZ1Os0SBbbMkk8mwaQQ1m80qliDBACBfY6TvQsA8PDz8FeDRaMRoSuEBEW1sbEig/HnPjGtQCCrg9PSU0DPA8ZeXl+wa84sEwO3s7FC9Xpeo7fb2lu2JpNvf3ycjfRcCptFoUDwep3K5LPklrwpp0gIDBB+B5Y0ch45kMkkXFxcE0GKx2EIrUWVyARjoP7z6jfRdc4+BM6gClLOIoNxRaY+Pj4xSMDZaoOPz85N8Pp9CFQfp7e1NmkclwUY0fXwvEuyLOGgRPb5rqhgoQLUgC0UDy8sdpx44hdMZD5Caczc3N6w/qK1Bo+Z8r7ZOfs/v9zMQ+Fy/32fJBttgq1rigcomkwmFw2H+c9XvZX3HppqAub+/l04r4FcImuO8Biq3dtlyR8BFgy7Xq3UMSltEa9vb22w7VAqSUw08ud5lfcceC4FBqeNkA7m+vpb0fnx8SOPvNMAzC3qPiKCvIBHPz88JSWpGwiwEplAo0MHBgSKreAaJOCe6Vg+Veb1epq7b7Spoc17v0WIbsh+AIklBZUa/wVAFBs8B6C/yUkcFQYyuGD1UBqrhR9319XVmP+wGDaHHaOlx8BF9Ry7RaJTa7TYhWfFgaqTMPZUhu0qlEtMtb/ipVIrNcXoz0jg9e5+cnLC+iMMGKvz4+Ji9fTg7O9O0LagLzzAQPFRDAHgikaDBYEB7e3tszrA/+EfZ/y7VanUaCoWmnU7n27i6AksNQ91CGx8dHbGXlTz7QdGRSMRCFipN+THAAIh8Ps9oCP0HVGdl+THAWBmEWbbNbf6zFttz5kXABsa8WAtpsoERCpd5i21gzIu1kCYbGKFwmbfYBsa8WAtp+g0FoDHIht3zXAAAAABJRU5ErkJggg==" /></p>
+<p>Q is an orthogonal matrix and R is an upper triangular square matrix.
+For singular matrix input the output would contain NaN or +inf/-inf.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Dimension: Input has to be a square matrix. Scalar and vector inputs
+are not supported.</li>
+<li>Data Types: Input supports signals of floating point data types
+(double, single, and half ). It does not support integer, boolean, and
+fixed-point data types.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>The output has the same dimension and data type as the input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The QR Inverse block has no parameters to set.</p>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="logical-not">Logical NOT</h1>
+<p>Performs element-wise logical NOT operation on the input</p>
+<h2 id="library">Library</h2>
+<p>Logic and Bit Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Logical NOT block has one input port and one output port. The
+output is false if the input is a non-zero (true) value.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<ul>
+<li>The Logical NOT block supports all data types supported by Model
+Composer.</li>
+<li>The block only supports real inputs.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>The Logical NOT block has no parameters to set.</p>
+</body>
+</html>

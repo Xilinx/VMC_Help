@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="sine">Sine</h1>
+<p>Element-wise computation of the sine function for the given input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABECAYAAAD9YQkjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAj1SURBVHhe7Zx7TFTZHcfVNdZVpH9UVm26uu1ute2GxCariSYmbeomkOI2qX9smk0UjBQ062pFZSNbl6nbxUoRDF0e266C1cTaaFhCFwj4KHU1aAmlqzAwD4aBhRGEAV///nq/h57JfZz7mGFmmBn545Px3jn3d+79eH/nMfdw5z179ozmCA9ByWxra6Pq6mqqrKykiooKKi8vp9OnT1NpaWlCgGvBNblcLnr48CH5/X569OgRPX36VOhDTVAyc3Nzad68eQlPa2sreb1e8vl8NDExERmZOTk59MIL8+natR0JSUHBFiazrq6Oenp6yOPx0OjoKD158kToQ01QMrOzs+mll5Lo/v09CUl5eRqTef78eero6KDe3l4aGRmhx48fC32oCUrm7t27nwuZVVVVrH/o6upi6Y52U+RDTVAyd+3a9VzILCkpocbGRrp79y653W6ampoS+lATlMysrKznQmZhYSFdvnyZbt68SX19fTQ5OSn0oSbqMu3296X/7bIZ4fH8Sbg/GFyuP2jOLa5kOp0fSyfWL6XNUEzgcNgU5xc3MmNNJHC7/6g4x7iQGV6RXurv/0Qa/90WfGedkZEvNOcZ8zLDLdLtLmdx7fY8aXbylaCMOX5/jzQoP6g515iWGSmRnL6+Y5IYDF1E5bVMTk5/ut0lijicmJUZaZEctHtTU4Oq8vqI0psTkzKjJZLj9dYIjtOil96cmJMZbZHT7JXuuAbB8dOYpTcnpmTOjshpurvfNezhjdKbEzMyZ1MkR6+HN0tvTkzIdLlOai4gdEITyRH18GbpzYkJmfITnxmDMxLJme7hp2NaSW9O2GQ6HA46e/Ys+5QXkKMnc3T0S3bifr9jBvRJcW6Rx1MhxdyrqSNY3O5SGhj4i6X05nCZBw8eDF0mBCYnJ7NA+Lxx44awsJ7Mnp7f0NfDl8nnawoL4RIaLFzm4sWLyWazhSYTdySCcPSEGnVAiSCUywQLFy6k48ePz+zONBJqJBPEu1C5TDB//nw6duxY8G0mxJkJNZMJ4lmoWibn0KFDlh73BmQCM6FWZIJ4FcplLl++XOEA7Ny50/TBmkImMBJqVSaIR6FcZn5+Pq1du1bhAKSlpbGVHmpnHI1MoCc0IyPDskwQqtD/fnWRfv/xXrp+vVKxP9JCuUyMMy9cuECbN29WOAAbN26kwcFBjTMglAlEQhctWhSUTBCK0IZ/lLH6IFT9XSSFymVinAkH27dvVzgAuGvtdrvGma5MIBIarEwQrNDOzguU//5OamouF34fKaFqmRhnYlUHOiC5A7By5Uq6c+eOwpehTKAWGopMEO421O0uFtYzE0Qy+TgTq+QwVOIeALw0NTUFXJnKBOfOnQsECFUmfiLz+VpowNtM+/a9Tampr0m95jdp3Q/WUE7uL+l+96WAqLZ/fUpbtqynmpoP2fbVaxVsu/VqBR0tyKR161ZLxybTG298m6qrfy6sLxSMZMLDgQMHAh44KSkpbHEXvjeVicZW3rOFIpOLxPz9rbfS6cUXF1N2diZ99FEBZWb+is02UlN/ROPjbunEB6ilpY7VVVxsY9sNDX9j26+//kMpvVbQnj3vSMf9WLozvsFW5X3++dvCeoPFSKZep4w1SdyVocyxsTHasGGDIkCwMuUiHY5OFmP//tzArzrg6NE8WrEihdrbr7Lt1tZ6Vq64+Djbbmj4O9t+5ZXV5HK1SE3Gfhb7s8+2sf1ZWes19YaCnsyWlhahSAiW+9KVicVKGFfJA4BgZMpFguHhXjYiWLNmNV25cl4as4l/TNaTmZeXFRAJurpy2P6MjLWKekNFJPPSpUuWRAKhTEydduzYoQgANm3aZFmmWiTHZisINOTJycto27Z0qqoqk8o6AmX0ZBYW/kxTD9I8Pf37mv2hoJaJpYVJSUlsH0dPJBDKPHLkiCIAwKzA6gxITyQH6Xz48Hu0fn0qLViwgMV/+eXvSMe2s+/VMuvqPmHbNttPNHVBZlraa5r9oSCXWVRUREuXLmXbHCORQCPz1KlTigAA81LcrVZkmokcGuqRvncGtl2uLil932X17Nv3a7ZPLhMPyWprpwfO0ZKJRb1Llixh/+aYiQQKmZhCqcdS6enpgQm+mUwzkU1NV1jMoqIPFfudzv+w/ZmZ77BtLrOoKI+1kTU1v2Db0ZKJH4fxybEiEgRkYvCJzkEeBPNQ+cTeSKaZSDA+7qFXX/0uLVuWRGVlJ+j27RZqbLxCW7f+lNVXX3+RleMyP/hgWl60ZcpBm4nenDswgslE9w/78iAYWw4NDSkK68m0IpLT0fFPqSPbqKgrJeVbVFlZGijT2Phnth9//YD4syUTbSZ686B+HD5z5owiyKpVq4QTeT2ZY2P/VgizAlK7rQ3rxq+T3+8N7EcbKR/+hAoepNl786V/W5/Dy2WizURvLp8BmaG5M/GJhfHqgkBP5vj4PYWoUJmYsEvnUqCJHyx2+2EpU/4/h+8/JSwjQt5mojdXTyfNCLSZOAh3KD7lBeToyfQMfMoe086IsS+li2+m4ZF6ScYRTR1W6e5+T/GDyojvC8vxuMy8vDzh3NyMgEwrGHVALndJ4AJmSqhCu7v30uDQXzXxhr6+KH1vnu5cpmhuLvKhJmwywWwL7fdUCGMBK+keUzLBbAnFeidRDI6VdI85mSDaQvv6fiuVbdQcq8Ys3WNSJoiWUPTcI7564XEijNI9ZmWCSAtV99xWMEr3mJYJIiVU23ObpzlHL91jXiaIhFCjntsKonSPC5kgnELDhTrd40YmCJ9Q6ylthMP5O8X5xZVMgAvAIoJQQXp7vWdoQJrCir63xADiYLm3st2MO5mxzJzMMDInM4zMyQwjczLDSFRl4lU8qOzEia0JyZtvfo9dX1RexYPnyags0YnKS6LwJy649fFYGGlQW1vL3lZ48uTJhABvKMSjG7xYL+KvL8MzdCwxRCWdnZ1069YtVnF9fX1C0NzczG4WiIz4i/XQED948IAJdTqdUqN9n0ltb29PCCDx3r17LAMj/spH3O4QijsUUoeHh5lY/A8mAhCIa4LEiL+MdA4jntH/AMn0AakzlC0AAAAAAElFTkSuQmCC" /></p>
+<h2 id="description">Description</h2>
+<p>The Sine block returns the output of the function sin(<code>x</code>)
+for each element in array <code>x</code>.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector or matrix.</li>
+<li>Data Types: Input supports signals of floating point data types
+(double, single, and half) and signed fixed-point type. It does not
+support integer, Boolean, and unsigned fixed-point data types.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>The output has the same dimension and data type as the input.
+However, If the data type of the input is a fixed-point type, the data
+type of the output is fixed-point type with integer width fixed as
+2.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Sine block has no parameters to set.</p>
+</body>
+</html>

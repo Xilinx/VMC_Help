@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-reinterpret">Vector Reinterpret</h1>
+<p>The Vector Reinterpret block changes the vector input signal type
+without altering the binary representation. You can change the signal
+between signed and unsigned, and relocate the binary point.</p>
+<p>Hardware notes: In hardware this block costs nothing.</p>
+<p>Example: The input is 6 bits wide, signed with 2 fractional bits, and
+the output is forced to unsigned with 0 fractional bits. Then an input
+of -2.0 (1110.00 in binary 2&#39;s complement) becomes an output of 56
+(111000 in binary).</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.</p>
+<p>The Vector Reinterpret block forces its output to a new type without
+any regard for retaining the numerical value represented by the
+input.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The binary representation is passed through unchanged, so in hardware
+this block consumes no resources. The number of bits in the output will
+always be the same as the number of bits in the input.</p>
+<p>The block allows for unsigned data to be reinterpreted as signed
+data, or, conversely, for signed data to be reinterpreted as unsigned.
+It also allows for the reinterpretation of the data&#39;s scaling, through
+the repositioning of the binary point within the data. The Xilinx Scale
+block provides an analogous capability.</p>
+<p>An example of this block&#39;s use is as follows: if the input type is 6
+bits wide and signed, with 2 fractional bits, and the output type is
+forced to be unsigned with 0 fractional bits, then an input of -2.0
+(1110.00 in binary, two&#39;s complement) would be translated into an output
+of 56 (111000 in binary).</p>
+<p>This block can be particularly useful in applications that combine it
+with the Xilinx Slice block or the Xilinx Concat block. To illustrate
+the block&#39;s use, consider the following scenario:</p>
+<p>Given two signals, one carrying signed data, and the other carrying
+two unsigned bits (a <code>UFix_2_0</code>), you should design a system
+that concatenates the two bits from the second signal onto the tail
+(least significant bits) of the signed signal.</p>
+<p>You can do so using two Vector Reinterpret blocks and one Vector
+Concat block. The first Vector Reinterpret block is used to force the
+signed input signal to be treated as an unsigned value with its binary
+point at zero. The result is then fed through the Vector Concat block
+along with the other signal&#39;s <code>UFix_2_0</code>. The Concat
+operation is then followed by a second Vector Reinterpret that forces
+the output of the Vector Concat block back into a signed interpretation
+with the binary point appropriately repositioned.</p>
+<p>Though three blocks are required in this construction, the hardware
+implementation is realized as simply a bus concatenation, which has no
+cost in hardware.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Parameters specific to the block are as follows.</p>
+<p>Force Arithmetic Type<br />
+When checked, the Output Arithmetic Type parameter can be set and the
+output type is forced to the arithmetic type chosen according to the
+setting of the Output Arithmetic Type parameter. When unchecked, the
+arithmetic type of the output is unchanged from the arithmetic type of
+the input.</p>
+<p>Output Arithmetic Type<br />
+The arithmetic type (unsigned or signed, 2&#39;s complement, Floating-point)
+to which the output is to be forced.</p>
+<p>Force Binary Point<br />
+When checked, the Output Binary Point parameter can be set and the
+binary point position of the output is forced to the position supplied
+in the Output Binary Point parameter. When unchecked, the arithmetic
+type of the output is unchanged from the arithmetic type of the
+input.</p>
+<p>Output Binary Point<br />
+The position to which the output&#39;s binary point is to be forced. The
+supplied value must be an integer between zero and the number of bits in
+the input (inclusive).</p>
+<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf">LogiCORE
+IP Floating-Point Operator v7.1</a></p>
+</body>
+</html>

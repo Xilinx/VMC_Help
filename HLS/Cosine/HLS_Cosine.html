@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosine">Cosine</h1>
+<p>Computes cosine value for the input.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Cosine block returns the output of the function cos(x) for each
+element in array x.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector, or matrix.</li>
+<li>Data Types: Input supports signal of floating-point data types
+(double, single, and half), and signed fixed point type. It does not
+support integer, Boolean, and unsigned fixed point data types.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>Output has the same dimension and data type as the input. However, if
+the data type of the input is a fixed point type, the data type of the
+output is fixed point type with integer width fixed as 2.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Cosine block has no parameters to set.</p>
+</body>
+</html>

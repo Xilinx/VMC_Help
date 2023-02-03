@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-relational">Vector Relational</h1>
+<p>The Vector Relational block implements comparator for vector
+inputs.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The block parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>The only parameter specific to the Vector Relational block is:</p>
+<ul>
+<li>Comparison: specifies the comparison operation computed by the
+block.</li>
+</ul>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf">LogiCORE
+IP Floating-Point Operator v7.1</a></p>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cumulative-sum">Cumulative Sum</h1>
+<p>Compute the cumulative sum along the specified dimension of the
+input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Cumulative Sum block computes the cumulative sum of the input
+signal along the specified dimension or across time (running sum). The
+output signal has the same dimensions, data type and complexity as the
+input signal.</p>
+<p>Summing is performed in this way:</p>
+<ul>
+<li>Summing along Rows: If the block is configured for cumulative sum
+along rows, each element in the output signal is the sum of the
+corresponding element in the input and all of the elements in the same
+row and to the left of that element. If the input is 1-dimensional, each
+element in the output signal is the sum of the corresponding element in
+the input and all of the preceding elements.</li>
+<li>Summing along Columns: If the block is configured for cumulative sum
+along columns, each element in the output signal is the sum of the
+corresponding element in the input and all of the elements in the same
+column and above of that element. If the input is 1-dimensional, each
+element in the output signal is the sum of the corresponding element in
+the input and all of the preceding elements.</li>
+<li>Running sum: If the block is configured for running sum, each
+element in the output signal is the sum of the corresponding element in
+the input signal over time. In this case you can specify an optional
+reset port and restart the running sum when the reset signal is
+asserted.</li>
+</ul>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Data input: The data In input is the data signal to be summed. It
+supports integer, fixed point and floating-point data types but not
+boolean. The signal can be complex or real. The signal can be a scalar,
+vector or matrix.</li>
+<li>Reset: The Reset input is applicable only for running sum with
+non-default reset type. The reset signal must be scalar and real, and
+its data type must be integer or floating-point. Fixed point data type
+is not supported.</li>
+<li>Output: The data type, dimension and complexity of the output signal
+are the same as those of input signal.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Sum input along</p>
+<p>This parameter specifies the dimension along which sum elements are
+computed.</p>
+<p>Settings for the Sum input along parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Columns</td>
+<td>The block computes the cumulative sum of each column of the
+input.</td>
+</tr>
+<tr class="even">
+<td>Rows</td>
+<td>The block computes the cumulative sum of each row of the input.</td>
+</tr>
+<tr class="odd">
+<td>Channels (running sum)</td>
+<td>The block computes a running sum for each element of the input
+across time. When you select the Channels (running sum) option, you will
+also have to specify a Reset port parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Sum Input Along Parameter</p>
+<p>Reset port</p>
+<p>This parameter applies only to running sum. The Reset port parameter
+appears if you select Channels (running sum) for the Sum input along
+parameter.</p>
+<p>Settings for the Reset port parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>None</td>
+<td>Omits the Reset port.</td>
+</tr>
+<tr class="even">
+<td>Non-zero sample</td>
+<td>Triggers a reset operation at each sample time that the Reset input
+is not zero.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Reset Port Paremeter</p>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-assert">Vector Assert</h1>
+<p>The Vector Assert block asserts a user-defined sample rate and/or
+type on Vector inputs.</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAAAsCAIAAACBhoOKAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH4woRESgh8sGcZAAAAAd0RVh0QXV0aG9yAKmuzEgAAAAMdEVYdERlc2NyaXB0aW9uABMJISMAAAAKdEVYdENvcHlyaWdodACsD8w6AAAADnRFWHRDcmVhdGlvbiB0aW1lADX3DwkAAAAJdEVYdFNvZnR3YXJlAF1w/zoAAAALdEVYdERpc2NsYWltZXIAt8C0jwAAAAh0RVh0V2FybmluZwDAG+aHAAAAB3RFWHRTb3VyY2UA9f+D6wAAAAh0RVh0Q29tbWVudAD2zJa/AAAABnRFWHRUaXRsZQCo7tInAAAHXUlEQVRoge1afWxT1xU/99nv2c/P345DEkJKoB0ZmWg1Jk1VtQrtUwr8AUPq1KragmzCAtIm1k1CgzhA2AcTq7ZOCyI2bVLBNJUpqSiglamtsqrroo51Y2WEjHyQb4Ljb+Pn5/fu3R8PbCd5dl4c43Rafrp/WO+dc++5v3fvOeeea0QIgVUAAAC10gZ8iqBVIyRhMj2b+F9cQQihCgeroZAqYTUznA3zn9lYE5i9x7KGZZtXUiQS9znOGItF1QirWhcAYLZYDx19uX7L1mUYtgIYHLhxqu2HKoXVckHTjMVqt1jthVq1MrDa7IxOp1J41XdmsMpFBmr3yEK4n/9GMOA3cMYiWlMU8IkETdO/u/jBUhUL58LucD797FefefbrBehyBr3NkiFRq9UggJQozRNDCPkD4QQvLKnz6x/3vXP1YgFWFc4Fa+Aqq2rq6p9cqiJDU1vryoDAg2iOQI7/EiYwN75rNMgf4m+NhpfUf2B2Rq9nl2oVLIeLwkAhtLnWhgChh54KYxKIJCWJOCw6SpNJiggBXpBuj0dKZlupudhYbWYZDXo4ZUKIIOKB0TAhwLF2VqdNv8KE3BgKSrh0yW5J40iFgy2z6KisjBgTkCeMCbkxnJk5xuTWnRAvzPcgjxSl48Jq1K2vNBEACRO5YUz6RzITFlL45khQdiLjM/FgdGkuc/lQ3iPt7e1+v//IkSMUVTSynFZdOCZAek0QEEUcis2ZcCSeGpyI2Ey6sZl4UQbFmCQSCZXCylP1eDytra0ul0uSirZKh6aiDyKF3AA0GlRmm+/w7wYS/XdCxRqUAASDwbNnz6oRVuais7OTYZjOzk63252Hjusf94WCsyrNkiQyOh3PPhYjhMrMOpOBVtlDHiSTfCSswKDsmtxutxo6lLnYsWNHd3e3TIfL5cIYK4qFgoFUagm7mhfEqdn72ZEBIahycgytUd+JIq71vf+rk4cXPkcImYxGAHC73T6fL38nOd3B9u3be3p6GIbp6upqb29XlDGazCxr+Me1v/b95b3Ojpd/+ZNDU5Nj+ccLx1LhaBJjQPCgaRCsrzRSecstopi6cN77s9aDb3WfxxjHouE3L3TJr969enF8dLj3ncuDA/9+9fSp/9z6ZJ6uyWxuaWkBgL1793q93jyj5HONDQ0NMh29vb2KUf7vH30QjUb+ee3DV37RsrZ6vc1edvLYS3k6lHEvxFtNtM2sSzenVe+06vOo/Ppky9jo0M7nvvPRh73nXv1NNBp588Lr8qt33744MTZcVb3eYrXXb/m81eZYqH7s2DGPxwMATU1NHR0duUZZJEw0NDTs27dv0ent2PXC1xq++a1v7xsZHFhUeMNaM4Wy80vCC5I/xOeSJ4T86Ur3gR+0frb+qe9+//Af33pjocwTm+rLyiu++MyXneWVC98ihI4ePSr/bm5u7u/vVxxoES6uXLly5syZ/DJp0FoG40XiTp50K5eKmEoBgE6nBwCzxSr7yCUVXwkhra2t8u/Tp0/X1dUpiuXj4vLly7t27RIEYdu2baqKp4vBZKBrq0xziZiTbimCZhibw3ln+DYA3Lr5r9qNmwwGLhIKEkIwlsKhAABoaTrJ51xZHo+nra0NADo6OpqamnKJ5TyPXLp0affu3YIgNDY2Njc3n3v9tbzTXBwMTW2utWXvDozJ6N34vHRLEd/70fEfH2ys37L1xvVrh9teMVtsj2144sCenZIkBgN+AKjb/NTPPzl45CX39p3Pz9ONRCInTpwAAK/X63a784yizEU2ET6fLxRLKYq90HhgTUXVcy82IYQAgGaYrj+8l2uk2kpTJC6gh4mnfD6fuDc/v3RYdEaWvjMdy3749Je+8rknvzAxNnLw0E9ZAwcAp357fnDgZvVjtVjCej1LM8y5nvenp8ar19X+re/PaUVCSCwWAwCfz+dyufIQkZOLxsZGQRD27Nnj9Xo1Gg2AMhcGA0dRGtk4AEAI2exluUYan4nXVBizSxSEgMlAR+9nOjfotU6bHggqt+lngnPWvMlsya6VaLX0ps1b5hjDGTc8Pt8RyF5IDRGQi4vjx48X/TwS58VJf7zCwaXdhZxoDU9GhZQEAIyWWlduRACAwG7WJwQpGlf+BuqBAGw2mxoiIBcX+/fvX6YRigjHUiyTtBh1aYYRQM0abmgySgisq+BQNk1lhpFULLm8YztFIZZVW+MqdR38bjCRFKV0QEQItBqq2smtLWdpTbZjBQqhmjWcyuu/oqDUXBAC43djhBBMAGPAGAgQjtWaWIY8fJJuWg21xlFI5bIwlLrGBwCiRG5PRHR09meQP75C+pQUlI+FjwIrwAUASBK5X7zKSLGwem+WQeHrgucT92amhm4rn3NWENOT40IyZz6eB4Vz4Z+Z7nmj8+1LFwru4RGB5xMMo/ZuPRuFc3H291cL1v10YtVfZLDKRQZq94goinwinkwU59qiZIjFYqIoqhRW9d81CROHwx4OhQrzSSsIQUgyDJNMJtUIq+Li/wSr/iKDVS4y+C+/vRN/J6uU+AAAAABJRU5ErkJggg==" /></p>
+<p>Hardware notes: In hardware this blocks costs nothing.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): Use this configurable GUI parameter to
+control processing of multiple data samples on every sample period. This
+block enables 1-D vector data support for the primary block
+operation.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The block parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Parameters specific to this block are as follows:</p>
+<p>Type<br />
+Assert type<br />
+Specifies whether or not the block will assert that the type at its
+input is the same as the type specified. If the types are not the same,
+an error message is reported.</p>
+<p>Specify type<br />
+Specifies whether or not the type to assert is provided from a signal
+connected to an input port named type or whether it is specified
+Explicitly from parameters in the Assert block dialog box.</p>
+<p>Output Type<br />
+Specifies the data type of the output. Can be Boolean, Fixed-point, or
+Floating-point.</p>
+<p>Arithmetic Type<br />
+If the Output Type is specified as Fixed-point, you can select Signed
+(2’s comp) or Unsigned as the Arithmetic Type.</p>
+<p>Fixed-point Precision<br />
+Number of bits<br />
+Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+<p>Binary point<br />
+Position of the binary point in the fixed-point output.</p>
+<p>Floating-point Precision<br />
+Single<br />
+Specifies single precision (32 bits).</p>
+<p>Double<br />
+Specifies double precision (64 bits).</p>
+<p>Custom<br />
+This block is listed in the following: Activates the field below so you
+can specify the Exponent width and the Fraction width.</p>
+<p>Exponent width<br />
+Specify the exponent width.</p>
+<p>Fraction width<br />
+Specify the fraction width.</p>
+<p> </p>
+<p>Rate<br />
+Assert rate<br />
+specifies whether or not the block will assert that the rate at its
+input is the same as the rate specified. If the rates are not the same,
+an error message is reported.</p>
+<p>Specify rate<br />
+Specifies whether or not the initial rate to assert is provided from a
+signal connected to an input port named <code>rate</code>, or whether it
+is specified Explicitly from the Sample rate parameter in the Assert
+block dialog box.</p>
+<p> </p>
+<p>Provide output port<br />
+Specifies whether or not the block will feature an output port. The type
+and/or rate of the signal presented on the output port is the type
+and/or rate specified for assertion.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>The Output type parameter in this block uses the same description as
+the Arithmetic Type described in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>The Vector Assert block does not use a Xilinx LogiCORE™™ and does not
+use resources when implemented in hardware.</p>
+</body>
+</html>

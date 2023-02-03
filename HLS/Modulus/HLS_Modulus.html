@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="modulus">Modulus</h1>
+<p>Performs element-wise modulus operation on the input signals</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Modulus block takes two inputs. The first input is taken as
+dividend and the second input is considered as divisor. The output is
+the remainder after division. For each element of the dividend A,
+compute the modulus operation (remainder after division) with regard to
+the corresponding element of the divisor B, as follows:</p>
+<pre class="pre"><code>M = mod(A, B) = A - B .* floor(A ./ B)</code></pre>
+<p>The block can handle division by 0 by returning the NaN output for
+floating-point data types and 0 for the rest of the data types.</p>
+<p>Note: For signed data types the remainder will have the same sign as
+the divisor B. If instead it should have the same sign as the dividend,
+use the Remainder block instead of the Modulus block.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>The block supports all native Simulink® data types, as well as half
+precision floating-point, and fixed-point data types.</li>
+<li>For inputs of bool data type, the output value is always false.</li>
+<li>The block supports scalars, vectors, and 2D matrices.</li>
+<li>The input dimensions must match unless one input is a scalar, in
+which case, it gets broadcast to be used with each of the other input&#39;s
+elements. The output dimension is the larger of the two input
+dimensions.</li>
+<li>The block supports mismatched input data types. The output data type
+is decided by Vitis Model Composer data type propagation rules.</li>
+<li>The block operates on inputs of real numeric type only. For input of
+complex numeric type it issues an error.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>The Modulus block has no parameters to set.</p>
+</body>
+</html>

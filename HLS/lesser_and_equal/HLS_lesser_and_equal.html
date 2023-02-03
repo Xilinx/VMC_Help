@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="lesser-equals">Lesser Equals</h1>
+<p>Perform element-wise less than or equal relational operation on the
+inputs. The top input corresponds to the first operand.</p>
+<h2 id="library">Library</h2>
+<p>Relational Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>Performs element-wise less than or equal relational operation on the
+inputs. The block returns true (1) if the first input is less than or
+equal to the second input; returns false (0) otherwise.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Lesser Equals block supports inputs of native data types of
+MATLAB® and Ap_Fixed data type supported by Vitis HLS. The output type
+is always Boolean. It does not support complex data types. The block
+supports inputs of scalar, vector, and matrix dimensions. When both
+inputs have non-scalar dimensions then the dimensions of the inputs must
+match each other.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Lesser Equals block has no parameters to set.</p>
+</body>
+</html>

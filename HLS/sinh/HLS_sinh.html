@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="sinh">sinh</h1>
+<p>Element-wise computation of the hyperbolic sine for a given
+argument</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABDCAYAAAAPplKlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAlNSURBVHhe7Zx9UBTnHcc1Wt4ETIYYsOmkM5LqECczpFpHU83UiYga0I6YSTqGaqdNa4mENg7iFK0vUDVOqh0rKUkVq442Y2KdUVow6Iwyhgyo49ggb3cgxwkcIC++/vvr833os+7uPbt3ezlgD/njM8c+u8/vnv3s3vN7dvdhxz169IiscP/+fRoYGKA7d+5QV1cXdXR0kNvtptbW1lFBW1sb3yePx8P3sb+/n+7du0cPHz6U+hBYFpmZmUnjxo2jhIQEhfj4+FFDREQExcTEUH19PZcKoX19fcEXuXTpUi4yM/PlUQn2DdTU1HCZOEu7u7vpwYMHUh8CyyKXLFlCr7ySQDdv/nZUsmnTj7nI8+fP07Vr16ixsZE6Ozt5lybzIbAsMjU19YkQefr0aaqsrKQbN27wnzj6SZkPgWWRixcvfiJEHjlyhMrKyujKlSvU0tJCd+/elfoQWBaZkpLyRIg8cOAAnTp1ii5fvkxNTU18pCLzIRgTqSOkRDY0bGI/l78ExK1b+9knkK+3QnPzh15tCxmRTudO1qhbrM+5bQsaG/M17QsJkXaTCJzOP2naaHuRwZLY1vYPdrXxpXSdvwwMDH66XJ96tdPWIoMpEfHq6rKpp+eKdBt/aW8/7dVOYFuRwZYoaGjIpf7+eum2vujqusQOxnuaeAJbihwqiQKHYzuL3yqtY0Rv7w12Df17aTxgO5FDLVGAoZCsnoz+fqdXltZjK5HDJVFw+/aJ/9dxa+o/BuVtbNy4W1pfjW1EDrfEQbIMM7lZhpZhC5EjI3EQs0xulKFljLjI5uY90p2wSiASBbJMbpahZQRFJCqUlJTwT3W5GiOR6sYHitt9xCuuVZDJRbze3v+aZmgZQmRBQUFgIrFxbGwsD4JP3GpXbygwEtnd/RVvfH+/IyB67lRTm7vE0tljBJKK232MZeg/SNebIURGRkbSrl27rIvEmYgAgqlTp7KfSoNXBSOROPLtHadYp1/+rQiWzEARIkFUVBQVFxcHfkYKpk+fzoYWtzUVzJLNaJCpFgkmTZpEJ0+etNZHlpeXU1hYmCbQnDlzWDbsUbYxEwlCXaZeJIiOjqaKigrFgQyNSHD8+HEaP368JhCeHIqHP75EglCWqe4j1Q7wa7148aLGlRovkWDv3r2aIGDNmjX8Ibk/IkGoyhQiN2zYwPtItQMzmVKRYOPGjZogIC8vz2+RIBRlCpEYRyJro49UOzCSaSgSZx/OQnUQkJSU5LdIYEXmh3uy6cQ/C6XrzGR+9lkG5ecvoOrqX0rXW0EtEuNIZG30kWoHMpmGIgH6RfSP6iDAikjgr8zw8O/QG2/Ml64DRjKzsmbzdpWVrfZaZxW9SIwjkbX1Ixq9TFORADOykLnVQayKBP7IzM//BR08tFm6TiCTOdQiMTRE1jaT6VMkwLQ9jClFgEBEgmD1mS5XsSbucIjEOBLSZDIvXbrkn0hw9OhRpXIgIrdv/wnNmvVdSkiIoxdemEorVy5kDSvWCHr99R9R7safK8sLFiRT0cd59PeD+TR7dhI9++xkeumlabRt21qqrX0cW4g8cWIlvf32THr++ViKj4+m1NRENja2JtdMJDzk5OQoHgRTpkzxT6T+SFgViUSAemlpr1FBwWb64IP3KC7uGdaJT6JvvqlijXRxwsPDaPnypcoy6sycmUQREeGUmfkW5eZmU2Li93n5li2vKfGFyKefjmTbT6F162axODPoqafG03PPRdPVq7/StMcMM5EYFurH2PCCCxmfImWns1WRiYnPUHLyDOWuDCgt/ZwmT46loqKPlLJBkcuUZXzXhAkT2M6c48t43lJTk80OQBgXJuILkSkp09iBWaeUv/vuD3l5UdFSpcwXMpGY2odxJcrV4H4EJlnBk6lImcSJEydaEllXt57/LHFW7d+/h127Gz/5k4l89dU5/G9IxP1GxExOTuBnmvgOIbKkZLlSBj75JI2Xq89eX+hFwkFGRgYvU4Ocob6pYyjSqGNFBvdXJCR6PBV09uxJiokZHIvhQMyfP5cKC7ewI31NkQZkIjMylmskgrlzv8f6yyhlWYgsLf2ZUgaOHfspL4ccdbkZapG4XJ43bx5fVgMH+ps5UpFGElHu75WNkCikOBzXaefOP9LChQv42YmYUVGR9MUXR5VtZCLffHOZRiKAyLg4b5H6rP1tRO7evVszUhFg6jeGhHpnXiLNJGK9PyL1Ent6WtiQpVZZ9nicdOhQEReanPyyUi4TmZ6e5BV/OERiYj4+1eBKz2jmrkakL4nAl0i9xK6uZp6dly1brJQJZsz4Ab344jRlWS0SP2d8f1radK/vGA6RenJzc03/s0ER6XA4fEoEZiL1EgXvvPMWj5eTs44NXv9DlZVl9P77v+FleXm/U7YTIkWfiPUjLRLDna1bt/Lhj9qDHkXk4cOHNQFkEoGRSCOJoLOziQ2UM/hQRsSPjIyg9et/TX19LmU7iExPX6T0idhuJEUiMRYWFmoG5EZIz0gjicBIZE/PVY08Ge3tDfT11xV8XOjxOLzW67NzoOBSdHBqynqvdb4QInFjd8eOHV5XNkZo+kjIxJmJT3W5GiORvb2Pk0kgDAw0k7N5p1dcq9TX51Cn5yw7UOXkdlt/Ri5EBvw41l+MRLa6PqXu7qoA+Yo8XV+ynf83NTZt9ortL3V1WWx8d5xLFNxq/at0WyOESKNrbSOCJhI0t/xZsxOBEajMLD6/RxYTU2nkdbyxhUgwUjKbWz6SxBmk01PGZJhP5xPYRiQYbpkOxza2fZmuvpaOzjOs/9wgra/GViLBcMlsaMxjZ1yppK437R2fs340WxpHYDuRYKhlIkN3dP5LUscYX7PdbCkSDJVMWYb2F7NMbluRIPgyjTO0vxhlcluLBMGUaZah/cUok9teJAiOzOCiz+QhIRLYTWZT0xZN+0JGJHA4d1Br68cBgQkCLtdB6TpLuP7Gks4B1p4sTdtCSqSdGRMZJMZEBokxkUFi2ESOva5GjmWReIESvggzHUYj2Dcw5C9Q2rdvH61du5ZWr15Nq1atohUrVvCH5osWLRoV4ERJT0+nCxcuDO0rvTDLAPMl8QXXr1+nqqoq/h6xM2fOjArOnTvH+0VIHNKXzKHTxXsjIdPpdLJ+5SYXWl1dPSqAwNraWv4AcEhfezj2Ik45lkWOIeMR/Q8P0UoFVDah2wAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>The sinh block returns the output of the function sinh(x), which is
+the hyperbolic sine, for each element in array x.</p>
+<p>The hyperbolic sine of <code>x</code> is:</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAAfCAYAAAA2qem+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANZSURBVGhD7Zk7rw1RGIYHPQWV0qUWREWj5Q+gVVCoFCLUJP4A0SlIFIRKRKHRIdEqUKpcgtrlfWbPK+ssM2b22TOz9+x8T/JmZs1lrVnfba19ThEEQRAEq8tO6ZJ0XzpQHY9JY3JKeiox/k3pnBQsAE79LWHUZfFK+iLxLX/ZWh2D+fgsfZWel61huSYROOgEFyreSy8lviVYEErcO8lld2wYk/HJ0D3ShiwNmsFYZAUO5ByRKWQN1ym7rKd9gWPolzWyaV0miBxIOHS0sr+MyO0TlzqMzHqFEYcEJzIOdmNsnDUoDMaOqg1HMdHbVgocjW0wwTEDxAZlLnwf5+n61TfOdo7OvD4zv5b/lYEcPqbNofSH4bpCkIzhVJzItxPAzIMg5lpXPHeryxy9Hnq8sX8GtdLmUD6YSbRlcApGHbwMCX/7WEZlHMZj3IWp+9lCRJE9bASIUsDwaUZRGlhTcArXOPJs7qCLEs/lkXpBeiZ5y03m8T7P0TeTo50a9YPEVn3oH9HfquP26kggdcmyzfKjOu6ojtiQ+c9TFRrBsBjVnZH+DMB1O81QArnGsyiNMke51x2CgbYdxDnXUtwHxmsqr75XB++2qUtF4BnvAQjGeUvuZmBejId9ey25TIayRsd2lI3AJHOHpm0+yJFsh/pdlxUcnJ7n+L2mjPD9oIEt1TGFzHgo7ZWuS1clwIE46EjZ+reNof08hr8h7ZIoqzjxhXRS+p6cP5FS6O+T9Fpyvyl5v33zRpriX89+SQc5yR3q0sI6clbCeOel21JfDn0rsRbWOZQSx70r0umqnUK/l6X9Uu7QLpnbFgi7pW2z00nxU/o4O90Ihk+NiNMwInDeR8kFynq+ueGex6bv9H3D+sK9oIG68kKpxSEYmJ3lAwmH7JO4R0lGadsbnMMSzx4qW7MsxylnylZRHJVo35KOc6GCd+5Kj8tWUdypjvekdENCNXg0O50M2JLNIwFKINftHSYPTmVydTvZJnA62Zln7SpDoHuXjKhodZVnLcCZXcsnBqAcp9k6BViCUueRnenSs3bg1C5/KKBsTc2ZdXgvMU9lClYYgndqy0bQAE5kcxTZuSb0+ie9YLngzKH/qRCMRO5M79hjHZ0g/i9KrsjWIAiCqVMUfwCYIOEMVadnXgAAAABJRU5ErkJggg==" /></p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector or matrix.</li>
+<li>Data Types: Input supports signals of integer type, floating-point
+data types (double, single, and half) and fixed-point type.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>The output has the same dimension and data type as the input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The sinh block has no parameters to set.</p>
+</body>
+</html>

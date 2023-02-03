@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="requantize">Requantize</h1>
+<p>The Xilinx Requantize block requantizes and scales its input
+signals.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The Xilinx Requantize block requantizes each input sample to a number
+of a desired fixed point precision output. For example, a fixed point
+signed (two&#39;s complement) or unsigned number can be requantized to an
+output with lesser or greater number of bits and realign its binary
+point precision.</p>
+<p>This block also scales its input by a power of two. The power can be
+either positive or negative. The scale operation has the effect of
+moving the binary point without changing the bits in the container.</p>
+<p>The Requantize block is used to requantize and scale its input
+signals. If you are only performing one of these operations, but not
+both, you can use a different block in the HDL blockset to perform that
+operation.</p>
+<ul>
+<li>To requantize your input without scaling, use the <a href="convert.html">Convert</a> block in the HDL blockset.</li>
+<li>To scale your input without requantizing, use the <a href="scale.html">Scale</a> block in the HDL blockset.</li>
+</ul>
+<h2 id="quantization">Quantization</h2>
+<p>Quantization errors occur when the number of fractional bits is
+insufficient to represent the fractional portion of a value. This block
+uses symmetric round during quantization for any insufficient input
+data.</p>
+<p>Round (unbiased: +/- inf) is also known as &quot;Symmetric Round (towards
++/- inf)&quot; or &quot;Symmetric Round (away from zero)&quot;. This is similar to the
+MATLAB <code>round()</code> function. This method rounds the value to
+the nearest desired bit away from zero. When there is a value at the
+midpoint between two possible rounded values, the one with the larger
+magnitude is selected. For example, to round 01.0110 to a Fix_4_2, this
+yields 01.10, since 01.0110 is halfway between 01.01 and 01.10, and
+01.10 is further from zero.</p>
+<h2 id="overflow">Overflow</h2>
+<p>Overflow errors occur when a value lies outside the representable
+range. In case of data overflow this block saturates the data to the
+largest positive/smallest negative value.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink model.</p>
+<p>Parameters specific to the block are as follows.</p>
+<p>Scale factor s (scale output by 2^s)<br />
+The scale factor can be a positive or negative integer. The output of
+the block is <code>i*2^k</code>, where <code>i</code> is the input value
+and <code>k</code> is the scale factor. The effect of scaling is to move
+the binary point, which in hardware has no cost (a shift, on the other
+hand, might add logic).</p>
+<p>Fixed-point Precision<br />
+Number of bits<br />
+Specifies the total number of bits, including the binary point bit
+width.</p>
+<p>Binary point<br />
+Specifies the bit location of the binary point. Bit zero is the Least
+Significant Bit.</p>
+</body>
+</html>

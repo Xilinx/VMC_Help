@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-register">Vector Register</h1>
+<p>The Vector Register block supports vector type inputs.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.</p>
+<p>The Vector Register block models a D flip-flop-based register, having
+latency of one sample period.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-interface">Block Interface</h2>
+<p>The block has one input port for the data and an optional input reset
+port. The initial output value is specified by you in the block
+parameters dialog box (below). Data presented at the input will appear
+at the output after one sample period. Upon reset, the register assumes
+the initial value specified in the parameters dialog box.</p>
+<p>The Vector Register block differs from the Xilinx Delay block by
+providing an optional reset port and a user specifiable initial
+value.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Open the Block Parameters dialog box by double-clicking the icon in
+your Simulink® model.</p>
+<p>Basic Tab<br />
+Parameters specific to the Basic tab are as follows.</p>
+<p>Initial value<br />
+Specifies the initial value in the register.</p>
+<p>Optional Ports</p>
+<ul>
+<li>Provide synchronous reset port.</li>
+<li>Provide enable port.</li>
+</ul>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="xilinx-logicore">Xilinx LogiCORE</h2>
+<p>The Vector Register block is implemented as a synthesizable VHDL
+module. It does not use a Xilinx LogiCORE™™.</p>
+</body>
+</html>

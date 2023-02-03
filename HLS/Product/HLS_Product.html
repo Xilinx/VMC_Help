@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="product">Product</h1>
+<p>Compute element-wise product of the input signals</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Product block computes the element-wise product of its input
+signals.</p>
+<p>The block warns or errors out when an integer output overflows during
+simulation. To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink®
+Editor, then set the Wrap on overflow, or Saturate on overflow
+parameter.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Product block outputs the result of multiplying two inputs.
+Inputs can be two scalars, a scalar and a non-scalar, and two
+non-scalars of the same dimension. If one of the inputs is scalar and
+other input is vector/matrix then the scalar input is expanded to match
+the dimension of the other input to perform the operation. If input
+signals are both integer data types, such as int16, the datatype of the
+output is also an integer datatype int16. Hence an overflow of wrap
+around (no saturation) is likely if the output exceeds the range that is
+represented with int16. If the operation is to be applied without loss
+of precision or range, use fixed-point data types. If you want to narrow
+the bit width of the output signal, you can run it through a Data Type
+Conversion block and select a fixed-point data type that saturates.</p>
+<p>The output dimension is the same as that of the inputs if both inputs
+are either scalar or non scalar. If one input is scalar and the other is
+a vector/matrix then the output dimension matches the dimension of the
+vector/matrix input. The output type is same as that of the inputs if
+both inputs are of the same type. Otherwise, the output type is defined
+as follows.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Input Type</th>
+<th>Output Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(double, single)</td>
+<td>double</td>
+</tr>
+<tr class="even">
+<td>(double, int)</td>
+<td>double</td>
+</tr>
+<tr class="odd">
+<td>(double, half)</td>
+<td>double</td>
+</tr>
+<tr class="even">
+<td>(double, fixed)</td>
+<td>double</td>
+</tr>
+<tr class="odd">
+<td>(double, Boolean)</td>
+<td>double</td>
+</tr>
+<tr class="even">
+<td>(single, int)</td>
+<td>single</td>
+</tr>
+<tr class="odd">
+<td>(single, half)</td>
+<td>single</td>
+</tr>
+<tr class="even">
+<td>(single, fixed)</td>
+<td>single</td>
+</tr>
+<tr class="odd">
+<td>(single, Boolean)</td>
+<td>single</td>
+</tr>
+<tr class="even">
+<td>(half, int)</td>
+<td>half</td>
+</tr>
+<tr class="odd">
+<td>(half, fixed)</td>
+<td>half</td>
+</tr>
+<tr class="even">
+<td>(half, Boolean)</td>
+<td>half</td>
+</tr>
+<tr class="odd">
+<td>(fixed, int)</td>
+<td>fixed</td>
+</tr>
+<tr class="even">
+<td>(fixed, Boolean)</td>
+<td>fixed</td>
+</tr>
+<tr class="odd">
+<td>(int, Boolean)</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Input/Output</p>
+<h2 id="parameters">Parameters</h2>
+<p>Saturate on integer overflow</p>
+<p>This parameter specifies whether integer overflow is handled by
+wrapping (default) or by saturating. This parameter is relevant only if
+the output is integral (int8, int16, int32, uint8, uint16, uint32).</p>
+<p>Settings for the Saturate on integer overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not selected</td>
+<td>Integer overflow is handled by wrapping.</td>
+</tr>
+<tr class="even">
+<td>Selected</td>
+<td>Integer overflow is handled by saturation.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Saturate on Integer Overflow Parameter</p>
+<p>When overflow is detected, the Diagnostic Viewer displays messages
+that depend on the diagnostic action you specify in the Simulink Editor.
+To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+</body>
+</html>

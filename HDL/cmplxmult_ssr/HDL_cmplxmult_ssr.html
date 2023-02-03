@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="vector-complex-mult">Vector Complex Mult</h1>
+<p>The Vector Complex Multiplier block supports multiplication of two
+complex input vectors.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This blocks enable 1-D vector support for the primary block
+operation.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="data-type-support">Data Type Support</h2>
+<ul>
+<li>Supports fixed and floating-point data type inputs on both port A
+and B.</li>
+<li>The number of bits on Input port A should be greater than or equal
+to 26.</li>
+<li>The number of bits on Input port B should be greater than or equal
+to 17.</li>
+</ul>
+</body>
+</html>

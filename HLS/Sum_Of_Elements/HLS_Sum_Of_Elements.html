@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="sum-of-elements">Sum of Elements</h1>
+<p>Perform element-wise addition on the input, column-wise, row-wise, or
+in all dimensions</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABECAYAAAAfvRJaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAfTSURBVHhe7ZxfTBRHGMDBKlJtNVWq+NCkjS0PJhqJikqIicY02JgmjcY+1GgxEiPVtBUppq0KiAZrkVYNEtNgbaEvFmtoLWiNUkESoCfBIHfH3cEdBwcc4OE/Xr/ON3Svt3uze7t7y7p33sMvF3Zu/uyPuflmdicTNzExATG0Q7HQJ0+ewPj4OIyOjsLw8DB4PB5wu93gdDqjgr6+PnpPQ0ND9B59Ph88fvwYnj17xvQhRLHQkpISWL58OaSlpcGqVasoK1euhBUrVkQFqamp9P4aGxupXBT78OHDqRO6Z88eiIuLgw0b3opK8N6Qq1evgtlspr3W6/XC06dPmT6EKBaanZ0NCxa8Ag8e7I1Kzp7NpEKrqqrAZDKB1WqFwcFBOtSxfAhRLHT37t0vhNCKigq4c+cOdHR00J8+jqMsH0IUC921a9cLIbS0tBTq6uqgra0Nenp64NGjR0wfQhQLzcrKeiGEFhQUQE1NDTQ1NUF3dzed2bB8CIkJFRCRQi2WQ+Rn9J0qenvPkE+Ena4Eh+NkUNsiTqjdfoI0rpeMSf2GwGr9ite+iBJqNJmI3X6c18aIEaqVzL6+H8nq5QYzTS7j45OfLteFoHZGhFAtZWJ5XV37YWSkjfkduQwM/BbUTsTwQrWWyWGx5IHPZ2Z+NxTDw3+Tf8onvPI4DC10qmRy2GyFpHwnM48YY2MdZI3+ObM8xLBCp1omB06hWPlY+Hz2oKguxJBC9ZLJ0d//y3953Lz8/4PX+8i8s4SZPxDDCdVb5iQ5opFfKqKzMJTQ5yNzEqnILxbRWRhGqMPxDfNmlKJGJgcr8ktFdBaGERp4E2pxuy8FlasUjPxceWNj9yUjOgtNhdpsNrh48SL9DLweiJhQr/cuvQmfz6aKkdEW6HNXKupNYmDwcbt/JhH9S2a6FJzQAwcOhCcUJc6ZM4cWhp8NDQ1BX0bEhGJPGPDUkOBQHxZaSVULJzQxMREKCwvVC8WeiQVxiEmVCkrRIJUTikyfPh2OHTsWfg+VkiolFIl0qYFCkfj4eDhy5Ii6MRTlhZIaSiiiVqq1uwbutVf5aWkthdu3P4Zbt3YEYTJlM+sOF6FQjoMHD8p6N88TioSSKkcookbqjh3v8eqVoqzsXWa94cIJTUpKCqpz586dId9+BglFpKTKFYoolcoJnTUrEZYte8fP0qVvwpIlr/OorHyfWWe4cELz8/MhJSWF5wDJzMykW3RY3hCmUERM6ubNm2ULRZRIras/A7NnvwzTpsVDefkhXppeYyonFOeh1dXVkJ6eznOA4DYk3M/F8iYqFGFJTUhIUCQUUSK15spJmDlzBomwL8GlSwW8ND2kBgrFeSg62LJlC88Bgr3XYrEEOZMUirCkKhWKKJGKIlEoiv215iQvbaqlCoXiPBS342BQCnSAJCcnQ2trK89XSKGIUKoaoYgSqWfP5dEpCw4B1/78npfmclUwy9cCllBuHlpWVkbbxHlA0Et9fb3flSyhyKlTp/yFqBXa1bWPCPkLhr0NPEFiFB/fS+ubO/dVMn06778+MHCZWb4WSAlFD1u3bvV74ECpuP8J03XroZzMyQcXbtJAlyyysj6idS5cuAA8HjOMjZnJ2PUFsw4tkBJ6+vRpZg+9fv2635UuYyhfpnzu3WuEefNeo3UePpxP3wfhIzpWHVohNobm5ubyHCCLFi2im8kCfUkKZclUGuXVyuztvQ+LF09ugN2+/UNdZCJCoehAkyjPkol/K5mHqpXp9faQ+V8arXPdunRShkkXmUigUJyHrl27lucAwXlof38/0xtTqJhMvC53paRWJrJt2we0zpSUt0lPbdJNJsIJFVspbdq0SdlKSUompssRGo7M/PzPaJ1JSfPAZLqmq0yEE6rJWj6UTCSU0HBkVlaW0zoTE2eSud1PustEOKFC8vLylD1t0uJ5aDgykays7bTehIQZMH/+bMIsUTIy3mC2IVyEQnGadPToUTptCvQghl9ouE/sw5WJcELlgE+chG3QgkCh+MS+uLg4/Cf2YjIRMaEjI/8wJSlBq6kRLnEnt9zsC0oLBScU3ykVFRUFrZRCwRtDUarat55jY51MSXIZH3eA3XEiqFylmM2fwuDQ7+TXUg9ut/J3/JxQnMizlp6h4AmVg5hQp+sCmT82q+QuDA3fIBKugbX766Cy5dLVlUPmh9VUJkev8yzzu2JwQsXW8qHQTCji6Cnl3Yw61ErNofuXWGXiFiF2nmAMJRR5XlIdPd8yyplkcKiOSJHexshhOKGI3lJtNnyyXyfIz8czWEvG11xm/kAMKRTRS6rFmk964B+MvMEMeC6TcXY/sxwOwwpFploqRnTP4BVGHnFC7e4ztFBkqqSyIrpcpCK/4YUi2ksVj+hyEYv8ESEU0VKqVESXi1jkjxihiDZStUUY+SNKKGI0qd3dh3ntizihiM1eBE5nuSpwo4PL9QMzTRGu8yQ4nSPtyeG1LSKFGpmYUI2JCdWYmFCN0V1o7JghaRQLxYOwsMLU1OSoBO8N0e0gLNzSt3HjRli/fj1kZGTAmjVr6GGCeABfNIAHCq5evZr+3HU5qg13TeB2aKyovb0dmpub4ebNm1BbWxsV4E46HDdRpi6HCeLgjOeGolS73U7GnQdUbEtLS1SAIjs7O+mLSl2Ou4wdyCqNYqExpJiAfwGDn07W/TNw0AAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>This block performs element-wise addition on a vector or matrix type
+input. If input is a scalar then this block operates as a pass-through.
+The output is a scalar type if input is a vector or a matrix and the Sum
+over parameter is set as All dimensions.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support for the block is:</p>
+<ul>
+<li><p>The Sum of Elements block supports any floating-point,
+fixed-point, integer or Boolean data type.</p></li>
+<li><p>The output type is a scalar or a vector depending on the
+dimensions of the input and the selection of the Sum over
+parameter.</p></li>
+<li><p>The block can perform element-wise addition on real or complex
+number data.</p></li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Sum over</p>
+<p>The Sum over parameter value is used to decide whether elements will
+be added in all dimensions or in one of the dimensions.</p>
+<p>Following are settings for the Sum over parameter.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All dimensions</td>
+<td>Add all elements of the input signal (output is scalar)</td>
+</tr>
+<tr class="even">
+<td>Specified dimension</td>
+<td>This option shows an edit box, Dimension, where the specific
+dimension value can be entered.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Sum Over Parameter</p>
+<p>Dimension</p>
+<p>The Dimension parameter is displayed only if the Sum over parameter
+value is set to Specified dimension.</p>
+<p>Settings for the Dimension parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Add input over row dimension. Output is a row matrix.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Add input over column dimension. Output is a column matrix.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
