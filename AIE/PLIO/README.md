@@ -28,3 +28,6 @@ This is necessary to get accurate thorughput results from the Cycle Approximate 
 
 Note that you can also use the "--pl-freq=_value_" AI Engine Compiler option in the Vitis Model Composer Hub block to specify the interface frequency (in MHz) for all PLIOs in the design.
 
+## Constraints
+You can specify location constraints for PLIO blocks. 
+
