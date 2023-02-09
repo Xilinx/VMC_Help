@@ -18,7 +18,7 @@ The input must be a Boolean or unsigned fixed-point signal. The output
 type is normally unsigned with binary point at zero, but can be Boolean
 when the Width parameter is 1.
 
-![](./Images/ven1555440990852.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

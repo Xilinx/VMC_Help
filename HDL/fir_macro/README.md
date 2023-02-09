@@ -4,7 +4,7 @@ The Xilinx Digital FIR Filter block allows you to generate highly
 parameterizable, area-efficient, high-performance single channel FIR
 filters.
 
-![](./Images/qip1555437384186.png)
+![](./Images/block.png)
 
 The Digital FIR filter block supports single channel, simple rate,
 integer decimation, and interpolation and fractional decimation and

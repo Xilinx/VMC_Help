@@ -4,7 +4,7 @@ The Xilinx Concat block performs a concatenation of n bit vectors
 represented by unsigned integer numbers, for example, n unsigned numbers
 with binary points at position zero.
 
-![](./Images/tdu1555432811213.png)
+![](./Images/block.png)
 
 The Xilinx [Reinterpret](reinterpret.html) block provides capabilities
 that can extend the functionality of the Concat block.

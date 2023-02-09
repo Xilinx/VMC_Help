@@ -7,7 +7,7 @@ positions specified by a non-negative integer parameter
 
 Logic and Bit Operations
 
-![](./Images/ppq1532103642810.png)
+![](./Images/block.png)
 
 ## Description
 

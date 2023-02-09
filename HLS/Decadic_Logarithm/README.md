@@ -6,7 +6,7 @@ Compute element-wise base 10 logarithm of input
 
 Math Functions / Math Operations
 
-![](./Images/kud1532106955941.png)
+![](./Images/block.png)
 
 ## Description
 

@@ -6,7 +6,7 @@ Delay input signal by specified number of samples
 
 Signal Operations
 
-![](./Images/gfy1532106955908.png)
+![](./Images/block.png)
 
 ## Description
 

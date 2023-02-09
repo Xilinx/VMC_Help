@@ -3,7 +3,7 @@
 The Xilinx Reciprocal block performs the reciprocal on the input.
 Currently, only the floating-point data type is supported.
 
-![](./Images/liy1555437334229.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

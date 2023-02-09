@@ -5,7 +5,7 @@ applications that use supported devices. The DSP48E combines an 18-bit
 by 25-bit signed multiplier with a 48-bit adder and programmable mux to
 select the adder's input.
 
-![](./Images/qtr1555437361930.png)
+![](./Images/block.png)
 
 Operations can be selected dynamically. Optional input and multiplier
 pipeline registers can be selected as well as registers for the alumode,

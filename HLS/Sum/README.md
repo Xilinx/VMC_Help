@@ -6,7 +6,7 @@ Perform element-wise addition of two input signals
 
 Math Functions / Math Operations
 
-![](./Images/mzr1532106555841.png)
+![](./Images/block.png)
 
 ## Description
 

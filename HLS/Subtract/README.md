@@ -6,7 +6,7 @@ Perform element-wise subtraction
 
 Math Functions / Math Operations
 
-![](./Images/doz1532106555847.png)
+![](./Images/block.png)
 
 ## Description
 

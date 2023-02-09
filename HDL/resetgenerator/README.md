@@ -4,7 +4,7 @@ The Reset Generator block captures the user's reset signal that is
 running at the system sample rate, and produces one or more downsampled
 reset signal(s) running at the rates specified on the block.
 
-![](./Images/wyt1555437356812.png)
+![](./Images/block.png)
 
 The downsampled reset signals are synchronized in the same way as they
 are during startup. The RDY output signal indicates when the downsampled

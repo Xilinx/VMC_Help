@@ -6,7 +6,7 @@ instruction for DSP48E1, and a 22-bit instruction for DSP48E2. The
 instruction consists of the opmode, carry-in, carry-in select, alumode,
 and (for DSP48E1 and DSP48E2) the inmode bits.
 
-![](./Images/jol1555437381461.png)
+![](./Images/block.png)
 
 The Opmode block is useful for generating DSP48E, DSP48E1, or DSP48E2
 control sequences. The figure below shows an example. The example

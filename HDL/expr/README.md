@@ -2,7 +2,7 @@
 
 The Xilinx Expression block performs a bitwise logical expression.
 
-![](./Images/vls1555437345473.png)
+![](./Images/block.png)
 
 The expression is specified with operators described in the table below.
 The number of input ports is inferred from the expression. The input

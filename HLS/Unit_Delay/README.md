@@ -6,7 +6,7 @@ Provides a delay of one sample period
 
 Signal Operations
 
-![](./Images/zuv1532106555799.png)
+![](./Images/block.png)
 
 ## Description
 

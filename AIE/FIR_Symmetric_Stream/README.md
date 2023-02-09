@@ -1,7 +1,7 @@
 # FIR Symmetric Stream
 
   
-![](./Images/bxh1648669293036.png)  
+![](./Images/block.png)  
 
 ## Library
 

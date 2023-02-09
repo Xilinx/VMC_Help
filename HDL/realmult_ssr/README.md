@@ -22,7 +22,7 @@ The Vector Real Mult block implements a multiplier. It computes the
 product of the data on its two input ports, producing the result on its
 output port.
 
-![](./Images/cdw1555440974269.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

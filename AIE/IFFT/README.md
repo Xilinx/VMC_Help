@@ -1,7 +1,7 @@
 # IFFT
 
   
-![](./Images/gwd1621249486548.png)  
+![](./Images/block.png)  
 
 ## Library
 

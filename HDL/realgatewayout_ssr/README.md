@@ -19,7 +19,7 @@ your Simulink design. This block converts the Model Composer fixed-point
 or floating-point data type into a Simulink integer, single, double, or
 fixed-point data type.
 
-![](./Images/blm1555440987597.png)
+![](./Images/block.png)
 
 According to its configuration, the Vector Real Gateway Out block can
 either define an output port for the top level of the HDL design

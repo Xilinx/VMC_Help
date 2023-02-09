@@ -7,7 +7,7 @@ over a specified dimension
 
 Logic and Bit Operations
 
-![](./Images/gzv1532106555789.png)
+![](./Images/block.png)
 
 ## Description
 

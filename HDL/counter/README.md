@@ -4,7 +4,7 @@ The Xilinx Counter block implements a free-running or count-limited type
 of an up, down, or up/down counter. The counter output can be specified
 as a signed or unsigned fixed-point number.
 
-![](./Images/kcq1555432825868.png)
+![](./Images/block.png)
 
 Free-running counters are the least expensive in FPGA hardware. The
 free-running up, down, or up/down counter can also be configured to load

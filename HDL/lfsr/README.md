@@ -7,7 +7,7 @@ change the current value of the register at any time. The LFSR output
 and re-loadable input can be configured as either serial or parallel
 ports.
 
-![](./Images/vjj1555437371242.png)
+![](./Images/block.png)
 
 ## Block Interface
 

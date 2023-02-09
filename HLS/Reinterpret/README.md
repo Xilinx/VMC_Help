@@ -7,7 +7,7 @@ type with the same bit width.
 
 Signal Attributes
 
-![](./Images/ftr1532103642819.png)
+![](./Images/block.png)
 
 ## Description
 

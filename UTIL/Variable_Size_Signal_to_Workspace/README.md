@@ -4,7 +4,7 @@ This block is used to save variable size signal data from your Simulink®
 simulation to the MATLAB® workspace.
 
   
-![](./Images/uwe1646832756777.png)  
+![](./Images/block.png)  
 
 ## Library
 

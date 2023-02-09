@@ -11,7 +11,7 @@ The term symbol is used to describe a collection of bits. In some
 applications, a symbol is a single bit. In others, a symbol is a bus.
 
   
-![](./Images/hxd1647548690214.png)  
+![](./Images/block.png)  
 
 The classic use of interleaving is to randomize the location of errors
 introduced in signal transmission. Interleaving spreads a burst of

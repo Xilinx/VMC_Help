@@ -6,7 +6,7 @@ Perform element and bitwise Boolean AND operation on the inputs
 
 Logic and Bit Operations
 
-![](./Images/bjz1532106955921.png)
+![](./Images/block.png)
 
 ## Description
 

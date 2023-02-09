@@ -7,7 +7,7 @@ top input corresponds to the first operand.
 
 Relational Operations
 
-![](./Images/rwl1532106955933.png)
+![](./Images/block.png)
 
 ## Description
 

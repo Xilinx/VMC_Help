@@ -1,7 +1,7 @@
 # FIR Interpolation
 
   
-![](./Images/mxv1621241753150.png)  
+![](./Images/block.png)  
 
 ## Library
 

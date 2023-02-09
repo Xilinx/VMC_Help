@@ -4,7 +4,7 @@ The Xilinx Addressable Shift Register block is a variable-length shift
 register in which any register in the delay chain can be addressed and
 driven onto the output data port.
 
-![](./Images/cxf1555432810515.png)
+![](./Images/block.png)
 
 The block operation is most easily thought of as a chain of registers,
 where each register output drives an input to a multiplexer, as shown

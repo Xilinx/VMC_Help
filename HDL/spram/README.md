@@ -3,7 +3,7 @@
 The Xilinx Single Port RAM block implements a random access memory (RAM)
 with one data input and one data output port.
 
-![](./Images/cwx1555437368107.png)
+![](./Images/block.png)
 
 ## Block Interface
 

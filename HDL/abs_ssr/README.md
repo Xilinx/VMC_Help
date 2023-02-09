@@ -7,7 +7,7 @@ vector type.
 
 This block enables 1-D vector support for the primary block operation.
 
-![](./Images/ndy1555441006420.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

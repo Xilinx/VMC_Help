@@ -2,7 +2,7 @@
 
 The Vector Relational block implements comparator for vector inputs.
 
-![](./Images/zco1555180085744.png)
+![](./Images/block.png)
 
 ## Description
 

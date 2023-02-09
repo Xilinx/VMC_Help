@@ -6,7 +6,7 @@ Element-wise computation of the hyperbolic cosine for a given argument
 
 Math Functions / Math Operations
 
-![](./Images/atb1532106555817.png)
+![](./Images/block.png)
 
 ## Description
 

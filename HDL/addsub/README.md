@@ -4,7 +4,7 @@ The Xilinx AddSub block implements an adder/subtractor. The operation
 can be fixed (Addition or Subtraction) or changed dynamically under
 control of the sub mode signal.
 
-![](./Images/mri1555432825191.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

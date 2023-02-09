@@ -4,7 +4,7 @@ The Xilinx Shift block performs a left or right shift on the input
 signal. The result will have the same fixed-point container as that of
 the input.
 
-![](./Images/vgb1555437374383.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

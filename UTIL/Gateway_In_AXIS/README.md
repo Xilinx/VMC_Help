@@ -1,7 +1,7 @@
 # Gateway In AXI Stream
 
   
-![](./Images/tqw1648735171179.png)  
+![](./Images/block.png)  
 
 ## Library
 

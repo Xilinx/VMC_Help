@@ -7,7 +7,7 @@ Questa HDL co-simulation block configures and controls co-simulation for
 one or several black boxes.
 
   
-![](./Images/pvi1555437347221.png)  
+![](./Images/block.png)  
 
 During a simulation, each Questa block spawns one copy of Questa, and
 therefore uses one Questa license. If licenses are scarce, several black

@@ -2,7 +2,7 @@
 
 This block is used to connect the HDL domain to the AI Engine domain
 using the AXI4-Stream protocol.  
-![](./Images/uhd1647641624300.png)  
+![](./Images/block.png)  
 
 ## Library
 

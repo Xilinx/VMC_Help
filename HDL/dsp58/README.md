@@ -7,7 +7,7 @@ resources. Versal® devices have many dedicated low-power DSP slices,
 combining high speed with small size while retaining system design
 flexibility.
 
-![](./Images/zoz1570738358673.png)
+![](./Images/block.png)
 
 The DSP58 slice is effectively a super-set of the DSP48E2 slice with
 these differences. The DSP58 has the following.

@@ -7,7 +7,7 @@ magnitude and radiant phase angle
 
 Math Functions / Math Operations
 
-![](./Images/ckt1532106955957.png)
+![](./Images/block.png)
 
 ## Description
 

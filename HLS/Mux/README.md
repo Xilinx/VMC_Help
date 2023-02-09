@@ -6,7 +6,7 @@ Combines scalar and vector inputs into a larger vector output.
 
 Signal Routing
 
-![](./Images/sbe1540857868775.png)
+![](./Images/block.png)
 
 ## Description
 

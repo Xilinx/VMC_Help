@@ -5,7 +5,7 @@ Fourier transform (IDFT), which undoes the process of Discrete Fourier
 Transform (DFT). The Inverse FFT maps the signal back from the frequency
 domain into the time domain.
 
-![](./Images/etf1568152632892.png)
+![](./Images/block.png)
 
 The IDFT of a sequence {F_(n)} can be defined as:
 

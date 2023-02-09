@@ -1,7 +1,7 @@
 # FIR Halfband Interpolator
 
   
-![](./Images/vcu1621352265618.png)  
+![](./Images/block.png)  
 
 ## Library
 

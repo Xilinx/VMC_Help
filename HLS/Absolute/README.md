@@ -6,7 +6,7 @@ Compute element-wise absolute value of input signal
 
 Math Functions/Math Operations
 
-![](./Images/ixu1532103642760.png)
+![](./Images/block.png)
 
 ## Description
 

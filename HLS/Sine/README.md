@@ -6,7 +6,7 @@ Element-wise computation of the sine function for the given input
 
 Math Functions / Math Operations
 
-![](./Images/rtf1532106555811.png)
+![](./Images/block.png)
 
 ## Description
 

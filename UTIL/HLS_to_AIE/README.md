@@ -4,7 +4,7 @@ This block is used to connect an HLS kernel block to AI Engine domain
 when the datatype or complexities of the ports involved do not match.
 
   
-![](./Images/kea1647638721035.png)  
+![](./Images/block.png)  
 
 ## Library
 

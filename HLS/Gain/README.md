@@ -6,7 +6,7 @@ Element-wise multiplication of the input by a constant gain factor
 
 Math Functions / Math Operations
 
-![](./Images/joy1532104004162.png)
+![](./Images/block.png)
 
 ## Description
 

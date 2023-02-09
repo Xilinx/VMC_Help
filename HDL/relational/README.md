@@ -2,7 +2,7 @@
 
 The Xilinx Relational block implements a comparator.
 
-![](./Images/aaj1555437340202.png)
+![](./Images/block.png)
 
 The supported comparisons are the following:
 

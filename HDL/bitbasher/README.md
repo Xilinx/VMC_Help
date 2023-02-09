@@ -3,7 +3,7 @@
 The Xilinx BitBasher block performs slicing, concatenation and
 augmentation of inputs attached to the block.
 
-![](./Images/pzq1555432818443.png)
+![](./Images/block.png)
 
 The operation to be performed is described using Verilog syntax which is
 detailed in this document. The block can have up to four output ports.

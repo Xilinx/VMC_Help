@@ -1,7 +1,7 @@
 # FIR Halfband Decimator Stream
 
   
-![](./Images/akm1648715261243.png)  
+![](./Images/block.png)  
 
 ## Library
 

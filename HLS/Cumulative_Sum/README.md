@@ -6,7 +6,7 @@ Compute the cumulative sum along the specified dimension of the input
 
 Math Functions / Math Operations
 
-![](./Images/rsn1532107405793.png)
+![](./Images/block.png)
 
 ## Description
 

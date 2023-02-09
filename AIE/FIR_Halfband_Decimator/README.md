@@ -1,7 +1,7 @@
 # FIR Halfband Decimator
 
   
-![](./Images/zjx1620997121180.png)  
+![](./Images/block.png)  
 
 ## Library
 

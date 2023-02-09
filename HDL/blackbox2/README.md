@@ -3,7 +3,7 @@
 The Model Composer Black Box block provides a way to incorporate
 hardware description language (HDL) models into Model Composer.
 
-![](./Images/gzg1555432827176.png)
+![](./Images/block.png)
 
 The block is used to specify both the simulation behavior in Simulink
 and the implementation files to be used during code generation with

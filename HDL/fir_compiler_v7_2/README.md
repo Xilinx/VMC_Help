@@ -4,7 +4,7 @@ The Xilinx FIR Compiler block provides users with a way to generate
 highly parameterizable, area-efficient, high-performance FIR filters
 with an AXI4-Stream-compliant interface.
 
-![](./Images/aig1555437371826.png)
+![](./Images/block.png)
 
 ## AXI Ports that are Unique to this Block
 

@@ -3,7 +3,7 @@
 The Xilinx Reinterpret block forces its output to a new type without any
 regard for retaining the numerical value represented by the input.
 
-![](./Images/oci1555437365807.png)
+![](./Images/block.png)
 
 The binary representation is passed through unchanged, so in hardware
 this block consumes no resources. The number of bits in the output will

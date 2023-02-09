@@ -3,7 +3,7 @@
 The Xilinx Clock Probe generates a double-precision representation of a
 clock signal with a period equal to the Simulink® system period.
 
-![](./Images/gub1555432809176.png)
+![](./Images/block.png)
 
 The output clock signal has a 50/50 duty cycle with the clock asserted
 at the start of the Simulink sample period. The Clock Probe's double

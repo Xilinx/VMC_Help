@@ -4,7 +4,7 @@ The Xilinx CIC Compiler provides the ability to design and implement
 AXI4-Stream-compliant Cascaded Integrator-Comb (CIC) filters for a
 variety of Xilinx FPGA devices.
 
-![](./Images/vyk1555432807226.png)
+![](./Images/block.png)
 
 CIC filters, also known as Hogenauer filters, are multi-rate filters
 often used for implementing large sample rate changes in digital

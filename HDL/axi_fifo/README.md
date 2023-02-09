@@ -3,7 +3,7 @@
 The Xilinx AXI FIFO block implements a FIFO memory queue with an
 AXI-compatible block interface.
 
-![](./Images/asb1555432809821.png)
+![](./Images/block.png)
 
 ## Block Interface
 

@@ -6,7 +6,7 @@ Perform element-wise conjugate transpose operation on the input signal.
 
 Math Functions / Matrices and Linear Algebra
 
-![](./Images/usz1532106955870.png)
+![](./Images/block.png)
 
 ## Description
 

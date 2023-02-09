@@ -6,7 +6,7 @@ Element-wise computation of the hyperbolic sine for a given argument
 
 Math Functions / Math Operations
 
-![](./Images/avt1532106555769.png)
+![](./Images/block.png)
 
 ## Description
 

@@ -3,7 +3,7 @@
 This block lets you import an HLS kernel code with a streaming
 interface.
 
-![](./Images/opv1646834498428.png)
+![](./Images/block.png)
 
 ## Library
 

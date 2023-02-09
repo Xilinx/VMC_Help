@@ -3,7 +3,7 @@
 The Xilinx Register block models a D flip-flop-based register, having
 latency of one sample period.
 
-![](./Images/ial1555437346657.png)
+![](./Images/block.png)
 
 ## Block Interface
 

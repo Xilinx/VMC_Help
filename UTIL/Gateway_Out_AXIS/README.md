@@ -1,7 +1,7 @@
 # Gateway Out AXI Stream
 
   
-![](./Images/rtl1648735658179.png)  
+![](./Images/block.png)  
 
 ## Library
 

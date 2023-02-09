@@ -5,7 +5,7 @@ derived clock enable signals from Xilinx signals in Model Composer
 models.
 
   
-![](./Images/fcw1649232876866.png)  
+![](./Images/block.png)  
 
 The probe accepts any Xilinx signal type as input, and produces a Bool
 output signal. The Bool output can be used at any point in the design

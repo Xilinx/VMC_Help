@@ -4,7 +4,7 @@ The Xilinx Vitis™ HLS block allows the functionality of a Vitis HLS
 design to be included in a Model Composer design. The Vitis HLS design
 can include C, C++ and System C design sources.
 
-![](./Images/fcg1555437350820.png)
+![](./Images/block.png)
 
 There are two steps to the method of including a Vitis HLS design into
 Model Composer. The first step is to use the Vitis HLS RTL Packaging

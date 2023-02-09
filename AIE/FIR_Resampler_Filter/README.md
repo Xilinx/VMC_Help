@@ -1,7 +1,7 @@
 # FIR Resampler Filter
 
   
-![](./Images/wph1620992297759.png)  
+![](./Images/block.png)  
 
 ## Library
 

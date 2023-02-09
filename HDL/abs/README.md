@@ -2,7 +2,7 @@
 
 The Xilinx Absolute block outputs the absolute value of the input.
 
-![](./Images/pzf1555432824443.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

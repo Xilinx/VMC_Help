@@ -2,7 +2,7 @@
 
 The Xilinx Negate block computes the arithmetic negation of its input.
 
-![](./Images/jdm1555437347799.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

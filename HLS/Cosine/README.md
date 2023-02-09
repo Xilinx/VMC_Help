@@ -6,7 +6,7 @@ Computes cosine value for the input.
 
 Math Functions / Math Operations
 
-![](./Images/nuz1532103642836.png)
+![](./Images/block.png)
 
 ## Description
 

@@ -5,7 +5,7 @@ time-multiplexed output words where N is the ratio of number of input
 bits to output bits. The order of the output can be either least
 significant bit first or most significant bit first.
 
-![](./Images/vxi1555437375458.png)
+![](./Images/block.png)
 
 The following waveform illustrates the block's behavior:
 

@@ -4,7 +4,7 @@ The Xilinx Mult block implements a multiplier. It computes the product
 of the data on its two input ports, producing the result on its output
 port.
 
-![](./Images/rfh1555437328401.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

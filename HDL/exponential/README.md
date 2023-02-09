@@ -3,7 +3,7 @@
 This Xilinx Exponential block preforms the exponential operation on the
 input. Currently, only the floating-point data type is supported.
 
-![](./Images/ptr1555437346050.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

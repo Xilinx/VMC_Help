@@ -3,7 +3,7 @@
 The Xilinx Time Division Demultiplexer block accepts input serially and
 presents it to multiple outputs at a slower rate.
 
-![](./Images/qrq1555437363703.png)
+![](./Images/block.png)
 
 ## Block Interface
 

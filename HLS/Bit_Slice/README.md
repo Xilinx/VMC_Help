@@ -6,7 +6,7 @@ Extract a range of bits from a value
 
 Logic and Bit Operations
 
-![](./Images/fdv1532106555804.png)
+![](./Images/block.png)
 
 ## Description
 

@@ -7,7 +7,7 @@ outputs during a Simulink simulation. The same code is translated in a
 straightforward way into equivalent behavioral VHDL/Verilog when
 hardware is generated.
 
-![](./Images/kzv1555437359448.png)
+![](./Images/block.png)
 
 The block's Simulink® interface is derived from the MATLAB function
 signature, and from block mask parameters. There is one input port for

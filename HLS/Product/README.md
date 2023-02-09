@@ -6,7 +6,7 @@ Compute element-wise product of the input signals
 
 Math Functions / Math Operations
 
-![](./Images/shh1532103642765.png)
+![](./Images/block.png)
 
 ## Description
 

@@ -6,7 +6,7 @@ Performs element-wise modulus operation on the input signals
 
 Math Functions / Math Operations
 
-![](./Images/fbx1532103642776.png)
+![](./Images/block.png)
 
 ## Description
 

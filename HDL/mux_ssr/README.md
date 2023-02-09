@@ -14,7 +14,7 @@ The Vector Mux block implements a multiplexer. The block has one select
 input (type unsigned) and a user-configurable number of data bus inputs,
 ranging from 2 to 1024.
 
-![](./Images/xqf1555440990202.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

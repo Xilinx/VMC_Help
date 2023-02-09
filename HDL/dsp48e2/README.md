@@ -7,7 +7,7 @@ dedicated DSP resources. UltraScale devices have many dedicated
 low-power DSP slices, combining high speed with small size while
 retaining system design flexibility.
 
-![](./Images/wyn1555437351432.png)
+![](./Images/block.png)
 
 The DSP48E2 slice is effectively a superset of the DSP48E1 slice with
 these differences:

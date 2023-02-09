@@ -5,7 +5,7 @@ algorithm, a computationally efficient method for calculating the
 Discrete Fourier Transform (DFT). In addition, the block provides an
 AXI4-Stream-compliant interface.
 
-![](./Images/iuv1555437382025.png)
+![](./Images/block.png)
 
 The FFT computes an N-point forward DFT or inverse DFT (IDFT) where, N =
 2^(m), m = 3 - 16. For fixed-point inputs, the input data is a vector of

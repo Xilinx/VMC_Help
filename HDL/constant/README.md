@@ -5,7 +5,7 @@ value, or a Boolean value. This block is similar to the Simulink®
 constant block, but can be used to directly drive the inputs on HDL
 blocks.
 
-![](./Images/uzx1555432820661.png)
+![](./Images/block.png)
 
 ## DSP48 Instruction Mode
 

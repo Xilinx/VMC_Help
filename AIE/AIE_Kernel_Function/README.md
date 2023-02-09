@@ -1,7 +1,7 @@
 # AIE Kernel
 
 This block allows you to import an AI Engine kernel.  
-![](./Images/ewx1603103288492.png)  
+![](./Images/block.png)  
 
 ## Library
 

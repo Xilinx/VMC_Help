@@ -4,7 +4,7 @@ The Xilinx Dual Port RAM block implements a random access memory (RAM).
 Dual ports enable simultaneous access to the memory space at different
 sample rates using multiple data widths.
 
-![](./Images/wfc1555437354139.png)
+![](./Images/block.png)
 
 ## Block Interface
 

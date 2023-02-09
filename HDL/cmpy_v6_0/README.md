@@ -4,7 +4,7 @@ The Complex Multiplier block implements AXI4-Stream compliant,
 high-performance, optimized complex multipliers for devices based on
 user-specified options.
 
-![](./Images/ldx1555432814591.png)
+![](./Images/block.png)
 
 The two multiplicand inputs and optional rounding bit are input on
 independent AXI4-Stream channels as slave interfaces and the resulting

@@ -5,7 +5,7 @@ block in cases where the data type or complexity of the ports do not
 match.
 
   
-![](./Images/qxl1646960654153.png)  
+![](./Images/block.png)  
 
 ## Library
 

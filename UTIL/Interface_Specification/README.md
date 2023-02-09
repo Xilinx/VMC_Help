@@ -6,7 +6,7 @@ Specify the RTL interfaces for a subsystem
 
 Tools
 
-![](./Images/wce1532103642848.png)
+![](./Images/block.png)
 
 ## Description
 

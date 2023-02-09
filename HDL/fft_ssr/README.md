@@ -19,7 +19,7 @@ can stay high with no gaps.
 The `in_scale` input port is used if scaling is required. And
 `out_scale` is used in if there is an internal overflow.
 
-![](./Images/iqr1555440992159.png)
+![](./Images/block.png)
 
 ## Data Type Support
 

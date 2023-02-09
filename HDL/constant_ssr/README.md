@@ -14,7 +14,7 @@ value, a Boolean value, or a DSP48 instruction. This block is similar to
 the Simulink® Vector Constant block, but can be used to directly drive
 the inputs on HDL blocks.
 
-![](./Images/hhi1555441009583.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

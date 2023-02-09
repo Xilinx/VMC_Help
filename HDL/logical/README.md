@@ -5,7 +5,7 @@ fixed-point numbers. Operands are zero padded and sign extended as
 necessary to make binary point positions coincide; then the logical
 operation is performed and the result is delivered at the output port.
 
-![](./Images/dtg1555437337783.png)
+![](./Images/block.png)
 
 In hardware this block is implemented as synthesizable VHDL. If you
 build a tree of logical gates, this synthesizable implementation is best

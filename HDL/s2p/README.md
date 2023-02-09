@@ -5,7 +5,7 @@ creates a single output of a specified multiple of that size. The input
 series can be ordered either with the most significant word first or the
 least significant word first.
 
-![](./Images/czx1555437350244.png)
+![](./Images/block.png)
 
 The following waveform illustrates the block's behavior:
 

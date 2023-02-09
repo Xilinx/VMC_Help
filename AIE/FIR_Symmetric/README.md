@@ -1,7 +1,7 @@
 # FIR Symmetric
 
   
-![](./Images/uwg1621248897520.png)  
+![](./Images/block.png)  
 
 ## Library
 

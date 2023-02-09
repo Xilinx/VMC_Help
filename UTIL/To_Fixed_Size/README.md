@@ -5,7 +5,7 @@ size vector as output. The block copies samples from the input to the
 output.
 
   
-![](./Images/gwa1647642451658.png)  
+![](./Images/block.png)  
 
 ## Library
 

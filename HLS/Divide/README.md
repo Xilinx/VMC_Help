@@ -6,7 +6,7 @@ Element-wise division
 
 Math Functions / Math Operations
 
-![](./Images/inu1532106955867.png)
+![](./Images/block.png)
 
 ## Description
 

@@ -10,7 +10,7 @@ used to control processing of multiple data samples on each sample
 period. This blocks enable 1-D vector support for the primary block
 operation.
 
-![](./Images/ftz1555441017003.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

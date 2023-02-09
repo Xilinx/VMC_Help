@@ -6,7 +6,7 @@ Apply element-wise complex conjugate operation to the input signal
 
 Math Functions / Math Operations
 
-![](./Images/qul1532106955944.png)
+![](./Images/block.png)
 
 ## Description
 

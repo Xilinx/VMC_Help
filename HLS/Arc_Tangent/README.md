@@ -6,7 +6,7 @@ Compute element-wise arctangent function of an argument.
 
 Math Functions / Math Operations
 
-![](./Images/qjs1532106555835.png)
+![](./Images/block.png)
 
 ## Description
 

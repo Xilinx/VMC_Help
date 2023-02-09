@@ -5,7 +5,7 @@ signal. This block has no cost in hardware and can be used to resolve
 rates and/or types in situations where designer intervention is
 required.
 
-![](./Images/yij1555432823102.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

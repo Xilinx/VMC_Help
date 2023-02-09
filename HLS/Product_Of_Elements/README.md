@@ -6,7 +6,7 @@ Multiply the elements of the input signal
 
 Math Functions / Math Operations
 
-![](./Images/vtg1532103642841.png)
+![](./Images/block.png)
 
 ## Description
 

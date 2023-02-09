@@ -5,4 +5,4 @@ A signal's normalized sample period is not equivalent to its Simulink
 absolute sample period. In hardware, this block is implemented as a
 constant.
 
-![](./Images/gph1555437366925.png)
+![](./Images/block.png)

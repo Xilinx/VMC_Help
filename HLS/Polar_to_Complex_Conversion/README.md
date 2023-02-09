@@ -7,7 +7,7 @@ signals into a complex signal
 
 Math Functions / Math Operations
 
-![](./Images/fpl1532106955960.png)
+![](./Images/block.png)
 
 ## Description
 

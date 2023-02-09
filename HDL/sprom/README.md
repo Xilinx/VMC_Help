@@ -2,7 +2,7 @@
 
 The Xilinx ROM block is a single port read-only memory (ROM).
 
-![](./Images/lrc1555437338380.png)
+![](./Images/block.png)
 
 Values are stored by word and all words have the same arithmetic type,
 width, and binary point position. Each word is associated with exactly

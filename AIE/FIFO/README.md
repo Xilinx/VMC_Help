@@ -1,7 +1,7 @@
 # FIFO
 
   
-![](./Images/xrt1648734809336.png)  
+![](./Images/block.png)  
 
 ## Library
 

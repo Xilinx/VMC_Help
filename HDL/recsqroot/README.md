@@ -4,7 +4,7 @@ The Xilinx Reciprocal SquareRoot block performs the reciprocal
 squareroot on the input. Currently, only the floating-point data type is
 supported.
 
-![](./Images/jqg1555437366356.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

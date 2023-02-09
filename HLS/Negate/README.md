@@ -6,7 +6,7 @@ Perform element-wise unary minus operation on the input data
 
 Math Functions / Math Operations
 
-![](./Images/syx1532106555798.png)
+![](./Images/block.png)
 
 ## Description
 

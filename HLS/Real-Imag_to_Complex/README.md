@@ -6,7 +6,7 @@ Computes the complex output from real and imaginary input.
 
 Math Functions / Math Operations
 
-![](./Images/hwd1532102789447.png)
+![](./Images/block.png)
 
 ## Description
 

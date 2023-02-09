@@ -4,7 +4,7 @@ The Xilinx Inverter block calculates the bitwise logical complement of a
 fixed-point number. The block is implemented as a synthesizable VHDL
 module.
 
-![](./Images/gii1555437379691.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

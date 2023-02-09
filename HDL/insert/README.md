@@ -3,7 +3,7 @@
 The Xilinx Depuncture block allows you to insert an arbitrary symbol
 into your input data at the location specified by the depuncture code.
 
-![](./Images/ymd1555437372522.png)
+![](./Images/block.png)
 
 The Xilinx Depuncture block accepts data of type `UFixN_0` where N
 equals the length of insert string x (the number of ones in the

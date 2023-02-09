@@ -6,7 +6,7 @@ Select a subset of elements (submatrix) from matrix input
 
 Math Functions / Matrices and Linear Algebra
 
-![](./Images/eez1532106555765.png)
+![](./Images/block.png)
 
 ## Description
 

@@ -4,7 +4,7 @@ The Convert block converts each input sample to a number of a
 desired arithmetic type. For example, a number can be converted to a
 signed (two's complement) or unsigned value.
 
-![](./Images/svh1555432812423.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

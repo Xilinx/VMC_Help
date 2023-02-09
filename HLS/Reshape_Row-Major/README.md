@@ -6,7 +6,7 @@ Changes the input dimensions in row-major order.
 
 Math Functions/Math Operations
 
-![](./Images/iaq1541789774292.png)
+![](./Images/block.png)
 
 ## Description
 

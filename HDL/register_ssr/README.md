@@ -12,7 +12,7 @@ operation.
 The Vector Register block models a D flip-flop-based register, having
 latency of one sample period.
 
-![](./Images/cax1555441000471.png)
+![](./Images/block.png)
 
 ## Block Interface
 

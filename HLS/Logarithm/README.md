@@ -6,7 +6,7 @@ Compute element-wise natural logarithm of input
 
 Math Functions / Math Operations
 
-![](./Images/tfu1532106955918.png)
+![](./Images/block.png)
 
 ## Description
 

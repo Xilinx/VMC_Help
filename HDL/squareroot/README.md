@@ -3,7 +3,7 @@
 The Xilinx SquareRoot block performs the square root on the input.
 Currently, only the floating-point data type is supported.
 
-![](./Images/llu1555437329032.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

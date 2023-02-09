@@ -2,7 +2,7 @@
 
 The Xilinx FIFO block implements an FIFO memory queue.
 
-![](./Images/pdj1555437379109.png)
+![](./Images/block.png)
 
 Values presented at the module's data-input port are written to the next
 available empty memory location when the write-enable input is one. By

@@ -7,7 +7,7 @@ argument
 
 Math Functions / Math Operations
 
-![](./Images/mbj1532106555782.png)
+![](./Images/block.png)
 
 ## Description
 

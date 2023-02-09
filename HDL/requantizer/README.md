@@ -2,7 +2,7 @@
 
 The Xilinx Requantize block requantizes and scales its input signals.
 
-![](./Images/wqk1555437358026.png)
+![](./Images/block.png)
 
 The Xilinx Requantize block requantizes each input sample to a number of
 a desired fixed point precision output. For example, a fixed point

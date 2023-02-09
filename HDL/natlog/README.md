@@ -3,7 +3,7 @@
 The Xilinx Natural Logarithm block produces the natural logarithm of the
 input.
 
-![](./Images/kfd1555437365200.png)
+![](./Images/block.png)
 
 ## Block Parameters Dialog Box
 

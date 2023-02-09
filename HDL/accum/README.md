@@ -3,7 +3,7 @@
 The Xilinx® Accumulator block implements an adder or subtractor-based
 scaling accumulator.
 
-![](./Images/jgt1555432816241.png)
+![](./Images/block.png)
 
 The block's current input is accumulated with a scaled current stored
 value. The scale factor is a block parameter.

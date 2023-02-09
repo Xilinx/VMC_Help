@@ -5,7 +5,7 @@ be either positive or negative. The block has one input and one output.
 The scale operation has the effect of moving the binary point without
 changing the bits in the container
 
-![](./Images/lwy1555437356206.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

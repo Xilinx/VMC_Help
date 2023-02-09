@@ -6,7 +6,7 @@ Separates a vector input into a number of scalar and vector outputs.
 
 Signal Routing
 
-![](./Images/vxf1541724243097.png)
+![](./Images/block.png)
 
 ## Description
 

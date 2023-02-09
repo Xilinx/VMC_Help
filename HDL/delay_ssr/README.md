@@ -14,7 +14,7 @@ operation.
 
 The Vector Delay block implements a fixed delay of L cycles.
 
-![](./Images/csd1555441015079.png)
+![](./Images/block.png)
 
 The delay value is displayed on the block in the form z^(-L), which is
 the Z-transform of the block’s transfer function. Any data provided to

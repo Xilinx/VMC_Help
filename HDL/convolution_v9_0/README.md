@@ -6,7 +6,7 @@ this block performs forward error correction (FEC) in digital
 communication systems. This block adheres to the AMBA® AXI4-Stream
 standard.
 
-![](./Images/soq1555432819892.png)
+![](./Images/block.png)
 
 Values are encoded using a linear feed forward shift register which
 computes modulo-two sums over a sliding window of input data, as shown

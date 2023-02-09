@@ -1,7 +1,7 @@
 # FIR Interpolation Stream
 
   
-![](./Images/dkk1648716461930.png)  
+![](./Images/block.png)  
 
 ## Library
 

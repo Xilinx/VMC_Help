@@ -5,7 +5,7 @@ computes the product of the data on its two input channels, producing
 the result on its output channel. For complex multiplication the input
 and output have two components: real and imaginary.
 
-![](./Images/beu1555437367483.png)
+![](./Images/block.png)
 
 The Product block is ideal for generating a simple scalar or complex
 multiplier. If your implementation will use more complicated features

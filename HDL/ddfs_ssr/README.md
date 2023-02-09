@@ -20,7 +20,7 @@ on/off the phase noise dithering feature. The CONJ input port is set to
 and O_IM, generate Real and Imaginary components of the desired vector
 output frequency signal.
 
-![](./Images/kmq1555440996352.png)
+![](./Images/block.png)
 
 ## Data Type Support
 

@@ -16,7 +16,7 @@ operation.
 The Vector Down Sample block reduces the sample rate at the point where
 the block is placed in your design.
 
-![](./Images/asv1555440976901.png)
+![](./Images/block.png)
 
 The input signal is sampled at even intervals, at either the beginning
 (first value), or end (last value) of a frame. The sampled value is

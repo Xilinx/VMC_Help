@@ -1,6 +1,6 @@
 # Window Function Stream
 
-![](./Images/fqn1664289463224.png)
+![](./Images/block.png)
 
 ## Library
 

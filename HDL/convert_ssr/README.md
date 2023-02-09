@@ -17,7 +17,7 @@ The Vector Convert block converts each input sample to a number of a
 desired arithmetic type. For example, a number can be converted to a
 signed (two's complement) or unsigned value.
 
-![](./Images/svq1555441007018.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

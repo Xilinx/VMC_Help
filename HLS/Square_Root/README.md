@@ -6,7 +6,7 @@ Element-wise computation of the square root for a given argument
 
 Math Functions / Math Operations
 
-![](./Images/bdo1532103642792.png)
+![](./Images/block.png)
 
 ## Description
 

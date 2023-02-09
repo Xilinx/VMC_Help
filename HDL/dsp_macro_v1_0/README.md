@@ -5,7 +5,7 @@ the DSP48E1, DSP48E2, and DSP58 blocks. Using this block instead of
 using a technology-specific DSP slice helps makes the design more
 portable between Xilinx technologies.
 
-![](./Images/upn1555437362547.png)
+![](./Images/block.png)
 
 The DSP Macro provides a simplified interface to the XtremeDSP slice by
 the abstraction of all opmode, subtract, alumode, and inmode controls to

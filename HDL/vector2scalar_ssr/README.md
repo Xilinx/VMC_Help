@@ -8,7 +8,7 @@ output.
 The Vector2Scalar block does the bit level concatenation of all the
 elements of the input vector to produce a scalar output.
 
-![](./Images/coj1555441007641.png)
+![](./Images/block.png)
 
 For example, if the input vector is \[0 1 2 7\] of type `Ufix_3_0`, and
 the SSR parameter is 4, it produces Scalar output 3720 of type

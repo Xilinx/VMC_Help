@@ -19,7 +19,7 @@ This Vector FIR Compiler block provides a way to generate highly
 parameterizable, area-efficient, high-performance FIR filters with an
 AXI4-Stream-compliant interface.
 
-![](./Images/adb1555440980811.png)
+![](./Images/block.png)
 
 ## AXI Ports that are Unique to this Block
 

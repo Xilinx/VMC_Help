@@ -1,7 +1,7 @@
 # FIR Halfband Interpolator Stream
 
   
-![](./Images/qpm1648715631196.png)  
+![](./Images/block.png)  
 
 ## Library
 

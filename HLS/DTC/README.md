@@ -11,7 +11,7 @@ Wrap or Saturate to Overflow.
 
 Signal Attributes
 
-![](./Images/rqg1532104004151.png)
+![](./Images/block.png)
 
 ## Description
 

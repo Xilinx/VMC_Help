@@ -4,7 +4,7 @@ The Xilinx CMult block implements a gain operator, with output equal to
 the product of its input by a constant value. This value can be a
 MATLAB® expression that evaluates to a constant.
 
-![](./Images/wbk1555432823748.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

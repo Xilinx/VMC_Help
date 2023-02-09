@@ -4,7 +4,7 @@ The Xilinx Mux block implements a multiplexer. The block has one select
 input (type unsigned) and a user-configurable number of data bus inputs,
 ranging from 2 to 32.
 
-![](./Images/njn1555437344445.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

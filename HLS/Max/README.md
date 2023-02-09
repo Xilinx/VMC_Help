@@ -7,7 +7,7 @@ multiple inputs.
 
 Math Functions/Math Operations
 
-![](./Images/bpx1541786708230.png)
+![](./Images/block.png)
 
 ## Description
 

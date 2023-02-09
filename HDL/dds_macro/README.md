@@ -3,7 +3,7 @@
 The Xilinx Sine Wave block generates a sine wave, using simulation time
 as the time source.
 
-![](./Images/bvx1555437369305.png)
+![](./Images/block.png)
 
 The Xilinx Sine Wave block outputs a sinusoidal waveform. Outputs from
 the block can be a sine wave, a cosine wave, or both. When implemented

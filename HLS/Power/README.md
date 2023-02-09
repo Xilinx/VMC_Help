@@ -6,7 +6,7 @@ Compute the element-wise power function
 
 Math Functions / Math Operations
 
-![](./Images/wjm1532104004158.png)
+![](./Images/block.png)
 
 ## Description
 

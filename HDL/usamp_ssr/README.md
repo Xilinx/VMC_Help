@@ -17,7 +17,7 @@ The Vector Up Sample block increases the sample rate at the point where
 the block is placed in your design. The output sample period is l/n,
 where l is the input sample period, and n is the sampling rate.
 
-![](./Images/yxv1555440978968.png)
+![](./Images/block.png)
 
 The input signal is up sampled so that within an input sample frame, an
 input sample is either presented at the output n times if samples are

@@ -3,7 +3,7 @@
 The Xilinx Time Division Multiplexer block multiplexes values presented
 at input ports into a single faster rate output stream.
 
-![](./Images/jll1555437329595.png)
+![](./Images/block.png)
 
 ## Block Interface
 

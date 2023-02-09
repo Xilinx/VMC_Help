@@ -6,7 +6,7 @@ Performs signum function (sign extraction) on the input.
 
 Math Functions/Math Operations
 
-![](./Images/shi1540918467605.png)
+![](./Images/block.png)
 
 ## Description
 

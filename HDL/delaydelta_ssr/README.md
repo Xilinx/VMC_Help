@@ -26,7 +26,7 @@ parameter.
 
 The Vector Delay Delta block implements a fixed delay of L cycles.
 
-![](./Images/bex1555441005205.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

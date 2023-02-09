@@ -7,7 +7,7 @@ top input on the block.
 
 Math Functions / Matrices and Linear Algebra
 
-![](./Images/krq1532106955875.png)
+![](./Images/block.png)
 
 ## Description
 

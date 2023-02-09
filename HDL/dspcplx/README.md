@@ -4,7 +4,7 @@ The Xilinx DSPCPLX block is one of the advanced features provided by
 Versal® architecture DSP, which is the optimized solution to deal with
 18x18 complex multiplication followed by 58 + 58 accumulation operation.
 
-![](./Images/lpf1600174939832.png)
+![](./Images/block.png)
 
 Versal architecture DSP supports an 18-bit complex multiplier with two
 back-to-back DSP58s in the same tile pair together. The two DSP58s with

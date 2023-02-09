@@ -1,7 +1,7 @@
 # FIR Symmetric Decimation Stream
 
   
-![](./Images/dzl1648670194942.png)  
+![](./Images/block.png)  
 
 ## Library
 

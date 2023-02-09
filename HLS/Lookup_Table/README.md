@@ -6,7 +6,7 @@ Perform one-dimensional lookup operation with an input index.
 
 Lookup Tables
 
-![](./Images/ivc1532104004144.png)
+![](./Images/block.png)
 
 ## Description
 

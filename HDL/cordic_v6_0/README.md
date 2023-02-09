@@ -3,7 +3,7 @@
 The Xilinx CORDIC block implements a generalized coordinate rotational
 digital computer (CORDIC) algorithm and is AXI compliant.
 
-![](./Images/ops1555432813091.png)
+![](./Images/block.png)
 
 The CORDIC core implements the following equation types:
 

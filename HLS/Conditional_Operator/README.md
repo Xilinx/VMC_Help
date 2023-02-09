@@ -8,7 +8,7 @@ data ports, and the second input port is the control port.
 
 Signal Routing
 
-![](./Images/dtc1532106955943.png)
+![](./Images/block.png)
 
 ## Description
 

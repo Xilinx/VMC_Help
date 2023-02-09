@@ -3,7 +3,7 @@
 The Vector Assert block asserts a user-defined sample rate and/or type
 on Vector inputs.
 
-![](./Images/hsm1555176301126.png)
+![](./Images/block.png)
 
 Hardware notes: In hardware this blocks costs nothing.
 

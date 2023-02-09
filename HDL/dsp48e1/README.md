@@ -8,7 +8,7 @@ increased maximum frequency. The high performance allows designers to
 implement multiple slower operations in a single DSP48E1 slice using
 time-multiplexing methods.
 
-![](./Images/jbj1555437333608.png)
+![](./Images/block.png)
 
 The DSP48E1 slice supports many independent functions. These functions
 include multiply, multiply accumulate (MACC), multiply add, three-input

@@ -6,7 +6,7 @@ Element-wise computation of the reciprocal for a given argument
 
 Math Functions / Math Operations
 
-![](./Images/bbd1532103642767.png)
+![](./Images/block.png)
 
 ## Description
 

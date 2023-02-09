@@ -4,7 +4,7 @@ The Xilinx Divider Generator block creates a circuit for integer
 division based on Radix-2 non-restoring division, or High-Radix division
 with prescaling.
 
-![](./Images/ggc1555437332895.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

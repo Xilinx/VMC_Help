@@ -4,7 +4,7 @@ The Xilinx FFT (Fast Fourier Transform) block takes a block of time
 domain waveform data and computes the frequency of the sinusoid signals
 that make up the waveform.
 
-![](./Images/lrd1555437353552.png)
+![](./Images/block.png)
 
 FFT is a fast implementation of the discrete Fourier transform. The data
 of the time domain signal is sampled at discrete intervals. The sampling

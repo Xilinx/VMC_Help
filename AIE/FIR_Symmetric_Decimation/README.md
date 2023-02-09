@@ -1,7 +1,7 @@
 # FIR Symmetric Decimation
 
   
-![](./Images/jcd1621242865989.png)  
+![](./Images/block.png)  
 
 ## Library
 

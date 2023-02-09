@@ -6,7 +6,7 @@ Compute the inverse of a matrix using QR factorization
 
 Math Functions / Matrices and Linear Algebra
 
-![](./Images/dut1532102789446.png)
+![](./Images/block.png)
 
 ## Description
 

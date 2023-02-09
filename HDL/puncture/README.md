@@ -3,7 +3,7 @@
 The Xilinx Puncture block removes a set of user-specified bits from the
 input words of its data stream.
 
-![](./Images/jzm1555437349025.png)
+![](./Images/block.png)
 
 Based on the Puncture Code parameter, a binary vector that specifies
 which bits to remove, it converts input data of type `UFixN_0` (where N

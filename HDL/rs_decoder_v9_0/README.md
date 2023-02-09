@@ -7,7 +7,7 @@ license.
 The Reed-Solomon (RS) codes are block-based error correcting codes with
 a wide range of applications in digital communications and storage.
 
-![](./Images/iac1647547426690.png)
+![](./Images/block.png)
 
 They are used to correct errors in many systems such as digital storage
 devices, wireless/ mobile communications, and digital video

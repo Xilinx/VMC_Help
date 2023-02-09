@@ -4,7 +4,7 @@ The Xilinx FDATool block provides an interface to the FDATool software
 available as part of the MATLAB® Signal Processing Toolbox.
 
   
-![](./Images/kbu1649233392803.png)  
+![](./Images/block.png)  
 
 The block does not function properly and should not be used if the
 Signal Processing Toolbox is not installed. This block provides a means

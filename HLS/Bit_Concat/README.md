@@ -6,7 +6,7 @@ Perform bitwise concatenation of input values into a single output value
 
 Logic and Bit Operations
 
-![](./Images/wcl1532107405796.png)
+![](./Images/block.png)
 
 ## Description
 

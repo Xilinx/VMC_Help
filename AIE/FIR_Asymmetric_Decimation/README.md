@@ -1,7 +1,7 @@
 # FIR Asymmetric Decimation
 
   
-![](./Images/rmi1620983823614.png)  
+![](./Images/block.png)  
 
 ## Library
 

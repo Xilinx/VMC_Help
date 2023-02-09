@@ -10,7 +10,7 @@ used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector data support for the primary block
 operation.
 
-![](./Images/ueg1555441001060.png)
+![](./Images/block.png)
 
 The [Vector Reinterpret](vectorreinterpret.html) block provides
 capabilities that can extend the functionality of the Vector Concat

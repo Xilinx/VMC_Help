@@ -4,7 +4,7 @@ The Xilinx MultAdd block performs both fixed-point and floating-point
 multiply and addition with the a and b inputs used for the
 multiplication and the c input for addition or subtraction.
 
-![](./Images/ebf1568152781176.png)
+![](./Images/block.png)
 
 If the MultAdd inputs are floating point, then inputs a,b, and c must be
 of the same data type. If the inputs are fixed point, then the port c

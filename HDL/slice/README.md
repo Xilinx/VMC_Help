@@ -5,7 +5,7 @@ your input data and create a new data value. This value is presented as
 the output from the block. The output data type is unsigned with its
 binary point at zero.
 
-![](./Images/sho1555437380863.png)
+![](./Images/block.png)
 
 The block provides several mechanisms by which the sequence of bits can
 be specified. If the input type is known at the time of

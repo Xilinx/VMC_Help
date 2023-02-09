@@ -6,7 +6,7 @@ Perform an element-wise transpose operation on the input signal
 
 Math Functions / Matrices and Linear Algebra
 
-![](./Images/sam1532106955950.png)
+![](./Images/block.png)
 
 ## Description
 

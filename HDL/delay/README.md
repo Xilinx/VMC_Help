@@ -2,7 +2,7 @@
 
 The Xilinx Delay block implements a fixed delay of L cycles.
 
-![](./Images/cne1555432826543.png)
+![](./Images/block.png)
 
 The delay value is displayed on the block in the form z^(-L), which is
 the Z-transform of the block’s transfer function. Any data provided to

@@ -5,7 +5,7 @@ input number is negative, the output of the block is -1; otherwise, the
 output is 1. The output is a signed fixed-point integer that is 2 bits
 long. The block has one input and one output.
 
-![](./Images/huo1555437339003.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

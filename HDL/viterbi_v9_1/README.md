@@ -7,7 +7,7 @@ license.
 Data encoded with a convolution encoder can be decoded using the Xilinx
 Viterbi decoder block. This block adheres to the AXI4-Stream standard.
 
-![](./Images/xgo1647543498213.png)
+![](./Images/block.png)
 
 There are two steps to the decode process. The first weighs the cost of
 incoming data against all possible data input combinations; either a

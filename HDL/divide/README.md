@@ -4,7 +4,7 @@ The Xilinx Divide block performs both fixed-point and floating-point
 division with the a input being the dividend and the b input the
 divisor. Both inputs must be of the same data type.
 
-![](./Images/vic1571752965079.png)
+![](./Images/block.png)
 
 ## Block Parameters
 

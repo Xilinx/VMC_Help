@@ -4,7 +4,7 @@ The Xilinx DDS (Direct Digital Synthesizer) Compiler block implements
 high performance, optimized Phase Generation and Phase to Sinusoid
 circuits with AXI4-Stream compliant interfaces for supported devices.
 
-![](./Images/sur1555432819067.png)
+![](./Images/block.png)
 
 The core sources sinusoidal waveforms for use in many applications. A
 DDS consists of a Phase Generator and a SIN/COS Lookup Table (phase to

@@ -1,7 +1,7 @@
 # FIR Asymmetric Decimation Stream
 
   
-![](./Images/xvn1648669820567.png)  
+![](./Images/block.png)  
 
 ## Library
 

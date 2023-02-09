@@ -6,7 +6,7 @@ Perform an element-wise exponential value of the input
 
 Math Functions / Math Operations
 
-![](./Images/fsn1532106955932.png)
+![](./Images/block.png)
 
 ## Description
 
