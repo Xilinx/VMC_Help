@@ -93,6 +93,3 @@ Window size. The dimensions of the output are as follows:
 - Min+Mwin-1, Min+Nwin-1 if Full is selected for Output size.
 - Min, Nin if Same as Input is selected for Output size.
 - Min-Mwin+1, Min-Nwin+1 if Valid is selected for Output size.
-
-**Parent topic:** [HLS
-Blocks](model-composer-blocks-gmf1515450958696.html)
