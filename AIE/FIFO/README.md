@@ -1,5 +1,5 @@
 # FIFO
-
+This block allows specification of the FIFO depth on a particular path.
   
 ![](./Images/block.png)  
 
@@ -19,5 +19,5 @@ combination of the two.
 
 ## Parameters
 
-FIFO Depth (32-bit words)  
-Should be a positive integer value and the default value is '0'.
+#### FIFO Depth (32-bit words)  
+* Should be a positive integer value and the default value is '0'.
