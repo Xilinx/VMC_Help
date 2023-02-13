@@ -45,7 +45,6 @@ a positive integer.
   | cint32    | \[0, log2(FFT Size) + 31\] |
   | cfloat    | 0                          |
 
-  Table 1. Valid Parameters
 
 #### SSR:
 
