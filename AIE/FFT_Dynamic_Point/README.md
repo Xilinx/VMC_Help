@@ -1,5 +1,5 @@
 # FFT Dynamic Point
-
+FFT Dynamic Point implementation targeted for AI Engines.
   
 ![](./Images/block.png)  
 
@@ -15,7 +15,7 @@ windows. Each window must be preceded by a 256-bit header which
 describes run-time parameters of that window. The format of the header
 is described below.
 
-Note:
+**Note**:
 
 - Every input frame must be appended by a header.
 - If the FFT size (N) is smaller than the frame size, the block takes
@@ -28,13 +28,68 @@ Note:
   data samples. As a result, the overheads incurred during kernel
   triggering are reduced and overall performance is increased
 
-Figure: Header Format
 
 ![](./Images/iiu1648641803037.png)
 
-[TABLE]
-
-Table 1. Header Format
+<table 
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead class="thead" style="text-align:left;">
+<tr class="header row">
+<th id="d136037e92" class="entry cellrowborder"
+style="vertical-align: top">Index</th>
+<th id="d136037e95" class="entry cellrowborder"
+style="vertical-align: top">Field Name</th>
+<th id="d136037e98" class="entry cellrowborder"
+style="vertical-align: top">Description</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="odd row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e92 ">1</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e95 ">Direction</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e98 "><ul>
+<li>0 = Inverse FFT</li>
+<li>1= Forward FFT</li>
+</ul></td>
+</tr>
+<tr class="even row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e92 ">2</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e95 ">Point size (radix 2 stages)</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e98 ">Point size described as power of 2. For example,
+value '<code class="ph codeph">5</code>' describes a point size of
+'<code class="ph codeph">32'</code></td>
+</tr>
+<tr class="odd row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e92 ">3</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e95 ">Reserved</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e98 ">Reserved</td>
+</tr>
+<tr class="even row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e92 ">4</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e95 ">Status (output only)</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d136037e98 "><ul>
+<li>0 = Legal point size</li>
+<li>1 = Illegal point size</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
 
 ## Example Header Format
 
@@ -56,38 +111,38 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 
 ## Parameters
 
-Main  
-Input Data Type/Output Data Type:
+### Main  
+#### Input Data Type/Output Data Type:
 
 - Describes the type of individual data samples input/output of the
   dynamic point FFT. It can be `cint16`, `cint32`, `cfloat` types.
 
-FFT Maximum Size:
+#### FFT Maximum Size:
 
 - Specifies the maximum FFT size that is supported by Dynamic point FFT.
   You can perform different lengths of FFT on different input data
   windows. It must be a power of `2` with a minimum value of `16`. The
   maximum value supported by the library element is `65536`.
 
-Input Window Size:
+#### Input Window Size:
 
 - Specifies the number of samples in the input window excluding the
   header. The value must be in the range `8` to `1024` and the default
   value is `64`.
 
-Scale Output down by 2^:
+#### Scale Output down by 2^:
 
 - Describes the power of 2 shift down applied to the accumulation of FIR
   terms before output. It must be in the range `0` to `61`.
 
-Advanced  
-Target Output Throughput (MSPS):
+### Advanced  
+#### Target Output Throughput (MSPS):
 
 - Specifies the output sampling rate of the DDS function in Mega Samples
   per Second (MSPS). The value must be in the range `1` to `1000` and
   the default value is `200`.
 
-Specify the Number of Cascade Stages:
+#### Specify the Number of Cascade Stages:
 
 - When this option is not enabled, the tool will determine the FFT
   configuration that best achieves the specified input sampling rate.
