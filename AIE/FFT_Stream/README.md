@@ -1,5 +1,5 @@
 # FFT Stream
-
+Stream-based FFT implementation targeted for AI Engines.
   
 ![](./Images/block.png)  
 
@@ -16,25 +16,25 @@ a positive integer.
 
 ## Parameters
 
-Main  
-Input Data Type/Output Data Type:
+### Main  
+#### Input Data Type/Output Data Type:
 
 - Describes the type of individual data samples input/output of the
   stream FFT. It can be `cint16`, `cint32`, `cfloat` types.
 
-FFT Size:
+#### FFT Size:
 
 - This is an unsigned integer which describes the point size of the
   transformation. This must be 2^N, where N is in the range `4` to `11`
   inclusive.
 
-Input Frame Size (Number of Samples):
+#### Input Frame Size (Number of Samples):
 
 - Specifies the number of samples for a particular frame. The value must
   be in the range `8` to `1024` and the default value is `64`. The FFT
   operation will not begin until this number of samples has been input.
 
-Scale Output Down by 2^:
+#### Scale Output Down by 2^:
 
 - Describes the power of 2 shift down applied before output. The
   following table shows the range of valid values of this parameter for
@@ -47,7 +47,7 @@ Scale Output Down by 2^:
 
   Table 1. Valid Parameters
 
-SSR:
+#### SSR:
 
 - This parameter is intended to improve performance and support FFT
   sizes beyond the limitations of a single tile. For an SSR value of 'n'
@@ -58,14 +58,14 @@ SSR:
   point size 2048. The specified FFT size and SSR values should be such
   that (2 \* FFT size / SSR) is in the range of 16 and 4096.
 
-Advanced  
-Target Output Throughput (MSPS):
+### Advanced  
+#### Target Output Throughput (MSPS):
 
 - Specifies the output sampling rate of the FFT function in Mega Samples
   per Second (MSPS). The value must be in the range `1` to `1000` and
   the default value is `200`.
 
-Specify the Number of Cascade Stages:
+#### Specify the Number of Cascade Stages:
 
 - When this option is not enabled, the tool will determine the FFT
   configuration that best achieves the specified input sampling rate.
