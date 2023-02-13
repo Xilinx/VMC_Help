@@ -70,7 +70,7 @@ stage of processing. The rounding options are as follows:
 7.  Round convergent to even
 8.  Round convergent to odd
 
-Modes 2 to 7 round to the nearest integer. They differ only in how they
+* Modes 2 to 7 round to the nearest integer. They differ only in how they
 round for the value of 0.5.
 
 ### Advanced  
