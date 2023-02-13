@@ -1,5 +1,5 @@
 # FFT Dynamic Point Stream
-
+FFT Dynamic Point Stream implementation targeted for AI Engines.
   
 ![](./Images/block.png)  
 
@@ -17,7 +17,7 @@ below. The block has two stream ports per subframe processor to maximize
 performance. The specified value for SSR parameter should be of the form
 2^N, where N is a positive integer.
 
-Note:
+**Note**:
 
 - Every input frame must be appended by a header.
 - If the FFT size (N) is smaller than the frame size, the block takes
@@ -30,13 +30,69 @@ Note:
   data samples. As a result, the overheads incurred during kernel
   triggering are reduced and overall performance is increased.
 
-Figure: Header Format
+
 
 ![](./Images/vid1664274231317.png)
 
-[TABLE]
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 25%" />
+<col style="width: 58%" />
+</colgroup>
+<thead class="thead" style="text-align:left;">
+<tr class="header row">
+<th id="d117526e90" class="entry cellrowborder"
+style="vertical-align: top">Index</th>
+<th id="d117526e93" class="entry cellrowborder"
+style="vertical-align: top">Field Name</th>
+<th id="d117526e96" class="entry cellrowborder"
+style="vertical-align: top">Description</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="odd row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e90 ">1</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e93 ">Direction</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e96 "><ul>
+<li>0 = Inverse FFT</li>
+<li>1= Forward FFT</li>
+</ul></td>
+</tr>
+<tr class="even row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e90 ">2</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e93 ">Point size (radix 2 stages)</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e96 ">Point size described as power of 2. For example,
+value '5' describes a point size of '32'</td>
+</tr>
+<tr class="odd row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e90 ">3</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e93 ">Reserved</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e96 ">Reserved</td>
+</tr>
+<tr class="even row">
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e90 ">4</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e93 ">Status (output only)</td>
+<td class="entry cellrowborder" style="vertical-align: top"
+headers="d117526e96 "><ul>
+<li>0 = Legal point size</li>
+<li>1 = Illegal point size</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
 
-Table 1. Header Description
 
 ## Example Header Format
 
@@ -59,30 +115,30 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 
 ## Parameters
 
-Main  
-Input/Output Data Type:
+### Main  
+#### Input/Output Data Type:
 
 - Describes the type of individual data samples input/output of the
   dynamic point FFT. It can be cint16, cint32, cfloat types.
 
-FFT Maximum Size:
+#### FFT Maximum Size:
 
 - Specifies the maximum FFT size that is supported by Dynamic Point FFT.
   You can perform different lengths of FFT on different input data
   frames. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by the library element is 65536.
 
-Input Window Size:
+#### Input Window Size:
 
 - Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default
   value is 60.
 
-Scale Output down by 2^:
+#### Scale Output down by 2^:
 
 - Describes the power of 2 shift down applied before output.
 
-SSR:
+#### SSR:
 
 - This parameter is intended to improve performance and support FFT
   sizes beyond the limitations of a single tile. For an SSR value of 'n'
@@ -93,14 +149,14 @@ SSR:
   point size 2048. The specified FFT size and SSR values should be such
   that FFT size / SSR should not exceed 2048.
 
-Advanced  
-Target Output Throughput (MSPS):
+### Advanced  
+#### Target Output Throughput (MSPS):
 
 - Specifies the output sampling rate of the FFT function in Mega Samples
   per Second (MSPS). The value must be in the range 1 to 1000 and the
   default value is 200.
 
-Specify the Number of Cascade Stages:
+#### Specify the Number of Cascade Stages:
 
 - When this option is disabled, the tool will determine the FFT
   configuration that best achieves the specified input sampling rate.
