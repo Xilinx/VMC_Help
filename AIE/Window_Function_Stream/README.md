@@ -1,5 +1,7 @@
 # Window Function Stream
 
+Window function implementation targeted for AI Engines.
+
 ![](./Images/block.png)
 
 ## Library
@@ -17,13 +19,12 @@ only allow 2^n inputs/output ports.
 
 ## Parameters
 
-Main  
-Input/Output Data Type:
+#### Input/Output Data Type:
 
 - Describes the type of individual data samples input/output of the
   dynamic point FFT. It can be cint16, cint32, and cfloat types.
 
-Filter coefficients data type:
+#### Filter coefficients data type:
 
 - Describes the type of individual coefficients of the filter taps. It
   should be one of int16, int32, or float and must also satisfy the
@@ -37,20 +38,20 @@ Filter coefficients data type:
   - Filter coefficients data type must be a float type if the
     Input/Output data type is a float type.
 
-Filter coefficients:
+#### Filter coefficients:
 
 - Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
   where 'N' is a positive integer that represents the filter length and
   must be in the range 4 to 240 inclusive.
 
-FFT Maximum Size:
+#### FFT Maximum Size:
 
 - Specifies the maximum FFT size that is supported by Dynamic point FFT.
   You can perform different lengths of FFT on different input data
   frames. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by the library element is 65536.
 
-Use dynamic point size:
+#### Use dynamic point size:
 
 - Describes whether to support run time selectable point size for the
   frames of data within the AIE window to be processed.
@@ -66,17 +67,17 @@ Use dynamic point size:
   must be in the range FFT_POINT_SIZE + FFT_POINT_SIZE/2 to
   2\*FFT_POINT_SIZE.
 
-Input Window Size:
+#### Input Window Size:
 
 - Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default
   value is 64.
 
-Scale Output down by 2^:
+#### Scale Output down by 2^:
 
 - Describes the power of 2 shift down applied before output.
 
-SSR:
+#### SSR:
 
 - This parameter is intended to improve performance and support FFT
   sizes beyond the limitations of a single tile. For an SSR value of 'n'
