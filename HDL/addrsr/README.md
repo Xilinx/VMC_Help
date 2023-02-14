@@ -51,7 +51,7 @@ Register icon) are as follows:
 
 
 
-## Block Parameters
+## Parameters
 
 The Block Parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.
