@@ -15,7 +15,7 @@ This block enables 1-D vector support for the primary block operation.
 #### Precision  
 * This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating-point arithmetic output will always be
-Full precision.
+Full precision:
 
   * Full:  
 The block uses sufficient precision to represent the result without
