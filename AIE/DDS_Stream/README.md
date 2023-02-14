@@ -1,5 +1,5 @@
 # DDS Stream
-This block implements the stream-based Direct Digital Synthesizer (DDS) targeted for AI Engines.
+
   
 ![](./Images/block.png)  
 
