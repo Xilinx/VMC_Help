@@ -22,7 +22,7 @@ follows:
 A subtractor-based accumulator replaces addition of the current input
 b(n) with subtraction.
 
-## Block Parameters
+## Parameters
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
