@@ -9,7 +9,7 @@ This block enables 1-D vector support for the primary block operation.
 
 ![](./Images/block.png)
 
-## Block Parameters
+## Parameters
 
 Double-click the icon in your Simulink® model to open the Block
 Parameters dialog box.
