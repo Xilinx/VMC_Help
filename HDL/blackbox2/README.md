@@ -1,9 +1,11 @@
 # Black Box
 
-The Model Composer Black Box block provides a way to incorporate
+The Vitis Model Composer Black Box block provides a way to incorporate
 hardware description language (HDL) models into Model Composer.
 
 ![](./Images/block.png)
+
+## Description
 
 The block is used to specify both the simulation behavior in Simulink
 and the implementation files to be used during code generation with
@@ -20,7 +22,7 @@ In addition to incorporating HDL into a Model Composer model, the black
 box can be used to define the implementation associated with an external
 simulation model.
 
-## Requirements on HDL for Black Boxes
+### Requirements on HDL for Black Boxes
 
 Every HDL component associated with a black box must adhere to the
 following Model Composer requirements and conventions:
@@ -53,7 +55,7 @@ following Model Composer requirements and conventions:
     the sample rates that drive it in Simulink.
   - Falling-edge triggered output data cannot be used.
 
-IMPORTANT: Model Composer does not import `.dcp` files as an IP for
+**IMPORTANT**: Model Composer does not import .dcp files as an IP for
 blackbox flows.
 
 To understand how clocks work for black boxes, it helps to understand
@@ -88,21 +90,20 @@ port visible in Model Composer; the work around is to add a separate
 enable port to the top-level HDL and AND this signal with the actual
 clock enable signal.
 
-## The Black Box Configuration Wizard
+### The Black Box Configuration Wizard
 
 The Back Box Configuration Wizard is a tool that makes it easy to
 associate a Verilog or VHDL component to a black box. The Black Box
 Configuration Wizard is invoked whenever a black box is added to a
 model.
 
-IMPORTANT: To use the wizard, copy the .v or .vhd file that defines the
+**IMPORTANT**: To use the wizard, copy the .v or .vhd file that defines the
 HDL component for a black box into the directory that contains the
 model.
 
 When a new black box is added to a model, the Configuration Wizard opens
 automatically. An example is shown in the figure below.
 
-Figure: Black Box Configuration Wizard Example
 
 ![](./Images/rhz1649416068382.png)
 
@@ -115,7 +116,7 @@ occasionally the function must be tailored by hand. Whether the
 configuration M-function needs to be modified depends on how complex the
 HDL is.
 
-## The Black Box Configuration M-Function
+### The Black Box Configuration M-Function
 
 A black box must describe its interface (e.g., ports and generics) and
 its implementation to Model Composer. It does this through the
@@ -198,7 +199,7 @@ that can be applied to this_block are specified in Appendix A. A good
 way to generate example configuration M-function is to run the
 Configuration Wizard (described below) on simple VHDL entities.
 
-## Sample Periods
+### Sample Periods
 
 The output ports, clocks, and clock enables on a black box must be
 assigned sample periods in the configuration M-function. If these
@@ -230,22 +231,19 @@ input.
 
 ## Block Parameters
 
-The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-Block Configuration M-Function  
-Specifies the name of the configuration M-function that is associated to
+#### Block Configuration M-Function  
+* Specifies the name of the configuration M-function that is associated to
 the black box. Ordinarily the file containing the function is stored in
 the directory containing the model, but it can be stored anywhere on the
 MATLAB path. Note that MATLAB limits all function names (including those
 for configuration M-functions) to 63 characters. Do not include the file
 extension (".m" or ".p") in the edit box.
 
-Simulation Mode  
-Tells the mode (Inactive, Vivado Simulator, or External co-simulator) to
+#### Simulation Mode  
+* Tells the mode (Inactive, Vivado Simulator, or External co-simulator) to
 use for simulation. When the mode is Inactive, the black box ignores all
 input data and writes zeroes to its output ports. Usually for this mode
 the black box should be coupled using a Variant Subsystem. For more
@@ -258,7 +256,7 @@ for HDL co-simulation. For co-simulation of Verilog black boxes, a mixed
 mode license is required. This is necessary because the portion of the
 design that Model Composer writes is VHDL.
 
-Note: When you use the Questa simulator, the Default Radix used is
+**Note**: When you use the Questa simulator, the Default Radix used is
 Binary.
 
 Usually the co-simulator block for a black box is stored in the same
