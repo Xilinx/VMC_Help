@@ -20,7 +20,7 @@ follows:
 ![](./Images/caz1630484762781.png)  
 
 A subtractor-based accumulator replaces addition of the current input
-`b(n)` with subtraction.
+b(n) with subtraction.
 
 ## Block Parameters
 
@@ -31,11 +31,11 @@ Parameters specific to the Basic tab are as follows:
 * This determines whether the block is adder- or subtractor-based.
 
 #### Fixed-Point Output Precision  
-* Number of bits  
+* #### Number of bits  
   * Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-* Overflow  
+* #### Overflow  
   * Refer to the section [Overflow and
 Quantization](common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322).
 
@@ -45,7 +45,7 @@ Quantization](common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1
   1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, or 1/256.
 
 #### Optional Ports  
-* Provide synchronous reset port  
+* #### Provide synchronous reset port  
   * Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted, the block goes back to its initial state. However,
 when a floating point accumulator is used, the output will be NAN during
@@ -54,28 +54,28 @@ available on the block. The reset signal must run at a multiple of the
 block's sample rate. The signal driving the reset port must be Boolean.
 
 #### Bypass Option on Reset  
-* Reinitialize with input 'b'  
+* #### Reinitialize with input 'b'  
   * When selected, the output of the accumulator is reset to the data on
-input port `b`. When not selected, the output of the accumulator is
+input port b. When not selected, the output of the accumulator is
 reset to zero. This option is available only when the block has a reset
 port. Using this option has clock speed implications if the accumulator
 is in a multirate system. In this case the accumulator is forced to run
-at the system rate because the clock enable (`CE`) signal driving the
+at the system rate because the clock enable (CE) signal driving the
 accumulator runs at the system rate, and the reset to input operation is
-a function of the `CE` signal.
+a function of the CE signal.
 
 ### Internal Precision tab  
 Parameters specific to the Internal Precision tab are as follows:
 
 #### Floating Point Precision  
-* Input MSB Max  
+* #### Input MSB Max  
   * The Most Significant Bit of the largest number that can be accepted.
 
-* Output MSB Max  
+* #### Output MSB Max  
   * The MSB of the largest result. It can be up to 54 bits greater than the
 Input MSB.
 
-* Output LSB Min  
+* #### Output LSB Min  
   * The Least Significant Bit of the smallest number that can be accepted.
 It is also the LSB of the accumulated result.
 
