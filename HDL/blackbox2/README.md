@@ -41,7 +41,7 @@ following Model Composer requirements and conventions:
   significant bit, as in std_logic_vector(7 downto 0), and not
   std_logic_vector(0 to 7).
 - Top level ports with signed binary types in Verilog RTL are not
-  supported (for example, `18'sb1010`). Only unsigned binary types are
+  supported (for example, 18'sb1010). Only unsigned binary types are
   supported.
 - Clock and clock enable ports must be named according to the
   conventions described below.
@@ -170,8 +170,8 @@ is invoked, Simulink might not yet know enough for such code to be
 executed.
 
 To avoid the problems that arise when information is not yet known (in
-particular, exceptions), BlockDescriptor members `inputTypesKnown` and
-`inputRatesKnown` can be used. These are used to determine if Simulink
+particular, exceptions), BlockDescriptor members inputTypesKnown and
+inputRatesKnown can be used. These are used to determine if Simulink
 is able, at the moment, to provide information about the input port
 types and rates respectively. The following code illustrates this point.
 
@@ -194,7 +194,7 @@ black box configuration M-function automatically makes this_block
 available through an input argument. In MATLAB, this_block is the object
 that represents the black box, and is used inside the configuration
 M-function to test and configure the black box. Every this_block object
-is an instance of the `SysgenBlockDescriptor` MATLAB class. The methods
+is an instance of the SysgenBlockDescriptor MATLAB class. The methods
 that can be applied to this_block are specified in Appendix A. A good
 way to generate example configuration M-function is to run the
 Configuration Wizard (described below) on simple VHDL entities.
