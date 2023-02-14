@@ -24,7 +24,7 @@ error.
 reduced number of total bits and/or fractional bits.
 
 #### Fixed-point Output Type  
-* Arithmetic type  
+* Arithmetic type:  
   * Signed (2’s comp)  
    The output is a Signed (2’s complement) number.
 
