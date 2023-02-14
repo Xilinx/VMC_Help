@@ -39,6 +39,7 @@ a positive integer.
 - Describes the power of 2 shift down applied before output. The
   following table shows the range of valid values of this parameter for
   different data types.
+  
   | Data Type | Scale output down by 2^    |
   |-----------|----------------------------|
   | cint16    | \[0, log2(FFT Size) + 15\] |
