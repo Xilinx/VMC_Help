@@ -1,5 +1,4 @@
 # FFT
-This block implements the FFT targeted for AI Engines which use rounding method and saturates the output samples on overflow.
   
 ![](./Images/block.png)  
 
