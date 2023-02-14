@@ -1,7 +1,5 @@
 # DDS
 
-This block implements the Direct Digital Synthesizer (DDS) targeted for
-AI Engines.
   
 ![](./Images/block.png)  
 
