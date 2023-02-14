@@ -1,10 +1,11 @@
 # BitBasher
 
-The Xilinx BitBasher block performs slicing, concatenation and
+The BitBasher block performs slicing, concatenation and
 augmentation of inputs attached to the block.
 
 ![](./Images/block.png)
 
+## Description
 The operation to be performed is described using Verilog syntax which is
 detailed in this document. The block can have up to four output ports.
 The number of output ports is equal to the number of expressions. The
@@ -12,28 +13,23 @@ block does not cost anything in hardware.
 
 ## Block Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-BitBasher Expression  
-Bitwise manipulation expression based on Verilog Syntax. Multiple
+#### BitBasher Expression  
+* Bitwise manipulation expression based on Verilog Syntax. Multiple
 expressions (limited to a maximum of 4) can be specified using new line
 as a separator between expressions.
 
-&nbsp;
+### Output Type tab  
+* #### Output  
+  This refers to the port on which the data type is specified.
 
-Output Type tab  
-Output  
-This refers to the port on which the data type is specified.
+* #### Output type  
+  Arithmetic type to be forced onto the corresponding output.
 
-Output type  
-Arithmetic type to be forced onto the corresponding output.
-
-Binary Point  
-Binary point location to be forced onto the corresponding output.
+* #### Binary Point  
+  Binary point location to be forced onto the corresponding output.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
@@ -46,9 +42,7 @@ constructs that perform bitwise manipulations including slice,
 concatenation, and repeat operators. All specified expressions must
 adhere to the following template expression:
 
-``` pre
-output_var = {bitbasher_expr}
-```
+`output_var = {bitbasher_expr}`
 
 `bitbasher_expr`: A slice, concat or repeat expression based on Verilog
 syntax or simply an input port identifier.
@@ -59,26 +53,25 @@ expression bitbasher_expr.
 
 ## Concat
 
-``` pre
-output_var = {bitbasher_expr1, bitbasher_expr2, bitbasher_expr3}
-```
+`output_var = {bitbasher_expr1, bitbasher_expr2, bitbasher_expr3}`
 
 The concat syntax is supported as shown above. Each of `bitbasher_exprN`
 could either be an expression or simply an input port identifier.
 
 The following are some examples of this construct:
 
-``` pre
-a1 = {b,c,d,e,f,g} 
-a2 = {e} 
-a3 = {b,{f,c,d},e}
-```
+`a1 = {b,c,d,e,f,g}` 
+
+`a2 = {e}` 
+
+`a3 = {b,{f,c,d},e}`
+
 
 ## Slice
 
 ``` pre
-output_var = {port_identifier[bound1:bound2]}(1) 
-output_var = {port_identifier[bitN]}(2)
+output_var = {port_identifier[bound1:bound2]}...(1) 
+output_var = {port_identifier[bitN]}...(2)
 ```
 
 `port_identifier`: The input port from which the bits are extracted.
@@ -159,7 +152,7 @@ a2 = {b[7:3],2{c,d}}
 
 The above expression is equivalent to `a2 = {b[7:3],c,d,c,d}`.
 
-Constants
+### Constants
 
 Binary Constant: N'bbin_const
 
