@@ -1,17 +1,16 @@
 # Addressable Shift Register
 
-The Xilinx Addressable Shift Register block is a variable-length shift
+The Addressable Shift Register block is a variable-length shift
 register in which any register in the delay chain can be addressed and
 driven onto the output data port.
 
 ![](./Images/block.png)
 
+## Description 
 The block operation is most easily thought of as a chain of registers,
 where each register output drives an input to a multiplexer, as shown
 below. The multiplexer select line is driven by the address port (addr).
 The output data port is shown below as q.
-
-Figure: Output Data Port
 
   
 ![](./Images/jrq1538085427893.png)  
@@ -19,7 +18,7 @@ Figure: Output Data Port
 The Addressable Shift Register has a maximum depth of 1024 and a minimum
 depth of 2. The address input port, therefore, can be between 1 and 10
 bits (inclusive). The data input port width must be between 1 and 255
-bits (inclusive) when this block is implemented with the Xilinx
+bits (inclusive) when this block is implemented with the
 LogiCORE™ (for example, when Use behavioral HDL (otherwise use core) is
 unchecked).
 
@@ -44,33 +43,33 @@ Register icon) are as follows:
 | addr   | address                  |
 | en     | enable signal (optional) |
 
-Table 1. Input Signals
+
 
 | Signal | Description |
 |--------|-------------|
 | q      | data output |
 
-Table 2. Output Signals
+
 
 ## Block Parameters
 
 The Block Parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.
 
-Basic tab  
+### Basic tab  
 Parameters specific to this block are as follows:
 
-Infer maximum latency (depth) using address port width  
-You can choose to allow the block to automatically determine the depth
+#### Infer maximum latency (depth) using address port width  
+* You can choose to allow the block to automatically determine the depth
 or maximum latency of the shift-register-based on the bit-width of the
 address port.
 
-Maximum latency (depth)  
-In the case that the maximum latency is not inferred (previous option),
+#### Maximum latency (depth)  
+* In the case that the maximum latency is not inferred (previous option),
 the maximum latency can be set explicitly.
 
-Initial value vector  
-Specifies the initial register values. When the vector is longer than
+#### Initial value vector  
+* Specifies the initial register values. When the vector is longer than
 the shift register depth, the vector's trailing elements are discarded.
 When the shift register is deeper than the vector length, the shift
 register's trailing registers are initialized to zero.
@@ -79,11 +78,11 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
 
-Implementation tab  
+### Implementation tab  
 Parameters specific to this block are as follows:
 
-Optimization  
-You can choose to optimize for Resource (minimum area) or for Speed
+#### Optimization  
+* You can choose to optimize for Resource (minimum area) or for Speed
 (maximum performance).
 
 ## LogiCORE Documentation
