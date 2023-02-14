@@ -13,7 +13,7 @@ Super Sample Rate (SSR): Use this configurable GUI parameter to control
 processing of multiple data samples on every sample period. This block
 enables 1-D vector data support for the primary block operation.
 
-## Block Parameters
+## Parameters
 
 
 Parameters specific to this block are as follows:
