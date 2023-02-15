@@ -16,7 +16,7 @@ Within each channel, operands, and the results are represented in signed
 two’s complement format. The operand widths. and the result width are
 parameterizable.
 
-## Block Parameters
+## Parameters
 
 ### Basic tab  
 Parameters specific to the Basic tab are:
