@@ -6,7 +6,7 @@ Compute element-wise four-quadrant inverse tangent of input signal.
 
 Math Functions / Math Operations
 
-![](./Images/gvl1532106555781.png)
+![](./Images/block.png)
 
 ## Description
 
