@@ -31,4 +31,4 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
 
-The Concat block does not use a Xilinx LogiCORE™.
+The Concat block does not use a LogiCORE™.
