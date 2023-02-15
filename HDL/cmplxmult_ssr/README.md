@@ -3,6 +3,8 @@
 The Vector Complex Multiplier block supports multiplication of two
 complex input vectors.
 
+![](./Images/block.png)
+
 ## Description
 
 Super Sample Rate (SSR): This configurable GUI parameter is primarily
@@ -10,7 +12,7 @@ used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector support for the primary block
 operation.
 
-![](./Images/block.png)
+
 
 ## Data Type Support
 
