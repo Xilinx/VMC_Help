@@ -35,16 +35,21 @@ vertical-align: middle;
 <h2 id="description">Description</h2>
 <p>This block implements the FIR Fractional Asymmetric Interpolation and
 Decimation filter targeted for AI Engines.</p>
-<p>Note: The FIR Fractional Interpolation block has been deprecated.
-Please use the FIR Resampler Filter block instead.</p>
+<p><strong>Note</strong>: The FIR Fractional Interpolation block has
+been deprecated. Please use the FIR Resampler Filter block instead.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input/Output data type<br />
-Describes the type of individual data samples input to and output from
-the filter function. int16, cint16, int32, cint32, float, cfloat.</p>
-<p>Filter coefficients data type<br />
-Describes the type of individual coefficients of the filter taps. It
-should be one of int16, cint16, int32, cint32, float, cfloat and must
+<h3 id="main">Main</h3>
+<h4 id="inputoutput-data-type">Input/Output data type</h4>
+<ul>
+<li>Describes the type of individual data samples input to and output
+from the filter function. int16, cint16, int32, cint32, float,
+cfloat.</li>
+</ul>
+<h4 id="filter-coefficients-data-type">Filter coefficients data
+type</h4>
+<ul>
+<li><p>Describes the type of individual coefficients of the filter taps.
+It should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
@@ -55,33 +60,50 @@ also a 32-bit type.</li>
 Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
+</ul></li>
 </ul>
-<p>Specify filter coefficients via input port<br />
-When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via input port.</p>
-<p>Filter coefficients<br />
-This field should be specified with the asymmetric filter coefficients
-and must be in the range 4 to 240 inclusive.</p>
-<p>Interpolation factor<br />
-An unsigned integer which describes the Interpolation factor of the
-filter. It must be in the range 3 to 16.</p>
-<p>Decimation factor<br />
-An unsigned integer which describes the decimation factor of the filter.
-It must be in the range 2 to 16. The decimation factor should be less
-that the interpolation factor and should not be divisible by the
-interpolation factor.</p>
-<p>Input window size (Number of samples)<br />
-Describes the number of samples used as an input to the filter function.
-The number of values in the output window will be the input window size
-multipled by the Interpolation factor and divided by the decimation
-factor. In this instance it would result in a fraction number of output
-samples which would be rounded down.</p>
-<p>Scale output down by 2^<br />
-Describes the power of 2 shift down applied to the accumulation of FIR
-terms before output. It must be in the range 0 to 61.</p>
-<p>Rounding mode<br />
-Describes the selection of rounding to be applied during the shift down
-stage of processing. The rounding options are as follows:</p>
+<h4 id="specify-filter-coefficients-via-input-port">Specify filter
+coefficients via input port</h4>
+<ul>
+<li>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via input port.</li>
+</ul>
+<h4 id="filter-coefficients">Filter coefficients</h4>
+<ul>
+<li>This field should be specified with the asymmetric filter
+coefficients and must be in the range 4 to 240 inclusive.</li>
+</ul>
+<h4 id="interpolation-factor">Interpolation factor</h4>
+<ul>
+<li>An unsigned integer which describes the Interpolation factor of the
+filter. It must be in the range 3 to 16.</li>
+</ul>
+<h4 id="decimation-factor">Decimation factor</h4>
+<ul>
+<li>An unsigned integer which describes the decimation factor of the
+filter. It must be in the range 2 to 16. The decimation factor should be
+less that the interpolation factor and should not be divisible by the
+interpolation factor.</li>
+</ul>
+<h4 id="input-window-size-number-of-samples">Input window size (Number
+of samples)</h4>
+<ul>
+<li>Describes the number of samples used as an input to the filter
+function. The number of values in the output window will be the input
+window size multipled by the Interpolation factor and divided by the
+decimation factor. In this instance it would result in a fraction number
+of output samples which would be rounded down.</li>
+</ul>
+<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+<ul>
+<li>Describes the power of 2 shift down applied to the accumulation of
+FIR terms before output. It must be in the range 0 to 61.</li>
+</ul>
+<h4 id="rounding-mode">Rounding mode</h4>
+<ul>
+<li>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</li>
+</ul>
 <ol type="1">
 <li>Floor (truncate)</li>
 <li>Ceiling</li>
@@ -92,13 +114,17 @@ stage of processing. The rounding options are as follows:</p>
 <li>Round convergent to even</li>
 <li>Round convergent to odd</li>
 </ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
-<p>Advanced<br />
-Number of cascade stages<br />
-This determines the number of kernels over which the function will be
-split. A higher number of cascade stages will result in higher
+<ul>
+<li>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<h4 id="number-of-cascade-stages">Number of cascade stages</h4>
+<ul>
+<li>This determines the number of kernels over which the function will
+be split. A higher number of cascade stages will result in higher
 throughput at the expense of resources. The value must be in the range 1
-to 9.</p>
+to 9.</li>
+</ul>
 </body>
 </html>

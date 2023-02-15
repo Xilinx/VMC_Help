@@ -36,19 +36,25 @@ vertical-align: middle;
 <p>This block implements the Direct Digital Synthesizer (DDS) targeted
 for AI Engines.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Output data type<br />
-Describes the types of individual data samples output of the DDS
+<h3 id="main">Main</h3>
+<h4 id="output-data-type">Output data type</h4>
+<ul>
+<li>Describes the types of individual data samples output of the DDS
 function. The supported data types are <code>cint16</code> and
-<code>cfloat</code>.</p>
-<p>Output window size (Number of samples)<br />
-Specifies the number of samples in output window. The value must be in
-the range 8 to 1024 and the default value is <code>32</code>.</p>
-<p>Phase increment<br />
-Specifies the phase increment between samples. The value must be in the
-range <code>0</code> to <code>2^31</code> and the default value is
-<code>0</code>. Input value <code>2^31</code> corresponds to Pi (i.e.,
-<code>180</code>).</p>
+<code>cfloat</code>.</li>
+</ul>
+<h4 id="output-window-size-number-of-samples">Output window size (Number
+of samples)</h4>
+<ul>
+<li>Specifies the number of samples in output window. The value must be
+in the range 8 to 1024 and the default value is <code>32</code>.</li>
+</ul>
+<h4 id="phase-increment">Phase increment</h4>
+<ul>
+<li><p>Specifies the phase increment between samples. The value must be
+in the range <code>0</code> to <code>2^31</code> and the default value
+is <code>0</code>. Input value <code>2^31</code> corresponds to Pi
+(i.e., <code>180</code>).</p>
 <p>Phase increment is calculated using the formula (Fo*(2^N)) / Fs</p>
 <p>Where:</p>
 <ul>
@@ -56,14 +62,20 @@ range <code>0</code> to <code>2^31</code> and the default value is
 <li><code>N</code> = 32, which represents the accumulator width, and it
 is fixed</li>
 <li><code>Fs</code> = Sampling frequency</li>
+</ul></li>
 </ul>
-<p>Sample time<br />
-Specifies the sample time for the block output port. The default value
-is <code>-1</code>.</p>
-<p>Advanced<br />
-Target output throughput (MSPS)<br />
-Specifies the output sampling rate of the DDS function in Mega Samples
-per Second (MSPS). The value must be in the range <code>1</code> to
-<code>1000</code> and the default value is <code>200</code>.</p>
+<h4 id="sample-time">Sample time</h4>
+<ul>
+<li>Specifies the sample time for the block output port. The default
+value is <code>-1</code>.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<h4 id="target-output-throughput-msps">Target output throughput
+(MSPS)</h4>
+<ul>
+<li>Specifies the output sampling rate of the DDS function in Mega
+Samples per Second (MSPS). The value must be in the range <code>1</code>
+to <code>1000</code> and the default value is <code>200</code>.</li>
+</ul>
 </body>
 </html>

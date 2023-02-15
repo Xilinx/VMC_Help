@@ -36,28 +36,29 @@ vertical-align: middle;
 <p>This block implements the stream-based Mixer targeted for AI
 Engines.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input/Output Data Type:</p>
+<h3 id="main">Main</h3>
+<h4 id="inputoutput-data-type">Input/Output Data Type:</h4>
 <ul>
 <li>Describes the type of individual data samples output of the DDS
-function. It should be <code>cint16</code>, <code>cint32</code>, or
-<code>cfloat</code>.</li>
+function. It should be cint16, cint32, or cfloat.</li>
 </ul>
-<p>Input Frame Size (Number of Samples):</p>
+<h4 id="input-frame-size-number-of-samples">Input Frame Size (Number of
+Samples):</h4>
 <ul>
 <li>Specifies the number of samples in the input frame. The value must
-be in the range <code>8</code> to <code>1024</code> and the default
-value is <code>32</code>.</li>
+be in the range 8 to 1024 and the default value is 32.</li>
 </ul>
-<p>Mixer Mode:</p>
+<h4 id="mixer-mode">Mixer Mode:</h4>
 <ul>
-<li><p>This specifies the mixer operation modes. Two modes are supported
-by Mixer function: Single Input Mode<br />
+<li>This specifies the mixer operation modes. Two modes are supported by
+Mixer function:
+<ul>
+<li><p>Single Input Mode:<br />
 This is a DDS plus Mixer for a single data input port. Each data input
 sample is complex multiplied with the corresponding DDS sample to create
 a modulated signal that is written to the output window. This is the
-default Mixer mode.</p>
-<p>Dual Input Mode<br />
+default Mixer mode.</p></li>
+<li><p>Dual Input Mode:<br />
 This is a special configuration for symmetrical carriers and two data
 input ports. Each data sample of the first input is complex multiplied
 with the corresponding DDS sample to create a modulated signal. Each
@@ -66,19 +67,20 @@ conjugate (which is equivalent to a signal rotating in the opposite
 direction) of the DDS sample to create a second modulated signal. These
 two modulated signals are added together and written to the output
 window.</p></li>
+</ul></li>
 </ul>
-<p>Number of parallel input/output (SSR):</p>
+<h4 id="number-of-parallel-inputoutput-ssr">Number of parallel
+input/output (SSR):</h4>
 <ul>
 <li>This parameter specifies the number of input (or output) ports and
 must be of the form 2^N, where N is a non-negative integer.</li>
 </ul>
-<p>Phase Increment:</p>
+<h4 id="phase-increment">Phase Increment:</h4>
 <ul>
 <li>Specifies the phase increment between samples. The value must be in
-the range <code>0</code> to <code>2^31</code> and the default value is
-<code>0</code>. Input value <code>2^31</code> corresponds to Pi (i.e.,
-180). Phase increment is calculated using the formula (Fo*(2^N)) / Fs
-where:
+the range 0 to 2^31 and the default value is 0. Input value 2^31
+corresponds to Pi (i.e., 180). Phase increment is calculated using the
+formula (Fo*(2^N)) / Fs where:
 <ul>
 <li>Fo = Output frequency.</li>
 <li>N = 32, which represents the accumulator width, and it is
@@ -86,17 +88,17 @@ fixed.</li>
 <li>Fs = Sampling frequency.</li>
 </ul></li>
 </ul>
-<p>Initial Phase Offset:</p>
+<h4 id="initial-phase-offset">Initial Phase Offset:</h4>
 <ul>
-<li>Specifies the initial phase offset. The default value is
-<code>0</code>.</li>
+<li>Specifies the initial phase offset. The default value is 0.</li>
 </ul>
-<p>Advanced<br />
-Target Output Throughput (MSPS):</p>
+<h3 id="advanced">Advanced</h3>
+<h4 id="target-output-throughput-msps">Target Output Throughput
+(MSPS):</h4>
 <ul>
 <li>Specifies the output sampling rate of the Mixer function in Mega
-Samples per Second (MSPS). The value must be in the range <code>1</code>
-to <code>1000</code> and the default value is <code>200</code>.</li>
+Samples per Second (MSPS). The value must be in the range 1 to 1000 and
+the default value is 200.</li>
 </ul>
 </body>
 </html>

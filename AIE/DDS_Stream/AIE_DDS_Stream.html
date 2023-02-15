@@ -36,24 +36,26 @@ vertical-align: middle;
 <p>This block implements the stream-based Direct Digital Synthesizer
 (DDS) targeted for AI Engines.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Output Data Type:</p>
+<h3 id="main">Main</h3>
+<h4 id="output-data-type">Output Data Type:</h4>
 <ul>
 <li>Describes the type of individual data samples output of the DDS
 function. It should be <code>cint16</code> or <code>cfloat</code>.</li>
 </ul>
-<p>Output Frame Size (Number of Samples):</p>
+<h4 id="output-frame-size-number-of-samples">Output Frame Size (Number
+of Samples):</h4>
 <ul>
 <li>Specifies the number of samples in the output frame. The value must
 be in the range <code>8</code> to <code>1024</code> and the default
 value is <code>32</code>.</li>
 </ul>
-<p>Number of Parallel Outputs (SSR):</p>
+<h4 id="number-of-parallel-outputs-ssr">Number of Parallel Outputs
+(SSR):</h4>
 <ul>
 <li>This parameter specifies the number of output ports and must be of
 the form 2^N, where N is a non-negative integer.</li>
 </ul>
-<p>Phase Increment:</p>
+<h4 id="phase-increment">Phase Increment:</h4>
 <ul>
 <li>Specifies the phase increment between samples. The value must be in
 the range <code>0</code> to <code>2^31</code> and the default value is
@@ -67,18 +69,18 @@ fixed.</li>
 <li>Fs = Sampling frequency.</li>
 </ul></li>
 </ul>
-<p>Initial Phase Offset:</p>
+<h4 id="initial-phase-offset">Initial Phase Offset:</h4>
 <ul>
 <li>Specifies the initial phase offset. The default value is
 <code>0</code>.</li>
 </ul>
-<p>Sample Time:</p>
+<h4 id="sample-time">Sample Time:</h4>
 <ul>
 <li>Specifies the sample time for the block output port. The default
 value is <code>-1</code>.</li>
 </ul>
-<p>Advanced<br />
-Target Output Throughput (MSPS):</p>
+<h3 id="advanced">Advanced</h3>
+<p>Target Output Throughput (MSPS):</p>
 <ul>
 <li>Specifies the output sampling rate of the DDS function in Mega
 Samples per Second (MSPS). The value must be in the range <code>1</code>

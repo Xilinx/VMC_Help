@@ -36,34 +36,50 @@ vertical-align: middle;
 <p>This block implements the FFT targeted for AI Engines which use
 rounding method and saturates the output samples on overflow.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input/Output data type<br />
-Describes the type of individual data samples input to and output from
-the filter function. Supported types are cint16, cint32, and cfloat.</p>
-<p>FFT size<br />
-This is an unsigned integer which describes the point size of the
+<h3 id="main">Main</h3>
+<h4 id="inputoutput-data-type">Input/Output data type</h4>
+<ul>
+<li>Describes the type of individual data samples input to and output
+from the filter function. Supported types are cint16, cint32, and
+cfloat.</li>
+</ul>
+<h4 id="fft-size">FFT size</h4>
+<ul>
+<li>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 4 to 11
 inclusive. However, for <code>cint16</code> datatype, the FFT size can
 be 2^12, provided the FFT receives and outputs data to/from kernels on
-the same processor.</p>
-<p>Note: To understand more on achieving the 4096 point size FFT, refer
-to the AI Engine examples in <a href="https://github.com/Xilinx/Vitis_Model_Composer">GitHub</a>.</p>
-<p>Input Window Size(Number of Samples)<br />
-Describes the number of samples used as an input to the FFT.</p>
-<p>Scale output down by 2^<br />
-Describes the power of 2 to scale the result by prior to output.</p>
-<p>Advanced<br />
-Target input throughput<br />
+the same processor.</li>
+</ul>
+<p><strong>Note</strong>: To understand more on achieving the 4096 point
+size FFT, refer to the AI Engine examples in <a href="https://github.com/Xilinx/Vitis_Model_Composer">GitHub</a>.</p>
+<h4 id="input-window-sizenumber-of-samples">Input Window Size(Number of
+Samples)</h4>
+<ul>
+<li>Describes the number of samples used as an input to the FFT.</li>
+</ul>
+<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+<ul>
+<li>Describes the power of 2 to scale the result by prior to
+output.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<ul>
+<li>Target input throughput<br />
 Specifies the rate at which data samples should be processed. The
-default value is <code>200</code>.</p>
-<p>Specify the number of cascade stages<br />
-When this option is not enabled, the tool will determine the filter
+default value is <code>200</code>.</li>
+</ul>
+<h4 id="specify-the-number-of-cascade-stages">Specify the number of
+cascade stages</h4>
+<p>When this option is not enabled, the tool will determine the filter
 configuration that best achieves the specified input sampling rate. When
 this option is enabled and the &#39;Number of cascade stages&#39; is specified,
 the tool will guarantee the same. In such cases, however, the specified
 sample rate constraint may not be achieved.</p>
-<p>Number of cascade stages<br />
-This determines the number of kernels the FFT will be divided over in
-series to improve throughput.</p>
+<h4 id="number-of-cascade-stages">Number of cascade stages</h4>
+<ul>
+<li>This determines the number of kernels the FFT will be divided over
+in series to improve throughput.</li>
+</ul>
 </body>
 </html>

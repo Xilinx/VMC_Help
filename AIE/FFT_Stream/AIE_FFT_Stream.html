@@ -29,6 +29,7 @@ vertical-align: middle;
 <h1 class="title">FFT Stream</h1>
 </header>
 <h1 id="fft-stream">FFT Stream</h1>
+<p>Stream-based FFT implementation targeted for AI Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <h2 id="library">Library</h2>
 <p>AI Engine/DSP/Stream IO</p>
@@ -38,36 +39,57 @@ block has two stream ports per subframe processor to maximize
 performance. The specified value for SSR parameter should be of the form
 2^N, where N is a positive integer.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input Data Type/Output Data Type:</p>
+<h3 id="main">Main</h3>
+<h4 id="input-data-typeoutput-data-type">Input Data Type/Output Data
+Type:</h4>
 <ul>
 <li>Describes the type of individual data samples input/output of the
 stream FFT. It can be <code>cint16</code>, <code>cint32</code>,
 <code>cfloat</code> types.</li>
 </ul>
-<p>FFT Size:</p>
+<h4 id="fft-size">FFT Size:</h4>
 <ul>
 <li>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range <code>4</code>
 to <code>11</code> inclusive.</li>
 </ul>
-<p>Input Frame Size (Number of Samples):</p>
+<h4 id="input-frame-size-number-of-samples">Input Frame Size (Number of
+Samples):</h4>
 <ul>
 <li>Specifies the number of samples for a particular frame. The value
 must be in the range <code>8</code> to <code>1024</code> and the default
 value is <code>64</code>. The FFT operation will not begin until this
 number of samples has been input.</li>
 </ul>
-<p>Scale Output Down by 2^:</p>
+<h4 id="scale-output-down-by-2">Scale Output Down by 2^:</h4>
 <ul>
 <li><p>Describes the power of 2 shift down applied before output. The
 following table shows the range of valid values of this parameter for
-different data types. | Data Type | Scale output down by 2^ |
-|-----------|----------------------------| | cint16 | [0, log2(FFT Size)
-+ 15] | | cint32 | [0, log2(FFT Size) + 31] | | cfloat | 0 |</p>
-<p>Table 1. Valid Parameters</p></li>
+different data types.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Data Type</th>
+<th>Scale output down by 2^</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cint16</td>
+<td>[0, log2(FFT Size) + 15]</td>
+</tr>
+<tr class="even">
+<td>cint32</td>
+<td>[0, log2(FFT Size) + 31]</td>
+</tr>
+<tr class="odd">
+<td>cfloat</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></li>
 </ul>
-<p>SSR:</p>
+<h4 id="ssr">SSR:</h4>
 <ul>
 <li>This parameter is intended to improve performance and support FFT
 sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
@@ -78,14 +100,16 @@ inputs and there will be 8 subframe FFTs each of point size 2048. The
 specified FFT size and SSR values should be such that (2 * FFT size /
 SSR) is in the range of 16 and 4096.</li>
 </ul>
-<p>Advanced<br />
-Target Output Throughput (MSPS):</p>
+<h3 id="advanced">Advanced</h3>
+<h4 id="target-output-throughput-msps">Target Output Throughput
+(MSPS):</h4>
 <ul>
 <li>Specifies the output sampling rate of the FFT function in Mega
 Samples per Second (MSPS). The value must be in the range <code>1</code>
 to <code>1000</code> and the default value is <code>200</code>.</li>
 </ul>
-<p>Specify the Number of Cascade Stages:</p>
+<h4 id="specify-the-number-of-cascade-stages">Specify the Number of
+Cascade Stages:</h4>
 <ul>
 <li>When this option is not enabled, the tool will determine the FFT
 configuration that best achieves the specified input sampling rate. When

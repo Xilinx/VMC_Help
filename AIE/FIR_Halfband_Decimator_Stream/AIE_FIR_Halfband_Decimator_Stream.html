@@ -30,6 +30,8 @@ vertical-align: middle;
 </header>
 <h1 id="fir-halfband-decimator-stream">FIR Halfband Decimator
 Stream</h1>
+<p>This block implements the stream-based FIR Halfband Decimator filter
+targeted for AI Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <h2 id="library">Library</h2>
 <p>AI Engine/DSP/Stream IO</p>
@@ -37,13 +39,19 @@ Stream</h1>
 <p>This block implements the stream-based FIR Halfband Decimator filter
 targeted for AI Engines.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input data type/Output data type<br />
-Describes the type of individual data samples input to and output from
-the filter function. int16, cint16, int32, cint32, float, cfloat.</p>
-<p>Filter coefficients data type<br />
-Describes the type of individual coefficients of the filter taps. It
-should be one of int16, cint16, int32, cint32, float, cfloat and must
+<h3 id="main">Main</h3>
+<h4 id="input-data-typeoutput-data-type">Input data type/Output data
+type</h4>
+<ul>
+<li>Describes the type of individual data samples input to and output
+from the filter function. int16, cint16, int32, cint32, float,
+cfloat.</li>
+</ul>
+<h4 id="filter-coefficients-data-type">Filter coefficients data
+type</h4>
+<ul>
+<li><p>Describes the type of individual coefficients of the filter taps.
+It should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
@@ -54,24 +62,38 @@ also a 32-bit type.</li>
 Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
+</ul></li>
 </ul>
-<p>Specify filter coefficients via input port<br />
-When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via input port.</p>
-<p>Filter coefficients<br />
-Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
+<h4 id="specify-filter-coefficients-via-input-port">Specify filter
+coefficients via input port</h4>
+<ul>
+<li>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via input port.</li>
+</ul>
+<h4 id="filter-coefficients">Filter coefficients</h4>
+<ul>
+<li>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where &#39;N&#39; is a positive integer that represents the filter length and
-must be in the range 4 to 240 inclusive.</p>
-<p>Input frame size (Number of samples)<br />
-Describes the number of samples used as an input to the filter function.
-The number of values in the output window will be the Input window size
-divided by two by virtue of the halfband decimation factor.</p>
-<p>Scale output down by 2^<br />
-Describes the power of 2 shift down applied to the accumulation of FIR
-terms before output. It must be in the range 0 to 61.</p>
-<p>Rounding mode<br />
-Describes the selection of rounding to be applied during the shift down
-stage of processing. The rounding options are as follows:</p>
+must be in the range 4 to 240 inclusive.</li>
+</ul>
+<h4 id="input-frame-size-number-of-samples">Input frame size (Number of
+samples)</h4>
+<ul>
+<li>Describes the number of samples used as an input to the filter
+function. The number of values in the output window will be the Input
+window size divided by two by virtue of the halfband decimation
+factor.</li>
+</ul>
+<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+<ul>
+<li>Describes the power of 2 shift down applied to the accumulation of
+FIR terms before output. It must be in the range 0 to 61.</li>
+</ul>
+<h4 id="rounding-mode">Rounding mode</h4>
+<ul>
+<li>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</li>
+</ul>
 <ol type="1">
 <li>Floor (truncate)</li>
 <li>Ceiling</li>
@@ -82,17 +104,25 @@ stage of processing. The rounding options are as follows:</p>
 <li>Round convergent to even</li>
 <li>Round convergent to odd</li>
 </ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
-<p>Number of parallel input/output (SSR)<br />
-This parameter specifies the number of input (or output) ports and must
-be of the form 2^N, where N is a non-negative integer.</p>
-<p>Number of parallel polyphases (interp_poly)<br />
-Number of decimation polyphases into which data is split into for
+<ul>
+<li>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</li>
+</ul>
+<h4 id="number-of-parallel-inputoutput-ssr">Number of parallel
+input/output (SSR)</h4>
+<ul>
+<li>This parameter specifies the number of input (or output) ports and
+must be of the form 2^N, where N is a non-negative integer.</li>
+</ul>
+<h4 id="number-of-parallel-polyphases-interp_poly">Number of parallel
+polyphases (interp_poly)</h4>
+<ul>
+<li>Number of decimation polyphases into which data is split into for
 parallel computation. It must be integer divisible by interpolation
-factor.</p>
-<p>Advanced<br />
-Number of cascade stages:</p>
+factor.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<h4 id="number-of-cascade-stages">Number of cascade stages:</h4>
 <ul>
 <li>Specifies the number of cascade stages. The tool will guarantee the
 same.</li>

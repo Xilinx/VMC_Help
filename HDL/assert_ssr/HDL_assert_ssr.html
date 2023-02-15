@@ -38,59 +38,73 @@ type on Vector inputs.</p>
 control processing of multiple data samples on every sample period. This
 block enables 1-D vector data support for the primary block
 operation.</p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
+<h2 id="parameters">Parameters</h2>
 <p>Parameters specific to this block are as follows:</p>
-<p>Type<br />
-Assert type<br />
-Specifies whether or not the block will assert that the type at its
+<h3 id="type">Type</h3>
+<h4 id="assert-type">Assert type</h4>
+<ul>
+<li>Specifies whether or not the block will assert that the type at its
 input is the same as the type specified. If the types are not the same,
-an error message is reported.</p>
-<p>Specify type<br />
-Specifies whether or not the type to assert is provided from a signal
-connected to an input port named type or whether it is specified
-Explicitly from parameters in the Assert block dialog box.</p>
-<p>Output Type<br />
-Specifies the data type of the output. Can be Boolean, Fixed-point, or
-Floating-point.</p>
-<p>Arithmetic Type<br />
-If the Output Type is specified as Fixed-point, you can select Signed
+an error message is reported.</li>
+</ul>
+<h4 id="specify-type">Specify type</h4>
+<ul>
+<li>Specifies whether or not the type to assert is provided from a
+signal connected to an input port named type or whether it is specified
+Explicitly from parameters in the Assert block dialog box.</li>
+</ul>
+<h4 id="output-type">Output Type</h4>
+<ul>
+<li>Specifies the data type of the output. Can be Boolean, Fixed-point,
+or Floating-point.</li>
+</ul>
+<h4 id="arithmetic-type">Arithmetic Type</h4>
+<p>If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.</p>
-<p>Fixed-point Precision<br />
-Number of bits<br />
+<ul>
+<li><h5 id="fixed-point-precision">Fixed-point Precision</h5>
+<ul>
+<li><p><strong>Number of bits</strong><br />
 Specifies the bit location of the binary point of the output number,
-where bit zero is the least significant bit.</p>
-<p>Binary point<br />
-Position of the binary point in the fixed-point output.</p>
-<p>Floating-point Precision<br />
-Single<br />
-Specifies single precision (32 bits).</p>
-<p>Double<br />
-Specifies double precision (64 bits).</p>
-<p>Custom<br />
+where bit zero is the least significant bit.</p></li>
+<li><p><strong>Binary point</strong> Position of the binary point in the
+fixed-point output.</p></li>
+</ul></li>
+<li><h5 id="floating-point-precision">Floating-point Precision</h5>
+<ul>
+<li><p><strong>Single</strong><br />
+Specifies single precision (32 bits).</p></li>
+<li><p><strong>Double</strong><br />
+Specifies double precision (64 bits).</p></li>
+<li><p><strong>Custom</strong><br />
 This block is listed in the following: Activates the field below so you
-can specify the Exponent width and the Fraction width.</p>
-<p>Exponent width<br />
-Specify the exponent width.</p>
-<p>Fraction width<br />
-Specify the fraction width.</p>
-<p> </p>
-<p>Rate<br />
-Assert rate<br />
-specifies whether or not the block will assert that the rate at its
+can specify the Exponent width and the Fraction width.</p></li>
+<li><p><strong>Exponent width</strong><br />
+Specify the exponent width.</p></li>
+<li><p><strong>Fraction width</strong><br />
+Specify the fraction width.</p></li>
+</ul></li>
+</ul>
+<h3 id="rate">Rate</h3>
+<h4 id="assert-rate">Assert rate</h4>
+<ul>
+<li>Specifies whether or not the block will assert that the rate at its
 input is the same as the rate specified. If the rates are not the same,
-an error message is reported.</p>
-<p>Specify rate<br />
-Specifies whether or not the initial rate to assert is provided from a
-signal connected to an input port named <code>rate</code>, or whether it
-is specified Explicitly from the Sample rate parameter in the Assert
-block dialog box.</p>
-<p> </p>
-<p>Provide output port<br />
-Specifies whether or not the block will feature an output port. The type
-and/or rate of the signal presented on the output port is the type
-and/or rate specified for assertion.</p>
+an error message is reported.</li>
+</ul>
+<h4 id="specify-rate">Specify rate</h4>
+<ul>
+<li>Specifies whether or not the initial rate to assert is provided from
+a signal connected to an input port named <code>rate</code>, or whether
+it is specified Explicitly from the Sample rate parameter in the Assert
+block dialog box.</li>
+</ul>
+<h3 id="provide-output-port">Provide output port</h3>
+<ul>
+<li>Specifies whether or not the block will feature an output port. The
+type and/or rate of the signal presented on the output port is the type
+and/or rate specified for assertion.</li>
+</ul>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <p>The Output type parameter in this block uses the same description as

@@ -35,23 +35,29 @@ vertical-align: middle;
 <h2 id="description">Description</h2>
 <p>This block implements the Mixer targeted for AI Engines.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Input/Output data type<br />
-Describes the types of individual data samples input to and output from
-the Mixer function. The supported data types are <code>cint16</code>,
-<code>cint32</code>, and <code>cfloat</code>.</p>
-<p>Input window size (Number of samples)<br />
-Specifies the number of samples in the input window. The value must be
-in the range <code>16</code> to <code>4096</code>. Default value is
-<code>32</code>.</p>
-<p>Mixer mode<br />
-This specifies the mixer operation modes. Two modes are supported by
-Mixer function:</p>
-<p>Single Input Mode<br />
+<h4 id="inputoutput-data-type">Input/Output data type</h4>
+<ul>
+<li>Describes the types of individual data samples input to and output
+from the Mixer function. The supported data types are cint16, cint32,
+and cfloat.</li>
+</ul>
+<h4 id="input-window-size-number-of-samples">Input window size (Number
+of samples)</h4>
+<ul>
+<li>Specifies the number of samples in the input window. The value must
+be in the range 16 to 4096. Default value is 32.</li>
+</ul>
+<h4 id="mixer-mode">Mixer mode</h4>
+<ul>
+<li><p>This specifies the mixer operation modes. Two modes are supported
+by Mixer function:</p>
+<ul>
+<li><p>Single Input Mode:<br />
 This is a DDS plus Mixer for a single data input port. Each data input
 sample is complex multiplied with the corresponding DDS sample to create
 a modulated signal that is written to the output window. This is the
-default Mixer mode.</p>
-<p>Dual Input Mode<br />
+default Mixer mode.</p></li>
+<li><p>Dual Input Mode:<br />
 This is a special configuration for symmetrical carriers and two data
 input ports. Each data sample of the first input is complex multiplied
 with the corresponding DDS sample to create a modulated signal. Each
@@ -59,21 +65,27 @@ data sample of the second data input is complex multiplied with the
 conjugate (which is equivalent to a signal rotating in the opposite
 direction) of the DDS sample to create a second modulated signal. These
 two modulated signals are added together and written to the output
-window.</p>
-<p>Phase increment<br />
-This specifies the phase increment between the samples. The value should
-be in the range <code>0</code> to <code>2^31</code>.</p>
+window.</p></li>
+</ul></li>
+</ul>
+<h4 id="phase-increment">Phase increment</h4>
+<ul>
+<li><p>This specifies the phase increment between the samples. The value
+should be in the range 0 to 2^31.</p>
 <p>Phase increment is calculated using the formula (Fo*(2^N ))/ Fs)</p>
 <p>Where:</p>
 <ul>
-<li><code>Fo</code> = Output frequency</li>
-<li><code>N</code> = 32, which represents the accumulator width, and it
-is fixed</li>
-<li><code>Fs</code> = Sampling frequency</li>
+<li>Fo = Output frequency</li>
+<li>N = 32, which represents the accumulator width, and it is fixed</li>
+<li>Fs = Sampling frequency</li>
+</ul></li>
 </ul>
-<p>Target input throughput (MSPS)<br />
-Specifies the input sampling rate of the function in Mega Samples per
-Second (MSPS). The value must be in the range <code>1</code> to
-<code>1000</code> and the default value is <code>200</code>.</p>
+<h4 id="target-input-throughput-msps">Target input throughput
+(MSPS)</h4>
+<ul>
+<li>Specifies the input sampling rate of the function in Mega Samples
+per Second (MSPS). The value must be in the range 1 to 1000 and the
+default value is 200.</li>
+</ul>
 </body>
 </html>

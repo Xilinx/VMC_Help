@@ -29,6 +29,7 @@ vertical-align: middle;
 <h1 class="title">Window Function</h1>
 </header>
 <h1 id="window-function">Window Function</h1>
+<p>Window function implementation targeted for AI Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <h2 id="library">Library</h2>
 <p>AI Engine/DSP/Window IO</p>
@@ -37,13 +38,13 @@ vertical-align: middle;
 the utility to apply a windowing (scaling) function such as Hamming to a
 frame of input window data samples.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input/Output Data Type:</p>
+<h4 id="inputoutput-data-type">Input/Output Data Type:</h4>
 <ul>
 <li>Describes the type of individual data samples input/output of the
 dynamic point FFT. It can be cint16, cint32, or cfloat types.</li>
 </ul>
-<p>Filter coefficients data type:</p>
+<h4 id="filter-coefficients-data-type">Filter coefficients data
+type:</h4>
 <ul>
 <li>Describes the type of individual coefficients of the filter taps. It
 should be one of int16, int32, or float and must also satisfy the
@@ -59,20 +60,20 @@ Input/Output data type is an integer type.</li>
 Input/Output data type is a float type.</li>
 </ul></li>
 </ul>
-<p>Filter coefficients:</p>
+<h4 id="filter-coefficients">Filter coefficients:</h4>
 <ul>
 <li>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where &#39;N&#39; is a positive integer that represents the filter length and
 must be in the range 4 to 240 inclusive.</li>
 </ul>
-<p>FFT Maximum Size:</p>
+<h4 id="fft-maximum-size">FFT Maximum Size:</h4>
 <ul>
 <li>Specifies the maximum FFT size that is supported by Dynamic point
 FFT. You can perform different lengths of FFT on different input data
 frames. It must be a power of 2 with a minimum value of 16. The maximum
 value supported by the library element is 65536.</li>
 </ul>
-<p>Use dynamic point size:</p>
+<h4 id="use-dynamic-point-size">Use dynamic point size:</h4>
 <ul>
 <li>Describes whether to support run time selectable point size for the
 frames of data within the AIE window to be processed.</li>
@@ -88,17 +89,17 @@ the weights for the maximum point size and all smaller point sizes, so
 it must be in the range FFT_POINT_SIZE + FFT_POINT_SIZE/2 to
 2*FFT_POINT_SIZE.</li>
 </ul>
-<p>Input Window Size:</p>
+<h4 id="input-window-size">Input Window Size:</h4>
 <ul>
 <li>Specifies the number of samples in the input frame excluding the
 header. The value must be in the range 16 to 65536 and the default value
 is 64.</li>
 </ul>
-<p>Scale Output down by 2^:</p>
+<h4 id="scale-output-down-by-2">Scale Output down by 2^:</h4>
 <ul>
 <li>Describes the power of 2 shift down applied before output.</li>
 </ul>
-<p>SSR:</p>
+<h4 id="ssr">SSR:</h4>
 <ul>
 <li>This parameter is intended to improve performance and support FFT
 sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;

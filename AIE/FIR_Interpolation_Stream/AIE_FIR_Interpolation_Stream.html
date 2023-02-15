@@ -36,13 +36,19 @@ vertical-align: middle;
 <p>This block implements the stream-based FIR Asymmetric Interpolation
 filter targeted for AI Engines.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input data type/Output data type<br />
-Describes the type of individual data samples input to and output from
-the filter function. int16, cint16, int32, cint32, float, cfloat.</p>
-<p>Filter coefficients data type<br />
-Describes the type of individual coefficients of the filter taps. It
-should be one of int16, cint16, int32, cint32, float, cfloat and must
+<h3 id="main">Main</h3>
+<h4 id="input-data-typeoutput-data-type">Input data type/Output data
+type</h4>
+<ul>
+<li>Describes the type of individual data samples input to and output
+from the filter function. int16, cint16, int32, cint32, float,
+cfloat.</li>
+</ul>
+<h4 id="filter-coefficients-data-type">Filter coefficients data
+type</h4>
+<ul>
+<li><p>Describes the type of individual coefficients of the filter taps.
+It should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
@@ -53,27 +59,42 @@ also a 32-bit type.</li>
 Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
+</ul></li>
 </ul>
-<p>Specify filter coefficients via input port<br />
-When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via the input port.</p>
-<p>Filter coefficients<br />
-Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
+<h4 id="specify-filter-coefficients-via-input-port">Specify filter
+coefficients via input port</h4>
+<ul>
+<li>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via the input port.</li>
+</ul>
+<h4 id="filter-coefficients">Filter coefficients</h4>
+<ul>
+<li>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where &#39;N&#39; is a positive integer that represents the filter length and
-must be in the range 4 to 240 inclusive.</p>
-<p>Interpolation factor<br />
-An unsigned integer which describes the interpolation factor of the
-filter. It must be in the range 1 to 16.</p>
-<p>Input frame size (Number of samples)<br />
-Describes the number of samples used as an input to the filter function.
-The number of values in the output window will be Input window size
-multiplied by interpolation factor.</p>
-<p>Scale output down by 2^<br />
-Describes power of 2 shift down applied to the accumulation of FIR terms
-before output. It must be in range 0 to 61.</p>
-<p>Rounding mode<br />
-Describes the selection of rounding to be applied during the shift down
-stage of processing. The rounding options are as follows:</p>
+must be in the range 4 to 240 inclusive.</li>
+</ul>
+<h4 id="interpolation-factor">Interpolation factor</h4>
+<ul>
+<li>An unsigned integer which describes the interpolation factor of the
+filter. It must be in the range 1 to 16.</li>
+</ul>
+<h4 id="input-frame-size-number-of-samples">Input frame size (Number of
+samples)</h4>
+<ul>
+<li>Describes the number of samples used as an input to the filter
+function. The number of values in the output window will be Input window
+size multiplied by interpolation factor.</li>
+</ul>
+<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+<ul>
+<li>Describes power of 2 shift down applied to the accumulation of FIR
+terms before output. It must be in range 0 to 61.</li>
+</ul>
+<h4 id="rounding-mode">Rounding mode</h4>
+<ul>
+<li>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</li>
+</ul>
 <ol type="1">
 <li>Floor (truncate)</li>
 <li>Ceiling</li>
@@ -84,16 +105,23 @@ stage of processing. The rounding options are as follows:</p>
 <li>Round convergent to even</li>
 <li>Round convergent to odd</li>
 </ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
-<p>Number of parallel input/output (SSR)<br />
-This parameter specifies the number of input (or output) ports and must
-be of the form 2^N, where N is a non-negative integer.</p>
-<p>Advanced<br />
-Number of cascade stages:</p>
+<ul>
+<li>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</li>
+</ul>
+<h4 id="number-of-parallel-inputoutput-ssr">Number of parallel
+input/output (SSR)</h4>
+<ul>
+<li>This parameter specifies the number of input (or output) ports and
+must be of the form 2^N, where N is a non-negative integer.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<ul>
+<li><p>Number of cascade stages:</p>
 <ul>
 <li>Specifies the number of cascade stages. The tool will guarantee the
 same.</li>
+</ul></li>
 </ul>
 </body>
 </html>

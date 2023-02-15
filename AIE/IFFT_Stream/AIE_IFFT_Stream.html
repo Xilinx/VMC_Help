@@ -38,36 +38,55 @@ block has two stream ports per subframe processor to maximize
 performance. The specified value for SSR parameter should be of the form
 2^N, where N is a positive integer.</p>
 <h2 id="parameters">Parameters</h2>
-<p>Main<br />
-Input/Output Data Type:</p>
+<h3 id="main">Main</h3>
+<h4 id="inputoutput-data-type">Input/Output Data Type:</h4>
 <ul>
 <li>Describes the type of individual data samples input/output of the
-stream IFFT. It can be <code>cint16</code>, <code>cint32</code>,
-<code>cfloat</code> types.</li>
+stream IFFT. It can be cint16, cint32, cfloat types.</li>
 </ul>
-<p>IFFT Size:</p>
+<h4 id="ifft-size">IFFT Size:</h4>
 <ul>
 <li>This is an unsigned integer which describes the point size of the
-transformation. This must be 2^N, where N is in the range <code>4</code>
-to <code>11</code> inclusive.</li>
+transformation. This must be 2^N, where N is in the range 4 to 11
+inclusive.</li>
 </ul>
-<p>Input Frame Size (Number of Samples):</p>
+<h4 id="input-frame-size-number-of-samples">Input Frame Size (Number of
+Samples):</h4>
 <ul>
 <li>Specifies the number of samples for a particular frame. The value
-must be in the range <code>8</code> to <code>1024</code> and the default
-value is <code>64</code>. The IFFT operation will not begin until this
-number of samples has been input.</li>
+must be in the range 8 to 1024 and the default value is 64. The IFFT
+operation will not begin until this number of samples has been
+input.</li>
 </ul>
-<p>Scale Output Down by 2^:</p>
+<h4 id="scale-output-down-by-2">Scale Output Down by 2^:</h4>
 <ul>
 <li><p>Describes the power of 2 shift down applied before output. The
 following table shows the range of valid values of this parameter for
-different data types. | Data Type | Scale output down by 2^ |
-|-----------|-----------------------------| | cint16 | [0, log2(IFFT
-Size) + 15] | | cint32 | [0, log2(IFFT Size) + 31] | | cfloat | 0 |</p>
-<p>Table 1. Valid Parameters</p></li>
+different data types.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Data Type</th>
+<th>Scale output down by 2^</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cint16</td>
+<td>[0, log2(IFFT Size) + 15]</td>
+</tr>
+<tr class="even">
+<td>cint32</td>
+<td>[0, log2(IFFT Size) + 31]</td>
+</tr>
+<tr class="odd">
+<td>cfloat</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></li>
 </ul>
-<p>SSR:</p>
+<h4 id="ssr">SSR:</h4>
 <ul>
 <li>This parameter is intended to improve performance and support IFFT
 sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
@@ -78,14 +97,15 @@ stream inputs and there will be 8 subframe IFFTs each of point size
 2048. The specified IFFT size and SSR values should be such that (2 *
 IFFT size / SSR) is in the range of 16 and 4096.</li>
 </ul>
-<p>Advanced<br />
-Target Output Throughput (MSPS):</p>
+<h3 id="advanced">Advanced</h3>
+<p>Target Output Throughput (MSPS):</p>
 <ul>
 <li>Specifies the output sampling rate of the IFFT function in Mega
-Samples per Second (MSPS). The value must be in the range <code>1</code>
-to <code>1000</code> and the default value is <code>200</code>.</li>
+Samples per Second (MSPS). The value must be in the range 1 to 1000 and
+the default value is 200.</li>
 </ul>
-<p>Specify the Number of Cascade Stages:</p>
+<h4 id="specify-the-number-of-cascade-stages">Specify the Number of
+Cascade Stages:</h4>
 <ul>
 <li>When this option is not enabled, the tool will determine the IFFT
 configuration that best achieves the specified input sampling rate. When
@@ -93,8 +113,7 @@ the option is enabled, the Number of cascade stages can be specified
 (which describes the number of AI Engine processors to split the
 operation over). This allows resources to be traded for higher
 performance, but the specified input sampling rate constraint may not be
-achieved. The value must be in the range of <code>1</code> to
-<code>9</code>.</li>
+achieved. The value must be in the range of 1 to 9.</li>
 </ul>
 </body>
 </html>

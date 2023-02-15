@@ -29,95 +29,111 @@ vertical-align: middle;
 <h1 class="title">AXI FIFO</h1>
 </header>
 <h1 id="axi-fifo">AXI FIFO</h1>
-<p>The Xilinx AXI FIFO block implements a FIFO memory queue with an
-AXI-compatible block interface.</p>
 <p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The AXI FIFO block implements a FIFO memory queue with an
+AXI-compatible block interface.</p>
 <h2 id="block-interface">Block Interface</h2>
-<p>Write Channel<br />
-tready<br />
-Indicates that the slave can accept a transfer in the current cycle.</p>
-<p>tvalid<br />
-Indicates that the master is driving a valid transfer. A transfer takes
-place when both tvalid and tready are asserted.</p>
-<p>tdata<br />
-The primary input data channel.</p>
-<p> </p>
-<p>Read Channel<br />
-tdata<br />
-The primary output for the data.</p>
-<p>tready<br />
-Indicates that the slave can accept a transfer in the current cycle.</p>
-<p>tvaild<br />
-Indicates that the slave is accepting a valid transfer. A transfer takes
-place when both tvalid and tready are asserted.</p>
+<h3 id="write-channel">Write Channel</h3>
+<ul>
+<li><h4 id="tready">tready</h4>
+<p>Indicates that the slave can accept a transfer in the current
+cycle.</p></li>
+<li><h4 id="tvalid">tvalid</h4>
+<p>Indicates that the master is driving a valid transfer. A transfer
+takes place when both tvalid and tready are asserted.</p></li>
+<li><h4 id="tdata">tdata</h4>
+<p>The primary input data channel.</p></li>
+</ul>
+<h3 id="read-channel">Read Channel</h3>
+<ul>
+<li><h4 id="tdata-1">tdata</h4>
+<p>The primary output for the data.</p></li>
+<li><h3 id="tready-1">tready</h3>
+<p>Indicates that the slave can accept a transfer in the current
+cycle.</p></li>
+<li><h3 id="tvalid-1">tvalid</h3>
+<p>Indicates that the slave is accepting a valid transfer. A transfer
+takes place when both tvalid and tready are asserted.</p></li>
+</ul>
 <h2 id="block-parameters">Block Parameters</h2>
-<p>The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows.</p>
-<p>Data Port Parameters<br />
-FIFO depth<br />
-Specifies the number of words that can be stored. Range 16-128K.</p>
-<p>Actual FIFO depth<br />
-A report field that indicates the actual FIFO depth. The actual depth of
-the FIFO depends on its implementation and the features that influence
-its implementation.</p>
-<p>Optional Ports<br />
-TDATA<br />
-The primary payload that is used to provide the data that is passing
+<h3 id="basic-tab">Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<h3 id="data-port-parameters">Data Port Parameters</h3>
+<ul>
+<li><h4 id="fifo-depth">FIFO depth</h4>
+<p>Specifies the number of words that can be stored. Range
+16-128K.</p></li>
+<li><h4 id="actual-fifo-depth">Actual FIFO depth</h4>
+<p>A report field that indicates the actual FIFO depth. The actual depth
+of the FIFO depends on its implementation and the features that
+influence its implementation.</p></li>
+</ul>
+<h3 id="optional-ports">Optional Ports</h3>
+<ul>
+<li><h4 id="tdata-2">TDATA</h4>
+<p>The primary payload that is used to provide the data that is passing
 across the interface. The width of the data payload is an integer number
-of bytes.</p>
-<p>TDEST<br />
-Provides routing information for the data stream.</p>
-<p>TSTRB<br />
-The byte qualifier that indicates whether the content of the associated
-byte of TDATA is processed as a data byte or a position byte. For a
-64-bit DATA, bit 0 corresponds to the least significant byte on DATA,
-and bit 7 corresponds to the most significant byte. For example:</p>
+of bytes.</p></li>
+<li><h4 id="tdest">TDEST</h4>
+<p>Provides routing information for the data stream.</p></li>
+<li><h4 id="tstrb">TSTRB</h4>
+<p>The byte qualifier that indicates whether the content of the
+associated byte of TDATA is processed as a data byte or a position byte.
+For a 64-bit DATA, bit 0 corresponds to the least significant byte on
+DATA, and bit 7 corresponds to the most significant byte. For
+example:</p>
 <ul>
 <li>STROBE[0] = 1b, DATA[7:0] is valid</li>
 <li>STROBE[7] = 0b, DATA[63:56] is not valid</li>
-</ul>
-<p>TREADY<br />
-Indicates that the slave can accept a transfer in the current cycle.</p>
-<p>TID<br />
-The data stream identifier that indicates different streams of data.</p>
-<p>TUSER<br />
-The user-defined sideband information that can be transmitted alongside
-the data stream.</p>
-<p>TKEEP<br />
-The byte qualifier that indicates whether the content of the associated
-byte of TDATA is processed as part of the data stream. Associated bytes
-that have the TKEEP byte qualifier de-asserted are null bytes and can be
-removed from the data stream. For a 64-bit DATA, bit 0 corresponds to
-the least significant byte on DATA, and bit 7 corresponds to the most
-significant byte. For example:</p>
+</ul></li>
+<li><h4 id="tready-2">TREADY</h4>
+<p>Indicates that the slave can accept a transfer in the current
+cycle.</p></li>
+<li><h4 id="tid">TID</h4>
+<p>The data stream identifier that indicates different streams of
+data.</p></li>
+<li><h4 id="tuser">TUSER</h4>
+<p>The user-defined sideband information that can be transmitted
+alongside the data stream.</p></li>
+<li><h4 id="tkeep">TKEEP</h4>
+<p>The byte qualifier that indicates whether the content of the
+associated byte of TDATA is processed as part of the data stream.
+Associated bytes that have the TKEEP byte qualifier de-asserted are null
+bytes and can be removed from the data stream. For a 64-bit DATA, bit 0
+corresponds to the least significant byte on DATA, and bit 7 corresponds
+to the most significant byte. For example:</p>
 <ul>
 <li>KEEP[0] = 1b, DATA[7:0] is a NULL byte</li>
 <li>KEEP [7] = 0b, DATA[63:56] is not a NULL byte</li>
+</ul></li>
+<li><h4 id="tlast">TLAST</h4>
+<p>Indicates the boundary of a packet.</p></li>
+<li><h4 id="arestn">arestn</h4>
+<p>Adds arestn (global reset) port to the block.</p></li>
 </ul>
-<p>TLAST<br />
-Indicates the boundary of a packet.</p>
-<p>arestn<br />
-Adds arestn (global reset) port to the block.</p>
-<p>Data Threshold Parameters<br />
-Provide FIFO occupancy DATA counts<br />
+<h3 id="data-threshold-parameters">Data Threshold Parameters</h3>
+<ul>
+<li><h4 id="provide-fifo-occupancy-data-counts">Provide FIFO occupancy
+DATA counts</h4>
 Adds data_count port to the block. This port indicates the number of
 words written into the FIFO. The count is guaranteed to never
 under-report the number of words in the FIFO, to ensure the user never
 overflows the FIFO. The exception to this behavior is when a write
 operation occurs at the rising edge of write clock; that write operation
 will only be reflected on WR_DATA_COUNT at the next rising clock edge. D
-= log2(FIFO depth)+1</p>
-<p> </p>
-<p>Implementation tab<br />
-FIFO Options</p>
-<p>FIFO implementation type<br />
+= log2(FIFO depth)+1</li>
+</ul>
+<h3 id="implementation-tab">Implementation tab</h3>
+<p>FIFO Options</p>
+<ul>
+<li><h4 id="fifo-implementation-type">FIFO implementation type</h4>
 Specifies how the FIFO is implemented in the FPGA. Possible options are:
 Common Clock block RAM and Common Clock Distributed RAM. The
 XPM_FIFO_AXIS macro will be inferred or implemented when the design is
 compiled. For information on the XPM_FIFO_AXIS Xilinx Parameterized
-Macro (XPM), refer to UltraScale Architecture Libraries Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug974-vivado-ultrascale-libraries">UG974</a>).</p>
+Macro (XPM), refer to UltraScale Architecture Libraries Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug974-vivado-ultrascale-libraries">UG974</a>).</li>
+</ul>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </body>
