@@ -8,46 +8,45 @@ The Convert block converts each input sample to a number of a
 desired arithmetic type. For example, a number can be converted to a
 signed (two's complement) or unsigned value.
 
-## Block Parameters
+## Parameters
 
 ### Basic tab  
 Parameters specific to the Basic Tab are as follows.
 
 #### Output Type  
-Specify the output data type.
-
-- Boolean
-- Fixed-point
-- Floating-point
+* Specify the output data type.
+  - Boolean
+  - Fixed-point
+  - Floating-point
 
 #### Arithmetic Type  
-If the Output Type is specified as Fixed-point, you can select Signed
+* If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned.
 
-#### Fixed-point Precision  
-Number of bits  
-Specifies the bit location of the binary point, where bit zero is the
+#### Fixed-point Precision
+* #### Number of bits  
+  Specifies the bit location of the binary point, where bit zero is the
 least significant bit.
 
 #### Binary point  
-Specifies the bit location of the binary point.
+* Specifies the bit location of the binary point.
 
 #### Floating-point Precision  
-- Single  
-Specifies single precision (32 bits).
+- #### Single  
+  Specifies single precision (32 bits).
 
-- Double  
-Specifies double precision (64 bits).
+- #### Double  
+  Specifies double precision (64 bits).
 
-- Custom  
-Activates the field below so you can specify the Exponent width and the
+- #### Custom  
+  Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-- Exponent width  
-Specify the exponent width.
+- #### Exponent width  
+  Specify the exponent width.
 
-- Fraction width  
-Specify the fraction width.
+- #### Fraction width  
+  Specify the fraction width.
 
 #### Quantization  
 Quantization errors occur when the number of fractional bits is
@@ -58,7 +57,7 @@ significant representable bit), or to Round (unbiased: +/- inf) or Round
 
 - Round (unbiased: +/- inf) also known as "Symmetric Round (towards +/-
 inf)" or "Symmetric Round (away from zero)". This is similar to the
-MATLAB `round()` function. This method rounds the value to the nearest
+MATLAB round() function. This method rounds the value to the nearest
 desired bit away from zero and when there is a value at the midpoint
 between two possible rounded values, the one with the larger magnitude
 is selected. For example, to round 01.0110 to a Fix_4_2, this yields
@@ -78,7 +77,7 @@ to a Fix_4_2, this yields 01.10, since 01.1010 is exactly between 01.10
 and 01.11 and the former is even.
 
 #### Overflow  
-Overflow errors occur when a value lies outside the representable range.
+* Overflow errors occur when a value lies outside the representable range.
 For overflow the options are to Saturate to the largest
 positive/smallest negative value, to Wrap (for example, to discard bits
 to the left of the most significant representable bit), or to Flag as
@@ -87,13 +86,13 @@ is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.
 
 #### Optional Ports  
-Provide enable port activates an optional enable (en) pin on the block.
+* Provide enable port activates an optional enable (en) pin on the block.
 When the enable signal is not asserted the block holds its current state
 until the enable signal is asserted again or the reset signal is
 asserted.
 
 #### Latency  
-The Latency value defines the number of sample periods by which the
+* The Latency value defines the number of sample periods by which the
 block's output is delayed. One sample period might correspond to
 multiple clock cycles in the corresponding FPGA implementation (for
 example, when the hardware is over-clocked with respect to the Simulink®
