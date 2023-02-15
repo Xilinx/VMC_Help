@@ -1,11 +1,10 @@
 # Absolute
 
-The Xilinx Absolute block outputs the absolute value of the input.
 
 ![](./Images/block.png)
 
 ## Description
-The Xilinx Absolute block outputs the absolute value of the input.
+The Absolute block outputs the absolute value of the input.
 
 ## Parameters
 
