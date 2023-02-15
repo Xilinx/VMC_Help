@@ -1,7 +1,6 @@
 # Variable Size Signal to Workspace
 
-This block is used to save variable size signal data from your Simulink®
-simulation to the MATLAB® workspace.
+This block is used to save variable size signal data to the MATLAB® workspace.
 
   
 ![](./Images/block.png)  
@@ -13,10 +12,10 @@ AI Engine/Tools
 ## Description
 
 AI Engine blocks produce variable signal outputs. The Variable Size
-Signal to Workspace block allows you to write data into theMATLAB
+Signal to Workspace block allows you to write data into the MATLAB
 workspace in a structured format.
 
-Note: This block behaves similarly to theSimulink To Workspace block but
+Note: This block behaves similarly to the Simulink To Workspace block but
 will make it easier to analyze the output data by discarding empty
 sample in the input variable size signal and concatenating valid samples
 into a MATALB vector. This block can only be connected to a variable
