@@ -32,7 +32,7 @@ place when both tvalid and tready are asserted.
   Indicates that the slave is accepting a valid transfer. A transfer takes
 place when both tvalid and tready are asserted.
 
-## Block Parameters
+## Parameters
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
