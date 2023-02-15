@@ -229,7 +229,7 @@ The first line sets the first output port to the same rate as the input
 port. The next two lines set the output rate to 5 times the rate of the
 input.
 
-## Block Parameters
+## Parameters
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
