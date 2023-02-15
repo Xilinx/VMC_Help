@@ -52,7 +52,7 @@ pass on the sample rate to downstream blocks that will inherit the rate
 and build the proper CE circuitry to automatically enable those
 downstream blocks at the new rate.
 
-## Block Parameters
+## Parameters
 
 ### Filter Specification tab  
 Parameters specific to the Filter Specification tab are as follows.
