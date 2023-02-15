@@ -11,7 +11,7 @@ detailed in this document. The block can have up to four output ports.
 The number of output ports is equal to the number of expressions. The
 block does not cost anything in hardware.
 
-## Block Parameters
+## Parameters
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
