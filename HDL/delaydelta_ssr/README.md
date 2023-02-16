@@ -6,6 +6,8 @@ based on the given latency and delay latency values.
 Hardware notes: A delay line is a chain, each link of which is an SRL16
 followed by a flip-flop.
 
+![](./Images/block.png)
+
 ## Description
 
 The delta latency parameter is used to generate each parallel path with
@@ -26,14 +28,14 @@ parameter.
 
 The Vector Delay Delta block implements a fixed delay of L cycles.
 
-![](./Images/block.png)
 
-## Block Parameters
+## Parameters
 
-Super Sample Rate (SSR): This configurable GUI parameter is primarily
+#### Super Sample Rate (SSR)
+* This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector and/or complex data support for
 the primary block operation.
 
-See the Xilinx® [Vector Delay](vectordelay.html) block for further
+See the [Vector Delay](vectordelay.html) block for further
 information on using this block.
