@@ -20,7 +20,7 @@ various control signals for the XtremeDSP slice of the target device.
 The instructions are stored in a ROM from which the appropriate
 instruction is selected using the SEL port.
 
-## Block Parameters
+## Parameters
 
 ### Instruction tab  
 The Instruction tab is used to define the operations that the LogiCORE™
