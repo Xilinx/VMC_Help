@@ -2,6 +2,8 @@
 
 The Vector Down Sample block down samples input vector data.
 
+![](./Images/block.png)
+
 Hardware notes: Sample and Latency controls determine the hardware
 implementation. The cost in hardware of different implementations varies
 considerably.
@@ -16,7 +18,7 @@ operation.
 The Vector Down Sample block reduces the sample rate at the point where
 the block is placed in your design.
 
-![](./Images/block.png)
+
 
 The input signal is sampled at even intervals, at either the beginning
 (first value), or end (last value) of a frame. The sampled value is
@@ -26,9 +28,6 @@ A Vector Down Sample frame consists of l input samples, where l is
 sampling rate. An example frame for a Vector Down Sample block
 configured with a sampling rate of 4 is shown below.
 
-Figure: Vector Down Sample with Sampling Rate of 4
-
-  
 ![](./Images/xtq1538085466148.png)  
 
 The Vector Down Sample block is realized in hardware using one of three
@@ -40,7 +39,7 @@ enable, corresponding to the output stream rate, for example, down
 sampled data. These enable signals control the register sampling in
 hardware.
 
-## Zero Latency Vector Down Sample
+### Zero Latency Vector Down Sample
 
 The zero latency Vector Down Sample block must be configured to sample
 the first value of the frame. The first sample in the input frame passes
@@ -54,12 +53,10 @@ register adjusts the timing of the destination clock enable, so that it
 is asserted at the start of the sample period, instead of the end. The
 hardware implementation is shown below.
 
-Figure: Zero Latency Vector Down Sample
 
-  
 ![](./Images/uat1538085467153.png)  
 
-## Vector Down Sample with Latency
+### Vector Down Sample with Latency
 
 If the Vector Down Sample block is configured with latency greater than
 zero, a more efficient implementation is used. One of two
@@ -73,9 +70,6 @@ at the start of the input frame. The second register samples the
 contents of the first register at the end of the sample period to ensure
 output data is aligned correctly.
 
-Figure: Two Register Example
-
-  
 ![](./Images/pls1538085468180.png)  
 
 If the block samples the last value in a frame, a register samples the
@@ -84,28 +78,22 @@ for the duration of the next frame. The most efficient implementation is
 used when the Vector Down Sample block is configured to sample the last
 value of the frame.
 
-Figure: One Register Example
-
-  
 ![](./Images/ley1538085469133.png)  
 
-## Block Parameters
+## Parameters
 
-The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
-Basic tab  
+### Basic tab  
 Basic tab parameters are as follows.
 
-Sampling Rate (number of input samples per output sample)  
-Must be an integer greater or equal to 2. This is the ratio of the
+#### Sampling Rate (number of input samples per output sample)  
+* Must be an integer greater or equal to 2. This is the ratio of the
 output sample period to the input, and is essentially a sample rate
 divider. For example, a ratio of 2 indicates a 2:1 division of the input
 sample rate. If a non-integer ratio is desired, the Vector Up Sample
 block can be used in combination with the Vector Down Sample block.
 
-Sample  
-The Vector Down Sample block can sample either the first or last value
+#### Sample  
+* The Vector Down Sample block can sample either the first or last value
 of a frame. This parameter will determine which of these two values is
 sampled.
 
@@ -113,6 +101,6 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
 
-## Xilinx LogiCORE
+## LogiCORE
 
-The Vector Down Sample block does not use a Xilinx® LogiCORE™™.
+The Vector Down Sample block does not use a LogiCORE™.
