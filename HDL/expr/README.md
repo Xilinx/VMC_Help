@@ -1,8 +1,10 @@
 # Expression
 
-The Xilinx Expression block performs a bitwise logical expression.
+The Expression block performs a bitwise logical expression.
 
 ![](./Images/block.png)
+
+## Description
 
 The expression is specified with operators described in the table below.
 The number of input ports is inferred from the expression. The input
@@ -25,19 +27,16 @@ operators that can be used in the Expression block.
 | OR         | \|     |
 | XOR        | ^      |
 
-## Block Parameters
+## Parameters
 
-The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-Expression  
-Bitwise logical expression.
+#### Expression  
+* Bitwise logical expression.
 
-Align Binary Point  
-Specifies that the block must align binary points automatically. If not
+#### Align Binary Point  
+* Specifies that the block must align binary points automatically. If not
 selected, all inputs must have the same binary point position.
 
 Other parameters used by this block are explained in the topic [Common
