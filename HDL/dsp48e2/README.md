@@ -1,13 +1,13 @@
 # DSP48E2
 
-![](./Images/block.png)
-
 The DSP48E2 block is an efficient building block for DSP
 applications that use UltraScale devices. DSP applications use many
 binary multipliers and accumulators that are best implemented in
 dedicated DSP resources. UltraScale devices have many dedicated
 low-power DSP slices, combining high speed with small size while
 retaining system design flexibility.
+
+![](./Images/block.png)
 
 ## Description
 
