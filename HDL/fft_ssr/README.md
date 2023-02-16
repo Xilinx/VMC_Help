@@ -2,13 +2,15 @@
 
 The Vector FFT block supports the FFT operation for vector type inputs.
 
+![](./Images/block.png)
+
 ## Description
 
-The real part of the input data should be given to the `in_re` port, and
-the imaginary part should be given to the `in_im port`.
+The real part of the input data should be given to the in_re port, and
+the imaginary part should be given to the in_im port.
 
-When the `in_valid` is high it indicates that the input data is valid.
-When `out_valid` is high, it indicates that the output data is valid.
+When the in_valid is high it indicates that the input data is valid.
+When out_valid is high, it indicates that the output data is valid.
 The valid indicator accompanies every set of input and output samples
 (for example, R number of samples). There is no back pressure flow
 control and once an FFT transform starts, 'R' data samples must be input
@@ -16,17 +18,15 @@ into the core every clock for N/R consecutive clocks. Where N is the FFT
 length. However, for back-to-back transforms, the valid control input
 can stay high with no gaps.
 
-The `in_scale` input port is used if scaling is required. And
-`out_scale` is used in if there is an internal overflow.
+The in_scale input port is used if scaling is required. And
+out_scale is used in if there is an internal overflow.
 
-![](./Images/block.png)
+### Data Type Support
 
-## Data Type Support
+- The number of in_scale bits must be equal to log2(FFT length).
+- in_valid and out_valid are of Boolean data type.
 
-- The number of `in_scale` bits must be equal to `log2(FFT length)`.
-- `in_valid` and `out_valid` are of Boolean data type.
-
-## Block Parameters
+## Parameters
 
 FFT length (N) is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. SSR is the super sample rate, the
