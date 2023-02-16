@@ -1,12 +1,14 @@
 # Dual Port RAM
 
-The Xilinx Dual Port RAM block implements a random access memory (RAM).
+![](./Images/block.png)
+
+## Description
+
+The Dual Port RAM block implements a random access memory (RAM).
 Dual ports enable simultaneous access to the memory space at different
 sample rates using multiple data widths.
 
-![](./Images/block.png)
-
-## Block Interface
+### Block Interface
 
 The block has two independent sets of ports for simultaneous reading and
 writing. Independent address, data, and write enable ports allow shared
@@ -18,19 +20,19 @@ signal to each input port set.
 A dual-port RAM can be implemented using either distributed memory,
 block RAM, or UltraRAM resources in the FPGA.
 
-Form Factors
+#### Form Factors
 
 The Dual Port RAM block also supports various Form Factors (FF). Form
 factor is defined as:
 
-FF = W_(B) / W_(A)
+* FF = W_(B) / W_(A)
 
 where W_(B) is data width of Port B and W_(A) is Data Width of Port A.
 
 The Depth of port B (D_(B)) is inferred from the specified form factor
 as follows:
 
-D_(B) = D_(A) / FF
+* D_(B) = D_(A) / FF
 
 The data input ports on Port A and B can have different arithmetic type
 and binary point position for a form factor of 1. For form factors
@@ -50,7 +52,7 @@ parameter. Each write enable port must be a boolean value. When the WE
 port is 1, the value on the data input is written to the location
 indicated by the address line.
 
-Write Mode
+#### Write Mode
 
 When the Dual Port RAM block is implemented in block RAM, you can set
 the write mode for the block in the block parameters dialog box.
@@ -75,9 +77,7 @@ is obtained from the location specified by the address line, and hence
 is the value of the location being written to. This means that the
 output can be the old value which corresponds to Read after write.
 
-Figure: Write Mode Output
 
-  
 ![](./Images/xhk1538085518671.png)  
 
 Collision Behavior: The result of simultaneous access to both ports is
@@ -102,21 +102,18 @@ on the Write Mode of the write port.
 You can set the Write Mode of each port using the Advanced tab of the
 block parameters dialog box.
 
-## Block Parameters
+## Parameters
 
-The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-Depth  
-Specifies the number of words in the memory for Port A, which must be a
+#### Depth  
+* Specifies the number of words in the memory for Port A, which must be a
 positive integer. The Port B depth is inferred from the form factor
 specified by the input data widths.
 
-Initial value vector  
-For distributed memory or block RAM, specifies the initial memory
+#### Initial value vector  
+* For distributed memory or block RAM, specifies the initial memory
 contents. The size and precision of the elements of the initial value
 vector are based on the data format specified for Port A. When the
 vector is longer than the RAM, the vector's trailing elements are
@@ -124,72 +121,70 @@ discarded. When the RAM is longer than the vector, the RAM's trailing
 words are set to zero. The initial value vector is saturated and rounded
 according to the precision specified on the data port A of RAM.
 
-Note: UltraRAM memory is initialized to all 0's during power up or
+  **Note**: UltraRAM memory is initialized to all 0's during power up or
 device reset. If implemented in UltraRAM, the Single Port RAM block
 cannot be initialized to user defined values.
 
-Memory Type  
-Option to select whether the dual port RAM will be implemented in
+#### Memory Type  
+* Option to select whether the dual port RAM will be implemented in
 Distributed memory, Block RAM, or UltraRAM. The distributed dual port
 RAM is always set to use port A in Read Before Write mode and port B in
 read-only mode.
 
-Depending on your selection for Memory Type, the dual-port RAM will be
+  Depending on your selection for Memory Type, the dual-port RAM will be
 inferred or implemented in this way when the design is compiled:
 
-- If the block will be implemented in Distributed memory, the
+  - If the block will be implemented in Distributed memory, the
   Distributed Memory Generator v8.0 LogiCORE IP will be inferred or
   implemented when the design is compiled. This LogiCORE IP is described
   in the Distributed Memory Generator LogiCORE IP Product Guide
   ([PG063](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf)).
 
-- If the block will be implemented in block RAM or UltraRAM, the
+  - If the block will be implemented in block RAM or UltraRAM, the
   XPM_MEMORY_TDPRAM (True Dual Port RAM) macro will be inferred or
   implemented when the design is compiled. For information on the
   XPM_MEMORY_TDPRAM Xilinx Parameterized Macro (XPM), refer to
   UltraScale Architecture Libraries Guide
   ([UG974](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug974-vivado-ultrascale-libraries)).
 
-Initial value for port A output Register  
-Specifies the initial value for port A output register. The initial
+#### Initial value for port A output Register  
+* Specifies the initial value for port A output register. The initial
 value is saturated and rounded according to the precision specified on
 the data port A of RAM.
 
-Initial value for port B output register  
-Specifies the initial value for port B output register. The initial
+#### Initial value for port B output register  
+* Specifies the initial value for port B output register. The initial
 value is saturated and rounded according to the precision specified on
 the data port B of RAM.
 
-Provide synchronous reset port for port A output register  
-When selected, allows access to the reset port available on the port A
+#### Provide synchronous reset port for port A output register  
+* When selected, allows access to the reset port available on the port A
 output register of the block RAM or UltraRAM. The reset port is
 available only when the latency of the Block RAM or UltraRAM is greater
 than or equal to 1.
 
-Provide synchronous reset port for port B output register  
-When selected, allows access to the reset port available on the port B
+#### Provide synchronous reset port for port B output register  
+* When selected, allows access to the reset port available on the port B
 output register of the Block RAM or UltraRAM. The reset port is
 available only when the latency of the Block RAM or UltraRAM is greater
 than or equal to 1.
 
-Provide enable port for port A  
-When selected, allows access to the enable port for port A. The enable
+#### Provide enable port for port A  
+* When selected, allows access to the enable port for port A. The enable
 port is available only when the latency of the block is greater than or
 equal to 1.
 
-Provide enable port for port B  
-When selected, allows access to the enable port for port B. The enable
+#### Provide enable port for port B  
+* When selected, allows access to the enable port for port B. The enable
 port is available only when the latency of the block is greater than or
 equal to 1.
 
-&nbsp;
-
-Advanced tab  
+### Advanced tab  
 Parameters specific to the Advanced tab are as follows.
 
-Write Modes  
-Port A or Port B  
-When the Dual Port RAM block is implemented in block RAM, specifies
+#### Write Modes  
+  * #### Port A or Port B  
+    When the Dual Port RAM block is implemented in block RAM, specifies
 memory behavior for port A or port B when WE is asserted. Supported
 modes are: Read after write, Read before write, and No read on write.
 Read after write indicates the output value reflects the state of the
