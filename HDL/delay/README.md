@@ -4,6 +4,8 @@ The Xilinx Delay block implements a fixed delay of L cycles.
 
 ![](./Images/block.png)
 
+## Description
+
 The delay value is displayed on the block in the form z^(-L), which is
 the Z-transform of the block’s transfer function. Any data provided to
 the input of the block will appear at the output after L cycles. The
@@ -15,7 +17,6 @@ value parameter. The delay block supports a specified latency but no
 initial value other than zeros. The following figure shows the Delay
 block behavior when L=4 and Period=1s.
 
-Figure: Delay Block Behavior
 
   
 ![](./Images/lua1538085457280.png)  
@@ -25,46 +26,40 @@ Addressable Shift Register block. Delays that are not an integer number
 of clock cycles are not supported and such delays should not be used in
 synchronous design (with a few rare exceptions).
 
-## Block Parameters
+## Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-Provide synchronous reset port  
-this option activates an optional reset (rst) pin on the block. When the
+#### Provide synchronous reset port  
+* This option activates an optional reset (rst) pin on the block. When the
 reset signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block's sample
 rate. The signal driving the reset port must be Boolean.
 
-Provide enable port:  
-this option activates an optional enable (en) pin on the block. When the
+#### Provide enable port 
+* This option activates an optional enable (en) pin on the block. When the
 enable signal is not asserted the block holds its current state until
 the enable signal is asserted again or the reset signal is asserted.
 Reset signal has precedence over the enable signal. The enable signal
 has to run at a multiple of the block 's sample rate. The signal driving
 the enable port must be Boolean.
 
-&nbsp;
-
-Latency  
-Latency is the number of cycles of delay. The latency can be zero,
+#### Latency  
+* Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port checkbox is not checked. The
 latency must be a non-negative integer. If the latency is zero, the
 delay block collapses to a wire during logic synthesis. If the latency
 is set to L=1, the block will generally be synthesized as a flip-flop
 (or multiple flip-flops if the data width is greater than 1).
 
-&nbsp;
 
-Implementation tab  
+### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
 
-Implement using behavioral HDL  
-Uses behavioral HDL as the implementation. This allows the downstream
+#### Implement using behavioral HDL  
+* Uses behavioral HDL as the implementation. This allows the downstream
 logic synthesis tool to choose the best implementation.
 
 Other parameters used by this block are explained in the topic [Common
@@ -97,9 +92,7 @@ cascaded, albeit without using the dedicated cascade routes. For
 example, the following is the synthesis result for a 1-bit wide delay
 block with a latency of L=64:
 
-Figure: 1-Bit Wide Delay Block with a Latency of L=64
 
-  
 ![](./Images/jsy1538085458405.png)  
 
 The first SRL provides a delay of 32 cycles and the associated flip-flop
@@ -122,7 +115,6 @@ setting, to precede the delay block with an additional delay block with
 a latency of L=1. This ensures that the critical path is not burdened
 with the long setup time of the SRL. An example is shown below.
 
-Figure: Delay Block with an Additional Delay Block with a Latency
 
 ![](./Images/zba1555432813843.png) ![](./Images/fud1555437330166.png)
 
@@ -133,8 +125,6 @@ flip-flop, which has a shorter setup time than an SRL.
 
 The synthesis results of both designs are shown below, with the faster
 design highlighted in red:
-
-Figure: Synthesis Results
 
   
 ![](./Images/fwy1538085460731.png)  
@@ -160,8 +150,6 @@ feedback shift registers) for the address counters in order to make the
 design faster, but conventional counters can be used as well. The
 difference in value between the counters (minus the RAM latency) is the
 latency L of the delay line.
-
-Figure: Novel Use of Long Delay LFSRs
 
   
 ![](./Images/dsd1538085461723.png)  
