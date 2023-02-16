@@ -30,12 +30,12 @@ Parameters specific to the Basic tab are as follows.
 #### Input configuration  
 * #### A or ACIN input  
   Specifies if the A input should be taken directly from the a port or
-from the cascaded `acin` port. The `acin` port can only be connected to
+from the cascaded acin port. The acin port can only be connected to
 another DSP48 block.
 
 * #### B or BCIN input  
   Specifies if the B input should be taken directly from the b port or
-from the cascaded `bcin` port. The `bcin` port can only be connected to
+from the cascaded bcin port. The bcin port can only be connected to
 another DSP48 block.
 
   **Note**: If the input to the block is NaN, you will see a behavioral
@@ -107,10 +107,10 @@ Parameters specific to the Optional Ports tab are:
 
 #### Input Ports  
 * #### Consolidate control port  
-  When selected, combines the `opmode`, `alumode`, `carry_in`,
-`carry_in_sel`, and `inmode` ports into one 20-bit port. Bits 0 to 6 are
-the opmode, bits 7 to 10 are the `alumode` port, bit 11 is the
-`carry_in` port, bits 12 to 14 are the `carry_in_sel` port, and bits
+  When selected, combines the opmode, alumode, carry_in,
+carry_in_sel, and inmode ports into one 20-bit port. Bits 0 to 6 are
+the opmode, bits 7 to 10 are the alumode port, bit 11 is the
+carry_in port, bits 12 to 14 are the carry_in_sel port, and bits
 15-19 are the inmode bits. This option should be used when the Opmode
 block is used to generate a DSP48 instruction.
 
@@ -128,8 +128,8 @@ connected to all available enable ports based on the pipeline
 selections.
 
 * #### Provide pcin port  
-  When selected, the `pcin` port is exposed. The `pcin` port must be
-connected to the `pcout` port of another DSP48 block.
+  When selected, the pcin port is exposed. The pcin port must be
+connected to the pcout port of another DSP48 block.
 
 * #### Provide carry cascade in port  
   When selected, the carry cascade in port is exposed. This port can only
@@ -141,13 +141,13 @@ exposed. This port can only be connected to a multiplier sign cascade
 out port of another DSP48E block.
 
 * #### Provide carryout port  
-  When selected, the `carryout` output port is made available. When the
+  When selected, the carryout output port is made available. When the
 mode of operation for the adder/subtractor is set to one 48-bit adder,
-the `carryout` port is 1-bit wide. When the mode of operation is set to
-two 24 bit adders, the `carryout` port is 2 bits wide. The MSB
+the carryout port is 1-bit wide. When the mode of operation is set to
+two 24 bit adders, the carryout port is 2 bits wide. The MSB
 corresponds to the second adder's carryout and the LSB corresponds to
 the first adder's carryout. When the mode of operation is set to four 12
-bit adders, the `carryout` port is 4 bits wide with the bits
+bit adders, the carryout port is 4 bits wide with the bits
 corresponding to the addition of the 48 bit input split into 4 12-bit
 sections.
 
@@ -175,16 +175,16 @@ number of 1s in the mask whether set by the GUI mask field or the c port
 input.
 
 * #### Provide acout port  
-  When selected, the `acout` output port is made available. The `acout`
-port must be connected to the `acin` port of another DSP48E block.
+  When selected, the acout output port is made available. The acout
+port must be connected to the acin port of another DSP48E block.
 
 * #### Provide bcout port  
-  When selected, the `bcout` output port is made available. The `bcout`
-port must be connected to the `bcin` port of another DSP48E block.
+  When selected, the bcout output port is made available. The bcout
+port must be connected to the bcin port of another DSP48E block.
 
 * #### Provide pcout port  
-  When selected, the `pcout` output port is made available. The `pcout`
-port must be connected to the `pcin` port of another DSP48 block.
+  When selected, the pcout output port is made available. The pcout
+port must be connected to the pcin port of another DSP48 block.
 
 * #### Provide multiplier sign cascade out port  
   When selected, the multiplier sign cascade out port (multsigncascout) is
@@ -193,7 +193,7 @@ cascade in port of another DSP48E block and is used to support 96-bit
 accumulators/adders and subtracters which are built from two DSP48Es.
 
 * #### Provide carry cascade out port  
-  When selected, the carry cascade out port (`carrycascout`) is made
+  When selected, the carry cascade out port (carrycascout) is made
 available. This port can only be connected to the carry cascade in port
 of another DSP48E block.
 
@@ -205,19 +205,19 @@ length 0 removes the register on the input.
 
 #### Length of b/bcin pipeline  
 * Specifies the length of the pipeline for the b input whether it is read
-from b or `bcin`.
+from b or bcin.
 
 #### Length of acout pipeline  
-* Specifies the length of the pipeline between the a/`acin` input and the
-`acout` output port. A pipeline of length 0 removes the register from
-the `acout` pipeline length. Must be less than or equal to the length of
-the a/`acin` pipeline.
+* Specifies the length of the pipeline between the a/acin input and the
+acout output port. A pipeline of length 0 removes the register from
+the acout pipeline length. Must be less than or equal to the length of
+the a/acin pipeline.
 
 #### Length of bcout pipeline  
-* Specifies the length of the pipeline between the b/`bcin` input and the
+* Specifies the length of the pipeline between the b/bcin input and the
 bcout output port. A pipeline of length 0 removes the register from the
 bcout pipeline length. Must be less than or equal to the length of the
-b/`bcin` pipeline.
+b/bcin pipeline.
 
 #### Pipeline c  
 * Indicates whether the input from the c port should be registered.
