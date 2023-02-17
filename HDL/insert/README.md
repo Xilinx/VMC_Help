@@ -1,24 +1,23 @@
 # Depuncture
 
-The Xilinx Depuncture block allows you to insert an arbitrary symbol
+The Depuncture block allows you to insert an arbitrary symbol
 into your input data at the location specified by the depuncture code.
 
 ![](./Images/block.png)
 
-The Xilinx Depuncture block accepts data of type `UFixN_0` where N
+## Description
+The Depuncture block accepts data of type UFixN_0 where N
 equals the length of insert string x (the number of ones in the
-depuncture code) and produces output data of type `UFixK_0` where K
+depuncture code) and produces output data of type UFixK_0 where K
 equals the length of insert string multiplied by the length of the
 depuncture code.
 
-The Xilinx Depuncture block can be used to decode a range of punctured
+The Depuncture block can be used to decode a range of punctured
 convolution codes. The following diagram illustrates an application of
 this block to implement soft decision Viterbi decoding of punctured
 convolution codes.
 
-Figure: Soft Decision Viterbi Decoding
 
-  
 ![](./Images/hsz1538085512596.png)  
 
 The previous diagram shows a matched filter block connected to a
@@ -37,20 +36,16 @@ decoder.
 
 ## Block Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
-Figure: Block Parameters Dialog Box
 
 ![](./Images/iaa1647548822620.png)
 
-Parameters specific to the Xilinx Depuncture block are:
+Parameters specific to the Depuncture block are as follows:
 
-Depuncture code  
-Specifies the depuncture pattern for inserting the string to the input.
+#### Depuncture code  
+> Specifies the depuncture pattern for inserting the string to the input.
 
-Symbol to insert  
-Specifies the binary word to be inserted in the depuncture code.
+#### Symbol to insert  
+> Specifies the binary word to be inserted in the depuncture code.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
