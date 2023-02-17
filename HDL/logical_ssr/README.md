@@ -1,7 +1,9 @@
 # Vector Logical
-
 The Vector Logical block supports logical operation for vector type
 inputs.
+
+![](./Images/block.png)
+
 
 ## Description
 
@@ -15,29 +17,23 @@ fixed-point numbers. Operands are zero padded and sign extended as
 necessary to make binary point positions coincide. The logical operation
 is performed and the result is delivered at the output port.
 
-![](./Images/block.png)
-
 In hardware this block is implemented as synthesizable VHDL. If you
 build a tree of logical gates, this synthesizable implementation is best
 as it facilitates logic collapsing in synthesis and mapping.
 
-## Block Parameters
-
-Double-click the icon in your Simulink® model to open the Block
-Parameters dialog box.
-
-Basic tab  
+## Parameters
+### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-Logical function  
-Specifies one of the following bitwise logical operators: AND, NAND, OR,
+#### Logical function  
+> Specifies one of the following bitwise logical operators: AND, NAND, OR,
 NOR, XOR, XNOR.
 
-Number of inputs  
-Specifies the number of inputs (1 - 1024).
+#### Number of inputs  
+> Specifies the number of inputs (1 - 1024).
 
-Logical Reduction Operation  
-When the number of inputs is specified as 1, a unary logical reduction
+#### Logical Reduction Operation  
+> When the number of inputs is specified as 1, a unary logical reduction
 operation performs a bit-wise operation on the single operand to produce
 a single bit result. The first step of the operation applies the logical
 operator between the least significant bit of the operand and the next
@@ -48,10 +44,11 @@ implements the same functionality as that of the logical reduction
 operation in HDLs. The output of the logical reduction operation is
 always Boolean.
 
-Output Type tab  
+### Output Type tab  
 Parameters specific to the Output Type tab are as follows:
 
-- Align binary point: Specifies that the block must align binary points
+#### Align binary point
+> Specifies that the block must align binary points
   automatically. If not selected, all inputs must have the same binary
   point position.
 
