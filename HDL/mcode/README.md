@@ -1,7 +1,7 @@
 # MCode
 
-The Xilinx MCode block is a container for executing a user-supplied
-MATLAB function within Simulink. A parameter on the block specifies the
+The MCode block is a container for executing a user-supplied
+MATLAB function within Simulink®. A parameter on the block specifies the
 M-function name. The block executes the M-code to calculate block
 outputs during a Simulink simulation. The same code is translated in a
 straightforward way into equivalent behavioral VHDL/Verilog when
@@ -9,7 +9,8 @@ hardware is generated.
 
 ![](./Images/block.png)
 
-The block's Simulink® interface is derived from the MATLAB function
+## Description
+The block's Simulink interface is derived from the MATLAB function
 signature, and from block mask parameters. There is one input port for
 each parameter to the function, and one output port for each value the
 function returns. Port names and ordering correspond to the names and
@@ -27,11 +28,11 @@ must be followed:
 - The code for the block must exist on the MATLAB path or in the same
   directory as the directory as the model that uses the block.
 
-The example described below consists of a function `xlmax` which returns
+The example described below consists of a function xlmax which returns
 the maximum of its inputs. The second illustrates how to do simple
 arithmetic. The third shows how to build a finite state machine.
 
-## Configuring an MCode Block
+### Configuring an MCode Block
 
 The MATLAB Function parameter of an MCode block specifies the name of
 the block's M- code function. This function must exist in one of the
@@ -43,7 +44,7 @@ locations are:
 - A directory in the MATLAB path.
 
 The block icon displays the name of the M-function. To illustrate these
-ideas, consider the file `xlmax.m` containing function `xlmax`:
+ideas, consider the file xlmax.m containing function xlmax:
 
 ``` pre
 function z = xlmax(x, y) 
@@ -54,30 +55,28 @@ function z = xlmax(x, y)
   end 
 ```
 
-An MCode block based on the function `xlmax` will have input ports `x`
-and `y` and output port `z`.
+An MCode block based on the function xlmax will have input ports x
+and y and output port z.
 
 The following figure shows how to set up an MCode block to use function
-`xlmax`.
+xlmax.
 
-Figure: xlmax function
 
 ![](./Images/viv1647548449608.png)
 
 Once the model is compiled, the xlmax MCode block will appear like the
 block illustrated below.
 
-Figure: xlmax MCode block
 
 ![](./Images/ish1555437343249.png)
 
-## MATLAB Language Support
+### MATLAB Language Support
 
 The MCode block supports the following MATLAB language constructs:
 
 - Assignment statements
-- Simple and compound `if/else/elseif` end statements
-- `switch` statements
+- Simple and compound if/else/elseif end statements
+- switch statements
 - Arithmetic expressions involving only addition and subtraction
 - Addition
 - Subtraction
@@ -101,12 +100,12 @@ The MCode block supports the following MATLAB language constructs:
 
 The MCode block supports the following MATLAB functions.
 
-- Type conversion. The only supported data type is `xfix`, the Xilinx
-  fixed-point type. The `xfix()` type conversion function is used to
+- Type conversion. The only supported data type is xfix, the Xilinx
+  fixed-point type. The xfix() type conversion function is used to
   convert to this type. The conversion is done implicitly for integers
   but must be done explicitly for floating point constants. All values
   must be scalar; arrays are not supported.
-- Functions that return `xfix` properties:
+- Functions that return xfix properties:
   |               |                               |
   |---------------|-------------------------------|
   | `xl_nbits() ` | Returns number of bits        |
@@ -136,12 +135,12 @@ The MCode block supports the following MATLAB functions.
   | `pi() `       | Returns pi                          |
   | `zeros(1,N) ` | Returns 1-by-N vector of zeros      |
 
-Data Types  
-There are three kinds of `xfix` data types: unsigned fixed-point
-(`xlUnsigned`), signed fixed-point(`xlSigned`), and boolean
-(`xlBoolean`). Arithmetic operations on these data types produce signed
+#### Data Types  
+There are three kinds of xfix data types: unsigned fixed-point
+(xlUnsigned), signed fixed-point(xlSigned), and boolean
+(xlBoolean). Arithmetic operations on these data types produce signed
 and unsigned fixed-point values. Relational operators produce a boolean
-result. Relational operands can be any `xfix` type, provided the mixture
+result. Relational operands can be any xfix type, provided the mixture
 of types makes sense. Boolean variables can be compared to boolean
 variables, but not to fixed-point numbers; boolean variables are
 incompatible with arithmetic operators. Logical operators can only be
@@ -149,24 +148,24 @@ applied to boolean variables. Every operation is performed in full
 precision, for example, with the minimum precision needed to guarantee
 that no information is lost.
 
-Literal Constants  
+#### Literal Constants  
 Integer, floating-point, and boolean literals are supported. Integer
-literals are automatically converted to `xfix` values of appropriate
+literals are automatically converted to xfix values of appropriate
 width having a binary point position at zero. Floating-point literals
-must be converted to the `xfix` type explicitly with the `xfix()`
-conversion function. The predefined MATLAB values `true` and `false` are
+must be converted to the xfix type explicitly with the xfix()
+conversion function. The predefined MATLAB values true and false are
 automatically converted to boolean literals.
 
-Assignment  
+#### Assignment  
 The left-hand side of an assignment can only contain one variable. A
 variable can be assigned more than once.
 
-Control Flow  
-The conditional expression of an `if` statement must evaluate to a
-boolean. Switch statements can contain a `case` clause and an
-`otherwise` clause. The types of a switch selector and its cases must be
+#### Control Flow  
+The conditional expression of an if statement must evaluate to a
+boolean. Switch statements can contain a case clause and an
+otherwise clause. The types of a switch selector and its cases must be
 compatible; thus, the selector can be boolean provided its cases are.
-All cases in a `switch` must be constant; equivalently, no `case` can
+All cases in a switch must be constant; equivalently, no case can
 depend on an input value.
 
 When the same variable is assigned in several branches of a control
@@ -180,13 +179,13 @@ else
 end
 ```
 
-is acceptable only if `a` and `b` are both boolean or both arithmetic.
+is acceptable only if a and b are both boolean or both arithmetic.
 
 &nbsp;
 
-Constant Expressions  
+#### Constant Expressions  
 An expression is constant provided its value does not depend on the
-value of any input argument. Thus, for example, the variable `c` defined
+value of any input argument. Thus, for example, the variable c defined
 by
 
 ``` pre
@@ -197,17 +196,17 @@ c = xfix({xlSigned, 10, 2}, b + 3.345);
 
 can be used in any context that demands a constant.
 xfix() Conversion  
-The `xfix()` conversion function converts a `double` to an `xfix`, or
-changes one `xfix` into another having different characteristics. A call
+The xfix() conversion function converts a double to an xfix, or
+changes one xfix into another having different characteristics. A call
 on the conversion function looks like the following
 
 ``` pre
 x = xfix(type_spec, value)
 ```
 
-Here `x` is the variable that receives the `xfix`. type_spec is a cell
-array that specifies the type of `xfix` to create, and value is the
-value being operated on. The` value` can be floating point or `xfix`
+Here x is the variable that receives the xfix. type_spec is a cell
+array that specifies the type of xfix to create, and value is the
+value being operated on. The value can be floating point or xfix
 type. The type_spec cell array is defined using curly braces in the
 usual MATLAB method. For example,
 
@@ -215,41 +214,41 @@ usual MATLAB method. For example,
 xfix({xlSigned, 20, 16, xlRound, xlWrap}, 3.1415926)
 ```
 
-returns an `xfix` approximation to `pi`. The approximation is signed,
+returns an xfix approximation to pi. The approximation is signed,
 occupies 20 bits (16 fractional), quantizes by rounding, and wraps on
 overflow.
 
 The type_spec consists of 1, 3, or 5 elements. Some elements can be
 omitted. When elements are omitted, default element settings are used.
 The elements specify the following properties (in the order presented):
-`data type`, `width`, `binary point position`, `quantization mode`, and
-`overflow mode`. The `data type` can be `xlBoolean`, `xlUnsigned`, or
-`xlSigned`. When the type is `xlBoolean`, additional elements are not
-needed (and must not be supplied). For other types, `width` and
-`binary point position` must be supplied. The `quantization` and
-`overflow mode`s are optional, but when one is specified, the other must
-be as well. Three values are possible for quantization: `xlTruncate`,
-`xlRound`, and `xlRoundBanker`. The default is `xlTruncate`. Similarly,
-three values are possible for overflow: `xlWrap`, `xlSaturate`, and
-`xlThrowOverflow`. For `xlThrowOverflow`, if an overflow occurs during
+data type, width, binary point position, quantization mode, and
+overflow mode. The data type can be xlBoolean, xlUnsigned, or
+xlSigned. When the type is xlBoolean, additional elements are not
+needed (and must not be supplied). For other types, width and
+binary point position must be supplied. The quantization and
+overflow modes are optional, but when one is specified, the other must
+be as well. Three values are possible for quantization: xlTruncate,
+xlRound, and xlRoundBanker. The default is xlTruncate. Similarly,
+three values are possible for overflow: xlWrap, xlSaturate, and
+xlThrowOverflow. For xlThrowOverflow, if an overflow occurs during
 simulation, an exception occurs.
 
 All values in a type_spec must be known at compilation time;
 equivalently, no type_spec value can depend on an input to the function.
 
-The following is a more elaborate example of an `xfix()` conversion:
+The following is a more elaborate example of an xfix() conversion:
 
 ``` pre
 width = 10, binpt = 4; 
 z = xfix({xlUnsigned, width, binpt}, x + y);
 ```
 
-This assignment to `x` is the result of converting `x + y` to an
+This assignment to x is the result of converting x + y to an
 unsigned fixed-point number that is 10 bits wide with 4 fractional bits
-using `xlTruncate` for quantization and `xlWrap` for overflow.
+using xlTruncate for quantization and xlWrap for overflow.
 
-If several `xfix()` calls need the same *type_spec* value, you can
-assign the *type_spec* to a variable, then use the variable for `xfix()`
+If several xfix() calls need the same *type_spec* value, you can
+assign the *type_spec* to a variable, then use the variable for xfix()
 
 calls. For example, the following is allowed:
 
@@ -262,28 +261,28 @@ y = xfix(proto, b);
 &nbsp;
 
 xfix Properties: xl_arith, xl_nbits, and xl_binpt  
-Each `xfix` number has three properties: the arithmetic type, the bit
+Each xfix number has three properties: the arithmetic type, the bit
 width, and the binary point position. The MCode blocks provide three
 functions to get these properties of a fixed- point number. The results
 of these functions are constants and are evaluated when Simulink
 compiles the model.
 
-Function `a = xl_arith(x)` returns the arithmetic type of the input
-number `x`. The return value is either `1`, `2`, or `3` for
-`xlUnsigned`, `xlSigned`, or `xlBoolean` respectively.
+Function a = xl_arith(x) returns the arithmetic type of the input
+number x. The return value is either 1, 2, or 3 for
+xlUnsigned, xlSigned, or xlBoolean respectively.
 
-Function `n = xl_nbits(x)` returns the width of the input number `x`.
+Function n = xl_nbits(x) returns the width of the input number x.
 
-Function `b = xl_binpt(x)` returns the binary point position of the
-input number `x`.
+Function b = xl_binpt(x) returns the binary point position of the
+input number x.
 
 &nbsp;
 
 Bit-wise Operators: xl_or, xl_and, xl_xor, and xl_not  
 The MCode block provides four built-in functions for bit-wise logical
-operations: `xl_or`, `xl_and`, `xl_xor`, and `xl_not`.
+operations: xl_or, xl_and, xl_xor, and xl_not.
 
-Function `xl_or`, `xl_and`, and `xl_xor` perform bit-wise logical or,
+Function xl_or, xl_and, and xl_xor perform bit-wise logical or,
 and, and xor operations respectively. Each function is in the form of
 
 ``` pre
@@ -294,8 +293,8 @@ Each function takes at least two fixed-point numbers and returns a
 fixed-point number. All the input arguments are aligned at the binary
 point position.
 
-Function `xl_not` performs a bit-wise logical not operation. It is in
-the form of `x = xl_not(a)`. It only takes one `xfix` number as its
+Function xl_not performs a bit-wise logical not operation. It is in
+the form of x = xl_not(a). It only takes one xfix number as its
 input argument and returns a fixed- point number.
 
 The following are some examples of these function calls:
@@ -310,15 +309,15 @@ N = xl_not(x);
 &nbsp;
 
 Shift Operators: xl_rsh, and xl_lsh  
-Functions `xl_lsh` and `xl_rsh` allow you to shift a sequence of bits of
+Functions xl_lsh and xl_rsh allow you to shift a sequence of bits of
 a fixed-point number. The function is in the form:
 
-`x = xl_lsh(a, n)` and `x = xl_rsh(a, n)` where `a` is a `xfix` value
-and `n` is the number of bits to shift.
+x = xl_lsh(a, n) and x = xl_rsh(a, n) where a is a xfix value
+and n is the number of bits to shift.
 
-Left or right shift the fixed-point number by `n` number of bits. The
-right shift (`xl_rsh`) moves the fixed-point number toward the least
-significant bit. The left shift (`xl_lsh`) function moves the
+Left or right shift the fixed-point number by n number of bits. The
+right shift (xl_rsh) moves the fixed-point number toward the least
+significant bit. The left shift (xl_lsh) function moves the
 fixed-point number toward the most significant bit. Both shift functions
 are a full precision shift. No bits are discarded and the precision of
 the output is adjusted as needed to accommodate the shifted position of
@@ -332,13 +331,13 @@ a = xfix({xlSigned, 20, 16, xlRound, xlWrap}, 3.1415926)
 b = xl_rsh(a, 5); 
 ```
 
-The output `b` is of type `xlSigned` with 21 bits and the binary point
+The output b is of type xlSigned with 21 bits and the binary point
 located at bit 21.
 
 &nbsp;
 
 Slice Function: xl_slice  
-Function `xl_slice` allows you to access a sequence of bits of a
+Function xl_slice allows you to access a sequence of bits of a
 fixed-point number. The function is in the form:
 
 ``` pre
@@ -348,8 +347,8 @@ x = xl_slice(a, from_bit, to_bit).
 Each bit of a fixed-point number is consecutively indexed from zero for
 the LSB up to the MSB. For example, given an 8-bit wide number with
 binary point position at zero, the LSB is indexed as 0 and the MSB is
-indexed as 7. The block will throw an error if the `from_bit` or
-`to_bit` arguments are out of the bit index range of the input number.
+indexed as 7. The block will throw an error if the from_bit or
+to_bit arguments are out of the bit index range of the input number.
 The result of the function call is an unsigned fixed-point number with
 zero binary point position.
 
@@ -365,7 +364,7 @@ c = xl_slice(a, xl_nbits(a)-1, xl_nbits(a)-1);
 &nbsp;
 
 Concatenate Function: xl_concat  
-Function `x = xl_concat(hi, mid, ..., low)` concatenates two or more
+Function x = xl_concat(hi, mid, ..., low) concatenates two or more
 fixed-point numbers to form a single fixed-point number. The first input
 argument occupies the most significant bits, and the last input argument
 occupies the least significant bits. The output is an unsigned
@@ -374,10 +373,10 @@ fixed-point number with binary point position at zero.
 &nbsp;
 
 Reinterpret Function: xl_force  
-Function `x = xl_force(a, arith, binpt)` forces the output to a new type
-with `arith` as its new arithmetic type and `binpt` as its new binary
-point position. The `arith` argument can be one of `xlUnsigned`,
-`xlSigned`, or `xlBoolean`. The `binpt` argument must be from 0 to the
+Function x = xl_force(a, arith, binpt) forces the output to a new type
+with arith as its new arithmetic type and binpt as its new binary
+point position. The arith argument can be one of xlUnsigned,
+xlSigned, or xlBoolean. The binpt argument must be from 0 to the
 bit width inclusively. Otherwise, the block will throw an error.
 
 &nbsp;
@@ -387,7 +386,7 @@ State Variables: xl_state
 An MCode block can have internal state variables that hold their values
 from one simulation step to the next. A state variable is declared with
 the MATLAB keyword persistent and must be initially assigned with an
-`xl_state` function call.
+xl_state function call.
 
 The following code models a 4-bit accumulator:
 
@@ -404,38 +403,38 @@ function q = accum(din, rst)
  end
 ```
 
-The state variable `s` is declared as persistent, and the first
-assignment to `s` is the result of the `xl_state` invocation. The
-`xl_state` function takes two arguments. The first is the initial value
+The state variable s is declared as persistent, and the first
+assignment to s is the result of the xl_state invocation. The
+xl_state function takes two arguments. The first is the initial value
 and must be a constant. The second is the precision of the state
-variable. It can be a type cell array as described in the `xfix`
-function call. It can also be an `xfix` number. In the above code, if
-`s = xl_state(init, din)`, then state variable s will use `din` as the
-precision. The `xl_state` function must be assigned to a persistent
+variable. It can be a type cell array as described in the xfix
+function call. It can also be an xfix number. In the above code, if
+s = xl_state(init, din), then state variable s will use din as the
+precision. The xl_state function must be assigned to a persistent
 variable.
 
-The `xl_state` function behaves in the following way:
+The xl_state function behaves in the following way:
 
-1.  In the first cycle of simulation, the `xl_state` function
+1.  In the first cycle of simulation, the xl_state function
     initializes the state variable with the specified precision.
-2.  In the following cycles of simulation, the `xl_state `function
+2.  In the following cycles of simulation, the xl_state function
     retrieves the state value left from the last clock cycle and assigns
     the value to the corresponding variable with the specified
     precision.
 
-`v = xl_state(init, precision)` returns the value of a state variable.
-The first input argument `init` is the initial value, the second
-argument `precision` is the precision for this state variable. The
-argument `precision` can be a cell arrary in the form of
-`{type, nbits, binpt}` or `{type, nbits, binpt, quantization,overflow}`.
-The `precision` argument can also be an `xfix` number.
+v = xl_state(init, precision) returns the value of a state variable.
+The first input argument init is the initial value, the second
+argument precision is the precision for this state variable. The
+argument precision can be a cell arrary in the form of
+{type, nbits, binpt} or {type, nbits, binpt, quantization,overflow}.
+The precision argument can also be an xfix number.
 
-`v = xl_state(init, precision, maxlen)` returns a vector object. The
-vector is initialized with `init` and will have `maxlen` for the maximum
-length it can be. The vector is initialized with `init`. For example,
-`v = xl_state(zeros(1, 8), prec, 8)` creates a vector of 8 zeros,
-`v = xl_state([], prec, 8)` creates an empty vector with 8 as maximum
-length, `v = xl_state(0, prec, 8)` creates a vector of one zero as
+v = xl_state(init, precision, maxlen) returns a vector object. The
+vector is initialized with init and will have maxlen for the maximum
+length it can be. The vector is initialized with init. For example,
+v = xl_state(zeros(1, 8), prec, 8) creates a vector of 8 zeros,
+v = xl_state([], prec, 8) creates an empty vector with 8 as maximum
+length, v = xl_state(0, prec, 8) creates a vector of one zero as
 content and with 8 as the maximum length.
 
 Conceptually, a vector state variable is a double ended queue. It has
@@ -461,12 +460,12 @@ Methods available for vector are:
 
 A method of a vector that queries a state variable is called a query
 method. It has a return value. The following methods are query method:
-`v(idx)`, `v.front`, `v.back`, `v.full`, `v.empty`, `v.length`,
-`v.maxlen`. A method of a vector that changes a state variable is called
+v(idx), v.front, v.back, v.full, v.empty, v.length,
+v.maxlen. A method of a vector that changes a state variable is called
 an update method. An update method does not return any value. The
-following methods are update methods: `v(idx) = val`,
-`v.push_front(val)`, `v.pop_front`, `v.push_back(val)`, `v.pop_back`,
-and `v.push_front_pop_back(val)`. All query methods of a vector must be
+following methods are update methods: v(idx) = val,
+v.push_front(val), v.pop_front, v.push_back(val), v.pop_back,
+and v.push_front_pop_back(val). All query methods of a vector must be
 invoked before any update method is invocation during any simulation
 cycle. An error is thrown during model compilation if this rule is
 broken.
@@ -474,7 +473,7 @@ broken.
 The MCode block can map a vector state variable into a vector of
 registers, a delay line, an addressable shift register, a single port
 ROM, or a single port RAM based on the usage of the state variable. The
-`xl_state` function can also be used to convert a MATLAB 1-D array into
+xl_state function can also be used to convert a MATLAB 1-D array into
 a zero-indexed constant array. If the MCode block cannot map a vector
 state variable into an FPGA, an error message is issued during model
 netlist time. The following are examples of using vector state
@@ -577,17 +576,17 @@ disp()
 Displays the expression value. In order to see the printing on the
 MATLAB console, the option Enable printing with disp must be checked on
 the Advanced tab of the MCode block parameters dialog box. The argument
-can be a string, an `xfix` number, or an MCode state variable. If the
-argument is an `xfix` number, it will print the type, binary value, and
-double precision value. For example, if variable `x` is assigned with
-`xfix({xlSigned, 10, 7}, 2.75)`, the `disp(x)` will print the following
+can be a string, an xfix number, or an MCode state variable. If the
+argument is an xfix number, it will print the type, binary value, and
+double precision value. For example, if variable x is assigned with
+xfix({xlSigned, 10, 7}, 2.75), the disp(x) will print the following
 line:
 
 ``` pre
 type: Fix_10_7, binary: 010.1100000, double: 2.75
 ```
 
-If the argument is a vector state variable, `disp()` will print out the
+If the argument is a vector state variable, disp() will print out the
 type, maximum length, current length, and the binary and double values
 of all the elements. For each simulation step, when Enable printing with
 disp is on and when a disp() function is invoked, a title line is
@@ -595,7 +594,7 @@ printed for the corresponding block. The title line includes the block
 name, Simulink simulation time, and FPGA clock number.
 
 The following MCode function shows several examples of using the
-`disp()` function.
+disp() function.
 
 ``` pre
 function x = testdisp(a, b)
@@ -675,8 +674,8 @@ end
 ```
 
 isnan()  
-Returns true for Not-a-Number. `isnan(X)` returns true when `X` is
-Not-a-Number. `X` must be a scalar value of double or Xilinx fixed-point
+Returns true for Not-a-Number. isnan(X) returns true when X is
+Not-a-Number. X must be a scalar value of double or Xilinx fixed-point
 number. This function is not supported for vectors or matrices. For
 example:
 
@@ -687,7 +686,7 @@ end
 ```
 
 NaN()  
-The `NaN()` function generates an IEEE arithmetic representation for
+The NaN() function generates an IEEE arithmetic representation for
 Not-a-Number. A NaN is obtained as a result of mathematically undefined
 operations like 0.0/0.0 and inf-inf. NaN(1,N) generates a 1-by-N vector
 of NaN values. Here are examples of using NaN.
@@ -701,11 +700,11 @@ end
 ```
 
 num2Str()  
-Converts a number to a string. `num2str(X)` converts the `X` into a
-string. `X` can be a scalar value of double, a Xilinx fixed-point
+Converts a number to a string. num2str(X) converts the X into a
+string. X can be a scalar value of double, a Xilinx fixed-point
 number, or a vector state variable. The default number of digits is
-based on the magnitude of the elements of `X`. Here's an example of
-`num2str`:
+based on the magnitude of the elements of X. Here's an example of
+num2str:
 
 ``` pre
 if opcode <=0 | opcode >= 10
@@ -714,9 +713,9 @@ end
 ```
 
 ones()  
-The `ones()` function generates a specified number of one values.
-`ones(1,N)` generates a 1-by-N vector of ones. `ones(M,N)` where `M`
-must be 1. It's usually used with `xl_state()` function call. For
+The ones() function generates a specified number of one values.
+ones(1,N) generates a 1-by-N vector of ones. ones(M,N) where M
+must be 1. It's usually used with xl_state() function call. For
 example, the following line creates a 1-by-4 vector state variable
 initialized to \[1, 1, 1, 1\].
 
@@ -725,9 +724,9 @@ persitent m, m = xl_state(ones(1, 4), proto)
 ```
 
 zeros()  
-The `zeros()` function generates a specified number of zero values.
-`zeros(1,N)` generates a 1-by-N vector of zeros. `zero(M,N)` where `M`
-must be 1. It's usually used with `xl_state()` function call. For
+The zeros() function generates a specified number of zero values.
+zeros(1,N) generates a 1-by-N vector of zeros. zero(M,N) where M
+must be 1. It's usually used with xl_state() function call. For
 example, the following line creates a 1-by-4 vector state variable
 initialized to \[0, 0, 0, 0\].
 
@@ -738,7 +737,7 @@ persitent m, m = xl_state(zeros(1, 4), proto)
 &nbsp;
 
 FOR Loop  
-`FOR` statement is fully unrolled. The following function sums `n`
+FOR statement is fully unrolled. The following function sums n
 samples.
 
 ``` pre
@@ -787,12 +786,12 @@ function [x, y, z] = test1(a, b)
   end
 ```
 
-Here `a`, `b`, and `x` are available, but `y` and `z` are not. Variable
-`y` is not available because the if statement has no else, and variable
-`z` is not available because the switch statement has no otherwise part.
+Here a, b, and x are available, but y and z are not. Variable
+y is not available because the if statement has no else, and variable
+z is not available because the switch statement has no otherwise part.
 
 Debug MCode  
-There are two ways to debug your MCode. One is to insert `disp()`
+There are two ways to debug your MCode. One is to insert disp()
 functions in your code and enable printing; the other is to use the
 MATLAB debugger. For usage of the disp() function, see the disp()
 section in this topic.
@@ -802,44 +801,39 @@ MATLAB debugging option on the Advanced tab of the MCode block
 parameters dialog box. Then you can open your MATLAB function with the
 MATLAB editor, set break points, and debug your M-function. Just be
 aware that every time you modify your script, you need to execute a
-`clear functions` command in the MATLAB console.
+clear functions command in the MATLAB console.
 
 To start debugging your M-function, you need to first check the Enable
 MATLAB debugging check box on the Advanced tab of the MCode block
 parameters dialog, then click the OK or Apply button.
-
-Figure: Enable MATLAB Debugging
 
 ![](./Images/yvt1647632346760.png)
 
 Now you can edit the M-file with the MATLAB editor and set break points
 as needed.
 
-Figure: Set Break Points
 
 ![](./Images/slw1555437358574.png)
 
 During the Simulink simulation, the MATLAB debugger will stop at the
 break points you set when the break points are reached.
 
-Figure: Stopping at Break Point
 
 ![](./Images/xdu1555437348361.png)
 
 When debugging, you can also examine the values of the variables by
 typing the variable names in the MATLAB console.
 
-Figure: Examining Variable
 
   
 ![](./Images/vis1538085527539.png)  
 
 There is one special case to consider when the function for an MCode
-block is executed from the MATLAB debugger. A `switch/case` expression
-inside an MCode block must be type `xfix`, however, executing a
-`switch/case` expression from the MATLAB console requires that the
-expression be a `double` or `char`. To facilitate execution in the
-MATLAB console, a call to `double()` must be added. For example,
+block is executed from the MATLAB debugger. A switch/case expression
+inside an MCode block must be type xfix, however, executing a
+switch/case expression from the MATLAB console requires that the
+expression be a double or char. To facilitate execution in the
+MATLAB console, a call to double() must be added. For example,
 consider the following:
 
 ``` pre
@@ -851,7 +845,7 @@ switch i
   end
 ```
 
-where `i` is type `xfix`. To run from the console this code must changed
+where i is type xfix. To run from the console this code must changed
 to
 
 ``` pre
@@ -863,8 +857,8 @@ switch double(i)
 end
 ```
 
-The `double()` function call only has an effect when the M code is run
-from the console. The MCode block ignores the `double()` call.
+The double() function call only has an effect when the M code is run
+from the console. The MCode block ignores the double() call.
 
 &nbsp;
 
@@ -886,20 +880,17 @@ dout = xfix(proto, din);
 ```
 
 The following figures shows how the bindings are set for the din input
-of two separate `xl_sconvert` blocks.
+of two separate xl_sconvert blocks.
 
-Figure: din Bindings, Example 1
 
 ![](./Images/hcq1647548231356.png)
 
-Figure: din Bindings, Example 2
 
 ![](./Images/dxd1647548293459.png)
 
 The following figure shows the block diagram after the model is
 compiled.
 
-Figure: Block Diagram
 
   
 ![](./Images/elk1538085530719.png)  
@@ -922,17 +913,16 @@ function s = xl_m_addsub(a, b, sub)
   end
 ```
 
-If `sub` is set to be `false`, the MCode block that uses this M-function
-will have two input ports `a` and `b` and will perform full precision
+If sub is set to be false, the MCode block that uses this M-function
+will have two input ports a and b and will perform full precision
 addition. If it is set to an empty cell array {}, the block will have
-three input ports `a`, `b`, and `sub` and will perform full precision
-addition or subtraction based on the value of input port `sub`.
+three input ports a, b, and sub and will perform full precision
+addition or subtraction based on the value of input port sub.
 
 The following figure shows the block diagram of two blocks using the
-same `xl_m_addsub` function, one having two input ports and one having
+same xl_m_addsub function, one having two input ports and one having
 three input ports.
 
-Figure: Two Blocks Using Same xl_m_addsub Function
 
   
 ![](./Images/zrd1538085531656.png)  
@@ -947,7 +937,7 @@ Usually the MCode block drives a register with the value representing
 the next state, and the register feeds back the current state into the
 MCode block. For this to work, the precision of the state output from
 the MCode block must be static, that is, independent of any inputs to
-the block. Occasionally you might find you need to use `xfix()`
+the block. Occasionally you might find you need to use xfix()
 conversions to force static precision. The following code illustrates
 this:
 
@@ -996,13 +986,13 @@ function myFn = aFn(en, a)
 ```
 
 There are two branches in the conditional assignment to persistent state
-variable `r1`. A register is used to perform the conditional assignment.
-The input of the register is connected to `r1 + a`, the output of the
-register is `r1`. The register's enable signal is inferred; the enable
-signal is connected to `en`, when `en` is asserted. Persistent state
-variable `r1` is assigned to `r1 + a` when `en` evaluates to `false`,
+variable r1. A register is used to perform the conditional assignment.
+The input of the register is connected to r1 + a, the output of the
+register is r1. The register's enable signal is inferred; the enable
+signal is connected to en, when en is asserted. Persistent state
+variable r1 is assigned to r1 + a when en evaluates to false,
 the enable signal on the register is de-asserted resulting in the
-assignment of `r1` to `r1`.
+assignment of r1 to r1.
 
 The following M-code will also infer an enable signal on the register
 used to perform the conditional assignment:
@@ -1017,13 +1007,13 @@ function myFn = aFn(en, a)
 ```
 
 An enable is inferred instead of a reset because the conditional
-assignment of persistent state variable `r1` is to a non-constant value,
-`r1 + a`.
+assignment of persistent state variable r1 is to a non-constant value,
+r1 + a.
 
 If there were three branches in the conditional assignment of persistent
-state variable `r1`, the enable signal would not be inferred. The
+state variable r1, the enable signal would not be inferred. The
 following M-code illustrates the case where there are three branches in
-the conditional assignment of persistent state variable `r1` and the
+the conditional assignment of persistent state variable r1 and the
 enable signal is not inferred:
 
 ``` pre
@@ -1041,8 +1031,8 @@ function myFn = aFn(en, en2, a, b)
 The reset signal can be inferred if a persistent state variable is
 conditionally assigned to a constant; the reset is synchronous. Consider
 the following M-code example which infers a reset signal for the
-assignment of persistent state variable `r1` to `init`, a constant, when
-`rst` evaluates to true and `r1 + 1` otherwise:
+assignment of persistent state variable r1 to init, a constant, when
+rst evaluates to true and r1 + 1 otherwise:
 
 ``` pre
 function myFn = aFn(rst)
@@ -1070,11 +1060,11 @@ function myFn = aFn(rst)
 ```
 
 In both code examples above, the reset signal of the register containing
-persistent state variable `r1` is assigned to `rst`. When `rst`
-evaluates to `true`, the register's reset input is asserted and the
-persistent state variable is assigned to constant `init`. When `rst`
-evaluates to `false`, the register's reset input is de-asserted and
-persistent state variable `r1` is assigned to `r1 + 1`. Again, if the
+persistent state variable r1 is assigned to rst. When rst
+evaluates to true, the register's reset input is asserted and the
+persistent state variable is assigned to constant init. When rst
+evaluates to false, the register's reset input is de-asserted and
+persistent state variable r1 is assigned to r1 + 1. Again, if the
 conditional assignment of a persistent state variable contains three or
 more branches, a reset signal is not inferred on the persistent state
 variable's register.
@@ -1082,7 +1072,7 @@ variable's register.
 It is possible to infer reset and enable signals on the register of a
 single persistent state variable. The following M-code example
 illustrates simultaneous inference of reset and enable signals for the
-persistent state variable `r1`:
+persistent state variable r1:
 
 ``` pre
 function myFn = aFn(rst,en)
@@ -1098,16 +1088,16 @@ function myFn = aFn(rst,en)
   end
 ```
 
-The reset input for the register of persistent state variable `r1` is
-connected to `rst`; when `rst` evaluates to `true`, the register's reset
-input is asserted and `r1` is assigned to `init`. The enable input of
-the register is connected to `en`; when `en` evaluates to `true`, the
-register's enable input is asserted and `r1` is assigned to `r1 + 1`. It
+The reset input for the register of persistent state variable r1 is
+connected to rst; when rst evaluates to true, the register's reset
+input is asserted and r1 is assigned to init. The enable input of
+the register is connected to en; when en evaluates to true, the
+register's enable input is asserted and r1 is assigned to r1 + 1. It
 is important to note that an inferred reset signal takes precedence over
 an inferred enable signal regardless of the order of the conditional
 assignment statements. Consider the second code example above; if both
-`rst` and `en` evaluate to `true`, persistent state variable `r1` would
-be assigned to `init`.
+rst and en evaluate to true, persistent state variable r1 would
+be assigned to init.
 
 Inference of reset and enable signals also works for conditional
 assignment of persistent state variables using switch statements,
@@ -1174,20 +1164,20 @@ constants that are powers of two. If detected, the MCode block will
 perform a shift operation. For example, multiplying by 4 is equivalent
 to left shifting 2 bits and dividing by 8 is equivalent to right
 shifting 3 bits. A shift is implemented by adjusting the binary point,
-expanding the `xfix` container as needed. For example, a `Fix_8_4`
-number multiplied by 4 will result in a `Fix_8_2` number, and a
-`Fix_8_4` number multiplied by 64 will result in a `Fix_10_0` number.
+expanding the xfix container as needed. For example, a Fix_8_4
+number multiplied by 4 will result in a Fix_8_2 number, and a
+Fix_8_4 number multiplied by 64 will result in a Fix_10_0 number.
 
 &nbsp;
 
 Using the xl_state Function with Rounding Mode  
-The `xl_state` function call creates an `xfix` container for the state
+The xl_state function call creates an xfix container for the state
 variable. The container's precision is specified by the second argument
-passed to the `xl_state` function call. If precision uses `xlRound` for
+passed to the xl_state function call. If precision uses xlRound for
 its rounding mode, hardware resources is added to accomplish the
 rounding. If rounding the initial value is all that is required, an
-`xfix` call to round a constant does not require additional hardware
-resources. The rounded value can then be passed to the `xl_state`
+xfix call to round a constant does not require additional hardware
+resources. The rounded value can then be passed to the xl_state
 function. For example:
 
 ``` pre
@@ -1195,12 +1185,11 @@ init = xfix({xlSigned,8,5,xlRound,xlWrap}, 3.14159);
 persistent s, s = xl_state(init, {xlSigned, 8, 5});
 ```
 
-## Block Parameters
+## Parameters
 
 The block parameters dialog box can be invoked by double-clicking the
 block icon in a Simulink® model.
 
-Figure: Block Parameters
 
 ![](./Images/wqq1647547952612.png)
 
