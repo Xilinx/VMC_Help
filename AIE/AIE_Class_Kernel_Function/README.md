@@ -27,11 +27,11 @@ kernels.
 The string could be the file name, a relative path to the file or an absolute path of the file. 
 
 #### Kernel search paths
-* Optional vector of strings. If the kernel header file or the kernel source file are not found using the value provided through the Kernel header file or Kernel source file fields respectively, then the paths provided through Kernel search paths are used to find the files. 
+> Optional vector of strings. If the kernel header file or the kernel source file are not found using the value provided through the Kernel header file or Kernel source file fields respectively, then the paths provided through Kernel search paths are used to find the files. 
 
-* This parameter allows use of environment variables while specifying paths for the kernel header file and the kernel source file. The environment variable can be used in either ${ENV} or $ENV format.
+> This parameter allows use of environment variables while specifying paths for the kernel header file and the kernel source file. The environment variable can be used in either ${ENV} or $ENV format.
 
 #### Preprocessor options
-* Optional preprocessor arguments for downstream compilation with specific preprocessor options.
+> Optional preprocessor arguments for downstream compilation with specific preprocessor options.
 
   The following two preprocessor option formats are accepted and multiple can be selected: -D<name> and -D<name>=<definition> separated by a comma. That is, the optional argument must begin with -D and if the option <definition> value is not provided, it is assumed to be 1.
