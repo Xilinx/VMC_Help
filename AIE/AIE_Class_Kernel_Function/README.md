@@ -17,13 +17,13 @@ kernels.
 ## Parameters
 
 #### Kernel class
-* Mandatory string. Name of the kernel class which contains member variables and kernel member functions.
+> Mandatory string. Name of the kernel class which contains member variables and kernel member functions.
 
 #### Kernel function
-* Mandatory string. Name of the kernel member function for which the block is to be created. This function should be registered using the registerKernelClass method in the kernel header file. 
+> Mandatory string. Name of the kernel member function for which the block is to be created. This function should be registered using the registerKernelClass method in the kernel header file. 
 
 #### Kernel source file
-* Mandatory string. Name of the source file that contains where the kernel member function definition and non-default constructor parameter values are specified.
+> Mandatory string. Name of the source file that contains where the kernel member function definition and non-default constructor parameter values are specified.
 The string could be the file name, a relative path to the file or an absolute path of the file. 
 
 #### Kernel search paths
