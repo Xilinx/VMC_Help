@@ -21,14 +21,14 @@ consists of a dataflow graph specification written in C++.
 selected.
 
 #### Graph Header file(\*.h)  
-> This is the mandatory string that specify the file (.h), where the
+> This is the mandatory string that specifies the file (.h), where the
 application graph class is defined and the Adaptive Data Flow (ADF)
 header (adf.h), kernel function prototypes are included. This parameter
 is only visible when you choose the Header file (\*.h) option in the
 Graph file.
 
 #### Graph Source file (\*.cpp)  
-> This is the mandatory string that specify the file (.cpp), where the adf
+> This is the mandatory string that specifies the file (.cpp), where the adf
 dataflow graph is instantiated. This file should contain the main()
 function, from where the dataflow graph initializes and runs. This
 option is available only when the Source file (\*.cpp) is selected in
