@@ -1,10 +1,12 @@
 # Inverter
 
-The Xilinx Inverter block calculates the bitwise logical complement of a
-fixed-point number. The block is implemented as a synthesizable VHDL
-module.
 
 ![](./Images/block.png)
+
+## Description
+The Inverter block calculates the bitwise logical complement of a
+fixed-point number. The block is implemented as a synthesizable VHDL
+module.
 
 ## Block Parameters
 
