@@ -63,7 +63,7 @@ delayed.
 are all three pipeline stages used in the generated Multiplier IP.
 
 
-### ementation tab  
+### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 
 #### Use behavioral HDL (otherwise use core)  
