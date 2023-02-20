@@ -28,17 +28,17 @@ reduced number of total bits and/or fractional bits.
 #### Fixed-point output type  
 > #### Arithematic Type  
 > > #### Signed (2’s comp)  
-> > The output is a Signed (2’s complement) number.
+> > > The output is a Signed (2’s complement) number.
 
 > > #### Unsigned  
-> > The output is an Unsigned number.
+> > > The output is an Unsigned number.
 
 > > #### Number of bits  
-> > Specifies the bit location of the binary point of the output number,
+> > > Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
 > > #### Binary point  
-> > Position of the binary point in the fixed-point output.
+> > > Position of the binary point in the fixed-point output.
 
 #### Quantization  
 > Refer to the Overflow and Quantization section in the [Common Options in
