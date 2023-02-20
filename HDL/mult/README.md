@@ -79,11 +79,11 @@ Floating-point Operator core.
 > > Directs the block to be optimized for either Speed or Area.
 
 > #### Use embedded multipliers  
-> This field specifies that if possible, use the XtremeDSP slice (DSP48
+> > This field specifies that if possible, use the XtremeDSP slice (DSP48
 type embedded multiplier) in the target device.
 
 > #### Test for optimum pipelining  
-> Checks if the Latency provided is at least equal to the optimum pipeline
+> > Checks if the Latency provided is at least equal to the optimum pipeline
 length. Latency values that pass this test imply that the core produced
 is optimized for speed.
 
