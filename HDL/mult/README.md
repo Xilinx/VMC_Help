@@ -18,11 +18,11 @@ port.
 fixed-point arithmetic. Floating point output always has Full precision.
 
 > #### Full  
-> The block uses sufficient precision to represent the result without
+> > The block uses sufficient precision to represent the result without
 error.
 
 > #### User Defined  
-> If you do not need full precision, this option allows you to specify a
+> > If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
 
 #### Fixed-point output type  
