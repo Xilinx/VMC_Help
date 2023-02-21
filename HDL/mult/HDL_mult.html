@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,74 +28,162 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Mult</h1>
 </header>
-<h1 id="mult">Mult</h1>
-<p>The Xilinx Mult block implements a multiplier. It computes the
-product of the data on its two input ports, producing the result on its
-output port.</p>
+<section id="mult" class="level1">
+<h1>Mult</h1>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows.</p>
-<p>Precision<br />
-This parameter allows you to specify the output precision for
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Mult block implements a multiplier. It computes the product of
+the data on its two input ports, producing the result on its output
+port.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<blockquote>
+<p>Parameters specific to the Basic tab are as follows.</p>
+</blockquote>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<blockquote>
+<p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point output always has Full
 precision.</p>
-<p>Full<br />
-The block uses sufficient precision to represent the result without
+</blockquote>
+<blockquote>
+<h4 id="full">Full</h4>
+<blockquote>
+<p>The block uses sufficient precision to represent the result without
 error.</p>
-<p>User Defined<br />
-If you do not need full precision, this option allows you to specify a
-reduced number of total bits and/or fractional bits.</p>
-<p>Fixed-point output type<br />
-Arithematic Type<br />
-Signed (2’s comp)<br />
-The output is a Signed (2’s complement) number.</p>
-<p>Unsigned<br />
-The output is an Unsigned number.</p>
-<p>Number of bits<br />
-Specifies the bit location of the binary point of the output number,
+</blockquote>
+</blockquote>
+<blockquote>
+<h4 id="user-defined">User Defined</h4>
+<blockquote>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="fixed-point-output-type" class="level4">
+<h4>Fixed-point output type</h4>
+<blockquote>
+<h4 id="arithematic-type">Arithematic Type</h4>
+<blockquote>
+<h4 id="signed-2s-comp">Signed (2’s comp)</h4>
+<blockquote>
+<p>The output is a Signed (2’s complement) number.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<h4 id="unsigned">Unsigned</h4>
+<blockquote>
+<p>The output is an Unsigned number.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<h4 id="number-of-bits">Number of bits</h4>
+<blockquote>
+<p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
-<p>Binary point<br />
-Position of the binary point in the fixed-point output.</p>
-<p>Quantization<br />
-Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<h4 id="binary-point">Binary point</h4>
+<blockquote>
+<p>Position of the binary point in the fixed-point output.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</section>
+<section id="quantization" class="level4">
+<h4>Quantization</h4>
+<blockquote>
+<p>Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
-<p>Overflow<br />
-Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</blockquote>
+</section>
+<section id="overflow" class="level4">
+<h4>Overflow</h4>
+<blockquote>
+<p>Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
-<p>Optional Port<br />
-Provide enable port</p>
-<p>Latency<br />
-This defines the number of sample periods by which the block&#39;s output is
-delayed.</p>
-<p>Note: Only when latency of the Mult block is set to 4 in Model
-Composer, are all three pipeline stages used in the generated Multiplier
-IP.</p>
-<p> </p>
-<p>Implementation tab<br />
-Parameters specific to the Implementation tab are as follows.</p>
-<p>Use behavioral HDL (otherwise use core)<br />
-The block is implemented using behavioral HDL. This gives the downstream
-logic synthesis tool maximum freedom to optimize for performance or
-area.</p>
-<p>Note: For Floating-point operations, the block always uses the
-Floating-point Operator core.</p>
-<p>Core Parameters<br />
-Optimize for Speed|Area<br />
-Directs the block to be optimized for either Speed or Area.</p>
-<p>Use embedded multipliers<br />
-This field specifies that if possible, use the XtremeDSP slice (DSP48
+</blockquote>
+</section>
+<section id="optional-port" class="level4">
+<h4>Optional Port</h4>
+<blockquote>
+<p>Provide enable port</p>
+</blockquote>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<blockquote>
+<p>This defines the number of sample periods by which the block&#39;s output
+is delayed.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: Only when latency of the Mult block is set to
+4 in Model Composer, are all three pipeline stages used in the generated
+Multiplier IP.</p>
+</blockquote>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows.</p>
+<section id="use-behavioral-hdl-otherwise-use-core" class="level4">
+<h4>Use behavioral HDL (otherwise use core)</h4>
+<blockquote>
+<p>The block is implemented using behavioral HDL. This gives the
+downstream logic synthesis tool maximum freedom to optimize for
+performance or area.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: For Floating-point operations, the block
+always uses the Floating-point Operator core.</p>
+</blockquote>
+</section>
+<section id="core-parameters" class="level4">
+<h4>Core Parameters</h4>
+<blockquote>
+<h4 id="optimize-for-speedarea">Optimize for Speed|Area</h4>
+<blockquote>
+<p>Directs the block to be optimized for either Speed or Area.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h4 id="use-embedded-multipliers">Use embedded multipliers</h4>
+<blockquote>
+<p>This field specifies that if possible, use the XtremeDSP slice (DSP48
 type embedded multiplier) in the target device.</p>
-<p>Test for optimum pipelining<br />
-Checks if the Latency provided is at least equal to the optimum pipeline
-length. Latency values that pass this test imply that the core produced
-is optimized for speed.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h4 id="test-for-optimum-pipelining">Test for optimum pipelining</h4>
+<blockquote>
+<p>Checks if the Latency provided is at least equal to the optimum
+pipeline length. Latency values that pass this test imply that the core
+produced is optimized for speed.</p>
+</blockquote>
+</blockquote>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™™ Documentation</h2>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™™ Documentation</h2>
 <p>Multiplier LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=mult_gen;v=latest;d=pg108-mult-gen.pdf">PG108</a>)</p>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,31 +28,40 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">FIR Asymmetric</h1>
 </header>
-<h1 id="fir-asymmetric">FIR Asymmetric</h1>
+<section id="fir-asymmetric" class="level1">
+<h1>FIR Asymmetric</h1>
 <p>This block implements the Single Rate Asymmetric FIR Filter targeted
 for AI Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/DSP/Window IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block implements the Single Rate Asymmetric FIR Filter targeted
 for AI Engines.</p>
-<h2 id="parameters">Parameters</h2>
-<h3 id="main">Main</h3>
-<h4 id="input-data-typeoutput-data-type">Input data type/Output data
-type</h4>
-<ul>
-<li>Describes the type of individual data samples input to and output
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="input-data-typeoutput-data-type" class="level4">
+<h4>Input data type/Output data type</h4>
+<blockquote>
+<p>Describes the type of individual data samples input to and output
 from the filter function. int16, cint16, int32, cint32, float,
-cfloat.</li>
-</ul>
-<h4 id="filter-coefficients-data-type">Filter coefficients data
-type</h4>
-<ul>
-<li>Describes the type of individual coefficients of the filter taps. It
+cfloat.</p>
+</blockquote>
+</section>
+<section id="filter-coefficients-data-type" class="level4">
+<h4>Filter coefficients data type</h4>
+<blockquote>
+<p>Describes the type of individual coefficients of the filter taps. It
 should be one of int16, cint16, int32, cint32, float, or cfloat and must
-also satisfy the following rules:</li>
-</ul>
+also satisfy the following rules:</p>
+</blockquote>
+<blockquote>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
 also complex.</li>
@@ -63,35 +72,45 @@ Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
 </ul>
-<h4 id="specify-filter-coefficients-via-input-port">Specify filter
-coefficients via input port</h4>
-<ul>
-<li>When this option is enabled, the tool allows you to specify
-reloadable filter coefficients via the input port.</li>
-</ul>
-<h4 id="filter-coefficients">Filter coefficients</h4>
-<ul>
-<li>This field should be specified with the asymmetric filter
-coefficients and must be in the range 4 to 240 inclusive.</li>
-</ul>
-<h4 id="input-window-size-number-of-samples">Input window size (Number
-of samples)</h4>
-<ul>
-<li>Describes the number of samples used as an input to the filter
+</blockquote>
+</section>
+<section id="specify-filter-coefficients-via-input-port" class="level4">
+<h4>Specify filter coefficients via input port</h4>
+<blockquote>
+<p>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via the input port.</p>
+</blockquote>
+</section>
+<section id="filter-coefficients" class="level4">
+<h4>Filter coefficients</h4>
+<blockquote>
+<p>This field should be specified with the asymmetric filter
+coefficients and must be in the range 4 to 240 inclusive.</p>
+</blockquote>
+</section>
+<section id="input-window-size-number-of-samples" class="level4">
+<h4>Input window size (Number of samples)</h4>
+<blockquote>
+<p>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be equal to
 input window size also by virtue of the single rate nature of this
-function.</li>
-</ul>
-<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
-<ul>
-<li>Describes the power of 2 shift down applied to the accumulation of
-FIR terms before output. It must be in the range 0 to 61.</li>
-</ul>
-<h4 id="rounding-mode">Rounding mode</h4>
-<ul>
-<li>Describes the selection of rounding to be applied during the shift
-down stage of processing. The rounding options are as follows:</li>
-</ul>
+function.</p>
+</blockquote>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
+<blockquote>
+<p>Describes the power of 2 shift down applied to the accumulation of
+FIR terms before output. It must be in the range 0 to 61.</p>
+</blockquote>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
+<blockquote>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</p>
+</blockquote>
+<blockquote>
 <ol type="1">
 <li>Floor (truncate)</li>
 <li>Ceiling</li>
@@ -102,27 +121,36 @@ down stage of processing. The rounding options are as follows:</li>
 <li>Round convergent to even</li>
 <li>Round convergent to odd</li>
 </ol>
-<ul>
-<li>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</li>
-</ul>
-<h3 id="advanced">Advanced</h3>
-<h4 id="target-input-throughput-msps">Target input throughput
-(MSPS)</h4>
-<ul>
-<li>Specifies the rate at which data samples should be processed. The
-default value is 200.</li>
-</ul>
-<h4 id="specify-the-number-of-cascade-stages">Specify the number of
-cascade stages</h4>
-<ul>
-<li>When this option is not enabled, the tool will determine the filter
+</blockquote>
+<blockquote>
+<p>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</p>
+</blockquote>
+</section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
+<section id="target-input-throughput-msps" class="level4">
+<h4>Target input throughput (MSPS)</h4>
+<blockquote>
+<p>Specifies the rate at which data samples should be processed. The
+default value is 200.</p>
+</blockquote>
+</section>
+<section id="specify-the-number-of-cascade-stages" class="level4">
+<h4>Specify the number of cascade stages</h4>
+<blockquote>
+<p>When this option is not enabled, the tool will determine the filter
 configuration that best achieves the specified input sampling rate. When
 the option is enabled, the &#39;Number of cascade stages&#39; can be specified
 (which describes the number of AI Engine processors to split the
 operation over). However, this allows resource to be traded for higher
 performance and the specified input sampling rate constraint may not be
-achieved. The value must be in the range 1 to 9.</li>
-</ul>
+achieved. The value must be in the range 1 to 9.</p>
+</blockquote>
+</section>
+</section>
+</section>
+</section>
 </body>
 </html>

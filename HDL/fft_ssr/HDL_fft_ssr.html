@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,49 +28,74 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Vector FFT</h1>
 </header>
-<h1 id="vector-fft">Vector FFT</h1>
+<section id="vector-fft" class="level1">
+<h1>Vector FFT</h1>
 <p>The Vector FFT block supports the FFT operation for vector type
 inputs.</p>
-<h2 id="description">Description</h2>
-<p>The real part of the input data should be given to the
-<code>in_re</code> port, and the imaginary part should be given to the
-<code>in_im port</code>.</p>
-<p>When the <code>in_valid</code> is high it indicates that the input
-data is valid. When <code>out_valid</code> is high, it indicates that
-the output data is valid. The valid indicator accompanies every set of
-input and output samples (for example, R number of samples). There is no
-back pressure flow control and once an FFT transform starts, &#39;R&#39; data
-samples must be input into the core every clock for N/R consecutive
-clocks. Where N is the FFT length. However, for back-to-back transforms,
-the valid control input can stay high with no gaps.</p>
-<p>The <code>in_scale</code> input port is used if scaling is required.
-And <code>out_scale</code> is used in if there is an internal
-overflow.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="data-type-support">Data Type Support</h2>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The real part of the input data should be given to the in_re port,
+and the imaginary part should be given to the in_im port.</p>
+<p>When the in_valid is high it indicates that the input data is valid.
+When out_valid is high, it indicates that the output data is valid. The
+valid indicator accompanies every set of input and output samples (for
+example, R number of samples). There is no back pressure flow control
+and once an FFT transform starts, &#39;R&#39; data samples must be input into
+the core every clock for N/R consecutive clocks. Where N is the FFT
+length. However, for back-to-back transforms, the valid control input
+can stay high with no gaps.</p>
+<p>The in_scale input port is used if scaling is required. And out_scale
+is used in if there is an internal overflow.</p>
+<section id="data-type-support" class="level3">
+<h3>Data Type Support</h3>
 <ul>
-<li>The number of <code>in_scale</code> bits must be equal to
-<code>log2(FFT length)</code>.</li>
-<li><code>in_valid</code> and <code>out_valid</code> are of Boolean data
-type.</li>
+<li>The number of in_scale bits must be equal to log2(FFT length).</li>
+<li>in_valid and out_valid are of Boolean data type.</li>
 </ul>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>FFT length (N) is the size of the transformation, and should be
-powers of 2 in the range of 2^3 to 2^16. SSR is the super sample rate,
-the number of samples processed in parallel every clock. Using a typical
-example with N=1024 and SSR=4, the core would compute one 1K FFT every
-256 clock cycles, processing 4 input samples/clock.</p>
-<p>The fixed-point output data size must be 27 bits or less, this is
-limited by the DSP48 multiplier A port size.</p>
-<p>BRAM_THRESHOLD is an implementation parameter with no functional
-implications, it controls the use of distributed RAM vs BRAM when
-implementing delay lines. It can be used to trade utilization numbers
-between these two types of resources. The higher the value, the more
-distributed RAM will be used instead of BRAM. Typical values to try are
-258, 514, and 1026.</p>
-<p>Scaling Ports<br />
-The scaling ports are called SI and SO. Their width matches the FFT size
-N, it is always log2(N). There is one SI bit for every add/subtract
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="fft-length-n" class="level4">
+<h4>FFT length (N)</h4>
+<blockquote>
+<p>Is the size of the transformation, and should be powers of 2 in the
+range of 2^3 to 2^16. SSR is the super sample rate, the number of
+samples processed in parallel every clock. Using a typical example with
+N=1024 and SSR=4, the core would compute one 1K FFT every 256 clock
+cycles, processing 4 input samples/clock.</p>
+</blockquote>
+</section>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point precision</h4>
+<blockquote>
+<p>Must be 27 bits or less, this is limited by the DSP48 multiplier A
+port size.</p>
+</blockquote>
+</section>
+<section id="block-ram_threshold" class="level4">
+<h4>Block RAM_THRESHOLD</h4>
+<blockquote>
+<p>Is an implementation parameter with no functional implications, it
+controls the use of distributed RAM vs BRAM when implementing delay
+lines. It can be used to trade utilization numbers between these two
+types of resources. The higher the value, the more distributed RAM will
+be used instead of BRAM. Typical values to try are 258, 514, and
+1026.</p>
+</blockquote>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<blockquote>
+<p>Super Sample Rate</p>
+</blockquote>
+</section>
+</section>
+<section id="scaling-ports" class="level2">
+<h2>Scaling Ports</h2>
+<p>The scaling ports are called SI and SO. Their width matches the FFT
+size N, it is always log2(N). There is one SI bit for every add/subtract
 stage, where internal overflows can occur. If that bit is set to zero
 then no scaling happens and bit growth is addressed by increasing the
 internal data sizes bit, one bit every stage. If the bit is set to 1
@@ -91,5 +116,7 @@ If the two rules outlined above are followed, then internal overflows
 are impossible by design.</p>
 <p>The SO port is an indicator of internal overflows, it is not normally
 used, only attach an unsigned signals of size log2(N) to it.</p>
+</section>
+</section>
 </body>
 </html>

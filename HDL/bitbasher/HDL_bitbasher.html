@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,37 +28,50 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">BitBasher</h1>
 </header>
-<h1 id="bitbasher">BitBasher</h1>
+<section id="bitbasher" class="level1">
+<h1>BitBasher</h1>
 <p>The BitBasher block performs slicing, concatenation and augmentation
 of inputs attached to the block.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The operation to be performed is described using Verilog syntax which
 is detailed in this document. The block can have up to four output
 ports. The number of output ports is equal to the number of expressions.
 The block does not cost anything in hardware.</p>
-<h2 id="block-parameters">Block Parameters</h2>
-<h3 id="basic-tab">Basic tab</h3>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows.</p>
-<h4 id="bitbasher-expression">BitBasher Expression</h4>
-<ul>
-<li>Bitwise manipulation expression based on Verilog Syntax. Multiple
+<section id="bitbasher-expression" class="level4">
+<h4>BitBasher Expression</h4>
+<p>Bitwise manipulation expression based on Verilog Syntax. Multiple
 expressions (limited to a maximum of 4) can be specified using new line
-as a separator between expressions.</li>
-</ul>
-<h3 id="output-type-tab">Output Type tab</h3>
-<ul>
-<li><h4 id="output">Output</h4>
-<p>This refers to the port on which the data type is specified.</p></li>
-<li><h4 id="output-type">Output type</h4>
-<p>Arithmetic type to be forced onto the corresponding output.</p></li>
-<li><h4 id="binary-point">Binary Point</h4>
-<p>Binary point location to be forced onto the corresponding
-output.</p></li>
-</ul>
+as a separator between expressions.</p>
+</section>
+</section>
+<section id="output-type-tab" class="level3">
+<h3>Output Type tab</h3>
+<section id="output" class="level4">
+<h4>Output</h4>
+<p>This refers to the port on which the data type is specified.</p>
+</section>
+<section id="output-type" class="level4">
+<h4>Output type</h4>
+<p>Arithmetic type to be forced onto the corresponding output.</p>
+</section>
+<section id="binary-point" class="level4">
+<h4>Binary Point</h4>
+<p>Binary point location to be forced onto the corresponding output.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="supported-verilog-constructs">Supported Verilog Constructs</h2>
+</section>
+</section>
+</section>
+<section id="supported-verilog-constructs" class="level2">
+<h2>Supported Verilog Constructs</h2>
 <p>The BitBasher block only supports a subset of Verilog expression
 constructs that perform bitwise manipulations including slice,
 concatenation, and repeat operators. All specified expressions must
@@ -69,7 +82,9 @@ based on Verilog syntax or simply an input port identifier.</p>
 <p><code>output_var</code>: The output port identifier. An output port
 with the name output_var will appear on the block and will hold the
 result of the wire expression bitbasher_expr.</p>
-<h2 id="concat">Concat</h2>
+</section>
+<section id="concat" class="level2">
+<h2>Concat</h2>
 <p><code>output_var = {bitbasher_expr1, bitbasher_expr2, bitbasher_expr3}</code></p>
 <p>The concat syntax is supported as shown above. Each of
 <code>bitbasher_exprN</code> could either be an expression or simply an
@@ -78,7 +93,9 @@ input port identifier.</p>
 <p><code>a1 = {b,c,d,e,f,g}</code></p>
 <p><code>a2 = {e}</code></p>
 <p><code>a3 = {b,{f,c,d},e}</code></p>
-<h2 id="slice">Slice</h2>
+</section>
+<section id="slice" class="level2">
+<h2>Slice</h2>
 <pre class="pre"><code>output_var = {port_identifier[bound1:bound2]}...(1) 
 output_var = {port_identifier[bitN]}...(2)</code></pre>
 <p><code>port_identifier</code>: The input port from which the bits are
@@ -110,7 +127,9 @@ if <code>b</code> is 110100110 then <code>a2</code> is 00101).</p>
 constructs. Bits 7 through 5 of input <code>b</code>, bits 3 through 9
 of input <code>c</code> and all the bits of <code>d</code> and
 <code>e</code> are concatenated.</p>
-<h2 id="repeat">Repeat</h2>
+</section>
+<section id="repeat" class="level2">
+<h2>Repeat</h2>
 <pre class="pre"><code>output_var = {N{bitbasher_expr}}</code></pre>
 <p><code>N</code>: A positive integer that represents the repeat factor
 in the expression</p>
@@ -121,7 +140,8 @@ in the expression</p>
 <pre class="pre"><code>a2 = {b[7:3],2{c,d}}</code></pre>
 <p>The above expression is equivalent to
 <code>a2 = {b[7:3],c,d,c,d}</code>.</p>
-<h3 id="constants">Constants</h3>
+<section id="constants" class="level3">
+<h3>Constants</h3>
 <p>Binary Constant: N&#39;bbin_const</p>
 <p>Octal Constant: N&#39;ooctal_const</p>
 <p>Decimal Constant: N&#39;doctal_const</p>
@@ -149,12 +169,17 @@ block.</p>
 <pre class="pre"><code>a1 = {4&#39;o10, e}</code></pre>
 <p>if <code>e</code> were 110110110 then <code>a1</code> would be
 1000110110110.</p>
-<h2 id="limitations">Limitations</h2>
+</section>
+</section>
+<section id="limitations" class="level2">
+<h2>Limitations</h2>
 <ul>
 <li>Does not support masked parameterization on the bitbasher
 expressions.</li>
 <li>An expression cannot contain only constants, that is, each
 expression must include at least one input port.</li>
 </ul>
+</section>
+</section>
 </body>
 </html>

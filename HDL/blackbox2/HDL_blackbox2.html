@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,12 +28,14 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Black Box</h1>
 </header>
-<h1 id="black-box">Black Box</h1>
+<section id="black-box" class="level1">
+<h1>Black Box</h1>
 <p>The Vitis Model Composer Black Box block provides a way to
 incorporate hardware description language (HDL) models into Model
 Composer.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The block is used to specify both the simulation behavior in Simulink
 and the implementation files to be used during code generation with
 Model Composer. A black box&#39;s ports produce and consume the same sorts
@@ -46,8 +48,8 @@ the Model Composer interface to the Vivado® simulator.</p>
 <p>In addition to incorporating HDL into a Model Composer model, the
 black box can be used to define the implementation associated with an
 external simulation model.</p>
-<h3 id="requirements-on-hdl-for-black-boxes">Requirements on HDL for
-Black Boxes</h3>
+<section id="requirements-on-hdl-for-black-boxes" class="level3">
+<h3>Requirements on HDL for Black Boxes</h3>
 <p>Every HDL component associated with a black box must adhere to the
 following Model Composer requirements and conventions:</p>
 <ul>
@@ -113,8 +115,9 @@ icon. A work around is required to make the top-level HDL clock enable
 port visible in Model Composer; the work around is to add a separate
 enable port to the top-level HDL and AND this signal with the actual
 clock enable signal.</p>
-<h3 id="the-black-box-configuration-wizard">The Black Box Configuration
-Wizard</h3>
+</section>
+<section id="the-black-box-configuration-wizard" class="level3">
+<h3>The Black Box Configuration Wizard</h3>
 <p>The Back Box Configuration Wizard is a tool that makes it easy to
 associate a Verilog or VHDL component to a black box. The Black Box
 Configuration Wizard is invoked whenever a black box is added to a
@@ -133,8 +136,9 @@ produced by the wizard can usually be used without change, but
 occasionally the function must be tailored by hand. Whether the
 configuration M-function needs to be modified depends on how complex the
 HDL is.</p>
-<h3 id="the-black-box-configuration-m-function">The Black Box
-Configuration M-Function</h3>
+</section>
+<section id="the-black-box-configuration-m-function" class="level3">
+<h3>The Black Box Configuration M-Function</h3>
 <p>A black box must describe its interface (e.g., ports and generics)
 and its implementation to Model Composer. It does this through the
 definition of a MATLAB M-function (or p-function) called the block&#39;s
@@ -206,7 +210,9 @@ is an instance of the SysgenBlockDescriptor MATLAB class. The methods
 that can be applied to this_block are specified in Appendix A. A good
 way to generate example configuration M-function is to run the
 Configuration Wizard (described below) on simple VHDL entities.</p>
-<h3 id="sample-periods">Sample Periods</h3>
+</section>
+<section id="sample-periods" class="level3">
+<h3>Sample Periods</h3>
 <p>The output ports, clocks, and clock enables on a black box must be
 assigned sample periods in the configuration M-function. If these
 periods are dynamic, or the black box needs to check rates, then the
@@ -229,28 +235,30 @@ block.outport(3).setRate(theInputRate*5);</code></pre>
 <p>The first line sets the first output port to the same rate as the
 input port. The next two lines set the output rate to 5 times the rate
 of the input.</p>
-<h2 id="block-parameters">Block Parameters</h2>
-<h3 id="basic-tab">Basic tab</h3>
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows.</p>
-<h4 id="block-configuration-m-function">Block Configuration
-M-Function</h4>
-<ul>
-<li>Specifies the name of the configuration M-function that is
-associated to the black box. Ordinarily the file containing the function
-is stored in the directory containing the model, but it can be stored
-anywhere on the MATLAB path. Note that MATLAB limits all function names
-(including those for configuration M-functions) to 63 characters. Do not
-include the file extension (&quot;.m&quot; or &quot;.p&quot;) in the edit box.</li>
-</ul>
-<h4 id="simulation-mode">Simulation Mode</h4>
-<ul>
-<li>Tells the mode (Inactive, Vivado Simulator, or External
-co-simulator) to use for simulation. When the mode is Inactive, the
-black box ignores all input data and writes zeroes to its output ports.
-Usually for this mode the black box should be coupled using a Variant
-Subsystem. For more information, see Variant Subsystems and Model
-Composer in the Vitis Model Composer User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>).</li>
-</ul>
+<section id="block-configuration-m-function" class="level4">
+<h4>Block Configuration M-Function</h4>
+<p>Specifies the name of the configuration M-function that is associated
+to the black box. Ordinarily the file containing the function is stored
+in the directory containing the model, but it can be stored anywhere on
+the MATLAB path. Note that MATLAB limits all function names (including
+those for configuration M-functions) to 63 characters. Do not include
+the file extension (&quot;.m&quot; or &quot;.p&quot;) in the edit box.</p>
+</section>
+<section id="simulation-mode" class="level4">
+<h4>Simulation Mode</h4>
+<p>Tells the mode (Inactive, Vivado Simulator, or External co-simulator)
+to use for simulation. When the mode is Inactive, the black box ignores
+all input data and writes zeroes to its output ports. Usually for this
+mode the black box should be coupled using a Variant Subsystem. For more
+information, see Variant Subsystems and Model Composer in the Vitis
+Model Composer User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>).</p>
 <p>Model Composer supports the Questa simulator from Mentor Graphics®,
 Inc. for HDL co-simulation. For co-simulation of Verilog black boxes, a
 mixed mode license is required. This is necessary because the portion of
@@ -266,8 +274,11 @@ To avoid running out of licenses, several black boxes can share the same
 co-simulation block. Model Composer automatically generates and uses the
 additional VHDL needed to allow multiple blocks to be combined into a
 single Questa simulation.</p>
-<h2 id="data-type-translation-for-hdl-co-simulation">Data Type
-Translation for HDL Co-Simulation</h2>
+</section>
+</section>
+</section>
+<section id="data-type-translation-for-hdl-co-simulation" class="level2">
+<h2>Data Type Translation for HDL Co-Simulation</h2>
 <p>During co-simulation, ports in Model Composer drive ports in the HDL
 simulator, and vice-versa. Types of signals in the tools are not
 identical, and must be translated. The rules used for translation are
@@ -292,7 +303,9 @@ wrapper might, for example, translate every weak low signal to 0 or
 every indeterminate signal to 0 or 1 before it is returned to Model
 Composer.</li>
 </ul>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <p>The following is an example VHDL entity that can be associated to a
 HDL black box.</p>
 <pre class="pre"><code>library IEEE; 
@@ -340,5 +353,7 @@ this_block.setTopLevelLanguage(&#39;VHDL&#39;);
   % ----------------------------- 
   this_block.addFile(&#39;word_parity_block.vhd&#39;);
   return;</code></pre>
+</section>
+</section>
 </body>
 </html>

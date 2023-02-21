@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,89 +28,113 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Vector Assert</h1>
 </header>
-<h1 id="vector-assert">Vector Assert</h1>
+<section id="vector-assert" class="level1">
+<h1>Vector Assert</h1>
 <p>The Vector Assert block asserts a user-defined sample rate and/or
 type on Vector inputs.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <p>Hardware notes: In hardware this blocks costs nothing.</p>
-<h2 id="description">Description</h2>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>Super Sample Rate (SSR): Use this configurable GUI parameter to
 control processing of multiple data samples on every sample period. This
 block enables 1-D vector data support for the primary block
 operation.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Parameters specific to this block are as follows:</p>
-<h3 id="type">Type</h3>
-<h4 id="assert-type">Assert type</h4>
-<ul>
-<li>Specifies whether or not the block will assert that the type at its
+<section id="type" class="level3">
+<h3>Type</h3>
+<section id="assert-type" class="level4">
+<h4>Assert type</h4>
+<p>Specifies whether or not the block will assert that the type at its
 input is the same as the type specified. If the types are not the same,
-an error message is reported.</li>
-</ul>
-<h4 id="specify-type">Specify type</h4>
-<ul>
-<li>Specifies whether or not the type to assert is provided from a
-signal connected to an input port named type or whether it is specified
-Explicitly from parameters in the Assert block dialog box.</li>
-</ul>
-<h4 id="output-type">Output Type</h4>
-<ul>
-<li>Specifies the data type of the output. Can be Boolean, Fixed-point,
-or Floating-point.</li>
-</ul>
-<h4 id="arithmetic-type">Arithmetic Type</h4>
+an error message is reported.</p>
+</section>
+<section id="specify-type" class="level4">
+<h4>Specify type</h4>
+<p>Specifies whether or not the type to assert is provided from a signal
+connected to an input port named type or whether it is specified
+Explicitly from parameters in the Assert block dialog box.</p>
+</section>
+<section id="output-type" class="level4">
+<h4>Output Type</h4>
+<p>Specifies the data type of the output. Can be Boolean, Fixed-point,
+or Floating-point.</p>
+</section>
+<section id="arithmetic-type" class="level4">
+<h4>Arithmetic Type</h4>
 <p>If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.</p>
-<ul>
-<li><h5 id="fixed-point-precision">Fixed-point Precision</h5>
-<ul>
-<li><p><strong>Number of bits</strong><br />
-Specifies the bit location of the binary point of the output number,
-where bit zero is the least significant bit.</p></li>
-<li><p><strong>Binary point</strong> Position of the binary point in the
-fixed-point output.</p></li>
-</ul></li>
-<li><h5 id="floating-point-precision">Floating-point Precision</h5>
-<ul>
-<li><p><strong>Single</strong><br />
-Specifies single precision (32 bits).</p></li>
-<li><p><strong>Double</strong><br />
-Specifies double precision (64 bits).</p></li>
-<li><p><strong>Custom</strong><br />
-This block is listed in the following: Activates the field below so you
-can specify the Exponent width and the Fraction width.</p></li>
-<li><p><strong>Exponent width</strong><br />
-Specify the exponent width.</p></li>
-<li><p><strong>Fraction width</strong><br />
-Specify the fraction width.</p></li>
-</ul></li>
-</ul>
-<h3 id="rate">Rate</h3>
-<h4 id="assert-rate">Assert rate</h4>
-<ul>
-<li>Specifies whether or not the block will assert that the rate at its
+<section id="fixed-point-precision" class="level5">
+<h5>Fixed-point Precision</h5>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
+<p>Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+</section>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
+<p>Position of the binary point in the fixed-point output.</p>
+</section>
+</section>
+<section id="floating-point-precision" class="level5">
+<h5>Floating-point Precision</h5>
+<section id="single" class="level6">
+<h6>Single</h6>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level6">
+<h6>Double</h6>
+<p>Specifies double precision (64 bits).</p>
+</section>
+<section id="custom" class="level6">
+<h6>Custom</h6>
+<p>This block is listed in the following: Activates the field below so
+you can specify the Exponent width and the Fraction width.</p>
+</section>
+<section id="exponent-width" class="level6">
+<h6>Exponent width</h6>
+<p>Specify the exponent width.</p>
+</section>
+<section id="fraction-width" class="level6">
+<h6>Fraction width</h6>
+<p>Specify the fraction width.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="rate" class="level3">
+<h3>Rate</h3>
+<section id="assert-rate" class="level4">
+<h4>Assert rate</h4>
+<p>Specifies whether or not the block will assert that the rate at its
 input is the same as the rate specified. If the rates are not the same,
-an error message is reported.</li>
-</ul>
-<h4 id="specify-rate">Specify rate</h4>
-<ul>
-<li>Specifies whether or not the initial rate to assert is provided from
+an error message is reported.</p>
+</section>
+<section id="specify-rate" class="level4">
+<h4>Specify rate</h4>
+<p>Specifies whether or not the initial rate to assert is provided from
 a signal connected to an input port named <code>rate</code>, or whether
 it is specified Explicitly from the Sample rate parameter in the Assert
-block dialog box.</li>
-</ul>
-<h3 id="provide-output-port">Provide output port</h3>
-<ul>
-<li>Specifies whether or not the block will feature an output port. The
+block dialog box.</p>
+</section>
+</section>
+<section id="provide-output-port" class="level3">
+<h3>Provide output port</h3>
+<p>Specifies whether or not the block will feature an output port. The
 type and/or rate of the signal presented on the output port is the type
-and/or rate specified for assertion.</li>
-</ul>
+and/or rate specified for assertion.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <p>The Output type parameter in this block uses the same description as
 the Arithmetic Type described in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>The Vector Assert block does not use a Xilinx LogiCORE™™ and does not
-use resources when implemented in hardware.</p>
+<p>The Vector Assert block does not use a LogiCORE™™ and does not use
+resources when implemented in hardware.</p>
+</section>
+</section>
+</section>
 </body>
 </html>

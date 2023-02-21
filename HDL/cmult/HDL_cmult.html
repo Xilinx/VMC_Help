@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,76 +28,132 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">CMult</h1>
 </header>
-<h1 id="cmult">CMult</h1>
-<p>The Xilinx CMult block implements a gain operator, with output equal
-to the product of its input by a constant value. This value can be a
-MATLAB® expression that evaluates to a constant.</p>
+<section id="cmult" class="level1">
+<h1>CMult</h1>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows: Constant Type<br />
-Fixed-point<br />
-Use fixed-point data type.</p>
-<p>Floating-point<br />
-Use floating-point data type. Can be a constant or an expression. If the
-constant cannot be expressed exactly in the specified fixed-point type,
-its value is rounded and saturated as needed.</p>
-<p>Fixed-point Precision<br />
-Number of bits<br />
-Specifies the bit location of the binary point of the constant, where
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The CMult block implements a gain operator, with output equal to the
+product of its input by a constant value. This value can be a MATLAB®
+expression that evaluates to a constant.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows:</p>
+<section id="constant-type" class="level4">
+<h4>Constant Type</h4>
+<section id="fixed-point" class="level5">
+<h5>Fixed-point</h5>
+<p>Use fixed-point data type.</p>
+</section>
+<section id="floating-point" class="level5">
+<h5>Floating-point</h5>
+<p>Use floating-point data type. Can be a constant or an expression. If
+the constant cannot be expressed exactly in the specified fixed-point
+type, its value is rounded and saturated as needed.</p>
+</section>
+</section>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point Precision</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
+<p>Specifies the bit location of the binary point of the constant, where
 bit zero is the least significant bit.</p>
-<p>Binary point<br />
-Position of the binary point.</p>
-<p>Floating-point Precision<br />
-Single<br />
-Specifies single precision (32 bits)</p>
-<p>Double<br />
-Specifies double precision (64 bits)</p>
-<p>Custom<br />
-Activates the field below so you can specify the Exponent width and the
-Fraction width.</p>
-<p>Exponent width<br />
-Specify the exponent width.</p>
-<p>Fraction width<br />
-Specify the fraction width.</p>
-<p> </p>
-<p>Output tab<br />
-Precision<br />
-This parameter allows you to specify the output precision for
+</section>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
+<p>Position of the binary point.</p>
+</section>
+</section>
+<section id="floating-point-precision" class="level4">
+<h4>Floating-point Precision</h4>
+<section id="single" class="level5">
+<h5>Single</h5>
+<p>Specifies single precision (32 bits)</p>
+</section>
+<section id="double" class="level5">
+<h5>Double</h5>
+<p>Specifies double precision (64 bits)</p>
+</section>
+<section id="custom" class="level5">
+<h5>Custom</h5>
+<p>Activates the field below so you can specify the Exponent width and
+the Fraction width.</p>
+</section>
+<section id="exponent-width" class="level5">
+<h5>Exponent width</h5>
+<p>Specify the exponent width.</p>
+</section>
+<section id="fraction-width" class="level5">
+<h5>Fraction width</h5>
+<p>Specify the fraction width.</p>
+</section>
+</section>
+</section>
+<section id="output-tab" class="level3">
+<h3>Output tab</h3>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
 Full precision.</p>
-<p>Full<br />
-The block uses sufficient precision to represent the result without
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
 error.</p>
-<p>User Defined<br />
-If you do not need full precision, this option allows you to specify a
-reduced number of total bits and/or fractional bits.</p>
-<p>Fixed-point Output Type<br />
-Arithmetic type<br />
-Signed (2’s comp)<br />
-The output is a Signed (2’s complement) number.</p>
-<p>Unsigned<br />
-The output is an Unsigned number.</p>
-<p>Fixed-point Precision<br />
-Number of bits<br />
-Specifies the bit location of the binary point of the output number,
+</section>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</section>
+</section>
+<section id="fixed-point-output-type" class="level4">
+<h4>Fixed-point Output Type</h4>
+<section id="arithmetic-type" class="level5">
+<h5>Arithmetic type</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned</h6>
+<p>The output is an Unsigned number.</p>
+</section>
+</section>
+<section id="fixed-point-precision-1" class="level5">
+<h5>Fixed-point Precision</h5>
+<section id="number-of-bits-1" class="level6">
+<h6>Number of bits</h6>
+<p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
-<p>Binary point<br />
-Position of the binary point in the fixed-point output.</p>
-<p>Quantization<br />
-Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+</section>
+<section id="binary-point-1" class="level6">
+<h6>Binary point</h6>
+<p>Position of the binary point in the fixed-point output.</p>
+</section>
+</section>
+<section id="quantization" class="level5">
+<h5>Quantization</h5>
+<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
 and Quantization</a>.</p>
-<p>Overflow<br />
-Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+</section>
+<section id="overflow" class="level5">
+<h5>Overflow</h5>
+<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
 and Quantization</a>.</p>
-<p> </p>
-<p>Implementation tab<br />
-Parameters specific to the Implementation tab are as follows. Use
-behavioral HDL description (otherwise use core)<br />
-When selected, Model Composer uses behavioral HDL, otherwise it uses the
-Xilinx LogiCORE™™ Multiplier. When this option is not selected (false)
+</section>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows.</p>
+<section id="use-behavioral-hdl-description-otherwise-use-core" class="level4">
+<h4>Use behavioral HDL description (otherwise use core)</h4>
+<p>When selected, Model Composer uses behavioral HDL, otherwise it uses
+the LogiCORE™™ Multiplier. When this option is not selected (false)
 Model Composer internally uses the behavioral HDL model for simulation
 if any of the following conditions are true:</p>
 <ul>
@@ -108,20 +164,32 @@ greater than 64.</li>
 <li>The bit width of the input data is 1 and its data type is
 xlFix.</li>
 </ul>
-<p>Core Parameters<br />
-Implement using<br />
-Specifies whether to use distributed RAM or block RAM.</p>
-<p>Test for optimum pipelining<br />
-Checks if the Latency provided is at least equal to the optimum pipeline
-length supported for the given configuration of the block. Latency
-values that pass this test imply that the core produced is optimized for
-speed.</p>
+</section>
+<section id="core-parameters" class="level4">
+<h4>Core Parameters</h4>
+<section id="implement-using" class="level5">
+<h5>Implement using</h5>
+<p>Specifies whether to use distributed RAM or block RAM.</p>
+</section>
+<section id="test-for-optimum-pipelining" class="level5">
+<h5>Test for optimum pipelining</h5>
+<p>Checks if the Latency provided is at least equal to the optimum
+pipeline length supported for the given configuration of the block.
+Latency values that pass this test imply that the core produced is
+optimized for speed.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
-<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/mult_gen/v12_0/pg108-mult-gen.pdf">LogiCORE
+</section>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
+<p><a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">LogiCORE
 IP Multiplier v12.0</a></p>
-<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf">LogiCORE
+<p><a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">LogiCORE
 IP Floating-Point Operator v7.1</a></p>
+</section>
+</section>
 </body>
 </html>

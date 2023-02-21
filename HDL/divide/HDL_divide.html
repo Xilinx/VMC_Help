@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,90 +28,119 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Divide</h1>
 </header>
-<h1 id="divide">Divide</h1>
-<p>The Xilinx Divide block performs both fixed-point and floating-point
+<section id="divide" class="level1">
+<h1>Divide</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Divide block performs both fixed-point and floating-point
 division with the a input being the dividend and the b input the
 divisor. Both inputs must be of the same data type.</p>
-<p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows</p>
-<p>AXI Interface<br />
-Flow Control<br />
-Blocking<br />
-Selects “Blocking” mode. In this mode, the lack of data on one input
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows</p>
+<section id="axi-interface" class="level4">
+<h4>AXI Interface</h4>
+<ul>
+<li><h4 id="flow-control">Flow Control</h4>
+<ul>
+<li><h4 id="blocking">Blocking</h4>
+<p>Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
-another input channel.</p>
-<p>NonBlocking<br />
-Selects “Non-Blocking” mode. In this mode, the lack of data on one input
-channel does not block the execution of an operation if data is received
-on another input channel.</p>
-<p>Fixed-point Options<br />
-Algorithm Type<br />
-Radix2<br />
-This is non-restoring integer division using integer operands and allows
-a remainder to be generated. This option is recommended for operand
-widths less than 16 bits. This option supports both unsigned (two&#39;s
-complement) and signed divisor and dividend inputs.</p>
-<p>High_Radix<br />
-This option is recommended for operand widths greater than 16 bits,
+another input channel.</p></li>
+<li><h4 id="nonblocking">NonBlocking</h4>
+<p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
+input channel does not block the execution of an operation if data is
+received on another input channel.</p></li>
+</ul></li>
+<li><h4 id="fixed-point-options">Fixed-point Options</h4>
+<ul>
+<li><h4 id="algorithm-type">Algorithm Type</h4>
+<h5 id="radix2"><strong>Radix2</strong></h5>
+<p>This is non-restoring integer division using integer operands and
+allows a remainder to be generated. This option is recommended for
+operand widths less than 16 bits. This option supports both unsigned
+(two&#39;s complement) and signed divisor and dividend inputs.</p>
+<h5 id="high_radix"><strong>High_Radix</strong></h5>
+<p>This option is recommended for operand widths greater than 16 bits,
 though the implementation requires the use of DSP48 (or variant)
 primitives. This option only supports signed (two&#39;s complement) divisor
 and dividend inputs.</p>
-<p>LutMult<br />
-A simple lookup estimate of the reciprocal of the divisor followed by a
-multiplier. Only remainder output type is supported because of the bias
-required in the reciprocal estimate. This bias would introduce an offset
-(error) if used to create a fractional output. This is recommended for
-operand widths less than or equal to 12 bits. This implementation uses
-DSP slices, block RAM, and a small number of FPGA logic primitives
-(registers and LUTs). For operand widths where either Radix2 or the
-LUTMult options are possible, the LUTMult solution offers a solution
-using fewer FPGA logic resources because of the use of DSP and block RAM
-primitives. Supports unsigned or two&#39;s complement signed numbers.</p>
-<p>Output Fractional width<br />
-For Fixed-point division, this entry determines the number of bits in
-the fractional part of the output.</p>
-<p>Optional Ports<br />
-Dividend Channel Ports<br />
-Has TLAST<br />
-Adds a TLAST port to the Input channel.</p>
-<p>Has TUSER<br />
-Adds a TUSER port to the Input channel.</p>
-<p>Divisor Channel Ports<br />
-Has TLAST<br />
-Adds a TLAST port to the Input channel.</p>
-<p>Has TUSER<br />
-Adds a TUSER port to the Input channel.</p>
-<p>Control Options<br />
-Provide enable port<br />
-Adds an enable port to the block interface.</p>
-<p>Has Result TREADY<br />
-Adds a TREADY port to the Result channel.</p>
-<p>Output TLAST behavior<br />
-Determines the behavior of the result_tlast output port.</p>
-<p>Pass_A_TLAST<br />
-Pass the value of the a_tlast input port to the dout_tlast output
+<h5 id="lutmult"><strong>LutMult</strong></h5>
+<p>A simple lookup estimate of the reciprocal of the divisor followed by
+a multiplier. Only remainder output type is supported because of the
+bias required in the reciprocal estimate. This bias would introduce an
+offset (error) if used to create a fractional output. This is
+recommended for operand widths less than or equal to 12 bits. This
+implementation uses DSP slices, block RAM, and a small number of FPGA
+logic primitives (registers and LUTs). For operand widths where either
+Radix2 or the LUTMult options are possible, the LUTMult solution offers
+a solution using fewer FPGA logic resources because of the use of DSP
+and block RAM primitives. Supports unsigned or two&#39;s complement signed
+numbers.</p></li>
+<li><h4 id="output-fractional-width">Output Fractional width</h4>
+<p>For Fixed-point division, this entry determines the number of bits in
+the fractional part of the output.</p></li>
+</ul></li>
+<li><h4 id="optional-ports">Optional Ports</h4>
+<ul>
+<li><h4 id="dividend-channel-ports">Dividend Channel Ports</h4>
+<h5 id="has-tlast"><strong>Has TLAST</strong></h5>
+<p>Adds a TLAST port to the Input channel.</p>
+<h5 id="has-tuser"><strong>Has TUSER</strong></h5>
+<p>Adds a TUSER port to the Input channel.</p></li>
+</ul></li>
+<li><h4 id="divisor-channel-ports">Divisor Channel Ports</h4>
+<ul>
+<li><h4 id="has-tlast-1">Has TLAST</h4>
+<p>Adds a TLAST port to the Input channel.</p></li>
+<li><h4 id="has-tuser-1">Has TUSER</h4>
+<p>Adds a TUSER port to the Input channel.</p></li>
+</ul></li>
+<li><h4 id="control-options">Control Options</h4>
+<ul>
+<li><h4 id="provide-enable-port">Provide enable port</h4>
+<p>Adds an enable port to the block interface.</p></li>
+<li><h4 id="has-result-tready">Has Result TREADY</h4>
+<p>Adds a TREADY port to the Result channel.</p></li>
+<li><h4 id="output-tlast-behavior">Output TLAST behavior</h4>
+<p>Determines the behavior of the result_tlast output port.</p>
+<h5 id="pass_a_tlast"><strong>Pass_A_TLAST</strong></h5>
+<p>Pass the value of the a_tlast input port to the dout_tlast output
 port.</p>
-<p>Pass B_TLAST<br />
-Pass the value of the b_tlast input port to the dout_tlast output
+<h5 id="pass-b_tlast"><strong>Pass B_TLAST</strong></h5>
+<p>Pass the value of the b_tlast input port to the dout_tlast output
 port.</p>
-<p>OR_all_TLASTS<br />
-Pass the logical OR of all the present TLAST input ports.</p>
-<p>AND_all_TLASTS<br />
-Pass the logical AND of all the present TLAST input ports.</p>
-<p>Exception Signals<br />
-UNDERFLOW<br />
-Adds an output port that serves as an underflow flag.</p>
-<p>OVERFLOW<br />
-Adds an output port that serves as an overflow flag.</p>
-<p>INVALID_OP<br />
-Adds an output port that serves as an invalid operation flag.</p>
-<p>DIVIDE_BY_ZERO<br />
-Adds an output port that serves as a divide-by-zero flag.</p>
+<h5 id="or_all_tlasts"><strong>OR_all_TLASTS</strong></h5>
+<p>Pass the logical OR of all the present TLAST input ports.</p>
+<h5 id="and_all_tlasts"><strong>AND_all_TLASTS</strong></h5>
+<p>Pass the logical AND of all the present TLAST input ports.</p></li>
+</ul></li>
+<li><h4 id="exception-signals">Exception Signals</h4>
+<ul>
+<li><h4 id="underflow">UNDERFLOW</h4>
+<p>Adds an output port that serves as an underflow flag.</p></li>
+<li><h4 id="overflow">OVERFLOW</h4>
+<p>Adds an output port that serves as an overflow flag.</p></li>
+<li><h4 id="invalid_op">INVALID_OP</h4>
+<p>Adds an output port that serves as an invalid operation
+flag.</p></li>
+<li><h4 id="divide_by_zero">DIVIDE_BY_ZERO</h4>
+<p>Adds an output port that serves as a divide-by-zero flag.</p></li>
+</ul></li>
+</ul>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</section>
+</section>
 </body>
 </html>

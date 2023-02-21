@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,12 +28,15 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">DSP Macro 1.0</h1>
 </header>
-<h1 id="dsp-macro-10">DSP Macro 1.0</h1>
-<p>The Xilinx DSP macro block provides a device independent abstraction
-of the DSP48E1, DSP48E2, and DSP58 blocks. Using this block instead of
-using a technology-specific DSP slice helps makes the design more
-portable between Xilinx technologies.</p>
+<section id="dsp-macro-10" class="level1">
+<h1>DSP Macro 1.0</h1>
 <p><img src="data:image/png;base64,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" /></p>
+<p>The DSP macro block provides a device independent abstraction of the
+DSP48E1, DSP48E2, and DSP58 blocks. Using this block instead of using a
+technology-specific DSP slice helps makes the design more portable
+between technologies.</p>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The DSP Macro provides a simplified interface to the XtremeDSP slice
 by the abstraction of all opmode, subtract, alumode, and inmode controls
 to a single SEL port. Further, all CE and RST controls are grouped to a
@@ -43,35 +46,54 @@ portability of HDL between device families.</p>
 various control signals for the XtremeDSP slice of the target device.
 The instructions are stored in a ROM from which the appropriate
 instruction is selected using the SEL port.</p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>Instruction tab<br />
-The Instruction tab is used to define the operations that the LogiCORE™
-is to implement. Each instruction can be entered on a new line, or in a
-comma delimited list, and are enumerated from the top down. You can
-specify a maximum of 64 instructions.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="instruction-tab" class="level3">
+<h3>Instruction tab</h3>
+<p>The Instruction tab is used to define the operations that the
+LogiCORE™ is to implement. Each instruction can be entered on a new
+line, or in a comma delimited list, and are enumerated from the top
+down. You can specify a maximum of 64 instructions.</p>
 <p>Refer to the topic Instructions page of the DSP Macro LogiCORE IP
 Product Guide (PG323) for details on all the parameters on this tab.</p>
-<p> </p>
-<p>Pipeline Options tab<br />
-The Pipeline Options tab is used to define the pipeline depth of the
+</section>
+<section id="pipeline-options-tab" class="level3">
+<h3>Pipeline Options tab</h3>
+<p>The Pipeline Options tab is used to define the pipeline depth of the
 various input paths.</p>
-<p>Pipeline Options<br />
-Specifies the pipeline method to be used; Automatic, By Tier, or
-Expert.</p>
-<p>Custom Pipeline options<br />
-Used to specify the pipeline depth of the various input paths.</p>
-<p>Tier 1 to 6<br />
-When By Tier is selected for Pipeline Options these parameters are used
-to enable/disable the registers across all the input paths for a given
-pipeline stage. The following restrictions are enforced:</p>
+<section id="pipeline-options" class="level4">
+<h4>Pipeline Options</h4>
+<ul>
+<li>Specifies the pipeline method to be used; Automatic, By Tier, or
+Expert.</li>
+</ul>
+</section>
+<section id="custom-pipeline-options" class="level4">
+<h4>Custom Pipeline options</h4>
+<ul>
+<li>Used to specify the pipeline depth of the various input paths.</li>
+</ul>
+</section>
+<section id="tier-1-to-6" class="level4">
+<h4>Tier 1 to 6</h4>
+<ul>
+<li><p>When By Tier is selected for Pipeline Options these parameters
+are used to enable/disable the registers across all the input paths for
+a given pipeline stage. The following restrictions are enforced:</p>
 <ul>
 <li>When P has been specified in an expression tier, 6 will be forced as
 asynchronous feedback is not supported.</li>
+</ul></li>
 </ul>
-<p>Individual registers<br />
-When you select Expert for the Pipeline Options, these parameters are
-used to enable/disable individual register stages. The following
-restrictions are enforced:</p>
+</section>
+<section id="individual-registers" class="level4">
+<h4>Individual registers</h4>
+<ul>
+<li>When you select Expert for the Pipeline Options, these parameters
+are used to enable/disable individual register stages. The following
+restrictions are enforced:</li>
+</ul>
 <ul>
 <li>The P register is forced when P is specified in an expression.
 Asynchronous feedback is not supported.</li>
@@ -79,37 +101,58 @@ Asynchronous feedback is not supported.</li>
 <p>Refer to the topic Detailed Pipeline Implementation of the DSP Macro
 LogiCORE IP Product Guide (PG323) for details on all the parameters on
 this tab.</p>
-<p> </p>
-<p>Implementation tab<br />
-The Implementation tab is used to define implementation options.</p>
-<p>Output Port Properties<br />
-Precision<br />
-Specifies the precision of the P output port.</p>
-<p>Full<br />
-The bit width of the output port P is set to the full XtremeDSP Slide
-width of 48 bits.</p>
-<p>User_Defined<br />
-The output width of P can be set to any value up to 48 bits. When set to
-less than 48 bits, the output is truncated (LSBs removed).</p>
-<p>Width<br />
-Specifies the User Defined output width of the P output port</p>
-<p>Binary Point<br />
-Specifies the placement of the binary point of the P output port.</p>
-<p>Additional ports<br />
-Use ACOUT<br />
-Use the optional cascade A output port.</p>
-<p>Use CARRYOUT<br />
-Use the optional carryout output port.</p>
-<p>Use BCOUT<br />
-Use the optional cascade B output port.</p>
-<p>Use CARRYCASCOUT<br />
-Use the optional cascade carryout output port.</p>
-<p>Use PCOUT<br />
-Use the optional cascade P output port.</p>
-<p>Control ports<br />
-Refer to the topic Implementation Page of the DSP Macro LogiCORE IP
-Product Guide (PG323) for details on all the parameters on this tab.</p>
-<h2 id="logicore-documentation">LogiCORE Documentation</h2>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>The Implementation tab is used to define implementation options.</p>
+<section id="output-port-properties" class="level4">
+<h4>Output Port Properties</h4>
+<ul>
+<li><h4 id="precision">Precision</h4>
+<p>Specifies the precision of the P output port.</p></li>
+<li><h4 id="full">Full</h4>
+<p>The bit width of the output port P is set to the full XtremeDSP Slide
+width of 48 bits.</p></li>
+<li><h4 id="user_defined">User_Defined</h4>
+<p>The output width of P can be set to any value up to 48 bits. When set
+to less than 48 bits, the output is truncated (LSBs removed).</p></li>
+<li><h4 id="width">Width</h4>
+<p>Specifies the User Defined output width of the P output port</p></li>
+<li><h4 id="binary-point">Binary Point</h4>
+<p>Specifies the placement of the binary point of the P output
+port.</p></li>
+</ul>
+</section>
+<section id="additional-ports" class="level4">
+<h4>Additional ports</h4>
+<ul>
+<li><h4 id="use-acout">Use ACOUT</h4>
+<p>Use the optional cascade A output port.</p></li>
+<li><h4 id="use-carryout">Use CARRYOUT</h4>
+<p>Use the optional carryout output port.</p></li>
+<li><h4 id="use-bcout">Use BCOUT</h4>
+<p>Use the optional cascade B output port.</p></li>
+<li><h4 id="use-carrycascout">Use CARRYCASCOUT</h4>
+<p>Use the optional cascade carryout output port.</p></li>
+<li><h4 id="use-pcout">Use PCOUT</h4>
+<p>Use the optional cascade P output port.</p></li>
+</ul>
+</section>
+<section id="control-ports" class="level4">
+<h4>Control ports</h4>
+<ul>
+<li>Refer to the topic Implementation Page of the DSP Macro LogiCORE IP
+Product Guide (PG323) for details on all the parameters on this
+tab.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE Documentation</h2>
 <p>DSP Macro LogiCORE IP Product Guide (PG323)</p>
+</section>
+</section>
 </body>
 </html>

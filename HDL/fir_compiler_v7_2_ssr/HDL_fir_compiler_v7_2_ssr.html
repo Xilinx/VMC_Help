@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,10 +28,13 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Vector FIR</h1>
 </header>
-<h1 id="vector-fir">Vector FIR</h1>
+<section id="vector-fir" class="level1">
+<h1>Vector FIR</h1>
 <p>The Vector FIR block supports FIR filtering for vector type
 inputs.</p>
-<h2 id="description">Description</h2>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector support for the primary block
@@ -46,9 +49,8 @@ the SSR value on the input side divided by Decimation Rate Value.</li>
 <p>This Vector FIR Compiler block provides a way to generate highly
 parameterizable, area-efficient, high-performance FIR filters with an
 AXI4-Stream-compliant interface.</p>
-<p><img src="data:image/png;base64,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" /></p>
-<h2 id="axi-ports-that-are-unique-to-this-block">AXI Ports that are
-Unique to this Block</h2>
+<section id="axi-ports-that-are-unique-to-this-block" class="level3">
+<h3>AXI Ports that are Unique to this Block</h3>
 <p>This block exposes the AXI CONFIG channel as a group of separate
 ports based on sub-field names. The sub-field ports are described as
 follows:</p>
@@ -66,80 +68,102 @@ the bits in this field.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>Open the block parameters dialog box by double-clicking the icon in
-your Simulink® model.</p>
-<p>Filter Specification tab<br />
-Parameters specific to the Filter Specification tab are as follows:</p>
-<p>Filter Coefficients<br />
-Coefficient Vector<br />
-Specifies the coefficient vector as a single MATLAB row vector. The
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="filter-specification-tab" class="level3">
+<h3>Filter Specification tab</h3>
+<p>Parameters specific to the Filter Specification tab are as
+follows:</p>
+<section id="filter-coefficients" class="level4">
+<h4>Filter Coefficients</h4>
+<ul>
+<li><h4 id="coefficient-vector">Coefficient Vector</h4>
+<p>Specifies the coefficient vector as a single MATLAB row vector. The
 number of taps is inferred from the length of the MATLAB row vector. If
 multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
 coefficients using the <a href="fdatool.html">FDATool</a> block as
-well.</p>
-<p>Number of Coefficients Sets<br />
-The number of sets of filter coefficients to be implemented. The value
-specified must divide without remainder into the number of
-coefficients.</p>
-<p>Use Reloadable Coefficients<br />
-Check to add the coefficient reload ports to the block. The set of data
-loaded into the reload channel will not take action until triggered by a
-re-configuration synchronization event. Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">FIR
+well.</p></li>
+<li><h4 id="number-of-coefficients-sets">Number of Coefficients
+Sets</h4>
+<p>The number of sets of filter coefficients to be implemented. The
+value specified must divide without remainder into the number of
+coefficients.</p></li>
+<li><h4 id="use-reloadable-coefficients">Use Reloadable
+Coefficients</h4>
+<p>Check to add the coefficient reload ports to the block. The set of
+data loaded into the reload channel will not take action until triggered
+by a re-configuration synchronization event. Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">FIR
 Compiler V7.2 Product Guide</a> for a more detailed explanation of the
 RELOAD Channel interface timing. This block supports the
 xlGetReloadOrder function. See the Model Composer Utility function
-xlGetReloadOrder for details.</p>
-<p>Filter Specification<br />
-Filter Type<br />
-Single_Rate<br />
-The data rate of the input and the output are the same.</p>
-<p>Interpolation<br />
-The data rate of the output is faster than the input by a factor
-specified by the Interpolation Rate value.</p>
-<p>Decimation<br />
-The data rate of the output is slower than the input by a factor
-specified in the Decimation Rate Value.</p>
-<p>Rate Change Type<br />
-This field is applicable to Interpolation and Decimation filter types.
-Used to specify an Integer or Fixed_Fractional rate change.</p>
-<p>Interpolation Rate Value<br />
-This field is applicable to all Interpolation filter types and
+xlGetReloadOrder for details.</p></li>
+</ul>
+</section>
+<section id="filter-specification" class="level4">
+<h4>Filter Specification</h4>
+<ul>
+<li><h4 id="filter-type">Filter Type</h4>
+<ul>
+<li><h4 id="single_rate">Single_Rate</h4>
+<p>The data rate of the input and the output are the same.</p></li>
+<li><h4 id="interpolation">Interpolation</h4>
+<p>The data rate of the output is faster than the input by a factor
+specified by the Interpolation Rate value.</p></li>
+<li><h4 id="decimation">Decimation</h4>
+<p>The data rate of the output is slower than the input by a factor
+specified in the Decimation Rate Value.</p></li>
+</ul></li>
+<li><h4 id="rate-change-type">Rate Change Type</h4>
+<p>This field is applicable to Interpolation and Decimation filter
+types. Used to specify an Integer or Fixed_Fractional rate
+change.</p></li>
+<li><h4 id="interpolation-rate-value">Interpolation Rate Value</h4>
+<p>This field is applicable to all Interpolation filter types and
 Decimation filter types for Fractional Rate Change implementations. The
 value provided in this field defines the up-sampling factor, or P for
-Fixed Fractional Rate (P/Q) resampling filter implementations.</p>
-<p>Decimation Rate Value<br />
-This field is applicable to the all Decimation and Interpolation filter
-types for Fractional Rate Change implementations. The value provided in
-this field defines the down-sampling factor, or Q for Fixed Fractional
-Rate (P/Q) resampling filter implementations.</p>
+Fixed Fractional Rate (P/Q) resampling filter implementations.</p></li>
+<li><h4 id="decimation-rate-value">Decimation Rate Value</h4>
+<p>This field is applicable to the all Decimation and Interpolation
+filter types for Fractional Rate Change implementations. The value
+provided in this field defines the down-sampling factor, or Q for Fixed
+Fractional Rate (P/Q) resampling filter implementations.</p></li>
+</ul>
 <p>SSR<br />
 SSR value.</p>
-<p> </p>
-<p>Implementation tab<br />
-Parameters specific to the Implementation tab are as follows:</p>
-<p>Coefficient Options<br />
-Coefficient Type<br />
-Specify Signed or Unsigned.</p>
-<p>Quantization<br />
-Specifies the quantization method to be used for quantizing the
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows:</p>
+<section id="coefficient-options" class="level4">
+<h4>Coefficient Options</h4>
+<ul>
+<li><h4 id="coefficient-type">Coefficient Type</h4>
+<p>Specify Signed or Unsigned.</p></li>
+<li><h4 id="quantization">Quantization</h4>
+<p>Specifies the quantization method to be used for quantizing the
 coefficients. This can be set to one of the following:</p>
 <ul>
 <li>Integer_Coefficients</li>
 <li>Quantize_Only</li>
 <li>Maximize_Dynamic_Range</li>
 <li>Normalize_to_Centre_Coefficient</li>
-</ul>
-<p>Coefficient Width<br />
-Specifies the number of bits used to represent the coefficients.</p>
-<p>Best Precision Fractional Bits<br />
-When selected, the coefficient fractional width is automatically set to
-maximize the precision of the specified filter coefficients.</p>
-<p>Coefficient Fractional Bits<br />
-Specifies the binary point location in the coefficients datapath
-options</p>
-<p>Coefficients Structure</p>
+</ul></li>
+<li><h4 id="coefficient-width">Coefficient Width</h4>
+<p>Specifies the number of bits used to represent the
+coefficients.</p></li>
+<li><h4 id="best-precision-fractional-bits">Best Precision Fractional
+Bits</h4>
+<p>When selected, the coefficient fractional width is automatically set
+to maximize the precision of the specified filter coefficients.</p></li>
+<li><h4 id="coefficient-fractional-bits">Coefficient Fractional
+Bits</h4>
+<p>Specifies the binary point location in the coefficients datapath
+options</p></li>
+<li><h4 id="coefficients-structure">Coefficients Structure</h4>
 <ul>
 <li>Specifies the coefficient structure. Depending on the coefficient
 structure, optimizations are made in the core to reduce the amount of
@@ -153,11 +177,15 @@ selected structure can be any of the following:
 </ul>
 <p>The vector of coefficients specified must match the structure
 specified unless Inferred from coefficients is selected in which case
-the structure is determined automatically from these coefficients.</p>
-<p>Datapath Options<br />
-Output Rounding Mode</p>
+the structure is determined automatically from these
+coefficients.</p></li>
+</ul>
+</section>
+<section id="datapath-options" class="level4">
+<h4>Datapath Options</h4>
 <ul>
-<li>Choose one of the following:
+<li><h4 id="output-rounding-mode">Output Rounding Mode</h4>
+<p>Choose one of the following:</p>
 <ul>
 <li>Full_Precision</li>
 <li>Truncate_LSBs</li>
@@ -168,19 +196,24 @@ Output Rounding Mode</p>
 <li>Convergent_Rounding_to_Even</li>
 <li>Convergent_Rounding_to_Odd</li>
 </ul></li>
+<li><h4 id="output-width">Output Width</h4>
+<p>Specify the output width. Edit box activated only if the Rounding
+mode is set to a value other than Full_Precision.</p></li>
 </ul>
-<p>Output Width<br />
-Specify the output width. Edit box activated only if the Rounding mode
-is set to a value other than Full_Precision.</p>
-<p>Detailed Implementation tab<br />
-Parameters specific to the Detailed Implementation tab are as
+</section>
+</section>
+<section id="detailed-implementation-tab" class="level3">
+<h3>Detailed Implementation tab</h3>
+<p>Parameters specific to the Detailed Implementation tab are as
 follows:</p>
-<p>Filter Architecture<br />
-The following two filter architectures are supported.</p>
+<section id="filter-architecture" class="level4">
+<h4>Filter Architecture</h4>
+<p>The following two filter architectures are supported.</p>
 <ul>
 <li><p>Systolic_Multiply_Accumulate</p></li>
-<li><p>Transpose_Multiply_Accumulate Note: When selecting the Transpose
-Multiply-Accumulate architecture, these limitations apply:</p>
+<li><p>Transpose_Multiply_Accumulate <strong>Note</strong>: When
+selecting the Transpose Multiply-Accumulate architecture, these
+limitations apply:</p>
 <ul>
 <li>Symmetry is not exploited. If the Coefficient Vector specified on
 the Filter Specification tab is detected as symmetric, the FIR Compiler
@@ -189,111 +222,141 @@ Multiply Accumulate.</li>
 <li>Multiple interleaved channels are not supported.</li>
 </ul></li>
 </ul>
-<p>Optimization Options<br />
-Specifies if the core is required to operate at maximum possible speed
-(“Speed” option) or minimum area (“Area” option). The “Area” option is
-the recommended default and will normally achieve the best speed and
-area for the design, however in certain configurations, the “Speed”
-setting might be required to improve performance at the expense of
-overall resource usage (this setting normally adds pipeline registers in
-critical paths).</p>
-<p>Goal</p>
+</section>
+<section id="optimization-options" class="level4">
+<h4>Optimization Options</h4>
+<p>Specifies if the core is required to operate at maximum possible
+speed (“Speed” option) or minimum area (“Area” option). The “Area”
+option is the recommended default and will normally achieve the best
+speed and area for the design, however in certain configurations, the
+“Speed” setting might be required to improve performance at the expense
+of overall resource usage (this setting normally adds pipeline registers
+in critical paths).</p>
+<ul>
+<li><h4 id="goal">Goal</h4>
 <ul>
 <li>Area</li>
 <li>Speed</li>
 <li>Custom</li>
-</ul>
-<p>List<br />
-A comma delimited list that specifies which optimizations are
-implemented by the block. The optimizations are as follows.
-Data_Path_Fanout<br />
-Adds additional pipeline registers on the data memory outputs to
+</ul></li>
+<li><h4 id="list">List</h4>
+<p>A comma delimited list that specifies which optimizations are
+implemented by the block. The optimizations are as follows.</p></li>
+<li><h4 id="data_path_fanout">Data_Path_Fanout</h4>
+<p>Adds additional pipeline registers on the data memory outputs to
 minimize fan-out. Useful when implementing large data width filters
-requiring multiple DSP slices per multiply-add unit.</p>
-<p>Pre-Adder_Pipeline<br />
-Pipelines the pre-adder when implemented using fabric resources. This
-may occur when a large coefficient width is specified.</p>
-<p>Coefficient_Fanout<br />
-Adds additional pipeline registers on the coefficient memory outputs to
-minimize fan-out. Useful for Parallel channels or large coefficient
-width filters requiring multiple DSP slices per multiply-add unit.</p>
-<p>Control_Path_Fanout<br />
-Adds additional pipeline registers to control logic when Parallel
-channels have been specified.</p>
-<p>Control_Column_Fanout<br />
-Adds additional pipeline registers to control logic when multiple DSP
-columns are required to implement the filter.</p>
-<p>Control_Broadcast_Fanout<br />
-Adds additional pipeline registers to control logic for fully parallel
-(one clock cycle per channel per input sample) symmetric filter
-implementations.</p>
-<p>Control_LUT_Pipeline<br />
-Pipelines the Look-up tables required to implement the control logic for
-Advanced Channel sequences.</p>
-<p>No_BRAM_Read_First_Mode<br />
-Specifies that Block RAM READ-FIRST mode should not be used.</p>
-<p>Increased speed<br />
-Multiple DSP slice columns are required for non-symmetric filter
-implementations.</p>
-<p>Other<br />
-Miscellaneous optimizations.</p>
-<p>Note: All optimizations may be specified but are only implemented
-when relevant to the core configuration.</p>
-<p>Memory Options<br />
-The memory type for MAC implementations can either be user-selected or
-chosen automatically to suit the best implementation options. Note that
-a choice of “Distributed” might result in a shift register
+requiring multiple DSP slices per multiply-add unit.</p></li>
+<li><h4 id="pre-adder_pipeline">Pre-Adder_Pipeline</h4>
+<p>Pipelines the pre-adder when implemented using fabric resources. This
+may occur when a large coefficient width is specified.</p></li>
+<li><h4 id="coefficient_fanout">Coefficient_Fanout</h4>
+<p>Adds additional pipeline registers on the coefficient memory outputs
+to minimize fan-out. Useful for Parallel channels or large coefficient
+width filters requiring multiple DSP slices per multiply-add
+unit.</p></li>
+<li><h4 id="control_path_fanout">Control_Path_Fanout</h4>
+<p>Adds additional pipeline registers to control logic when Parallel
+channels have been specified.</p></li>
+<li><h4 id="control_column_fanout">Control_Column_Fanout</h4>
+<p>Adds additional pipeline registers to control logic when multiple DSP
+columns are required to implement the filter.</p></li>
+<li><h4 id="control_broadcast_fanout">Control_Broadcast_Fanout</h4>
+<p>Adds additional pipeline registers to control logic for fully
+parallel (one clock cycle per channel per input sample) symmetric filter
+implementations.</p></li>
+<li><h4 id="control_lut_pipeline">Control_LUT_Pipeline</h4>
+<p>Pipelines the Look-up tables required to implement the control logic
+for Advanced Channel sequences.</p></li>
+<li><h4 id="no_bram_read_first_mode">No_BRAM_Read_First_Mode</h4>
+<p>Specifies that Block RAM READ-FIRST mode should not be used.</p></li>
+<li><h4 id="increased-speed">Increased speed</h4>
+<p>Multiple DSP slice columns are required for non-symmetric filter
+implementations.</p></li>
+<li><h4 id="other">Other</h4>
+<p>Miscellaneous optimizations.</p></li>
+</ul>
+<p><strong>Note</strong>: All optimizations may be specified but are
+only implemented when relevant to the core configuration.</p>
+</section>
+<section id="memory-options" class="level4">
+<h4>Memory Options</h4>
+<p>The memory type for MAC implementations can either be user-selected
+or chosen automatically to suit the best implementation options. Note
+that a choice of “Distributed” might result in a shift register
 implementation where appropriate to the filter structure. Forcing the
 RAM selection to be either Block or Distributed should be used with
 caution, as inappropriate use can lead to inefficient resource usage -
 the default Automatic mode is recommended for most applications.</p>
-<p>Data Buffer Type<br />
-Specifies the type of memory used to store data samples.</p>
-<p>Coefficient Buffer Type<br />
-Specifies the type of memory used to store the coefficients.</p>
-<p>Input Buffer Type<br />
-Specifies the type of memory to be used to implement the data input
-buffer, where present.</p>
-<p>Output Buffer type<br />
-Specifies the type of memory to be used to implement the data output
-buffer, where present.</p>
-<p>Preference for other storage<br />
-Specifies the type of memory to be used to implement general storage in
-the datapath.</p>
-<p>DSP Slice Column Options<br />
-Multi-Column Support<br />
-For device families with DSP slices, implementations of large high speed
-filters might require chaining of DSP slice elements across multiple
-columns. Where applicable (the feature is only enabled for multi-column
-devices), you can select the method of folding the filter structure
-across the multiple-columns, which can be Automatic (based on the
-selected device for the project) or Custom (you select the length of the
-first and subsequent columns).</p>
-<p>Inter-Column Pipe Length<br />
-Pipeline stages are required to connect between the columns, with the
+<ul>
+<li><h4 id="data-buffer-type">Data Buffer Type</h4>
+<p>Specifies the type of memory used to store data samples.</p></li>
+<li><h4 id="coefficient-buffer-type">Coefficient Buffer Type</h4>
+<p>Specifies the type of memory used to store the coefficients.</p></li>
+<li><h4 id="input-buffer-type">Input Buffer Type</h4>
+<p>Specifies the type of memory to be used to implement the data input
+buffer, where present.</p></li>
+<li><h4 id="output-buffer-type">Output Buffer type</h4>
+<p>Specifies the type of memory to be used to implement the data output
+buffer, where present.</p></li>
+<li><h4 id="preference-for-other-storage">Preference for other
+storage</h4>
+<p>Specifies the type of memory to be used to implement general storage
+in the datapath.</p></li>
+</ul>
+</section>
+<section id="dsp-slice-column-options" class="level4">
+<h4>DSP Slice Column Options</h4>
+<ul>
+<li><h4 id="multi-column-support">Multi-Column Support</h4>
+<p>For device families with DSP slices, implementations of large high
+speed filters might require chaining of DSP slice elements across
+multiple columns. Where applicable (the feature is only enabled for
+multi-column devices), you can select the method of folding the filter
+structure across the multiple-columns, which can be Automatic (based on
+the selected device for the project) or Custom (you select the length of
+the first and subsequent columns).</p></li>
+<li><h4 id="inter-column-pipe-length">Inter-Column Pipe Length</h4>
+<p>Pipeline stages are required to connect between the columns, with the
 level of pipelining required being depending on the required system
 clock rate, the chosen device and other system-level parameters. The
-choice of this parameter is always left for you to specify.</p>
-<p>Interface tab<br />
-Data Channel Options<br />
-Output TREADY<br />
+choice of this parameter is always left for you to specify.</p></li>
+</ul>
+</section>
+</section>
+<section id="interface-tab" class="level3">
+<h3>Interface tab</h3>
+<section id="data-channel-options" class="level4">
+<h4>Data Channel Options</h4>
+<ul>
+<li><h4 id="output-tready">Output TREADY</h4>
 This field enables the data_tready port. With this port enabled, the
 block will support back-pressure. Without the port, back-pressure is not
 supported, but resources are saved and performance is likely to be
-higher.</p>
-<p>Control Options<br />
-ACLKEN<br />
-Active-High clock enable. Available for MAC-based FIR
-implementations.</p>
-<p>ARESETn (active low)<br />
-Active-low synchronous clear input that always takes priority over
+higher.</li>
+</ul>
+</section>
+<section id="control-options" class="level4">
+<h4>Control Options</h4>
+<ul>
+<li><h4 id="aclken">ACLKEN</h4>
+<p>Active-High clock enable. Available for MAC-based FIR
+implementations.</p></li>
+<li><h4 id="aresetn-active-low">ARESETn (active low)</h4>
+<p>Active-low synchronous clear input that always takes priority over
 ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
-the pulse is not in the cycle immediately following.</p>
+the pulse is not in the cycle immediately following.</p></li>
+</ul>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>FIR Compiler LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf">PG149</a>)</p>
+</section>
+</section>
 </body>
 </html>

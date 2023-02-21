@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,37 +28,43 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Vector Concat</h1>
 </header>
-<h1 id="vector-concat">Vector Concat</h1>
+<section id="vector-concat" class="level1">
+<h1>Vector Concat</h1>
 <p>The Vector Concat block concatenates two or more inputs of type
 vector. The output is cast to an unsigned value with the binary point at
 zero.</p>
-<h2 id="description">Description</h2>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector data support for the primary block
 operation.</p>
-<p><img src="data:image/png;base64,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" /></p>
 <p>The <a href="vectorreinterpret.html">Vector Reinterpret</a> block
 provides capabilities that can extend the functionality of the Vector
 Concat block.</p>
-<h2 id="block-interface">Block Interface</h2>
+</section>
+<section id="block-interface" class="level2">
+<h2>Block Interface</h2>
 <p>The block has n input ports, where n is a value between 2 and 1024,
 inclusively, and one output port. The first and last input ports are
-labeled <code>hi</code> and <code>low</code>, respectively. Input ports
-between these two ports are not labeled. The input to the
-<code>hi</code> port occupies the most significant bits of the output,
-and the input to the <code>lo</code> port occupies the least significant
-bits of the output.</p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>Double-click the icon in your Simulink® model to open the Block
-Parameter dialog box.</p>
+labeled hi and low, respectively. Input ports between these two ports
+are not labeled. The input to the hi port occupies the most significant
+bits of the output, and the input to the lo port occupies the least
+significant bits of the output.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Parameters specific to this block are as follows:</p>
-<ul>
-<li>Number of Inputs: Specifies number of inputs, between 2 and 1024,
-inclusively, to concatenate together.</li>
-</ul>
+<section id="number-of-inputs" class="level4">
+<h4>Number of Inputs</h4>
+<p>Specifies number of inputs, between 2 and 1024, inclusively, to
+concatenate together.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>The Vector Concat block does not use a Xilinx LogiCORE™™.</p>
+<p>The Vector Concat block does not use a LogiCORE™.</p>
+</section>
+</section>
+</section>
 </body>
 </html>
