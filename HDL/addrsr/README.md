@@ -12,7 +12,6 @@ where each register output drives an input to a multiplexer, as shown
 below. The multiplexer select line is driven by the address port (addr).
 The output data port is shown below as q.
 
-  
 ![](./Images/jrq1538085427893.png)  
 
 The Addressable Shift Register has a maximum depth of 1024 and a minimum
@@ -32,7 +31,7 @@ between the data port and the first register of the delay chain. (If the
 shift operation were to come first, followed by the read, then there
 would be no delay, and the hardware would be incorrect.)
 
-## Block Interface
+### Block Interface
 
 The block interface (inputs and outputs as seen on the Addressable Shift
 Register icon) are as follows:
@@ -60,16 +59,16 @@ icon in your Simulink® model.
 Parameters specific to this block are as follows:
 
 #### Infer maximum latency (depth) using address port width  
-* You can choose to allow the block to automatically determine the depth
+You can choose to allow the block to automatically determine the depth
 or maximum latency of the shift-register-based on the bit-width of the
 address port.
 
 #### Maximum latency (depth)  
-* In the case that the maximum latency is not inferred (previous option),
+In the case that the maximum latency is not inferred (previous option),
 the maximum latency can be set explicitly.
 
 #### Initial value vector  
-* Specifies the initial register values. When the vector is longer than
+Specifies the initial register values. When the vector is longer than
 the shift register depth, the vector's trailing elements are discarded.
 When the shift register is deeper than the vector length, the shift
 register's trailing registers are initialized to zero.
@@ -82,13 +81,13 @@ Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
 Parameters specific to this block are as follows:
 
 #### Optimization  
-* You can choose to optimize for Resource (minimum area) or for Speed
+You can choose to optimize for Resource (minimum area) or for Speed
 (maximum performance).
 
 ## LogiCORE Documentation
 
 RAM-Based Shift Register LogiCORE IP Product Guide
-([PG122](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=c_shift_ram;v=latest;d=pg122-c-shift-ram.pdf))
+([PG122](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg122-c-shift-ram&ft:locale=en-US))
 
 Floating-Point Operator LogiCORE IP Product Guide
-([PG060](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf))
+([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
