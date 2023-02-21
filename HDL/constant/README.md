@@ -25,50 +25,50 @@ the desired sequence.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-* #### Constant Value  
-  Specifies the value of the constant. When changed, the new value appears
+#### Constant Value  
+Specifies the value of the constant. When changed, the new value appears
 on the block icon. If the constant data type is specified as fixed-point
 and cannot be expressed exactly in the specified fixed-point type, its
 value is rounded and saturated as needed. A positive value is
 implemented as an unsigned number, a negative value as signed.
 
 
-* #### Output Type  
-  Specifies the data type of the output. Can be Boolean, Fixed-point, or
+#### Output Type  
+Specifies the data type of the output. Can be Boolean, Fixed-point, or
 Floating-point.
 
-  * #### Arithmetic Type  
-    If the Output Type is specified as Fixed-point, you can select Signed
+##### Arithmetic Type  
+If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp), Unsigned, or DSP48 instruction as the Arithmetic Type.
 
-  * #### Fixed-point Precision  
-    * #### Number of bits  
-      Specifies the bit location of the binary point of the output number,
+##### Fixed-point Precision  
+###### Number of bits  
+Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-    * #### Binary point  
-      Position of the binary point in the fixed-point output.
+###### Binary point  
+Position of the binary point in the fixed-point output.
 
-  * #### Floating-point Precision  
-    * #### Single  
-      Specifies single precision (32 bits).
+##### Floating-point Precision  
+###### Single  
+Specifies single precision (32 bits).
 
-    * #### Double  
-      Specifies double precision (64 bits)
+###### Double  
+Specifies double precision (64 bits)
 
-    * #### Custom  
-      Activates the field below so you can specify the Exponent width and the
+###### Custom  
+Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-    * #### Exponent width  
-      Specifies the exponent width.
+###### Exponent width  
+Specifies the exponent width.
 
-    * #### Fraction width  
-      Specifies the fraction width.
+###### Fraction width  
+Specifies the fraction width.
 
-  * #### Sample Period  
-    * #### Sampled Constant  
-      Allows a sample period to be associated with the constant output and
+##### Sample Period  
+###### Sampled Constant  
+Allows a sample period to be associated with the constant output and
 inherited by blocks that the constant block drives. (This is useful
 mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.)
@@ -76,7 +76,7 @@ sample periods are used to establish hardware clock periods.)
 
 ### DSP48 tab  
 #### DSP48 Instruction  
-* The use of this block for DSP48 instructions is deprecated. Please use
+The use of this block for DSP48 instructions is deprecated. Please use
 the Opmode block.
 
 Other parameters used by this block are explained in the topic [Common
