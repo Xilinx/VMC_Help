@@ -87,14 +87,14 @@ ports. If a range of consecutive bits need to be extracted, then the
 expression of the following form should be used.
 
 ``` pre
-output_var = {port_identifier[bound1:bound2]}(1)
+output_var = {port_identifier[bound1:bound2]}...(1)
 ```
 
 If only one bit is to be extracted, then the alternative form should be
 used.
 
 ``` pre
-output_var = {port_identifier[bitN]}(2)
+output_var = {port_identifier[bitN]}..(2)
 ```
 
 The following are some examples of this construct:
