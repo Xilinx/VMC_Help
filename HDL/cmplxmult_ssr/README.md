@@ -12,8 +12,6 @@ used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector support for the primary block
 operation.
 
-
-
 ## Data Type Support
 
 - Supports fixed and floating-point data type inputs on both port A and
