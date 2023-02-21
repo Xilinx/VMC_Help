@@ -242,7 +242,7 @@ block's sample rate. The signal driving this port must be Boolean.
 Adds dout_tready port if Blocking mode is activated.
 
 ##### Cartesian  
-####### tlast  
+###### tlast  
 Adds a tlast input port to the Cartesian input channel.
 
 ###### tuser  
