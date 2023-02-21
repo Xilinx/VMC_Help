@@ -30,8 +30,8 @@ the least significant bits of the output.
 
 Parameters specific to this block are as follows:
 
-#### Number of Inputs: 
-* Specifies number of inputs, between 2 and 1024,
+#### Number of Inputs
+Specifies number of inputs, between 2 and 1024,
   inclusively, to concatenate together.
 
 Other parameters used by this block are explained in the topic [Common
