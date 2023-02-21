@@ -53,4 +53,4 @@ Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
 ## LogiCORE™ Documentation
 
 Floating-Point Operator LogiCORE IP Product Guide
-([PG060](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf))
+([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
