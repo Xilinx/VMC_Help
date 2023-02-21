@@ -98,4 +98,4 @@ The Accumulator block always has a latency of 1.
 ## LogiCORE™ Documentation
 
 Accumulator LogiCORE IP Product Guide
-([PG119](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=c_accum;v=latest;d=pg119-c-accum.pdf))
+([PG119](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg119-c-accum&ft:locale=en-US))
