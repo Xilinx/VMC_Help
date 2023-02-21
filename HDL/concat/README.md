@@ -7,7 +7,7 @@
 The Concat block performs a concatenation of n bit vectors
 represented by unsigned integer numbers, for example, n unsigned numbers
 with binary points at position zero.
-The Xilinx [Reinterpret](reinterpret.html) block provides capabilities
+The [Reinterpret](reinterpret.html) block provides capabilities
 that can extend the functionality of the Concat block.
 
 ## Block Interface
@@ -24,7 +24,7 @@ the least significant bits of the output.
 Parameters specific to this block are as follows:
 
 #### Number of Inputs: 
-* Specifies number of inputs, between 2 and 1024,
+Specifies number of inputs, between 2 and 1024,
   inclusively, to concatenate together.
 
 Other parameters used by this block are explained in the topic [Common
