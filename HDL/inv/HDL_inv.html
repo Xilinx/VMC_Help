@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Inverter</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Inverter</h1>
+</header>
+<section id="inverter" class="level1">
+<h1>Inverter</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Inverter block calculates the bitwise logical complement of a
+fixed-point number. The block is implemented as a synthesizable VHDL
+module.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<p>The block parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</body>
+</html>

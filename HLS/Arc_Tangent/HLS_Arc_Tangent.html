@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>atan</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">atan</h1>
+</header>
+<h1 id="atan">atan</h1>
+<p>Compute element-wise arctangent function of an argument.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The atan block returns the output of the atan (<code>x</code>)
+function for each element in array <code>x</code>.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector, or matrix.</li>
+<li>Data Types: Input supports signals of integer type, floating point
+type (double, single and half) and fixed point type.</li>
+<li>Complex Number Support: No</li>
+</ul>
+<p>Output has the same dimension and type as the input. However, If the
+data type of the input is a fixed point type, the data type of the
+output is fixed point type with integer width fixed as 2. The reason for
+this is that the output of the atan function is between -π/2 and π/2.
+Use the atan2 function if you need the output of the function to be
+between -π and π.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Atan block has no parameters to set.</p>
+</body>
+</html>

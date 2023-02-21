@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Sine</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Sine</h1>
+</header>
+<h1 id="sine">Sine</h1>
+<p>Element-wise computation of the sine function for the given input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFXElEQVRoge2aXWhTVxzAf+fem6ZNm6RuJmMwB64TRIKoMNTqNmjnHoR94JNjMvRtKnvaCDhhbG+DPhadMEEQ1vnxsAcREUkdq4jgwCkZDDY/UNlsbtu0aZd+3Nx79tBEmzZfJ71xbZrfY+753/P/5Zxz7/m4QkopWSFo/3cCzxOj1EUhxPPKw1WKddaSsgB3737mejK1pKOjt+i1FdWNG7L1Stkxq4LXuwav9zWlmKamEI6TIZNJKsUZRoDR0Ss4zlTlMUo1lKC5eS2rV3+EEB63blmWiYlfmZn5p+LyrnTjakWltDDN06RSV5HSUopLpa4qiYILsosRHRr6kamp+4yNDTA9/QgpMxXEZZiefsTY2IByrouSdUM0+wvDw+dxnEmg1OxV4jiTDA+fL1OuMFXLuic6i+NMYZo/4DjFW9dxrGyZyh9Kc6lK1m3RHJY1SDJ5seD4ldIimbyIZQ1WkzJQhWytRHOk07dJp+PAXGGLdDpOOn1HNd08lGRrLZpjtgWTgAM4WNYIyeRFpToLUbFsU9PLhEKfVCGaURKdjbExzb5sehqm2YeUtlK9hah4UiGxsO1RHGdaqQLbTmHbE8qJ2fYYT54cR0qJbaeU4wtRsaw1M4Rp9uEPdCKErlSJP9DJeOo6lmUqxamWL4fSmLUsk/HUdeUuJYSOP9CJxxNSinMbDWBoaIienh5Ms/w/uRyEi3loAKdOnSIajdLV1UUikSh7s6UuXMxDA9i/fz+RSIR4PE53d/eyFy7moQGEQiFisVjNhS9fvsE3X39fc+FiHmLuvnEikaC7u5t4PP40oJINN48nVNVTWkq7qqd0KTo6ehkcHMzziMVihMPhfFnIF4bKdxc9nhD+4A5E9gH/+HGCg59+i2HoTE5Nc+LEEX6P32Xg2m+8/dYWzp69QjDYxoMHf9PV9RL79r3umqyUckHDxWKxhe/ZcDjMmTNniEQiSpXoehvNTWtx5OyK5MKFS3zw4W4OHvyYO3f+YGRkCt1oR9d8eJpW8fDhEAPXjjMxPsq2be+5JlvIIx6Pc/jw4YXv2UQiwd69e5VunJsz63oAjxHGY4TZ9c5uvjvex5dHerFmWti5410MPYim+dC1djZt2oyhryKTucHMzIxrkoU8IpEIx44dy5ed3/QqovPnzBs3Rrh582e2b3+DaPQrTp48nXdd11GeM1dKoS4cDoefyRYqUI5Sq6Bz537i3r377NnzPkePfsGtW7fnXM0wOflXTUSBgqKQnRubplm0QDHKLffWrevg0KHP8flacByH3t4e/vzzLlI6pFK/YNvjLis+o5iHkFLKnp4eotHoggJCiIJP4+e1rq2Gjo7eog1mABw4cACYnUmFQqVf9EtZNEd/f39BjwXv2byL81p2OYjm3rOFqHg9m9upUKWanYochuFHSlwb30t2p0LTfATbdwGQHLmU3VNeHEtyp0IIjUCwE7Ld0R/oJDXWX7R7VsqS3KnwtW5C11pBCBACQ2/D17pZqc5CKO8b11rY630Vr/cVmNt7hJ49Dl2jmm4eVZ0I1EpY1wO0tm1GiIWjSwid1rYt6EawmpSBRZz1uC0shIdAcCdCFE9JCI1AoLPqM+BFneK5Kez3b0VoTUCpz5EEQvPi92+tKt9Fn8+6IezzrcfwvPB04V8yDg3D8yI+33rlXF05eV+McCD4Ji2+DQXHaam4Ft8GDKNdqT7XvqmYFb6G4Sm9WpqPrvsBG9tOK8Y1Y9v/KsW4+rWMZQ1jWcNu3tJVVtR3UA3ZemVFyZZdvC9Hqlq819sX9SuqGzdk65WGbL3SkK1XGrL1SkO2XmnI1isN2XqlIVuv/Ac0pRQ/LmtzAgAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>The Sine block returns the output of the function sin(<code>x</code>)
+for each element in array <code>x</code>.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector or matrix.</li>
+<li>Data Types: Input supports signals of floating point data types
+(double, single, and half) and signed fixed-point type. It does not
+support integer, Boolean, and unsigned fixed-point data types.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>The output has the same dimension and data type as the input.
+However, If the data type of the input is a fixed-point type, the data
+type of the output is fixed-point type with integer width fixed as
+2.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Sine block has no parameters to set.</p>
+</body>
+</html>

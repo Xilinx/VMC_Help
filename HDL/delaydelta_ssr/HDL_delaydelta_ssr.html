@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector Delay Delta</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vector Delay Delta</h1>
+</header>
+<section id="vector-delay-delta" class="level1">
+<h1>Vector Delay Delta</h1>
+<p>The Vector Delay Delta Block delays each vector element differently
+based on the given latency and delay latency values.</p>
+<p>Hardware notes: A delay line is a chain, each link of which is an
+SRL16 followed by a flip-flop.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The delta latency parameter is used to generate each parallel path
+with different latency (for example, [Latency + Delta Latency * (i-1)],
+where i represents the channel number in a range from 1 to the SSR
+value).</p>
+<p>The delta latency should be an integer and greater than or equal to
+-Latency/(SSR-1).</p>
+<p>For example when SSR is set to &#39;4&#39;, Latency is set to &#39;1&#39;, and Delta
+Latency is set to &#39;3&#39; then the four channels from 1 to 4 are delayed by
+1,4,7, and 10 sample times respectively.</p>
+<p>Note: In the Vector Delay Delta block, all the parallel channels are
+delayed by an equal number of sample times provided by Latency
+parameter.</p>
+<p>The Vector Delay Delta block implements a fixed delay of L
+cycles.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<ul>
+<li>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This blocks
+enable 1-D vector and/or complex data support for the primary block
+operation.</li>
+</ul>
+<p>See the <a href="vectordelay.html">Vector Delay</a> block for further
+information on using this block.</p>
+</section>
+</section>
+</section>
+</body>
+</html>

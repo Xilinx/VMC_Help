@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FIFO</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">FIFO</h1>
+</header>
+<section id="fifo" class="level1">
+<h1>FIFO</h1>
+<p>The FIFO block implements an FIFO memory queue.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>Values presented at the module&#39;s data-input port are written to the
+next available empty memory location when the write-enable input is one.
+By asserting the read-enable input port, data can be read out of the
+FIFO using the data output port (<code>dout</code>) in the order in
+which they were written. The FIFO can be implemented using block RAM,
+distributed RAM, SRL, or built-in FIFO.</p>
+<p>The full output port is asserted to one when no unused locations
+remain in the module&#39;s internal memory. The percent_full output port
+indicates the percentage of the FIFO that is full, represented with
+user-specified precision. When the <code>empty</code> output port is
+asserted the FIFO is empty.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<section id="fifo-implementation" class="level4">
+<h4>FIFO Implementation</h4>
+<ul>
+<li><h4 id="memory-type">Memory Type</h4></li>
+</ul>
+<blockquote>
+<p>This block implements FIFOs built from block RAM, distributed RAM,
+shift registers, or the 7 series built-in FIFOs. Memory primitives are
+arranged in an optimal configuration based on the selected width and
+depth of the FIFO. The following table provides best-use recommendations
+for specific design requirements.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"> </th>
+<th style="text-align: center;">Independent Clocks</th>
+<th style="text-align: center;">Common Clock</th>
+<th style="text-align: center;">Small Buffering</th>
+<th style="text-align: center;">Medium-Large Buffering</th>
+<th style="text-align: center;">High Performance</th>
+<th style="text-align: center;">Minimal Resources</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">7 series, with Built-In FIFO</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Block RAM</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Shift Register</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Distributed RAM</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"> </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h4 id="performance-options">Performance Options</h4>
+<ul>
+<li><h4 id="standard-fifo">Standard FIFO</h4></li>
+</ul></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>FIFO will operate in Standard Mode.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="first-word-fall-through">First Word Fall Through</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>FIFO will operate in First-Word Fall-Through (FWFT) mode. The
+First-Word Fall-Through feature provides the ability to look-ahead to
+the next word available from the FIFO without issuing a read operation.
+When data is available in the FIFO, the first word falls through the
+FIFO and appears automatically on the output. FWFT is useful in
+applications that require low-latency access to data and to applications
+that require throttling based on the contents of the data that are read.
+FWFT support is included in FIFOs created with block RAM, distributed
+RAM, or built-in FIFOs in 7 series devices.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="implementation-options">Implementation Options</h4>
+<ul>
+<li><h4 id="use-embedded-registers-when-possible">Use Embedded Registers
+(when possible)</h4></li>
+</ul></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>In 7 series FPGA block RAM and FIFO macros, embedded output registers
+are available to increase performance and add a pipeline register to the
+macros. This feature can be leveraged to add one additional cycle of
+latency to the FIFO core (DOUT bus and VALID outputs) or implement the
+output registers for FWFT FIFOs. The embedded registers available in 7
+series FPGAs can be reset (DOUT) to a default or user programmed value
+for common clock built-in FIFOs. See the topic &#39;Embedded Registers in
+block RAM and FIFO Macros&#39; in the FIFO Generator LogiCORE IP Product
+Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fifo_generator;v=latest;d=pg057-fifo-generator.pdf">PG057</a>).</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</section>
+<section id="depth" class="level4">
+<h4>Depth</h4>
+<blockquote>
+<p>Specifies the number of words that can be stored. Range 16-4M.</p>
+</blockquote>
+</section>
+<section id="specify-custom-dout-width" class="level4">
+<h4>Specify custom dout width</h4>
+<blockquote>
+<p>Allows specification of asymmetric data widths for input and output.
+When this option is enabled, the input din must be of type Unsigned
+int.</p>
+</blockquote>
+<ul>
+<li><h4 id="dout-width">Dout Width</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Specifies the custom width of dout . The default value is
+<code>32</code>. The ratio between width of din and dout should be one
+of 1:1, 1:2, 1: 4, 1:8, 2:1, 4:1, or 8:1.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>For example, if the width of the din is <code>32</code>. Then the
+dout can be 4, 8, 16, 32, 64, 128, or 256.</p>
+</blockquote>
+</blockquote>
+<p><strong>IMPORTANT</strong>: Asymmetric data-widths are supported only
+for Versal devices with Block RAM configuration.</p>
+<p><strong>IMPORTANT</strong>: The total size of the memory
+(depth*width) should not exceed 150M.</p>
+</section>
+<section id="bits-of-precision-to-use-for-full-signal" class="level4">
+<h4>Bits of precision to use for %full signal</h4>
+<blockquote>
+<blockquote>
+<p>Specifies the bit width of the %full port. The binary point for this
+unsigned output is always at the top of the word. Thus, if for example
+precision is set to one, the output can take two values: 0.0 and 0.5,
+the latter indicating the FIFO is at least 50% full.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<blockquote>
+<h4 id="provide-reset-port">Provide reset port</h4>
+<blockquote>
+<p>Add a reset port to the block.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="reset-latency">Reset Latency</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Creates a latency on the reset by adding registers. The default is
+1.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Note</strong>: For UltraScale™ devices, after the reset gets
+asserted, the FIFO will remain disable for the next 20 cycles. During
+this 20 cycle period, all read and write operations are ignored.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="provide-enable-port">Provide enable port</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Add enable port to the block.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="provide-data-count-port">Provide data count port</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Add data count port to the block. Provides the number of words in the
+FIFO.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="provide-percent-full-port">Provide percent full
+port</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Add a percent full output port to the block. Indicates the percentage
+of the FIFO that is full using the user-specified precision. This
+optional port is turned on by default for backward compatibility
+reasons.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="provide-almost-empty-port">Provide almost empty
+port</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Add almost empty (ae) port to the block.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><h4 id="provide-almost-full-port">Provide almost full port</h4></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Add almost efull (af) port to the block.</p>
+</blockquote>
+</blockquote>
+<p>Following are some general guidelines to use Reset, Write enable,
+Read enable for the &#39;built-in FIFO&#39; Memory type:</p>
+</section>
+</section>
+<section id="7-series-devices" class="level3">
+<h3>7 series devices</h3>
+<ul>
+<li><p>Without Reset port, it is required to run at least 8 clock cycles
+latency before asserting WE/RE signals.</p></li>
+<li><p>With Reset port, it is required to run Reset signal ON for at
+least three clock cycles. During this time no WE or RE signals should be
+asserted. To be consistent across all built-in FIFO configurations, it
+is recommended to give reset pulse of at least five clock
+cycles.</p></li>
+<li><p>After Reset de-assertion, run at least 30 clock cycles (reset
+duration +30 clock cycles duration is defined as a no access zone)
+before asserting WE/RE signals.</p></li>
+</ul>
+</section>
+<section id="ultrascale-devices" class="level3">
+<h3>UltraScale devices</h3>
+<ul>
+<li>The built-in FIFO requires a reset pulse of at least one clock
+cycle.</li>
+</ul>
+</section>
+<section id="versal-devices" class="level3">
+<h3>Versal Devices</h3>
+<ul>
+<li>Read enable (rd_en) and Write enable (wr_en) signals can be made
+high only when rd_rst_busy and wr_rst_busy signals are low.</li>
+</ul>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
+<p>FIFO Generator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fifo_generator;v=latest;d=pg057-fifo-generator.pdf">PG057</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</section>
+</section>
+</body>
+</html>

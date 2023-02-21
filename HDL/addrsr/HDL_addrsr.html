@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Addressable Shift Register</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Addressable Shift Register</h1>
+</header>
+<section id="addressable-shift-register" class="level1">
+<h1>Addressable Shift Register</h1>
+<p>The Addressable Shift Register block is a variable-length shift
+register in which any register in the delay chain can be addressed and
+driven onto the output data port.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The block operation is most easily thought of as a chain of
+registers, where each register output drives an input to a multiplexer,
+as shown below. The multiplexer select line is driven by the address
+port (addr). The output data port is shown below as q.</p>
+<p><img src="data:image/png;base64,R0lGODlhGAFrAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8AAAAP7+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAAAAAAALAAAAAAYAWsAhwAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8AAAAP7+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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" /></p>
+<p>The Addressable Shift Register has a maximum depth of 1024 and a
+minimum depth of 2. The address input port, therefore, can be between 1
+and 10 bits (inclusive). The data input port width must be between 1 and
+255 bits (inclusive) when this block is implemented with the LogiCORE™
+(for example, when Use behavioral HDL (otherwise use core) is
+unchecked).</p>
+<p>In hardware, the address port is asynchronous relative to the output
+port. In the block S-function, the address port is therefore given
+priority over the input data port, for example, on each successive
+cycle, the addressed data value is read from the register and driven to
+the output before the shift operation occurs. This order is needed in
+the Simulink® software model to guarantee one clock cycle of latency
+between the data port and the first register of the delay chain. (If the
+shift operation were to come first, followed by the read, then there
+would be no delay, and the hardware would be incorrect.)</p>
+<section id="block-interface" class="level3">
+<h3>Block Interface</h3>
+<p>The block interface (inputs and outputs as seen on the Addressable
+Shift Register icon) are as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Signal</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>d</td>
+<td>data input</td>
+</tr>
+<tr class="even">
+<td>addr</td>
+<td>address</td>
+</tr>
+<tr class="odd">
+<td>en</td>
+<td>enable signal (optional)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Signal</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>q</td>
+<td>data output</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to this block are as follows:</p>
+<section id="infer-maximum-latency-depth-using-address-port-width" class="level4">
+<h4>Infer maximum latency (depth) using address port width</h4>
+<p>You can choose to allow the block to automatically determine the
+depth or maximum latency of the shift-register-based on the bit-width of
+the address port.</p>
+</section>
+<section id="maximum-latency-depth" class="level4">
+<h4>Maximum latency (depth)</h4>
+<p>In the case that the maximum latency is not inferred (previous
+option), the maximum latency can be set explicitly.</p>
+</section>
+<section id="initial-value-vector" class="level4">
+<h4>Initial value vector</h4>
+<p>Specifies the initial register values. When the vector is longer than
+the shift register depth, the vector&#39;s trailing elements are discarded.
+When the shift register is deeper than the vector length, the shift
+register&#39;s trailing registers are initialized to zero.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to this block are as follows:</p>
+<section id="optimization" class="level4">
+<h4>Optimization</h4>
+<p>You can choose to optimize for Resource (minimum area) or for Speed
+(maximum performance).</p>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE Documentation</h2>
+<p>RAM-Based Shift Register LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg122-c-shift-ram&amp;ft:locale=en-US">PG122</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
+</section>
+</section>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Gain</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Gain</h1>
+</header>
+<h1 id="gain">Gain</h1>
+<p>Element-wise multiplication of the input by a constant gain
+factor</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Gain block multiplies the input signal by a constant gain
+factor.</p>
+<p>You can specify the data type of the gain constant and built-in type
+promotion rules apply to determine the output data type. Alternatively,
+the output data type can be made the same as the input type. In case of
+integer overflow the block supports the option to saturate output values
+at the output type limits.</p>
+<p>The block warns or errors out when an integer output overflows during
+simulation. To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+<h3 id="data-type-support">Data Type Support</h3>
+<p>The block supports all data types except Boolean.</p>
+<p>Data type support for the block is:</p>
+<ul>
+<li>The input can be a scalar, vector or matrix.</li>
+<li>If the input is a vector or matrix and the Gain is a scalar, the
+scalar value will apply to all the elements of the input.</li>
+<li>If neither the input nor the gain constant are scalar the dimensions
+of the input and the gain constant must match.</li>
+</ul>
+<p>The output is complex if either the Gain constant or the input is
+complex.</p>
+<h2 id="parameters">Parameters</h2>
+<h4 id="gain-1">Gain</h4>
+<p>Specifies the constant gain factor. The Gain can be any valid MATLAB
+expression that evaluates to a real or complex scalar, vector, or
+matrix.</p>
+<h4 id="gain-data-type">Gain data type</h4>
+<p>This parameter specifies the type of conversion to be applied to the
+Gain factor constant before multiplication. If fixed is specified more
+parameters are available.</p>
+<p>Settings for the Gain data type parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>double</td>
+<td>double precision floating-point</td>
+</tr>
+<tr class="even">
+<td>single</td>
+<td>single precision floating-point</td>
+</tr>
+<tr class="odd">
+<td>int8</td>
+<td>8-bit signed integer</td>
+</tr>
+<tr class="even">
+<td>uint8</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr class="odd">
+<td>int16</td>
+<td>16-bit signed integer</td>
+</tr>
+<tr class="even">
+<td>uint16</td>
+<td>16-bit unsigned integer</td>
+</tr>
+<tr class="odd">
+<td>int32</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr class="even">
+<td>uint32</td>
+<td>32-bit unsigned integer</td>
+</tr>
+<tr class="odd">
+<td>fixed</td>
+<td>fixed-point</td>
+</tr>
+<tr class="even">
+<td>half</td>
+<td>half precision floating-point</td>
+</tr>
+<tr class="odd">
+<td>data type expression</td>
+<td>A string that specifies the output data type. See &quot;Working with Data
+Type Expression&quot; in the Vitis Model Composer User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>).</td>
+</tr>
+</tbody>
+</table>
+<p>Unless the <strong>Output data type same as input</strong> parameter
+is enabled, the output data type will be a function of the input type
+and the specified Gain data type.</p>
+<ul>
+<li>If either input or gain types are floating-point (double, single, or
+half), the output type will be floating-point. If both are
+floating-point, the output type will be the larger of both. The smaller
+type will be promoted to the larger before the operation.</li>
+<li>Otherwise, if either of input or Gain data type are fixed-point, the
+output type will be fixed-point with a bit width sufficient to hold the
+full output result. The other type (input or Gain data type) will be
+promoted to its equivalent fixed-point type.</li>
+<li>Otherwise, the input and Gain data type are integers. The output
+type will be the larger of either input or Gain data type, and will be a
+signed integer if either one is signed.</li>
+</ul>
+<h4 id="output-data-type-same-as-input">Output data type same as
+input</h4>
+<p>This parameter specifies the way the output data type is
+determined.</p>
+<p>If disabled (unchecked) the output type is computed via built-in type
+promotion rules. If enabled (checked), the output data type is the same
+as the input type.</p>
+<h4 id="saturate-on-integer-overflow">Saturate on integer overflow</h4>
+<p>This parameter specifies the behavior in case of integer overflow. By
+default the option is disabled and overflow would result in value wrap.
+With the option enabled, integer overflow gets mitigated by saturation
+at the limits of the output data type.</p>
+<p>Settings for the Saturate on integer overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unchecked</td>
+<td>Wrap around</td>
+</tr>
+<tr class="even">
+<td>Checked</td>
+<td>Saturation</td>
+</tr>
+</tbody>
+</table>
+<p>When overflow is detected, the Diagnostic Viewer displays messages
+that depend on the diagnostic action you specify in the Simulink Editor.
+To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+</body>
+</html>

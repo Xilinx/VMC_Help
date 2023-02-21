@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector DDFS</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vector DDFS</h1>
+</header>
+<section id="vector-ddfs" class="level1">
+<h1>Vector DDFS</h1>
+<p>The Vector DDFS block generates Real and Imaginary vector output
+signals of desired frequency.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The input port I is used for providing the desired output frequency
+value as a vector type.</p>
+<p>The input port I value should be equal to:</p>
+<ul>
+<li><em>(desired output Frequency * Sampling time *2^(Frequency
+Resolution))</em></li>
+</ul>
+<p>The VI input port and VO output are used for synchronization purposes
+with the other blocks in the design. The VO is just a delayed version of
+VI based on the block latency. The DITH input port is used to turn
+on/off the phase noise dithering feature. The CONJ input port is set to
+&#39;1&#39; to conjugate the complex exponential output. The output ports, O_RE
+and O_IM, generate Real and Imaginary components of the desired vector
+output frequency signal.</p>
+<section id="data-type-support" class="level3">
+<h3>Data Type Support</h3>
+<ul>
+<li>The input port I should be a signed fixed-point data type.</li>
+<li>The input port VI, DITH, and CONJ should be Boolean data types.</li>
+</ul>
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<ul>
+<li>This configurable GUI parameter is primarily used to control the
+processing of multiple data samples on every sample period. This block
+enables 1-D vector support for the primary block operation.</li>
+</ul>
+</section>
+<section id="frequency-resolution-bits" class="level4">
+<h4>Frequency Resolution (bits)</h4>
+<ul>
+<li>Defines the smallest incremental step in frequency that the block
+can output. This should be an integer value.</li>
+</ul>
+</section>
+<section id="sincos-table-depth" class="level4">
+<h4>Sin/Cos Table Depth</h4>
+<ul>
+<li>Defines the depth of the Sin/Cos Table and should be an integer
+value.</li>
+</ul>
+</section>
+<section id="sincos-table-width" class="level4">
+<h4>Sin/Cos Table Width</h4>
+<ul>
+<li>Defines the width of the Sin/Cos Table and should be an integer
+value.</li>
+</ul>
+</section>
+</section>
+</section>
+</body>
+</html>

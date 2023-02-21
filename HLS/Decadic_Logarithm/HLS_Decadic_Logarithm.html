@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Log10</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Log10</h1>
+</header>
+<h1 id="log10">Log10</h1>
+<p>Compute element-wise base 10 logarithm of input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Log10 block returns the base 10 logarithm value for the input.
+The block supports input of all data types except Boolean. The input can
+be scalar, vector, or matrix.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>Data Types:  Input supports signals of integer, fixed-point, and
+floating-point data type. The block does not support Boolean
+inputs.</li>
+<li>Complex Number Support: No</li>
+</ul>
+<p>The output has the same dimension and type as the input.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Log10 block has no parameters to set.</p>
+</body>
+</html>

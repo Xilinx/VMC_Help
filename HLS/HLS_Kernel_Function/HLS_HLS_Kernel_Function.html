@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HLS Kernel</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">HLS Kernel</h1>
+</header>
+<h1 id="hls-kernel">HLS Kernel</h1>
+<p>This block lets you import an HLS kernel code with a streaming
+interface.</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHUAAABaCAYAAACG/hlfAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAJ50lEQVR4nO2dfXAU5R2An73du0suuUuAREHKTBGCKKEIIoEgqAyOUu2gxBnGIahtGTL+UdGqLdU6ijBjO6kWo0ago+MwIii2KS3SagCVWr5GKBQiFAZRKBJJLrlLLl+3t7f943InKRGO3Hu5Nzv75J/c3nu//d0+t++++37cKaZpmthYCkemE7ARjxb/R1GUTOZhIwjTNL+VCnDixM8ylYuNAEaNehmwq19LYku1ILZUC2JLtSDapYvIhds9Arf7amHxXK5CotEIkUizsJgAmuYjEKglGu0UGjepfff7HlMgK2skBQX3oSjOTKeSFKHQZ4TDZ/t9vwOm+k2HUNPUaWhYSzC4HdPUhcYNBrdlRCgMEKnpEtrYuJ7OzpO0tHxKV9dXmKYhIG6Erq4vaWn5p4As+4b0UtMttHsLfv9GotFQyrGj0Tb8/veAzHWpSy21f4TGiEbDnDv3FtFouM+xRcQQgbRS+1NonEikkaamTX26vpqmTlPTJiKRxlTTTBkppWZCaJyOjs8JhfZdlljT1AmF9tHR8XmqaQpBOqmZFBonGKwlHP4mqYaTaRqEw/UEArWppikMqaTKIDT2mih+/3pMsyuJsp34/RuAaApZikUaqbIIjWMY7TQ0rLtoNRy7z30bw2hPJU3hSCFVNqFxwuGvCQQ+6FWsaeoEAh8QDn+dSpppIeNSZRUaJ9YAOtJDrGnqdHQcIRTal3L8dJBRqbILjdPU9FcikQCx62aUSCRAU9NfhMUXTcakulzDKCy8X7DQiHCh8bgNDeuIHS5H97U29S7FdJGxURoTHcMIEI1euoWZLIbRgmGk3tXXe+wg9fXVmKaJYQTTsg9RZEyqHm6koeFtvL5SFEUVFtfrK6W1ZSe63iAsZpx0xEwHGb2m6noDrS07hVZliqLi9ZXidBYKiznQyHjr1xYrnoxLBTh69Bi3zf5JD7Erlr/OmjU1HDt2ijtuv3A+smFEWfrLl5k5YzGzbn2IOXOW8MUXZxLPK4pKff0I5s/flNj2/vvHKS+vIRIR3/uzfPkOamu/EB63L0ghFWK3Ipdzxm7e/A8CgRCf7FjN9o9eY9GiuVS/urFnIcWBqnlxOgupq2tg1ap9vPrqD9E0ad52WpBqjlK8Kvb6Si9ZtrWlnUjESCwXKSubRVnZrAvKKSh0dIxl6dJqXnllDnl5bgACgU6WLt2GrkfRdYNly26hoMDDwoU1DB6czbx5Y1m9ej933lnEiRPNnDoVZPXqO8nPz6Km5igbN36Opjm44YZhLFlSIvZApIg0H9lDh84xc+abTJtWSfG4e1mzpuai5e++52a+PtvAlBsf4Mknq9m961Cv5bq6dMrLn2VB+T2MHj06sb26+jPmzRvL66//iEcfncoLL+xCVRWOHGnk+edncdddY3A4FMaMGUJl5WwmThzKxx9/hd/fwbp1h3jrrXtYu/ZuDhyo59gxv9BjkSrSnKnjx1/Bu+/em3i8cuW/wfzua19uroctW17i8OETbN26l4cf/h13zCnluecqepQ7cvRLVqx4iNeq3+PeshfJzo7VCPv3n2XfvrO8+eZBTBMcjtgZP3RoLldemZt4/bhxBQAMGZJNa2sXdXUNnD7dQnl57EMXDHZx6lSLsOMgAmmk/j/RaHusZ8i8odfn29s70TSN4uJRFBeP4sEH72Li9QsukHr9hCIWLZqL1+uhouK3/PFPv6EttAunU2X58lsYPXrweTF1XK6e98wOx7eVmWmCy+WgpGQ4VVV39Ci3a9fpVN+yMKSpfnvDMEK0tf0Ls5dJXL9+6jWqqjYkHh8/fpoRI4Z+Z6z582+joCCfl156B6+vlEmTRrJtW6w78fDhc2zYUJdUTmPHFnDw4De0tsbmIVVW7iQYFNcrJgJpz9Q4ut7EwQPHuHHy/Yltq1Y/ybPLFvPIkheYWvIgbreLXK+HVauWXjTWi79/lFturmD69Ot54hc/p2Lxr1iwoAbDiLJixa1J5ZOfn8Ujj5TwwAN/xulUmTx5WKLxJQtK/OsBFEWRen2q01kovEvRNI20dSlmglGjXsY0Tbmr3/NJ9DwJnDaiKCq+vBloziHCYsqA9NXv+ahqLlmukURNcYuOotEuHIpLWDwZGDBSzx9QV/EJiWmaOo3N6zO25iVdDIjqd6DMkJAF6aXaQi8fqaWmInThwsXs33+Qxx57irVr1wMwYsS1FBeXcN11E7jppueoqtoLwLJln7BjxymhuWcSaaWmInTLlloKCwuYNGlCj+2mCbW1D/Hhh/PZvPk+tm8/yYED9TzxRCmVlTvTMiSXCaSUmmqVW139Byoqftxjm2nqmGYnXV0nu/ehMWnSME6eDODxOCkpGc7WrdaojqWTmqpQwzA4evQ411xTlNhmmgaNjet7jNW2tYXZu/cMxcVXADB16vfYs+fMBfEGIlLd0ohoFDU3Bxg8OD/x2DSjhEJ76OyMjbbMnfsOEBuVKS8fT1FRrEN/2LBc6uvTMxOxv5FGqshWbnzg3DR1Ojv/g667gJjUTZvmo6rSVVBCkeLdiRQ6aFA+fn9z4rYlEklujm59fYihQ3MvXXAAkHGpou9DVVWlqOhq9u6tuqz70N27/8uUKVcJySHTWHItzcKFo3njjb8B8PTTMykruxaAPXt+2mvV296us3v3GWbPHiksj0xiybU0M2Z4aGxsp64uuSG1yspdPP74NJzOiw/raZoXVfWKSDWtWHYtzcqVtyf9umeemXnJMg5HNnn5twHQ3PR3olG5Fhqfj72WJgli467TE9NqfHmlBAMfSbvyzV5LkwQ5ORNxqDko3X8ONYec3InC4osm461f2cW6s0bicl+Fwre1iYKKyzUcd9b3U46fDjIuFeQVq2mDyMn5AYpy4VVKUVRyciagaYNSSTMtSCEV5BPrcLjx5U3vcYZeEB8VX14pDodc02GkkQryiFUUBa9vGigaXOyXXRRQFGf32h95fgJGKqkgh1hPznhU1YeS1OFxoGp5eHKKU0tSINJJhcyKdbmG43aP7PU6+p2xUcnOvhqXS45uRimlQmbEqqqXXO/kPt43q+R6b5Six0laqdC/YhVFw+ubjqL0/ZAoiqM7RmZHNKWWCv0lVsHrm4JDdZNag0fB4XDj9ZWkGCc1pJcK6Reb7RmDphVc9PblcuJq2hCyPWMEZNk3BoRUSJ9YX94MPJ5xQqtMRdHweMahafmXLpwGpJnOkgwxsZ+iOa8QFjPWsDGEf72rqmZhGG1CYybLgJIKoOt+dF2u71iQjQFT/dokjy3VgthSLYgt1YL0+M4Hm4FPjx+a73ZrYwHs6teC2FItiC3VgthSLYgt1YLYUi2ILdWC2FItiC3VgthSLYgt1YLYUi2ILdWC2FItiC3VgthSLYgt1YL8D9NGZSpIZxOiAAAAAElFTkSuQmCC" /></p>
+<h2 id="library">Library</h2>
+<p>HLS/User-Defined Functions</p>
+<h2 id="description">Description</h2>
+<p>The HLS Kernel block allows you to import an HLS kernel, which is a
+proper HLS IP (an IP with interface specification using HLS pragmas).
+The primary use of this block is to co-simulate AI Engine domain with
+HLS.</p>
+<p>Note: This block does not participate in HLS code generation and
+should not be part of the HLS subsystem in a design.</p>
+<p>Note: Use this block to connect with AI Engine blocks using the AIE
+to HLS Kernel or HLS to AIE blocks and co-simulate a design with both AI
+Engines and PL components.</p>
+<p>The block also accepts templatized HLS functions.</p>
+<p>Function arguments can be either of <code>hls::stream</code> type or
+of <code>scalar</code> or <code>vector</code> types. For example the
+following is a valid HLS function signature:</p>
+<pre class="pre"><code>void func(hls::stream&lt;unsigned int&gt; &amp;in, const ap_uint&lt;8&gt; (&amp;param_in)[32], hls::stream&lt;unsigned int&gt; &amp;out, ap_uint&lt;8&gt; param_out);</code></pre>
+<p>For stream inputs and outputs, this block accepts variable size
+signals and produces variable size outputs. For stream inputs and
+outputs, the data width can only be 32, 64, or 128 bit wide.</p>
+<h2 id="parameters">Parameters</h2>
+<p>[TABLE]</p>
+</body>
+</html>

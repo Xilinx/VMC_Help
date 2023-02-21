@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FFT</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">FFT</h1>
+</header>
+<section id="fft" class="level1">
+<h1>FFT</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/DSP/Window IO</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block implements the FFT targeted for AI Engines which use
+rounding method and saturates the output samples on overflow.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output data type</h4>
+<ul>
+<li>Describes the type of individual data samples input to and output
+from the filter function. Supported types are cint16, cint32, and
+cfloat.</li>
+</ul>
+</section>
+<section id="fft-size" class="level4">
+<h4>FFT size</h4>
+<ul>
+<li>This is an unsigned integer which describes the point size of the
+transformation. This must be 2^N, where N is in the range 4 to 11
+inclusive. However, for <code>cint16</code> datatype, the FFT size can
+be 2^12, provided the FFT receives and outputs data to/from kernels on
+the same processor.</li>
+</ul>
+<p><strong>Note</strong>: To understand more on achieving the 4096 point
+size FFT, refer to the AI Engine examples in <a href="https://github.com/Xilinx/Vitis_Model_Composer">GitHub</a>.</p>
+</section>
+<section id="input-window-sizenumber-of-samples" class="level4">
+<h4>Input Window Size(Number of Samples)</h4>
+<ul>
+<li>Describes the number of samples used as an input to the FFT.</li>
+</ul>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
+<ul>
+<li>Describes the power of 2 to scale the result by prior to
+output.</li>
+</ul>
+</section>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages</h4>
+<ul>
+<li>This determines the number of kernels the FFT will be divided over
+in series to improve throughput.</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+</body>
+</html>

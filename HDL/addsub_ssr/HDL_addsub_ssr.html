@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector AddSub Fabric</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vector AddSub Fabric</h1>
+</header>
+<section id="vector-addsub-fabric" class="level1">
+<h1>Vector AddSub Fabric</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The Vector Adder/Subtracter Fabric block supports the
+Addition/Subtraction operation for inputs of vector type.</p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on each sample
+period. This blocks enable 1-D vector support for the primary block
+operation.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows:</p>
+<section id="operation" class="level4">
+<h4>Operation</h4>
+<p>Specifies the block operation to be Addition, Subtraction, or
+Addition/ Subtraction. When Addition/Subtraction is selected, the block
+operation is determined by the sub input port, which must be driven by a
+Boolean signal. When the sub input is 1, the block performs subtraction.
+Otherwise, it performs addition.</p>
+</section>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<section id="provide-carry-in-port" class="level5">
+<h5>Provide carry-in port</h5>
+<p>When selected, allows access to the carry-in port, cin. The carry-in
+port is available only when User defined precision is selected and the
+binary point of the inputs is set to zero.</p>
+</section>
+<section id="provide-carry-out-port" class="level5">
+<h5>Provide carry-out port</h5>
+<p>When selected, allows access to the carry-out port, cout. The
+carry-out port is available only when User defined precision is
+selected, the inputs and output are unsigned, and the number of output
+integer bits equals x, where x = max (integer bits a, integer bits
+b).</p>
+</section>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>The Latency value defines the number of sample periods by which the
+block&#39;s output is delayed. One sample period might correspond to
+multiple clock cycles in the corresponding FPGA implementation (for
+example, when the hardware is over-clocked with respect to the Simulink
+model). Model Composer does not perform extensive pipelining unless you
+select the Pipeline for maximum performance option (on the
+Implementation tab, described below); additional latency is usually
+implemented as a shift register on the output of the block.</p>
+</section>
+</section>
+<section id="output-tab" class="level3">
+<h3>Output tab</h3>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>This parameter allows you to specify the output precision for
+fixed-point arithmetic. Floating point arithmetic output will always be
+Full precision.</p>
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
+error.</p>
+</section>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</section>
+</section>
+<section id="user-defined-precision" class="level4">
+<h4>User-Defined Precision</h4>
+<section id="fixed-point-precision" class="level5">
+<h5>Fixed-point Precision</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned:</h6>
+<p>The output is an Unsigned number.</p>
+</section>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
+<p>Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+</section>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
+<p>Position of the binary point. in the fixed-point output.</p>
+</section>
+</section>
+</section>
+<section id="quantization" class="level4">
+<h4>Quantization</h4>
+<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+and Quantization</a>.</p>
+</section>
+<section id="overflow" class="level4">
+<h4>Overflow</h4>
+<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+and Quantization</a>.</p>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows:</p>
+<section id="use-behavioral-hdl-otherwise-use-core" class="level4">
+<h4>Use behavioral HDL (otherwise use core)</h4>
+<p>The block is implemented using behavioral HDL. This gives the
+downstream logic synthesis tool maximum freedom to optimize for
+performance or area.</p>
+<p><strong>Note</strong>: For Floating-point operations, the block
+always uses the Floating-point Operator core.</p>
+</section>
+<section id="core-parameters" class="level4">
+<h4>Core Parameters</h4>
+<section id="implement-using" class="level5">
+<h5>Implement using</h5>
+<p>Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
+available in the target device. The default is Fabric.</p>
+</section>
+<section id="pipeline-for-maximum-performance" class="level5">
+<h5>Pipeline for maximum performance</h5>
+<p>The LogiCORE™ can be internally pipelined to optimize for speed
+instead of area. Selecting this option puts all user defined latency
+into the core until the maximum allowable latency is reached. If the
+Pipeline for maximum performance option is not selected and latency is
+greater than zero, a single output register is put in the core and
+additional latency is added on the output of the core.</p>
+<p>The Pipeline for maximum performance option adds the pipeline
+registers throughout the block, so that the latency is distributed,
+instead of adding it only at the end. This helps to meet tight timing
+constraints in the design.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
+<p>Adder/Subtractor LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg120-c-addsub&amp;ft:locale=en-US">PG120</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
+</section>
+</section>
+</body>
+</html>

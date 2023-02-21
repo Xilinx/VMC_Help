@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FIR Resampler Filter</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">FIR Resampler Filter</h1>
+</header>
+<h1 id="fir-resampler-filter">FIR Resampler Filter</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="library">Library</h2>
+<p>AI Engine/DSP/Window IO</p>
+<h2 id="description">Description</h2>
+<p>This block implements the FIR Fractional Asymmetric Interpolation and
+Decimation filter targeted for AI Engines.</p>
+<p><strong>Note</strong>: The FIR Fractional Interpolation block has
+been deprecated. Please use the FIR Resampler Filter block instead.</p>
+<h2 id="parameters">Parameters</h2>
+<h3 id="main">Main</h3>
+<h4 id="inputoutput-data-type">Input/Output data type</h4>
+<ul>
+<li>Describes the type of individual data samples input to and output
+from the filter function. int16, cint16, int32, cint32, float,
+cfloat.</li>
+</ul>
+<h4 id="filter-coefficients-data-type">Filter coefficients data
+type</h4>
+<ul>
+<li><p>Describes the type of individual coefficients of the filter taps.
+It should be one of int16, cint16, int32, cint32, float, cfloat and must
+also satisfy the following rules:</p>
+<ul>
+<li>Complex types are only supported when the Input/Output data type is
+also complex.</li>
+<li>32-bit types are only supported when the Input/Output data type is
+also a 32-bit type.</li>
+<li>Filter coefficients data type must be an integer type if the
+Input/Output data type is an integer type.</li>
+<li>Filter coefficients data type must be a float type if the
+Input/Output data type is a float type.</li>
+</ul></li>
+</ul>
+<h4 id="specify-filter-coefficients-via-input-port">Specify filter
+coefficients via input port</h4>
+<ul>
+<li>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via input port.</li>
+</ul>
+<h4 id="filter-coefficients">Filter coefficients</h4>
+<ul>
+<li>This field should be specified with the asymmetric filter
+coefficients and must be in the range 4 to 240 inclusive.</li>
+</ul>
+<h4 id="interpolation-factor">Interpolation factor</h4>
+<ul>
+<li>An unsigned integer which describes the Interpolation factor of the
+filter. It must be in the range 3 to 16.</li>
+</ul>
+<h4 id="decimation-factor">Decimation factor</h4>
+<ul>
+<li>An unsigned integer which describes the decimation factor of the
+filter. It must be in the range 2 to 16. The decimation factor should be
+less that the interpolation factor and should not be divisible by the
+interpolation factor.</li>
+</ul>
+<h4 id="input-window-size-number-of-samples">Input window size (Number
+of samples)</h4>
+<ul>
+<li>Describes the number of samples used as an input to the filter
+function. The number of values in the output window will be the input
+window size multipled by the Interpolation factor and divided by the
+decimation factor. In this instance it would result in a fraction number
+of output samples which would be rounded down.</li>
+</ul>
+<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+<ul>
+<li>Describes the power of 2 shift down applied to the accumulation of
+FIR terms before output. It must be in the range 0 to 61.</li>
+</ul>
+<h4 id="rounding-mode">Rounding mode</h4>
+<ul>
+<li>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</li>
+</ul>
+<ol type="1">
+<li>Floor (truncate)</li>
+<li>Ceiling</li>
+<li>Round to positive infinity</li>
+<li>Round to negative infinity</li>
+<li>Round symmetrical to infinity</li>
+<li>Round symmetrical to zero</li>
+<li>Round convergent to even</li>
+<li>Round convergent to odd</li>
+</ol>
+<ul>
+<li>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<h4 id="number-of-cascade-stages">Number of cascade stages</h4>
+<ul>
+<li>This determines the number of kernels over which the function will
+be split. A higher number of cascade stages will result in higher
+throughput at the expense of resources. The value must be in the range 1
+to 9.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Variable Size Signal to Workspace</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Variable Size Signal to Workspace</h1>
+</header>
+<section id="variable-size-signal-to-workspace" class="level1">
+<h1>Variable Size Signal to Workspace</h1>
+<p>This block is used to save variable size signal data to the MATLAB®
+workspace.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/Tools</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>AI Engine blocks produce variable signal outputs. The Variable Size
+Signal to Workspace block allows you to write data into the MATLAB
+workspace in a structured format.</p>
+<p>Note: This block behaves similarly to the Simulink To Workspace block
+but will make it easier to analyze the output data by discarding empty
+sample in the input variable size signal and concatenating valid samples
+into a MATALB vector. This block can only be connected to a variable
+size signal. The settings of the block can be accessed from Simulink
+Model settings (Ctrl+E) under the Data Import/Export tab. In particular,
+here you can set all simulation outputs as a single Simulink Simulation
+Output object or as individual variables.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<p>Variable Name<br />
+Using this parameter, you can specify the name for workspace
+variable.</p>
+<p><strong>Parent topic:</strong> <a href="yjr1649167359223.html">Utility Blocks</a></p>
+</section>
+</section>
+</body>
+</html>

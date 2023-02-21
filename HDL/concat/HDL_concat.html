@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Concat</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Concat</h1>
+</header>
+<section id="concat" class="level1">
+<h1>Concat</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Concat block performs a concatenation of n bit vectors
+represented by unsigned integer numbers, for example, n unsigned numbers
+with binary points at position zero. The <a href="reinterpret.html">Reinterpret</a> block provides capabilities that
+can extend the functionality of the Concat block.</p>
+</section>
+<section id="block-interface" class="level2">
+<h2>Block Interface</h2>
+<p>The block has n input ports, where n is some value between 2 and
+1024, inclusively, and one output port. The first and last input ports
+are labeled hi and low, respectively. Input ports between these two
+ports are not labeled. The input to the hi port will occupy the most
+significant bits of the output and the input to the lo port will occupy
+the least significant bits of the output.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<p>Parameters specific to this block are as follows:</p>
+<section id="number-of-inputs" class="level4">
+<h4>Number of Inputs:</h4>
+<p>Specifies number of inputs, between 2 and 1024, inclusively, to
+concatenate together.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>The Concat block does not use a LogiCORE™.</p>
+</section>
+</section>
+</section>
+</body>
+</html>

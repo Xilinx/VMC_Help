@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Cosine</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Cosine</h1>
+</header>
+<h1 id="cosine">Cosine</h1>
+<p>Computes cosine value for the input.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Cosine block returns the output of the function cos(x) for each
+element in array x.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Dimension: Input can be scalar, vector, or matrix.</li>
+<li>Data Types: Input supports signal of floating-point data types
+(double, single, and half), and signed fixed point type. It does not
+support integer, Boolean, and unsigned fixed point data types.</li>
+<li>Complex Numbers: Complex numbers are not supported.</li>
+</ul>
+<p>Output has the same dimension and data type as the input. However, if
+the data type of the input is a fixed point type, the data type of the
+output is fixed point type with integer width fixed as 2.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Cosine block has no parameters to set.</p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Absolute</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Absolute</h1>
+</header>
+<section id="absolute" class="level1">
+<h1>Absolute</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Absolute block outputs the absolute value of the input.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>This parameter allows you to specify the output precision for
+fixed-point arithmetic. Floating point arithmetic output will always be
+Full precision.</p>
+</section>
+<section id="full" class="level4">
+<h4>Full</h4>
+<p>The block uses sufficient precision to represent the result without
+error.</p>
+</section>
+<section id="user-defined" class="level4">
+<h4>User Defined</h4>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</section>
+<section id="fixed-point-output-type" class="level4">
+<h4>Fixed-point Output Type</h4>
+<section id="arithmetic-type" class="level5">
+<h5>Arithmetic type:</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned</h6>
+<p>The output is an Unsigned number.</p>
+</section>
+</section>
+</section>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point Precision</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
+<p>Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+</section>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
+<p>Position of the binary point. in the fixed-point output.</p>
+</section>
+</section>
+<section id="quantization" class="level4">
+<h4>Quantization</h4>
+<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+and Quantization</a>.</p>
+</section>
+<section id="overflow" class="level4">
+<h4>Overflow</h4>
+<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+and Quantization</a>.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
+</section>
+</section>
+</body>
+</html>

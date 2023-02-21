@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Time Division Multiplexer</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Time Division Multiplexer</h1>
+</header>
+<h1 id="time-division-multiplexer">Time Division Multiplexer</h1>
+<p>The Xilinx Time Division Multiplexer block multiplexes values
+presented at input ports into a single faster rate output stream.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-interface">Block Interface</h2>
+<p>The block has two to 32 input ports and one output port. All input
+ports must have the same arithmetic type, precision, and rate. The
+output port has the same arithmetic type and precision as the inputs.
+The block has optional ports vin and vout that specify when input and
+output respectively are valid. Both valid ports are of type Bool.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The block parameters dialog box can be invoked by double-clicking the
+icon in your Simulink® model.</p>
+<p>Parameters specific to the block are as follows.</p>
+<p>Number of inputs<br />
+Specifies the number of inputs (2 to 32).</p>
+<p>Provide valid port<br />
+When selected, the multiplexer is augmented with input and output valid
+ports named vin and vout respectively. When the vin port indicates that
+input values are invalid, the vout port indicates the corresponding
+output frame is invalid.</p>
+<p>Optimization Parameter<br />
+The Time Division Multiplexer block logic can be implemented in fabric
+(optimizing for resource usage) or in DSP48E1/DSP48E2 primitives
+(optimizing for speed). The default is Resource.</p>
+<p>Resource<br />
+Use combinatorial fabric (general interconnect) to implement the Time
+Division Multiplexer in the Xilinx device.</p>
+<p>Speed<br />
+Use DSP48 primitives to implement the Time Division Multiplexer in the
+Xilinx device.</p>
+<p>Parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</body>
+</html>

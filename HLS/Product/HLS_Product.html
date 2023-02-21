@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Product</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Product</h1>
+</header>
+<h1 id="product">Product</h1>
+<p>Compute element-wise product of the input signals</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFVElEQVRoge2aQWhTZxzAf997L0mbNqmoyRjMgetFJId1U0SZzDUO8SIT2aYiM97GishEZLCTXnuSUj1WCnOCpx1kh5n2oMgOXiYZGwzZQGGa1xobNbZ9ee/tkKTGJC9538tLV2N+p9J8//6/X9+X9/7/fyJs27Z5Q1D+7w2sJlqzF4UQq7UPX3E6rE1lAe7dO+n7ZjrJ8PCE42tv1DHuyXYrGsDc3BxTU1OkUilisVhbfzAU2kQo9J5UTDAYw7KKFIs5qThNi/LkyS9Y1qK79QBTU1OcPXuW6elp0uk08XhcKmmFvr7NbNx4BCECnuK98OzZHZaX/3W1VgFIpVIkEgkymQzJZJJsNiud1KuobRvo+jT5/Cy2bUjF5fOzrkWhLBuLxUin056F2xGdm/uRxcW/WVi4ydLSfWy76CKuyNLSfRYWbkrlW7lBxePxOmE3+CFa/g3z89ewrBdAswrWxrJeMD9/rcW6el65G9cKt8I/0RKWtYiu/4BlOV9dyzLKa9zdlKqpe/TE43GuXr3aMtBv0QqG8Yhc7nrD969tG+Ry1zGMR1I5K9TJZrNZDh8+3DSoU6IVCoXfKBQyQLWwQaGQoVC4K5Wzmldks9ksyWSSTCZDIpFoGNBp0QqlK5gDLMDCMB6Ty12XylnLimytaDqdrlscDL5NLPaVB9GilGgpxkTXr5S3qKDrV7BtUypvLRqArut1oo0KCxsD03yCZS1JJTHNPKb5THpzprnAw4cXsW0b08xLx9eiAVy+fLmlKICxPIeuXyES3YUQqlSiSHQXT/O3MQxdKk52fTM0gBMnTgC4qo0NQ+dp/ra0sBCqZ2G/EM1mUEIIx+Y9EIh5usK2bXZUeHh4wnFS4bnFq1xh2ZtG5QoHAu11V15oq59dq8K63vjUtN28ywg/f/5i5WchVBR1pCPCo6OjDRsZXyYVboQNo8jevWPcvfsXAH/+8Q+f7PmGQPBD34WdOjffxjIrwlgNXw8ENC5d+o7U8XPMzt7hyJHvuXDhDP39YaJDu9ECG/zaimOr2nKUKoOqDtIX3IxlN+5Itm9/i3Pnz3Dws2+ZvHiej/d8CoBlLaGIoG/7SKfTK0VSMplcqR08P3pqcVMz5/NP2bfvINu2jXDr1q/cuPET69dHpEvJZlQePY3KX1+OsRvR5eVlDh06xtGjnzMxMc6pU19z4MCXPHgw7ZtoNdWtaiaTYWxsrP1j7LYLCgaDnD59kv379wJw/PgXhMO/Y9sP6MSnLNWtaiKRYHJysj1Z2XavIlpp93buDLWT3pFGRzgej3s/xqvV13rBqYNToDQkHx8fd6w8alnLooBjB6fAyyG5U+VRzVoXBRxbVakh+WpOKipoWgRVjUjFzMzMNOzJNXg5JK99ENdtepUnFYoSZmhdqfDIPf65PFNujVNP/kpRUXsXy2QydUXFavWxQigMrRtFVUpXtWjmyS/MOPaqFVz3s26G5KvV1oUH3kdVBkAIEAJNHSQ8MCKVsxZPQ/JOC4dC7xIKvQPVp0eo5Y9DN0nlrMbTkBw6J6yqUQYGRxCivt4RQmVg8ANUbUgqZwXpIXk1fgsLESA69BFCONc6QihEo7s8fQYsNSRvhJ/CkcgOhBIEmhXLAqGEiER2SOWDsqzbIbkTfgiHw1vQAusRLipYgYIW2EA4vEUqnwLuh+TNaEc4OrSb/vDWhu/TZnH94a1o2jrXMdJD8maUhG+hBeT+WaUKycQ0C5JxfZjmc9frfZtUrBU6MiR/HenJdist37OvI56+gtttXzJ/o45xT7Zb6cl2Kz3ZbqUn2630ZLuVnmy30pPtVnqy3cp/y9tKOS8DTcIAAAAASUVORK5CYII=" /></p>
+<h2 id="description">Description</h2>
+<p>The Product block computes the element-wise product of its input
+signals.</p>
+<p>The block warns or errors out when an integer output overflows during
+simulation. To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink®
+Editor, then set the Wrap on overflow, or Saturate on overflow
+parameter.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Product block outputs the result of multiplying two inputs.
+Inputs can be two scalars, a scalar and a non-scalar, and two
+non-scalars of the same dimension. If one of the inputs is scalar and
+other input is vector/matrix then the scalar input is expanded to match
+the dimension of the other input to perform the operation. If input
+signals are both integer data types, such as int16, the datatype of the
+output is also an integer datatype int16. Hence an overflow of wrap
+around (no saturation) is likely if the output exceeds the range that is
+represented with int16. If the operation is to be applied without loss
+of precision or range, use fixed-point data types. If you want to narrow
+the bit width of the output signal, you can run it through a Data Type
+Conversion block and select a fixed-point data type that saturates.</p>
+<p>The output dimension is the same as that of the inputs if both inputs
+are either scalar or non scalar. If one input is scalar and the other is
+a vector/matrix then the output dimension matches the dimension of the
+vector/matrix input. The output type is same as that of the inputs if
+both inputs are of the same type. Otherwise, the output type is defined
+as follows.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Input Type</th>
+<th>Output Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(double, single)</td>
+<td>double</td>
+</tr>
+<tr class="even">
+<td>(double, int)</td>
+<td>double</td>
+</tr>
+<tr class="odd">
+<td>(double, half)</td>
+<td>double</td>
+</tr>
+<tr class="even">
+<td>(double, fixed)</td>
+<td>double</td>
+</tr>
+<tr class="odd">
+<td>(double, Boolean)</td>
+<td>double</td>
+</tr>
+<tr class="even">
+<td>(single, int)</td>
+<td>single</td>
+</tr>
+<tr class="odd">
+<td>(single, half)</td>
+<td>single</td>
+</tr>
+<tr class="even">
+<td>(single, fixed)</td>
+<td>single</td>
+</tr>
+<tr class="odd">
+<td>(single, Boolean)</td>
+<td>single</td>
+</tr>
+<tr class="even">
+<td>(half, int)</td>
+<td>half</td>
+</tr>
+<tr class="odd">
+<td>(half, fixed)</td>
+<td>half</td>
+</tr>
+<tr class="even">
+<td>(half, Boolean)</td>
+<td>half</td>
+</tr>
+<tr class="odd">
+<td>(fixed, int)</td>
+<td>fixed</td>
+</tr>
+<tr class="even">
+<td>(fixed, Boolean)</td>
+<td>fixed</td>
+</tr>
+<tr class="odd">
+<td>(int, Boolean)</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Input/Output</p>
+<h2 id="parameters">Parameters</h2>
+<p>Saturate on integer overflow</p>
+<p>This parameter specifies whether integer overflow is handled by
+wrapping (default) or by saturating. This parameter is relevant only if
+the output is integral (int8, int16, int32, uint8, uint16, uint32).</p>
+<p>Settings for the Saturate on integer overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not selected</td>
+<td>Integer overflow is handled by wrapping.</td>
+</tr>
+<tr class="even">
+<td>Selected</td>
+<td>Integer overflow is handled by saturation.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Saturate on Integer Overflow Parameter</p>
+<p>When overflow is detected, the Diagnostic Viewer displays messages
+that depend on the diagnostic action you specify in the Simulink Editor.
+To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+</body>
+</html>

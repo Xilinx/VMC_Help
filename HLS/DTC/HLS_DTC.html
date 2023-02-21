@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Data Type Conversion</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Data Type Conversion</h1>
+</header>
+<h1 id="data-type-conversion">Data Type Conversion</h1>
+<p>Convert the input to the data type of the output.</p>
+<p>The block warns or errors out when an integer or fixed-point output
+overflows during simulation. To configure, select Configuration
+Parameters → Diagnostics → Data Validity. In the Data Validity pane, set
+Wrap or Saturate to Overflow.</p>
+<h2 id="library">Library</h2>
+<p>Signal Attributes</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The Data Type Conversion block has one input and one output. It
+converts the value of the input signal to the data type of the output.
+This conversion tries to preserve the mathematical value of the input
+signal. The data type of the output is specified via the mask dialog.
+The conversion is governed by the following rules:</p>
+<ul>
+<li>Conversions where the output data type is fixed-point, first select
+the nearest number that can be represented, taking into account the
+overflow mode. In case of a tie, the rounding mode breaks the tie.</li>
+<li>Conversions where the output data type is integer are performed as
+in the C language. Overflow is handled via truncation.
+<ul>
+<li>As per IEEE Standard for Floating-point Arithmetic (IEEE Standard
+754, Section-7.2), conversion from floating-point to integral is an
+invalid operation, when the floating-point value is outside the range of
+the destination integer data type. In this case, the output integer
+value depends upon the implementation of a C compiler. Hence, the
+results from the HLS Data Type Conversion block may differ from the
+results from Simulink® Data Type Conversion block.</li>
+<li>When the floating-point input value is outside the range of the
+integer data type, the simulation results between Model Composer and RTL
+co-simulation in Vitis HLS may also differ.</li>
+<li>During simulation, to check whether the input floating-point value
+goes outside the range of the destination integer type, in Simulink
+select Model Configuration Parameters → Diagnostics → Data Validity .
+Then set Saturate on overflow to either warning or error.</li>
+</ul></li>
+<li>Conversions where the output data type is floating point follow the
+rules implemented in the C language.</li>
+</ul>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The input signal can be double, single, an integer, boolean, Xilinx
+supported half or Xilinx supported fixed-point data type.</p>
+<p>The data type of the output is specified the mask parameters.</p>
+<p>The input can be real or complex, and scalar, vector, or matrix. The
+output signal has the same complexity and dimensions as the input
+signal.</p>
+<h2 id="parameters">Parameters</h2>
+<p>Output data type<br />
+This parameter specifies the data type of the output signal. If
+<code>fixed</code> is specified, more parameters are available.</p>
+<p>Settings for the Output data type parameter are as follows.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>double</td>
+<td>double precision floating point</td>
+</tr>
+<tr class="even">
+<td>single</td>
+<td>single precision floating point</td>
+</tr>
+<tr class="odd">
+<td>int8</td>
+<td>8-bit signed integer</td>
+</tr>
+<tr class="even">
+<td>uint8</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr class="odd">
+<td>int16</td>
+<td>16-bit signed integer</td>
+</tr>
+<tr class="even">
+<td>uint16</td>
+<td>16-bit unsigned integer</td>
+</tr>
+<tr class="odd">
+<td>int32</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr class="even">
+<td>uint32</td>
+<td>32-bit unsigned integer</td>
+</tr>
+<tr class="odd">
+<td>logical</td>
+<td>boolean</td>
+</tr>
+<tr class="even">
+<td>fixed</td>
+<td>Xilinx supported fixed-point</td>
+</tr>
+<tr class="odd">
+<td>half</td>
+<td>Xilinx supported half precision floating point</td>
+</tr>
+<tr class="even">
+<td>data type expression</td>
+<td>A string that specifies the output data type. See &quot;Working with Data
+Type Expression&quot; in the Vitis Model Composer User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>).</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Output Data Type Parameter</p>
+<p>Signedness<br />
+If the Output data type is set to fixed, the Signedness parameter
+specifies whether the output is a signed fixed-point or unsigned
+fixed-point data type.</p>
+<p>Settings for the Signedness parameter are as follows.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Signed</td>
+<td>The output type contains both positive and negative numbers.</td>
+</tr>
+<tr class="even">
+<td>Unsigned</td>
+<td>The output type contains only non-negative numbers.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Signedness Parameter</p>
+<p>This parameter is available only if fixed is selected as the setting
+for parameter Output data type.</p>
+<p> </p>
+<p>Word length<br />
+If the Output data type is set to fixed, the Word length parameter
+specifies the number of bits used to represent it.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>16</td>
+<td> </td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>A positive integer</td>
+</tr>
+</tbody>
+</table>
+<p>Table 3. Word Length Parameter</p>
+<p>This parameter is available only if fixed is selected as the setting
+for parameter Output data type.</p>
+<p>Fractional length<br />
+If the Output data type is set to <code>fixed</code>, the Fractional
+length parameter specifies the number of bits to the right of the binary
+point.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td> </td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>An integer</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4. Fractional Length Parameter</p>
+<p>This parameter is available only if fixed is selected as the setting
+for parameter Output data type.</p>
+<p>Round<br />
+If the Output data type is set to fixed, the Round parameter allows you
+to select among five rounding and two truncation options.</p>
+<p>If one of the five rounding options is selected, the block always
+rounds to the nearest supported precision. The five rounding choices are
+relevant only in case of a tie. For example, assume the output type is
+signed fixed-point, with a word length of 6 and a fractional length of
+2, and the input to the block is 2.74. In this case, the output is
+rounded to the nearest supported precision, 2.75, regardless of which
+one of the five rounding modes is selected. However, if the input value
+is 2.625 (halfway between 2.5 and 2.75), then the output value depends
+on the chosen rounding mode. If Round to plus infinity is selected, the
+value will be 2.75, and if Round to zero is selected, the value will be
+2.5. For more information on this, refer to the Vitis High-Level
+Synthesis User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug1399-vitis-hls">UG1399</a>).</p>
+<p>If one of the two truncation options is selected, the output will be
+truncated to the supported precision specified by the truncation
+selection.</p>
+<p>Truncation to minus infinity is the default setting for Round and
+requires the smallest hardware resources among all the options.</p>
+<p>The Round parameter is available only if fixed is selected as the
+setting for the Output data type parameter.</p>
+<p>Settings for the Round parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Round to plus infinity</td>
+<td>Rounding to plus infinity</td>
+</tr>
+<tr class="even">
+<td>Round to zero</td>
+<td>Rounding to zero</td>
+</tr>
+<tr class="odd">
+<td>Round to minus infinity</td>
+<td>Rounding to minus infinity</td>
+</tr>
+<tr class="even">
+<td>Round to infinity</td>
+<td>Rounding to infinity</td>
+</tr>
+<tr class="odd">
+<td>Convergent rounding</td>
+<td>Convergent rounding</td>
+</tr>
+<tr class="even">
+<td>Truncation to minus infinity</td>
+<td>Truncation to minus infinity</td>
+</tr>
+<tr class="odd">
+<td>Truncation to zero</td>
+<td>Truncation to zero</td>
+</tr>
+</tbody>
+</table>
+<p>Table 5. Round Parameter</p>
+<p> </p>
+<p>Overflow<br />
+If the Output data type is set to <code>fixed</code>, the Overflow
+parameter specifies the overflow mode applied during conversion.</p>
+<p>This parameter is available only if fixed is selected as the setting
+for parameter Output data type.</p>
+<p>Settings for the Overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Saturation</td>
+<td>Saturation</td>
+</tr>
+<tr class="even">
+<td>Saturation to Zero</td>
+<td>Saturation to zero</td>
+</tr>
+<tr class="odd">
+<td>Symmetrical Saturation</td>
+<td>Symmetrical saturation</td>
+</tr>
+<tr class="even">
+<td>Wrap around</td>
+<td>Wrap around</td>
+</tr>
+<tr class="odd">
+<td>Sign-Magnitude Wrap Around</td>
+<td>Sign magnitude wrap around</td>
+</tr>
+</tbody>
+</table>
+<p>Table 6. Overflow Parameter</p>
+<p> </p>
+<p>Type Expression<br />
+If the Output data type is set to data type expression, the Type
+Expression parameter specifies the output data type as a string.</p>
+<p>This parameter is available only if data type expression is selected
+as the setting for parameter Output data type.</p>
+<p> </p>
+<p>Saturate on integer overflow<br />
+This parameter specifies whether integer overflow is handled by wrapping
+(default) or by saturating. This parameter is relevant only if the
+output is integral (int8, int16, int32, uint8, uint16, uint32).</p>
+<p>When overflow is detected, the Diagnostic Viewer displays messages
+depending on the diagnostic action selected in the Configuration
+Parameters dialog box. To configure, in the Configuration
+Parameters → Diagnostics → Data Validity pane, set the Wrap or Saturate
+on overflow.</p>
+<p>Settings for the Saturate on integer overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not selected</td>
+<td>Integer overflow is handled by wrapping.</td>
+</tr>
+<tr class="even">
+<td>Selected</td>
+<td>Integer overflow is handled by saturation.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 7. Saturate On Integer Overflow Parameter</p>
+<p>If the Output data type is set to fixed and overflow is detected, the
+Diagnostic Viewer displays messages that depend on the diagnostic action
+you specify in the Simulink Editor. To configure, select
+Simulation → Model Configuration Parameters → Diagnostics → Data
+Validity for your model in the Simulink Editor, then set the Wrap on
+overflow or Saturate on overflow parameter.</p>
+</body>
+</html>

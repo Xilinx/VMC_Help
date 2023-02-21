@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>atan2</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">atan2</h1>
+</header>
+<h1 id="atan2">atan2</h1>
+<p>Compute element-wise four-quadrant inverse tangent of input
+signal.</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The atan2 block returns the output of the function
+atan2(<code>y</code>,<code>x</code>).</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data types accepted at the inputs of the block are:</p>
+<ul>
+<li>Dimension: Inputs can be scalar, vector, or matrix. If one of the
+inputs is scalar and the other is a vector or matrix then the scalar
+input is expanded to match the other input dimension, and operation will
+be performed element wise. If both inputs are non-scalar, then they must
+match in dimension.</li>
+<li>Data Types: Input supports signals of integer type, floating point
+type (double, single, and half) and signed and unsigned fixed point
+type. Both inputs must be of the same data type.</li>
+<li>Complex Number Support: No</li>
+</ul>
+<p>Except for fixed-point input data type, output has the same data type
+as the input. For fixed point input, the output data type will be signed
+fixed-point with a 3-bit integer width, to be able to represent numbers
+between –π and π.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The atan2 block has no parameters to set.</p>
+</body>
+</html>

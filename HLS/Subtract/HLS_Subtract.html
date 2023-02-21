@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Subtract</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Subtract</h1>
+</header>
+<h1 id="subtract">Subtract</h1>
+<p>Perform element-wise subtraction</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFJ0lEQVRoge2av28TZxjHP+/d+Ufs2EkLZ6lSaUWzRJEH0wxISCyx+AOy0aUKM+rK3BGJEVEJEEoUQUBiYEIVah0GWqZKVcsNFRLqAFLB5+DEpM6P89118A8c22ffa19SY/ydkvh9/LyfvD/8fB+fcF3X5SOR8n9P4CildXtRCHFU8whUXpu1KyzAixffBT6Zw9TMzFXP1z6qbTyGHVVpAIVCgeXlZZaWltB1faA3jEROEIl8JRUTDus4ToVKpSgVp2lJNjd/wnF2/Y0HWF5e5tKlS6yurpLL5UilUlJJ64pGT3L8+DcIEeorvh9tb//G/v4/vsYqAEtLS6TTaQzDIJvNks/npZP2C+q6Fqa5Sqn0GNe1pOJKpce+QaEGq+s6uVzON/CjRy8O/D4IaKFwl93dv9naesLe3ktct+IjrsLe3ku2tp5I5WtcUKlUqg3YS5cv/9r4OQjQ2l/Y2LiP4+wA3SpYF8fZYWPjfo9x7TpwG7cC91JwoFU5zi6meQfH8V5dx7FqY/xdSs1q++hJpVLcu3evbeCDB3+RyVwnk7nOq1clMpmbzM19z40bt6USeoHWZVlvKBYfdjy/rmtRLD7Est5I5ayrrVzM5/OcP3++beDi4iyLi7MALCys8fy5EdiKtqpc/oNo9Evi8TRQz2FRLhuUy39K5WzWgZXN5/Nks1kMwyCdTncMiEZPoqqJQwOtq7qCRcABHCzrLcXiQ6mcrWrAtoLmcrm2weHwZ+j6t9JJXLciBVqNsTHNtdoUFUxzDde1pXM3SwMwTbMNtFNh4WJh25s8eyZ3bmy7hG1vS0/Otrd4/foHXNfFtkvS8a3SAFZWVnqCAlj7BUxzjUTyDEKoUokSyTO8Kz3FskypONnx3aQBXLhwAcBXbWxZJu9KT6WBhVD7Bg5KolsPSgjhad5DIb2vFXZd+1CBZ2auenYq+rZ49RWWvTTqKxwKDeau+tFAfnZYgU2z864Z2LwPI/DCwkJHIxNIp2LYgL2cW2BtmQYwjlScECrJqbNooWNBTcXTqvZspcpIVSeJhk/iuHKOxHH2UEQ4sHnkcrlGkZTNZhu1Q2CwzXZPJek7znUtCsW7Uh2HXqpb1VbgQLZx0L42CDVbVcMwuHjx4uCwwwgKB61qOp3m2rVrg8EOM2gnY9M37LCCAp4OToFqk/zKlSuelUerhhkU8HRwCrxvkntVHs0adlDA06pKNcnrnQp5UPlORV2alkBVE1Ix6+vrHT25Bu+b5K2fS22TrnUqHGdPKnm/nQpFiTE1fQ6A4tsfaz3l3vLy5Af8bOstZhhGm589Kh8rhMLU9AKqUl3Vil2itLXu6VXr8u1n/TTJj6roj8UzqEochAAh0NRJYvFTUjlb5btJ3qzDBo5EviAS+Ryad49Qa1+HnpDK2aw2WK8m+e3bz5ifv8n8/E1u3fr90IBVNUl88hRCtJftQqjEJ79G1aakcjbi/Z7ZnZ0K29v7AMTjIWKx6o0c5BkWIsT0J+dQlAjg9aSOi+Pssln8ueNXJL7ObK8m+cSEhq7H0PVYAxSC3dKJxGmEEsYbFEAglAiJxGmpfFCD9dsk91IQwLHYLFroU4SPClagoIWOEYvNSuVTwH+TvJsGAU5OnWUiNtfxnHaLm4jNoWnTvmOkm+TdVAX+BS0k98+qVkg2tl2WjIti2//6Ht93k3xYdShN8g9RY9hRVc8z+yGqr0dwR+0h849qG49hR1Vj2FHVGHZUNYYdVY1hR1Vj2FHVGHZUNYYdVf0HeT1QnnIWDWEAAAAASUVORK5CYII=" /></p>
+<h2 id="description">Description</h2>
+<p>The Subtract block performs element-wise subtraction of two input
+signals.</p>
+<p>The block warns or errors out when an integer output overflows during
+simulation. To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>The Subtract block supports any floating point, fixed-point, integer
+or Boolean data type. The block can perform element-wise subtraction on
+real and complex inputs. The input signals can be scalars, vectors or
+matrices. When both inputs have non-scalar dimensions, the dimensions
+must match each other.</p>
+<h2 id="parameters">Parameters</h2>
+<p>Saturate on integer overflow</p>
+<p>This parameter specifies whether integer overflow is handled by
+wrapping (default) or by saturating. This parameter is relevant only if
+the output is integral (int8, int16, int32, uint8, uint16, uint32).</p>
+<p>Settings for the Saturate on integer overflow parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not selected</td>
+<td>Integer overflow is handled by wrapping.</td>
+</tr>
+<tr class="even">
+<td>Selected</td>
+<td>Integer overflow is handled by saturation.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Saturate On Integer Overflow Parameter</p>
+<p>When overflow is detected, the Diagnostic Viewer displays messages
+that depend on the diagnostic action you specify in the Simulink Editor.
+To configure, select Simulation → Model Configuration
+Parameters → Diagnostics → Data Validity for your model in the Simulink
+Editor, then set the Wrap on overflow or Saturate on overflow
+parameter.</p>
+</body>
+</html>

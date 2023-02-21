@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Abs</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Abs</h1>
+</header>
+<h1 id="abs">Abs</h1>
+<p>Compute element-wise absolute value of input signal</p>
+<h2 id="library">Library</h2>
+<p>Math Functions/Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFJElEQVRoge2az4sTVxzAP29mkqzJZiJtEpF2C1baigTpellYugdd/AMqau2l7FLQw1LwsiIUelopVG9F7aV1KXRXkF4sa3HLrgeLrdBL21yloIdqJjEm2uyPycz0kKi72UwyL5nYbTaf2ybvO+/72fcj7715wnEchy2C8l8n8DLRGn0phHhZefiKW2dtKAtw9+4nvifTSXbv/tL1uy3VjXuy3UrTMStDKDRAKPSmVEwwmMC2y5TLeak4TdN5/PgnbHvZe4xUDQ3o69tFPP4hQgT8emRTnj79jdXVvz2X96UbtyrqOCaG8S3F4k0cx5SKKxZvSomCD7LtiGazsywv/0WhcIuVlfs4TtlDXJmVlfsUCrekc21L1g/R6ifkclex7SWg0erVwbaXyOWuNilXn5Zl/ROtYNvLGMZ32LZ769q2WS3jfVJaS0uyfos+wzQfks/P1R2/jmOSz89hmg9bSRloQbZTos8olX6nVEoDa4VNSqU0pdIfsumuQ0q206LPqLRgHrABG9N8RD4/J1VnPTzLBoM7SSQ+akG0LCVaibEwjJlqegqGMYPjWFL11sPzosLBxLIeY9srUhVYVhHLeiqdmGUVePDgIo7jYFlF6fh6eJY1V7MYxgxRfRghVKlKovowT4q3MU1DKk62fDOkxqxpGjwp3pbuUkKoRPVhAoGEVJzfKADZbJZz585hGM3/k/8HYTcPBeDy5cucPn2agwcPkslkmj5sswu7eSgAY2NjpFIp0uk0o6Ojvgq//dZhCoUXE1Q94aGhrykW5Sa+Rrh5KACJRIKFhYWOCdfS6RZ283g+QSWTyQ3CXvAq/NWl7zl29Mzzv48d/ZSZmYcdEXZruHWzca2wV54LY7uWOXHyfbLZAvPzd7hx41dyuQInTh5Gj43UptE29Rouk8ls/J1NJpNcuXKFVColVYGq9tMX3IXt1O5IFAKBJKFQlIuXPmd8bBIHh+np84RCO6UXKV5Z65FOp5mYmNgom8lkOH78uNSD166ZVfR13wmhoKlxAlqM/YNJ4vEEpllm/+BIZc2cn4UGPaJV1nqkUikuXLiwvv9kMhlGR0dJp9OeW1ZmczA/v0i5XBnb1679IL1m9kqtx8LCAslk8kXL1iuwY8eOhg+VEV1aWubUqTPMzn6DZa1y5MgHXL9+jEgk2L5dDfVEoTozGIbhWsAN2e3e1NQXHDp0gH373mFgIM3IyGucP/9Lm1r1cfPQAKanpzsqCnD27Gfr9rVTUwdaVGmOm4cGMD4+DlRWUolE49+9l7WBb4fFxcW6HhpAPB5ncnKy6UNaF5XfwLeDW4N1/KTi3r0/KZfnGoreufMxuh7a8LmmRVHVqFR9jdi0JxWKEia2/RAA+Uc/Vs+U22NTnlQIoaDHhqH6Bj2qD1MsLLq+UffKpjypCEfeRVUiIAQIgab2E44MStVZD+kVeKeFQ6E3CIVeh7W9R6jV16EDsumuo6XtRqeEVVUn0j+IEBtHlxAqkf79qFqslZSBNvZWfgsLEUCPvYcQ7ikJoaDrwy2/A25rI+mncDQ6hFCCQKPrSAKhhIhGh1rKt+1dsx/C4fAetMArCA/pCBS0wKuEw3ukc/XliKAdYT02wrbw3rrjtFHctvBeNG27VH2+3amoCP+MFmi8iailskKysKySZFwflvWPVIyvt2VMM4dp5vx8pK9sqXtQPdluZUvJikY3ybfUfeNuu1G/pbpxT7Zb6cl2Kz3ZbqUn2630ZLuVnmy30pPtVnqy3cq/B7HgkOtlKDsAAAAASUVORK5CYII=" /></p>
+<h2 id="description">Description</h2>
+<p>The Abs block computes element-wise absolute value on the input
+data.</p>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li><p>Dimension: Input can be scalar, vector, or matrix.</p></li>
+<li><p>Data Types: Input supports signals of integer type, floating
+point data type (double, single, and half), and signed and unsigned
+fixed point type.</p></li>
+<li><p>Complex Numbers Support: Yes.</p></li>
+</ul>
+<p>Output has the same dimension and data type as the input. Output of
+the Abs block is always real.</p>
+<h2 id="parameters">Parameters</h2>
+<p>The Abs block has no parameters to set.</p>
+</body>
+</html>

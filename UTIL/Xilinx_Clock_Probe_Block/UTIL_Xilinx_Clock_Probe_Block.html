@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Clock Probe</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Clock Probe</h1>
+</header>
+<h1 id="clock-probe">Clock Probe</h1>
+<p>The Xilinx Clock Probe generates a double-precision representation of
+a clock signal with a period equal to the Simulink® system period.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The output clock signal has a 50/50 duty cycle with the clock
+asserted at the start of the Simulink sample period. The Clock Probe&#39;s
+double output is useful only for analysis, and cannot be translated into
+hardware.</p>
+<p>There are no parameters for this block.</p>
+</body>
+</html>

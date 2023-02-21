@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector Register</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vector Register</h1>
+</header>
+<h1 id="vector-register">Vector Register</h1>
+<p>The Vector Register block supports vector type inputs.</p>
+<h2 id="description">Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.</p>
+<p>The Vector Register block models a D flip-flop-based register, having
+latency of one sample period.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="block-interface">Block Interface</h2>
+<p>The block has one input port for the data and an optional input reset
+port. The initial output value is specified by you in the block
+parameters dialog box (below). Data presented at the input will appear
+at the output after one sample period. Upon reset, the register assumes
+the initial value specified in the parameters dialog box.</p>
+<p>The Vector Register block differs from the Xilinx Delay block by
+providing an optional reset port and a user specifiable initial
+value.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>Open the Block Parameters dialog box by double-clicking the icon in
+your Simulink® model.</p>
+<p>Basic Tab<br />
+Parameters specific to the Basic tab are as follows.</p>
+<p>Initial value<br />
+Specifies the initial value in the register.</p>
+<p>Optional Ports</p>
+<ul>
+<li>Provide synchronous reset port.</li>
+<li>Provide enable port.</li>
+</ul>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<h2 id="xilinx-logicore">Xilinx LogiCORE</h2>
+<p>The Vector Register block is implemented as a synthesizable VHDL
+module. It does not use a Xilinx LogiCORE™™.</p>
+</body>
+</html>

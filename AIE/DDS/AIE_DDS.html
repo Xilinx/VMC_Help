@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>DDS</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DDS</h1>
+</header>
+<h1 id="dds">DDS</h1>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALMAAABhCAYAAACd4pDXAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAHzElEQVR4nO3df2ycdR3A8ff3er3e2Gh72+7WZgkoiWxsR9gkhETRZS0SNc4YECkRI6hxsR1RgozGBMHIHwxMFkNmAk6jEJJl4x8lUf+gI2AQ2YQueLiWH2PKfrTXLm23rrvr/fj6x+26dne9ux7fp737fj+vpNl6z+37XJv3mufTPs9TpbXWCGEB31K/ACFM8ef/opRaytchRMXmO5jwz34n9crmRXkxQlSrcWv/vNvkMENYQ2IW1pCYhTUkZmENf/mnOOrKDejWG40vq5Zfhc5MQ2LI+NoANK1GHf8tpCe9Wb+GSczFtG5Gr/8lNDQZX3pRfkI19BJMfrAYe6opcphxOQ9DJpNEvbsT9d+9kE2YXz+bzH1VdjBkkJjn8jrkgUdgvB9O7Iexf0F22tz62WkYOwwnD5hbs85IzHmLFTIAGvX+EzA9AmQN7CALyZHcmotzIFOTJGZY5JAvPU6sF9IGDjfSCXj34dyaDpOYlyLki1RyCDX4KGQ+weFGZho1+CgqOVz9GpZwO+YlDHnG+BHUieeqGwizSdTHf4TxI9W9Rsu4G3MthJxXzUAoA18BN2OupZCBhQ+EMvAV417MNRfypX9b8UAoA19RbsVcqyFfVNFAKAPfvNyJucZDnlFqIJSBryQ3Yq6XkPOKDYQy8JVlf8z1FjJQOBDKwFcJu2Nefi1645PehJyd9ijki/IDIb7cmwx8Zdl9CmgmA1OTkE6ZXzsxAVNj5tedRSWHoP8HuXdk4CtL5W8Co5Sy8+rsZdejw9tBNZpfO5tADe2C1Cnza4uiGrf2z3urAbsPMwAu/BtGn0dpg6db5qkmdNtPoXG1+bXFgtkfM6Cm3oSxF82ePwygFPiWodc8jPa3ml1bLJgTMQNw7lXU2b+ANj1E+aBhBbTthIblhtcWC+FOzAATf4Vzf/co6Bb0modABQ2vLSrlVsyAGnsRzr8FWdNB+6EhjF7zgDfDpijLuZhBo848D8mjYHoo9PlRgbUQ2QE0mF1blOVgzABZVPxZSH6E0ma/B61VI7rpGnTkhzj76V0iDn+2M6j40+jpk6DTZpdWAWi6Dr36O4DcKnixOBwzoFOo4d2QHgEMB+1rgituRIfuMLuuYGRkpOjjbscMoBOo4acgPYGZy/5nUU2wYgu0fMXsuo7r6OggHo8XPC4xA2TOw/CTkJnE+FlpvgC6+atw5Raz6zosFovR2dlZELTEfJFKj6OGd0F2Ckr8zqLBD4/TsuELRG+9k+itd/Lle3p4OzZQepsvAKFv8o8PrmbL/e/x+e73uOG+o+x6QU4eqkY0Gi0atMQ8W2oUNfSrsj9U2bxxPbGXDxB7+QC/ePBHdPX0cuL0cMltWgXofuodfv/Ybbz+m2t585l1/O3QWT46Lad1LlRfX1/RoCXmy6VO5YbCCr9ld/PmKPff28XuvS+U3XZ2copUy90QvIZgwMcrv/4Mn2734Fxry0UikaJBS8zFXBGC8FpoDhW+rWgBv3/OY5+9+Sb+c+x/pbc1h3j85w+x9a7t3NH7T5750yhj5zJL/ZHWrUgkwr59+4DcMXRPT4/EXCB/mVVwxTwxN0PD3GBTgWU0NAVLb2sOcfd3uxj889f4dkeAQ0fPc8N9Rzk+5MGpqQ6Ix+N0dXUBuWPoPXv2SMxzVHm94BtvHGLTputLb8skGT+0k+ZUjNu/2Mrveq/mWx0hXnp9wsQrd0o8Hqezs5NYLEY0GqWvr49IJCIxz6gy5MOH32bv3ufYsWP7/Nu67+XUaw9y010HOH0mdyyezmje/zjBp9oDRl6+S4qFDLZfA1ipBYZ85Mg7bNp0C+l0mpUrQ+zf/wfa2iJMTEwUbtv3LO1jT0NgkCe2r2Vb74cAZLLwjVta2Pa5Fi8/MisVCxlcuAawnLq8FYG7Grf2Fw0ZXP/KLCHXpYMHDxIOhwsed/eYWUKuW8VCBldjlpCt5F7MErK13IpZQraaOzFLyNZzI2YJ2Qn2xywhO8Pu7zPnb2nrBa9vaZsXaM/9OX3a2/1YwO6Yvbyl7YWzkLhgft1ZtH8VtD+We+fkz1DpM57ur97Z/+Ps4Hp0uCd36ZJp2WnUyB5IDJhf2xdAtz0C/tWAhvQoauhx8zd/rDNu39I2MZALzosIfIHcf5TgesMLK1j1ffCHQPlANYB/Jaz6HnIfjvnZHzPUX9DNX0IHr5t7zzrViA5uhObbzO3HMm7EDPUTdHAduvXruZvIFNtP6zYIrvvk+7GQOzFDzQet/avQ4e7SdxFVjehwd244FHO4FTPUbtC+AER+krtPXTmqESI/9maorWPuxQw1GPRlA1/Zp8tAWIybMUNtBV1s4CtHBsIC7sYMtRF0qYGvkn3IQDjD7ZhhSYOuaOArRwbCGRIzLE3QCxn4ypGBEJCYL1nUoBc48JUjAyEgMc+1WEFXM/CVIwOhxFzA66DXPJD71RDVDHyVrB+6HZquMr92HbD7FNBqJQZQ8d3o4AbjS6tAOzqbgvSo8bUB8LdCyqO1a5zEPJ/kMVTymCdLu3tU6y05zBDWkJiFNSRmYQ2JWVhDYhbWkJiFNeZcnS1EPZjv6mx/uScIUS/kMENYQ2IW1pCYhTUkZmENiVlYQ2IW1pCYhTUkZmENiVlYQ2IW1pCYhTUkZmENiVlYQ2IW1pCYhTUkZmENiVlY4/+ksZiEXqG96QAAAABJRU5ErkJggg==" /></p>
+<h2 id="library">Library</h2>
+<p>AI Engine/DSP/Window IO</p>
+<h2 id="description">Description</h2>
+<p>This block implements the Direct Digital Synthesizer (DDS) targeted
+for AI Engines.</p>
+<h2 id="parameters">Parameters</h2>
+<h3 id="main">Main</h3>
+<h4 id="output-data-type">Output data type</h4>
+<ul>
+<li>Describes the types of individual data samples output of the DDS
+function. The supported data types are <code>cint16</code> and
+<code>cfloat</code>.</li>
+</ul>
+<h4 id="output-window-size-number-of-samples">Output window size (Number
+of samples)</h4>
+<ul>
+<li>Specifies the number of samples in output window. The value must be
+in the range 8 to 1024 and the default value is <code>32</code>.</li>
+</ul>
+<h4 id="phase-increment">Phase increment</h4>
+<ul>
+<li><p>Specifies the phase increment between samples. The value must be
+in the range <code>0</code> to <code>2^31</code> and the default value
+is <code>0</code>. Input value <code>2^31</code> corresponds to Pi
+(i.e., <code>180</code>).</p>
+<p>Phase increment is calculated using the formula (Fo*(2^N)) / Fs</p>
+<p>Where:</p>
+<ul>
+<li><code>Fo</code> = Output frequency</li>
+<li><code>N</code> = 32, which represents the accumulator width, and it
+is fixed</li>
+<li><code>Fs</code> = Sampling frequency</li>
+</ul></li>
+</ul>
+<h4 id="sample-time">Sample time</h4>
+<ul>
+<li>Specifies the sample time for the block output port. The default
+value is <code>-1</code>.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<h4 id="target-output-throughput-msps">Target output throughput
+(MSPS)</h4>
+<ul>
+<li>Specifies the output sampling rate of the DDS function in Mega
+Samples per Second (MSPS). The value must be in the range <code>1</code>
+to <code>1000</code> and the default value is <code>200</code>.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>AIE Class Kernel</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">AIE Class Kernel</h1>
+</header>
+<section id="aie-class-kernel" class="level1">
+<h1>AIE Class Kernel</h1>
+<p>This block allows you to import class-based kernels.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/User-Defined Functions</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The AIE Class Kernel block is used to import class-based kernels.
+This block also supports importing class templates to define a family of
+kernels.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="kernel-class" class="level4">
+<h4>Kernel class</h4>
+<blockquote>
+<p>Mandatory string. Name of the kernel class which contains member
+variables and kernel member functions.</p>
+</blockquote>
+</section>
+<section id="kernel-function" class="level4">
+<h4>Kernel function</h4>
+<blockquote>
+<p>Mandatory string. Name of the kernel member function for which the
+block is to be created. This function should be registered using the
+registerKernelClass method in the kernel header file.</p>
+</blockquote>
+</section>
+<section id="kernel-source-file" class="level4">
+<h4>Kernel source file</h4>
+<blockquote>
+<p>Mandatory string. Name of the source file that contains where the
+kernel member function definition and non-default constructor parameter
+values are specified. The string could be the file name, a relative path
+to the file or an absolute path of the file.</p>
+</blockquote>
+</section>
+<section id="kernel-search-paths" class="level4">
+<h4>Kernel search paths</h4>
+<blockquote>
+<p>Optional vector of strings. If the kernel header file or the kernel
+source file are not found using the value provided through the Kernel
+header file or Kernel source file fields respectively, then the paths
+provided through Kernel search paths are used to find the files.</p>
+</blockquote>
+<blockquote>
+<p>This parameter allows use of environment variables while specifying
+paths for the kernel header file and the kernel source file. The
+environment variable can be used in either ${ENV} or $ENV format.</p>
+</blockquote>
+</section>
+<section id="preprocessor-options" class="level4">
+<h4>Preprocessor options</h4>
+<blockquote>
+<p>Optional preprocessor arguments for downstream compilation with
+specific preprocessor options.</p>
+</blockquote>
+<p>The following two preprocessor option formats are accepted and
+multiple can be selected: -D<name> and -D<name>=<definition> separated
+by a comma. That is, the optional argument must begin with -D and if the
+option <definition> value is not provided, it is assumed to be 1.</p>
+</section>
+</section>
+</section>
+</body>
+</html>

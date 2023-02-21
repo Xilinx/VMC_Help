@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Cumulative Sum</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Cumulative Sum</h1>
+</header>
+<h1 id="cumulative-sum">Cumulative Sum</h1>
+<p>Compute the cumulative sum along the specified dimension of the
+input</p>
+<h2 id="library">Library</h2>
+<p>Math Functions / Math Operations</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAABVCAYAAABuD4dpAAAACXBIWXMAAA7EAAAOxAGVKw4bAAALwklEQVR4nO2de2xUVR7HP/fOk86rQFsEwQVHt2BaCMrKS9wFloeGBIxakZAVIxpWsqsrKawmGhIgxjQmalc2WR9lK2VBlIesWZEWgiAiqAEslld5KtiZTjudFkrnzr13/xhaKHTaMnM7vVPu56/p3Ht/85s53/s75/7O75wKqqqqGNzSiN3tgEH3Y27voCAIyfLDIAnECvrtigCgsvIvmjtjkHy83sKYx4zuwMAQgYEhAgMMERjQiYFhKmGzDcJmuzNhOxZLX1RVIRKp1cCrKGazm2BwG4pyWTObWtFjRGC3DyEj40kEwdLdrsSkvn6fLkXQI7oDLQWgqhGqqz8mFNqJqoY18A5UVaK2dguSVKWJPa1JeRFoKwCJ2tovaGysoK5uJ01N51HVSMI2Gxp+oKHhh4T96ypSWgRaCyAU+oqLF79vfodA4GNUtSkBmxGams4RDG5N2L+uJGVFoLUAGhp+IBTa3ep9RWnE71+DqkpxWFWQ5RDV1WsBfc/RpaQItBZAY2NFzLs1HD5PMPjlTQtBUZrw+VbFKaDkknIi0FoATU1nqKnZTHt3a0PD91y+fLzT4wNFkfD7P0KW6xP2MRmklAi0fgoIh6uorl6HqiodnU0gsAlFaaCj0K6qEjU1GwiHLyTsY7JIGRFoKwCFSCRIdfVHnb67VVXC51uNosQO79HB5S4aG48k7GMySQkRaJsIUlCUBvz+IhTl5vIAkUiAmprPYuQPJBobj9wwuEwFdC8C7QVwmaqqD5HlS3FZaGw8zMWLB1GUqxFEVRXCYX+HYwu9omsRaJ0KVhSJqqoiZLkuITvB4FZkuZrmBleUi/j9q1FVWQMvk49uRWC19icz80+aCUBVJfz+YiKRag1syfj9a4Bo+Z3P928UpTFhu92FbieQVDWMLAdRlPgzdtcSkes0fWaX5Xp+/XUlIBCJBDSz2x3oVgSSFMDnK8btmYAgmGi+6xLB5R5HfWgPkuRP3EHQzE53o9vuACASqaUuuIPTp8+Sl/cyQ7MfY8TwOfx9SSHh8M1P7AiCCZd7HBZLZpvHZ8z4D6FQ7MhTWnoSgB07TlNQsOemP1+v6FoEAJFIPU/OXsysWeOpqFjH/u+KaWqSWLr0X3HZ60gI7fHBBwcAmDhxMPn54+L6fD2i2+6gmX37fqFvXxsPTRdQ1EtYLA5ef30hTWGJzZt3sn//Tyxf/mcAhg17nIqK9bzyykqksMTlpjAnTvzM7NlT+O67Co5UnGZ1yTL27v2R/fsOs3hxLpLkZ9y4IvbsebrlM8+erWPJkjIsFpFIROGtt6ZRWnqKQ4eqyM8vZerUO9m792fMZpG77urD44/fA8CUKatZt+5Rdu48w/r1P2E2i9x3X39eeGF0t/x2nUX3kaCyspbc3H4oShN1wR3IchC73YTH44x5jSgK9O7tprAwn5Ejs6moOE1hYT4TJ46irHRf9CRBiBkRLlxoYNGiMRQXz2LaNC+ffFLBnDk59O3bi4KCP7acN22al7KyUwCcOFFDv34OVBVKSn5k9epHKC6exYEDv3LsmL4HjiJAdXU1BQUF+P36HOjIcjS3r6oRQnW7kKQAKu2PCYYOGwxA794usrN/0/I6FLrYck5z1yAIre+FAQNcfPjhAZ577r9s3HiEurq2S8JGjuzP8eM1hMMy27ad5KGH7uLwYT/nzoWYO3cjc+ZswOe7xNmzoXi/uqbEal8zQFFREYsXL6a4uJiysjKysrKS6lx7eL292bTpai5eVWUCgV0cO5bOtb1ZJNI6UWMyXW1Yk3j1taqqrZbXyTIIgrVVRHjjja+ZNSubqVO9fPppRcw7WRBg/PhBfPPNz2zffpqVKx+msrKG0aNv5513psf9nbuKSZMmtdm+IsC8efPIycmhvLycyZMn4/P5usXJtrj//tu5dEmiuPggqgqSJLN06U4+//wL7LYQNYFo9u/QoeMInXyMdLnSqKkJXb3uStcgCFFR+f2XGDjQjSyrbN1aSTgcjUSSdONs47RpXj777CgWi0hmZhpDh2Zw8GAV9fXR+YWCgj3U1WmT60iUWO0rAmRmZlJWVqZLIQgCrFo1k927zzF27AdMn74Gj8fGokVjyc1t4tSpk8x/ZhmlpftwOnt1yubYscM5c+YC859Z3nKdIJgQRQcWSwZz5+ayeHEpzz67hby8eygtPcmhQ1UMHZrBY4+tb2VrzJjb2bXrLNOnewFIT7fz4oujeeqpTTzxxKcAeDw2bX+UOInVvsK1+xP4fD4mT55MeXl5ywWpsCDVZh+CwzHihr49HlRV1jShpBe83kKqqqpatW9z19DqV8vKymoVEVKFpsunaKjfD3RUHNIxgmDC7ZmA2dI3ccd0xvXt2xwRbsgTZGVlsXbtWnJycrrDz7gRRSs262CUBKqDm1GUJkRBHyFca65t3/LychYuXHijCHw+H7Nnz+4O/+Lm2ilnU4K2VDVCILiBcPi8Jr7pjWvbNycnh3fffbd1d3D9mCAV6KrFJz2R69v3hjFBWyfona5dfNLzaEsAcCXb4vf7Y56gVzoSgCzL5Oe/yu7d32A2m7Hbbbz3XiFe75Abzo21+KSnEat9RYBVq1b1KAEAbN78ObW1Qb79djt79mxjwYJnePvtf95wXkeLT3oSsdrXDPD009EZtHnz5pGZefNTrMmks11AKFRPJBJpSRHn5T1CXt4jVFcHmDEjj717y1BVicmTH2bZsuEcOxZgw4YK+vTpxYkTNcycmU15uY+jRwO89NIYxo0blIyv16Vs3769zfYVATIyMsjPz+8xAgB49NGZnD9/gdzcseTnv8rXX+9tdbx58Ykk+VFVFVEUqKlpZPnyicyffy8lJT+yYsUkFi0ay8aNR7vqKyWVWO2r+6nkZm52EOhyOSkr20JJyXtkZWWyYMHfePnlpS3HmxefXFsifvfdfQBIT7fh9UZfezw26uv1kfvvKlJCBPE8BVy8eIlwOMzw4Tnk5/+Vr776H0VFJQhCc7VwdPFJJHI1y9hq5tF0dTKqp2/8q3sRxPsYuGTJa7z55j9a/j527AR33DEQh8NMIPALsnyJy5cjVFZqty9RqqLr8rJE8gArVrzG888vYsSI8djtNlwuJ++//xa1tav5/e8HMX/+Fvr3d5Kd3Tfmdq+3CkJ7u5wLgtBts4hWa3/69XtOM3vRBaWrNE0Hm80uVATkiD4qh9rD6y2Mf2/j7kJF0nzxiZarhESTHU/6FACCtV8iyw2a2U42uhWBFK7G719zpeIn0WkhQAW3Z8KVYtXENo8QBBGXazyoCggCbs8EgrWlKbErSVvoemAoSX7qQ3u0WegpRGsFPOkPIoqdq0CKhcMxHJPJGS17QkAUbLg9D6TsvwbQtQhAYyEgAFY86X9AFOOrF7BaB2K13dF6aZwgYja5cTp/hxbL5ZKN7kUA2gpBEJrv3AdbCks7i8nkxOm6r+3rBBMW6230Svttwj4mm5QQAWjdNYiIouNKCO/seMOE2/1Au3WMgmAmLW0oVtuAxH1MIikjAtA6IoiYTR5crjGd6MsFnK5RCKKNjsO9CadzFGZzesI+JouUEgFoHRFMmK19cTpH0V7j2u1DsFlv63TUEAQzbs8DiCZ74j4mgZQTAWgcETBjsQ7A4cht87jZ3Js0Ry7c9GOqGbf7QUi46rHrSUkRgNZdgwmbfQi90rKve9+CyxNfnkIQREQxDbd7TML+dTUpKwLQXghpaUOx2a+Wn7ncYxETyKcJgojFkoHDMTxh/7qSlBYBaJ1HMOFwjMBqHUCvtGGYzb3j6AauQzBhsw/GZh+sgX9dQ8qLALR/anC5x5CWNkybdDXRgaLTeS8mk0cTe1qj27mDmyUqhN2YLYkXyZpEJwhK3Btetm2zF4qinT0t6TEigOiOZ5Kk711B9EiP6A4MEsMQgYEhAgNDBAZ0osbQoOcQV43hrV6Fe6tgdAcGhggMDBEYYIjAAEMEBhgiMMAQgQGGCAwwRGCAIQIDDBEYYIjAAEMEBhgiMMAQgQGGCAwwRGAA/B8bPC5fuwkRFgAAAABJRU5ErkJggg==" /></p>
+<h2 id="description">Description</h2>
+<p>The Cumulative Sum block computes the cumulative sum of the input
+signal along the specified dimension or across time (running sum). The
+output signal has the same dimensions, data type and complexity as the
+input signal.</p>
+<p>Summing is performed in this way:</p>
+<ul>
+<li>Summing along Rows: If the block is configured for cumulative sum
+along rows, each element in the output signal is the sum of the
+corresponding element in the input and all of the elements in the same
+row and to the left of that element. If the input is 1-dimensional, each
+element in the output signal is the sum of the corresponding element in
+the input and all of the preceding elements.</li>
+<li>Summing along Columns: If the block is configured for cumulative sum
+along columns, each element in the output signal is the sum of the
+corresponding element in the input and all of the elements in the same
+column and above of that element. If the input is 1-dimensional, each
+element in the output signal is the sum of the corresponding element in
+the input and all of the preceding elements.</li>
+<li>Running sum: If the block is configured for running sum, each
+element in the output signal is the sum of the corresponding element in
+the input signal over time. In this case you can specify an optional
+reset port and restart the running sum when the reset signal is
+asserted.</li>
+</ul>
+<h2 id="data-type-support">Data Type Support</h2>
+<p>Data type support is:</p>
+<ul>
+<li>Data input: The data In input is the data signal to be summed. It
+supports integer, fixed point and floating-point data types but not
+boolean. The signal can be complex or real. The signal can be a scalar,
+vector or matrix.</li>
+<li>Reset: The Reset input is applicable only for running sum with
+non-default reset type. The reset signal must be scalar and real, and
+its data type must be integer or floating-point. Fixed point data type
+is not supported.</li>
+<li>Output: The data type, dimension and complexity of the output signal
+are the same as those of input signal.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Sum input along</p>
+<p>This parameter specifies the dimension along which sum elements are
+computed.</p>
+<p>Settings for the Sum input along parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Columns</td>
+<td>The block computes the cumulative sum of each column of the
+input.</td>
+</tr>
+<tr class="even">
+<td>Rows</td>
+<td>The block computes the cumulative sum of each row of the input.</td>
+</tr>
+<tr class="odd">
+<td>Channels (running sum)</td>
+<td>The block computes a running sum for each element of the input
+across time. When you select the Channels (running sum) option, you will
+also have to specify a Reset port parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Sum Input Along Parameter</p>
+<p>Reset port</p>
+<p>This parameter applies only to running sum. The Reset port parameter
+appears if you select Channels (running sum) for the Sum input along
+parameter.</p>
+<p>Settings for the Reset port parameter are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>None</td>
+<td>Omits the Reset port.</td>
+</tr>
+<tr class="even">
+<td>Non-zero sample</td>
+<td>Triggers a reset operation at each sample time that the Reset input
+is not zero.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Reset Port Paremeter</p>
+</body>
+</html>

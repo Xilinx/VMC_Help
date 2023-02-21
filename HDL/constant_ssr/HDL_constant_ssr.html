@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector Constant</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vector Constant</h1>
+</header>
+<section id="vector-constant" class="level1">
+<h1>Vector Constant</h1>
+<p>The Vector Constant Block generates vector constant values.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.</p>
+<p>The Vector Constant block generates a constant that can be a
+fixed-point value, a Boolean value, or a DSP48 instruction. This block
+is similar to the Simulink® Vector Constant block, but can be used to
+directly drive the inputs on HDL blocks.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows:</p>
+<section id="constant-value" class="level4">
+<h4>Constant Value</h4>
+<p>Specifies the value of the constant. When changed, the new value
+appears on the block icon. If the constant data type is specified as
+fixed-point and cannot be expressed exactly in the specified fixed-point
+type, its value is rounded and saturated as needed. A positive value is
+implemented as an unsigned number, a negative value as signed.</p>
+</section>
+<section id="output-type" class="level4">
+<h4>Output Type</h4>
+<p>Specifies the data type of the output.</p>
+<ul>
+<li>Boolean</li>
+<li>Fixed-point</li>
+<li>Floating-point</li>
+</ul>
+</section>
+<section id="arithmetic-type" class="level4">
+<h4>Arithmetic Type</h4>
+<p>If the Output Type is specified as Fixed-point.</p>
+<ul>
+<li>Signed (2’s comp)</li>
+<li>Unsigned</li>
+<li>DSP48 instruction</li>
+</ul>
+</section>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point Precision</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
+<p>Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+</section>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
+<p>Position of the binary point. in the fixed-point output.</p>
+</section>
+</section>
+<section id="floating-point-precision" class="level4">
+<h4>Floating-point Precision</h4>
+<section id="single" class="level5">
+<h5>Single</h5>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level5">
+<h5>Double</h5>
+<p>Specifies double precision (64 bits).</p>
+</section>
+<section id="custom" class="level5">
+<h5>Custom</h5>
+<p>Activates the field below so you can specify the Exponent width and
+the Fraction width.</p>
+</section>
+<section id="exponent-width" class="level5">
+<h5>Exponent width</h5>
+<p>Specifies the exponent width.</p>
+</section>
+<section id="fraction-width" class="level5">
+<h5>Fraction width</h5>
+<p>Specifies the fraction width.</p>
+</section>
+</section>
+<section id="sample-period" class="level4">
+<h4>Sample Period</h4>
+<section id="sampled-constant" class="level5">
+<h5>Sampled Constant</h5>
+<p>Allows a sample period to be associated with the constant output and
+inherited by blocks that the Constant block drives. This is useful
+mainly because the blocks eventually target hardware and the Simulink
+sample periods are used to establish hardware clock periods.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</section>
+</section>
+</section>
+</body>
+</html>

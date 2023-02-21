@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Constant</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Constant</h1>
+</header>
+<section id="constant" class="level1">
+<h1>Constant</h1>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAAA9CAYAAADGbsXjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEEElEQVR4nO2bTW/jRBjH/+PYqZM6alfbuuWlLIIbirQIDiCBhNSIL8Cpl70gboVTJQ6AxHWPXPod+iXSE2ckpGhXi1DLbqvu1ik02bw79gyHYKCtk0zj5Jk4O79T6k7TJ79Yj2f+HjMhhIBmphiqC3gVMKMXjDGVdSwEw5qC+f8ffv71BUkxi8in9zeH/k63CwLM8UNmTyFv4U5hSWqsvWSCCw7f59Lvn7UMHD9vIAzVXOOVS15xsnjv7VUYxmyvCc8v2miFwUz/xzCUtovbCuZcoHJ0iVOvBc7lzkrOBX47qaPVVSMYUCh5EsGP/qih3vTx7LyJdjfAuBk+5wKn1Raql90pVDw5SiQnEQwAQgCPn9YQjjibORe4qPdwct6aSs1JIJecVHCE3+d48rQW2za4EGh0+vj9tD6VmpNCKnlagiNqTR9nF+0rooUQ6PkhHh/XxrYTKsgkT1twxPX+HISDi+OoVkINiWQnZ6H4zh15wUJOMPBff45SgcrRJfy+/ByaApJ5MhcCvX4ILvnZe32OfiAvyu9z/PLkTzAGtBVO1YZBIrndDfDouIatDQeya46tDQcn/7QCGTq9+ZMbQdaT290AJ+dNyLZKgw1E523li1JpqtVq7HHS2cWii97e3obneTeOk8+T0yq61Wrg228e4Ie9r4aOqVQqKJVKN0QrWfGlUfRPD7/H/Q8+HjmmWCzGilaWXaRN9N53D/H+h6Mll8vlWNFKU7hItOzKzGDAvU0HOQWi7Vx+7BjXdWNFK7+iWKaBQt6UXqFxDmTm+H6k67o4ODj4V/Tu7q5ayZMutZud/owrmxzP87CzswNg0KP39/fTmSfPK57noVQqoVKpoFgsolwuw3VdNWdyGgV/ufM5mo2XqF/+hQdffIav937ER59sXxkTJxgAWLSDiDFGsiUgjYJliLYEXBcMpDxPnjfiBAOEd6sXXTAAHB4eYn19/cZxEslRnizLbfLkiKyVAWNAzw8nKXEqxAkGFiRPNk2Gd98oAACOzhpKRceR+jyZMWDLdQAIAAxvbTo4PnuJIHjFbj8Bs8sq1lZtLFkGgMG3l2ED0cYcrQpTnScv2ybuFuwr234ZA6xMBlsby5gXz6nNk02T4U13GSzmExgMyC1l8Nra+FCHglTmyVEfNkZUzxhDIW9hbdWeQsXJSGWefL0PD/8bhrsrNlaWs8kLTsBc5Mm3EX1v08Haii39+IXBgNfX87CtTIJKk6E8T253Azx70YCTs6TGZ63BJvDgNvPojAE/VLfhRblkAOj0QnR687WAmCb6mRECtGQCruTJmmSMfY5PP/07O3S7IEBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJkBLJuBvwoQ+h6N6GWoAAAAASUVORK5CYII=" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Constant block generates a constant that can be a fixed-point
+value, or a Boolean value. This block is similar to the Simulink®
+constant block, but can be used to directly drive the inputs on HDL
+blocks.</p>
+<section id="dsp48-instruction-mode" class="level3">
+<h3>DSP48 Instruction Mode</h3>
+<p>The constant block, when set to create a DSP48 instruction, is useful
+for generating DSP48 control sequences. The following figure shows an
+example. The example implements a 35x35-bit multiplier using a sequence
+of four instructions in a DSP48 block. The constant blocks supply the
+desired instructions to a multiplexer that selects each instruction in
+the desired sequence.</p>
+<p><img src="data:image/png;base64,R0lGODlhtAHeAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8AQEBLzE5Pz07Pz8/P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAAAAAAALAAAAAC0Ad4AhwAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8AQEBLzE5Pz07Pz8/P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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" /></p>
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows:</p>
+<section id="constant-value" class="level4">
+<h4>Constant Value</h4>
+<p>Specifies the value of the constant. When changed, the new value
+appears on the block icon. If the constant data type is specified as
+fixed-point and cannot be expressed exactly in the specified fixed-point
+type, its value is rounded and saturated as needed. A positive value is
+implemented as an unsigned number, a negative value as signed.</p>
+</section>
+<section id="output-type" class="level4">
+<h4>Output Type</h4>
+<p>Specifies the data type of the output. Can be Boolean, Fixed-point,
+or Floating-point.</p>
+<section id="arithmetic-type" class="level5">
+<h5>Arithmetic Type</h5>
+<p>If the Output Type is specified as Fixed-point, you can select Signed
+(2’s comp), Unsigned, or DSP48 instruction as the Arithmetic Type.</p>
+</section>
+<section id="fixed-point-precision" class="level5">
+<h5>Fixed-point Precision</h5>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
+<p>Specifies the bit location of the binary point of the output number,
+where bit zero is the least significant bit.</p>
+</section>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
+<p>Position of the binary point in the fixed-point output.</p>
+</section>
+</section>
+<section id="floating-point-precision" class="level5">
+<h5>Floating-point Precision</h5>
+<section id="single" class="level6">
+<h6>Single</h6>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level6">
+<h6>Double</h6>
+<p>Specifies double precision (64 bits)</p>
+</section>
+<section id="custom" class="level6">
+<h6>Custom</h6>
+<p>Activates the field below so you can specify the Exponent width and
+the Fraction width.</p>
+</section>
+<section id="exponent-width" class="level6">
+<h6>Exponent width</h6>
+<p>Specifies the exponent width.</p>
+</section>
+<section id="fraction-width" class="level6">
+<h6>Fraction width</h6>
+<p>Specifies the fraction width.</p>
+</section>
+</section>
+<section id="sample-period" class="level5">
+<h5>Sample Period</h5>
+<section id="sampled-constant" class="level6">
+<h6>Sampled Constant</h6>
+<p>Allows a sample period to be associated with the constant output and
+inherited by blocks that the constant block drives. (This is useful
+mainly because the blocks eventually target hardware and the Simulink
+sample periods are used to establish hardware clock periods.)</p>
+</section>
+</section>
+</section>
+</section>
+<section id="dsp48-tab" class="level3">
+<h3>DSP48 tab</h3>
+<section id="dsp48-instruction" class="level4">
+<h4>DSP48 Instruction</h4>
+<p>The use of this block for DSP48 instructions is deprecated. Please
+use the Opmode block.</p>
+<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</section>
+</section>
+</body>
+</html>

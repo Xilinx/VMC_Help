@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Requantize</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Requantize</h1>
+</header>
+<h1 id="requantize">Requantize</h1>
+<p>The Xilinx Requantize block requantizes and scales its input
+signals.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>The Xilinx Requantize block requantizes each input sample to a number
+of a desired fixed point precision output. For example, a fixed point
+signed (two&#39;s complement) or unsigned number can be requantized to an
+output with lesser or greater number of bits and realign its binary
+point precision.</p>
+<p>This block also scales its input by a power of two. The power can be
+either positive or negative. The scale operation has the effect of
+moving the binary point without changing the bits in the container.</p>
+<p>The Requantize block is used to requantize and scale its input
+signals. If you are only performing one of these operations, but not
+both, you can use a different block in the HDL blockset to perform that
+operation.</p>
+<ul>
+<li>To requantize your input without scaling, use the <a href="convert.html">Convert</a> block in the HDL blockset.</li>
+<li>To scale your input without requantizing, use the <a href="scale.html">Scale</a> block in the HDL blockset.</li>
+</ul>
+<h2 id="quantization">Quantization</h2>
+<p>Quantization errors occur when the number of fractional bits is
+insufficient to represent the fractional portion of a value. This block
+uses symmetric round during quantization for any insufficient input
+data.</p>
+<p>Round (unbiased: +/- inf) is also known as &quot;Symmetric Round (towards
++/- inf)&quot; or &quot;Symmetric Round (away from zero)&quot;. This is similar to the
+MATLAB <code>round()</code> function. This method rounds the value to
+the nearest desired bit away from zero. When there is a value at the
+midpoint between two possible rounded values, the one with the larger
+magnitude is selected. For example, to round 01.0110 to a Fix_4_2, this
+yields 01.10, since 01.0110 is halfway between 01.01 and 01.10, and
+01.10 is further from zero.</p>
+<h2 id="overflow">Overflow</h2>
+<p>Overflow errors occur when a value lies outside the representable
+range. In case of data overflow this block saturates the data to the
+largest positive/smallest negative value.</p>
+<h2 id="block-parameters">Block Parameters</h2>
+<p>The Block Parameters dialog box can be invoked by double-clicking the
+icon in your Simulink model.</p>
+<p>Parameters specific to the block are as follows.</p>
+<p>Scale factor s (scale output by 2^s)<br />
+The scale factor can be a positive or negative integer. The output of
+the block is <code>i*2^k</code>, where <code>i</code> is the input value
+and <code>k</code> is the scale factor. The effect of scaling is to move
+the binary point, which in hardware has no cost (a shift, on the other
+hand, might add logic).</p>
+<p>Fixed-point Precision<br />
+Number of bits<br />
+Specifies the total number of bits, including the binary point bit
+width.</p>
+<p>Binary point<br />
+Specifies the bit location of the binary point. Bit zero is the Least
+Significant Bit.</p>
+</body>
+</html>

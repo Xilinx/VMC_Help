@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Sample Time</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Sample Time</h1>
+</header>
+<h1 id="sample-time">Sample Time</h1>
+<p>The Sample Time block reports the normalized sample period of its
+input. A signal&#39;s normalized sample period is not equivalent to its
+Simulink absolute sample period. In hardware, this block is implemented
+as a constant.</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFYElEQVRoge2aX2xTVRzHP+f2z9qucwzWdoBDITE60gRjfISobQjBYKIRkz3Ck4kDEl94U980OA1Rg1NJGD4BDyaaLL6QLRE1Ib4QTZn4hxU3F7bbsdV1f9rd23t8mJ3baLue9naMrt9kD93t75zfp+fc3/n9fvcKKaVkk0h70A6sp5zFLgoh1ssPW1VosxaFBfjh5zHbnamm9u9rK3htU23jOmytas17VkVNPhctTQ1KNp4GB1JKMguWkp3bpXHnbgozW/rJaRtss9/N3se3oGnrF8HH7s0zM2+U/H1btnG5oJYliQ1NMTw+g2WVvkJZSzI8NqMECjbAVgI6eCfJPzMLjIzPMj1nYJWQzFlSkpo1GNFnlX2tCNYO0Jxu/ZXENNeGNU3JreGksq9QAaydoADZrGQwPlV0O1uW5GZ8iqxCUFqusmDtBs1pNm1ye3Q6L7BlSf78e5q5tFmOy0AZsNUCzUmfSpNIplcAW5YkkVz8fyVSgq02aE5DoynSC1mklEgpSS9kuT2aUpozn0qG9XtdhPe0qINKNdAlm3gSIQRCCG7GkwUrGRWVnFRYUpIxslhqiQ4Zw8IwFY2AjJHlxu/3kBIWjKyyfT6VDDuXNhmMJ2kP+VFNktpDfkbGZ5SDSyXBKJ+U7tm5tMnI+AwKyc7iJGIR2OexNRVXlgYwMTFBd3c3iURiTYOHAbgQhwbQ29vL6dOniUQi6Lq+5mAbHbgQh5BSykQiQSQSIRaLEQ6H6e/vJxgMIoQo2pbxeZxF7+GErnPqxOtMTEywkMnwVMdePvqkhwsXzvP5Z59iGAaT9xIEQzsA+Pj8V4S276wINNeWWc6RkwYQCATo7+8nHA4Ti8WIRqO2rHD3++9y5KWXuTrwPd/9+BNbWlro6/uGN7pOceOXW3zx5dc88WSYK33XudJ3vWLQnApxLAWoYDB4H3ApKgacSk1jZv+PqGe6z3L0tc7FiQVsb/VVpf4ttHArovFq4FKVA1597p849SZnPzjDkcNRPux+j/jQ7RXXNQENLg2vzfdwvoXTdf3+oycYDHL58mXlCVxOjSafE2+DY+nv2Wee5uavv/HW2+8wN5vixUMRBq5+u3S9we1AEwJHFfrTyzlisRhdXV33JxW6rtPZ2ak0cKGceXJykq1bt3L40EEOHzrIC88/R29vL0dffQUAt1MjY2SVOw6laDlHOBzm3LlzK1dW13Wi0ehSVC5FxYqDAwcOcO3ataXPg4OD7N69G/ivZBudVmqYlarVHLmo7Cz2hVAoVHTQtaqgS5cucfLkSZLJxaS+o6ODnp6epSooNWv/igJ5QaGCc3a9yj1VrXnOXrx4Me8vUUgbFTSnQhxOgOPHjwNw7NgxAoFA0YE2OijAwMBAXg5R7GH06m38MIDu39dW/iPLnHKdClWV06nIqcHteDDF+3p3KlwOjT07mgD4Y2QaM6s+xmptyE6FJgTtIT9SggB2hfzE76Yq7kNtyE5FaJsXt1MgBCDA7RRs3+ZVmzSfH6oG1QZu9rtobnQhlm0foQkeaXTR3OhWdXelD+UYVQvY43LQtq0x74srQgjaWn00uB3luLw4f7mGdgM7NEF7W2PReKAJ2BVqLLsGrugpnp3AOwM+HCVAaJrg0YBP1dVF27KslskO4NZmD16Pq6T3rjQh8HpcBJo9yr7a8uS9EuDH2vwEWjxKx5kmoLXFg8et1uGwrR8ylzYZHkvh97qU7NwuJxYWpqGWNDidGoapllnZ2vyZz2SZz9iT2lVDm+o9qDpsrWpTwa5ZvD+MKqt4r7U36jfVNq7D1qrqsLWqOmytqg5bq6rD1qrqsLWqOmytqg5bq/oXoXkOELqotakAAAAASUVORK5CYII=" /></p>
+</body>
+</html>

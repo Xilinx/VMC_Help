@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>DDS Stream</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DDS Stream</h1>
+</header>
+<h1 id="dds-stream">DDS Stream</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="library">Library</h2>
+<p>AI Engine/DSP/Stream IO</p>
+<h2 id="description">Description</h2>
+<p>This block implements the stream-based Direct Digital Synthesizer
+(DDS) targeted for AI Engines.</p>
+<h2 id="parameters">Parameters</h2>
+<h3 id="main">Main</h3>
+<h4 id="output-data-type">Output Data Type:</h4>
+<ul>
+<li>Describes the type of individual data samples output of the DDS
+function. It should be <code>cint16</code> or <code>cfloat</code>.</li>
+</ul>
+<h4 id="output-frame-size-number-of-samples">Output Frame Size (Number
+of Samples):</h4>
+<ul>
+<li>Specifies the number of samples in the output frame. The value must
+be in the range <code>8</code> to <code>1024</code> and the default
+value is <code>32</code>.</li>
+</ul>
+<h4 id="number-of-parallel-outputs-ssr">Number of Parallel Outputs
+(SSR):</h4>
+<ul>
+<li>This parameter specifies the number of output ports and must be of
+the form 2^N, where N is a non-negative integer.</li>
+</ul>
+<h4 id="phase-increment">Phase Increment:</h4>
+<ul>
+<li>Specifies the phase increment between samples. The value must be in
+the range <code>0</code> to <code>2^31</code> and the default value is
+<code>0</code>. Input value <code>2^31</code> corresponds to Pi (i.e.,
+180). Phase increment is calculated using the formula (Fo*(2^N)) / Fs
+where:
+<ul>
+<li>Fo = Output frequency.</li>
+<li>N = 32, which represents the accumulator width, and it is
+fixed.</li>
+<li>Fs = Sampling frequency.</li>
+</ul></li>
+</ul>
+<h4 id="initial-phase-offset">Initial Phase Offset:</h4>
+<ul>
+<li>Specifies the initial phase offset. The default value is
+<code>0</code>.</li>
+</ul>
+<h4 id="sample-time">Sample Time:</h4>
+<ul>
+<li>Specifies the sample time for the block output port. The default
+value is <code>-1</code>.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<p>Target Output Throughput (MSPS):</p>
+<ul>
+<li>Specifies the output sampling rate of the DDS function in Mega
+Samples per Second (MSPS). The value must be in the range <code>1</code>
+to <code>1000</code> and the default value is <code>200</code>.</li>
+</ul>
+</body>
+</html>
