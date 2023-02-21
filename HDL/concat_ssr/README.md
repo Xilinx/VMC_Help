@@ -17,7 +17,7 @@ The [Vector Reinterpret](vectorreinterpret.html) block provides
 capabilities that can extend the functionality of the Vector Concat
 block.
 
-## Block Interface
+### Block Interface
 
 The block has n input ports, where n is a value between 2 and 1024,
 inclusively, and one output port. The first and last input ports are
