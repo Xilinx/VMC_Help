@@ -420,7 +420,7 @@ port is displayed on the block.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](matlab:helpview(vmcHelp('name','common-options'))).
 
 ## LogiCORE™ Documentation
 
