@@ -71,11 +71,11 @@ Position of the binary point in the fixed-point output.
 
 #### Quantization  
 Refer to the section [Overflow and
-Quantization](matlab:helpview(vmcHelp('name','common-options'))).
+Quantization](../../GEN/common-options/README.md).
 
 #### Overflow  
 Refer to the section [Overflow and
-Quantization](matlab:helpview(vmcHelp('name','common-options'))).
+Quantization](../../GEN/common-options/README.md).
 
 
 ### Implementation tab  
