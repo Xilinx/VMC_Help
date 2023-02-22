@@ -14,38 +14,38 @@ signed (two's complement) or unsigned value.
 Parameters specific to the Basic Tab are as follows.
 
 #### Output Type  
-* Specify the output data type.
+Specify the output data type.
   - Boolean
   - Fixed-point
   - Floating-point
 
 #### Arithmetic Type  
-* If the Output Type is specified as Fixed-point, you can select Signed
+If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned.
 
 #### Fixed-point Precision
-* #### Number of bits  
-  Specifies the bit location of the binary point, where bit zero is the
+##### Number of bits  
+Specifies the bit location of the binary point, where bit zero is the
 least significant bit.
 
-#### Binary point  
-* Specifies the bit location of the binary point.
+##### Binary point  
+Specifies the bit location of the binary point.
 
 #### Floating-point Precision  
-- #### Single  
-  Specifies single precision (32 bits).
+##### Single  
+Specifies single precision (32 bits).
 
-- #### Double  
-  Specifies double precision (64 bits).
+##### Double  
+Specifies double precision (64 bits).
 
-- #### Custom  
-  Activates the field below so you can specify the Exponent width and the
+##### Custom  
+Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-- #### Exponent width  
-  Specify the exponent width.
+##### Exponent width  
+Specify the exponent width.
 
-- #### Fraction width  
+##### Fraction width  
   Specify the fraction width.
 
 #### Quantization  
@@ -55,7 +55,7 @@ are to Truncate (for example, to discard bits to the right of the least
 significant representable bit), or to Round (unbiased: +/- inf) or Round
 (unbiased: even values).
 
-- Round (unbiased: +/- inf) also known as "Symmetric Round (towards +/-
+Round (unbiased: +/- inf) also known as "Symmetric Round (towards +/-
 inf)" or "Symmetric Round (away from zero)". This is similar to the
 MATLAB round() function. This method rounds the value to the nearest
 desired bit away from zero and when there is a value at the midpoint
@@ -64,7 +64,7 @@ is selected. For example, to round 01.0110 to a Fix_4_2, this yields
 01.10, since 01.0110 is exactly between 01.01 and 01.10 and the latter
 is further from zero.
 
-- Round (unbiased: even values) also known as "Convergent Round (toward
+Round (unbiased: even values) also known as "Convergent Round (toward
 even)" or "Unbiased Rounding". Symmetric rounding is biased because it
 rounds all ambiguous midpoints away from zero which means the average
 magnitude of the rounded results is larger than the average magnitude of
@@ -77,7 +77,7 @@ to a Fix_4_2, this yields 01.10, since 01.1010 is exactly between 01.10
 and 01.11 and the former is even.
 
 #### Overflow  
-* Overflow errors occur when a value lies outside the representable range.
+Overflow errors occur when a value lies outside the representable range.
 For overflow the options are to Saturate to the largest
 positive/smallest negative value, to Wrap (for example, to discard bits
 to the left of the most significant representable bit), or to Flag as
@@ -86,13 +86,13 @@ is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.
 
 #### Optional Ports  
-* Provide enable port activates an optional enable (en) pin on the block.
+Provide enable port activates an optional enable (en) pin on the block.
 When the enable signal is not asserted the block holds its current state
 until the enable signal is asserted again or the reset signal is
 asserted.
 
 #### Latency  
-* The Latency value defines the number of sample periods by which the
+The Latency value defines the number of sample periods by which the
 block's output is delayed. One sample period might correspond to
 multiple clock cycles in the corresponding FPGA implementation (for
 example, when the hardware is over-clocked with respect to the Simulink®
@@ -105,7 +105,7 @@ output of the block.
 Parameters specific to the Implementation tab are as follows.
 
 #### Performance Parameters  
-- Pipeline for maximum performance: The XILINX LogiCORE can be internally
+Pipeline for maximum performance: The XILINX LogiCORE can be internally
 pipelined to optimize for speed instead of area. Selecting this option
 puts all user defined latency into the core until the maximum allowable
 latency is reached. If the Pipeline for maximum performance option is
@@ -113,7 +113,7 @@ not selected and latency is greater than zero, a single output register
 is put in the core and additional latency is added on the output of the
 core.
 
-    The Pipeline for maximum performance option adds the pipeline registers
+The Pipeline for maximum performance option adds the pipeline registers
 throughout the block, so that the latency is distributed, instead of
 adding it only at the end. This helps to meet tight timing constraints
 in the design.
@@ -125,4 +125,4 @@ Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
 ## LogiCORE™ Documentation
 
 Floating-Point Operator LogiCORE IP Product Guide
-([PG060](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf))
+([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))

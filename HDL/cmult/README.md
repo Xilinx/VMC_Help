@@ -92,7 +92,7 @@ Quantization](common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1
 Parameters specific to the Implementation tab are as follows.
 
 #### Use behavioral HDL description (otherwise use core)  
-When selected, Model Composer uses behavioral HDL, otherwise it uses the LogiCORE™™ Multiplier. When this option is not selected (false)
+When selected, Model Composer uses behavioral HDL, otherwise it uses the LogiCORE™ Multiplier. When this option is not selected (false)
 Model Composer internally uses the behavioral HDL model for simulation
 if any of the following conditions are true:
 

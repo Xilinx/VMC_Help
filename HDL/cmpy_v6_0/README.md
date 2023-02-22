@@ -81,10 +81,7 @@ BPortWidth + 1). When the Output Width is set to be less than this, the
 most significant bits of the result are those output; the remaining bits
 will either be truncated or rounded according to Output Rounding option
 selected. That is to say, the output MSB is now fixed at (APortWidth +
-BPortWidth). For details please refer to the document [LogiCORE IP
-Complex Multiplier
-v6.0](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)
-Product Guide.
+BPortWidth). For details please refer to the document Complex Multiplier LogiCORE IP Product Guide ([PG104](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)).
 
 #### Output Rounding  
 If rounding is required, the Output LSB must be greater than zero.
@@ -97,7 +94,7 @@ When this option is selected, a ctrl_tvalid and ctrl_tdata input port is
 added to the block. Bit 0 of ctrl_tdata input determines the particular
 type if rounding for the operation. For details, refer to the Rounding
 section of the Complex Multiplier LogiCORE IP Product Guide
-([PG104](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=cmpy;v=latest;d=pg104-cmpy.pdf)).
+([PG104](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)).
 
 #### Channel CTRL Options  
 The following options are activated when Random Rounding is selected.
