@@ -1,6 +1,5 @@
 # Divider Generator 5.1
 
-
 ![](./Images/block.png)
 
 ## Description
@@ -10,13 +9,11 @@ with prescaling.
 
 ## Block Parameters
 
-The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
 
 ### Basic tab  
 #### Common Options  
-* #### Algorithm Type  
-  - **Radix-2**: Non-restoring integer division using integer operands, allows
+##### Algorithm Type  
+###### Radix-2: Non-restoring integer division using integer operands, allows
   a remainder to be generated. This is recommended for operand widths
   less than around 16 bits. This option supports both unsigned and
   signed (2’s complement) divisor and dividend inputs.
