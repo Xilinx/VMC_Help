@@ -28,11 +28,10 @@ parameter.
 
 The Vector Delay Delta block implements a fixed delay of L cycles.
 
-
 ## Parameters
 
 #### Super Sample Rate (SSR)
-* This configurable GUI parameter is primarily
+This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector and/or complex data support for
 the primary block operation.
