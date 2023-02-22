@@ -108,12 +108,12 @@ block parameters dialog box.
 Parameters specific to the Basic tab are as follows.
 
 #### Depth  
-* Specifies the number of words in the memory for Port A, which must be a
+Specifies the number of words in the memory for Port A, which must be a
 positive integer. The Port B depth is inferred from the form factor
 specified by the input data widths.
 
 #### Initial value vector  
-* For distributed memory or block RAM, specifies the initial memory
+For distributed memory or block RAM, specifies the initial memory
 contents. The size and precision of the elements of the initial value
 vector are based on the data format specified for Port A. When the
 vector is longer than the RAM, the vector's trailing elements are
@@ -121,24 +121,24 @@ discarded. When the RAM is longer than the vector, the RAM's trailing
 words are set to zero. The initial value vector is saturated and rounded
 according to the precision specified on the data port A of RAM.
 
-  **Note**: UltraRAM memory is initialized to all 0's during power up or
+**Note**: UltraRAM memory is initialized to all 0's during power up or
 device reset. If implemented in UltraRAM, the Single Port RAM block
 cannot be initialized to user defined values.
 
 #### Memory Type  
-* Option to select whether the dual port RAM will be implemented in
+Option to select whether the dual port RAM will be implemented in
 Distributed memory, Block RAM, or UltraRAM. The distributed dual port
 RAM is always set to use port A in Read Before Write mode and port B in
 read-only mode.
 
-  Depending on your selection for Memory Type, the dual-port RAM will be
+Depending on your selection for Memory Type, the dual-port RAM will be
 inferred or implemented in this way when the design is compiled:
 
   - If the block will be implemented in Distributed memory, the
   Distributed Memory Generator v8.0 LogiCORE IP will be inferred or
   implemented when the design is compiled. This LogiCORE IP is described
   in the Distributed Memory Generator LogiCORE IP Product Guide
-  ([PG063](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf)).
+  ([PG063](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg063-dist-mem-gen&ft:locale=en-US)).
 
   - If the block will be implemented in block RAM or UltraRAM, the
   XPM_MEMORY_TDPRAM (True Dual Port RAM) macro will be inferred or
@@ -148,34 +148,34 @@ inferred or implemented in this way when the design is compiled:
   ([UG974](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug974-vivado-ultrascale-libraries)).
 
 #### Initial value for port A output Register  
-* Specifies the initial value for port A output register. The initial
+Specifies the initial value for port A output register. The initial
 value is saturated and rounded according to the precision specified on
 the data port A of RAM.
 
 #### Initial value for port B output register  
-* Specifies the initial value for port B output register. The initial
+Specifies the initial value for port B output register. The initial
 value is saturated and rounded according to the precision specified on
 the data port B of RAM.
 
 #### Provide synchronous reset port for port A output register  
-* When selected, allows access to the reset port available on the port A
+When selected, allows access to the reset port available on the port A
 output register of the block RAM or UltraRAM. The reset port is
 available only when the latency of the Block RAM or UltraRAM is greater
 than or equal to 1.
 
 #### Provide synchronous reset port for port B output register  
-* When selected, allows access to the reset port available on the port B
+When selected, allows access to the reset port available on the port B
 output register of the Block RAM or UltraRAM. The reset port is
 available only when the latency of the Block RAM or UltraRAM is greater
 than or equal to 1.
 
 #### Provide enable port for port A  
-* When selected, allows access to the enable port for port A. The enable
+When selected, allows access to the enable port for port A. The enable
 port is available only when the latency of the block is greater than or
 equal to 1.
 
 #### Provide enable port for port B  
-* When selected, allows access to the enable port for port B. The enable
+When selected, allows access to the enable port for port B. The enable
 port is available only when the latency of the block is greater than or
 equal to 1.
 
@@ -183,8 +183,8 @@ equal to 1.
 Parameters specific to the Advanced tab are as follows.
 
 #### Write Modes  
-  * #### Port A or Port B  
-    When the Dual Port RAM block is implemented in block RAM, specifies
+##### Port A or Port B  
+When the Dual Port RAM block is implemented in block RAM, specifies
 memory behavior for port A or port B when WE is asserted. Supported
 modes are: Read after write, Read before write, and No read on write.
 Read after write indicates the output value reflects the state of the
@@ -197,12 +197,12 @@ refer to the Write Mode topic above for more information.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](matlab:helpview(vmcHelp('name','common-options'))).
 
-## ™LogiCORE and XPM Documentation
+## LogiCORE™ and XPM Documentation
 
 Distributed Memory Generator LogiCORE IP Product Guide
-([PG063](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf))
+([PG063](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg063-dist-mem-gen&ft:locale=en-US))
 (Distributed Memory)
 
 UltraScale Architecture Memory Resources User Guide
