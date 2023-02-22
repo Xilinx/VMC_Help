@@ -18,8 +18,6 @@ operation.
 The Vector Down Sample block reduces the sample rate at the point where
 the block is placed in your design.
 
-
-
 The input signal is sampled at even intervals, at either the beginning
 (first value), or end (last value) of a frame. The sampled value is
 presented on the output port and held until the next sample is taken.
@@ -86,20 +84,20 @@ value of the frame.
 Basic tab parameters are as follows.
 
 #### Sampling Rate (number of input samples per output sample)  
-* Must be an integer greater or equal to 2. This is the ratio of the
+Must be an integer greater or equal to 2. This is the ratio of the
 output sample period to the input, and is essentially a sample rate
 divider. For example, a ratio of 2 indicates a 2:1 division of the input
 sample rate. If a non-integer ratio is desired, the Vector Up Sample
 block can be used in combination with the Vector Down Sample block.
 
 #### Sample  
-* The Vector Down Sample block can sample either the first or last value
+The Vector Down Sample block can sample either the first or last value
 of a frame. This parameter will determine which of these two values is
 sampled.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](matlab:helpview(vmcHelp('name','common-options'))).
 
 ## LogiCORE
 
