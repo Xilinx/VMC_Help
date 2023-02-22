@@ -90,7 +90,7 @@ length. Between 2 and 7 (inclusive) codes can be entered.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](matlab:helpview(vmcHelp('name','common-options'))).
 
 ## LogiCORE™ Documentation
 
