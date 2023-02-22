@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -46,48 +46,36 @@ kernels.</p>
 <h2>Parameters</h2>
 <section id="kernel-class" class="level4">
 <h4>Kernel class</h4>
-<blockquote>
 <p>Mandatory string. Name of the kernel class which contains member
 variables and kernel member functions.</p>
-</blockquote>
 </section>
 <section id="kernel-function" class="level4">
 <h4>Kernel function</h4>
-<blockquote>
 <p>Mandatory string. Name of the kernel member function for which the
 block is to be created. This function should be registered using the
 registerKernelClass method in the kernel header file.</p>
-</blockquote>
 </section>
 <section id="kernel-source-file" class="level4">
 <h4>Kernel source file</h4>
-<blockquote>
 <p>Mandatory string. Name of the source file that contains where the
 kernel member function definition and non-default constructor parameter
 values are specified. The string could be the file name, a relative path
 to the file or an absolute path of the file.</p>
-</blockquote>
 </section>
 <section id="kernel-search-paths" class="level4">
 <h4>Kernel search paths</h4>
-<blockquote>
 <p>Optional vector of strings. If the kernel header file or the kernel
 source file are not found using the value provided through the Kernel
 header file or Kernel source file fields respectively, then the paths
 provided through Kernel search paths are used to find the files.</p>
-</blockquote>
-<blockquote>
 <p>This parameter allows use of environment variables while specifying
 paths for the kernel header file and the kernel source file. The
 environment variable can be used in either ${ENV} or $ENV format.</p>
-</blockquote>
 </section>
 <section id="preprocessor-options" class="level4">
 <h4>Preprocessor options</h4>
-<blockquote>
 <p>Optional preprocessor arguments for downstream compilation with
 specific preprocessor options.</p>
-</blockquote>
 <p>The following two preprocessor option formats are accepted and
 multiple can be selected: -D<name> and -D<name>=<definition> separated
 by a comma. That is, the optional argument must begin with -D and if the
