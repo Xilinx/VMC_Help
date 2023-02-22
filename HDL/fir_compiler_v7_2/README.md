@@ -115,7 +115,6 @@ port is divided into sub-ports that represent each parallel path.
 
 ![](./Images/qfl1538085406107.png)
 
-  
 
 #### Hardware Oversampling Specification  
 ##### Select format  
@@ -171,7 +170,7 @@ options.
 Specifies the coefficient structure. Depending on the coefficient
 structure, optimizations are made in the core to reduce the amount of
 hardware required to implement a particular filter configuration. The
-selected structure can be any of the following.
+selected structure can be any of the following:
 
   - Inferred
   - Non-Symmetric
@@ -186,7 +185,7 @@ structure is determined automatically from these coefficients.
 
 #### Datapath Options  
 ##### Output Rounding Mode  
-  Choose one of the following.
+  Choose one of the following:
 
   - Full_Precision
   - Truncate_LSBs
