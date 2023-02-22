@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -38,10 +38,8 @@ signals of desired frequency.</p>
 <p>The input port I is used for providing the desired output frequency
 value as a vector type.</p>
 <p>The input port I value should be equal to:</p>
-<ul>
-<li><em>(desired output Frequency * Sampling time *2^(Frequency
-Resolution))</em></li>
-</ul>
+<p><em>(desired output Frequency * Sampling time *2^(Frequency
+Resolution))</em></p>
 <p>The VI input port and VO output are used for synchronization purposes
 with the other blocks in the design. The VO is just a delayed version of
 VI based on the block latency. The DITH input port is used to turn
@@ -61,32 +59,24 @@ output frequency signal.</p>
 <h2>Parameters</h2>
 <section id="super-sample-rate-ssr" class="level4">
 <h4>Super Sample Rate (SSR)</h4>
-<ul>
-<li>This configurable GUI parameter is primarily used to control the
+<p>This configurable GUI parameter is primarily used to control the
 processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation.</li>
-</ul>
+enables 1-D vector support for the primary block operation.</p>
 </section>
 <section id="frequency-resolution-bits" class="level4">
 <h4>Frequency Resolution (bits)</h4>
-<ul>
-<li>Defines the smallest incremental step in frequency that the block
-can output. This should be an integer value.</li>
-</ul>
+<p>Defines the smallest incremental step in frequency that the block can
+output. This should be an integer value.</p>
 </section>
 <section id="sincos-table-depth" class="level4">
 <h4>Sin/Cos Table Depth</h4>
-<ul>
-<li>Defines the depth of the Sin/Cos Table and should be an integer
-value.</li>
-</ul>
+<p>Defines the depth of the Sin/Cos Table and should be an integer
+value.</p>
 </section>
 <section id="sincos-table-width" class="level4">
 <h4>Sin/Cos Table Width</h4>
-<ul>
-<li>Defines the width of the Sin/Cos Table and should be an integer
-value.</li>
-</ul>
+<p>Defines the width of the Sin/Cos Table and should be an integer
+value.</p>
 </section>
 </section>
 </section>

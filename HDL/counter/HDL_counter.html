@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -75,75 +75,55 @@ calculations replace addition by subtraction.</p>
 <p>Parameters specific to the Basic tab are as follows:</p>
 <section id="counter-type" class="level4">
 <h4>Counter type</h4>
-<ul>
-<li>Specifies the counter to be a count-limited or free-running
-counter.</li>
-</ul>
+<p>Specifies the counter to be a count-limited or free-running
+counter.</p>
 </section>
 <section id="count-to-value" class="level4">
 <h4>Count to value</h4>
-<ul>
-<li>Specifies the ending value, the number at which the count-limited
+<p>Specifies the ending value, the number at which the count-limited
 counter resets. A value of <code>Inf</code> denotes the largest
 representable output in the specified precision. This cannot be the same
-as the initial value.</li>
-</ul>
+as the initial value.</p>
 </section>
 <section id="count-direction" class="level4">
 <h4>Count direction</h4>
-<ul>
-<li>Specifies the direction of the count (up or down) or provides an
+<p>Specifies the direction of the count (up or down) or provides an
 optional input port up (when up/down is selected) for specifying the
-direction of the counter.</li>
-</ul>
+direction of the counter.</p>
 </section>
 <section id="initial-value" class="level4">
 <h4>Initial value</h4>
-<ul>
-<li>Specifies the initial value to be the output of the counter.</li>
-</ul>
+<p>Specifies the initial value to be the output of the counter.</p>
 </section>
 <section id="step" class="level4">
 <h4>Step</h4>
-<ul>
-<li>Specifies the increment or decrement value.</li>
-</ul>
+<p>Specifies the increment or decrement value.</p>
 </section>
 <section id="output-type" class="level4">
 <h4>Output type</h4>
-<ul>
-<li>Specifies the block output to be either Signed or Unsigned.</li>
-</ul>
+<p>Specifies the block output to be either Signed or Unsigned.</p>
 </section>
 <section id="number-of-bits" class="level4">
 <h4>Number of bits</h4>
-<ul>
-<li>Specifies the number of bits in the block output.</li>
-</ul>
+<p>Specifies the number of bits in the block output.</p>
 </section>
 <section id="binary-point" class="level4">
 <h4>Binary point</h4>
-<ul>
-<li>Specifies the location of the binary point in the block output.</li>
-</ul>
+<p>Specifies the location of the binary point in the block output.</p>
 </section>
 <section id="provide-load-port" class="level4">
 <h4>Provide load port</h4>
-<ul>
-<li>When checked, the block operates as a free-running load counter with
+<p>When checked, the block operates as a free-running load counter with
 explicit load and din port. The load capability is available only for
-the free-running counter.</li>
-</ul>
+the free-running counter.</p>
 </section>
 <section id="provide-synchronous-reset-port" class="level4">
 <h4>Provide Synchronous reset port</h4>
-<ul>
-<li>Activates an optional reset (rst) pin on the block. When the reset
+<p>Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block&#39;s sample
-rate. The signal driving the reset port must be Boolean.</li>
-</ul>
+rate. The signal driving the reset port must be Boolean.</p>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
@@ -151,29 +131,28 @@ rate. The signal driving the reset port must be Boolean.</li>
 <p>Parameters specific to the Implementation tab are as follows.</p>
 <section id="implementation-details" class="level4">
 <h4>Implementation Details</h4>
-<ul>
-<li><h4 id="use-behavioral-hdl-otherwise-use-core">Use behavioral HDL
-(otherwise use core)</h4>
-The block is implemented using behavioral HDL. This gives the downstream
-logic synthesis tool maximum freedom to optimize for performance or
-area.</li>
-</ul>
+<section id="use-behavioral-hdl-otherwise-use-core" class="level5">
+<h5>Use behavioral HDL (otherwise use core)</h5>
+<p>The block is implemented using behavioral HDL. This gives the
+downstream logic synthesis tool maximum freedom to optimize for
+performance or area.</p>
+</section>
 </section>
 <section id="core-parameters" class="level4">
 <h4>Core Parameters</h4>
-<ul>
-<li><h4 id="implement-using">Implement using</h4>
-Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
-available in the target device. The default is Fabric.</li>
-</ul>
+<section id="implement-using" class="level5">
+<h5>Implement using</h5>
+<p>Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
+available in the target device. The default is Fabric.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>
 </section>
+</section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Binary Counter LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=c_counter_binary;v=latest;d=pg121-c-counter-binary.pdf">PG121</a>)</p>
+<p>Binary Counter LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg121-c-counter-binary&amp;ft:locale=en-US">PG121</a>)</p>
 </section>
 </section>
 </body>
