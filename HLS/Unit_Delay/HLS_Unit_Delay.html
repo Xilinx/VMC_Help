@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,18 +28,24 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Unit Delay</h1>
 </header>
-<h1 id="unit-delay">Unit Delay</h1>
+<section id="unit-delay" class="level1">
+<h1>Unit Delay</h1>
 <p>Provides a delay of one sample period</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Signal Operations</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFMElEQVRoge2aT2wUVRyAvzcz2y277JZgt9EoJlgPBJdgNYG4woE2XoCDQdB4gXJBEiIHTRo4eSDEA2pISPBAE8BoMYEDkoAHbAmiNCReNOVEiAmEfztbtt3Wpe10Zjzsdt22O7vzZmdL3e53fPN+b37fzpvZ934zwrZtmyWC8rwTWEi0cgeFEAuVh684TdaysgB3737qezK1pL39hOOxJTWNG7L1SsV7VpZgcBXB4GtSMU1NMSxrmunptFScpkUZGbmKZU246y81egWam1fT2voxQgT8HLYs4+N/MDX1yFVf36axV1HbNtD178hkrmHbhlRcJnPNtSj4JFuNaCp1jomJvxkdvcHk5H1se9pF3DSTk/cZHb0hdb6qZf0QzbcwPHwey3oGlFvB2ljWM4aHz1foN5+qZP0TzWFZE+j6D1iW89W1LCPfx91DqRjPsn6LzmAYT0inL5e8f23bIJ2+jGE88ZSzJ9laic6Qzf5JNjsEFAsbZLNDZLN/ySecR1q21qIz5K5gGrAAC8N4Sjp9WTbdWUjJNjW9RCy224PotJRoLsZE1/vyKSroeh+2bUqddy5SiwobA9McwbImpU5imhlMc1wqJhc3yuPHJ7FtG9PMSMfPRUrWmEqh631EogmEUKVOFIkmGMvcxDB0qTjZ/uWQvmcNQ2csc1N6SgmhEokmCARisqf0DQUglUpx7NgxdN3dr7jYhZ08FIDTp0/T09NDZ2cnyWTS1YCLWdjJQwHo7u4mHo8zNDREV1fXggqPj09x5MivbNt2TmqMcjh5KACxWIz+/v7nInzvHuzZsx5N86+O4ORROENbW9s8YbdUI7xp8y7a21+XiquE04Wb9XPOFZahIIxVsW9v7098sKOHb09eQAiVaMtmhPCvjlDqwiWTSUSpNwK3b98mHo8DcqXU5ubVrFz5Ppad25GcOvUj33zdWzj+4METenu/5MOPts+Ks6xJEu9s5+LFHZ7kimlvP1GoGxd77Ny5c75sMpmkq6urcGXdylZaM1+5cpVDh75gcPAXwuFQof3s2e+5cKGXwcE7bNjwMvv3v01Hx4vylnlmZIs94vE4/f39s1dQczu4ncqVRB8+fMSBA59z6dK5WaK2bbB1q0Vn5xZgi2fBuZQSbWtr+++eLdXBDZVETdNk9+5POHz4M9ate6PQLrsLkqGUKOQfULquO3Yoh5vt3tGjX9Ha2sq+fd2FtlqKAo4eGsCZM2dqInr9+u/09Z3n1q2BQlutRQFHDw1g7969QG4lFYtVXsa53cAfP34SXU+xfv27+RabXbvWcfDgGg8K7hkYGCjpUfKvp3BQiHlP44WqVHil+K9nLlL/5DOVClm8VCpm0LQItg2mOSYdO28smc4LXalQlBAtK94DIP3053xN2TuLtlIhhEK0JQH5KRmJJsiMDjhOUTcs2kpFKPwmqhIGIUAINHU5oXCHbLqz8LSvqrVwMPgqweArUDx7hJp/HbrKS8pAFW8EaiWsqlHCyztK7oKEUAkvfwtVa/GUc1U7Zr+FhQgQbdmEEM5pCaEQjSY8vQOuujzgp3AkshGhNAHlPkkSCCVIJLJROldfaiF+CIdCa9ACKxEuUhIoaIEXCIXkVmK+FX6qEY62bGZZaK1UtUIIlWWhtWjaCtcxvn5TkRP+DS1QeSNRjKpGABPTzErGNWOa/7ju7/vXMoYxjGEM+z2sLyyp76AasvXKkpKtuHn/P+Jp815vX9QvqWnckK1XGrL1SkO2XmnI1isN2XqlIVuvNGTrlYZsvfIvuu4Kz92somMAAAAASUVORK5CYII=" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Unit Delay block provides a delay of one sample period. The
 output has the same sample time as the input. The output dimension is
 the same as the initial condition dimension if the input is scalar.
 Otherwise, the output dimension is the same as the input dimension and
 should match the dimension of the initial condition.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data type support is:</p>
 <ul>
 <li>All data types are supported.</li>
@@ -51,10 +57,14 @@ the elements of the input during the first cycle.</li>
 the block gives an error indicating that the input type must be
 complex.</li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Initial Condition</p>
 <p>Specifies the initial value.</p>
 <p>The Initial Condition can be scalar, vector, or matrix, of real or
 complex type.</p>
+</section>
+</section>
 </body>
 </html>

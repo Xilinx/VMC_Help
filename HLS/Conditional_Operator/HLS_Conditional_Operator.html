@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,19 +28,25 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Conditional</h1>
 </header>
-<h1 id="conditional">Conditional</h1>
+<section id="conditional" class="level1">
+<h1>Conditional</h1>
 <p>Pass through input T when control input C satisfies a selected
 criteria; otherwise, pass through input F. The first and third input
 ports are data ports, and the second input port is the control port.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Signal Routing</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Conditional block passes through input T when control input C
 satisfies the selected criteria; otherwise, it passes through input F.
 The first and third input ports are data ports, and the second (or
 middle) input port is the control port.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data type support for the Conditional block is:</p>
 <ul>
 <li>Inputs T and F should either be both complex or real, and can be
@@ -60,7 +66,9 @@ dimension matches with the input C dimension. Input C must match the
 dimension of input T and F if they are non scalars. Input C should be
 real and can be of any data type.</li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Criteria for passing first input<br />
 This parameter is used to select the condition under which the block
 passes the first input (T). If the control input C meets the condition
@@ -113,5 +121,7 @@ criteria, either T or F is selected to populate the output signal.</p>
 <p>Dependencies<br />
 Setting Criteria for passing first input to C ~= 0 disables this
 parameter.</p>
+</section>
+</section>
 </body>
 </html>

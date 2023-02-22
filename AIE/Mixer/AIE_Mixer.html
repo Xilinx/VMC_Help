@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,26 +28,36 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Mixer</h1>
 </header>
-<h1 id="mixer">Mixer</h1>
+<section id="mixer" class="level1">
+<h1>Mixer</h1>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/DSP/Window IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block implements the Mixer targeted for AI Engines.</p>
-<h2 id="parameters">Parameters</h2>
-<h4 id="inputoutput-data-type">Input/Output data type</h4>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output data type</h4>
 <ul>
 <li>Describes the types of individual data samples input to and output
 from the Mixer function. The supported data types are cint16, cint32,
 and cfloat.</li>
 </ul>
-<h4 id="input-window-size-number-of-samples">Input window size (Number
-of samples)</h4>
+</section>
+<section id="input-window-size-number-of-samples" class="level4">
+<h4>Input window size (Number of samples)</h4>
 <ul>
 <li>Specifies the number of samples in the input window. The value must
 be in the range 16 to 4096. Default value is 32.</li>
 </ul>
-<h4 id="mixer-mode">Mixer mode</h4>
+</section>
+<section id="mixer-mode" class="level4">
+<h4>Mixer mode</h4>
 <ul>
 <li><p>This specifies the mixer operation modes. Two modes are supported
 by Mixer function:</p>
@@ -68,7 +78,9 @@ two modulated signals are added together and written to the output
 window.</p></li>
 </ul></li>
 </ul>
-<h4 id="phase-increment">Phase increment</h4>
+</section>
+<section id="phase-increment" class="level4">
+<h4>Phase increment</h4>
 <ul>
 <li><p>This specifies the phase increment between the samples. The value
 should be in the range 0 to 2^31.</p>
@@ -80,12 +92,16 @@ should be in the range 0 to 2^31.</p>
 <li>Fs = Sampling frequency</li>
 </ul></li>
 </ul>
-<h4 id="target-input-throughput-msps">Target input throughput
-(MSPS)</h4>
+</section>
+<section id="target-input-throughput-msps" class="level4">
+<h4>Target input throughput (MSPS)</h4>
 <ul>
 <li>Specifies the input sampling rate of the function in Mega Samples
 per Second (MSPS). The value must be in the range 1 to 1000 and the
 default value is 200.</li>
 </ul>
+</section>
+</section>
+</section>
 </body>
 </html>

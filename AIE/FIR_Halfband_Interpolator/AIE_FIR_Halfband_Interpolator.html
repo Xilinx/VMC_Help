@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,26 +28,34 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">FIR Halfband Interpolator</h1>
 </header>
-<h1 id="fir-halfband-interpolator">FIR Halfband Interpolator</h1>
+<section id="fir-halfband-interpolator" class="level1">
+<h1>FIR Halfband Interpolator</h1>
 <p>This block implements the FIR Halfband Interpolator targeted for AI
 Engines.</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASsAAABhCAYAAACOEIcKAAAACXBIWXMAAA7EAAAOxAGVKw4bAAANcklEQVR4nO3de3SU9Z3H8fdvbrmRkEAyAZGYaojhYpFClcrRKCnb1QquyqmsiicK4lbwKB4b6IWyK90uEs+WI0tVrFgCdaPSG1l2Q3tCi57iwRu4hkhAgWgCuZEbucxMZubpH5MryeSCTyZ55vm+zpnDmeH3fJ8nIfnwPN955vdTmqZpCCHEGGcZ7QMQQoihsA30l0qpUB2HEEIAEOxib8CwAmj/yxzdD0YIIfpjv+1o0L+Ty0AhhCFIWAkhDEHCSghhCBJWQghDGLTBLkwodgZa/FxdS6qYFDSfB1yVutbtEpGIOvsKeJtHpr4YdRJWorf4OWgZm8AaoWvZkNx5XFkAzZ+FYk9iFMhloOg2QkGFz406noMq+xX4XfrWBvC7A2dVElRhTcJKBIxkUJ3YAA1HofxNqP8A/B796vs9UP8+VLylX00xJklYidAEFQAa6tRm8NQAfh124Ad3TaBmaC40xSiSsDK7kAVV9+sUrwevDpeDXhccXxeoKcKehJWZhTqoOih3Jap0I/i+wuWgz4Mq3YhyV11+DWEoElZmNUpB1aXhGKo87/Ia7n436std0HDs8o5RGJKElRmNdlB1upyGuzTUTUvCymzGSlABw2+4S0PdzCSszGRMBVX3tkNuuEtD3dQkrMxiLAZVhyE13KWhbnoSVmYwhoOqy0ANd2moCySswp8RgqpTfw13aaiLDhJW4cxIQQX0bbhLQ110k7AKVzHpaDO36B9Ufs8IBVWHzoY7lsBDGuqig0wRE658PmhtBm+7vnVdjdBar2/NSyh3JRxdGXgiDXXRQQ20yKlSSla3MbKo69CSHgNl17eu34WqfA7az+lbV5ie/bajQZfiksvAcNb2CdTuRmk6TskCoCLQJj0D9kR96woxAAmrMKdaj0D9Xn3nkFIKLFFoyevQbPH61RViABJWZnDxEKrpf0HTs1FtAes4mJQD1hgd6wrRPwkrs2j8P7j4zggE1ni05B+AitSxrhB9SViZiKrfCy0fgl/PwLKBNQktea3+jXwhepCwMhUNdWE3uD8FPZvuFhvKMQWcawCrfnWF6EHCynT8qOod4D6D0vS7B0tTdrSIq9Gcq5AfKzES5KfKlHyo6m1ongrQvPqVVQ6ImI6WuBxQ+tUVgo6wqq2tJTc3l5qamtE+HhEqWjuq6hfgrQF0DCxLBETPRUu4V7+awlSC5ZAF4LXXXiMnJ4eFCxdSXV0d0gMTo0hzoapywduIPktjdVARMC4Txt+uX01hGsFyyAKQnZ3NrFmzKC4uJisrSwLLTHwtULUFfM3oOrOBxYEWdwfEZupXU5hCsByyACQlJVFUVCSBFSKlX7iI/c7HXPtASddj5ZYvaGj2kbbsOAA79tUy6a5PmPlQCTMfKmHG8hL2/KmuT60d+2r56avne72W+cRJjp8JPk3w3JUnaGj28XmFmxnLS3jxrVPMu/1uGhqqIfhHRYcl7ea7wOKAhKVo0TcC8PR/lZNX2Pdr6FRR286Hpa267P9SnV9zMPv+1jgi+xXDFyyHuhrsTqezT2CJkfON9ChKfzOj6/GrnJQ+Y1YtSeR43gyO583gr9vS+emr56lt1K+/9NGpVhYvGM/jdyeB5kVVb9P5plHQlAMSl0PUdYOOfefj5hELq8FsfVP+cx4rgp049ZoipjOwsrKyKC4uHpUDFf1zxtvISIng9Dk3ieOHNrOPy+Mn++dl1DX5aG7z8R+PTSHz+nEANLb42PJ6FU0tftKvDNx9npv3MR+eWoqbybz5Ui7joqPJfnoj9Q2NNLe28fN1a8icP5cbFi9n6Xe/TennZzldVsHel3OJiY7in1evx+f3M3t6eu8DUXY05xqwHQbaaWr1sfDJU2ReH8v52nasVtj+9FR+lleJ3ab42hURTIyzsv6lc0Q4FHHRVnbkpFD04UVe/3Md5TXtvPbDq/jexjPc+a04yio91DZ62b0hlYRxNtZs/ZLT59y0uf2se2ASd8yP6zqU0+fcrHzuCxx2RbtXY8+GVAr+1sgHpa2s2FzGKzlX9bv9vEdPcMvscTjsis2PTdHl31T079IcysrKoqioqO+tC06nk/z8/NE4RjGAs5UeSs66SJ/a92Mtv/x9DWnLjnc9Os9Oquq9LF4wnj/9Zxov/yCFzb+p7NpmfIyVZ5Ylc29mPCvunAjA9KsiKdxxJwtuWcCugiKqXV6WLLmdAwX/zUsvbOa5HXsgLgGLzc7M62fz6stbmT9/Hgfe+5g/vP0eyVOuYN/eXSy6fRGedi/EJXQ/omNBBX7cLEpxoszFj5Yn8/rGVD6rcNPU4ueh70zg+3clsmheLE9sLWf3hlQKNl/D7LQo8govYLXAyS/dHNo2jWlXRmBR8M3pMeT9JJVb58Syc/8F/ufdRlrafBQ+n8bv/v1q1m4rx9/jvYPymnY2rZxM4fNp3H1LPLsK61i1JBFnvI1X118VdHurRbHgunESVCHSM4eKi4tZvXp138n3qqurWbZsWcgPzmyOnmpj5kMlXc+X3prA2u85e43Zub+W/e824vL4cXs0duSkED+u7x3ij9+dxLMrJnc9z3ziJACTJtg5XNxCflE9mgZ1TcF7NgC3Zs5Hy9jEjQv+QkFBIclp6Rx+8dfk/7EQTdOoa2oOBI/VypybvgVxCSRdOZVGj4/KynPcsCDw2k3fzkJZLYGx0D0Ncns9EA3AlU4HE+MCP37OeBtNLd3H5vL4+f/P27j/384A0Ob2s3BuLCnJDuakR2G1dN/DNX9m4EPUs66O4ndvN9Di8nPz7MDZ48Q4G7HRFirru29+TXE6yHmxgufzqzl/oZ1bOsZ2+uhka9Dt52VED/j9E/rpmUOzZs1i+/btvcOqurq669Sr85pRjIw506I4tK335dKlDeBHvpvIsysmU3fRx03fL2XOtOH9suzcX4vDpijYfA1nKz3ct/FM8MHWKCzp68AagVIKpRQ7d+7G4XCwb18+ZWVfcN99D3cNt1i6Q1PTNDRNQynV6zkQdL526yXn9D37+jarIiHWStHWab3G7H+3kQh77w29vsCGfr+GInAras8zKb8femQb61+u4P5FCfzTzfHkFdZRfKatV72Bto+wy42uoXBpDhUVFeF0OrsvA/sbIMaGCbFWnlyaxA93DG9mzso6L1+b7ADgt39twOMN8k5f/ByInMThI4FA+eCDo2RkTKOqqprU1EDjf+/efXg8wT+ek56exvvvfwTAwYNvB14c5sISFgu42zVsVsWUJDvvfdoCQF5hHUdKWvrd5vAngdePlLQwIzWSuddGc+hYMwA1DV5a3X6SE7o/YB34nkTg82v8/p3u70nnn4NtL0Zef0EFHQ32mpqaoAPE2LBqSSLffLSUw8Ut3DRraPNHLctK4IFnz1J4pInsOwJ9qVcKansPikxGy9iE37+I4uJP2bPnDVpaWnnjjV9TWVnFgw+u4sCBIrKz7w9s/8qufvd1zz1LyM//LQsX3smNN84jJiZ62AtL3DA9huWbzuJMsPHLp6fy1AvlOOyBBvuuH6dy6NjFPtsc+6yV3Qcu0Or289azVzM+xsqB95r4x2c+w+XR2PbUVFSPE6J/uSuRRzaXcUWinUcXJ7L2hXIeXDSBr18Txc1rTvL2tvQBtxcjL1gOKU3TtNzcXHJycvoMkDnYw5zhlurqbe7KExRtndZvH08Yk/22o0FPmGwADz8c6EVkZ2eTlJQU+iMUoWfwoBLh6+DBg/3mkKxuY0YSVGKMktVtRDcJKmFQElZmIkElDEzCyiwkqITBSViZgQSVCAMSVuFOgkqECQmrcCZBJcLI0OYaEcYTk442c4v+df2e0ASVo+OD2Z7zA48TpiFhFa58PmhtBq9+y20B0NYErrbBx30Fmm0iTP7XwJOKH6G8F0Z0f8IY5KbQcBaZgZa0OjC9sJ78HlTNdnCd0LcuBOZun7QBbImABt5aVOXPwK/joqxizJKbQs3KdSIQKnr/olscgRCMzNC3LgomrgBbQmCiPmUF2wSY+AiyDqGQsAp3RgqsuEVokdNB9ZiSRdnRImdC3D/otx9hSBJWZmCEwIq8Fi1+SWCR1P72E78YIq/96vsRhiVhZRZjOLA020S0pMd7n1FdStnRkh4PNN+FKUlYmclYDCyLA5xPgRrCmwDKDs4n9X/DQBiChJXZjKnAuqShPuhwabibmYSVGY2VwOqvoT4YabibloSVWY12YA3UUB/KPqThbjoSVmY2SoE1pIb6YKThbjoSVmYX6sAaTkN9MNJwNxUJKxHCwBpmQ30w0nA3FQkrERCKwLqchvpgpOFuGhJWottIBlbyWrSEey+voT6U+gn3QESK/rXFmCFTxIjeXCdQ1b9Ai5yha1nlmIzmbwdv7eCDL4ctHtpHqLYYEySsRF/u0yj3ad3LSldJfBVyGSiEMAQJKyGEIUhYCSEMQcJKCGEIElZCCEOQsBJCGMKgq9sIIUQoBYukAe+zGiDHhBAipOQyUAhhCBJWQghDkLASQhiChJUQwhAkrIQQhiBhJYQwBAkrIYQhSFgJIQxBwkoIYQgSVkIIQ5CwEkIYgoSVEMIQJKyEEIYgYSWEMAQJKyGEIUhYCSEMQcJKCGEIfwdZ0eXs2pYtnQAAAABJRU5ErkJggg==" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/DSP/Window IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block implements the FIR Halfband Interpolator targeted for AI
 Engines.</p>
-<h2 id="parameters">Parameters</h2>
-<h3 id="main">Main</h3>
-<h4 id="input-data-typeoutput-data-type">Input data type/Output data
-type</h4>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="input-data-typeoutput-data-type" class="level4">
+<h4>Input data type/Output data type</h4>
 <ul>
 <li>Describes the type of individual data samples input to and output
 from the filter function. int16, cint16, int32, cint32, float,
 cfloat.</li>
 </ul>
-<h4 id="filter-coefficients-data-type">Filter coefficients data
-type</h4>
+</section>
+<section id="filter-coefficients-data-type" class="level4">
+<h4>Filter coefficients data type</h4>
 <ul>
 <li><p>Describes the type of individual coefficients of the filter taps.
 It should be one of int16, cint16, int32, cint32, float, cfloat and must
@@ -63,32 +71,40 @@ Input/Output data type is an integer type.</li>
 Input/Output data type is a float type.</li>
 </ul></li>
 </ul>
-<h4 id="specify-filter-coefficients-via-input-port">Specify filter
-coefficients via input port</h4>
+</section>
+<section id="specify-filter-coefficients-via-input-port" class="level4">
+<h4>Specify filter coefficients via input port</h4>
 <ul>
 <li>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via the input port.</li>
 </ul>
-<h4 id="filter-coefficients">Filter coefficients</h4>
+</section>
+<section id="filter-coefficients" class="level4">
+<h4>Filter coefficients</h4>
 <ul>
 <li>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where &#39;N&#39; is a positive integer that represents the filter length and
 must be in the range 4 to 240 inclusive.</li>
 </ul>
-<h4 id="input-window-size-number-of-samples">Input window size (Number
-of samples)</h4>
+</section>
+<section id="input-window-size-number-of-samples" class="level4">
+<h4>Input window size (Number of samples)</h4>
 <ul>
 <li>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be the Input
 window size multiplied by two by virtue of the halfband interpolation
 factor.</li>
 </ul>
-<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
 <ul>
 <li>scribes the power of 2 shift down applied to the accumulation of FIR
 terms before output. It must be in the range 0 to 61.</li>
 </ul>
-<h4 id="rounding-mode">Rounding mode</h4>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
 <ul>
 <li>Describes the selection of rounding to be applied during the shift
 down stage of processing. The rounding options are as follows:</li>
@@ -107,8 +123,9 @@ down stage of processing. The rounding options are as follows:</li>
 <li>Modes 2 to 7 round to the nearest integer. They differ only in how
 they round for the value of 0.5.</li>
 </ul>
-<h4 id="use-center-tap-to-upshift-data">Use center tap to upshift
-data</h4>
+</section>
+<section id="use-center-tap-to-upshift-data" class="level4">
+<h4>Use center tap to upshift data</h4>
 <ul>
 <li><p>To upshift the data sample by the center tap coefficient (or its
 real part) position.</p>
@@ -149,15 +166,19 @@ etc.):</p>
 <li>If the parameter is set, the expected output will be: [1, 2^3, 2,
 2^3...]=[1, 8, 2, 8..]</li>
 </ul>
-<h3 id="advanced">Advanced</h3>
-<h4 id="target-input-throughput-msps">Target input throughput
-(MSPS)</h4>
+</section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
+<section id="target-input-throughput-msps" class="level4">
+<h4>Target input throughput (MSPS)</h4>
 <ul>
 <li>Specifies the rate at which data samples should be processed. The
 default value is <code>200</code>.</li>
 </ul>
-<h4 id="specify-the-number-of-cascade-stages">Specify the number of
-cascade stages</h4>
+</section>
+<section id="specify-the-number-of-cascade-stages" class="level4">
+<h4>Specify the number of cascade stages</h4>
 <ul>
 <li>When this option is not enabled, the tool will determine the filter
 configuration that best achieves the specified input sampling rate. When
@@ -167,5 +188,9 @@ operation over). However, this allows resource to be traded for higher
 performance and the specified input sampling rate constraint may not be
 achieved. The value must be in the range 1 to 9.</li>
 </ul>
+</section>
+</section>
+</section>
+</section>
 </body>
 </html>

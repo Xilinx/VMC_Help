@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Product</h1>
 </header>
-<h1 id="product">Product</h1>
+<section id="product" class="level1">
+<h1>Product</h1>
 <p>The Xilinx Product block implements a scalar or complex multiplier.
 It computes the product of the data on its two input channels, producing
 the result on its output channel. For complex multiplication the input
@@ -47,7 +48,8 @@ generation. Refer to the <a href="https://www.xilinx.com/support/documentation/i
 IP Complex Multiplier v6.0 Product Guide</a> or the <a href="https://www.xilinx.com/support/documentation/ip_documentation/mult_gen/v12_0/pg108-mult-gen.pdf">LogiCORE
 IP Multiplier v12.0 Product Guide</a> for details about these LogiCORE
 IP.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Parameters specific to the block are as follows.</p>
@@ -62,10 +64,14 @@ and rate and type propagation (from the input data width), the latency
 value of the block will be derived automatically for a fully pipelined
 circuit. This latency value will be displayed on the block in the
 Simulink model.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p><a href="https://www.xilinx.com/support/documentation/ip_documentation/cmpy/v6_0/pg104-cmpy.pdf">LogiCORE
 IP Complex Multiplier v6.0</a></p>
 <p><a href="https://www.xilinx.com/support/documentation/ip_documentation/mult_gen/v12_0/pg108-mult-gen.pdf">LogiCORE
 IP Multiplier v12.0</a></p>
+</section>
+</section>
 </body>
 </html>

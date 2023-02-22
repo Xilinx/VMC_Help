@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,19 +28,25 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Conjugate</h1>
 </header>
-<h1 id="conjugate">Conjugate</h1>
+<section id="conjugate" class="level1">
+<h1>Conjugate</h1>
 <p>Apply element-wise complex conjugate operation to the input
 signal</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Conjugate block applies element-wise complex conjugate operation
 to the input signal.</p>
 <p>The conjugate of a complex number is the number with equal real part,
 where the imaginary part is equal in magnitude but opposite in sign. The
 complex conjugate of a+bi is a-bi.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data type support for the input is:</p>
 <ul>
 <li>The input signals can be signed integer, fixed-point, or
@@ -52,7 +58,11 @@ floating-point data type.</li>
 <p>The data type and dimension of the output signal are the same as
 those of input signal. For complex type input, only the magnitude of the
 imaginary part changes.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Conjugate block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

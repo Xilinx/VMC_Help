@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,13 +28,17 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Lesser</h1>
 </header>
-<h1 id="lesser">Lesser</h1>
+<section id="lesser" class="level1">
+<h1>Lesser</h1>
 <p>Performs element-wise less than relational operation on the inputs.
 The top input corresponds to the first operand.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Relational Operations</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFWElEQVRoge2az4sTZxjHP+/MJFmzm+zWmkBLLdi9iESoRVTcetml+g/Ysl7KSgs9FT2Uba9e6sEitbI9eFlZ2nVBKHgQCyUr4g9aaKEt8VDUFiptNZM1m2jjrpOZ6SGbNZvMJPNOZrdrzAdy2Xmffd5v3pn3fb5PRti2bfOcoPzfE1hLtGYXhRBrNY9AcbtZm4oFuHPnw8Ans5oMDp52vfZc3cZdsZ2KBpDL5ZicnGRsbIxEItHWP4xENhOJvCYVEw4nsKwy5XJeKk7T4szPf4dlLXgbDzA5Ocn4+DhTU1Ok02mSyaRU0io9PVvYtOkQQoR8xfvh0aMfefLkH09jFYCxsTFSqRSZTIaRkRGy2ax0Ur9CbdtA16coFi9j24ZUXLF42bNQWBKbSCRIp9O+BbcjNJc7x8LCHxQKV1lcvIttlz3ElVlcvEuhcFUq3/IGlUwmGwR7IQihS39hbu48lvUYaFbB2ljWY+bmzrcY18iK3bhecCuCE1rBshbQ9a+xLPfVtSxjaYy3TamWhqMnmUwyMzPTMjBooVUM4z75/EXH59e2DfL5ixjGfamcVRrEZrNZRkdHmwatltAqpdIvlEoZoFawQamUoVT6VSpnLSvEZrNZRkZGyGQypFIpx4DVFlqlsoJ5wAIsDOMB+fxFqZz1LIutF5pOpxsGh8MvkUi860NoWUpoJcZE16eXpqig69PYtimVtx4NQNf1BqFOhYWNgWnOY1mLUklMs4hpPpKenGkWuHfvS2zbxjSL0vH1aABnz55tKRTAeJJD16eJxfcihCqVKBbfy8PiDQxDl4qTHd8MDeDw4cMAnmpjw9B5WLwhLVgI1bfgoBDNelBCCFfzHgolfK2wbZurKnhw8LRrp8K3xauusOymUV3hUKg9d+WHtvzsehWs6853TdvmvR3Bf/39MpmM3M7uheHhYUcjE0inQlbwtWs/887bn/D+e58S7d0e+Aq7ObeW3UWvLO/S/UMIh+/QNC0uXLjCF6dm6O3bwJEjh9i/f/fy9ULhCmVjLpC51Dq32qM0MLEAqtpHT3gLlt3oSM5Nf8Pnp77izJnj7Ny5fcU1y1pEEeHA5pFOp5eLpFrBgTXcqjWzqsYJacmGz65d+xjo38jH45/x7aWf0NQEIS2Jpr5AsSDXcWiFkzfPZrP+z1knoV5q5uvXv+fkyQlu3/6do0c/4MABE9P8U05NE2rP2Zs3by4bmoMHD7Z/G8u6oKGhPQwN7eHWrd84fvwjcrkeRkedHVY71FrVVCrFxMREe2LbsXsDAz9w7NjOdtK74uTg2npm18rX+sHNwSlQaZKfOHHCtfKoZz0LBVwdnAJPm+RulUct610o4GpVpZrka9mpqKJpMVQ1JhUzOzvr6Mk1eNokrz+IGya9xp0KRYnSP/AWAPkHl5Z6yq1x8+Qrztn6XSyTyTScs2vlY4VQ6B8YRlUqq1o2ixQLs65etYpnP+ulSb5Wti7a+zqq0gtCgBBoah/R3h1SOevx1SRfbcGRyKtEIq9A7d0j1KWfQzdL5azFV5McVk+wqsbp7duBEI31jhAqvX1voGr9UjmrSDfJawlasBAh4v1vIoR7rSOEQjy+19dvwFJNcieCFByL7UYoYaDZK0kCoUSIxXY3GeOMAt6b5G4EITga3YoW2uho/BviUNBCLxKNbpXKp4D3Jnkz2hEc79/Hhug2x+e0WdyG6DY0bcBzjHSTvBkVwdfQQnJfVqVCMjHNkmRcD6b5r+fxgZj39cSqNMmfRbpiO5WWz+yziK9XcDvtJfPn6jbuiu1UumI7la7YTqUrtlPpiu1UumI7la7YTqUrtlP5D1F4Q6/aL991AAAAAElFTkSuQmCC" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Lesser block has two input signals and one output signal. The
 block compares two inputs using element-wise lesser relational
 operation. The first input corresponds to the top input port and the
@@ -43,7 +47,9 @@ signal matches the dimensions of the input signals. An element of the
 output signal is true if the corresponding element of the first input
 signal is less than the corresponding element of the second signal;
 otherwise the element is false.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data types support for the Lesser block is:</p>
 <ul>
 <li>The data types of the input signals can be integer, fixed-point,
@@ -56,7 +62,11 @@ inputs are not scalar, their dimensions must match.</li>
 scalar. Otherwise it matches the dimensions of the non-scalar
 input.</li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Lesser block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

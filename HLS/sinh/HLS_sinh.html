@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,18 +28,24 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">sinh</h1>
 </header>
-<h1 id="sinh">sinh</h1>
+<section id="sinh" class="level1">
+<h1>sinh</h1>
 <p>Element-wise computation of the hyperbolic sine for a given
 argument</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The sinh block returns the output of the function sinh(x), which is
 the hyperbolic sine, for each element in array x.</p>
 <p>The hyperbolic sine of <code>x</code> is:</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAAfCAYAAAA2qem+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANZSURBVGhD7Zk7rw1RGIYHPQWV0qUWREWj5Q+gVVCoFCLUJP4A0SlIFIRKRKHRIdEqUKpcgtrlfWbPK+ssM2b22TOz9+x8T/JmZs1lrVnfba19ThEEQRAEq8tO6ZJ0XzpQHY9JY3JKeiox/k3pnBQsAE79LWHUZfFK+iLxLX/ZWh2D+fgsfZWel61huSYROOgEFyreSy8lviVYEErcO8lld2wYk/HJ0D3ShiwNmsFYZAUO5ByRKWQN1ym7rKd9gWPolzWyaV0miBxIOHS0sr+MyO0TlzqMzHqFEYcEJzIOdmNsnDUoDMaOqg1HMdHbVgocjW0wwTEDxAZlLnwf5+n61TfOdo7OvD4zv5b/lYEcPqbNofSH4bpCkIzhVJzItxPAzIMg5lpXPHeryxy9Hnq8sX8GtdLmUD6YSbRlcApGHbwMCX/7WEZlHMZj3IWp+9lCRJE9bASIUsDwaUZRGlhTcArXOPJs7qCLEs/lkXpBeiZ5y03m8T7P0TeTo50a9YPEVn3oH9HfquP26kggdcmyzfKjOu6ojtiQ+c9TFRrBsBjVnZH+DMB1O81QArnGsyiNMke51x2CgbYdxDnXUtwHxmsqr75XB++2qUtF4BnvAQjGeUvuZmBejId9ey25TIayRsd2lI3AJHOHpm0+yJFsh/pdlxUcnJ7n+L2mjPD9oIEt1TGFzHgo7ZWuS1clwIE46EjZ+reNof08hr8h7ZIoqzjxhXRS+p6cP5FS6O+T9Fpyvyl5v33zRpriX89+SQc5yR3q0sI6clbCeOel21JfDn0rsRbWOZQSx70r0umqnUK/l6X9Uu7QLpnbFgi7pW2z00nxU/o4O90Ihk+NiNMwInDeR8kFynq+ueGex6bv9H3D+sK9oIG68kKpxSEYmJ3lAwmH7JO4R0lGadsbnMMSzx4qW7MsxylnylZRHJVo35KOc6GCd+5Kj8tWUdypjvekdENCNXg0O50M2JLNIwFKINftHSYPTmVydTvZJnA62Zln7SpDoHuXjKhodZVnLcCZXcsnBqAcp9k6BViCUueRnenSs3bg1C5/KKBsTc2ZdXgvMU9lClYYgndqy0bQAE5kcxTZuSb0+ie9YLngzKH/qRCMRO5M79hjHZ0g/i9KrsjWIAiCqVMUfwCYIOEMVadnXgAAAABJRU5ErkJggg==" /></p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data type support is:</p>
 <ul>
 <li>Dimension: Input can be scalar, vector or matrix.</li>
@@ -48,7 +54,11 @@ data types (double, single, and half) and fixed-point type.</li>
 <li>Complex Numbers: Complex numbers are not supported.</li>
 </ul>
 <p>The output has the same dimension and data type as the input.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The sinh block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

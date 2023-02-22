@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,25 +28,31 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">FIR Halfband Interpolator Stream</h1>
 </header>
-<h1 id="fir-halfband-interpolator-stream">FIR Halfband Interpolator
-Stream</h1>
+<section id="fir-halfband-interpolator-stream" class="level1">
+<h1>FIR Halfband Interpolator Stream</h1>
 <p>This block implements the stream-based FIR Halfband Interpolator
 filter targeted for AI Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/DSP/Stream IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block implements the stream-based FIR Halfband Interpolator
 filter targeted for AI Engines.</p>
-<h2 id="parameters">Parameters</h2>
-<h3 id="main">Main</h3>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
 <ul>
 <li>Input data type/Output data type<br />
 Describes the type of individual data samples input to and output from
 the filter function. int16, cint16, int32, cint32, float, cfloat.</li>
 </ul>
-<h4 id="filter-coefficients-data-type">Filter coefficients data
-type</h4>
+<section id="filter-coefficients-data-type" class="level4">
+<h4>Filter coefficients data type</h4>
 <ul>
 <li><p>Describes the type of individual coefficients of the filter taps.
 It should be one of int16, cint16, int32, cint32, float, cfloat and must
@@ -62,32 +68,40 @@ Input/Output data type is an integer type.</li>
 Input/Output data type is a float type.</li>
 </ul></li>
 </ul>
-<h4 id="specify-filter-coefficients-via-input-port">Specify filter
-coefficients via input port</h4>
+</section>
+<section id="specify-filter-coefficients-via-input-port" class="level4">
+<h4>Specify filter coefficients via input port</h4>
 <ul>
 <li>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via the input port.</li>
 </ul>
-<h4 id="filter-coefficients">Filter coefficients</h4>
+</section>
+<section id="filter-coefficients" class="level4">
+<h4>Filter coefficients</h4>
 <ul>
 <li>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where &#39;N&#39; is a positive integer that represents the filter length and
 must be in the range 4 to 240 inclusive.</li>
 </ul>
-<h4 id="input-frame-size-number-of-samples">Input frame size (Number of
-samples)</h4>
+</section>
+<section id="input-frame-size-number-of-samples" class="level4">
+<h4>Input frame size (Number of samples)</h4>
 <ul>
 <li>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be the Input
 window size multiplied by two by virtue of the halfband interpolation
 factor.</li>
 </ul>
-<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
 <ul>
 <li>Describes the power of 2 shift down applied to the accumulation of
 FIR terms before output. It must be in the range 0 to 61.</li>
 </ul>
-<h4 id="rounding-mode">Rounding mode</h4>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
 <ul>
 <li>Describes the selection of rounding to be applied during the shift
 down stage of processing. The rounding options are as follows:</li>
@@ -106,24 +120,34 @@ down stage of processing. The rounding options are as follows:</li>
 <li>Modes 2 to 7 round to the nearest integer. They differ only in how
 they round for the value of 0.5.</li>
 </ul>
-<h4 id="number-of-parallel-inputoutput-ssr">Number of parallel
-input/output (SSR)</h4>
+</section>
+<section id="number-of-parallel-inputoutput-ssr" class="level4">
+<h4>Number of parallel input/output (SSR)</h4>
 <ul>
 <li>This parameter specifies the number of input (or output) ports and
 must be of the form 2^N, where N is a non-negative integer.</li>
 </ul>
-<h4 id="number-of-parallel-polyphases-interp_poly">Number of parallel
-polyphases (interp_poly)</h4>
+</section>
+<section id="number-of-parallel-polyphases-interp_poly" class="level4">
+<h4>Number of parallel polyphases (interp_poly)</h4>
 <ul>
 <li>Number of decimation polyphases into which data is split into for
 parallel computation. It must be integer divisible by interpolation
 factor.</li>
 </ul>
-<h3 id="advanced">Advanced</h3>
-<h4 id="number-of-cascade-stages">Number of cascade stages:</h4>
+</section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages:</h4>
 <ul>
 <li>Specifies the number of cascade stages. The tool will guarantee the
 same.</li>
 </ul>
+</section>
+</section>
+</section>
+</section>
 </body>
 </html>

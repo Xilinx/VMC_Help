@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Fast Fourier Transform 9.1</h1>
 </header>
-<h1 id="fast-fourier-transform-91">Fast Fourier Transform 9.1</h1>
+<section id="fast-fourier-transform-91" class="level1">
+<h1>Fast Fourier Transform 9.1</h1>
 <p>The Xilinx Fast Fourier Transform block implements the Cooley-Tukey
 FFT algorithm, a computationally efficient method for calculating the
 Discrete Fourier Transform (DFT). In addition, the block provides an
@@ -45,7 +46,8 @@ bits wide.</p>
 vector of N complex values represented as dual 32-bit floating-point
 numbers with the phase factors represented as 24- or 25-bit fixed-point
 numbers.</p>
-<h2 id="theory-of-operation">Theory of Operation</h2>
+<section id="theory-of-operation" class="level2">
+<h2>Theory of Operation</h2>
 <p>The FFT is a computationally efficient algorithm for computing a
 Discrete Fourier Transform (DFT) of sample sizes that are a positive
 integer power of 2. The DFT of a sequence is defined as:</p>
@@ -53,8 +55,9 @@ integer power of 2. The DFT of a sequence is defined as:</p>
 <p>where N is the transform length and j is the square root of -1. The
 inverse DFT (IDFT) is defined as:</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="axi-ports-that-are-unique-to-this-block">AXI Ports that are
-Unique to this Block</h2>
+</section>
+<section id="axi-ports-that-are-unique-to-this-block" class="level2">
+<h2>AXI Ports that are Unique to this Block</h2>
 <p>This System Generator block exposes the AXI CONFIG channel as a group
 of separate ports based on sub-field names. The sub-field ports are
 described as follows:</p>
@@ -96,7 +99,9 @@ on the real and imaginary sub-field names. The sub-field ports are
 described as follows:</p>
 <p>DATA Channel Input Signals:</p>
 <p>[TABLE]</p>
-<h2 id="block-parameters">Block Parameters</h2>
+</section>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The Block Parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Basic tab<br />
@@ -232,11 +237,17 @@ Choose one of the following:</p>
 </ul>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="block-timing">Block Timing</h2>
+</section>
+<section id="block-timing" class="level2">
+<h2>Block Timing</h2>
 <p>To better understand the FFT blocks control behavior and timing,
 please consult the core data sheet.</p>
-<h2 id="logicore-documentation">LogiCORE Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE Documentation</h2>
 <p>Fast Fourier Transform LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf">PG109</a>)</p>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</section>
+</section>
 </body>
 </html>

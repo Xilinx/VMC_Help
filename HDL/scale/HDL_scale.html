@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,13 +28,15 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Scale</h1>
 </header>
-<h1 id="scale">Scale</h1>
+<section id="scale" class="level1">
+<h1>Scale</h1>
 <p>The Xilinx Scale block scales its input by a power of two. The power
 can be either positive or negative. The block has one input and one
 output. The scale operation has the effect of moving the binary point
 without changing the bits in the container</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>The only parameter that is specific to the Scale block is Scale
@@ -44,7 +46,11 @@ The effect of scaling is to move the binary point, which in hardware has
 no cost (a shift, on the other hand, might add logic).</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="xilinx-logicore">Xilinx LogiCORE</h2>
+</section>
+<section id="xilinx-logicore" class="level2">
+<h2>Xilinx LogiCORE</h2>
 <p>The Scale block does not use a Xilinx LogiCORE™.</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,12 +28,16 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Bit Slice</h1>
 </header>
-<h1 id="bit-slice">Bit Slice</h1>
+<section id="bit-slice" class="level1">
+<h1>Bit Slice</h1>
 <p>Extract a range of bits from a value</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Logic and Bit Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Bit Slice block allows the element-wise extraction of a
 contiguous set of bits from the input values. The extracted bits are
 returned as unsigned fixed point values of an all-integer range, and you
@@ -56,7 +60,9 @@ Significant Bit options are equivalent. Offsets to specify the position
 relative to these anchors can be positive or negative. However, an error
 will occur during simulation and/or code generation if the extraction
 range lies outside of the input type bit range.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>The Bit Slice block accepts any real-valued integer or fixed-point
 type of any dimension N ≤ 2. Floating point values and complex numeric
 types are not supported.</p>
@@ -64,7 +70,9 @@ types are not supported.</p>
 type with integer-only range. The output data has the same width as the
 extraction range you specify.</p>
 <p>The output dimensions are the same as the input dimensions.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Specify range as</p>
 <p>The Specify range as parameter specifies the extraction range.</p>
 <ul>
@@ -161,5 +169,7 @@ sections of the block dialog box.</p>
 <p>Negative offsets specify bit positions to the right of the anchor
 (zero offset basis). Positive offsets specify bit positions to the left
 of the anchor.</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Viterbi Decoder 9.1</h1>
 </header>
-<h1 id="viterbi-decoder-91">Viterbi Decoder 9.1</h1>
+<section id="viterbi-decoder-91" class="level1">
+<h1>Viterbi Decoder 9.1</h1>
 <p>Note: This block goes into the FPGA fabric and is a Licensed Core.
 Please visit the Xilinx web site to purchase the appropriate core
 license.</p>
@@ -95,7 +96,8 @@ that for decoding.</p>
 </tbody>
 </table>
 <p>Table 1. Convolution Codes</p>
-<h2 id="block-interface">Block Interface</h2>
+<section id="block-interface" class="level2">
+<h2>Block Interface</h2>
 <p>The Xilinx Viterbi Decoder 9.1 block is AXI4 compliant. The following
 describes the standard AXI channels and pins on the interface.</p>
 <p>S_AXIS_DATA Channel<br />
@@ -222,7 +224,9 @@ Composer ties this pin to inactive (high) on the core.</p>
 Carries the clock enable signal for the decoder. The signal driving
 aclken must be <code>Bool</code>. This pin becomes available if ACLKEN
 option is selected on Page 5 tab.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+</section>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>Page1 tab<br />
 Parameters specific to the Page1 tab are as follows. Viterbi Type<br />
 Number of Channels<br />
@@ -344,7 +348,11 @@ decoding code symbols.</p>
 <p>Common Parameters used by this block, such as Display shortened port
 names, are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>Viterbi Decoder LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=viterbi;v=latest;d=pg027_viterbi_decoder.pdf">PG027</a>)</p>
+</section>
+</section>
 </body>
 </html>

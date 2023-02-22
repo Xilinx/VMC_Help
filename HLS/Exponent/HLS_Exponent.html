@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,16 +28,22 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Exp</h1>
 </header>
-<h1 id="exp">Exp</h1>
+<section id="exp" class="level1">
+<h1>Exp</h1>
 <p>Perform an element-wise exponential value of the input</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFhklEQVRoge2aXWhTVxzAf+fmq02bVJ1JGVjFFVGkk1kYSpkwLcPBBlIE516GvvigDDpxhSEM5vBhivjgVLoNlOFUEHwTH7q0A4cIdoIjm5tg/ShOzU2MSbu09fbeu4d+2LS5yT3Jbadpfo/3nv85/1/uuSfn4wrTNE3mCcr/ncBc4s53UwgxV3k4ilVnzSsLcOfOp44nM5s0Nh6zvDevunFFtlwp+M7K4PM14PO9IRXj9YYwjFFGR5NScW53kGfPujCMYfsxUi3koapqOYsXf4wQHqeqLMjgYC/Pnz+yXd6RblysqGlqqOqPpNM9mKYmFZdO90iJggOypYjG4+cYHr5LKnWFkZF+THPURtwoIyP9pFJXpHMtSdYJ0fErJBIXMIwhIN/s1cQwhkgkLhQol5uiZZ0THcMwhlHVnzAM66drGNp4GfuD0lSKknVadAJNe0IyeSnn+2uaGsnkJTTtSTEpA0XIzpboBJnMTTKZKDBVWCOTiZLJ/C6bbhZSsrMtOsHYE0wCBmCgaU9JJi9JtZkL27Je7+uEQp8UIToqJToWo6OqZ8fTU1DVs5imLtVuLmxPKkw0dP0ZhjEi1YCup9H1QenEdD3F48cnME0TXU9Lx+fCtqz2PI6qniUQbEEIl1QjgWALA+mraJoqFSdbvhBS76ymqQykr0p3KSFcBIIteDwhqTinUQDi8TiHDx9GVQv/kq+CsJWHAnDq1Ck6OjrYtGkTsVisYGUvu7CVhwKwY8cOmpqaiEajtLa2zolwZ+ctOjt/A+DkyV6OH78uVU8+rDwUgFAoRCQSmVPhfZ/vo6vrAbdvJ+jq6mPXrmapOvJh5TE5QIXD4RnCdihW2Ov1ceDrz9i27SIdHS14PHIjfD6sHlzWaDxd2C6TwhhZ1/v7n7B9+37eWL6FhiUfsHv3N2QyLybxqppi4cIFxJz9h8n54GKx2My/nnA4zPnz56UbcLlqqfIux+Opx+Opx+UKsf2jL1nasIy//u7hz1s/8zQxxN69J/B46hkequHbYxfp+eUMP3x/jVRKbrJSiKke0WiUPXv2IKYff8RiMVpbWyefrJ1941xz5mvXrrNx44eoah+1tTUA3Lhxkw0b3icev8v+/Qdobn6TzZs1zp27TG/vIw4e3FiyZGPjMUzTzPJoamoiEolkz6CmF7DTla0WB31999B1nUWLls2IefjwH44c+WpyztzWtoq2tlUlalp7RCIRwuHwC9lcBerr6/NWmm8VVF1dRSBQSyJxb8Y92VWQLLlEYXyAUlXVsoAVhZZ7jY3LGRgY5P79B5PXMpkhYrFHsyoKWHooAKdPn3ZUFGDNmibWr3+b9vYviMcTpNMDtLd3sHXrllkVBSw9FICdO3dy6NAhuru7HRGd4MyZ7zBNgxUr1rJyZTOq+gdHj75bvIVNrDxmjMZZN4XIGo3naqeiFCZG41zYXs9O7FTIUsxOxQRudwDTBF0fkI7NWZ/dgnO9U6EofuoWvAdA8unl8T3l0ngpdyqEUAjWtcB4dwwEW0inui27p11eyp0Kf81buJQaEAKEwO2qxV+zVqrNXEjvG8+2sM+3FJ9vCUztPcI1fhzaIJtuFkWdCMyWsMsVpKZ2LULMfLuEcFFT24zLXVdMykAJZz1OCwvhIVj3DkJYpySEQjDYUvQZcEmneE4KBwLrEIoXyPc5kkAoPgKBdUXlW/L5rBPCfv8q3J5FCBvpCBTcntfw++VXSY6cvJciHKzbQLV/dc73NF9ctX81bvcCqfYc+6ZiTPhX3J78c+vpuFwBQEfXM5JxVej6v1Ixjn4to2kJNC3hZJWOMq++g6rIlivzSrbg4v1VpKjFe7l9UT+vunFFtlypyJYrFdlypSJbrlRky5WKbLlSkS1XKrLlyn8v9SyJe5RIewAAAABJRU5ErkJggg==" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Exp block returns the exponential e^(x) for each element in
 array <code>x</code>. The block supports all data types except Boolean.
 The input can be scalar, vector or matrix.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data types accepted at the inputs of the block are:</p>
 <ul>
 <li>Dimension: Input can be scalar, vector, or matrix.</li>
@@ -46,7 +52,11 @@ floating point data type. It does not support Boolean inputs.</li>
 <li>Complex numbers are not supported.</li>
 </ul>
 <p>The output has the same dimension and type as the input.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Exponential block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

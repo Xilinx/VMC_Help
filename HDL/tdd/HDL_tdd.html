@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,11 +28,13 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Time Division Demultiplexer</h1>
 </header>
-<h1 id="time-division-demultiplexer">Time Division Demultiplexer</h1>
+<section id="time-division-demultiplexer" class="level1">
+<h1>Time Division Demultiplexer</h1>
 <p>The Xilinx Time Division Demultiplexer block accepts input serially
 and presents it to multiple outputs at a slower rate.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-interface">Block Interface</h2>
+<section id="block-interface" class="level2">
+<h2>Block Interface</h2>
 <p>The block has one data input port and a user-configurable number of
 data outputs, ranging from 1 to 32. The data output ports have the same
 arithmetic type and precision as the input data port. The time division
@@ -54,7 +56,9 @@ presented to the output at the rate of 2.</p>
 from a data frame should evenly divide the size of the input frame.
 Every input data frame value can also be qualified by using the optional
 valid port.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+</section>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Parameters specific to this block are as follows.</p>
@@ -71,5 +75,7 @@ value as part of the serial input data frame. The vout port marks the
 state of the output ports as valid or not.</p>
 <p>Parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
 </body>
 </html>

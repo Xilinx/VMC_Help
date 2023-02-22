@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,20 +28,26 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Min</h1>
 </header>
-<h1 id="min">Min</h1>
+<section id="min" class="level1">
+<h1>Min</h1>
 <p>Outputs the minimum value of an input or element-wise minimum value
 of multiple inputs.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions/Math Operation</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Min block with a single scalar or vector input outputs the
 minimum value of the input.</p>
 <p>If the block has more than one input, the non-scalar inputs must have
 the same dimensions. Any scalar input is expanded to the dimensions of
 non-scalar inputs and the block outputs element-wise minimum value of
 the inputs.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <ul>
 <li>The block supports floating-point, integer, and fixed-point data
 types.</li>
@@ -78,10 +84,14 @@ any input is signed, the output is signed. The bit width of the output
 is the largest among the bit widths of the inputs.</li>
 </ul></li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Number of inputs<br />
 This parameter determines the number of inputs.</p>
 <p>[TABLE]</p>
 <p>Table 1. Number of Inputs</p>
+</section>
+</section>
 </body>
 </html>

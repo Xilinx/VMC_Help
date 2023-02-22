@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -65,34 +65,33 @@ used in synchronous design (with a few rare exceptions).</p>
 <p>Parameters specific to the Basic tab are as follows:</p>
 <section id="optional-ports" class="level4">
 <h4>Optional Ports</h4>
-<ul>
-<li><h4 id="provide-synchronous-reset-port">Provide synchronous reset
-port</h4>
+<section id="provide-synchronous-reset-port" class="level5">
+<h5>Provide synchronous reset port</h5>
 <p>Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block&#39;s sample
-rate. The signal driving the reset port must be Boolean.</p></li>
-<li><h4 id="provide-enable-port">Provide enable port</h4>
+rate. The signal driving the reset port must be Boolean.</p>
+</section>
+<section id="provide-enable-port" class="level5">
+<h5>Provide enable port</h5>
 <p>Activates an optional enable (en) pin on the block. When the enable
 signal is not asserted the block holds its current state until the
 enable signal is asserted again or the reset signal is asserted. Reset
 signal has precedence over the enable signal. The enable signal has to
 run at a multiple of the block &#39;s sample rate. The signal driving the
-enable port must be Boolean.</p></li>
-</ul>
+enable port must be Boolean.</p>
 </section>
-<section id="latency" class="level4">
-<h4>Latency</h4>
-<ul>
-<li>Latency is the number of cycles of delay. The latency can be zero,
+<section id="latency" class="level5">
+<h5>Latency</h5>
+<p>Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port check box is not checked. The
 latency must be a non-negative integer. If the latency is zero, the
 Vector Delay block collapses to a wire during logic synthesis. If the
 latency is set to L=1, the block will generally be synthesized as a
 flip-flop (or multiple flip-flops if the data width is greater than
-1).</li>
-</ul>
+1).</p>
+</section>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
@@ -100,11 +99,9 @@ flip-flop (or multiple flip-flops if the data width is greater than
 <p>Parameters specific to the Implementation tab are as follows:</p>
 <section id="implement-using-behavioral-hdl" class="level4">
 <h4>Implement using behavioral HDL:</h4>
-<ul>
-<li>Uses behavioral HDL as the implementation. This allows the
-downstream logic synthesis tool to choose the best implementation.</li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Uses behavioral HDL as the implementation. This allows the downstream
+logic synthesis tool to choose the best implementation.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>

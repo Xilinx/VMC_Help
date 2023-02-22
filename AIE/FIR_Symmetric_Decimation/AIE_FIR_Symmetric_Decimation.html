@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,24 +28,32 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">FIR Symmetric Decimation</h1>
 </header>
-<h1 id="fir-symmetric-decimation">FIR Symmetric Decimation</h1>
+<section id="fir-symmetric-decimation" class="level1">
+<h1>FIR Symmetric Decimation</h1>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAABjCAYAAABJ979AAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAPAElEQVR4nO3de3xTZZ7H8c+TNGlpadMWWmqFCkK51A6KKAq6cimuNxZ3ZlTYYVYuw8gKo051rHgZfQ2i8pIRRwVFhtFVdIYZR0dX6ipaZHalrHhh1FApFSj30pbSKyRpTs7+kba0tgm9JKdJ+nu/XrxeaXLyPCdp8+U8v3PyPErXdR0hhDCAqbd3QAjRd0T5e1ApZdR+CCEiiK+Bk9/AAWj8eFzAd0YIEbksU3f6fEyGVEIIw0jgCCEMI4EjhDCMBI4QwjBnLRqLCBSfhZ44PuDNqrjz0DUHOI4HvO0W0QNRpb8Hd33w+hBBI4HT1ySOQx/9KJijA960YVeQlr0L9d8Z1ZsIIBlS9SVBDBs0J2pXHhz+E2jOwLcP4HGgStdK2IQxCZy+Ithhs/vXUL0TdfA/4VQp6FpAu1AeJ1QVwpG3AtquMJYETl9gUNgAoHtQux8GzRG4PnQPuuMoquS3GDhwE0EggRPpjAybZq4qVPEy0FwB6qcBtWspeBoD057oNRI4kaw3wqZZ9Zdw7M2e13M0J6roAXBV9awdERIkcCJVb4ZNkx7XczxO2Pcs1O3u3vNFyJHAiUQhEDZAz+o5mgOOv48q39z154qQJYETaUIlbJp1p57jaYSGvaj9L3R9H0VIk8CJJKEWNs26VM/RQavzHhkF+NS66H0SOJEiVMOmSafrOZoTZb8PGmu73ZcIXRI4kSDEwwboVD1HeZywZ4U3mEREksAJd+EQNs381XM0Bxz9K6pqW2D6EiFJAiechVPYNOuonuNxQe3XcODVwPYlQo4ETrgKx7Bp0rae4wHXCVTxcu9tEdEkcMJR3Ej0C54MTth4XEENG+BMPUeZAZO3SKydDl5/ImTIfDjhSNPgVD24g/DdotO14DDgw++qQn25AJQJnMeC358ICcrfyptKKVkmJlTFjEZPWQIma+Db9rhQFWvAIV8pEF1nmbrT57pUMqQKV47d3lDwBOgb2a2ZrN4wixkd+LZFnyaBE84kdESYkcAJdxI6IoxI4EQCCR0RJiRwIoWEjggDEjiRREJHhDgJnEgjoSNCmAROJJLQESHKBFBZWcnKlSupqKjo7f0RgSKhI3qRrywxAbz88svk5eUxbdo0ysvLDd0xEUQSOqKX+MoSE8C8efPIzs7GbreTk5MjoRNJJHREL/CVJSaAlJQUCgoKJHR6oPigg/hrvmLUnKKWfwufPEh1vcaI2bsAWPdflaTd+A0X3FrEBbcWkfXvRby2uf16S5pHJ/e5w1x6224m3l7M1LtK2HukB+s7dTN0Cr/4isqT1e3uf+jJNbz3cdNEWX5Cp/XrzZ77LfOfOEBZVde/cDrlzhJqGro/v3GhvYHKGjc1DRpT7izpdjui83xlSUvRODU1tV3oiK65eGQ/il/Pavm3Pi+j3Ta3zRzIrlez2PVqFlufG8nDfzhGZY27zTZv/28N1fUaO14czfYXRvEfNw7kd2/08D+AboTOa2+9x4mq9oGzPG8J10+94swdfkKn+fXaXxnDVRf2Z+bSfWieri3Xu/XZTGxx5i49p7UNH1RxosaNLc7M1mczu92O6DxfBzBtpqdoDp2cnBzsdnuv7GhfkpoYxeiMaPYddTLQduZXUXdKw63pKOX9eda0JGZNS+LDz+t45b9P8NqvhwKweNUhrr40nsc3lHHT5CTs+0/T6Na5LCuOL/ec4pTDw5vLz+dXzx/B1ajjcB2k5OhHzLn5Z+z4qoiikn28sXYlaSkDuHvZUxTvLcXpaiR34RySEhN454OtlOw/yJrlS5mb+zApA5L46Q+v59N/2Jl82XhmTP8nbn/gcezFe4m2Wli/8mGGR78Ozn0dvt751w8gf3sNmwprufFKG7nPHab4oANno07uLanMmGSj0N7A3asPoxTcMNHGQ7emMX7hbgp+l8nyV8uaXoeHksNOfnp1Mp9+20BRqYO/PjqMxP5m5j1+gKpajfrTGk8sOhdLlOKdT6opOexgTe4QfrKslC/Wj2bHtw3ct/YosdEmbHFm1i/NoOCLOv74YRW2/mb2H3Ux8wobS36UEuw/g4j0/SzJycmhoKCg/Wnx1NRUNm7c2Bv72OeUlrkoKnUwckhMm/t/PDmJIxWNZM/9ll89f4Rt39QDkHNxvDdInB50HT75up7rL7dhUooJWbFseGgoe486OT89mg0PDaWqTqO0zIVJQXKCmXX3ZjA+O52iw8d58fmnmJ4zmc07viZ/+06wRpP/t9d4+y8vc//K57l88lWMuyib1U8/TnrmSL7eXcLa557kljmzwBoNsXG8/T+foVusbCt4m3tyF/NWwTYw+7/S4uKRsRSVnmZTYQ0A760cwTtPDOf+dUfxeOAXTx/iz78ZRuHzo/jqu9OcqD1z9NfmdYyKZVfpadbdm8H0S+LZvKOO4yfd/MsVNjavGsGL92aw4vUyJmXHMS4zljW5QxiUbGlp6xdPH2bdvRnkPzmc89KsbHi/CpOC/cdcrL0ng7ceO5/Vf5Oztj3ROkvsdjtLlixpPwFXeXk5s2fPNnznIsHOktNccGtRy883TUki95bUNtu8lF9J/vYaHC4PTpfOurwMEvu3HS7Ex5rY8kwmX+89zQc7aln020PMmJTAikXnMvNKG/nbaxiWFs1lWXFEW7yHQVlD+wGQHB/FmPNimm6bqW2qfWQNjUFPySFpuImU1EGQkERS2jnUuNzs+aqIzVsLmf6juQBoOlS6dIiyQP8EiE8kPT2d9FFNQyZrDMT2Z+dnXzLxqish3sYN/3otMzK3QP13ft+jRrdOv2gT23c1sPmzWnJ+6a2paJrOsapGTta5OW+Qd46fN5YNa/f8rKFnXltKYlTL7ZoGjbRkC4X2BjYWnETXoaq247qPW9OpqG4kc7B3xsSJ2XG89381DE61ceEI7/sYF2OisbFrQz/RVussyc7OZs2aNW0Dp7y8vOUQqHn8JTpvXGY//v7cyDb3Vde3/aNfcMNAlv3sHKrqNCbdXsy4zNh27TQ4PFiiFGOH92Ps8H4snDGQ0XN2sWLRudx6zQAefeUYI4fE8G/Tk1qe0/rAovXt5nmQzAMmoEbkglqNudUGuq5jtVq5445FLFo03+dri45uP9GX2WzGo2mgNaC+ubtTy7ts39XA3bNS2W5v4M4fp7LoxoEtjzW6z/4BN5tUh7d1Xeel/EqsUYp3VwyntMzFrEf2+2yn9fxQHo+OqWn82rpN0X3fz5KCggJSU1PPDKk62kAET3K8mbtuSuH+dUfbPZb3whGe2ni85ec9hxxkpHk/8FlDYyg/6abQXs+Ui+I711n8GEiZjm7qeA7kSy8dT37+BwDU1dWzdOkjAJhMJpxO32fHLhl/IVu2FKD+sYSPt33D0heP+N2Nl/JPUNugcfUlCUzIimPTdu+wqu6Uh/vWHsESpUhJtLD7gANdh5sf3s/his6f1SqrcjPsHO/79ObWalxNAWYygbPV0UqUWTEo2dsPeM9iXTyyX6f7EWfXUdhAU9G4oqLC5wYieG6bOZBLf15Mob2BSdlxLfc/fls6i586xNh53xJjNREfa+Llpee1PH7NhAQqqt2YOvHFFP3cmyG+HEy+p6++9tocPvroY6ZMuQFN08jNXQzAFVdczqxZ83n99fXtn+TRuO6fx/Peq/czacFJrBYTf7iv/Vm59ZsqeecT74d/7Pn9ePuJ4SgF105I4MPPapl8xx40Dy1Dz9W5g1mw4gBuDWZeaWNwiqVdm77MzklizrJS3v+0lnnXDwDg9+9WcuUP+nPLI/vZ8OCZ93BN7hAWrzpEjFWRmmTh0YXpfPS5rPYZKL6yROm6rq9cuZK8vLx2G8icxqFH1+G6e7/jmTsHMyojxs+WJvTMe2DAVWD2t103eBrBcQRlv0eW5BXtWKbu9HngEgUwf7537D5v3jxSUuQ0YKg6WO7ihw/s4+apSf7DRkWhj34IbOMDHjbK40Jv2IfadR9opwLatogcW7Zs6TBLZNWGSGOyoo95DBLGgI+aTbdpTlR9ERQ96D3KEaID/lZtkHWpIok51rtAXtywwC8fozlQ1Z9D8WOgu8++vRAdkMCJFJYE9OxVEHNOUMKGE3+HklXIcryiJyRwIoBuHQBjnwFLMpg6f1anUzwOKNuEKl0HyIVwomckcMJdTBqMfRaiEprW6g4gjxN1+E9w6I+BbVf0WRI44Sx2KPoPVoE5zrtGdwApjxP2vwhl7wa0XdG3SeCEq/6jvAVic0zAwwbNif7dKlTllsC2K/o8CZxwFDcC/cLVwWnb04ja8yhUfRqc9luzpIFS4DoW/L5ESJDACUeaB07VgzsI18KcroVTNYFv9/vMNvT03wCgjjwI7srg9yl6nVz4F65iRntn2Qv0KXAAj8s7O6Bjd+DbBlAKfdBSsA7xHuG4T6COLgfdEZz+hKH8Xfgn61KFqzCeHF233QiWc5rOqpnAnIie8nPkzzHyyW84nIVj6MSMgYSctl+7UBaIHgmJMwLblwg5EjjhLpxCx2xDT1kEqoNhoMkKCVejx14UmL5ESJLAiQThEDpKoacs7jhsmujKCgMXgCW9Z32JkCWBEylCPHTa1m38UBb0Qb/0XswoIo4ETiQJ1dDpqG7juyMwxXn7kj/PiCO/0UgTaqHjr27ji4oC62D05Fld30cR0iRwIlGohE4n6ja+nxsN/Seh95/Y9eeKkCWBE6lCIHQ6XbfxRVkh+ScQ3X59KhGeJHAiWW+GTpfqNn4oK3rqHWC29awdERIkcCJdb4ROd+o2fvuJQU+9y3uBoAhrEjh9gZGh05O6jU9mlCUFfeBcQFbGDGcSOH2FQaHT47qND7qyQr+xED8toO0KY0ng9CXBDp1BuWC7LvDL0zRT0ejJt0B0+xU+RXiQ+XD6GsduVPnT6DFZAW9aWdPQPS5wVwW87RZRidAoc+eEKwmcvsi5D+XcF5SmpcIi/JEhlRDCMBI4QgjDSOAIIQwjgSOEMIwEjhDCMBI4QgjDnHWZGCGE6CpfseL3Ohw/WSSEEF0mQyohhGEkcIQQhpHAEUIYRgJHCGEYCRwhhGEkcIQQhpHAEUIYRgJHCGEYCRwhhGEkcIQQhpHAEUIYRgJHCGEYCRwhhGEkcIQQhpHAEUIYRgJHCGEYCRwhhGH+H22rR0dzVtQ6AAAAAElFTkSuQmCC" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AIE Engine/DSP/Window IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block implements the FIR Symmetric Decimation Filter targeted
 for AI Engines.</p>
-<h2 id="parameters">Parameters</h2>
-<h3 id="main">Main</h3>
-<h4 id="input-data-typeoutput-data-type">Input data type/Output data
-type</h4>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="input-data-typeoutput-data-type" class="level4">
+<h4>Input data type/Output data type</h4>
 <ul>
 <li>Describes the type of individual data samples input to and output
 from the filter function. int16, cint16, int32, cint32, float,
 cfloat.</li>
 </ul>
-<h4 id="filter-coefficients-data-type">Filter coefficients data
-type</h4>
+</section>
+<section id="filter-coefficients-data-type" class="level4">
+<h4>Filter coefficients data type</h4>
 <ul>
 <li><p>Describes the type of individual coefficients of the filter taps.
 It should be one of int16, cint16, int32, cint32, float, cfloat and must
@@ -61,13 +69,16 @@ Input/Output data type is an integer type.</li>
 Input/Output data type is a float type.</li>
 </ul></li>
 </ul>
-<h4 id="specify-filter-coefficients-via-input-port">Specify filter
-coefficients via input port</h4>
+</section>
+<section id="specify-filter-coefficients-via-input-port" class="level4">
+<h4>Specify filter coefficients via input port</h4>
 <ul>
 <li>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via the input port.</li>
 </ul>
-<h4 id="filter-coefficients">Filter coefficients</h4>
+</section>
+<section id="filter-coefficients" class="level4">
+<h4>Filter coefficients</h4>
 <ul>
 <li>This field should only be supplied for the first half of the filter
 length plus the center tap for odd lengths i.e., taps[] = {c0, c1, c2,
@@ -77,32 +88,41 @@ where FILTER_LENGTH is odd. For example, a 7-tap filter might use coeffs
 the context of symmetry allows the remaining coefficients to be
 inferred.</li>
 </ul>
-<h4 id="filter-length">Filter length</h4>
+</section>
+<section id="filter-length" class="level4">
+<h4>Filter length</h4>
 <ul>
 <li>This is an unsigned integer which describes the number of taps in
 the filter. The filter length must be in the range 4 to 240 and must be
 an integer multiple of the decimation factor.</li>
 </ul>
-<h4 id="decimation-factor">Decimation factor</h4>
+</section>
+<section id="decimation-factor" class="level4">
+<h4>Decimation factor</h4>
 <ul>
 <li>An unsigned integer which describes the decimation factor of the
 filter. It must be in the range 2 to 3. For larger factors, use the FIR
 Asymmetric decimation filter.</li>
 </ul>
-<h4 id="input-window-size-number-of-samples">Input window size (Number
-of samples)</h4>
+</section>
+<section id="input-window-size-number-of-samples" class="level4">
+<h4>Input window size (Number of samples)</h4>
 <ul>
 <li>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be the input
 window size divided by decimation factor by virtue of the decimation
 factor.</li>
 </ul>
-<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
 <ul>
 <li>Describes power of 2 shift down applied to the accumulation of FIR
 terms before output. It must be in range 0 to 61.</li>
 </ul>
-<h4 id="rounding-mode">Rounding mode</h4>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
 <ul>
 <li>Describes the selection of rounding to be applied during the shift
 down stage of processing. The rounding options are as follows:</li>
@@ -121,15 +141,19 @@ down stage of processing. The rounding options are as follows:</li>
 <li>Modes 2 to 7 round to the nearest integer. They differ only in how
 they round for the value of 0.5.</li>
 </ul>
-<h3 id="advanced">Advanced</h3>
-<h4 id="target-input-throughput-msps">Target input throughput
-(MSPS)</h4>
+</section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
+<section id="target-input-throughput-msps" class="level4">
+<h4>Target input throughput (MSPS)</h4>
 <ul>
 <li>Specifies the rate at which data samples should be processed. The
 default value is 200.</li>
 </ul>
-<h4 id="specify-the-number-of-cascade-stages">Specify the number of
-cascade stages</h4>
+</section>
+<section id="specify-the-number-of-cascade-stages" class="level4">
+<h4>Specify the number of cascade stages</h4>
 <ul>
 <li>When this option is not enabled, the tool will determine the filter
 configuration that best achieves the specified input sampling rate. When
@@ -137,5 +161,9 @@ the option is enabled and the &#39;Number of cascade stages&#39; is specified,
 the tool will guarantee the same. In such cases, however, the specified
 input sampling rate constraint may not be achieved.</li>
 </ul>
+</section>
+</section>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Relational</h1>
 </header>
-<h1 id="relational">Relational</h1>
+<section id="relational" class="level1">
+<h1>Relational</h1>
 <p>The Xilinx Relational block implements a comparator.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <p>The supported comparisons are the following:</p>
@@ -41,7 +42,8 @@ vertical-align: middle;
 <li>greater-than-or-equal-to (a &gt;= b)</li>
 <li>The output of the block is a <code>Bool</code>.</li>
 </ul>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>The only parameter specific to the Relational block is:</p>
@@ -51,8 +53,12 @@ block.</li>
 </ul>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p><a href="https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf">LogiCORE
 IP Floating-Point Operator v7.1</a></p>
+</section>
+</section>
 </body>
 </html>

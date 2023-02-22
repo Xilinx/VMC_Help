@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">FDATool</h1>
 </header>
-<h1 id="fdatool">FDATool</h1>
+<section id="fdatool" class="level1">
+<h1>FDATool</h1>
 <p>The Xilinx FDATool block provides an interface to the FDATool
 software available as part of the MATLAB® Signal Processing Toolbox.</p>
 <p><img src="data:image/png;base64,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" /></p>
@@ -37,7 +38,8 @@ Signal Processing Toolbox is not installed. This block provides a means
 of defining an FDATool object and storing it as part of a Model Composer
 model. FDATool provides a powerful means for defining digital filters
 with a graphical user interface.</p>
-<h2 id="example-of-use">Example of Use</h2>
+<section id="example-of-use" class="level2">
+<h2>Example of Use</h2>
 <p>Copy an FDATool block into a Subsystem where you would like to define
 a filter. Double-clicking the block icon opens up an FDATool session and
 graphical user interface. The filter is stored in an data structure
@@ -59,7 +61,9 @@ following diagram:</p>
 initialize a memory block or a <code>&#39;coefficient&#39;</code> variable for a
 masked Subsystem containing an FIR filter.</p>
 <p>This block does not use any hardware resources.</p>
-<h2 id="fdatool-interface">FDATool Interface</h2>
+</section>
+<section id="fdatool-interface" class="level2">
+<h2>FDATool Interface</h2>
 <p>Double-clicking the icon in your Simulink model opens up an FDATool
 session and its graphical user interface. Upon closing the FDATool
 session, the underlying FDATool object is stored in the UserData
@@ -67,5 +71,7 @@ parameter of the Xilinx FDATool block. Use the
 <code>xlfda_numerator()</code> helper function and
 <code>get_param()</code> to extract information from the object as
 desired.</p>
+</section>
+</section>
 </body>
 </html>

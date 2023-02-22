@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -40,15 +40,11 @@ block can be a sine wave, a cosine wave, or both. When implemented in an
 FPGA or SoC, the Sine Wave block optimizes the block parameters for your
 target device.</p>
 <p>The output of the Sine Wave block is determined by this equation:</p>
-<ul>
-<li>y = sin (2π(k+o)/p)</li>
-</ul>
+<p><em>y = sin (2π(k+o)/p)</em></p>
 <p>where:</p>
-<ul>
-<li><p>p = number of time samples per sine wave period</p></li>
-<li><p>k = repeating integer value that ranges from 0 to p-1</p></li>
-<li><p>o = offset (phase shift) of the signal</p></li>
-</ul>
+<p>p = number of time samples per sine wave period</p>
+<p>k = repeating integer value that ranges from 0 to p-1</p>
+<p>o = offset (phase shift) of the signal</p>
 <p>In this block, Model Composer sets k equal to 0 at the first time
 step and computes the block output, using the formula above. At the next
 time step, Simulink increments k and re-computes the output of the
@@ -75,55 +71,51 @@ block in your design instead of the Sine Wave block.</p>
 <p>Parameters specific to the block are as follows:</p>
 <section id="system-parameters" class="level3">
 <h3>System Parameters</h3>
-<ul>
-<li><h4 id="select-the-input-format">Select the input format</h4>
-<ul>
-<li>Specifies whether the frequency and phase offset inputs are entered
-as a Frequency (Hz) or an angular velocity (Radians) value.</li>
-</ul></li>
-<li><h4 id="frequency">Frequency</h4>
-<ul>
-<li>Specifies the frequency, either in Hertz or radians. The default is
-1.</li>
-</ul></li>
-<li><h4 id="phase-offset">Phase Offset</h4>
-<ul>
-<li>Specifies the phase shift, either in Hertz or radians. The default
-is 0.</li>
-</ul></li>
-</ul>
+<section id="select-the-input-format" class="level4">
+<h4>Select the input format</h4>
+<p>Specifies whether the frequency and phase offset inputs are entered
+as a Frequency (Hz) or an angular velocity (Radians) value.</p>
+</section>
+<section id="frequency" class="level4">
+<h4>Frequency</h4>
+<p>Specifies the frequency, either in Hertz or radians. The default is
+1.</p>
+</section>
+<section id="phase-offset" class="level4">
+<h4>Phase Offset</h4>
+<p>Specifies the phase shift, either in Hertz or radians. The default is
+0.</p>
+</section>
 </section>
 <section id="output-selection" class="level3">
 <h3>Output Selection</h3>
-<ul>
-<li><h4 id="sine_and_cosine">Sine_and_Cosine</h4>
-<p>Places both a sine and cosine output port on the block.</p></li>
-<li><h4 id="sine">Sine</h4>
-<p>Places only a sine output port on the block.</p></li>
-<li><h4 id="cosine">Cosine</h4>
-<p>Places only a cosine output port on the block.</p></li>
-</ul>
+<section id="sine_and_cosine" class="level4">
+<h4>Sine_and_Cosine</h4>
+<p>Places both a sine and cosine output port on the block.</p>
+</section>
+<section id="sine" class="level4">
+<h4>Sine</h4>
+<p>Places only a sine output port on the block.</p>
+</section>
+<section id="cosine" class="level4">
+<h4>Cosine</h4>
+<p>Places only a cosine output port on the block.</p>
+</section>
 <section id="spurious-free-dynamic-range-sfdr" class="level4">
 <h4>Spurious Free Dynamic Range (SFDR)</h4>
-<ul>
-<li>Specifies the precision of the output produced by the Sine Wave
+<p>Specifies the precision of the output produced by the Sine Wave
 block. This sets the output width as well as internal bus widths, and
-controls various implementation decisions.</li>
-</ul>
+controls various implementation decisions.</p>
 </section>
 <section id="explicit-sample-period" class="level4">
 <h4>Explicit Sample Period</h4>
-<ul>
-<li>If checked, the Sine Wave block uses the explicit sample time
+<p>If checked, the Sine Wave block uses the explicit sample time
 specified in the Sample Period box below. If not checked, the Model
-Composer base period will be used as block sample time.</li>
-</ul>
+Composer base period will be used as block sample time.</p>
 </section>
 <section id="sample-period" class="level4">
 <h4>Sample Period</h4>
-<ul>
-<li>If Explicit Sample Period</li>
-</ul>
+<p>If Explicit Sample Period</p>
 </section>
 </section>
 </section>
@@ -149,7 +141,7 @@ selected, specifies the sample time for the block. =&gt; 1MHz/20KHz =
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/dds_compiler/v6_0/pg141-dds-compiler.pdf">LogiCORE
+<p><a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg141-dds-compiler&amp;ft:locale=en-US">LogiCORE
 IP DDS Compiler v6.0 Product Guide</a></p>
 </section>
 </section>

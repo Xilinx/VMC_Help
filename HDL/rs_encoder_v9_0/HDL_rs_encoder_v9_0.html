@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Reed-Solomon Encoder 9.0</h1>
 </header>
-<h1 id="reed-solomon-encoder-90">Reed-Solomon Encoder 9.0</h1>
+<section id="reed-solomon-encoder-90" class="level1">
+<h1>Reed-Solomon Encoder 9.0</h1>
 <p>Note: This block goes into the FPGA fabric and is a Licensed Core.
 Please visit the Xilinx web site to purchase the appropriate core
 license.</p>
@@ -68,8 +69,8 @@ polynomial has the form:</p>
 <p>g(x)=(x-α^(j))(x-α^(j+1)...(x-α^(i+n-k-1))</p>
 <p>where <code>α</code> is a primitive element of the finite field
 having n + 1 elements.</p>
-<h2 id="block-interface-channels-and-pins">Block Interface Channels and
-Pins</h2>
+<section id="block-interface-channels-and-pins" class="level2">
+<h2>Block Interface Channels and Pins</h2>
 <p>The Xilinx Reed-Solomon Decoder 8.0 block is AXI4 compliant. The
 following describes the standard AXI channels and pins on the
 interface:</p>
@@ -140,7 +141,9 @@ the number of bits required to represent the parity bits (n-k) in the
 default code word, n being the &quot;Symbols Per Block&quot; and k being &quot;Data
 Symbols&quot;. Selecting this input significantly increases the size of the
 core.</p>
-<h2 id="other-optional-pins">Other Optional Pins</h2>
+</section>
+<section id="other-optional-pins" class="level2">
+<h2>Other Optional Pins</h2>
 <p>aresetn<br />
 Resets the encoder. This pin is added to the block when you specify
 ARESETn on the Detailed Implementation tab. The signal driving ARESETn
@@ -152,7 +155,9 @@ symbols.</p>
 Carries the clock enable signal for the encoder. The signal driving
 aclken must be <code>Bool</code>. Added to the block when you select the
 optional pin ACLKEN.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+</section>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The Block Parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Attributes<br />
@@ -335,7 +340,11 @@ LogiCORE.</p>
 Specifies the number of marker bits.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>Reed-Solomon Encoder LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=rs_encoder;v=latest;d=pg025_rs_encoder.pdf">PG025</a>)</p>
+</section>
+</section>
 </body>
 </html>

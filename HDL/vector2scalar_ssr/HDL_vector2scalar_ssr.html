@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,10 +28,12 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Vector2Scalar</h1>
 </header>
-<h1 id="vector2scalar">Vector2Scalar</h1>
+<section id="vector2scalar" class="level1">
+<h1>Vector2Scalar</h1>
 <p>The Vector2Scalar block converts vector type input to scalar type
 output.</p>
-<h2 id="description">Description</h2>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Vector2Scalar block does the bit level concatenation of all the
 elements of the input vector to produce a scalar output.</p>
 <p><img src="data:image/png;base64,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" /></p>
@@ -40,15 +42,21 @@ elements of the input vector to produce a scalar output.</p>
 output 3720 of type <code>Ufix_12_0</code>, whose binary value is 111
 010 001 000. This value represents input vector when you split it into
 four groups each of 3 bits.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <ul>
 <li>The inputs must be Boolean or unsigned fixed-point signal.</li>
 <li>All inputs must have binary set to 0.</li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector support for the primary block
 operation.</p>
+</section>
+</section>
 </body>
 </html>

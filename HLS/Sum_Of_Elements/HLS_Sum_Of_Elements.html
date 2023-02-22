@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,18 +28,24 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Sum of Elements</h1>
 </header>
-<h1 id="sum-of-elements">Sum of Elements</h1>
+<section id="sum-of-elements" class="level1">
+<h1>Sum of Elements</h1>
 <p>Perform element-wise addition on the input, column-wise, row-wise, or
 in all dimensions</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFHUlEQVRoge2aP2wTVxyAv3d3toMT2xGJXSqVSmkkCsiqSlsJ1SpDsdoVgaoIJNTCAgOquqUDS7dKRJ1QEFsCUvkvWlUKlYocBERMHWhldYhAHRgKvjgmhpqEy911sEOd2OfcO5/T1PEneTm/33u/z+/d+f05Ydu2zQZB+a8TWEu0Rl8KIdYqD19xGqwNZQEePvzS92RayeDgacfvNtQw7si2K6ves7KEQlsJhd6SigkG41jWIouLBak4TYvy9OlNLGveXXmp2lehq2uA/v5DCBHws9qGPH/+Ky9f/uWqrG/D2KuobRvo+nmKxVvYtiEVVyzeci0KPsk2Izozc5H5+T+Zm7vLwsIjbHvRRdwiCwuPmJu7K9Ve07J+iFaukM9fxbJeAI1msDaW9YJ8/uoq5WppStY/0TKWNY+uf49lOfeuZRmVMu4eStV4lvVbdAnDeEKhMFH3/rVtg0JhAsN44ilnT7KtEl2iVPqNUikLVAsblEpZSqXf5ROuIC3batElyj1YACzAwjBmKRQmZNNdhpRsMPg68fjnHkQXpUTLMSa6fqGSooKuX8C2Tal2VyI1qbAxMM2nWNaCVCOmWcQ0n0vFlOPmePz4DLZtY5pF6fiVSMkaL2fQ9QtEoimEUKUaikRTPCvewzB0qTjZ8o2QvmcNQ+dZ8Z70kBJCJRJNEQjEZZv0DQVgZmaGkZERdN3dr7jehZ08FICxsTGGh4fZu3cvuVzOVYXrWdjJQwE4cuQIyWSSbDZLOp1uifDU1H16Yx/TtzlNf9+nDAx8w7Zto5w8eUtSZXWcPBSAeDxOJpNpqfAH7+/gw9Q7DH/9BfnZDPnZDDP5Xzh1asijkjNOHq8eUIlEokbYLW6EuzaFuHLlW25MTHH27HWgdUPaqeOWPY1XCsvwShjLsUwkEub6DyOMj/3E5cs3gbJwNLYHLdAn6+RIvY7L5XK1fz2JRIJLly55akRVe+gKDhAIvOb42bJlG4cPf8adO3+8uqaqvSgi2LSkk0c2m+XEiRO1k4pcLsfBgwelK6+eM6tEHctNTt7h3LkfuX37BgGtrzxnLlyU2nFwQ7VHMplkdHR0ec/mcjnS6TTZbJZkMum6YreLg+npBxw79hXXrp2nv79PenHglpUemUyGRCLxr2y9Am5wK5rPz3LgwGHOnPmOHTvebpkoUFcUKnNjXdcdCzRCZrmXydxmevoB+/YdqlyxAZtwOMD9+8c9i9XDyUMDGB8fb6kowNDQfoaG9re0R5dw8tAAjh49CpRnUvH46v95a7WA98rk5GRdD9HoMFoIUXOKt95FBwdPez+yrGZpp0IWLzsVS2haBNsG03wmHVtTl0zhtd6pUJQwsd5PACjM/lzZU/bOut2pEEIhGktBZUhGoimKc5OOQ9QN63anItz9LqrSDUKAEGhqD+HuXbLpLsPTvnGrhUOhNwmF3oDq0SPUynHoVi8pA02cCLRKWFWjdPfsQojaO0wIle6e91C1mKecmzrr8VtYiADR2EcI4ZyWEArRaMrTGXDTp3h+CkciuxFKEGj0SpJAKCEikd3SufpyPuuHcDi8HS2wGeEiJYGCFugjHN4u1Z5vJ+/NCEdje9gU3ln3Pm0Utym8E03rdR3j6zsVZeEptMDqC4lqVDUCmJhmSTKuC9P823V539+WMYw8hpH3u1pf2FDvQXVk25UNJbvq4v3/iKfFe7u9Ub+hhnFHtl3pyLYrHdl2pSPbrnRk25WObLvSkW1XOrLtyj8TlvD+II+kHwAAAABJRU5ErkJggg==" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block performs element-wise addition on a vector or matrix type
 input. If input is a scalar then this block operates as a pass-through.
 The output is a scalar type if input is a vector or a matrix and the Sum
 over parameter is set as All dimensions.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data type support for the block is:</p>
 <ul>
 <li><p>The Sum of Elements block supports any floating-point,
@@ -50,7 +56,9 @@ parameter.</p></li>
 <li><p>The block can perform element-wise addition on real or complex
 number data.</p></li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Sum over</p>
 <p>The Sum over parameter value is used to decide whether elements will
 be added in all dimensions or in one of the dimensions.</p>
@@ -97,5 +105,7 @@ value is set to Specified dimension.</p>
 </tr>
 </tbody>
 </table>
+</section>
+</section>
 </body>
 </html>

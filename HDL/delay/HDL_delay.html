@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -30,7 +30,7 @@ vertical-align: middle;
 </header>
 <section id="delay" class="level1">
 <h1>Delay</h1>
-<p>The Xilinx Delay block implements a fixed delay of L cycles.</p>
+<p>The Delay block implements a fixed delay of L cycles.</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABpCAYAAADWQGYEAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAIp0lEQVR4nO2dy1MbyR3Hv90z0ugxEhIg8fZ7N8mWvK7cfPDFcHYOjnPH92Tz2C0f7Zsria++JDngWyqb/ANxiuKSg5OLaw14d415GONYCIwQyEKv6c6BxwqQBJK6WwP054ZmanrUH3X3b7r7NxDOOYfGtdB234CmPma9g4QQVfdx5qnVkdUVBAD//iYp/GY0+7lxrbfmMd3FuRwtyOVoQS5HC3I5WpDLOTKKU0Uo4EE0ZEm5ts8ywDlHocikXL8Sj0nxJrmJsiPm+d8VgjpsLz67EAGlp+O5a3ltC9mtkpBrtb2Lky2HMY6X8+uY+98mGJM7q+UwjsXlrDA5QJtbkAo5M0sbSG8WgE3A9nvQ3WFJKY9zIJsr4e3yR6HXbVsLUiFn/v0mVtfze5+9XsogVyhDxvRw2WH47k1G+HXbIki2HIdxvF3+iOSHrX2fcw68nF9H2REbLOx2o6KvC7RBkIqWk1zNYWmleldTKjNMzaWFjUcO41hIih13KlEqSEXLSaXzWEhm656Xy5fx/WKmZUmMcWSyRbxfzbV0nXooE6Si5aQ3Cph9t3Gs89c2ClhaybUkqeQwvFoUP+5UokSQCjmZj0W8ettYZb1dzmI9W2xKkrMz7jiSQ3fpgqTL4RzZrRK+W8g0FZ19v5hBvuTUXDCrhsM4Zt9tIJcvN15gg0gVpELOVt7B9Pw6WJOxM2Mc03PpY7cExjg+ZPJYSeePPlkA0gTJlsM5UCg6mJxba3mwL5bYtuQjrsM5UCg5mF3abKm8RpAiSL4cjmLZweRsGo6gSclsroTZdxt1JTG+Pe4021qbQbggFS2n7HC8eL2GUlnsg2EqnUdybatqd8cYx6vFDPJFR2iZRyFUkIpZaYcxvHi9hmJJztLBwvtNZHOlfa2EMY7k2hbWNgpSyqyHMEFK5Dgck7Npqb9izoFv36yjVGLgfLs7zRXKWHivbtypRIgg2+9B4lJUqhzGOKbm00pCW8fhmJpLg5DtvYHfLqxLmWA9DkKWGxjnKJQcMIkLlsWiI2yV8jjkiw6ev/oAziGtOz0OQgTl8mW8nF/HUI8NmYui53uCWEhmUVA0UKtorUchbAzK5ct4u5yFzJkPSgnO99jwmm1fCFaG0G+qQpJBCc73hWAaZ0OS8G8pXRIBDIPgQp8N0zgdm0zqIeVnKFsSAWCaBOf67FOzE6gW0voJ+ZIIvAbF+R77VKfJSO3IpUsiBJbXwLneIOgplSR9pJUvCfB7DQzEAziNjpSEQipaUsDnQX93UE4BbURZrCpbEiWAHfCgrysgp4A2QQFgdXUVjx49wsrKitTCVEgK2x7Eoz45BUikVt1TABgbG8O9e/cwPDyMVCol9UbkSyKIhi10d5wsSbXqngLA6OgoEokEpqamMDIyciokPf/vBH559xZePP+PnEIEU6vuKQDEYjGMj4+fKkmffPoj3Lr1MwR9HjkFCKZW3e8FCfF4/JAk2ciUdPHiJYAAXREf7ID7JdVqIPuiuIOSVLArScSC2Nd/+yvuffUbTE5+s/cZATAUD8Lvc0WuWk2qNZBUKgVS7V0909PTSCQSANS8yKIzbOHyQKihXZp/+fOf8I+/fw0AmJmZwW9/9yV+9cWv947/8Q+/x7+e/hP9AwO4/fNf4Cc/vSltg3ur3LjWu7dxsrLu79y5c1hQKpXCyMjIXguSLag74sMng+GmJz0XFxdx+/ZtTExMIBQKHTrOGMfLhXVkssVWb1Uau4Iq6z6RSGB8fHx/F3fwBNn0dvlbksMYw927d/H48eMTK2eXanLi8fgPgqqdIJPBWBAX+0ItLRc8fPgQN2/exPXr1w8dO0lyAFSVA+zsSVhZWal5ggwu9Nno7Qq0JOfZs2eYmJjA06dPDx07aXIA1Kx7EwCePHmiTM7lwTBiER+MFhfaHjx4gOXl5b3HgeHhYdy/f/9EygFQs+4J55yvrq5ibGwMo6OjiMViPxwkRFiQQAjw6VAHomGrZTm1OKlyblzrRSqV2lf3u1QNs/cOChJECcGPL3QgHPRqOVWoDLMPIv3pzaAEn12Mwvabcl9WcULlHIVUQYZBcPVSJ/yWoeU0iTRBHpPi6uVOWF5D2m7T0y4HkCTI6zHw+ZUovKYhbZ/AWZADSBDk8xr4/EonTINoOQIQKijgM3H1chQGpVqOIIQJsgPbOUKywmjg7MkBBAkK+k1cu9Ip4lI1YVy9HMtr7OQHqc1LrUSIoN30dKkJXCWGgsJEKq9Jcal/e4Z8ZimDcrk9KXY6gasKlBKc67UBDnAAgzEbb5KbbUmD1AlcByAEGIwHYRgUINt/Wx6KWNQvrcx66ASuA8QjfgSs/Q/XlBJEQ16E2rD5RCdwVdBhexAJe6ums1BC0N8dVJ5+qRO4dvBbBnq76qexUAIM9ahNddEJXNiWPRQ/RoBDANOk6OlSNx6d+QQushN4HLclUkIQDnjQEfQ2VV6jnPkEroGYH6bZ2NQUpQR9XQFYXqPxAhvkTCdwdUf8sH2eplofods7VmWPR2c2gcsOeNAdtloavwyDoj8mN2FMaczolgQuy2tgIBYEafHbUwLYfhOdYXnjkfLXdbQ7gcs0CM4JnJIihCAeCcBnyVmcbsv7VFRI6opYiIb2/7IJIRiM2zAEj+2745FBxVdn2154o0JSTzSAcEU43Nvlh+WlIBA/sBsGMCBhPGrrG4mkR3cU6O8OwA54EA1bCAeai9iOVRYI/JaJ7ojY3Ni2vzJKxXPSUDyI3k6/9Pf6UArEIj74vOLGI1ekneXyZSwmN2H75cwWez0GGDjKChb8DIOiVBa3XuUKQQCwVXCwVWjf0rJbaXsXp6mPFuRytCCXowW5HC3I5WhBLkcLcjlHpkBq1NBUCmQj/9dNIwfdxbkcLcjlaEEuRwtyOVqQy9GCXI4W5HK0IJejBbkcLcjlaEEuRwtyOVqQy9GCXI4W5HK0IJejBbmc/wOEbKaSfTdJjwAAAABJRU5ErkJggg==" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
@@ -57,35 +57,29 @@ used in synchronous design (with a few rare exceptions).</p>
 <p>Parameters specific to the Basic tab are as follows:</p>
 <section id="provide-synchronous-reset-port" class="level4">
 <h4>Provide synchronous reset port</h4>
-<ul>
-<li>This option activates an optional reset (rst) pin on the block. When
+<p>This option activates an optional reset (rst) pin on the block. When
 the reset signal is asserted the block goes back to its initial state.
 Reset signal has precedence over the optional enable signal available on
 the block. The reset signal has to run at a multiple of the block&#39;s
-sample rate. The signal driving the reset port must be Boolean.</li>
-</ul>
+sample rate. The signal driving the reset port must be Boolean.</p>
 </section>
 <section id="provide-enable-port" class="level4">
 <h4>Provide enable port</h4>
-<ul>
-<li>This option activates an optional enable (en) pin on the block. When
+<p>This option activates an optional enable (en) pin on the block. When
 the enable signal is not asserted the block holds its current state
 until the enable signal is asserted again or the reset signal is
 asserted. Reset signal has precedence over the enable signal. The enable
 signal has to run at a multiple of the block &#39;s sample rate. The signal
-driving the enable port must be Boolean.</li>
-</ul>
+driving the enable port must be Boolean.</p>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
-<ul>
-<li>Latency is the number of cycles of delay. The latency can be zero,
+<p>Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port checkbox is not checked. The
 latency must be a non-negative integer. If the latency is zero, the
 delay block collapses to a wire during logic synthesis. If the latency
 is set to L=1, the block will generally be synthesized as a flip-flop
-(or multiple flip-flops if the data width is greater than 1).</li>
-</ul>
+(or multiple flip-flops if the data width is greater than 1).</p>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
@@ -93,11 +87,9 @@ is set to L=1, the block will generally be synthesized as a flip-flop
 <p>Parameters specific to the Implementation tab are as follows:</p>
 <section id="implement-using-behavioral-hdl" class="level4">
 <h4>Implement using behavioral HDL</h4>
-<ul>
-<li>Uses behavioral HDL as the implementation. This allows the
-downstream logic synthesis tool to choose the best implementation.</li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Uses behavioral HDL as the implementation. This allows the downstream
+logic synthesis tool to choose the best implementation.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>

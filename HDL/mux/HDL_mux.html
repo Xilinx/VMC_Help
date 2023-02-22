@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,12 +28,14 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Mux</h1>
 </header>
-<h1 id="mux">Mux</h1>
+<section id="mux" class="level1">
+<h1>Mux</h1>
 <p>The Xilinx Mux block implements a multiplexer. The block has one
 select input (type unsigned) and a user-configurable number of data bus
 inputs, ranging from 2 to 32.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The Block Parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Basic tab<br />
@@ -73,7 +75,11 @@ Refer to the section Overflow and Quantization in the topic <a href="common-opti
 Options in Block Parameter Dialog Boxes</a>.</p>
 <p>Parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Puncture</h1>
 </header>
-<h1 id="puncture">Puncture</h1>
+<section id="puncture" class="level1">
+<h1>Puncture</h1>
 <p>The Xilinx Puncture block removes a set of user-specified bits from
 the input words of its data stream.</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABPCAYAAADhnEtrAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAISElEQVR4nO2dbWwbdx3HP3e+80PixIkSO31eWdjaFfeBh1YMVRpKeMUECCFGoKtIEVVpK5CKpqovQAW0dYIw0W10pUWiGQ+jrH0xKjbQkCuB2Cs0umXu2nRdG7dZkzgJSRo/JH6444Xr1EntNPU5vv+x+7xJ4tj//Hwf3f979/fvLpKu6zo2lkI2uwCbe0eZ75eSJFWrDpsilJoE55UG8K+3BytejM3d2bpxScnf2dOjBbGlWZC7To8iUFej0ljnMjSG26Wg6RqplGZoHFWRiQzGyGSNjWME4aV5PSrB+xuRZXEOiobGksQS5kkTenr0uJSKCNM0nfCVMfqjcTSt/NNSTdPpj8aJJdKG6jGKsNKcqoP1rZUR9m7fOBOxFNeGYiSmMpSznKDrkJjKcG0oZqieSiCkNMUhs6G1EcUhYeRUsVAY5Db8hcg42TL2tqymcyEyXpbwSiOcNIcsEWxtxKk6DJ3czxWWJ5XW6I2M39M0qWk6vZFxUmnzcqwQoaRJksS6jzTgcTkquofNZTyW4sZIYkHiNE3nxkiC8RJjmYFQ0tau8uH1qMiLsIfNZSH5JlKOFSKMtNYV9TTUOQ0deCxUGCws30TKsUKEkLaqxUugwV01YXnmyzfRcqwQ06UtbfKw3F9TdWF5iuWbiDlWiKnSmnxuVi+tM01YnsJ8EzXHCjFNmrdGZe19PmPCdOPC4Ha+SRJIEkLmWCGmrT3qWZ3pdBbNQGRMpzXSmcpkTiqt8Z/e0ZnvRcY0afHpDL2Rmyz31xg6J1vZ4uX6renNKMlp42NUA1MzbTKRYui/CQys4SJLOXE1buE/sKgYph89jk2mGJ2YNrT6/mETZ7o0gJHxJBPxtL3HLRAhpAEMjiaIJ1NoBg7bPiziZICRkRG6uroYHh42tZgPhpNMTWdtcbco5UMGOHHiBPv376etrY1oNFrVwgrRdZ3rQ3HSad3QedL/i7hSPmSAzs5OgsEg4XCY9vZ2U8RFrl6mfctqOr74GT79qfVsffgT/PW1v5Q9XqG44egAF8+/XcFqq0MpHzKA3+8nFAqZLu7Bhzbw0p/f4KUzb/D04d/xxL7vkpouf7UjL+5Cz7+5+O5bFay0OpTyMTN/BAIBQqEQ7e3tM080E/+S5Xh9jQxFh+j46pd4PfRPamu9/PTpJ1m2bDl+v5+X//RHfD4ffX1X+fyjX2Dnrj0MR6Ps2tlJIhGnpWUpzxz+JSeOPYOOg2Ur7uP5roMc//1reGpq+c3Rn+NvWUpDYxOvv3qa6NAAP3jyOc73vMmrr5zEoShs2LSFb+1+wpRtMNdHKBQiEAjMPnrMi8sbNpPI1cvEYzFS1EORfJNkmUikj1889wJ/OHma48deAKDrZ4fo+Prj/O3v/+BjwSDnwz10fONxvrN7N4989nNF/5bD4eBa5ApHXzyDt87HK6d+y7O/Ps3hYy9zvudNrly+uJhvtSRzfeT3uDuSOhAIcPLkSYLBYNWLfK83TOdj7ei6Tm1tHT986nk8HhVZBrfTgcflQFUknKqMS5XZtGkjHpcDj6ueTDqNx+Ug3PMW+/btw+NycPDgQQDCPedQHPK8n4iveWg9suzg0sV3uNEf4Xs7vwLA5M0JbvRHuP+ja6uyDeZS6CMcDrN37947pUWjUTo6OsyojwfWBDn64pmZn31eJ+tWNyDLMh6XgselgK6hKjJO1YHLqeYeI7c673EpqKqCU5FmHtf1XLPQ8FiS+FR6VrNQNnt7rVFVXbe+Otn0yYf5Sdfxarzlu1LoIxgMcuTIkdnTYzQanZlDzdjTCrktTKK+vp7R0dwK/Llz5+Z93ebNmwmFQgAcOnSIU6dOMzQ2RSyeBKDWW8fExBgAly6+c8frWx9Yx4XwOWKxmwD86tmnmLw5UbH3dS/M9ZHPNGW+J7S0tJhSbKEwgD179rBt2zbWrFlDc3Nzyeu2AA4cOMD27dvp7u5mydJlPPLoN3kwpvCjA7tpbPLz5cc6+fGBPaxa3YqvoemOsXwNjXx7736+v+trKKqTDR/fQl29b1HfbymKCQOQdF3Xh4eHaWtru+MJkiRV/fq0ucLKQdN1ktNZwu+PmXqhhBHy16fNFQa3Dvm7u7uLGq02FRGm6Uwm01y4Wl4nsUiU8qEA7NixA8itjPj9/upXR+WEjU2m6L0mdrvAQjl79mxRH9J8dzeo1vRYKWHRsSTvfzBZwcrMY+vGJeVfc73YVEpY/3CC6wJ3UFUSU6VVStjVgUkGR5MVrExsTJOWv8LTCJquc+n6TUYnpipSk1N1AJBKZysy3mJhXgudZryFLpXWKtZBpSgSrcvrAHivf4JMRtwjGbuFjtwS2MqAl/zK9MqAl76BSWGPQO0WOqC5wY1LlQEJkHCpMs0N7vKLWmRMb+wxu4Wu1q3QVOeetZAsSRJNdW5qBW1XMF0amNdCpygSKwK1SEW2giTDikAtiiLOrTDyCCENqt9Cl88xeZ4tIMu554h2XzdhpEF1W+hm51gpxMw3oaRVq4WuWI6VQsR8E0oa5E6Y8/eeWgxx8+VYKUTLN+GkAWQ1jb6BGFldL9rUs1DmiltIjpUcS6B8E1IaQCarERmIGco3mC1uYTlWCnHyTVhpkFsDjAzGDZ0KQE7cfUu8NPsWlmOlkCSJZp8bt8vcfBMnXUswlcpwbXASr0c1NI5Tzd3vMWPwcl+HQyZt8uW9wksDSE5nSU6LvfJeTYSeHm2KY0uzILY0C2JLsyB37cayMY+yurHs/x0kJvb0aEFsaRbElmZBbGkWxJZmQWxpFsSWZkFsaRbElmZBbGkWxJZmQWxpFsSWZkFsaRbElmZBbGkWxJZmQf4H+tUAROiDlCIAAAAASUVORK5CYII=" /></p>
@@ -50,7 +51,8 @@ bits. The top puncture block removes the center bit for code 0 ( [1 0 1]
 ( [1 1 0 ] ), producing a 2-bit punctured output. These data streams are
 serialized into 1-bit in-phase and quadrature data streams for baseband
 shaping.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Parameters specific to the block are as follows:</p>
@@ -59,5 +61,7 @@ The puncture pattern represented as a bit vector, where a zero in
 position i indicates bit i is to be removed.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">ROM</h1>
 </header>
-<h1 id="rom">ROM</h1>
+<section id="rom" class="level1">
+<h1>ROM</h1>
 <p>The Xilinx ROM block is a single port read-only memory (ROM).</p>
 <p><img src="data:image/png;base64,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" /></p>
 <p>Values are stored by word and all words have the same arithmetic
@@ -40,7 +41,8 @@ one input port for the memory address and one output port for data out.
 The address port must be an unsigned fixed-point integer. The block has
 two possible Xilinx LogiCORE™™ implementations, using either distributed
 or block memory.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The Block Parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Basic tab<br />
@@ -109,7 +111,9 @@ Specify the exponent width.</p>
 Specify the fraction width.</p>
 <p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>Distributed Memory Generator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf">PG063</a>)</p>
 <p>UltraScale Architecture Memory Resources User Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf">UG573</a>)
 - XPM_MEMORY_SPROM Macro (UltraRAM)</p>
@@ -118,5 +122,7 @@ ceil(log2(d)) where d denotes the memory depth. The maximum width of
 data words in the block memory depends on the depth specified; the
 maximum depth is depends on the device family targeted. The tables below
 provide the maximum data word width for a given block memory depth.</p>
+</section>
+</section>
 </body>
 </html>

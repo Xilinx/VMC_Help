@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,24 +28,34 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Bitwise OR</h1>
 </header>
-<h1 id="bitwise-or">Bitwise OR</h1>
+<section id="bitwise-or" class="level1">
+<h1>Bitwise OR</h1>
 <p>Perform element and bitwise Boolean OR operation on the inputs</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Logic and Bit Operations</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFOElEQVRoge2aP2wTVxzHP+/+2MGJnahgo0qlEs1SIQ+lQxGoLLE6dmokggo0bDB0Ze6eEVFBl6BUBSQkhkqoqtpLBiqmqlUrs4BQJVBV4nMwMfRION9dB//B2D773vnsBuOPlMH2+/m9T+58974/W3ie5/GGoPzfCxgmWrcXhRDDWkek+J2sXWUB7t//MvLFDJLZ2fO+r71Rp/FYdlTRAIrFIsvLyywuLpJOp/t6w3h8H/H4e1I1sVga161QqZSk6jQtxZMnP+G6W8HGAywvL3Pu3DlWVlYwDINMJiM1aZ2Jif3s2XMcIfRQ9WF49uxXXrz4J9BYBWBxcZFsNks+nyeXy1EoFKQnDSvqeTamuUK5vIbn2VJ15fJaYFGoyabTaQzDCC3cj2ixeJWtrb/Y3LzF9vZDPK8SoK7C9vZDNjdvSc3XuEBlMpk24SBEIVp7ho2N67juc6DbDtbDdZ+zsXG9x7h2Xrkatwr3IjrRKq67hWl+h+v6H13XtWtjgl2Ummm79WQyGa5du9azMGrROra9Tql0s+Pn1/NsSqWb2Pa61Jx12mQLhQILCwtdiwYlWsey/sCy8kCzsI1l5bGsP6XmbOYV2UKhQC6XI5/Pk81mOxYMWrRO9QiWABdwse3HlEo3peZspSHbKmoYRtvgWOxt0ulTIUQrUqLVGgfTvFJbooJpXsHzHKl5W9EATNNsE+20sfCwcZwnuO621CSOU8ZxnkkvznE2efToazzPw3HK0vWtaACXL1/uKQpgvyhimldIpo4ghCo1UTJ1hKfl29i2KVUnO74bGsDp06cBAu2Nbdvkafm2tLAQamjhqBDdelBCCN/wruvpUEfY85yBCs/OnvftVISOePUjLHvRqB9hXe8vXYWhrzy7U4VNs/NZ03d4DyrseR4PHjxqPK4Lr6/ruG603dy5ubmOQSaSTkUQYSEEX5z6irt3HzSeu3fvb86c+Z54PFx+9sMvuUXWlmkI4/qOOXP2M765dKPx+NLFG5w9O09q+iiavjuqpfhG1Uh7UKo6xURsP7q+t+PfsWMLrK39jmUlsKwEq6u/cWxhAVWdQRGxyNbhl8179o2D0rxnVkl1HKNrcPLk53y78iOe53HixHEmE3spFq9KdRx6UY+q9V1hLpfDMIzw99lmZMKBaW6Qy32K67oYxg0U5WepPXMvmu+zd+7caQSa+fn5/o+sbApKp3dz+PBHOI4duWgzzVE1m81y4cKF/mTDxr2LF5ekU5AMnRJcJpMJf4EaVq4Ng1+CU6DaJF9aWvLdebSyk0UB3wSnwMsmud/Oo5mdLgr4RlWpJvkwOxV1NC2JqialalZXVztmcg1eNslb70ttix5yp0JREkzPfAJA6fEPtZ5yb/wy+Sv32darWD6fb7vPDivHCqEwPTOHqlSPasUpU95c9c2qdQLn2SBN8mHFusTkB6jKJAgBQqCpUyQmD0rN2UqoJvmghePxd4nH34Hms0eota9D90nN2UyoJjkMTlhVU0xOHUSI9v2OECqTUx+iatNSc9aRbpI3E7WwEDqp6Y8Rwn+vI4RCKnUk1HfAUk3yTkQpnEweQigxoNtPkgRCiZNMHpKaD2qyQZvkfkQhnEi8j6a/hQiwgxUoaPpuEon3peZTIHiTvBv9CKemj7IrcaDj57Rb3a7EATRtJnCNdJO8G1XhX9B0uX9WdYfk4DiWZN0EjvNv4PGRhPedxECa5K8jY9lRpedn9nUk1E9wR+1H5m/UaTyWHVXGsqPKWHZUGcuOKmPZUWUsO6qMZUeVseyo8h+0FEjhlR1XgwAAAABJRU5ErkJggg==" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Bitwise OR block has two input signals and one output signal. The
 block performs element and bit-wise boolean OR operation on the inputs.
 The first input corresponds to the top input port and the second input
 to the bottom input port. The dimension of the output signal matches the
 dimensions of the input signals.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>The Bitwise OR block supports native and fixed-point types except the
 floating point types (double, single, and half). If one of the inputs is
 scalar, the output dimension is non-scalar. If both inputs are
 non-scalar, they must have the same dimension. The dimension can be
 scalar, vector, or matrix.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Bitwise OR block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

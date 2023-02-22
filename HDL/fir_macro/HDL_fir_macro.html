@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -60,11 +60,10 @@ IP FIR Compiler v7.2</a> for details on this LogicCore IP.</p>
 <h2>Parameters</h2>
 <p>Parameters specific to the Digital FIR Filter block are as
 follows.</p>
-<section id="coefficient-vector" class="level4">
-<h4>Coefficient Vector</h4>
-<ul>
-<li><h4 id="use-fda-tool-as-coefficient-source">Use FDA Tool as
-Coefficient Source</h4>
+<section id="coefficient-vector" class="level3">
+<h3>Coefficient Vector</h3>
+<section id="use-fda-tool-as-coefficient-source" class="level4">
+<h4>Use FDA Tool as Coefficient Source</h4>
 <p>If selected,the Coefficient Vector will be determined by the settings
 in the Filter Design and Analysis Tool (FDA Tool). To use the FDA Tool
 as your coefficient source, you must click the FDATool button and
@@ -79,8 +78,10 @@ quickly. FDATool enables you to design digital FIR filters by setting
 filter specifications, by importing filters from your MATLAB® workspace,
 or by adding, moving or deleting poles and zeroes. FDA Tool also
 provides tools for analyzing filters, such as magnitude and phase
-response and pole-zero plots (see <a href="fdatool.html">FDATool</a>).</p></li>
-<li><h4 id="edit-box">Edit Box</h4>
+response and pole-zero plots (see <a href="fdatool.html">FDATool</a>).</p>
+</section>
+<section id="edit-box" class="level4">
+<h4>Edit Box</h4>
 <p>The edit box is enabled for you to specify the Coefficient Vector
 when the Use FDA Tool as Coefficient Source option is disabled. The edit
 box specifies the vector coefficients of the filter&#39;s transfer function.
@@ -89,48 +90,53 @@ Filter structure must be Direct Form, and the input must be a
 scalar.</p>
 <p>The number of taps is inferred from the length of the MATLAB row
 vector. If multiple coefficient sets are specified, then each set is
-appended to the previous set in the vector.</p></li>
-<li><h4 id="fdatool">FDATool</h4>
+appended to the previous set in the vector.</p>
+<ul>
+<li><h4 id="fdatool">FDATool</h4></li>
+</ul>
 <p>This button is enabled if the Use FDA Tool as Coefficient Source
 option is enabled. Click this button to open a Block Parameters dialog
 box for the FDA Tool, and enter your filter specifications in this
 dialog box. To understand how to use this dialog box to describe your
-FIR filter, see <a href="fdatool.html">FDATool</a>.</p></li>
-</ul>
+FIR filter, see <a href="fdatool.html">FDATool</a>.</p>
 </section>
-<section id="coefficient-precision" class="level4">
-<h4>Coefficient Precision</h4>
-<ul>
-<li><h4 id="optimal-values">Optimal Values</h4>
+</section>
+<section id="coefficient-precision" class="level3">
+<h3>Coefficient Precision</h3>
+<section id="optimal-values" class="level4">
+<h4>Optimal Values</h4>
 <p>If selected, the Coefficient Width and Coefficient Fractional Bits
 will be set automatically to their optimum values. The values are
 calculated using the dynamic range of filter response between pass band
 and stop band signals. These values ensure the minimum hardware will be
 used for the required filter response when the design is implemented in
-the FPGA or SoC.</p></li>
-<li><h4 id="coefficient-width">Coefficient Width</h4></li>
-</ul>
+the FPGA or SoC.</p>
+</section>
+<section id="coefficient-width" class="level4">
+<h4>Coefficient Width</h4>
 <p>Specifies the number of bits used to represent the coefficients.</p>
-<ul>
-<li><h4 id="coefficient-fractional-bits">Coefficient Fractional
-Bits</h4></li>
-</ul>
+</section>
+<section id="coefficient-fractional-bits" class="level4">
+<h4>Coefficient Fractional Bits</h4>
 <p>Specifies the binary point location in the coefficients datapath
 options.</p>
-<ul>
-<li><h4 id="interpolation-rate">Interpolation Rate</h4>
+</section>
+<section id="interpolation-rate" class="level4">
+<h4>Interpolation Rate</h4>
 <p>Specifies the interpolation rate of the filter. Any value greater
 than 1 is applicable to all Interpolation filter types and Decimation
 filter types for Fractional Rate Change implementations. The value
 provided in this field defines the upsampling factor, or P for Fixed
-Fractional Rate (P/Q) resampling filter implementations.</p></li>
+Fractional Rate (P/Q) resampling filter implementations.</p>
+<ul>
 <li><h4 id="decimation-rate">Decimation Rate</h4>
-<p>Specifies the decimation rate of the filter. Any value greater than 1
-is applicable to the all Decimation and Interpolation filter types for
+Specifies the decimation rate of the filter. Any value greater than 1 is
+applicable to the all Decimation and Interpolation filter types for
 Fractional Rate Change implementations. The value provided in this field
 defines the downsampling factor, or Q for Fixed Fractional Rate (P/Q)
-resampling filter implementations.</p></li>
+resampling filter implementations.</li>
 </ul>
+</section>
 </section>
 </section>
 <section id="example" class="level2">

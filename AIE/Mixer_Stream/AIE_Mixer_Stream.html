@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,27 +28,38 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Mixer Stream</h1>
 </header>
-<h1 id="mixer-stream">Mixer Stream</h1>
+<section id="mixer-stream" class="level1">
+<h1>Mixer Stream</h1>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/DSP/Stream IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block implements the stream-based Mixer targeted for AI
 Engines.</p>
-<h2 id="parameters">Parameters</h2>
-<h3 id="main">Main</h3>
-<h4 id="inputoutput-data-type">Input/Output Data Type:</h4>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output Data Type:</h4>
 <ul>
 <li>Describes the type of individual data samples output of the DDS
 function. It should be cint16, cint32, or cfloat.</li>
 </ul>
-<h4 id="input-frame-size-number-of-samples">Input Frame Size (Number of
-Samples):</h4>
+</section>
+<section id="input-frame-size-number-of-samples" class="level4">
+<h4>Input Frame Size (Number of Samples):</h4>
 <ul>
 <li>Specifies the number of samples in the input frame. The value must
 be in the range 8 to 1024 and the default value is 32.</li>
 </ul>
-<h4 id="mixer-mode">Mixer Mode:</h4>
+</section>
+<section id="mixer-mode" class="level4">
+<h4>Mixer Mode:</h4>
 <ul>
 <li>This specifies the mixer operation modes. Two modes are supported by
 Mixer function:
@@ -69,13 +80,16 @@ two modulated signals are added together and written to the output
 window.</p></li>
 </ul></li>
 </ul>
-<h4 id="number-of-parallel-inputoutput-ssr">Number of parallel
-input/output (SSR):</h4>
+</section>
+<section id="number-of-parallel-inputoutput-ssr" class="level4">
+<h4>Number of parallel input/output (SSR):</h4>
 <ul>
 <li>This parameter specifies the number of input (or output) ports and
 must be of the form 2^N, where N is a non-negative integer.</li>
 </ul>
-<h4 id="phase-increment">Phase Increment:</h4>
+</section>
+<section id="phase-increment" class="level4">
+<h4>Phase Increment:</h4>
 <ul>
 <li>Specifies the phase increment between samples. The value must be in
 the range 0 to 2^31 and the default value is 0. Input value 2^31
@@ -88,17 +102,26 @@ fixed.</li>
 <li>Fs = Sampling frequency.</li>
 </ul></li>
 </ul>
-<h4 id="initial-phase-offset">Initial Phase Offset:</h4>
+</section>
+<section id="initial-phase-offset" class="level4">
+<h4>Initial Phase Offset:</h4>
 <ul>
 <li>Specifies the initial phase offset. The default value is 0.</li>
 </ul>
-<h3 id="advanced">Advanced</h3>
-<h4 id="target-output-throughput-msps">Target Output Throughput
-(MSPS):</h4>
+</section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
+<section id="target-output-throughput-msps" class="level4">
+<h4>Target Output Throughput (MSPS):</h4>
 <ul>
 <li>Specifies the output sampling rate of the Mixer function in Mega
 Samples per Second (MSPS). The value must be in the range 1 to 1000 and
 the default value is 200.</li>
 </ul>
+</section>
+</section>
+</section>
+</section>
 </body>
 </html>

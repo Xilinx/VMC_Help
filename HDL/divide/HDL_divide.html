@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 20px;}.level4{margin-left: 30px;}h4 {color:#c06838;}.level5{margin-left: 40px;}.level6{margin-left: 50px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -44,102 +44,139 @@ divisor. Both inputs must be of the same data type.</p>
 <p>Parameters specific to the Basic tab are as follows</p>
 <section id="axi-interface" class="level4">
 <h4>AXI Interface</h4>
-<ul>
-<li><h4 id="flow-control">Flow Control</h4>
-<ul>
-<li><h4 id="blocking">Blocking</h4>
+<section id="flow-control" class="level5">
+<h5>Flow Control</h5>
+<section id="blocking" class="level6">
+<h6>Blocking</h6>
 <p>Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
-another input channel.</p></li>
-<li><h4 id="nonblocking">NonBlocking</h4>
+another input channel.</p>
+</section>
+<section id="nonblocking" class="level6">
+<h6>NonBlocking</h6>
 <p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
 input channel does not block the execution of an operation if data is
-received on another input channel.</p></li>
-</ul></li>
-<li><h4 id="fixed-point-options">Fixed-point Options</h4>
+received on another input channel.</p>
+</section>
+</section>
+<section id="fixed-point-options" class="level5">
+<h5>Fixed-point Options</h5>
+<section id="algorithm-type" class="level6">
+<h6>Algorithm Type</h6>
 <ul>
-<li><h4 id="algorithm-type">Algorithm Type</h4>
-<h5 id="radix2"><strong>Radix2</strong></h5>
-<p>This is non-restoring integer division using integer operands and
-allows a remainder to be generated. This option is recommended for
-operand widths less than 16 bits. This option supports both unsigned
-(two&#39;s complement) and signed divisor and dividend inputs.</p>
-<h5 id="high_radix"><strong>High_Radix</strong></h5>
-<p>This option is recommended for operand widths greater than 16 bits,
-though the implementation requires the use of DSP48 (or variant)
-primitives. This option only supports signed (two&#39;s complement) divisor
-and dividend inputs.</p>
-<h5 id="lutmult"><strong>LutMult</strong></h5>
-<p>A simple lookup estimate of the reciprocal of the divisor followed by
-a multiplier. Only remainder output type is supported because of the
-bias required in the reciprocal estimate. This bias would introduce an
-offset (error) if used to create a fractional output. This is
-recommended for operand widths less than or equal to 12 bits. This
-implementation uses DSP slices, block RAM, and a small number of FPGA
-logic primitives (registers and LUTs). For operand widths where either
-Radix2 or the LUTMult options are possible, the LUTMult solution offers
-a solution using fewer FPGA logic resources because of the use of DSP
-and block RAM primitives. Supports unsigned or two&#39;s complement signed
-numbers.</p></li>
-<li><h4 id="output-fractional-width">Output Fractional width</h4>
+<li><p>Radix2: This is non-restoring integer division using integer
+operands and allows a remainder to be generated. This option is
+recommended for operand widths less than 16 bits. This option supports
+both unsigned (two&#39;s complement) and signed divisor and dividend
+inputs.</p></li>
+<li><p>High_Radix: This option is recommended for operand widths greater
+than 16 bits, though the implementation requires the use of DSP48 (or
+variant) primitives. This option only supports signed (two&#39;s complement)
+divisor and dividend inputs.</p></li>
+<li><p>LutMult: A simple lookup estimate of the reciprocal of the
+divisor followed by a multiplier. Only remainder output type is
+supported because of the bias required in the reciprocal estimate. This
+bias would introduce an offset (error) if used to create a fractional
+output. This is recommended for operand widths less than or equal to 12
+bits. This implementation uses DSP slices, block RAM, and a small number
+of FPGA logic primitives (registers and LUTs). For operand widths where
+either Radix2 or the LUTMult options are possible, the LUTMult solution
+offers a solution using fewer FPGA logic resources because of the use of
+DSP and block RAM primitives. Supports unsigned or two&#39;s complement
+signed numbers.</p></li>
+</ul>
+</section>
+</section>
+<section id="output-fractional-width" class="level5">
+<h5>Output Fractional width</h5>
 <p>For Fixed-point division, this entry determines the number of bits in
-the fractional part of the output.</p></li>
-</ul></li>
-<li><h4 id="optional-ports">Optional Ports</h4>
-<ul>
-<li><h4 id="dividend-channel-ports">Dividend Channel Ports</h4>
-<h5 id="has-tlast"><strong>Has TLAST</strong></h5>
+the fractional part of the output.</p>
+</section>
+</section>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<section id="dividend-channel-ports" class="level5">
+<h5>Dividend Channel Ports</h5>
+<section id="has-tlast" class="level6">
+<h6>Has TLAST</h6>
 <p>Adds a TLAST port to the Input channel.</p>
-<h5 id="has-tuser"><strong>Has TUSER</strong></h5>
-<p>Adds a TUSER port to the Input channel.</p></li>
-</ul></li>
-<li><h4 id="divisor-channel-ports">Divisor Channel Ports</h4>
-<ul>
-<li><h4 id="has-tlast-1">Has TLAST</h4>
-<p>Adds a TLAST port to the Input channel.</p></li>
-<li><h4 id="has-tuser-1">Has TUSER</h4>
-<p>Adds a TUSER port to the Input channel.</p></li>
-</ul></li>
-<li><h4 id="control-options">Control Options</h4>
-<ul>
-<li><h4 id="provide-enable-port">Provide enable port</h4>
-<p>Adds an enable port to the block interface.</p></li>
-<li><h4 id="has-result-tready">Has Result TREADY</h4>
-<p>Adds a TREADY port to the Result channel.</p></li>
-<li><h4 id="output-tlast-behavior">Output TLAST behavior</h4>
+</section>
+<section id="has-tuser" class="level6">
+<h6>Has TUSER</h6>
+<p>Adds a TUSER port to the Input channel.</p>
+</section>
+</section>
+</section>
+<section id="divisor-channel-ports" class="level4">
+<h4>Divisor Channel Ports</h4>
+<section id="has-tlast-1" class="level5">
+<h5>Has TLAST</h5>
+<p>Adds a TLAST port to the Input channel.</p>
+</section>
+<section id="has-tuser-1" class="level5">
+<h5>Has TUSER</h5>
+<p>Adds a TUSER port to the Input channel.</p>
+</section>
+</section>
+<section id="control-options" class="level4">
+<h4>Control Options</h4>
+<section id="provide-enable-port" class="level5">
+<h5>Provide enable port</h5>
+<p>Adds an enable port to the block interface.</p>
+</section>
+<section id="has-result-tready" class="level5">
+<h5>Has Result TREADY</h5>
+<p>Adds a TREADY port to the Result channel.</p>
+</section>
+<section id="output-tlast-behavior" class="level5">
+<h5>Output TLAST behavior</h5>
 <p>Determines the behavior of the result_tlast output port.</p>
-<h5 id="pass_a_tlast"><strong>Pass_A_TLAST</strong></h5>
+<section id="pass_a_tlast" class="level6">
+<h6><strong>Pass_A_TLAST</strong></h6>
 <p>Pass the value of the a_tlast input port to the dout_tlast output
 port.</p>
-<h5 id="pass-b_tlast"><strong>Pass B_TLAST</strong></h5>
+</section>
+<section id="pass-b_tlast" class="level6">
+<h6><strong>Pass B_TLAST</strong></h6>
 <p>Pass the value of the b_tlast input port to the dout_tlast output
 port.</p>
-<h5 id="or_all_tlasts"><strong>OR_all_TLASTS</strong></h5>
+</section>
+<section id="or_all_tlasts" class="level6">
+<h6><strong>OR_all_TLASTS</strong></h6>
 <p>Pass the logical OR of all the present TLAST input ports.</p>
-<h5 id="and_all_tlasts"><strong>AND_all_TLASTS</strong></h5>
-<p>Pass the logical AND of all the present TLAST input ports.</p></li>
-</ul></li>
-<li><h4 id="exception-signals">Exception Signals</h4>
-<ul>
-<li><h4 id="underflow">UNDERFLOW</h4>
-<p>Adds an output port that serves as an underflow flag.</p></li>
-<li><h4 id="overflow">OVERFLOW</h4>
-<p>Adds an output port that serves as an overflow flag.</p></li>
-<li><h4 id="invalid_op">INVALID_OP</h4>
-<p>Adds an output port that serves as an invalid operation
-flag.</p></li>
-<li><h4 id="divide_by_zero">DIVIDE_BY_ZERO</h4>
-<p>Adds an output port that serves as a divide-by-zero flag.</p></li>
-</ul></li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="and_all_tlasts" class="level6">
+<h6><strong>AND_all_TLASTS</strong></h6>
+<p>Pass the logical AND of all the present TLAST input ports.</p>
+</section>
+</section>
+</section>
+<section id="exception-signals" class="level4">
+<h4>Exception Signals</h4>
+<section id="underflow" class="level5">
+<h5>UNDERFLOW</h5>
+<p>Adds an output port that serves as an underflow flag.</p>
+</section>
+<section id="overflow" class="level5">
+<h5>OVERFLOW</h5>
+<p>Adds an output port that serves as an overflow flag.</p>
+</section>
+<section id="invalid_op" class="level5">
+<h5>INVALID_OP</h5>
+<p>Adds an output port that serves as an invalid operation flag.</p>
+</section>
+<section id="divide_by_zero" class="level5">
+<h5>DIVIDE_BY_ZERO</h5>
+<p>Adds an output port that serves as a divide-by-zero flag.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
 </section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>
