@@ -115,4 +115,4 @@ Macro (XPM), refer to UltraScale Architecture Libraries Guide
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
