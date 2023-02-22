@@ -43,14 +43,14 @@ where bit zero is the least significant bit.
 Position of the binary point. in the fixed-point output.
 
 #### Quantization  
-Refer to the section [Overflow and Quantization](matlab:helpview(vmcHelp('name','common-options'))).
+Refer to the section [Overflow and Quantization](../../GEN/common-options/README.md).
 
 #### Overflow  
-Refer to the section [Overflow and Quantization](matlab:helpview(vmcHelp('name','common-options'))).
+Refer to the section [Overflow and Quantization](../../GEN/common-options/README.md).
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
