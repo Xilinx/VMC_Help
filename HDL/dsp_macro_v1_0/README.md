@@ -28,7 +28,7 @@ is to implement. Each instruction can be entered on a new line, or in a
 comma delimited list, and are enumerated from the top down. You can
 specify a maximum of 64 instructions.
 
-  Refer to the topic Instructions page of the DSP Macro LogiCORE IP
+Refer to the topic Instructions page of the DSP Macro LogiCORE IP
 Product Guide (PG323) for details on all the parameters on this tab.
 
 
@@ -37,21 +37,21 @@ The Pipeline Options tab is used to define the pipeline depth of the
 various input paths.
 
 #### Pipeline Options  
-* Specifies the pipeline method to be used; Automatic, By Tier, or Expert.
+Specifies the pipeline method to be used; Automatic, By Tier, or Expert.
 
 #### Custom Pipeline options  
-* Used to specify the pipeline depth of the various input paths.
+Used to specify the pipeline depth of the various input paths.
 
 #### Tier 1 to 6  
-* When By Tier is selected for Pipeline Options these parameters are used
+When By Tier is selected for Pipeline Options these parameters are used
 to enable/disable the registers across all the input paths for a given
 pipeline stage. The following restrictions are enforced:
 
-  - When P has been specified in an expression tier, 6 will be forced as
+- When P has been specified in an expression tier, 6 will be forced as
   asynchronous feedback is not supported.
 
 #### Individual registers  
-* When you select Expert for the Pipeline Options, these parameters are
+When you select Expert for the Pipeline Options, these parameters are
 used to enable/disable individual register stages. The following
 restrictions are enforced:
 
@@ -66,41 +66,41 @@ this tab.
 The Implementation tab is used to define implementation options.
 
 #### Output Port Properties  
-* #### Precision  
-  Specifies the precision of the P output port.
+##### Precision  
+Specifies the precision of the P output port.
 
-* #### Full  
-  The bit width of the output port P is set to the full XtremeDSP Slide
+###### Full  
+The bit width of the output port P is set to the full XtremeDSP Slide
 width of 48 bits.
 
-* #### User_Defined  
-  The output width of P can be set to any value up to 48 bits. When set to
+###### User_Defined  
+The output width of P can be set to any value up to 48 bits. When set to
 less than 48 bits, the output is truncated (LSBs removed).
 
-* #### Width  
-  Specifies the User Defined output width of the P output port
+##### Width  
+Specifies the User Defined output width of the P output port
 
-* #### Binary Point  
+##### Binary Point  
   Specifies the placement of the binary point of the P output port.
 
 #### Additional ports  
-* #### Use ACOUT  
-  Use the optional cascade A output port.
+##### Use ACOUT  
+Use the optional cascade A output port.
 
-* #### Use CARRYOUT  
-  Use the optional carryout output port.
+##### Use CARRYOUT  
+Use the optional carryout output port.
 
-* #### Use BCOUT  
-  Use the optional cascade B output port.
+##### Use BCOUT  
+Use the optional cascade B output port.
 
-* #### Use CARRYCASCOUT  
+##### Use CARRYCASCOUT  
   Use the optional cascade carryout output port.
 
-* #### Use PCOUT  
+##### Use PCOUT  
   Use the optional cascade P output port.
 
 #### Control ports  
-* Refer to the topic Implementation Page of the DSP Macro LogiCORE IP
+Refer to the topic Implementation Page of the DSP Macro LogiCORE IP
 Product Guide (PG323) for details on all the parameters on this tab.
 
 ## LogiCORE Documentation
