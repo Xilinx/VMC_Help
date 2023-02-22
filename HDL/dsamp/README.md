@@ -73,20 +73,20 @@ frame.
 
 ### Basic tab  
 #### Sampling Rate (number of input samples per output sample)  
-* Must be an integer greater or equal to 2. This is the ratio of the
+Must be an integer greater or equal to 2. This is the ratio of the
 output sample period to the input, and is essentially a sample rate
 divider. For example, a ratio of 2 indicates a 2:1 division of the input
 sample rate. If a non-integer ratio is desired, the Up Sample block can
 be used in combination with the Down Sample block.
 
 #### Sample  
-* The Down Sample block can sample either the first or last value of a
+The Down Sample block can sample either the first or last value of a
 frame. This parameter will determine which of these two values is
 sampled.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](matlab:helpview(vmcHelp('name','common-options'))).
 
 ## LogiCORE
 
