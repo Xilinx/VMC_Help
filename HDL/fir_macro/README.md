@@ -38,27 +38,27 @@ for details on this LogicCore IP.
 Parameters specific to the Digital FIR Filter block are as
 follows.
 
-#### Coefficient Vector  
-* #### Use FDA Tool as Coefficient Source  
-  If selected,the Coefficient Vector will be determined by the settings in
+### Coefficient Vector  
+#### Use FDA Tool as Coefficient Source  
+If selected,the Coefficient Vector will be determined by the settings in
 the Filter Design and Analysis Tool (FDA Tool). To use the FDA Tool as
 your coefficient source, you must click the FDATool button and configure
 the Block Parameters dialog box that appears, to describe your FIR
 filter.
 
-  **Note**: Because the FDATool functionality is integrated into the Digital
+**Note**: Because the FDATool functionality is integrated into the Digital
 FIR Filter block itself, you do not have to enter a separate FDATool
 block into your design to use the FDATool as your coefficient source.
 
-  The FDA Tool is a user interface for designing and analyzing filters
+The FDA Tool is a user interface for designing and analyzing filters
 quickly. FDATool enables you to design digital FIR filters by setting
 filter specifications, by importing filters from your MATLAB® workspace,
 or by adding, moving or deleting poles and zeroes. FDA Tool also
 provides tools for analyzing filters, such as magnitude and phase
 response and pole-zero plots (see [FDATool](fdatool.html)).
 
-* #### Edit Box  
-  The edit box is enabled for you to specify the Coefficient Vector when
+#### Edit Box  
+The edit box is enabled for you to specify the Coefficient Vector when
 the Use FDA Tool as Coefficient Source option is disabled. The edit box
 specifies the vector coefficients of the filter's transfer function.
 Filter coefficients must be specified as a single MATLAB row vector.
@@ -69,29 +69,29 @@ If multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector.
 
 * #### FDATool  
-  This button is enabled if the Use FDA Tool as Coefficient Source option
+This button is enabled if the Use FDA Tool as Coefficient Source option
 is enabled. Click this button to open a Block Parameters dialog box for
 the FDA Tool, and enter your filter specifications in this dialog box.
 To understand how to use this dialog box to describe your FIR filter,
 see [FDATool](fdatool.html).
 
-#### Coefficient Precision  
-* #### Optimal Values  
-  If selected, the Coefficient Width and Coefficient Fractional Bits will
+### Coefficient Precision  
+#### Optimal Values  
+If selected, the Coefficient Width and Coefficient Fractional Bits will
 be set automatically to their optimum values. The values are calculated
 using the dynamic range of filter response between pass band and stop
 band signals. These values ensure the minimum hardware will be used for
 the required filter response when the design is implemented in the FPGA or SoC.
 
-* #### Coefficient Width  
+#### Coefficient Width  
 Specifies the number of bits used to represent the coefficients.
 
-* #### Coefficient Fractional Bits  
+#### Coefficient Fractional Bits  
 Specifies the binary point location in the coefficients datapath
 options.
 
-* #### Interpolation Rate  
-  Specifies the interpolation rate of the filter. Any value greater than 1
+#### Interpolation Rate  
+Specifies the interpolation rate of the filter. Any value greater than 1
 is applicable to all Interpolation filter types and Decimation filter
 types for Fractional Rate Change implementations. The value provided in
 this field defines the upsampling factor, or P for Fixed Fractional Rate
