@@ -156,7 +156,7 @@ Generator GUI).
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
