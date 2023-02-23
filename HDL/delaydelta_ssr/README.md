@@ -36,5 +36,5 @@ used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector and/or complex data support for
 the primary block operation.
 
-See the [Vector Delay](vectordelay.html) block for further
+See the [Vector Delay](../../HDL/delay_ssr/README.md) block for further
 information on using this block.
