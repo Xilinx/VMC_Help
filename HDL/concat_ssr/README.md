@@ -13,7 +13,7 @@ period. This block enables 1-D vector data support for the primary block
 operation.
 
 
-The [Vector Reinterpret](vectorreinterpret.html) block provides
+The [Vector Reinterpret](../../HDL/reinterpret/README.md) block provides
 capabilities that can extend the functionality of the Vector Concat
 block.
 
