@@ -69,7 +69,7 @@ significant representable bit), or to Round(unbiased: +/- inf) or Round
 
 Round (unbiased: +/- inf) also known as "Symmetric Round (towards +/-
 inf)" or "Symmetric Round (away from zero)". This is similar to the
-MATLAB `round()` function. This method rounds the value to the nearest
+MATLAB round() function. This method rounds the value to the nearest
 desired bit away from zero and when there is a value at the midpoint
 between two possible rounded values, the one with the larger magnitude
 is selected. For example, to round 01.0110 to a Fix_4_2, this yields
@@ -133,7 +133,7 @@ in the design.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
