@@ -306,4 +306,4 @@ port is displayed on the block icon.
 ## LogiCORE™ Documentation
 
 CORDIC LogiCORE IP Product Guide
-([PG105](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=cordic;v=latest;d=pg105-cordic.pdf))
+([PG105](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg105-cordic&ft:locale=en-US))
