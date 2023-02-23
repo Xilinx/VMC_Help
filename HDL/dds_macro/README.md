@@ -39,7 +39,7 @@ The output characteristic of the Sine Wave block is determined by:
 The Sine Wave block is ideal for generating simple sine and cosine
 waves. If your sine wave implementation will use more complicated
 features such as a phase generator, multiple channel support, or AXI4
-ports, use the Xilinx [DDS Compiler 6.0](ddscompiler60.html) block in
+ports, use the [DDS Compiler 6.0](../../HDL/dds_compiler_v6_0/README.md) block in
 your design instead of the Sine Wave block.
 
 In the Vivado design flow, the Sine Wave block is inferred as "LogicCore
@@ -119,5 +119,5 @@ Number of offset samples = (π/2) \* (50/2π) = 50/4
 
 ## LogiCORE™ Documentation
 
-[LogiCORE IP DDS Compiler v6.0 Product
-Guide](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US)
+LogiCORE IP DDS Compiler v6.0 Product
+Guide [(PG141)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US)
