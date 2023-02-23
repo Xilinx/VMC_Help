@@ -23,8 +23,8 @@ channel FIR filters. If your FIR filter implementation will use more
 complicated filter features such as multiple channels or multiple path
 core configuration, an AXI4-Stream-compliant interface, or functions
 such as reloading co-efficient, channel pattern support, or other
-HDL-based GUI parameters, use the Xilinx [FIR Compiler
-7.2](fircompiler72.html) block in your design instead of the Digital FIR
+HDL-based GUI parameters, use the [FIR Compiler
+7.2](../../HDL/fir_compiler_v7_2/README.md) block in your design instead of the Digital FIR
 Filter block.
 
 In the Vivado® design flow, the Digital FIR filter block is inferred as
@@ -64,11 +64,11 @@ specifies the vector coefficients of the filter's transfer function.
 Filter coefficients must be specified as a single MATLAB row vector.
 Filter structure must be Direct Form, and the input must be a scalar.
 
-  The number of taps is inferred from the length of the MATLAB row vector.
+The number of taps is inferred from the length of the MATLAB row vector.
 If multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector.
 
-* #### FDATool  
+#### FDATool  
 This button is enabled if the Use FDA Tool as Coefficient Source option
 is enabled. Click this button to open a Block Parameters dialog box for
 the FDA Tool, and enter your filter specifications in this dialog box.
