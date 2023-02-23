@@ -77,12 +77,12 @@ and/or rate specified for assertion.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
 
 The Output type parameter in this block uses the same description as the
 Arithmetic Type described in the topic [Common Options in Block
 Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
 
 The Assert block does not use a LogiCORE™™ and does not use
 resources when implemented in hardware.
