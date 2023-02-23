@@ -178,7 +178,7 @@ hexadecimal_const: A legal binary number string made up of 0, 1, 2, 3,
 
 A constant can only be used to augment expressions already derived from
 input ports. In other words, a BitBasher block cannot be used to simply
-source constant like the [Constant](constant.html) block.
+source constant like the [Constant](../../HDL/constant/README.md) block.
 
 The following examples make use of this construct:
 
