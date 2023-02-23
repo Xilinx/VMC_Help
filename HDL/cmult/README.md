@@ -114,12 +114,12 @@ speed.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
-[LogiCORE IP Multiplier
-v12.0](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)
+LogiCORE IP Multiplier
+v12.0 [(PG108)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)
 
-[LogiCORE IP Floating-Point Operator
-v7.1](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
+LogiCORE IP Floating-Point Operator
+v7.1 [(PG060)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
