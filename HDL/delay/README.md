@@ -63,7 +63,7 @@ logic synthesis tool to choose the best implementation.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../HDL/dds_compiler_v6_0/README.md).
 
 ## Logic Synthesis using Behavioral HDL
 
