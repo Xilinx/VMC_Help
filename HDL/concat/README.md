@@ -7,7 +7,7 @@
 The Concat block performs a concatenation of n bit vectors
 represented by unsigned integer numbers, for example, n unsigned numbers
 with binary points at position zero.
-The [Reinterpret](reinterpret.html) block provides capabilities
+The [Reinterpret](../../HDL/reinterpret/README.md) block provides capabilities
 that can extend the functionality of the Concat block.
 
 ## Block Interface
