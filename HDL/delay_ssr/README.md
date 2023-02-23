@@ -72,7 +72,7 @@ Uses behavioral HDL as the implementation. This allows the downstream logic synt
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../HDL/dds_compiler_v6_0/README.md).
 
 ## Logic Synthesis using Behavioral HDL
 
