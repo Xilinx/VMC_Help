@@ -38,7 +38,7 @@ following functions:
 Parameters specific to the Basic tab are as follows.
 
 #### Propagate data type to output  
-> This option is useful when you instantiate a Model Composer design as a
+This option is useful when you instantiate a Model Composer design as a
 sub-system into a Simulink design. Instead of using a Simulink double as
 the output data type by default, the Model Composer data type is
 propagated to an appropriate Simulink data type according to the
@@ -59,7 +59,7 @@ following table:
 
 
 #### Translate into Output Port  
-> Having this box unchecked prevents the gateway from becoming an actual
+Having this box unchecked prevents the gateway from becoming an actual
 output port when translated into hardware. This checkbox is on by
 default, enabling the output port. When this option is not selected, the
 Gateway Out block is used only during debugging, where its purpose is to
@@ -72,58 +72,58 @@ indicating that the gateway will not be translated into an output port.
 Parameters specific to the Implementation tab are as follows.
 
 #### Interface Options  
-* #### Interface  
-  * #### None  
-    During HDL Netlist generation, this Gateway Out will be translated as an
+##### Interface  
+###### None  
+During HDL Netlist generation, this Gateway Out will be translated as an
 Output Port at the top level.
 
-  * #### AXI4-Lite  
-    During HDL Netlist Generation, an AXI4-Lite interface will be created
+###### AXI4-Lite  
+During HDL Netlist Generation, an AXI4-Lite interface will be created
 and the Gateway Out will be mapped to one of the registers within the
 AXI4-Lite interface.
 
-  * #### Interrupt  
-    During an IP Catalog Generation, this Gateway Out will be tagged as an
+###### Interrupt  
+During an IP Catalog Generation, this Gateway Out will be tagged as an
 Interrupt output port when the Model Composer design is packaged into an
 IP module that can be included in the Vivado® IP catalog.
 
-  * #### Auto assign address offset  
-    If a Gateway Out is configured to be an AXI4-Lite interface, this option
+##### Auto assign address offset  
+If a Gateway Out is configured to be an AXI4-Lite interface, this option
 allows an address offset to be automatically assigned to the register
 within the AXI4-Lite interface that the Gateway Out is mapped to.
 
-  * #### Address offset  
-    If Auto assign address offset is not checked, then this entry box allows
+##### Address offset  
+If Auto assign address offset is not checked, then this entry box allows
 you to explicitly specify a address offset to use. Must be a multiple of 4.
 
-  * #### Interface Name  
-    If the Gateway Out is configured to be an AXI4-Lite interface, assigns a
+##### Interface Name  
+If the Gateway Out is configured to be an AXI4-Lite interface, assigns a
 unique name to this interface. This name can be used to differentiate
 between multiple AXI4-Lite interfaces in the design. When using the IP
 Catalog flow, you can expect to see an interface in the IP that Model
 Composer creates with the name \<design_name\>\_\<interface_name\>\_
 s_axi.
 
-    **IMPORTANT**: The Interface Name must be composed of alphanumeric
+**IMPORTANT**: The Interface Name must be composed of alphanumeric
 characters (lowercase alphabetic) or an underscore (\_) only, and must
 begin with a lowercase alphabetic character. axi4_lite1 is acceptable,
 1Axi4-Lite is not.
 
-  * #### Description  
-    Additional designer comments about this Gateway Out that is captured in
+##### Description  
+Additional designer comments about this Gateway Out that is captured in
 the interface documentation.
 
 #### Constraints  
-* #### IOB Timing Constraint  
-  In hardware, a Gateway Out is realized as a set of input/output buffers
+##### IOB Timing Constraint  
+In hardware, a Gateway Out is realized as a set of input/output buffers
 (IOBs). There are three ways to constrain the timing on IOBs. They are
 None, Data Rate, and Data Rate, Set 'FAST' Attribute.
 
-  If None is selected, no timing constraints for the IOBs are put in the
+If None is selected, no timing constraints for the IOBs are put in the
 user constraint file produced by Model Composer. This means the paths
 from the IOBs to synchronous elements are not constrained.
 
-  If Data Rate is selected, the IOBs are constrained at the data rate at
+If Data Rate is selected, the IOBs are constrained at the data rate at
 which the IOBs operate. The rate is determined by System Clock Period
 provided on the System Generator token and the sample rate of the
 Gateway relative to the other sample periods in the design. For example,
@@ -139,7 +139,7 @@ NET "Dout(2)" OFFSET = OUT : 10.0 : AFTER "clk";
   ```
 
 
-> If Data Rate, Set 'FAST' Attribute is selected, the OFFSET = OUT
+If Data Rate, Set 'FAST' Attribute is selected, the OFFSET = OUT
 constraints described above are produced. In addition, a FAST slew rate
 attribute is generated for each IOB. This reduces delay but increases
 noise and power consumption. For the previous example, the following
@@ -151,13 +151,13 @@ NET "Dout(1)" FAST;
 NET "Dout(2)" FAST; 
   ```
 
-* #### Specify IOB Location Constraints  
-  Checking this option allows IOB location constraints to be specified.
+##### Specify IOB Location Constraints  
+Checking this option allows IOB location constraints to be specified.
 
-* #### IOB Pad Locations, e.g. {'MSB', ..., 'LSB'}  
-  IOB pin locations can be specified as a cell array of strings in this
+##### IOB Pad Locations, e.g. {'MSB', ..., 'LSB'}  
+IOB pin locations can be specified as a cell array of strings in this
 edit box. The locations are package-specific.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
