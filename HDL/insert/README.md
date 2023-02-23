@@ -42,11 +42,11 @@ decoder.
 Parameters specific to the Depuncture block are as follows:
 
 #### Depuncture code  
-> Specifies the depuncture pattern for inserting the string to the input.
+Specifies the depuncture pattern for inserting the string to the input.
 
 #### Symbol to insert  
-> Specifies the binary word to be inserted in the depuncture code.
+Specifies the binary word to be inserted in the depuncture code.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
