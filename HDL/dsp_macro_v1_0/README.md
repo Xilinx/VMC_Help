@@ -81,7 +81,7 @@ less than 48 bits, the output is truncated (LSBs removed).
 Specifies the User Defined output width of the P output port
 
 ##### Binary Point  
-  Specifies the placement of the binary point of the P output port.
+Specifies the placement of the binary point of the P output port.
 
 #### Additional ports  
 ##### Use ACOUT  
@@ -94,10 +94,10 @@ Use the optional carryout output port.
 Use the optional cascade B output port.
 
 ##### Use CARRYCASCOUT  
-  Use the optional cascade carryout output port.
+Use the optional cascade carryout output port.
 
 ##### Use PCOUT  
-  Use the optional cascade P output port.
+Use the optional cascade P output port.
 
 #### Control ports  
 Refer to the topic Implementation Page of the DSP Macro LogiCORE IP
@@ -105,4 +105,4 @@ Product Guide (PG323) for details on all the parameters on this tab.
 
 ## LogiCORE Documentation
 
-DSP Macro LogiCORE IP Product Guide (PG323)
+DSP Macro LogiCORE IP Product Guide ([PG323](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=pg323-dsp-macro))
