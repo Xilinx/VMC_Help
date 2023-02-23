@@ -33,7 +33,7 @@ Binary point location to be forced onto the corresponding output.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](matlab:helpview(vmcHelp('name','common-options'))).
+Boxes](../../GEN/common-options/README.md).
 
 ## Supported Verilog Constructs
 
