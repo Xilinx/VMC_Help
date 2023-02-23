@@ -270,7 +270,7 @@ below. This generally results in less resources consumed.
 
 #### Control Signals  
 ##### Has phase out  
-When checked the DDS will have the `phase_output` port. This is an
+When checked the DDS will have the phase_output port. This is an
 output of the Phase_Generator half of the DDS, so it precedes the sine
 and cosine outputs by the latency of the sine/cosine lookup table.
 
@@ -344,10 +344,10 @@ passes the content untouched from the input PHASE channel to the output
 channels.
 
 ###### User and Chan_ID_Field  
-In this mode, the TUSER field has both a `user` field and a `chan_id`
-field, with the `chan_id` field in the least significant bits. The
+In this mode, the TUSER field has both a user field and a chan_id
+field, with the chan_id field in the least significant bits. The
 minimal number of bits required to describe the channel will determine
-the width of the `chan_id` field. For example, 7 channels will require 3
+the width of the chan_id field. For example, 7 channels will require 3
 bits.
 
 ###### User Field Width  
@@ -356,11 +356,11 @@ input to output untouched by the DDS.
 
 ##### Config Channel Options  
 ###### Synchronization Mode  
-###### On_Vector  
+* On_Vector:  
 In this mode, the re-configuration data is applied when the channel
 starts a new cycle of time-division-multiplexed channels.
 
-####### On_Packet  
+* On_Packet:  
 In this mode, available when TLAST is set to Packet Framing, the TLAST
 channel will trigger the re-configuration. This mode is targeted at the
 case where it is to be associated with the packets implied by the input
