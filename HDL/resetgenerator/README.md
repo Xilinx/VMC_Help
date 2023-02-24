@@ -6,18 +6,14 @@ reset signal(s) running at the rates specified on the block.
 
 ![](./Images/block.png)
 
+## Description
+
 The downsampled reset signals are synchronized in the same way as they
 are during startup. The RDY output signal indicates when the downsampled
 resets are no longer asserted after the input reset is detected.
 
-## Block Parameters Dialog Box
+## Parameters
 
-The block parameters dialog box shown below can be invoked by
-double-clicking the icon in your Simulink® model.
-
-Figure: Block Parameters
-
-  
 ![](./Images/hlx1649233212209.png)  
 
 You specify the design sample rates in MATLAB® vector format as shown
