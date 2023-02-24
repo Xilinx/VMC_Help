@@ -35,24 +35,19 @@ floating-point type vector inputs into vector outputs of type Simulink®
 integer, single, double, or fixed-point.</p>
 <p>Hardware notes: In hardware these blocks become top level output
 ports or are discarded depending on how they are configured.</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFfklEQVR4nO2bXWwUVRTHf3dmttCtlpq2W0qMqRGJho0PRkGFALY8+BEEjWLtA2lj1ESIgthqNL4SyBpDgsRoIBDUWlAxUSQxcUsEAjHRKmQRo0FLNDHMFmxpt9vt7sz1Ydsu7c5st3U/ZsP8knmZc++eM/c/5849d3aElFLi4liUYgfgkhktk1EIUag4rnvsJrKMAgFcvdyZ82BcJlNZ3WJrm1ag6X7AZfZkc/NnJVC2P+aSPdne9FkL5DRUrQbNU592XigVAEgzYtlPKOXEhn9GytG8xpcrSlIg1VOH94aVINRZ9Y/HfsdIuALlhUziSJlgNBoCoKzcjxCapd1I/FuQWHNBSQmUMXOkgRH/h9GR88m2WjWaZ0Gq7RR7qVAyhWrmaU1imsOMRE5PnBmJnMY0hwFpaS8VFIC+vj4CgQDhcLjY8ViiqNV4b2y0feZIaRAdPIaURto5EIBIszsNu7FXAPbt20dHRweNjY3oul7QwLLBlJJY3CAasz4GI3FMM70SN80IkYGjRAaOYtqs6pyC3dgrAK2trfj9fkKhEE1NTc4TybzCyNAxorEY0Vgi7UiYgri2DEjPMNMYwDQGCh/zDLEbewWgtraWYDDoaJEUGUY1TgFW05QAvCTUe/Liu78/wsuv7OHWRS9QU7+Bpcs62H+gO6u+Z87+yZGjP0zbzm7sJxYJPp8vTSSnkVkkFSnqMJVFOfUppWTdk9v57PBptm5ey94PNnH7wnpe2rKHTw6emLb/e+9/w5GvpxfILkEmreKmiuREUiKZFlYNQ/EjRU3O/H0bPEPPTxfYsW0Dm158hLVrlvDh/s3cecfNbA8cBmBF45s89UwAgEhkhMrqFt7Z+SWbt+6ls+s4nV3HeezxbRn9WCWIruvpy2yfz0dXV1fOLjAfzJ1TQ6XXQ/kcNe2YU6ai5rB4OPfLXwCsWrF44pwQglUr/fT26gwPx2z7vr2jlYYGH0+vX87nh16b1te1Yx8Khdi4cWN6oarrOs3NzTO+kEIghMrcivtRPfUIoaFNjV4aDA99h2H05cynoiTfiRnG5FWiaUqklMTj9kt3TVMRQqAqCh7P9NtS14693+9n9+7dkzNI13WampoIhUL4/f4ZX0w+UZQKvJUPo3kWpG3hAClx4pdy6te/+BYAgsfOplxJyfET51h4Wz3z5nkRQkws86PR2e3xTR37YDCIz+dLZZBVg7q6uv9zbTlDUW6iouohW7uUBlEbcaSoBEDIq7Py3fjgXSxdsog33vqIwcEoDQ0+Dh46yflf/+bjA1sAmD+/ip6eP7ik99N18OSk/pqq0HtRp78/QlVVha0fK3FgbJEQDodtGzgBE8Fo3LQtVIcioxjxQYueXhLqahLqasA7a/9ffPo6zeuXs3PXVzz7/Lv0XtQ51NnOmkfvBeDVLeuYW+7h7iVb0TSFsjINSTKjnlh3Hz/2XKDtuV0ZfdiNvZBSykAgQEdHR1oDIQRXL3dSWd1S9Bd2pqjFUB/AqhhN7rcN4Ul0k1qCq8S1JmD8rp1qLy7XjmlldYttYmgAbW1tQHJHoba2tsChZociw2CcshEpVahqxvcAY0Vr+ZiNNLvT6O7uthx7DaCmpob29vaCBzVTMos0uVCVom5Km5RdMX8rUMTZY5cYJfO6YZzMuwnJQtVQ/Fi/6hovZKvyG2QOKakXduMoMowwToxlyWSkSD5zhLTevZaiHCGH8xpfLilJgQCEvIKQV4odRt4puSnueiPrDHL/vFgcshKo2DXQ9Yw7xTkcken7IPfrhsIxq68b3G+7io87xTkcVyCH4wrkcFyBHI4rkMNxBXI4rkAOxxXI4bgCORxXIIfjCuRwXIEcjiuQw3EFcjiuQA7HFcjhuAI5nP8A2ICBO/kkZ20AAAAASUVORK5CYII=" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.</p>
 <p>Vector Real Gateway Out blocks are the outputs from the HDL portion
 of your Simulink design. This block converts the Model Composer
 fixed-point or floating-point data type into a Simulink integer, single,
 double, or fixed-point data type.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFfklEQVR4nO2bXWwUVRTHf3dmttCtlpq2W0qMqRGJho0PRkGFALY8+BEEjWLtA2lj1ESIgthqNL4SyBpDgsRoIBDUWlAxUSQxcUsEAjHRKmQRo0FLNDHMFmxpt9vt7sz1Ydsu7c5st3U/ZsP8knmZc++eM/c/5849d3aElFLi4liUYgfgkhktk1EIUag4rnvsJrKMAgFcvdyZ82BcJlNZ3WJrm1ag6X7AZfZkc/NnJVC2P+aSPdne9FkL5DRUrQbNU592XigVAEgzYtlPKOXEhn9GytG8xpcrSlIg1VOH94aVINRZ9Y/HfsdIuALlhUziSJlgNBoCoKzcjxCapd1I/FuQWHNBSQmUMXOkgRH/h9GR88m2WjWaZ0Gq7RR7qVAyhWrmaU1imsOMRE5PnBmJnMY0hwFpaS8VFIC+vj4CgQDhcLjY8ViiqNV4b2y0feZIaRAdPIaURto5EIBIszsNu7FXAPbt20dHRweNjY3oul7QwLLBlJJY3CAasz4GI3FMM70SN80IkYGjRAaOYtqs6pyC3dgrAK2trfj9fkKhEE1NTc4TybzCyNAxorEY0Vgi7UiYgri2DEjPMNMYwDQGCh/zDLEbewWgtraWYDDoaJEUGUY1TgFW05QAvCTUe/Liu78/wsuv7OHWRS9QU7+Bpcs62H+gO6u+Z87+yZGjP0zbzm7sJxYJPp8vTSSnkVkkFSnqMJVFOfUppWTdk9v57PBptm5ey94PNnH7wnpe2rKHTw6emLb/e+9/w5GvpxfILkEmreKmiuREUiKZFlYNQ/EjRU3O/H0bPEPPTxfYsW0Dm158hLVrlvDh/s3cecfNbA8cBmBF45s89UwAgEhkhMrqFt7Z+SWbt+6ls+s4nV3HeezxbRn9WCWIruvpy2yfz0dXV1fOLjAfzJ1TQ6XXQ/kcNe2YU6ai5rB4OPfLXwCsWrF44pwQglUr/fT26gwPx2z7vr2jlYYGH0+vX87nh16b1te1Yx8Khdi4cWN6oarrOs3NzTO+kEIghMrcivtRPfUIoaFNjV4aDA99h2H05cynoiTfiRnG5FWiaUqklMTj9kt3TVMRQqAqCh7P9NtS14693+9n9+7dkzNI13WampoIhUL4/f4ZX0w+UZQKvJUPo3kWpG3hAClx4pdy6te/+BYAgsfOplxJyfET51h4Wz3z5nkRQkws86PR2e3xTR37YDCIz+dLZZBVg7q6uv9zbTlDUW6iouohW7uUBlEbcaSoBEDIq7Py3fjgXSxdsog33vqIwcEoDQ0+Dh46yflf/+bjA1sAmD+/ip6eP7ik99N18OSk/pqq0HtRp78/QlVVha0fK3FgbJEQDodtGzgBE8Fo3LQtVIcioxjxQYueXhLqahLqasA7a/9ffPo6zeuXs3PXVzz7/Lv0XtQ51NnOmkfvBeDVLeuYW+7h7iVb0TSFsjINSTKjnlh3Hz/2XKDtuV0ZfdiNvZBSykAgQEdHR1oDIQRXL3dSWd1S9Bd2pqjFUB/AqhhN7rcN4Ul0k1qCq8S1JmD8rp1qLy7XjmlldYttYmgAbW1tQHJHoba2tsChZociw2CcshEpVahqxvcAY0Vr+ZiNNLvT6O7uthx7DaCmpob29vaCBzVTMos0uVCVom5Km5RdMX8rUMTZY5cYJfO6YZzMuwnJQtVQ/Fi/6hovZKvyG2QOKakXduMoMowwToxlyWSkSD5zhLTevZaiHCGH8xpfLilJgQCEvIKQV4odRt4puSnueiPrDHL/vFgcshKo2DXQ9Yw7xTkcken7IPfrhsIxq68b3G+7io87xTkcVyCH4wrkcFyBHI4rkMNxBXI4rkAOxxXI4bgCORxXIIfjCuRwXIEcjiuQw3EFcjiuQA7HFcjhuAI5nP8A2ICBO/kkZ20AAAAASUVORK5CYII=" /></p>
 <p>According to its configuration, the Vector Real Gateway Out block can
 either define an output port for the top level of the HDL design
 generated by Model Composer, or be used simply as a test point that is
 trimmed from the hardware representation</p>
-</section>
-<section id="gateway-blocks" class="level2">
-<h2>Gateway Blocks</h2>
+<section id="gateway-blocks" class="level3">
+<h3>Gateway Blocks</h3>
 <p>As listed below, the Vector Real Gateway Out block is used to provide
 the following functions:</p>
 <ul>
@@ -71,14 +66,17 @@ vector against expected results during HDL simulation.</li>
 <li>Name the corresponding output port on the top-level HDL entity.</li>
 </ul>
 </section>
-<section id="block-parameters" class="level2">
-<h2>Block Parameters</h2>
-<p>Basic Tab<br />
-Parameters specific to the Basic tab are as follows. Propagate data type
-to output<br />
-This option is useful when you instantiate a Model Composer design as a
-sub-system into a Simulink design. Instead of using a Simulink double as
-the output data type by default, the Model Composer data type is
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic Tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<section id="propagate-data-type-to-output" class="level4">
+<h4>Propagate data type to output</h4>
+<p>This option is useful when you instantiate a Model Composer design as
+a sub-system into a Simulink design. Instead of using a Simulink double
+as the output data type by default, the Model Composer data type is
 propagated to an appropriate Simulink data type according to the
 following table:</p>
 <table>
@@ -133,66 +131,99 @@ fraction width greater than that for single precision</td>
 </tr>
 </tbody>
 </table>
-<p>Table 1. Model Composer Data Type Propagation</p>
-<p>Translate into Output Port<br />
-Having this box unchecked prevents the gateway from becoming an actual
-output port when translated into hardware. This checkbox is on by
+</section>
+<section id="translate-into-output-port" class="level4">
+<h4>Translate into Output Port</h4>
+<p>Having this box unchecked prevents the gateway from becoming an
+actual output port when translated into hardware. This checkbox is on by
 default, enabling the output port. When this option is not selected, the
 Vector Real Gateway Out block is used only during debugging, where its
 purpose is to communicate with Simulink Sink blocks for probing portions
 of the design. In this case, the Vector Real Gateway Out block turns
 gray in color, indicating that the gateway will not be translated into
 an output port.</p>
-<p> </p>
-<p>Implementation Tab<br />
-Parameters specific to the Implementation tab are as follows.</p>
-<p>Interface Options<br />
-None<br />
-During HDL Netlist generation, this Vector Real Gateway Out will be
+</section>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This blocks
+enable 1-D vector support for the primary block operation.</p>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation Tab</h3>
+<p>Parameters specific to the Implementation tab are as follows.</p>
+<section id="interface-options" class="level4">
+<h4>Interface Options</h4>
+<section id="none" class="level5">
+<h5>None</h5>
+<p>During HDL Netlist generation, this Vector Real Gateway Out will be
 translated as an Output Port at the top level.</p>
-<p>AXI4-Lite<br />
-During HDL Netlist Generation, an AXI4-Lite interface will be created,
-and the Vector Real Gateway Out will be mapped to one of the registers
-within the AXI4-Lite interface.</p>
-<p>Interrupt<br />
-During an IP catalog Generation, this Vector Real Gateway Out is tagged
-as an Interrupt output port when the Model Composer design is packaged
-into an IP module that can be included in the Vivado® IP catalog.</p>
-<p>Auto assign address offset<br />
-If a Vector Real Gateway Out is configured to be an AXI4-Lite interface,
-this option allows an address offset to be automatically assigned to the
-register within the AXI4-Lite interface that the Vector Real Gateway Out
-is mapped to.</p>
-<p>Address offset<br />
-If Auto assign address offset is not checked, then this entry box allows
-you to explicitly specify a address offset to use. Must be a multiple of
-4.</p>
-<p>Interface Name<br />
-If the Vector Real Gateway Out is configured to be an AX4-Lite
+</section>
+<section id="axi4-lite" class="level5">
+<h5>AXI4-Lite</h5>
+<p>During HDL Netlist Generation, an AXI4-Lite interface will be
+created, and the Vector Real Gateway Out will be mapped to one of the
+registers within the AXI4-Lite interface.</p>
+</section>
+<section id="interrupt" class="level5">
+<h5>Interrupt</h5>
+<p>During an IP catalog Generation, this Vector Real Gateway Out is
+tagged as an Interrupt output port when the Model Composer design is
+packaged into an IP module that can be included in the Vivado® IP
+catalog.</p>
+</section>
+</section>
+<section id="auto-assign-address-offset" class="level4">
+<h4>Auto assign address offset</h4>
+<p>If a Vector Real Gateway Out is configured to be an AXI4-Lite
+interface, this option allows an address offset to be automatically
+assigned to the register within the AXI4-Lite interface that the Vector
+Real Gateway Out is mapped to.</p>
+</section>
+<section id="address-offset" class="level4">
+<h4>Address offset</h4>
+<p>If Auto assign address offset is not checked, then this entry box
+allows you to explicitly specify a address offset to use. Must be a
+multiple of 4.</p>
+</section>
+<section id="interface-name" class="level4">
+<h4>Interface Name</h4>
+<p>If the Vector Real Gateway Out is configured to be an AX4-Lite
 interface, assigns a unique name to this interface. This name can be
 used to differentiate between multiple AXI4-Lite interfaces in the
 design. When using the IP catalog flow, you can expect to see an
 interface in the IP that Model Composer creates with the name
-<code>&lt;design_name&gt;_&lt;interface_name&gt;_ s_axi</code>.</p>
-<p>IMPORTANT: The Interface Name must be composed of alphanumeric
-characters (lowercase alphabetic) or an underscore (_) only, and must
-begin with a lowercase alphabetic character. <code>axi4_lite1</code> is
-acceptable, 1AXI4-Lite is not.</p>
-<p>Description<br />
-Additional designer comments about this Vector Real Gateway Out that is
-captured in the interface documentation.</p>
-<p>Constraints<br />
-IOB Timing Constraint<br />
-In hardware, a Vector Real Gateway Out is realized as a set of
+&lt;design_name&gt;<em>&lt;interface_name&gt;</em> s_axi.</p>
+<p><strong>IMPORTANT</strong>: The Interface Name must be composed of
+alphanumeric characters (lowercase alphabetic) or an underscore (_)
+only, and must begin with a lowercase alphabetic character. axi4_lite1
+is acceptable, 1AXI4-Lite is not.</p>
+</section>
+<section id="description-1" class="level4">
+<h4>Description</h4>
+<p>Additional designer comments about this Vector Real Gateway Out that
+is captured in the interface documentation.</p>
+</section>
+</section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+</section>
+<section id="iob-timing-constraint" class="level3">
+<h3>IOB Timing Constraint</h3>
+<p>In hardware, a Vector Real Gateway Out is realized as a set of
 input/output buffers (IOBs). There are three ways to constrain the
 timing on IOBs. They are None, Data Rate, and Data Rate, Set &#39;FAST&#39;
 Attribute.</p>
-<p>None<br />
-No timing constraints for the IOBs are put in the user constraint file
-produced by Model Composer. This means the paths from the IOBs to
+<section id="none-1" class="level4">
+<h4>None</h4>
+<p>No timing constraints for the IOBs are put in the user constraint
+file produced by Model Composer. This means the paths from the IOBs to
 synchronous elements are not constrained.</p>
-<p>Data Rate<br />
-The IOBs are constrained at the data rate that the IOBs operate. The
+</section>
+<section id="data-rate" class="level4">
+<h4>Data Rate</h4>
+<p>The IOBs are constrained at the data rate that the IOBs operate. The
 rate is determined by System Clock Period provided on the System
 Generator token and the sample rate of the Gateway relative to the other
 sample periods in the design. For example, the following OFFSET = OUT
@@ -202,22 +233,31 @@ that is running at the system period of 10 ns:</p>
 NET &quot;Dout(0)&quot; OFFSET = OUT : 10.0 : AFTER &quot;clk&quot;; 
 NET &quot;Dout(1)&quot; OFFSET = OUT : 10.0 : AFTER &quot;clk&quot;; 
 NET &quot;Dout(2)&quot; OFFSET = OUT : 10.0 : AFTER &quot;clk&quot;;</code></pre>
-<p>Specify IOB Location Constraints<br />
-Checking this option allows IOB location constraints to be
+<section id="specify-iob-location-constraints" class="level5">
+<h5>Specify IOB Location Constraints</h5>
+<p>Checking this option allows IOB location constraints to be
 specified.</p>
-<p>IOB Pad Locations, e.g. {&#39;MSB&#39;, ..., &#39;LSB&#39;}<br />
-IOB pin locations can be specified as a cell array of strings in this
+</section>
+<section id="iob-pad-locations-eg-msb--lsb" class="level5">
+<h5>IOB Pad Locations, e.g. {&#39;MSB&#39;, ..., &#39;LSB&#39;}</h5>
+<p>IOB pin locations can be specified as a cell array of strings in this
 edit box. The locations are package-specific.</p>
-<p>Data Rate, Set &#39;FAST&#39; Attribute<br />
-The OFFSET = OUT constraints described above are produced. In addition,
-a FAST slew rate attribute is generated for each IOB. This reduces delay
-but increases noise and power consumption. For the previous example, the
-following additional attributes are added to the constraints file.</p>
+</section>
+</section>
+<section id="data-rate-set-fast-attribute" class="level4">
+<h4>Data Rate, Set &#39;FAST&#39; Attribute</h4>
+<p>The OFFSET = OUT constraints described above are produced. In
+addition, a FAST slew rate attribute is generated for each IOB. This
+reduces delay but increases noise and power consumption. For the
+previous example, the following additional attributes are added to the
+constraints file.</p>
 <pre class="pre"><code>NET &quot;Dout(0)&quot; FAST; 
 NET &quot;Dout(1)&quot; FAST; 
 NET &quot;Dout(2)&quot; FAST; </code></pre>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
 </section>
 </section>
 </body>

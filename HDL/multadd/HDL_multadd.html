@@ -30,35 +30,52 @@ vertical-align: middle;
 </header>
 <section id="multadd" class="level1">
 <h1>MultAdd</h1>
-<p>The Xilinx MultAdd block performs both fixed-point and floating-point
+<p>The MultAdd block performs both fixed-point and floating-point
 multiply and addition with the a and b inputs used for the
 multiplication and the c input for addition or subtraction.</p>
 <p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>If the MultAdd inputs are floating point, then inputs a,b, and c must
 be of the same data type. If the inputs are fixed point, then the port c
 binary point must be aligned to the sum of the port a and port b binary
 points.</p>
-<section id="block-parameters" class="level2">
-<h2>Block Parameters</h2>
-<p>The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows.</p>
-<p>Operation<br />
-Addition<br />
-Specifies that an addition will be performed after multiplication.</p>
-<p>Subtraction<br />
-Specifies that a subtraction will be performed after multiplication.</p>
-<p>Addition or subtraction<br />
-Adds a subtract port to the block, which controls whether the operation
-following multiplication is addition or subtraction (subtract High =
-subtraction, subtract Low = addition).</p>
-<p>Optional Ports<br />
-Provide enable port<br />
-Adds an active-High enable port to the block interface.</p>
-<p>Latency<br />
-This defines the number of sample periods by which the block&#39;s output is
-delayed. The latency values you can set depend on whether you are
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<section id="operation" class="level4">
+<h4>Operation</h4>
+<section id="addition" class="level5">
+<h5>Addition</h5>
+<p>Specifies that an addition will be performed after
+multiplication.</p>
+</section>
+<section id="subtraction" class="level5">
+<h5>Subtraction</h5>
+<p>Specifies that a subtraction will be performed after
+multiplication.</p>
+</section>
+<section id="addition-or-subtraction" class="level5">
+<h5>Addition or subtraction</h5>
+<p>Adds a subtract port to the block, which controls whether the
+operation following multiplication is addition or subtraction (subtract
+High = subtraction, subtract Low = addition).</p>
+</section>
+</section>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<section id="provide-enable-port" class="level5">
+<h5>Provide enable port</h5>
+<p>Adds an active-High enable port to the block interface.</p>
+</section>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>This defines the number of sample periods by which the block&#39;s output
+is delayed. The latency values you can set depend on whether you are
 performing fixed point or floating point arithmetic:</p>
 <ul>
 <li>For fixed point arithmetic, you can only specify a latency of 0 (for
@@ -70,34 +87,49 @@ for fixed point arithmetic.</li>
 to the block interface, you can only specify a positive integer for
 floating point arithmetic.</li>
 </ul>
-<p>See the Multiply Adder LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xbip_multadd;v=latest;d=pg192-multadd.pdf">PG192</a>)
+<p>See the Multiply Adder LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg192-multadd&amp;ft:locale=en-US">PG192</a>)
 for details on latency in the block.</p>
-<p> </p>
-<p>Output tab<br />
-Parameters specific to the Output tab are as follows.</p>
-<p>Precision<br />
-This parameter allows you to specify the output precision for
+</section>
+</section>
+<section id="output-tab" class="level3">
+<h3>Output tab</h3>
+<p>Parameters specific to the Output tab are as follows.</p>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
 Full precision.</p>
-<p>Full<br />
-The block uses sufficient precision to represent the result without
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
 error.</p>
-<p>User Defined<br />
-If you do not need full precision, this option allows you to specify a
-reduced number of total bits and/or fractional bits.</p>
-<p>Fixed-point Output Type<br />
-Arithmetic type</p>
-<p>Signed (2’s comp)<br />
-The output is a Signed (2’s complement) number.</p>
-<p>Unsigned<br />
-The output is an Unsigned number.</p>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</section>
+</section>
+<section id="fixed-point-output-type" class="level4">
+<h4>Fixed-point Output Type</h4>
+<p>Arithmetic type</p>
+<section id="signed-2s-comp" class="level5">
+<h5>Signed (2’s comp)</h5>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level5">
+<h5>Unsigned</h5>
+<p>The output is an Unsigned number.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Multiply Adder LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xbip_multadd;v=latest;d=pg192-multadd.pdf">PG192</a>)</p>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>Multiply Adder LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg192-multadd&amp;ft:locale=en-US">PG192</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>

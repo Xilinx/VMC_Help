@@ -30,44 +30,68 @@ vertical-align: middle;
 </header>
 <section id="reciprocal" class="level1">
 <h1>Reciprocal</h1>
-<p>The Xilinx Reciprocal block performs the reciprocal on the input.
-Currently, only the floating-point data type is supported.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<section id="block-parameters" class="level2">
-<h2>Block Parameters</h2>
-<p>The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows.</p>
-<p>Flow Control<br />
-Blocking<br />
-Selects “Blocking” mode. In this mode, the lack of data on one input
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Reciprocal block performs the reciprocal on the input. Currently,
+only the floating-point data type is supported.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<section id="flow-control" class="level4">
+<h4>Flow Control</h4>
+<section id="blocking" class="level5">
+<h5>Blocking</h5>
+<p>Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
 another input channel.</p>
-<p>NonBlocking<br />
-Selects “Non-Blocking” mode. In this mode, the lack of data on one input
-channel does not block the execution of an operation if data is received
-on another input channel.</p>
-<p> </p>
-<p>Optional ports<br />
-Input Channel Ports<br />
-Has TLAST<br />
+</section>
+<section id="nonblocking" class="level5">
+<h5>NonBlocking</h5>
+<p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
+input channel does not block the execution of an operation if data is
+received on another input channel.</p>
+</section>
+</section>
+</section>
+<section id="optional-ports" class="level3">
+<h3>Optional ports</h3>
+<section id="input-channel-ports" class="level4">
+<h4>Input Channel Ports</h4>
+<p>Has TLAST<br />
 Adds a TLAST port to the Input channel.</p>
-<p>Has TUSER<br />
-Adds a TUSER port to the Input channel.</p>
-<p>Provide enable port<br />
-Adds an enable port to the block interface.</p>
-<p>Has Result TREADY<br />
-Adds a TREADY port to the Result channel.</p>
-<p>Exception Signals<br />
-UNDERFLOW<br />
-Adds an output port that serves as an underflow flag.</p>
-<p>DIVIDE_BY_ZERO<br />
-Adds an output port that serves as a divide-by-zero flag.</p>
+<section id="has-tuser" class="level5">
+<h5>Has TUSER</h5>
+<p>Adds a TUSER port to the Input channel.</p>
+</section>
+<section id="provide-enable-port" class="level5">
+<h5>Provide enable port</h5>
+<p>Adds an enable port to the block interface.</p>
+</section>
+<section id="has-result-tready" class="level5">
+<h5>Has Result TREADY</h5>
+<p>Adds a TREADY port to the Result channel.</p>
+</section>
+</section>
+<section id="exception-signals" class="level4">
+<h4>Exception Signals</h4>
+<section id="underflow" class="level5">
+<h5>UNDERFLOW</h5>
+<p>Adds an output port that serves as an underflow flag.</p>
+</section>
+<section id="divide_by_zero" class="level5">
+<h5>DIVIDE_BY_ZERO</h5>
+<p>Adds an output port that serves as a divide-by-zero flag.</p>
+</section>
+</section>
+</section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>

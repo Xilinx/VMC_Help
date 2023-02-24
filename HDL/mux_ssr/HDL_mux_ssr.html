@@ -32,62 +32,94 @@ vertical-align: middle;
 <h1>Vector Mux</h1>
 <p>The Vector Multiplexer block supports the Multiplexing feature for
 input of vector types.</p>
+<p><img src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.</p>
 <p>The Vector Mux block implements a multiplexer. The block has one
 select input (type unsigned) and a user-configurable number of data bus
 inputs, ranging from 2 to 1024.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAACjCAYAAADhArLQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAOzklEQVR4nO2daXRU53mAnxlptI8WkEaWZEACs4sdCe0zmpE0gNNTB8eO7Z64oiW28b5FcWKnttO4ptYxTVMTErsJdmzH1I17etL2pO2pHEZgZqSRWARYYGzAMjJBC0hoX2ZufwwSQmgkzejeq4XvOYcfSPd++uaZb95733fue69GkiQJgaJoJ3sCNwOBo/1So9GwZn0WGdlGLAUF5GZlMCsqhMAA8d74gma0cKHRaCh9432cDhtOu43mpousS88hK9eM1VrEymUL0Yfr0Go0as552jGm5ANH/zT4/8aGC1Q59uN02KhylBMaFk56ppE8owVrUQFzk+IIDx31w3FT4pPkoUiSxJnTtTgdNioP2jh21MmChUtIzzBishSQn5dNXEw4wUEBik1+uuC35OH09vRQc6RyMLTUf3WO1esyyMzJp6CggHWrVxCtD7op47lskofTcrmZqor9OO02nA4bSJCWmUd2rgWrtYAF8xJvmniumOShSJLEV1+ewWm3UWnfx5EqO0lzk0nPyCPXZKHAbCR+duSMjeeqSB5Of38fnx47hNNejtNh44vTtaxcnUZaphGzpYDM9LXE6INnTDyfFMnDaW9r5ZDzk0HpHe1tpGXkeeJ5YQFLF6YQFaGbtvF8SkgezoX6usFYXl15gNmxBtIyjGTnmikoyCcpPmZaxfMpKXkobreLU7XHBuP5yRNHWbp8NWmZeRhNFnKyNjA7KnRKx/MpL3k4XZ0dHKl2XJeFrt+QOxjPVy1fRHRE0JSK59NO8nC8ZaGZOfmYLfkkJ8VPejyf9pKH4i0LHYjnxrws4mLCVY/nM0rycG7IQuvOsWZ9BmmZJoz5FtatTiVGH6x4PJ/RkoczUhaanmUkPdNEvsXMwuQkReL5TSV5KF6z0EwjGdkmjMYcEmKjZYnnN63k4XjLQtdn5JGTZ2ZD+lpm6YP9iudCshdGykLTM/M88dxkZumiFKIjgsYVz4XkcTJSFpqeaSQt04jRZGL9siSv+2okSZKamprYs2cPxcXFxMXFXfulkDwiQ7NQp93G4aqDjPalv0aSJKm0tJSSkhJSU1MpKyvDYDB4fikkj4ucVbeMKlkLUFxcTGpqKsePH8disdDQ0CDLH29va6X4bossY01ntABxcXGUlZUpIlow5LoLg8FAWVkZFotlULQ3Ku372POLneh0OiKjYnjx1Z/T2dnBjpefpr+vl76+Pp754avEzIpV5UVMda47/xgu2hsfffBrnn3h71mwcCn7//jftLQ08y+/+SWb/uwu8sybOVFTzZv/9Crff/F1xV/AdOCGkzyDwcDevXtJTU31ulOeeRMvP7cdy8Y7KNq8hThDAseOOqk5UsmH778FkoRWO3VKjZPNDZIbGhq45557Rt3p9jvuJSPHTPnHf+Cph77NK6//Cp1Ox7MvlJI8f+Hgdu1trfLPeBpyXVLe0NAwGCpGW8nvvPVTwsIi+ObdxRgLbufsmc9YtmItn+z7HwBOfVrD7z96T9mZTyMGV/JwwWVlZcTHx4+4kyE+kce33UloWDjhEXq2PvA0aRlG/u5vnqBi2524XP1870elqr2IqY5GkiSpsbERs9l8nWCDwSCSkXEyrmTk7bffvkGwQD4CAbZu3QpwQ+1CIA+iCicD4woXAmURklVASFYBIVkFhGQVEJJVQEhWASFZBYRkFRCSVUBIVgEhWQWEZBUQklVASFYBIVkFhGQVEJJVYNLaOCPDdURHBPu8nz5MB0BbZ58s8wgNDuDz81dwuZW7qdikSE6KC2dufDharf+9dNH6INnm8+Wf2nH1umQbbziqStZqNSyaE0WMPshnwW63RE+fmxNnLwOwPCWGYJ3W7zdq6Hg9CgoGFSUHBwX4Lcbtlrjc1stnX7XivvqxPnK6eUJv2PDxlEQVyVERQSydF41W67nMwBfcbom6ix3UN3bc8POTX7b4HHq8jackikv2N/5KkoTbDbVfttDa3ut1u/rGDtq7+sZ8E8c7nhIoJlmu+DueeNna3svh081ew5Ga8XckFJEsd/wdDz29rhHjtNrxdyRklxwaHMiiuZGARE+fb6smQKvh66Yuv+Pl0DidnBABoHr8HQnZJUtI9Pa5/dtXgraOiScZ9Y0dXOnwxF25kpaJIHta3d3j4mx9Gy6XhK93ZtZoIDE2jFmRvmeCw2nr7JsSgkGh2kV3n4uzF9pwudxI+GZaowVDTAjxMSFKTG1SUKxA1Nfv5uyFNnp7/VnRGqIjQ0iKC2ea3JVsVLQATU1NlJaW0tjYKOvg/S6Jcxfa6Orpx+2jaa0GIsICmRsfMS3u/zaaPy3Anj17KCkpwWw2y97u65Yk6i62097Zj69nUFqNhtDgQJIT9AQGTG3Ro/mbcAP7iZpqXix5EIA//u9/UHy3hb+8y8zvf/fu4DaS5Dnit1zpHvWK9JHQaCAoSENKgh5d4LXoZt9fxkP3f4OawxU+jacUo/mTrYG9p6ebN9/Ywc/e+ohfvvtffPj+m7S2XLpum4uXu2m43I3k4xmeBg0BAVpSEvSE6DydrnOTF5Bjsvo2kIKM5s+vBvbzdWf58Q8eJi4+kVmxnkaeU58eZfGylURGRQOwbkMuRw85yDNvvm7fS1d66O+XmJsQQVCg78fdFbfN4tiZSyTNSfZ5XyUZyd9AJ5l2pA0H3hFv/PbtXXzrvm28svNXg3cCuNTcyKzZ1zqn4gwJNDeO/GnQh+vQhwUSGhzg07+P/vUDnn7qcU7XnpDDi+wM9zewom9YSgMN7KNx9gtPmy/AqrUZI24jSRIMO1ZptRqWzIv2VOXGOGPYvXs3JpMJk8lEYmIiO3fu5M677qX40ZeYM38Jv/nnf8S+///4t7172P/xH0YdS02G+jt+/DiPPPKIfw3sIA2WFN0uT31idmw8TQ3X2tEaLn5Ncsq1ZnZfi0bbt29n+/bt1NXVsWXLFu789v0cOd08WOS5f9sT3L/tiTHHUZuh/lJTU9m1a5d/DexzkxdQe/wwAFWV+wFYsmwVp2praG25TFdnB9UV+1m9PgvwFO3XLJxNSJBvVTm3201x8Vaef6mU882uSauijZeR+tMNBoN/Dez3FT/KS99/iP/89w9IWbAYSZLQBQXx8FM/4skH7gI8K00fGTWhov1PfvIKy9dkYJi7bAIvXR28CQYFG9gnWrTf/4md75U8x+u79075G5TkrLpl8GA3Un96IMjfwC5H0b7kuedpamzg8e9+C4B16TlsffCZCc1LSUbzJ3sDu1xF+527Rz/DGXsentXf1aPO102vvfaaV3+yN7CHBgWQnKj3fZZ40u/Glm6aW7v92n+A2VEhGK6WShsuT3y8sVC9gb2r18Xn56/Q0+/yufKm0UBsdDBJhjCfLx3w7K8hyRBGbPS1ov9ExpMLRerJff1uzta3097V50eJU0NEqI75SRHXFYTGQheoZX5SBBGh199619/x5ESxvypJEvUNnTS19PhctNdqNOgCA5ifqCcsZOyvIcNCApmfqEcXGDBiJunreHKj+Fvb3NpN3cV23G7fvojS4DkNnBsfwewo719FzY4K8RT2tZrhWbxf4ymBKp+fzu5+znzdRq+McXpo/PUl3E407vuDakFKzjjtLf76O57SqHokmGicDgoM4LZbI7nt1kiCvMRff8bzp67tC5NyEXhzazddPX2Eh+h83jc02DPlrp5+WeYSpNPS71K28DRp7Qyd3S46u9W/+G8yEI05KiAkq4CQrAJCsgoIySogJKuAkKwCQrIKCMkqICSrgJCsAkKyCgjJKiAkq4CQrAJCsgoIySogJKuAkKwCQrIKCMkqICSrgKIN7AIPijewC2RuYO/oaKPkse/wwjPblJntNEXWJ7D/dMfzXjtUb2Zka2AHeOaHO/jidO1gI6XAg2wN7AAhoWHKzXQao1gDu+AaN0j2t4Fd4B3ZGtgF3hmUPFIDtjfuK36U9/fs4skH76a3p2ewUfCv7ink5R88jNNu4ztbjFR88rHyr2AaIJ7ALgNjdaQq0sA+03G7XXxWW4PTUU7lQduY24snsI+TC/V1VDlsVBy0cajyALckJFBQWMjfvvQ8RmPeqPuKJ7B7ob2tlUOVBzyr1W6ju6uT/HwzmzdvxFpUSGJi4rjHEpKv0t/fx4lj1VQ7yqk4aOPs5ydJ25CJ1VrE7ZusrFixwu/myknrfppsJEmi7twXVFXYqDy4jyPVDpJT5lNgKeQfXt9Bbk4OISHytAffVJJbLjdTVVFOlaOcyoP70Gq1mMwWHvruVjb+7rfExsaOOYY/zOhw0dvTQ83hCqoqPGcB9efPkZGZg9Vq5Ru3W1myeLEq/dUzaiW73W7OnK6lymGj0m7j2NEqFi9ZhsVSyC92v0FOdiY6ne9dsBNl2ktubLiA015OlcOG01FORIQek9nCk088xiZrAdHRUZM9xeknuauzg8PVdqrsNpwOG81NDWTlmNhYVMiun5Vy24L5kz3FG5jykt1uFyc/rcHpsOG02zh14ijLV67BYingke3vkJ2RRkDA1L5v3JQ88F2or6PSvg+no5zqigPEGeLJM1nYaC1iY5GZqEj/7tY1WUyJldze1kr11ezKabfR1dlBZo6Jb97x5/z6rZ+TMm/OZE9xQkyK5P7+Pk7UVOO0l+N02Djz+UlWr00n31zAs089Rkb6GgK0M+e6G1XCxUB25Ymrnuzq1jkp5BjNbLQWUmQxEamfud8PKraSWy43U+Uovyq2HDSQmZ3Pvff9Be+9+w7zbk2YEc8QGQ+yreSB7GpAav35c6xZn0l+fgGbN1lZt2Y5usCpfRagFH5LHsiunFezq+NHq1iwcCnZuflYrUXkG7OJ1ocqNvHphE/hYiC7cjpsVDnKCY/QsyHLyNa/foBN1g+ZkxhHwASe4DtTGXMlv/bGezivZleXmhpYvyGXXKOFzZuKWLl8ESFBN2cI8IUxJa9NyyIjO5+iwkJystOJiQyZFs9imkqMGi58fYSQYGRmzhn/FEZIVgEhWQWEZBUQklVASFYBIVkFhGQVEJJVQEhWASFZBYRkFRCSVUBIVgEhWQWEZBUQklVASFaB/wf7kImj1QKuCgAAAABJRU5ErkJggg==" /></p>
 </section>
-<section id="block-parameters" class="level2">
-<h2>Block Parameters</h2>
-<p>Open the Block Parameters dialog box by double-clicking the icon in
-your Simulink® model.</p>
-<p>Basic tab<br />
-Number of inputs<br />
-Specify a number between 2 and 32.</p>
-<p>Optional Ports<br />
-Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<section id="number-of-inputs" class="level4">
+<h4>Number of inputs</h4>
+<p>Specify a number between 2 and 32.</p>
+</section>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Output tab<br />
-Precision<br />
-This parameter allows you to specify the output precision for
+</section>
+</section>
+<section id="output-tab" class="level3">
+<h3>Output tab</h3>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating-point arithmetic output will always be
 Full precision.</p>
-<p>Full<br />
-The block uses sufficient precision to represent the result without
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
 error.</p>
-<p>User Defined<br />
-If you do not need full precision, this option allows you to specify a
-reduced number of total bits and/or fractional bits.</p>
-<p>Fixed-point Output Type<br />
-Arithmetic type<br />
-Signed (2’s comp)<br />
-The output is a Signed (2’s complement) number.</p>
-<p>Unsigned<br />
-The output is an Unsigned number.</p>
-<p>Fixed-Point Precision<br />
-Number of bits<br />
-Specifies the bit location of the binary point of the output number
+</section>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</section>
+</section>
+<section id="fixed-point-output-type" class="level4">
+<h4>Fixed-point Output Type</h4>
+<section id="arithmetic-type" class="level5">
+<h5>Arithmetic type</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned</h6>
+<p>The output is an Unsigned number.</p>
+</section>
+</section>
+<section id="fixed-point-precision" class="level5">
+<h5>Fixed-Point Precision</h5>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
+<p>Specifies the bit location of the binary point of the output number
 where bit zero is the least significant bit.</p>
-<p>Binary point<br />
-Position of the binary point. in the fixed-point output.</p>
-<p>Quantization<br />
-Refer to the section Overflow and Quantization in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
+<p>Position of the binary point. in the fixed-point output.</p>
+</section>
+</section>
+<section id="quantization" class="level5">
+<h5>Quantization</h5>
+<p>Refer to the section Overflow and Quantization in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Overflow<br />
-Refer to the section Overflow and Quantization in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="overflow" class="level5">
+<h5>Overflow</h5>
+<p>Refer to the section Overflow and Quantization in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="super-sample-rate-ssr" class="level5">
+<h5>Super Sample Rate (SSR)</h5>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This block
+enables 1-D vector support for the primary block operation.</p>
+<p>Parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>

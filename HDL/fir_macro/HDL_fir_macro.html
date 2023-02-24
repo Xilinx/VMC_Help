@@ -49,8 +49,9 @@ channel FIR filters. If your FIR filter implementation will use more
 complicated filter features such as multiple channels or multiple path
 core configuration, an AXI4-Stream-compliant interface, or functions
 such as reloading co-efficient, channel pattern support, or other
-HDL-based GUI parameters, use the Xilinx <a href="fircompiler72.html">FIR Compiler 7.2</a> block in your design
-instead of the Digital FIR Filter block.</p>
+HDL-based GUI parameters, use the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;fir_compiler_v7_2&#39;,&#39;category&#39;,&#39;HDL&#39;))">FIR
+Compiler 7.2</a> block in your design instead of the Digital FIR Filter
+block.</p>
 <p>In the Vivado® design flow, the Digital FIR filter block is inferred
 as &quot;LogiCORE™ IP FIR Compiler v7.2&quot; for code generation. Refer to the
 document <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">LogiCORE
@@ -91,9 +92,9 @@ scalar.</p>
 <p>The number of taps is inferred from the length of the MATLAB row
 vector. If multiple coefficient sets are specified, then each set is
 appended to the previous set in the vector.</p>
-<ul>
-<li><h4 id="fdatool">FDATool</h4></li>
-</ul>
+</section>
+<section id="fdatool" class="level4">
+<h4>FDATool</h4>
 <p>This button is enabled if the Use FDA Tool as Coefficient Source
 option is enabled. Click this button to open a Block Parameters dialog
 box for the FDA Tool, and enter your filter specifications in this

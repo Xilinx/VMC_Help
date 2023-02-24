@@ -340,10 +340,9 @@ menu below. This generally results in less resources consumed.</p>
 <h4>Control Signals</h4>
 <section id="has-phase-out" class="level5">
 <h5>Has phase out</h5>
-<p>When checked the DDS will have the <code>phase_output</code> port.
-This is an output of the Phase_Generator half of the DDS, so it precedes
-the sine and cosine outputs by the latency of the sine/cosine lookup
-table.</p>
+<p>When checked the DDS will have the phase_output port. This is an
+output of the Phase_Generator half of the DDS, so it precedes the sine
+and cosine outputs by the latency of the sine/cosine lookup table.</p>
 </section>
 <section id="aclken" class="level5">
 <h5>ACLKEN</h5>
@@ -438,11 +437,10 @@ channels.</p>
 </section>
 <section id="user-and-chan_id_field" class="level6">
 <h6>User and Chan_ID_Field</h6>
-<p>In this mode, the TUSER field has both a <code>user</code> field and
-a <code>chan_id</code> field, with the <code>chan_id</code> field in the
-least significant bits. The minimal number of bits required to describe
-the channel will determine the width of the <code>chan_id</code> field.
-For example, 7 channels will require 3 bits.</p>
+<p>In this mode, the TUSER field has both a user field and a chan_id
+field, with the chan_id field in the least significant bits. The minimal
+number of bits required to describe the channel will determine the width
+of the chan_id field. For example, 7 channels will require 3 bits.</p>
 </section>
 <section id="user-field-width" class="level6">
 <h6>User Field Width</h6>
@@ -454,16 +452,16 @@ from input to output untouched by the DDS.</p>
 <h5>Config Channel Options</h5>
 <section id="synchronization-mode" class="level6">
 <h6>Synchronization Mode</h6>
-</section>
-<section id="on_vector" class="level6">
-<h6>On_Vector</h6>
-<p>In this mode, the re-configuration data is applied when the channel
-starts a new cycle of time-division-multiplexed channels.</p>
-<p>####### On_Packet<br />
+<ul>
+<li><p>On_Vector:<br />
+In this mode, the re-configuration data is applied when the channel
+starts a new cycle of time-division-multiplexed channels.</p></li>
+<li><p>On_Packet:<br />
 In this mode, available when TLAST is set to Packet Framing, the TLAST
 channel will trigger the re-configuration. This mode is targeted at the
 case where it is to be associated with the packets implied by the input
-TLAST indicator.</p>
+TLAST indicator.</p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -529,7 +527,7 @@ and Phase Increment Programmability is Fixed or Programmable.</p>
 <h4>Display shortened port names</h4>
 <p>This option is ON by default. When unselected, the full AXI name of
 each port is displayed on the block.</p>
-<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;))">Common
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>

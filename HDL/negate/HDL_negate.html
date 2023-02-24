@@ -30,50 +30,78 @@ vertical-align: middle;
 </header>
 <section id="negate" class="level1">
 <h1>Negate</h1>
-<p>The Xilinx Negate block computes the arithmetic negation of its
-input.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<section id="block-parameters" class="level2">
-<h2>Block Parameters</h2>
-<p>The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows.</p>
-<p>Precision<br />
-This parameter allows you to specify the output precision for
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Negate block computes the arithmetic negation of its input.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point output always has Full
 precision.</p>
-<p>Full<br />
-The block uses sufficient precision to represent the result without
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
 error.</p>
-<p>User Defined<br />
-If you do not need full precision, this option allows you to specify a
-reduced number of total bits and/or fractional bits.</p>
-<p>Fixed-Point Output Type<br />
-Arithmetic Type</p>
-<p>Signed (2’s comp)<br />
-The output is a Signed (2’s complement) number.</p>
-<p>Unsigned<br />
-The output is an Unsigned number.</p>
-<p>Fixed-point Precision<br />
-Number of bits<br />
-Specifies the bit location of the binary point of the output number,
+</section>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</section>
+<section id="fixed-point-output-type" class="level5">
+<h5>Fixed-Point Output Type</h5>
+<p>Arithmetic Type</p>
+</section>
+<section id="signed-2s-comp" class="level5">
+<h5>Signed (2’s comp)</h5>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level5">
+<h5>Unsigned</h5>
+<p>The output is an Unsigned number.</p>
+</section>
+</section>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point Precision</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
+<p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
-<p>Binary point<br />
-Position of the binary point in the fixed-point output.</p>
-<p>Quantization<br />
-Refer to the section Overflow and Quantization in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
+<p>Position of the binary point in the fixed-point output.</p>
+</section>
+</section>
+<section id="quantization" class="level4">
+<h4>Quantization</h4>
+<p>Refer to the section Overflow and Quantization in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Overflow<br />
-Refer to the section Overflow and Quantization in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="overflow" class="level4">
+<h4>Overflow</h4>
+<p>Refer to the section Overflow and Quantization in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Optional Port<br />
-Provide enable port</p>
-<p>Latency<br />
-This defines the number of sample periods by which the block&#39;s output is
-delayed.</p>
-<p>Parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="optional-port" class="level4">
+<h4>Optional Port</h4>
+<p>Provide enable port</p>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>This defines the number of sample periods by which the block&#39;s output
+is delayed.</p>
+<p>Parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
 </section>
 </section>
 </body>

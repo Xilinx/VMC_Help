@@ -88,44 +88,50 @@ results.</li>
 <p>Parameters specific to the Basic tab are as follows.</p>
 <section id="output-type" class="level4">
 <h4>Output Type</h4>
-<blockquote>
 <p>Specifies the output data type. Can be Boolean, Fixed-point, or
 Floating-point.</p>
-</blockquote>
 </section>
 <section id="arithmetic-type" class="level4">
 <h4>Arithmetic Type</h4>
-<blockquote>
 <p>If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.</p>
-</blockquote>
 </section>
 <section id="fixed-point-precision" class="level4">
 <h4>Fixed-point Precision</h4>
-<ul>
-<li><h4 id="number-of-bits">Number of bits</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
 <p>Specifies the total number of bits, including the binary point bit
-width.</p></li>
-<li><h4 id="binary-point">Binary point</h4>
+width.</p>
+</section>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
 <p>Specifies the bit location of the binary point, where bit zero is the
-least significant bit.</p></li>
-</ul>
+least significant bit.</p>
+</section>
 </section>
 <section id="floating-point-precision" class="level4">
 <h4>Floating-point Precision</h4>
-<ul>
-<li><h4 id="single">Single</h4>
-<p>Specifies single precision (32 bits).</p></li>
-<li><h4 id="double">Double</h4>
-<p>Specifies double precision (64 bits).</p></li>
-<li><h4 id="custom">Custom</h4>
+<section id="single" class="level5">
+<h5>Single</h5>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level5">
+<h5>Double</h5>
+<p>Specifies double precision (64 bits).</p>
+</section>
+<section id="custom" class="level5">
+<h5>Custom</h5>
 <p>Activates the field below so you can specify the Exponent width and
-the Fraction width.</p></li>
-<li><h4 id="exponent-width">Exponent width</h4>
-<p>Specify the exponent width.</p></li>
-<li><h4 id="fraction-width">Fraction width</h4>
-<p>Specify the fraction width.</p></li>
-</ul>
+the Fraction width.</p>
+</section>
+<section id="exponent-width" class="level5">
+<h5>Exponent width</h5>
+<p>Specify the exponent width.</p>
+</section>
+<section id="fraction-width" class="level5">
+<h5>Fraction width</h5>
+<p>Specify the fraction width.</p>
+</section>
 </section>
 <section id="quantization" class="level4">
 <h4>Quantization</h4>
@@ -134,17 +140,17 @@ insufficient to represent the fractional portion of a value. The options
 are to Truncate (for example, to discard bits to the right of the least
 significant representable bit), or to Round(unbiased: +/- inf) or Round
 (unbiased: even values).</p>
-<ul>
-<li><h4 id="roundunbiased---inf">Round(unbiased: +/- inf)</h4>
-Also known as &quot;Symmetric Round (towards +/- inf)&quot; or &quot;Symmetric Round
+<section id="roundunbiased---inf" class="level5">
+<h5>Round(unbiased: +/- inf)</h5>
+<p>Also known as &quot;Symmetric Round (towards +/- inf)&quot; or &quot;Symmetric Round
 (away from zero)&quot;. This is similar to the MATLAB® <code>round()</code>
 function. This method rounds the value to the nearest desired bit away
 from zero and when there is a value at the midpoint between two possible
 rounded values, the one with the larger magnitude is selected. For
 example, to round 01.0110 to a Fix_4_2, this yields 01.10, since 01.0110
 is exactly between 01.01 and 01.10, and the latter is further from
-zero.</li>
-</ul>
+zero.</p>
+</section>
 </section>
 <section id="overflow" class="level4">
 <h4>Overflow</h4>
@@ -162,27 +168,35 @@ as when Wrap is selected.</p>
 <p>Parameters specific to the Implementation tab are as follows.</p>
 <section id="interface-options" class="level4">
 <h4>Interface Options</h4>
-<ul>
-<li><h4 id="interface">Interface</h4>
-<ul>
-<li><h4 id="none">None</h4>
+<section id="interface" class="level5">
+<h5>Interface</h5>
+<section id="none" class="level6">
+<h6>None</h6>
 <p>Implies that during HDL Netlist generation, this Gateway In will be
-translated as an Input Port at the top level.</p></li>
-<li><h4 id="axi4-lite">AXI4-Lite</h4>
+translated as an Input Port at the top level.</p>
+</section>
+<section id="axi4-lite" class="level6">
+<h6>AXI4-Lite</h6>
 <p>Implies that during HDL Netlist generation, an AXI4-Lite interface
 will be created and this Gateway In will be mapped to one of the
-registers within the AXI4-Lite interface.</p></li>
-</ul></li>
-<li><h4 id="auto-assign-address-offset">Auto assign address offset</h4>
+registers within the AXI4-Lite interface.</p>
+</section>
+</section>
+<section id="auto-assign-address-offset" class="level5">
+<h5>Auto assign address offset</h5>
 <p>If the Gateway In is configured to be an AXI4-Lite interface, this
 option allows an address offset to be automatically assigned to the
 register within the AXI4-Lite interface that the Gateway In is mapped
-to.</p></li>
-<li><h4 id="address-offset">Address offset</h4>
+to.</p>
+</section>
+<section id="address-offset" class="level5">
+<h5>Address offset</h5>
 <p>If Auto assign address offset is not checked, then this entry box
 allows you to explicitly specify an address offset to use. Must be a
-multiple of 4.</p></li>
-<li><h4 id="interface-name">Interface Name</h4>
+multiple of 4.</p>
+</section>
+<section id="interface-name" class="level5">
+<h5>Interface Name</h5>
 <p>If the Gateway In is configured to be an AX4-Lite interface, assigns
 a unique name to this interface. This name can be used to differentiate
 between multiple AXI4-Lite interfaces in the design. When using the IP
@@ -192,16 +206,18 @@ Composer creates with the name
 <p><strong>IMPORTANT</strong>: The Interface Name must be composed of
 alphanumeric characters (lowercase alphabetic) or an underscore (_)
 only, and must begin with a lowercase alphabetic character. axi4_lite1
-is acceptable, 1Axi4-Lite is not.</p></li>
-<li><h4 id="description">Description</h4>
+is acceptable, 1Axi4-Lite is not.</p>
+</section>
+<section id="description" class="level5">
+<h5>Description</h5>
 <p>Additional designer comments about this Gateway In that is captured
-in the interface documentation.</p></li>
-</ul>
+in the interface documentation.</p>
+</section>
 </section>
 <section id="constraints" class="level4">
 <h4>Constraints</h4>
-<ul>
-<li><h4 id="iob-timing-constraint">IOB Timing Constraint</h4>
+<section id="iob-timing-constraint" class="level5">
+<h5>IOB Timing Constraint</h5>
 <p>In hardware, a Gateway In is realized as a set of input/output
 buffers (IOBs). There are two constraint options: None, and Data
 Rate.</p>
@@ -211,20 +227,23 @@ paths from the IOBs to synchronous elements are not constrained.</p>
 <p>If Data Rate is selected, the IOBs are constrained at the data rate
 at which the IOBs operate. The rate is determined by System Clock Period
 provided on the System Generator token and the sample rate of the
-Gateway relative to the other sample periods in the design.</p></li>
-<li><h4 id="specify-iob-location-constraints">Specify IOB location
-constraints</h4>
+Gateway relative to the other sample periods in the design.</p>
+</section>
+<section id="specify-iob-location-constraints" class="level5">
+<h5>Specify IOB location constraints</h5>
 <p>Checking this option allows IOB location constraints and I/O
-standards to be specified.</p></li>
-<li><h4 id="iob-pad-locations-eg-msb--lsb">IOB pad locations, e.g.
-{&#39;MSB&#39;, ..., &#39;LSB&#39;}</h4>
+standards to be specified.</p>
+</section>
+<section id="iob-pad-locations-eg-msb--lsb" class="level5">
+<h5>IOB pad locations, e.g. {&#39;MSB&#39;, ..., &#39;LSB&#39;}</h5>
 <p>IOB pin locations can be specified as a cell array of strings in this
-edit box. The locations are package-specific.</p></li>
-<li><h4 id="io-standards-eg-msb--lsb">IO Standards, e.g. {&#39;MSB&#39;, ...,
-&#39;LSB&#39;}</h4>
+edit box. The locations are package-specific.</p>
+</section>
+<section id="io-standards-eg-msb--lsb" class="level5">
+<h5>IO Standards, e.g. {&#39;MSB&#39;, ..., &#39;LSB&#39;}</h5>
 <p>I/O standards can be specified as a cell array of strings in this
-edit box. The locations are package-specific.</p></li>
-</ul>
+edit box. The locations are package-specific.</p>
+</section>
 </section>
 </section>
 </section>
