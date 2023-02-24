@@ -47,4 +47,4 @@ Boxes](../../GEN/common-options/README.md).
 ## LogiCORE
 
 The Vector Register block is implemented as a synthesizable VHDL module.
-It does not use a Xilinx LogiCORE™™.
+It does not use a Xilinx LogiCORE™.
