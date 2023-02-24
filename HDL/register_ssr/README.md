@@ -21,7 +21,7 @@ the initial value specified in the parameters dialog box.
 The Vector Register block differs from the Xilinx Delay block by
 providing an optional reset port and a user specifiable initial value.
 
-## Block Parameters
+## Parameters
 
 ### Basic Tab  
 Parameters specific to the Basic tab are as follows.
