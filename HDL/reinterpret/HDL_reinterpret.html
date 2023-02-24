@@ -30,26 +30,27 @@ vertical-align: middle;
 </header>
 <section id="reinterpret" class="level1">
 <h1>Reinterpret</h1>
-<p>The Xilinx Reinterpret block forces its output to a new type without
-any regard for retaining the numerical value represented by the
-input.</p>
+<p>The Reinterpret block forces its output to a new type without any
+regard for retaining the numerical value represented by the input.</p>
 <p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The binary representation is passed through unchanged, so in hardware
 this block consumes no resources. The number of bits in the output will
 always be the same as the number of bits in the input.</p>
 <p>The block allows for unsigned data to be reinterpreted as signed
 data, or, conversely, for signed data to be reinterpreted as unsigned.
 It also allows for the reinterpretation of the data&#39;s scaling, through
-the repositioning of the binary point within the data. The Xilinx Scale
-block provides an analogous capability.</p>
+the repositioning of the binary point within the data. The Scale block
+provides an analogous capability.</p>
 <p>An example of this block&#39;s use is as follows: if the input type is 6
 bits wide and signed, with 2 fractional bits and the output type is
 forced to be unsigned with 0 fractional bits, then an input of -2.0
 (1110.00 in binary, two&#39;s complement) would be translated into an output
 of 56 (111000 in binary).</p>
 <p>This block can be particularly useful in applications that combine it
-with the Xilinx Slice block or the Xilinx Concat block. To illustrate
-the block&#39;s use, consider the following scenario:</p>
+with the Slice block or the Concat block. To illustrate the block&#39;s use,
+consider the following scenario:</p>
 <p>Given two signals, one carrying signed data and the other carrying
 two unsigned bits (a UFix_2_0), you should design a system that
 concatenates the two bits from the second signal onto the tail (least
@@ -64,33 +65,41 @@ interpretation with the binary point appropriately repositioned.</p>
 <p>Though three blocks are required in this construction, the hardware
 implementation is realized as simply a bus concatenation, which has no
 cost in hardware.</p>
-<section id="block-parameters" class="level2">
-<h2>Block Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Parameters specific to the block are as follows.</p>
-<p>Force Arithmetic Type<br />
-When checked, the Output Arithmetic Type parameter can be set and the
+<section id="force-arithmetic-type" class="level4">
+<h4>Force Arithmetic Type</h4>
+<p>When checked, the Output Arithmetic Type parameter can be set and the
 output type is forced to the arithmetic type chosen according to the
 setting of the Output Arithmetic Type parameter. When unchecked, the
 arithmetic type of the output is unchanged from the arithmetic type of
 the input.</p>
-<p>Output Arithmetic Type<br />
-The arithmetic type (unsigned or signed, 2&#39;s complement, Floating-point)
-to which the output is to be forced.</p>
-<p>Force Binary Point<br />
-When checked, the Output Binary Point parameter can be set and the
+</section>
+<section id="output-arithmetic-type" class="level4">
+<h4>Output Arithmetic Type</h4>
+<p>The arithmetic type (unsigned or signed, 2&#39;s complement,
+Floating-point) to which the output is to be forced.</p>
+</section>
+<section id="force-binary-point" class="level4">
+<h4>Force Binary Point</h4>
+<p>When checked, the Output Binary Point parameter can be set and the
 binary point position of the output is forced to the position supplied
 in the Output Binary Point parameter. When unchecked, the arithmetic
 type of the output is unchanged from the arithmetic type of the
 input.</p>
-<p>Output Binary Point<br />
-The position to which the output&#39;s binary point is to be forced. The
+</section>
+<section id="output-binary-point" class="level4">
+<h4>Output Binary Point</h4>
+<p>The position to which the output&#39;s binary point is to be forced. The
 supplied value must be an integer between zero and the number of bits in
 the input (inclusive).</p>
 </section>
+</section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf">LogiCORE
-IP Floating-Point Operator v7.1</a></p>
+<p>LogiCORE IP Floating-Point Operator v7.1 <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">(PG060)</a></p>
 </section>
 </section>
 </body>
