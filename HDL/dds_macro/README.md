@@ -14,15 +14,15 @@ parameters for your target device.
 
 The output of the Sine Wave block is determined by this equation:
 
-* y = sin (2π(k+o)/p)
+*y = sin (2π(k+o)/p)*
 
 where:
 
-* p = number of time samples per sine wave period
+p = number of time samples per sine wave period
 
-* k = repeating integer value that ranges from 0 to p-1
+k = repeating integer value that ranges from 0 to p-1
 
-* o = offset (phase shift) of the signal
+o = offset (phase shift) of the signal
 
 In this block, Model Composer sets k equal to 0 at the first time step
 and computes the block output, using the formula above. At the next time
@@ -39,7 +39,7 @@ The output characteristic of the Sine Wave block is determined by:
 The Sine Wave block is ideal for generating simple sine and cosine
 waves. If your sine wave implementation will use more complicated
 features such as a phase generator, multiple channel support, or AXI4
-ports, use the Xilinx [DDS Compiler 6.0](ddscompiler60.html) block in
+ports, use the [DDS Compiler 6.0](../../HDL/dds_compiler_v6_0/README.md) block in
 your design instead of the Sine Wave block.
 
 In the Vivado design flow, the Sine Wave block is inferred as "LogicCore
@@ -50,38 +50,38 @@ IP DDS Compiler v6.0" for code generation.
 Parameters specific to the block are as follows:
 
 ### System Parameters  
-* #### Select the input format  
-  * Specifies whether the frequency and phase offset inputs are entered as a
+#### Select the input format  
+Specifies whether the frequency and phase offset inputs are entered as a
 Frequency (Hz) or an angular velocity (Radians) value.
 
-* #### Frequency  
-  * Specifies the frequency, either in Hertz or radians. The default is 1.
+#### Frequency  
+Specifies the frequency, either in Hertz or radians. The default is 1.
 
-* #### Phase Offset  
-  * Specifies the phase shift, either in Hertz or radians. The default is 0.
+#### Phase Offset  
+Specifies the phase shift, either in Hertz or radians. The default is 0.
 
 ### Output Selection  
-* #### Sine_and_Cosine  
-  Places both a sine and cosine output port on the block.
+#### Sine_and_Cosine  
+Places both a sine and cosine output port on the block.
 
-* #### Sine  
-  Places only a sine output port on the block.
+#### Sine  
+Places only a sine output port on the block.
 
-* #### Cosine  
-  Places only a cosine output port on the block.
+#### Cosine  
+Places only a cosine output port on the block.
 
 #### Spurious Free Dynamic Range (SFDR)  
-* Specifies the precision of the output produced by the Sine Wave block.
+Specifies the precision of the output produced by the Sine Wave block.
 This sets the output width as well as internal bus widths, and controls
 various implementation decisions.
 
 #### Explicit Sample Period  
-* If checked, the Sine Wave block uses the explicit sample time specified
+If checked, the Sine Wave block uses the explicit sample time specified
 in the Sample Period box below. If not checked, the Model Composer base
 period will be used as block sample time.
 
 #### Sample Period  
-* If Explicit Sample Period
+If Explicit Sample Period
 
 ## Example
 
@@ -119,5 +119,5 @@ Number of offset samples = (π/2) \* (50/2π) = 50/4
 
 ## LogiCORE™ Documentation
 
-[LogiCORE IP DDS Compiler v6.0 Product
-Guide](https://www.xilinx.com/support/documentation/ip_documentation/dds_compiler/v6_0/pg141-dds-compiler.pdf)
+LogiCORE IP DDS Compiler v6.0 Product
+Guide [(PG141)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US)

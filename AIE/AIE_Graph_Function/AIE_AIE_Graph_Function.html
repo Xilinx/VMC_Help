@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -45,53 +45,42 @@ consists of a dataflow graph specification written in C++.</p>
 <h2>Parameters</h2>
 <section id="graph-file" class="level4">
 <h4>Graph file</h4>
-<blockquote>
 <p>Specifies whether the graph import should be done using the header
 file (*.h) or using source file (*.cpp). By default the header file is
 selected.</p>
-</blockquote>
 </section>
 <section id="graph-header-fileh" class="level4">
 <h4>Graph Header file(*.h)</h4>
-<blockquote>
 <p>This is the mandatory string that specifies the file (.h), where the
 application graph class is defined and the Adaptive Data Flow (ADF)
 header (adf.h), kernel function prototypes are included. This parameter
 is only visible when you choose the Header file (*.h) option in the
 Graph file.</p>
-</blockquote>
 </section>
 <section id="graph-source-file-cpp" class="level4">
 <h4>Graph Source file (*.cpp)</h4>
-<blockquote>
 <p>This is the mandatory string that specifies the file (.cpp), where
 the adf dataflow graph is instantiated. This file should contain the
 main() function, from where the dataflow graph initializes and runs.
 This option is available only when the Source file (*.cpp) is selected
 in Graph file.</p>
-</blockquote>
 </section>
 <section id="graph-class" class="level4">
 <h4>Graph class</h4>
-<blockquote>
 <p>This is a mandatory string that specifies the name of the graph
 class. This parameter is only visible when you choose the Header file
 (*.h) option in the Graph file.</p>
-</blockquote>
 </section>
 <section id="graph-search-paths" class="level4">
 <h4>Graph search paths</h4>
-<blockquote>
 <p>This is a vector of strings that specifies the search paths where
 header files, kernels, and other include files can be found and included
 for simulation. The search path $XILINX_VITIS/adf/include (where adf.h
 is defined) is included by default and does not need to be
 specified.</p>
-</blockquote>
 </section>
 <section id="preprocessor-options" class="level4">
 <h4>Preprocessor options</h4>
-<blockquote>
 <p>This is an optional parameter and should be specified with a
 preprocessor argument for downstream compilation with specific
 preprocessor options. The following preprocessor option formats are
@@ -100,7 +89,6 @@ accepted and multiple can be selected: ‘-D&lt;name&gt;’ and
 begin with the &#39;-D&#39; string and if the option
 <code>&lt;definition&gt;</code> value is not provided, it is assumed to
 be 1.</p>
-</blockquote>
 </section>
 </section>
 </section>

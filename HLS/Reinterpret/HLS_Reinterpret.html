@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,13 +28,17 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Reinterpret</h1>
 </header>
-<h1 id="reinterpret">Reinterpret</h1>
+<section id="reinterpret" class="level1">
+<h1>Reinterpret</h1>
 <p>Element-wise reinterpretation of the input type into a compatible
 output type with the same bit width.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Signal Attributes</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Reinterpret block provides a mechanism for interpreting a value
 from a different data type. You can specify the output data type with
 the restriction that the bit widths of input and output data types must
@@ -47,7 +51,9 @@ fractional part (i.e., -4 = 1111 00.00). The Reinterpret block
 interprets the input type to unsigned fixed-point number (x_ufix8),
 represented with 8 bits as that of input, and no bits are used for the
 fractional part. The output becomes 240 (1111 0000).</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>The data types of the input can be any integer, Boolean, fixed-point,
 or floating-point data type. The input can be any real or complex valued
 signal. If the input is real, the output is real. If the input is
@@ -114,7 +120,9 @@ all native data types if the bit width matches</td>
 </tbody>
 </table>
 <p>Table 1. Input/Output</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Output data type</p>
 <p>This parameter specifies the output data type for reinterpreting the
 input data. If fixed is specified more parameters are available.</p>
@@ -179,5 +187,7 @@ Type Expression in the Vitis Model Composer User Guide (<a href="https://docs.xi
 </tbody>
 </table>
 <p>Table 2. Output Data Type Parameter</p>
+</section>
+</section>
 </body>
 </html>

@@ -29,18 +29,18 @@ out_scale is used in if there is an internal overflow.
 ## Parameters
 
 #### FFT length (N) 
-> Is the size of the transformation, and should be powers
+Is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. SSR is the super sample rate, the
 number of samples processed in parallel every clock. Using a typical
 example with N=1024 and SSR=4, the core would compute one 1K FFT every
 256 clock cycles, processing 4 input samples/clock.
 
 #### Fixed-point precision 
-> Must be 27 bits or less, this is
+Must be 27 bits or less, this is
 limited by the DSP48 multiplier A port size.
 
 #### Block RAM_THRESHOLD 
-> Is an implementation parameter with no functional
+Is an implementation parameter with no functional
 implications, it controls the use of distributed RAM vs BRAM when
 implementing delay lines. It can be used to trade utilization numbers
 between these two types of resources. The higher the value, the more
@@ -48,7 +48,7 @@ distributed RAM will be used instead of BRAM. Typical values to try are
 258, 514, and 1026.
 
 #### SSR
-> Super Sample Rate
+Super Sample Rate
 
 ## Scaling Ports  
 The scaling ports are called SI and SO. Their width matches the FFT size

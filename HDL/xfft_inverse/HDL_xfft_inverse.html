@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Inverse FFT</h1>
 </header>
-<h1 id="inverse-fft">Inverse FFT</h1>
+<section id="inverse-fft" class="level1">
+<h1>Inverse FFT</h1>
 <p>The Xilinx Inverse FFT block performs a fast inverse (or backward)
 Fourier transform (IDFT), which undoes the process of Discrete Fourier
 Transform (DFT). The Inverse FFT maps the signal back from the frequency
@@ -50,7 +51,8 @@ in your design instead of the Inverse FFT block.</p>
 &quot;LogiCORE™ IP Fast Fourier Transform v9.1&quot; for code generation. Refer to
 the document <a href="https://www.xilinx.com/support/documentation/ip_documentation/xfft/v9_1/pg109-xfft.pdf">LogiCORE
 IP Fast Fourier Transform v9.1</a> for details on this LogicCore IP.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Parameters specific to the Xilinx Inverse FFT block are:</p>
@@ -78,15 +80,18 @@ to the block. The signals on these ports can be used to synchronize
 frames at the input and output of the Inverse FFT block. See <a href="fft.html#xxu1538085368021__aa1035227">Adding Start Frame Ports to
 Synchronize Frames</a> for a description of the operation of these two
 ports.</p>
-<h2 id="context-based-pipeline-vs-radix-implementation">Context Based
-Pipeline vs. Radix Implementation</h2>
+</section>
+<section id="context-based-pipeline-vs-radix-implementation" class="level2">
+<h2>Context Based Pipeline vs. Radix Implementation</h2>
 <p>Pipelined Streaming I/O and Radix-2 Burst I/O architectures are
 supported by the Inverse FFT block. Radix-4 Burst I/O architecture is
 implemented when the Optimize for: Resources block parameter is selected
 and the sample rate of the inputs is 8 times slower than the system
 rate. In all other configurations Pipelined Streaming I/O architecture
 is implemented by default.</p>
-<h2 id="input-data-type-support">Input Data Type Support</h2>
+</section>
+<section id="input-data-type-support" class="level2">
+<h2>Input Data Type Support</h2>
 <p>The Inverse FFT block accepts inputs of varying bit widths with
 changeable binary point location, such as Fix_16_0 or Fix_30_10, etc. in
 unscaled block configuration. For the scaled configuration, the input is
@@ -95,25 +100,29 @@ The <a href="fastfouriertransform91.html">Fast Fourier Transform 9.1</a>
 block accepts input values only in the normalized form in the format of
 Fix_x_[x-1] (for example, Fix_16_15), so the inputs are 2&#39;s complement
 with a single sign/integer bit.</p>
-<h2 id="latency-value-displayed-on-the-block">Latency Value Displayed on
-the Block</h2>
+</section>
+<section id="latency-value-displayed-on-the-block" class="level2">
+<h2>Latency Value Displayed on the Block</h2>
 <p>The latency value depends on parameters selected by the user, and the
 corresponding latency value is displayed on the Inverse FFT block icon
 in the Simulink model.</p>
-<h2 id="automatic-fixed-point-and-floating-point-support">Automatic
-Fixed Point and Floating Point Support</h2>
+</section>
+<section id="automatic-fixed-point-and-floating-point-support" class="level2">
+<h2>Automatic Fixed Point and Floating Point Support</h2>
 <p>Signed fixed point and floating point data types are supported.</p>
 <p>For floating point input, either scaled or unscaled data can be
 selected in the Inverse FFT block parameters. In the <a href="fastfouriertransform91.html">Fast Fourier Transform 9.1</a> block,
 the floating point data type is accepted only when the scaled
 configuration is selected by the user.</p>
-<h2 id="handling-overflow-for-scaled-configuration">Handling Overflow
-for Scaled Configuration</h2>
+</section>
+<section id="handling-overflow-for-scaled-configuration" class="level2">
+<h2>Handling Overflow for Scaled Configuration</h2>
 <p>The Inverse FFT block uses a conservative schedule to avoid overflow
 scenarios. This schedule sets the scaling value for the corresponding
 FFT stages in a way that makes sure no overflow occurs.</p>
-<h2 id="adding-start-frame-ports-to-synchronize-frames">Adding Start
-Frame Ports to Synchronize Frames</h2>
+</section>
+<section id="adding-start-frame-ports-to-synchronize-frames" class="level2">
+<h2>Adding Start Frame Ports to Synchronize Frames</h2>
 <p>Selecting Provide start frame port in the Inverse FFT block
 properties dialog box adds <code>start_frame_in</code> and
 <code>start_frame_out</code> ports at the input and output of the
@@ -149,8 +158,12 @@ Provide start frame port option is selected.</li>
 </ul>
 <p>Note: The first sample input to the Inverse FFT block may be ignored
 and users are advised to drive the input data accordingly.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p><a href="https://www.xilinx.com/support/documentation/ip_documentation/xfft/v9_1/pg109-xfft.pdf">LogiCORE
 IP Fast Fourier Transform v9.1</a></p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -59,37 +59,29 @@ is used in if there is an internal overflow.</p>
 <h2>Parameters</h2>
 <section id="fft-length-n" class="level4">
 <h4>FFT length (N)</h4>
-<blockquote>
 <p>Is the size of the transformation, and should be powers of 2 in the
 range of 2^3 to 2^16. SSR is the super sample rate, the number of
 samples processed in parallel every clock. Using a typical example with
 N=1024 and SSR=4, the core would compute one 1K FFT every 256 clock
 cycles, processing 4 input samples/clock.</p>
-</blockquote>
 </section>
 <section id="fixed-point-precision" class="level4">
 <h4>Fixed-point precision</h4>
-<blockquote>
 <p>Must be 27 bits or less, this is limited by the DSP48 multiplier A
 port size.</p>
-</blockquote>
 </section>
 <section id="block-ram_threshold" class="level4">
 <h4>Block RAM_THRESHOLD</h4>
-<blockquote>
 <p>Is an implementation parameter with no functional implications, it
 controls the use of distributed RAM vs BRAM when implementing delay
 lines. It can be used to trade utilization numbers between these two
 types of resources. The higher the value, the more distributed RAM will
 be used instead of BRAM. Typical values to try are 258, 514, and
 1026.</p>
-</blockquote>
 </section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
-<blockquote>
 <p>Super Sample Rate</p>
-</blockquote>
 </section>
 </section>
 <section id="scaling-ports" class="level2">

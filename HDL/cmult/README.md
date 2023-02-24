@@ -81,18 +81,18 @@ Position of the binary point in the fixed-point output.
 
 ##### Quantization  
 Refer to the section [Overflow and
-Quantization](common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322).
+Quantization](matlab:helpview(vmcHelp('name','common-options'))).
 
 ##### Overflow  
   Refer to the section [Overflow and
-Quantization](common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322).
+Quantization](matlab:helpview(vmcHelp('name','common-options'))).
 
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 
 #### Use behavioral HDL description (otherwise use core)  
-When selected, Model Composer uses behavioral HDL, otherwise it uses the LogiCORE™™ Multiplier. When this option is not selected (false)
+When selected, Model Composer uses behavioral HDL, otherwise it uses the LogiCORE™ Multiplier. When this option is not selected (false)
 Model Composer internally uses the behavioral HDL model for simulation
 if any of the following conditions are true:
 
@@ -114,12 +114,12 @@ speed.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
-[LogiCORE IP Multiplier
-v12.0](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)
+LogiCORE IP Multiplier
+v12.0 [(PG108)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)
 
-[LogiCORE IP Floating-Point Operator
-v7.1](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
+LogiCORE IP Floating-Point Operator
+v7.1 [(PG060)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)

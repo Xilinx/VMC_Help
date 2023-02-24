@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -100,51 +100,41 @@ current value with no change until the en port goes high again.</p>
 <p>Parameters specific to the Basic tab are as follows:</p>
 <section id="type" class="level4">
 <h4>Type</h4>
-<blockquote>
 <p>Fibonacci or Galois. This field specifies the structure of the
 feedback. Fibonacci has one XOR (or XNOR) gate at the beginning of the
 register chain that XORs (or XNORs) the taps together with the result
 going into the first register. Galois has one XOR (or XNOR) gate for
 each tap and gates the last register in the chains output with the input
 to the register at that tap.</p>
-</blockquote>
 </section>
 <section id="gate-type" class="level4">
 <h4>Gate type</h4>
-<blockquote>
 <p>XOR or XNOR. This field specifies the gate used by the feedback
 signals.</p>
-</blockquote>
 </section>
 <section id="number-of-bits-in-lfsr" class="level4">
 <h4>Number of bits in LFSR</h4>
-<blockquote>
 <p>This field specifies the number of registers in the LFSR chain. As a
 result, this number specifies the size of the input and output when
 selected to be parallel.</p>
-</blockquote>
 </section>
 <section id="feedback-polynomial" class="level4">
 <h4>Feedback polynomial</h4>
-<blockquote>
 <p>This field specifies the tap points of the feedback chain and the
 value must be entered in hex with single quotes. The lsb of this
 polynomial always must be set to 1 and the msb is an implied 1 and is
-not specified in the hex input. Please see the Xilinx application note
-titled <a href="https://www.xilinx.com/support/documentation/application_notes/xapp052.pdf">Efficient
+not specified in the hex input. Please see the application note titled
+<a href="https://www.xilinx.com/support/documentation/application_notes/xapp052.pdf">Efficient
 Shift Registers, LFSR Counters, and Long Pseudo- Random Sequence
 Generators</a> for more information on how to specify this equation and
 for optimal settings for the maximum repeating sequence.</p>
-</blockquote>
 </section>
 <section id="initial-value" class="level4">
 <h4>Initial value</h4>
-<blockquote>
 <p>This field specifies the initial seed value where the LFSR begins its
 repeating sequence. The initial value might not be all zeroes when
 choosing the XOR gate type and might not be all ones when choosing XNOR,
 as those values will stall the LFSR.</p>
-</blockquote>
 </section>
 </section>
 <section id="advanced-tab" class="level3">
@@ -152,26 +142,20 @@ as those values will stall the LFSR.</p>
 <p>Parameters specific to the Advanced tab are as follows:</p>
 <section id="use-reloadable-seed-value" class="level4">
 <h4>Use reloadable seed value</h4>
-<blockquote>
 <p>This field specifies whether or not an input is needed to reload a
 dynamic LFSR seed value at run time.</p>
-</blockquote>
 </section>
 <section id="parallel-input" class="level4">
 <h4>Parallel input</h4>
-<blockquote>
 <p>This field specifies whether the reloadable input seed is shifted in
 one bit at a time or if it happens in parallel.</p>
-</blockquote>
 </section>
 <section id="parallel-output" class="level4">
 <h4>Parallel output</h4>
-<blockquote>
 <p>This field specifies whether all of the bits in the LFSR chain are
 connected to the output or just the last register in the chain (serial
 or parallel).</p>
-</blockquote>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>

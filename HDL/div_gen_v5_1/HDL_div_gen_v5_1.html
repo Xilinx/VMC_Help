@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -39,14 +39,12 @@ prescaling.</p>
 </section>
 <section id="block-parameters" class="level2">
 <h2>Block Parameters</h2>
-<p>The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <section id="common-options" class="level4">
 <h4>Common Options</h4>
-<ul>
-<li><h4 id="algorithm-type">Algorithm Type</h4>
+<section id="algorithm-type" class="level5">
+<h5>Algorithm Type</h5>
 <ul>
 <li><strong>Radix-2</strong>: Non-restoring integer division using
 integer operands, allows a remainder to be generated. This is
@@ -69,129 +67,160 @@ widths where either Radix2 or the LUTMult options are possible, the
 LUTMult offers a solution using fewer FPGA logic resources because of
 the use of DSP and block RAM primitives. Supports unsigned or two&#39;s
 complement signed numbers.</li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="output-channel" class="level4">
 <h4>Output channel</h4>
-<ul>
-<li><h4 id="remainder-type">Remainder type</h4>
-<ul>
-<li><h4 id="remainder">Remainder</h4>
-<p>Only supported for Radix 2.</p></li>
-<li><h4 id="fractional">Fractional</h4>
-<p>Determines the number of bits in the fractional port output.</p></li>
-</ul></li>
-<li><h4 id="fractional-width">Fractional width</h4>
+<section id="remainder-type" class="level5">
+<h5>Remainder type</h5>
+<section id="remainder" class="level6">
+<h6>Remainder</h6>
+<p>Only supported for Radix 2.</p>
+</section>
+<section id="fractional" class="level6">
+<h6>Fractional</h6>
+<p>Determines the number of bits in the fractional port output.</p>
+</section>
+</section>
+<section id="fractional-width" class="level5">
+<h5>Fractional width</h5>
 <p>If Fractional Remainder type is selected, this entry determines the
-number of bits in the fractional port output.</p></li>
-</ul>
+number of bits in the fractional port output.</p>
+</section>
 </section>
 <section id="radix2-options" class="level4">
 <h4>Radix2 Options</h4>
-<ul>
-<li><h4 id="radix2-throughput">Radix2 throughput</h4>
-Determines the interval in clocks between new data being input (and
-output). Choices are 1, 2, 4, and 8.</li>
-</ul>
+<section id="radix2-throughput" class="level5">
+<h5>Radix2 throughput</h5>
+<p>Determines the interval in clocks between new data being input (and
+output). Choices are 1, 2, 4, and 8.</p>
+</section>
 </section>
 <section id="high-radix-options" class="level4">
 <h4>High Radix Options</h4>
-<ul>
-<li><h4 id="detect-divide-by-zero">Detect divide by zero</h4>
-Determines if the core shall have a division-by-zero indication output
-port.</li>
-</ul>
+<section id="detect-divide-by-zero" class="level5">
+<h5>Detect divide by zero</h5>
+<p>Determines if the core shall have a division-by-zero indication
+output port.</p>
+</section>
 </section>
 <section id="axi-interface" class="level4">
 <h4>AXI Interface</h4>
-<ul>
-<li><h4 id="axi-behavior">AXI behavior</h4>
-<ul>
-<li><h4 id="nonblocking">NonBlocking</h4>
+<section id="axi-behavior" class="level5">
+<h5>AXI behavior</h5>
+<section id="nonblocking" class="level6">
+<h6>NonBlocking</h6>
 <p>Performs an action only when a control packet and a data packet are
-presented to the block at the same time.</p></li>
-<li><h4 id="blocking">Blocking</h4>
+presented to the block at the same time.</p>
+</section>
+<section id="blocking" class="level6">
+<h6>Blocking</h6>
 <p>Preforms an action when a data packet is presented to the block. The
-block uses the previous control information.</p></li>
-</ul></li>
-<li><h4 id="axi-implementation-emphasis">AXI Implementation
-emphasis</h4>
-<ul>
-<li><h4 id="resources">Resources</h4>
+block uses the previous control information.</p>
+</section>
+</section>
+<section id="axi-implementation-emphasis" class="level5">
+<h5>AXI Implementation emphasis</h5>
+<section id="resources" class="level6">
+<h6>Resources</h6>
 <p>Automatic (fully pipelined) or Manual (determined by following
-field).</p></li>
-<li><h4 id="performance">Performance</h4>
-<p>Implementation decisions target the highest speed.</p></li>
-</ul></li>
-</ul>
+field).</p>
+</section>
+<section id="performance" class="level6">
+<h6>Performance</h6>
+<p>Implementation decisions target the highest speed.</p>
+</section>
+</section>
 </section>
 <section id="latency-options" class="level4">
 <h4>Latency Options</h4>
-<ul>
-<li><h4 id="latency-configuration">Latency configuration</h4>
+<section id="latency-configuration" class="level5">
+<h5>Latency configuration</h5>
 <p>Automatic (fully pipelined) or Manual (determined by following
-field).</p></li>
-<li><h4 id="latency">Latency</h4>
+field).</p>
+</section>
+<section id="latency" class="level5">
+<h5>Latency</h5>
 <p>This field determines the exact latency from input to output in terms
-of clock enabled clock cycles.</p></li>
-</ul>
+of clock enabled clock cycles.</p>
+</section>
 </section>
 </section>
 <section id="optional-ports-tab" class="level3">
 <h3>Optional ports tab</h3>
 <section id="optional-ports" class="level4">
 <h4>Optional Ports</h4>
-<ul>
-<li><h4 id="divided-channel-ports">Divided Channel Ports</h4>
-<ul>
-<li><h4 id="has-tuser">Has TUSER</h4>
-<p>Adds a tuser input port to the dividend channel.</p></li>
-<li><h4 id="has-tlast">Has TLAST</h4>
-<p>Adds a tlast output port to the dividend channel.</p></li>
-</ul></li>
-<li><h4 id="divisor-channel-ports">Divisor Channel Ports</h4>
-<ul>
-<li><h4 id="has-tuser-1">Has TUSER</h4>
-<p>Adds a tuser input port to the divisor channel.</p></li>
-<li><h4 id="has-tlast-1">Has TLAST</h4>
-<p>Adds a tlast output port to the divisor channel.</p></li>
-</ul></li>
-<li><h4 id="aclken">ACLKEN</h4>
+<section id="divided-channel-ports" class="level5">
+<h5>Divided Channel Ports</h5>
+<section id="has-tuser" class="level6">
+<h6>Has TUSER</h6>
+<p>Adds a tuser input port to the dividend channel.</p>
+</section>
+<section id="has-tlast" class="level6">
+<h6>Has TLAST</h6>
+<p>Adds a tlast output port to the dividend channel.</p>
+</section>
+</section>
+<section id="divisor-channel-ports" class="level5">
+<h5>Divisor Channel Ports</h5>
+<section id="has-tuser-1" class="level6">
+<h6>Has TUSER</h6>
+<p>Adds a tuser input port to the divisor channel.</p>
+</section>
+<section id="has-tlast-1" class="level6">
+<h6>Has TLAST</h6>
+<p>Adds a tlast output port to the divisor channel.</p>
+</section>
+</section>
+<section id="aclken" class="level5">
+<h5>ACLKEN</h5>
 <p>Specifies that the block has a clock enable port (the equivalent of
-selecting the Has ACLKEN option in the CORE Generator GUI).</p></li>
-<li><h4 id="aresetn">ARESETn</h4>
+selecting the Has ACLKEN option in the CORE Generator GUI).</p>
+</section>
+<section id="aresetn" class="level5">
+<h5>ARESETn</h5>
 <p>Specifies that the block has a reset port. Active-Low synchronous
-clear. A minimum ARESETn pulse of two cycles is required.</p></li>
-<li><h4 id="m_axis_dout_tready">m_axis_dout_tready</h4>
-<p>Specifies that the block has a dout_tready output port.</p></li>
-</ul>
+clear. A minimum ARESETn pulse of two cycles is required.</p>
+</section>
+<section id="m_axis_dout_tready" class="level5">
+<h5>m_axis_dout_tready</h5>
+<p>Specifies that the block has a dout_tready output port.</p>
+</section>
 </section>
 <section id="input-tlast-combination-for-output" class="level4">
 <h4>Input TLAST combination for output</h4>
 <p>Determines the behavior of the dout_tlast output port.</p>
-<ul>
-<li><h4 id="null">Null</h4>
-<p>Output is null.</p></li>
-<li><h4 id="pass_dividend_tlast">Pass_Dividend_TLAST</h4>
+<section id="null" class="level5">
+<h5>Null</h5>
+<p>Output is null.</p>
+</section>
+<section id="pass_dividend_tlast" class="level5">
+<h5>Pass_Dividend_TLAST</h5>
 <p>Pass the value of the dividend_tlast input port to the dout_tlast
-output port.</p></li>
-<li><h4 id="pass-divisor_tlast">Pass Divisor_TLAST</h4>
+output port.</p>
+</section>
+<section id="pass-divisor_tlast" class="level5">
+<h5>Pass Divisor_TLAST</h5>
 <p>Pass the value of the divisor_tlast input port to the dout_tlast
-output port.</p></li>
-<li><h4 id="or_all_tlasts">OR_all_TLASTS</h4>
-<p>Pass the logical OR of all the present TLAST input ports.</p></li>
-<li><h4 id="and_all_tlasts">AND_all_TLASTS</h4>
-<p>Pass the logical AND of all the present TLAST input ports.</p></li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+output port.</p>
+</section>
+<section id="or_all_tlasts" class="level5">
+<h5>OR_all_TLASTS</h5>
+<p>Pass the logical OR of all the present TLAST input ports.</p>
+</section>
+<section id="and_all_tlasts" class="level5">
+<h5>AND_all_TLASTS</h5>
+<p>Pass the logical AND of all the present TLAST input ports.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
 </section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Divider Generator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=div_gen;v=latest;d=pg151-div-gen.pdf">PG151</a>)</p>
+<p>Divider Generator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg151-div-gen&amp;ft:locale=en-US">PG151</a>)</p>
 </section>
 </section>
 </body>

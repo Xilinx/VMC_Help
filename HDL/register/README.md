@@ -1,11 +1,13 @@
 # Register
 
-The Xilinx Register block models a D flip-flop-based register, having
-latency of one sample period.
-
 ![](./Images/block.png)
 
-## Block Interface
+## Description
+
+The Register block models a D flip-flop-based register, having
+latency of one sample period.
+
+### Block Interface
 
 The block has one input port for the data and an optional input reset
 port. The initial output value is specified by you in the block
@@ -16,22 +18,19 @@ the initial value specified in the parameters dialog box.
 The Register block differs from the Xilinx Delay block by providing an
 optional reset port and a user specifiable initial value.
 
-## Block Parameters
+## Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows.
-Initial value  
+#### Initial value  
 specifies the initial value in the register.
 
-Optional Ports  
+#### Optional Ports  
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 ## Xilinx LogiCORE
 
 The Register block is implemented as a synthesizable VHDL module. It
-does not use a Xilinx LogiCORE™™.
+does not use a LogiCORE™.

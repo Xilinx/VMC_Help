@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -65,46 +65,56 @@ field.</td>
 follows.</p>
 <section id="filter-coefficients" class="level4">
 <h4>Filter Coefficients</h4>
-<ul>
-<li><h4 id="coefficient-vector">Coefficient Vector</h4>
+<section id="coefficient-vector" class="level5">
+<h5>Coefficient Vector</h5>
 <p>Specifies the coefficient vector as a single MATLAB® row vector. The
 number of taps is inferred from the length of the MATLAB® row vector. If
 multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
 coefficients using the <a href="fdatool.html">FDATool</a> block as
-well.</p></li>
-<li><h4 id="number-of-coefficients-sets">Number of Coefficients
-Sets</h4>
+well.</p>
+</section>
+<section id="number-of-coefficients-sets" class="level5">
+<h5>Number of Coefficients Sets</h5>
 <p>The number of sets of filter coefficients to be implemented. The
 value specified must divide without remainder into the number of
-coefficients.</p></li>
-<li><h4 id="use-reloadable-coefficients">Use Reloadable
-Coefficients</h4>
+coefficients.</p>
+</section>
+<section id="use-reloadable-coefficients" class="level5">
+<h5>Use Reloadable Coefficients</h5>
 <p>Check to add the coefficient reload ports to the block. The set of
 data loaded into the reload channel will not take action until triggered
 by a re-configuration synchronization event. Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">FIR
 Compiler V7.2 Product Guide</a> for a more detailed explanation of the
 RELOAD Channel interface timing. This block supports the
 xlGetReloadOrder function. See the Model Composer Utility function
-xlGetReloadOrder for details.</p></li>
-</ul>
+xlGetReloadOrder for details.</p>
+</section>
 </section>
 <section id="filter-specification" class="level4">
 <h4>Filter Specification</h4>
-<ul>
-<li><h4 id="filter-type">Filter Type</h4>
-<ul>
-<li><h4 id="single_rate">Single_Rate</h4>
-<p>The data rate of the input and the output are the same.</p></li>
-<li><h4 id="interpolation">Interpolation</h4>
+<section id="filter-type" class="level5">
+<h5>Filter Type</h5>
+<section id="single_rate" class="level6">
+<h6>Single_Rate</h6>
+<p>The data rate of the input and the output are the same.</p>
+</section>
+<section id="interpolation" class="level6">
+<h6>Interpolation</h6>
 <p>The data rate of the output is faster than the input by a factor
-specified by the Interpolation Rate Value.</p></li>
-<li><h4 id="decimation">Decimation</h4>
+specified by the Interpolation Rate Value.</p>
+</section>
+<section id="decimation" class="level6">
+<h6>Decimation</h6>
 <p>The data rate of the output is slower than the input by a factor
-specified in the Decimation Rate Value.</p></li>
-<li><h4 id="hilbert">Hilbert</h4>
-<p>Filter uses the Hilbert Transform.</p></li>
-<li><h4 id="interpolated">Interpolated</h4>
+specified in the Decimation Rate Value.</p>
+</section>
+<section id="hilbert" class="level6">
+<h6>Hilbert</h6>
+<p>Filter uses the Hilbert Transform.</p>
+</section>
+<section id="interpolated" class="level6">
+<h6>Interpolated</h6>
 <p>An interpolated FIR filter has a similar architecture to a
 conventional FIR filter, but with the unit delay operator replaced by
 k-1 units of delay. k is referred to as the zero-packing factor. The
@@ -112,23 +122,28 @@ interpolated FIR should not be confused with an interpolation filter.
 Interpolated filters are single-rate systems employed to produce
 efficient realizations of narrow-band filters and, with some minor
 enhancements, wide-band filters can be accommodated. The data rate of
-the input and the output are the same.</p></li>
-</ul></li>
-<li><h4 id="rate-change-type">Rate Change Type</h4>
+the input and the output are the same.</p>
+</section>
+</section>
+<section id="rate-change-type" class="level5">
+<h5>Rate Change Type</h5>
 <p>This field is applicable to Interpolation and Decimation filter
-types. Used to specify an Integer or Fixed_Fractional rate
-change.</p></li>
-<li><h4 id="interpolation-rate-value">Interpolation Rate Value</h4>
+types. Used to specify an Integer or Fixed_Fractional rate change.</p>
+</section>
+<section id="interpolation-rate-value" class="level5">
+<h5>Interpolation Rate Value</h5>
 <p>This field is applicable to all Interpolation filter types and
 Decimation filter types for Fractional Rate Change implementations. The
 value provided in this field defines the up-sampling factor, or P for
-Fixed Fractional Rate (P/Q) resampling filter implementations.</p></li>
-<li><h4 id="decimation-rate-value">Decimation Rate Value</h4>
+Fixed Fractional Rate (P/Q) resampling filter implementations.</p>
+</section>
+<section id="decimation-rate-value" class="level5">
+<h5>Decimation Rate Value</h5>
 <p>This field is applicable to the all Decimation and Interpolation
 filter types for Fractional Rate Change implementations. The value
 provided in this field defines the down-sampling factor, or Q for Fixed
-Fractional Rate (P/Q) resampling filter implementations.</p></li>
-</ul>
+Fractional Rate (P/Q) resampling filter implementations.</p>
+</section>
 </section>
 </section>
 <section id="channel-specification-tab" class="level3">
@@ -137,49 +152,57 @@ Fractional Rate (P/Q) resampling filter implementations.</p></li>
 follows.</p>
 <section id="interleaved-channel-specification" class="level4">
 <h4>Interleaved Channel Specification</h4>
-<ul>
-<li><h4 id="channel-sequence">Channel Sequence</h4>
+<section id="channel-sequence" class="level5">
+<h5>Channel Sequence</h5>
 <p>Select Basic or Advanced. See theFIR Compiler LogiCORE IP Product
 Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf">PG149</a>)
-for an explanation of the advanced channel specification
-feature.</p></li>
-<li><h4 id="number-of-channels">Number of Channels</h4>
+for an explanation of the advanced channel specification feature.</p>
+</section>
+<section id="number-of-channels" class="level5">
+<h5>Number of Channels</h5>
 <p>The number of data channels to be processed by the FIR Compiler
 block. The multiple channel data is passed to the core in a
-time-multiplexed manner. A maximum of 64 channels is supported.</p></li>
-<li><h4 id="sequence-id-list">Sequence ID List</h4>
+time-multiplexed manner. A maximum of 64 channels is supported.</p>
+</section>
+<section id="sequence-id-list" class="level5">
+<h5>Sequence ID List</h5>
 <p>A comma delimited list that specifies which channel sequences are
-implemented.</p></li>
-</ul>
+implemented.</p>
+</section>
 </section>
 <section id="parallel-channel-specification" class="level4">
 <h4>Parallel Channel Specification</h4>
-<ul>
-<li><h4 id="number-of-paths">Number of Paths</h4>
-Specifies the number of parallel data paths the filter is to process. As
-shown below, when more than one path is specified, the data_tdata input
-port is divided into sub-ports that represent each parallel path.</li>
-</ul>
+<section id="number-of-paths" class="level5">
+<h5>Number of Paths</h5>
+<p>Specifies the number of parallel data paths the filter is to process.
+As shown below, when more than one path is specified, the data_tdata
+input port is divided into sub-ports that represent each parallel
+path.</p>
 <p><img src="data:image/png;base64,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" /></p>
+</section>
 </section>
 <section id="hardware-oversampling-specification" class="level4">
 <h4>Hardware Oversampling Specification</h4>
-<ul>
-<li><h4 id="select-format">Select format</h4>
-<ul>
-<li><h4 id="maximum_possible">Maximum_Possible</h4>
+<section id="select-format" class="level5">
+<h5>Select format</h5>
+<section id="maximum_possible" class="level6">
+<h6>Maximum_Possible</h6>
 <p>Specifies that oversampling be automatically determined based on the
-din sample rate.</p></li>
-<li><h4 id="input_sample_periodoutput_sample_period">Input_Sample_Period/Output_Sample_Period</h4>
+din sample rate.</p>
+</section>
+<section id="input_sample_periodoutput_sample_period" class="level6">
+<h6>Input_Sample_Period/Output_Sample_Period</h6>
 <p>Activates the Sample period. Enter the Sample Period specification.
 Selecting this option exposes the s_axis_data_tvalid port (called ND
 port on earlier versions of the core). With this port exposed, no input
-handshake abstraction and no rate-propagation takes place.</p></li>
-<li><h4 id="hardware-oversampling-rate">Hardware Oversampling Rate</h4>
+handshake abstraction and no rate-propagation takes place.</p>
+</section>
+<section id="hardware-oversampling-rate" class="level6">
+<h6>Hardware Oversampling Rate</h6>
 <p>Activates the Hardware Oversampling Rate. Enter the Hardware
-Oversampling Rate specification below.</p></li>
-</ul></li>
-</ul>
+Oversampling Rate specification below.</p>
+</section>
+</section>
 </section>
 <section id="hardware-oversampling-rate-1" class="level4">
 <h4>Hardware Oversampling Rate</h4>
@@ -195,10 +218,12 @@ produce implementations with intermediate levels of parallelism.</p>
 <p>Parameters specific to the Implementation tab are as follows.</p>
 <section id="coefficient-options" class="level4">
 <h4>Coefficient Options</h4>
-<ul>
-<li><h4 id="coefficient-type">Coefficient Type</h4>
-<p>Specify Signed or Unsigned.</p></li>
-<li><h4 id="quantization">Quantization</h4>
+<section id="coefficient-type" class="level5">
+<h5>Coefficient Type</h5>
+<p>Specify Signed or Unsigned.</p>
+</section>
+<section id="quantization" class="level5">
+<h5>Quantization</h5>
 <p>Specifies the quantization method to be used for quantizing the
 coefficients. This can be set to one of the following:</p>
 <ul>
@@ -206,23 +231,28 @@ coefficients. This can be set to one of the following:</p>
 <li>Quantize_Only</li>
 <li>Maximize_Dynamic_Range</li>
 <li>Normalize_to_Centre_Coefficient</li>
-</ul></li>
-<li><h4 id="coefficient-width">Coefficient Width</h4>
-<p>Specifies the number of bits used to represent the
-coefficients.</p></li>
-<li><h4 id="best-precision-fractional-bits">Best Precision Fractional
-Bits</h4>
+</ul>
+</section>
+<section id="coefficient-width" class="level5">
+<h5>Coefficient Width</h5>
+<p>Specifies the number of bits used to represent the coefficients.</p>
+</section>
+<section id="best-precision-fractional-bits" class="level5">
+<h5>Best Precision Fractional Bits</h5>
 <p>When selected, the coefficient fractional width is automatically set
-to maximize the precision of the specified filter coefficients.</p></li>
-<li><h4 id="coefficient-fractional-bits">Coefficient Fractional
-Bits</h4>
+to maximize the precision of the specified filter coefficients.</p>
+</section>
+<section id="coefficient-fractional-bits" class="level5">
+<h5>Coefficient Fractional Bits</h5>
 <p>Specifies the binary point location in the coefficients datapath
-options.</p></li>
-<li><h4 id="coefficients-structure">Coefficients Structure</h4>
+options.</p>
+</section>
+<section id="coefficients-structure" class="level5">
+<h5>Coefficients Structure</h5>
 <p>Specifies the coefficient structure. Depending on the coefficient
 structure, optimizations are made in the core to reduce the amount of
 hardware required to implement a particular filter configuration. The
-selected structure can be any of the following.</p>
+selected structure can be any of the following:</p>
 <ul>
 <li>Inferred</li>
 <li>Non-Symmetric</li>
@@ -233,15 +263,14 @@ selected structure can be any of the following.</p>
 </ul>
 <p>The vector of coefficients specified must match the structure
 specified unless Inferred from coefficients is selected in which case
-the structure is determined automatically from these
-coefficients.</p></li>
-</ul>
+the structure is determined automatically from these coefficients.</p>
+</section>
 </section>
 <section id="datapath-options" class="level4">
 <h4>Datapath Options</h4>
-<ul>
-<li><h4 id="output-rounding-mode">Output Rounding Mode</h4>
-<p>Choose one of the following.</p>
+<section id="output-rounding-mode" class="level5">
+<h5>Output Rounding Mode</h5>
+<p>Choose one of the following:</p>
 <ul>
 <li>Full_Precision</li>
 <li>Truncate_LSBs</li>
@@ -251,12 +280,13 @@ coefficients.</p></li>
 <li>Symmetric_Rounding_to_Infinity</li>
 <li>Convergent_Rounding_to_Even</li>
 <li>Convergent_Rounding_to_Odd</li>
-</ul></li>
-<li><h4 id="output-width">Output Width</h4>
-<p>Specify the output width. Edit box activated only if the Rounding
-mode is set to a value other than Full_Precision.</p></li>
 </ul>
-<p> </p>
+</section>
+<section id="output-width" class="level5">
+<h5>Output Width</h5>
+<p>Specify the output width. Edit box activated only if the Rounding
+mode is set to a value other than Full_Precision.</p>
+</section>
 </section>
 </section>
 <section id="detailed-implementation-tab" class="level3">
@@ -289,53 +319,72 @@ speed and area for the design, however in certain configurations, the
 “Speed” setting might be required to improve performance at the expense
 of overall resource usage (this setting normally adds pipeline registers
 in critical paths).</p>
-<ul>
-<li><h4 id="goal">Goal</h4>
+<section id="goal" class="level5">
+<h5>Goal</h5>
 <ul>
 <li>Area</li>
 <li>Speed</li>
 <li>Custom</li>
-</ul></li>
-<li><h4 id="list">List</h4>
+</ul>
+</section>
+<section id="list" class="level5">
+<h5>List</h5>
 <p>A comma delimited list that specifies which optimizations are
 implemented by the block. The optimizations are as follows.</p>
-<ul>
-<li><h4 id="data_path_fanout">Data_Path_Fanout</h4>
+<section id="data_path_fanout" class="level6">
+<h6>Data_Path_Fanout</h6>
 <p>Adds additional pipeline registers on the data memory outputs to
 minimize fan-out. Useful when implementing large data width filters
-requiring multiple DSP slices per multiply-add unit.</p></li>
-<li><h4 id="pre-adder_pipeline">Pre-Adder_Pipeline</h4>
+requiring multiple DSP slices per multiply-add unit.</p>
+</section>
+<section id="pre-adder_pipeline" class="level6">
+<h6>Pre-Adder_Pipeline</h6>
 <p>Pipelines the pre-adder when implemented using fabric resources. This
-may occur when a large coefficient width is specified.</p></li>
-<li><h4 id="coefficient_fanout">Coefficient_Fanout</h4>
+may occur when a large coefficient width is specified.</p>
+</section>
+<section id="coefficient_fanout" class="level6">
+<h6>Coefficient_Fanout</h6>
 <p>Adds additional pipeline registers on the coefficient memory outputs
 to minimize fan-out. Useful for Parallel channels or large coefficient
-width filters requiring multiple DSP slices per multiply-add
-unit.</p></li>
-<li><h4 id="control_path_fanout">Control_Path_Fanout</h4>
+width filters requiring multiple DSP slices per multiply-add unit.</p>
+</section>
+<section id="control_path_fanout" class="level6">
+<h6>Control_Path_Fanout</h6>
 <p>Adds additional pipeline registers to control logic when Parallel
-channels have been specified.</p></li>
-<li><h4 id="control_column_fanout">Control_Column_Fanout</h4>
+channels have been specified.</p>
+</section>
+<section id="control_column_fanout" class="level6">
+<h6>Control_Column_Fanout</h6>
 <p>Adds additional pipeline registers to control logic when multiple DSP
-columns are required to implement the filter.</p></li>
-<li><h4 id="control_broadcast_fanout">Control_Broadcast_Fanout</h4>
+columns are required to implement the filter.</p>
+</section>
+<section id="control_broadcast_fanout" class="level6">
+<h6>Control_Broadcast_Fanout</h6>
 <p>Adds additional pipeline registers to control logic for fully
 parallel (one clock cycle per channel per input sample) symmetric filter
-implementations.</p></li>
-<li><h4 id="control_lut_pipeline">Control_LUT_Pipeline</h4>
+implementations.</p>
+</section>
+<section id="control_lut_pipeline" class="level6">
+<h6>Control_LUT_Pipeline</h6>
 <p>Pipelines the Look-up tables required to implement the control logic
-for Advanced Channel sequences.</p></li>
-<li><h4 id="no_bram_read_first_mode">No_BRAM_Read_First_Mode</h4>
-<p>Specifies that Block RAM READ-FIRST mode should not be used.</p></li>
-<li><h4 id="increased-speed">Increased speed</h4>
+for Advanced Channel sequences.</p>
+</section>
+<section id="no_bram_read_first_mode" class="level6">
+<h6>No_BRAM_Read_First_Mode</h6>
+<p>Specifies that Block RAM READ-FIRST mode should not be used.</p>
+</section>
+<section id="increased-speed" class="level6">
+<h6>Increased speed</h6>
 <p>Multiple DSP slice columns are required for non-symmetric filter
-implementations.</p></li>
-<li><h4 id="other">Other</h4>
-<p>Miscellaneous optimizations.</p></li>
-</ul>
-<p><strong>Note</strong>: All optimizations may be specified but are
-only implemented when relevant to the core configuration.</p></li>
-</ul>
+implementations.</p>
+</section>
+<section id="other" class="level6">
+<h6>Other</h6>
+<p>Miscellaneous optimizations. <strong>Note</strong>: All optimizations
+may be specified but are only implemented when relevant to the core
+configuration.</p>
+</section>
+</section>
 </section>
 <section id="memory-options" class="level4">
 <h4>Memory Options</h4>
@@ -346,155 +395,181 @@ implementation where appropriate to the filter structure. Forcing the
 RAM selection to be either Block or Distributed should be used with
 caution, as inappropriate use can lead to inefficient resource usage -
 the default Automatic mode is recommended for most applications.</p>
-<ul>
-<li><h4 id="data-buffer-type">Data Buffer Type</h4>
-<p>Specifies the type of memory used to store data samples.</p></li>
-<li><h4 id="coefficient-buffer-type">Coefficient Buffer Type</h4>
-<p>Specifies the type of memory used to store the coefficients.</p></li>
-<li><h4 id="input-buffer-type">Input Buffer Type</h4>
+<section id="data-buffer-type" class="level5">
+<h5>Data Buffer Type</h5>
+<p>Specifies the type of memory used to store data samples.</p>
+</section>
+<section id="coefficient-buffer-type" class="level5">
+<h5>Coefficient Buffer Type</h5>
+<p>Specifies the type of memory used to store the coefficients.</p>
+</section>
+<section id="input-buffer-type" class="level5">
+<h5>Input Buffer Type</h5>
 <p>Specifies the type of memory to be used to implement the data input
-buffer, where present.</p></li>
-<li><h4 id="output-buffer-type">Output Buffer type</h4>
+buffer, where present.</p>
+</section>
+<section id="output-buffer-type" class="level5">
+<h5>Output Buffer type</h5>
 <p>Specifies the type of memory to be used to implement the data output
-buffer, where present.</p></li>
-<li><h4 id="preference-for-other-storage">Preference for other
-storage</h4>
+buffer, where present.</p>
+</section>
+<section id="preference-for-other-storage" class="level5">
+<h5>Preference for other storage</h5>
 <p>Specifies the type of memory to be used to implement general storage
-in the datapath.</p></li>
-</ul>
+in the datapath.</p>
+</section>
 </section>
 <section id="dsp-slice-column-options" class="level4">
 <h4>DSP Slice Column Options</h4>
-<ul>
-<li><h4 id="multi-column-support">Multi-Column Support</h4>
+<section id="multi-column-support" class="level5">
+<h5>Multi-Column Support</h5>
 <p>For device families with DSP slices, implementations of large high
 speed filters might require chaining of DSP slice elements across
 multiple columns. Where applicable (the feature is only enabled for
 multi-column devices), you can select the method of folding the filter
 structure across the multiple-columns, which can be Automatic (based on
 the selected device for the project) or Custom (you select the length of
-the first and subsequent columns).</p></li>
-<li><h4 id="column-configuration">Column Configuration</h4>
+the first and subsequent columns).</p>
+</section>
+<section id="column-configuration" class="level5">
+<h5>Column Configuration</h5>
 <p>Specifies the individual column lengths in a comma delimited list.
-(See the data sheet for a more detailed explanation.)</p></li>
-<li><h4 id="inter-column-pipe-length">Inter-Column Pipe Length</h4>
+(See the data sheet for a more detailed explanation.)</p>
+</section>
+<section id="inter-column-pipe-length" class="level5">
+<h5>Inter-Column Pipe Length</h5>
 <p>Pipeline stages are required to connect between the columns, with the
 level of pipelining required being depending on the required system
 clock rate, the chosen device and other system-level parameters. The
-choice of this parameter is always left for you to specify.</p></li>
-</ul>
+choice of this parameter is always left for you to specify.</p>
+</section>
 </section>
 </section>
 <section id="interface-tab" class="level3">
 <h3>Interface tab</h3>
 <section id="data-channel-options" class="level4">
 <h4>Data Channel Options</h4>
-<ul>
-<li><h4 id="tlast">TLAST</h4>
+<section id="tlast" class="level5">
+<h5>TLAST</h5>
 <p>TLAST can either be Not_Required, in which case the block will not
 have the port, or Vector_Framing, where TLAST is expected to denote the
 last sample of an interleaved cycle of data channels, or Packet_Framing,
 where the block does not interpret TLAST, but passes the signal to the
-output DATA channel TLAST with the same latency as the
-datapath.</p></li>
-<li><h4 id="output-tready">Output TREADY</h4>
+output DATA channel TLAST with the same latency as the datapath.</p>
+</section>
+<section id="output-tready" class="level5">
+<h5>Output TREADY</h5>
 <p>This field enables the data_tready port. With this port enabled, the
 block will support back-pressure. Without the port, back-pressure is not
 supported, but resources are saved and performance is likely to be
-higher.</p></li>
-<li><h4 id="input-fifo">Input FIFO</h4>
+higher.</p>
+</section>
+<section id="input-fifo" class="level5">
+<h5>Input FIFO</h5>
 <p>Selects a FIFO interface for the S_AXIS_DATA channel. When the FIFO
 has been selected, data can be transferred in a continuous burst up to
 the size of the FIFO (default 16) or, if greater, the number of
 interleaved data channels. The FIFO requires additional FPGA logic
-resources.</p></li>
-<li><h4 id="tuser">TUSER</h4>
+resources.</p>
+</section>
+<section id="tuser" class="level5">
+<h5>TUSER</h5>
 <p>Select one of the following options for the Input and the Output.</p>
-<ul>
-<li><h4 id="not_required">Not_Required</h4>
+<section id="not_required" class="level6">
+<h6>Not_Required</h6>
 <p>Neither of the uses is required; the channel in question will not
-have a TUSER field.</p></li>
-<li><h4 id="user_field">User_Field</h4></li>
-</ul>
+have a TUSER field.</p>
+</section>
+<section id="user_field" class="level6">
+<h6>User_Field</h6>
 <p>In this mode, the block ignores the content of the TUSER field, but
 passes the content untouched from the input channel to the output
 channels.</p>
-<ul>
-<li><h4 id="chan_id_field">Chan_ID_Field</h4>
+</section>
+<section id="chan_id_field" class="level6">
+<h6>Chan_ID_Field</h6>
 <p>In this mode, the TUSER field identifies the
-time-division-multiplexed channel for the transfer.</p></li>
-<li><h4 id="user-and-chan_id_field">User and Chan_ID_Field</h4>
+time-division-multiplexed channel for the transfer.</p>
+</section>
+<section id="user-and-chan_id_field" class="level6">
+<h6>User and Chan_ID_Field</h6>
 <p>In this mode, the TUSER field will have both a user field and a
 chan_id field, with the chan_id field in the least significant bits. The
 minimal number of bits required to describe the channel will determine
-the width of the chan_id field, e.g. 7 channels will require 3
-bits.</p></li>
-</ul></li>
-</ul>
+the width of the chan_id field, e.g. 7 channels will require 3 bits.</p>
+</section>
+</section>
 </section>
 <section id="configuration-channel-options" class="level4">
 <h4>Configuration Channel Options</h4>
-<ul>
-<li><h4 id="synchronization-mode">Synchronization Mode</h4>
-<ul>
-<li><h4 id="on_vector">On_Vector</h4>
+<section id="synchronization-mode" class="level5">
+<h5>Synchronization Mode</h5>
+<section id="on_vector" class="level6">
+<h6>On_Vector</h6>
 <p>Configuration packets, when available, are consumed and their
 contents applied when the first sample of an interleaved data channel
 sequence is processed by the block. When the block is configured to
 process a single data channel configuration packets are consumed every
-processing cycle of the block.</p></li>
-<li><h4 id="on_packet">On_Packet</h4>
+processing cycle of the block.</p>
+</section>
+<section id="on_packet" class="level6">
+<h6>On_Packet</h6>
 <p>Further qualifies the consumption of configuration packets. Packets
 will only be consumed once the block has received a transaction on the
-s_axis_data channel where s_axis_data_tlast has been asserted.</p></li>
-</ul></li>
-<li><h4 id="configuration-method">Configuration Method</h4>
-<ul>
-<li><h4 id="single">Single</h4>
+s_axis_data channel where s_axis_data_tlast has been asserted.</p>
+</section>
+</section>
+<section id="configuration-method" class="level5">
+<h5>Configuration Method</h5>
+<section id="single" class="level6">
+<h6>Single</h6>
 <p>A single coefficient set is used to process all interleaved data
-channels.</p></li>
-<li><h4 id="by_channel">By_Channel</h4>
+channels.</p>
+</section>
+<section id="by_channel" class="level6">
+<h6>By_Channel</h6>
 <p>A unique coefficient set is specified for each interleaved data
-channel.</p></li>
-</ul></li>
-</ul>
+channel.</p>
+</section>
+</section>
 </section>
 <section id="reload-channel-options" class="level4">
 <h4>Reload Channel Options</h4>
-<ul>
-<li><h4 id="reload-slots">Reload Slots</h4>
-Specifies the number of coefficient sets that can be loaded in advance.
-Reloaded coefficients are only applied to the block once the
-configuration packet has been consumed (Range 1 to 256).</li>
-</ul>
+<section id="reload-slots" class="level5">
+<h5>Reload Slots</h5>
+<p>Specifies the number of coefficient sets that can be loaded in
+advance. Reloaded coefficients are only applied to the block once the
+configuration packet has been consumed (Range 1 to 256).</p>
+</section>
 </section>
 <section id="control-options" class="level4">
 <h4>Control Options</h4>
-<ul>
-<li><h4 id="aclken">ACLKEN</h4>
+<section id="aclken" class="level5">
+<h5>ACLKEN</h5>
 <p>Active-high clock enable. Available for MAC-based FIR
-implementations.</p></li>
-<li><h4 id="aresetn-active-low">ARESETn (active low)</h4>
+implementations.</p>
+</section>
+<section id="aresetn-active-low" class="level5">
+<h5>ARESETn (active low)</h5>
 <p>Active-low synchronous clear input that always takes priority over
 ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
-the pulse is not in the cycle immediately following.</p></li>
-</ul>
+the pulse is not in the cycle immediately following.</p>
+</section>
 </section>
 </section>
 <section id="advanced-tab" class="level3">
 <h3>Advanced tab</h3>
 <section id="block-icon-display" class="level4">
 <h4>Block Icon Display</h4>
-<ul>
-<li><h4 id="display-shortened-port-names">Display shortened port
-names</h4>
-On by default. When unchecked, data_tvalid, for example, becomes
-m_axis_data_tvalid.</li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<section id="display-shortened-port-names" class="level5">
+<h5>Display shortened port names</h5>
+<p>On by default. When unchecked, data_tvalid, for example, becomes
+m_axis_data_tvalid.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
 </section>
 </section>
 </section>

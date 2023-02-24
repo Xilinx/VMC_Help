@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,17 +28,23 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Reciprocal</h1>
 </header>
-<h1 id="reciprocal">Reciprocal</h1>
+<section id="reciprocal" class="level1">
+<h1>Reciprocal</h1>
 <p>Element-wise computation of the reciprocal for a given argument</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Reciprocal block returns the output of the function
 inv(<code>x</code>) for each element in array <code>x</code>. The block
 supports input of all data types except Boolean. The input can be
 scalar, vector or matrix.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data types accepted at the inputs of the block:</p>
 <ul>
 <li><p>Dimension: Input can be scalar, vector, or matrix.</p></li>
@@ -48,7 +54,11 @@ inputs.</p></li>
 <li><p>Complex Number Support: No</p>
 <p>The output has the same dimension and type as the input.</p></li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Reciprocal block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

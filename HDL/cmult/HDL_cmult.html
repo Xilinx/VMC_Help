@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -137,12 +137,12 @@ where bit zero is the least significant bit.</p>
 </section>
 <section id="quantization" class="level5">
 <h5>Quantization</h5>
-<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+<p>Refer to the section <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;))">Overflow
 and Quantization</a>.</p>
 </section>
 <section id="overflow" class="level5">
 <h5>Overflow</h5>
-<p>Refer to the section <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322">Overflow
+<p>Refer to the section <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;))">Overflow
 and Quantization</a>.</p>
 </section>
 </section>
@@ -153,9 +153,9 @@ and Quantization</a>.</p>
 <section id="use-behavioral-hdl-description-otherwise-use-core" class="level4">
 <h4>Use behavioral HDL description (otherwise use core)</h4>
 <p>When selected, Model Composer uses behavioral HDL, otherwise it uses
-the LogiCORE™™ Multiplier. When this option is not selected (false)
-Model Composer internally uses the behavioral HDL model for simulation
-if any of the following conditions are true:</p>
+the LogiCORE™ Multiplier. When this option is not selected (false) Model
+Composer internally uses the behavioral HDL model for simulation if any
+of the following conditions are true:</p>
 <ul>
 <li>The constant value is 0 (or is truncated to 0).</li>
 <li>The constant value is less than 0 and its bit width is 1.</li>
@@ -177,7 +177,7 @@ xlFix.</li>
 pipeline length supported for the given configuration of the block.
 Latency values that pass this test imply that the core produced is
 optimized for speed.</p>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>
@@ -185,10 +185,8 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p><a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">LogiCORE
-IP Multiplier v12.0</a></p>
-<p><a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">LogiCORE
-IP Floating-Point Operator v7.1</a></p>
+<p>LogiCORE IP Multiplier v12.0 <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">(PG108)</a></p>
+<p>LogiCORE IP Floating-Point Operator v7.1 <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">(PG060)</a></p>
 </section>
 </section>
 </body>

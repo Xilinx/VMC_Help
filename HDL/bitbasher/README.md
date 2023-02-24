@@ -33,7 +33,7 @@ Binary point location to be forced onto the corresponding output.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 ## Supported Verilog Constructs
 
@@ -87,14 +87,14 @@ ports. If a range of consecutive bits need to be extracted, then the
 expression of the following form should be used.
 
 ``` pre
-output_var = {port_identifier[bound1:bound2]}(1)
+output_var = {port_identifier[bound1:bound2]}...(1)
 ```
 
 If only one bit is to be extracted, then the alternative form should be
 used.
 
 ``` pre
-output_var = {port_identifier[bitN]}(2)
+output_var = {port_identifier[bitN]}..(2)
 ```
 
 The following are some examples of this construct:
@@ -178,7 +178,7 @@ hexadecimal_const: A legal binary number string made up of 0, 1, 2, 3,
 
 A constant can only be used to augment expressions already derived from
 input ports. In other words, a BitBasher block cannot be used to simply
-source constant like the [Constant](constant.html) block.
+source constant like the [Constant](../../HDL/constant/README.md) block.
 
 The following examples make use of this construct:
 

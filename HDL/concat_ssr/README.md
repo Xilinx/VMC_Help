@@ -13,11 +13,11 @@ period. This block enables 1-D vector data support for the primary block
 operation.
 
 
-The [Vector Reinterpret](vectorreinterpret.html) block provides
+The [Vector Reinterpret](../../HDL/reinterpret/README.md) block provides
 capabilities that can extend the functionality of the Vector Concat
 block.
 
-## Block Interface
+### Block Interface
 
 The block has n input ports, where n is a value between 2 and 1024,
 inclusively, and one output port. The first and last input ports are
@@ -36,6 +36,6 @@ Specifies number of inputs, between 2 and 1024,
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 The Vector Concat block does not use a LogiCORE™.

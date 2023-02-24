@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,20 +28,26 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Max</h1>
 </header>
-<h1 id="max">Max</h1>
+<section id="max" class="level1">
+<h1>Max</h1>
 <p>Outputs the maximum value of an input or element-wise maximum value
 of multiple inputs.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions/Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Max block with a single scalar or vector input, outputs the
 maximum value of the input.</p>
 <p>If the block has more than one input, the non-scalar inputs must have
 the same dimensions. Any scalar input is expanded to the dimensions of
 the non-scalar inputs, and the block outputs element-wise maximum value
 of the inputs.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <ul>
 <li>The block supports floating-point, integer, and fixed-point data
 types.</li>
@@ -78,10 +84,14 @@ signed, the output is signed. The bit width of the output is the largest
 among the bit widths of the inputs.</li>
 </ul></li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Number of inputs<br />
 This parameter determines the number of inputs.</p>
 <p>[TABLE]</p>
 <p>Table 1. Number of Inputs</p>
+</section>
+</section>
 </body>
 </html>

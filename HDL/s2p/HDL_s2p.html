@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Serial to Parallel</h1>
 </header>
-<h1 id="serial-to-parallel">Serial to Parallel</h1>
+<section id="serial-to-parallel" class="level1">
+<h1>Serial to Parallel</h1>
 <p>The Serial to Parallel block takes a series of inputs of any size and
 creates a single output of a specified multiple of that size. The input
 series can be ordered either with the most significant word first or the
@@ -40,11 +41,14 @@ least significant word first.</p>
 <p>This example illustrates the case where the input width is 1, output
 width is 4, word size is 1 bit, and the block is configured for most
 significant word first.</p>
-<h2 id="block-interface">Block Interface</h2>
+<section id="block-interface" class="level2">
+<h2>Block Interface</h2>
 <p>The Serial to Parallel block has one input and one output port. The
 input port can be any size. The output port size is indicated on the
 Block Parameters dialog box.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+</section>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Basic tab<br />
@@ -62,5 +66,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <p>An error is reported when the number of output bits cannot be divided
 evenly by the number of input bits. The minimum latency for this block
 is zero.</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -41,99 +41,67 @@ port.</p>
 <h2>Parameters</h2>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
-<blockquote>
 <p>Parameters specific to the Basic tab are as follows.</p>
-</blockquote>
 <section id="precision" class="level4">
 <h4>Precision</h4>
-<blockquote>
 <p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point output always has Full
 precision.</p>
-</blockquote>
-<blockquote>
-<h4 id="full">Full</h4>
-<blockquote>
+<section id="full" class="level5">
+<h5>Full</h5>
 <p>The block uses sufficient precision to represent the result without
 error.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<h4 id="user-defined">User Defined</h4>
-<blockquote>
+</section>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
 <p>If you do not need full precision, this option allows you to specify
 a reduced number of total bits and/or fractional bits.</p>
-</blockquote>
-</blockquote>
+</section>
 </section>
 <section id="fixed-point-output-type" class="level4">
 <h4>Fixed-point output type</h4>
-<blockquote>
-<h4 id="arithematic-type">Arithematic Type</h4>
-<blockquote>
-<h4 id="signed-2s-comp">Signed (2’s comp)</h4>
-<blockquote>
+<section id="arithematic-type" class="level5">
+<h5>Arithematic Type</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
 <p>The output is a Signed (2’s complement) number.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<h4 id="unsigned">Unsigned</h4>
-<blockquote>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned</h6>
 <p>The output is an Unsigned number.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<h4 id="number-of-bits">Number of bits</h4>
-<blockquote>
+</section>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<h4 id="binary-point">Binary point</h4>
-<blockquote>
+</section>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
 <p>Position of the binary point in the fixed-point output.</p>
-</blockquote>
-</blockquote>
-</blockquote>
+</section>
+</section>
 </section>
 <section id="quantization" class="level4">
 <h4>Quantization</h4>
-<blockquote>
-<p>Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Refer to the Overflow and Quantization section in the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
-</blockquote>
 </section>
 <section id="overflow" class="level4">
 <h4>Overflow</h4>
-<blockquote>
-<p>Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Refer to the Overflow and Quantization section in the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
-</blockquote>
 </section>
 <section id="optional-port" class="level4">
 <h4>Optional Port</h4>
-<blockquote>
 <p>Provide enable port</p>
-</blockquote>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
-<blockquote>
 <p>This defines the number of sample periods by which the block&#39;s output
 is delayed.</p>
-</blockquote>
-<blockquote>
 <p><strong>Note</strong>: Only when latency of the Mult block is set to
 4 in Model Composer, are all three pipeline stages used in the generated
 Multiplier IP.</p>
-</blockquote>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
@@ -141,48 +109,38 @@ Multiplier IP.</p>
 <p>Parameters specific to the Implementation tab are as follows.</p>
 <section id="use-behavioral-hdl-otherwise-use-core" class="level4">
 <h4>Use behavioral HDL (otherwise use core)</h4>
-<blockquote>
 <p>The block is implemented using behavioral HDL. This gives the
 downstream logic synthesis tool maximum freedom to optimize for
 performance or area.</p>
-</blockquote>
-<blockquote>
 <p><strong>Note</strong>: For Floating-point operations, the block
 always uses the Floating-point Operator core.</p>
-</blockquote>
 </section>
 <section id="core-parameters" class="level4">
 <h4>Core Parameters</h4>
-<blockquote>
-<h4 id="optimize-for-speedarea">Optimize for Speed|Area</h4>
-<blockquote>
+<section id="optimize-for-speedarea" class="level5">
+<h5>Optimize for Speed|Area</h5>
 <p>Directs the block to be optimized for either Speed or Area.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<h4 id="use-embedded-multipliers">Use embedded multipliers</h4>
-<blockquote>
+</section>
+<section id="use-embedded-multipliers" class="level5">
+<h5>Use embedded multipliers</h5>
 <p>This field specifies that if possible, use the XtremeDSP slice (DSP48
 type embedded multiplier) in the target device.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<h4 id="test-for-optimum-pipelining">Test for optimum pipelining</h4>
-<blockquote>
+</section>
+<section id="test-for-optimum-pipelining" class="level5">
+<h5>Test for optimum pipelining</h5>
 <p>Checks if the Latency provided is at least equal to the optimum
 pipeline length. Latency values that pass this test imply that the core
 produced is optimized for speed.</p>
-</blockquote>
-</blockquote>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
 </section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™™ Documentation</h2>
-<p>Multiplier LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=mult_gen;v=latest;d=pg108-mult-gen.pdf">PG108</a>)</p>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>Multiplier LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">PG108</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,13 +28,17 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Polar to Complex</h1>
 </header>
-<h1 id="polar-to-complex">Polar to Complex</h1>
+<section id="polar-to-complex" class="level1">
+<h1>Polar to Complex</h1>
 <p>Element-wise conversion of real magnitude and angle representation
 signals into a complex signal</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Polar to Complex block accepts a real signal of floating
 point data type such as double, single, or half. The first and second
 inputs represent magnitude and angle respectively. The angle is in
@@ -45,7 +49,9 @@ signals are also scalar, vector, or matrix. The elements of a certain
 magnitude input map to the magnitudes of the corresponding complex
 output elements. Similarly, the elements of a certain angle input map to
 the angles of the corresponding complex output elements.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data types accepted at the inputs of the block are:</p>
 <ul>
 <li>Dimension : The inputs can be scalar, array, or combination of
@@ -84,7 +90,11 @@ type.</li>
 </tbody>
 </table>
 <p>Table 1. Input/Output</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Polar to Complex block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

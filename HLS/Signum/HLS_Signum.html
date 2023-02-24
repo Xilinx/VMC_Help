@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,12 +28,16 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Signum</h1>
 </header>
-<h1 id="signum">Signum</h1>
+<section id="signum" class="level1">
+<h1>Signum</h1>
 <p>Performs signum function (sign extraction) on the input.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions/Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Signum block returns the sign for each element of the real input.
 The block returns 1, 0, or -1 if the number is positive, equal to 0, or
 negative, respectively.</p>
@@ -41,13 +45,19 @@ negative, respectively.</p>
 <pre class="pre"><code>sign(s) = s./ abs(s) </code></pre>
 <p>Where sign is the MATLAB® signum function, and <code>./</code>
 indicates element-wise division.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>The Signum block supports signals of integer type, floating-point
 type (double, single and half), and fixed-point type for real inputs.
 The complex inputs are supported only for floating point data types.</p>
 <p>The output data type, and dimension are the same as those of the
 input.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Signum block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

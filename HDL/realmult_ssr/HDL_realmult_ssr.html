@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,63 +28,95 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Vector Real Mult</h1>
 </header>
-<h1 id="vector-real-mult">Vector Real Mult</h1>
+<section id="vector-real-mult" class="level1">
+<h1>Vector Real Mult</h1>
 <p>The Vector Real Multiplier block supports the multiplication feature
 for vector type inputs.</p>
 <p>Hardware notes: To check for the optimum internal pipeline stages of
 the dedicated multiplier select Test for optimum pipelining.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>Optimization Goal: For implementation into device fabric (LUTs), the
 Speed or Area optimization takes effect only if it is supported by IP
 for the particular device family. Otherwise, the results will be
 identical regardless of the selection.</p>
-<h2 id="description">Description</h2>
-<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.</p>
 <p>The Vector Real Mult block implements a multiplier. It computes the
 product of the data on its two input ports, producing the result on its
 output port.</p>
-<p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>Open the Block Parameters dialog box by double-clicking the icon in
-your Simulink® model.</p>
-<p>Basic tab<br />
-Parameters specific to the Basic tab are as follows.</p>
-<p>Precision<br />
-This parameter allows you to specify the output precision for
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating-point output always has Full
 precision.</p>
-<p>Full<br />
-The block uses sufficient precision to represent the result without
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
 error.</p>
-<p>User Defined<br />
-If you do not need full precision, this option allows you to specify a
-reduced number of total bits and/or fractional bits.</p>
-<p>User-Defined Precision<br />
-Fixed-point Precision<br />
-Signed (2’s comp)<br />
-The output is a Signed (2’s complement) number.</p>
-<p>Unsigned<br />
-The output is an Unsigned number.</p>
-<p>Number of bits<br />
-Specifies the bit location of the binary point of the output number,
+</section>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+</section>
+</section>
+<section id="user-defined-precision" class="level4">
+<h4>User-Defined Precision</h4>
+<section id="fixed-point-precision" class="level5">
+<h5>Fixed-point Precision</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned</h6>
+<p>The output is an Unsigned number.</p>
+</section>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
+<p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
-<p>Binary point<br />
-Position of the binary point in the fixed-point output.</p>
-<p>Quantization<br />
-Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
+<p>Position of the binary point in the fixed-point output.</p>
+</section>
+</section>
+</section>
+<section id="quantization" class="level4">
+<h4>Quantization</h4>
+<p>Refer to the Overflow and Quantization section in the <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
-<p>Overflow<br />
-Refer to the Overflow and Quantization section inthe <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="overflow" class="level4">
+<h4>Overflow</h4>
+<p>Refer to the Overflow and Quantization section inthe <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
-<p>Optional Port<br />
-Provide enable port.</p>
-<p>Latency<br />
-This defines the number of sample periods by which the block&#39;s output is
-delayed.</p>
-<p>Saturation and Rounding of User Data Types in a Multiplier<br />
-When saturation or rounding is selected on the user data type of a
+</section>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This block
+enables 1-D vector support for the primary block operation.</p>
+</section>
+<section id="optional-port" class="level4">
+<h4>Optional Port</h4>
+<p>Provide enable port.</p>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>This defines the number of sample periods by which the block&#39;s output
+is delayed.</p>
+</section>
+<section id="saturation-and-rounding-of-user-data-types-in-a-multiplier" class="level4">
+<h4>Saturation and Rounding of User Data Types in a Multiplier</h4>
+<p>When saturation or rounding is selected on the user data type of a
 multiplier, latency is also distributed so as to pipeline the
 saturation/rounding logic first, and then additional registers are added
 to the core. For example, if a latency of three is selected, and
@@ -95,29 +127,44 @@ pipelining is reached and then further registers are placed after the
 rounding/saturation logic. However, if the data type you select does not
 require additional saturation/rounding logic, then all the registers are
 used to pipeline the core.</p>
-<p> </p>
-<p>Implementation tab<br />
-Parameters specific to the Implementation tab are as follows: Use
-behavioral HDL (otherwise use core)<br />
-The block is implemented using behavioral HDL. This gives the downstream
-logic synthesis tool maximum freedom to optimize for performance or
-area.</p>
-<p>Note: For Floating-point operations, the block always uses the
-Floating-point Operator core.</p>
-<p>Core Parameters<br />
-Optimize for Speed|Area<br />
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows:</p>
+<section id="use-behavioral-hdl-otherwise-use-core" class="level4">
+<h4>Use behavioral HDL (otherwise use core)</h4>
+<p>The block is implemented using behavioral HDL. This gives the
+downstream logic synthesis tool maximum freedom to optimize for
+performance or area.</p>
+<p><strong>Note</strong>: For Floating-point operations, the block
+always uses the Floating-point Operator core.</p>
+</section>
+<section id="core-parameters" class="level4">
+<h4>Core Parameters</h4>
+<p>Optimize for Speed|Area<br />
 Directs the block to be optimized for either Speed or Area.</p>
-<p>Use embedded multipliers<br />
-This field specifies that if possible, use the XtremeDSP slice (DSP48
+<section id="use-embedded-multipliers" class="level5">
+<h5>Use embedded multipliers</h5>
+<p>This field specifies that if possible, use the XtremeDSP slice (DSP48
 type embedded multiplier) in the target device.</p>
-<p>Test for optimum pipelining<br />
-Checks if the Latency provided is at least equal to the optimum pipeline
-length. Latency values that pass this test imply that the core produced
-is optimized for speed.</p>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+</section>
+<section id="test-for-optimum-pipelining" class="level5">
+<h5>Test for optimum pipelining</h5>
+<p>Checks if the Latency provided is at least equal to the optimum
+pipeline length. Latency values that pass this test imply that the core
+produced is optimized for speed.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<h2 id="logicore-documentation">LogiCORE™™ Documentation</h2>
-<p>Multiplier LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=mult_gen;v=latest;d=pg108-mult-gen.pdf">PG108</a>)</p>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+</section>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
+<p>Multiplier LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">PG108</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
+</section>
+</section>
 </body>
 </html>

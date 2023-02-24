@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -53,16 +53,13 @@ asserted the FIFO is empty.</p>
 <p>Parameters specific to the Basic tab are as follows.</p>
 <section id="fifo-implementation" class="level4">
 <h4>FIFO Implementation</h4>
-<ul>
-<li><h4 id="memory-type">Memory Type</h4></li>
-</ul>
-<blockquote>
+<section id="memory-type" class="level5">
+<h5>Memory Type</h5>
 <p>This block implements FIFOs built from block RAM, distributed RAM,
 shift registers, or the 7 series built-in FIFOs. Memory primitives are
 arranged in an optimal configuration based on the selected width and
 depth of the FIFO. The following table provides best-use recommendations
 for specific design requirements.</p>
-</blockquote>
 <table>
 <thead>
 <tr class="header">
@@ -114,28 +111,15 @@ for specific design requirements.</p>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><h4 id="performance-options">Performance Options</h4>
-<ul>
-<li><h4 id="standard-fifo">Standard FIFO</h4></li>
-</ul></li>
-</ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
+</section>
+<section id="performance-options" class="level5">
+<h5>Performance Options</h5>
+<section id="standard-fifo" class="level6">
+<h6>Standard FIFO</h6>
 <p>FIFO will operate in Standard Mode.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<ul>
-<li><h4 id="first-word-fall-through">First Word Fall Through</h4></li>
-</ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
+</section>
+<section id="first-word-fall-through" class="level6">
+<h6>First Word Fall Through</h6>
 <p>FIFO will operate in First-Word Fall-Through (FWFT) mode. The
 First-Word Fall-Through feature provides the ability to look-ahead to
 the next word available from the FIFO without issuing a read operation.
@@ -145,22 +129,12 @@ applications that require low-latency access to data and to applications
 that require throttling based on the contents of the data that are read.
 FWFT support is included in FIFOs created with block RAM, distributed
 RAM, or built-in FIFOs in 7 series devices.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+</section>
+<section id="implementation-options" class="level6">
+<h6>Implementation Options</h6>
 <ul>
-<li><h4 id="implementation-options">Implementation Options</h4>
-<ul>
-<li><h4 id="use-embedded-registers-when-possible">Use Embedded Registers
-(when possible)</h4></li>
-</ul></li>
-</ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>In 7 series FPGA block RAM and FIFO macros, embedded output registers
+<li>Use Embedded Registers (when possible):<br />
+In 7 series FPGA block RAM and FIFO macros, embedded output registers
 are available to increase performance and add a pipeline register to the
 macros. This feature can be leveraged to add one additional cycle of
 latency to the FIFO core (DOUT bus and VALID outputs) or implement the
@@ -168,167 +142,111 @@ output registers for FWFT FIFOs. The embedded registers available in 7
 series FPGAs can be reset (DOUT) to a default or user programmed value
 for common clock built-in FIFOs. See the topic &#39;Embedded Registers in
 block RAM and FIFO Macros&#39; in the FIFO Generator LogiCORE IP Product
-Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fifo_generator;v=latest;d=pg057-fifo-generator.pdf">PG057</a>).</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg057-fifo-generator&amp;ft:locale=en-US">PG057</a>).</li>
+</ul>
+</section>
+</section>
 </section>
 <section id="depth" class="level4">
 <h4>Depth</h4>
-<blockquote>
 <p>Specifies the number of words that can be stored. Range 16-4M.</p>
-</blockquote>
 </section>
 <section id="specify-custom-dout-width" class="level4">
 <h4>Specify custom dout width</h4>
-<blockquote>
 <p>Allows specification of asymmetric data widths for input and output.
 When this option is enabled, the input din must be of type Unsigned
 int.</p>
-</blockquote>
-<ul>
-<li><h4 id="dout-width">Dout Width</h4></li>
-</ul>
-<blockquote>
-<blockquote>
-<p>Specifies the custom width of dout . The default value is
-<code>32</code>. The ratio between width of din and dout should be one
-of 1:1, 1:2, 1: 4, 1:8, 2:1, 4:1, or 8:1.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>For example, if the width of the din is <code>32</code>. Then the
-dout can be 4, 8, 16, 32, 64, 128, or 256.</p>
-</blockquote>
-</blockquote>
+<section id="dout-width" class="level6">
+<h6>Dout Width</h6>
+<p>Specifies the custom width of dout . The default value is 32. The
+ratio between width of din and dout should be one of 1:1, 1:2, 1: 4,
+1:8, 2:1, 4:1, or 8:1.</p>
+<p>For example, if the width of the din is 32. Then the dout can be 4,
+8, 16, 32, 64, 128, or 256.</p>
 <p><strong>IMPORTANT</strong>: Asymmetric data-widths are supported only
 for Versal devices with Block RAM configuration.</p>
 <p><strong>IMPORTANT</strong>: The total size of the memory
 (depth*width) should not exceed 150M.</p>
 </section>
+</section>
 <section id="bits-of-precision-to-use-for-full-signal" class="level4">
 <h4>Bits of precision to use for %full signal</h4>
-<blockquote>
-<blockquote>
 <p>Specifies the bit width of the %full port. The binary point for this
 unsigned output is always at the top of the word. Thus, if for example
 precision is set to one, the output can take two values: 0.0 and 0.5,
 the latter indicating the FIFO is at least 50% full.</p>
-</blockquote>
-</blockquote>
 </section>
 <section id="optional-ports" class="level4">
 <h4>Optional Ports</h4>
-<blockquote>
-<h4 id="provide-reset-port">Provide reset port</h4>
-<blockquote>
+<section id="provide-reset-port" class="level5">
+<h5>Provide reset port</h5>
 <p>Add a reset port to the block.</p>
-</blockquote>
-</blockquote>
-<ul>
-<li><h4 id="reset-latency">Reset Latency</h4></li>
-</ul>
-<blockquote>
-<blockquote>
+<section id="reset-latency" class="level6">
+<h6>Reset Latency:</h6>
 <p>Creates a latency on the reset by adding registers. The default is
 1.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
 <p><strong>Note</strong>: For UltraScale™ devices, after the reset gets
 asserted, the FIFO will remain disable for the next 20 cycles. During
 this 20 cycle period, all read and write operations are ignored.</p>
-</blockquote>
-</blockquote>
-<ul>
-<li><h4 id="provide-enable-port">Provide enable port</h4></li>
-</ul>
-<blockquote>
-<blockquote>
+</section>
+<section id="provide-enable-port" class="level6">
+<h6>Provide enable port</h6>
 <p>Add enable port to the block.</p>
-</blockquote>
-</blockquote>
-<ul>
-<li><h4 id="provide-data-count-port">Provide data count port</h4></li>
-</ul>
-<blockquote>
-<blockquote>
+</section>
+<section id="provide-data-count-port" class="level6">
+<h6>Provide data count port</h6>
 <p>Add data count port to the block. Provides the number of words in the
 FIFO.</p>
-</blockquote>
-</blockquote>
-<ul>
-<li><h4 id="provide-percent-full-port">Provide percent full
-port</h4></li>
-</ul>
-<blockquote>
-<blockquote>
+</section>
+<section id="provide-percent-full-port" class="level6">
+<h6>Provide percent full port</h6>
 <p>Add a percent full output port to the block. Indicates the percentage
 of the FIFO that is full using the user-specified precision. This
 optional port is turned on by default for backward compatibility
 reasons.</p>
-</blockquote>
-</blockquote>
-<ul>
-<li><h4 id="provide-almost-empty-port">Provide almost empty
-port</h4></li>
-</ul>
-<blockquote>
-<blockquote>
+</section>
+<section id="provide-almost-empty-port" class="level6">
+<h6>Provide almost empty port</h6>
 <p>Add almost empty (ae) port to the block.</p>
-</blockquote>
-</blockquote>
-<ul>
-<li><h4 id="provide-almost-full-port">Provide almost full port</h4></li>
-</ul>
-<blockquote>
-<blockquote>
+</section>
+<section id="provide-almost-full-port" class="level6">
+<h6>Provide almost full port</h6>
 <p>Add almost efull (af) port to the block.</p>
-</blockquote>
-</blockquote>
 <p>Following are some general guidelines to use Reset, Write enable,
 Read enable for the &#39;built-in FIFO&#39; Memory type:</p>
 </section>
 </section>
+</section>
+</section>
 <section id="7-series-devices" class="level3">
 <h3>7 series devices</h3>
-<ul>
-<li><p>Without Reset port, it is required to run at least 8 clock cycles
-latency before asserting WE/RE signals.</p></li>
-<li><p>With Reset port, it is required to run Reset signal ON for at
-least three clock cycles. During this time no WE or RE signals should be
+<p>Without Reset port, it is required to run at least 8 clock cycles
+latency before asserting WE/RE signals.</p>
+<p>With Reset port, it is required to run Reset signal ON for at least
+three clock cycles. During this time no WE or RE signals should be
 asserted. To be consistent across all built-in FIFO configurations, it
-is recommended to give reset pulse of at least five clock
-cycles.</p></li>
-<li><p>After Reset de-assertion, run at least 30 clock cycles (reset
+is recommended to give reset pulse of at least five clock cycles.</p>
+<p>After Reset de-assertion, run at least 30 clock cycles (reset
 duration +30 clock cycles duration is defined as a no access zone)
-before asserting WE/RE signals.</p></li>
-</ul>
+before asserting WE/RE signals.</p>
 </section>
 <section id="ultrascale-devices" class="level3">
 <h3>UltraScale devices</h3>
-<ul>
-<li>The built-in FIFO requires a reset pulse of at least one clock
-cycle.</li>
-</ul>
+<p>The built-in FIFO requires a reset pulse of at least one clock
+cycle.</p>
 </section>
 <section id="versal-devices" class="level3">
 <h3>Versal Devices</h3>
-<ul>
-<li>Read enable (rd_en) and Write enable (wr_en) signals can be made
-high only when rd_rst_busy and wr_rst_busy signals are low.</li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Read enable (rd_en) and Write enable (wr_en) signals can be made high
+only when rd_rst_busy and wr_rst_busy signals are low.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>FIFO Generator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fifo_generator;v=latest;d=pg057-fifo-generator.pdf">PG057</a>)</p>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>FIFO Generator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg057-fifo-generator&amp;ft:locale=en-US">PG057</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>

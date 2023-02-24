@@ -50,10 +50,10 @@ Specifies double precision (64 bits).
 ###### Custom
 Activates the field below so you can specify the Exponent width and the Fraction width.
 
-######Exponent width
+###### Exponent width
 Specify the exponent width.
 
-######Fraction width
+###### Fraction width
 Specify the fraction width.
 
 
@@ -77,12 +77,12 @@ and/or rate specified for assertion.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 The Output type parameter in this block uses the same description as the
 Arithmetic Type described in the topic [Common Options in Block
 Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 The Assert block does not use a LogiCORE™™ and does not use
 resources when implemented in hardware.

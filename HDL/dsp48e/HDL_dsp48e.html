@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -44,108 +44,126 @@ do not contain the DSP48E hardware primitive if the Use synthesizable
 model option is selected on the Implementation tab.</p>
 <p><img src="data:image/png;base64,R0lGODlhYwJSAfcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8CIeHyQhIicjJCkmJisoKTEuLzMwMTUyMzUzMzc0NTg2Njg2Nzw5Oj07Oz07PEA+P0E/QERBQkdFRkpISU1LS01LTFBOT1FQUFVTU1VTVFdWVldWV1lXV1lXWFtZWltaWlxbW11bW2BfX2NiYmRiY2dlZmdmZmppaWppamxqam1rbG5tbW5tbm9tbnJxcnZ1dnd2dnp5ent6enx7e39+f4B/f4KCgoWEhImIiYqIiYqJiY2MjI+OjpKRkZeWlp2cnJ6dnZ6dnqKioqSjo6qpqbCvr7W0tLa2tru7u7+/v8LBwsLCwsbGxsvLy8zMzM3NzdDQ0NPT09jY2Nra2uLi4uTk5Ozs7O3t7e7u7vb29v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAAAAAAALAAAAABjAlIBhwAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8CIeHyQhIicjJCkmJisoKTEuLzMwMTUyMzUzMzc0NTg2Njg2Nzw5Oj07Oz07PEA+P0E/QERBQkdFRkpISU1LS01LTFBOT1FQUFVTU1VTVFdWVldWV1lXV1lXWFtZWltaWlxbW11bW2BfX2NiYmRiY2dlZmdmZmppaWppamxqam1rbG5tbW5tbm9tbnJxcnZ1dnd2dnp5ent6enx7e39+f4B/f4KCgoWEhImIiYqIiYqJiY2MjI+OjpKRkZeWlp2cnJ6dnZ6dnqKioqSjo6qpqbCvr7W0tLa2tru7u7+/v8LBwsLCwsbGxsvLy8zMzM3NzdDQ0NPT09jY2Nra2uLi4uTk5Ozs7O3t7e7u7vb29v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////wj+AMkIHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKJDlmps2bOHPq3Mmzp04wPJn4HEq0qNGjSJNGVMBUwcCmUJ2SiQpVyFSqTJ9iFYg169WtXMF+jRpWbFetVMumVQsVLdmxb+E2ddtW7ly2d+1K7SpVL927fPeaBRsYr1e/er2eNdyXL+O/hx0jnix5MeXFljNjHrw2MWPBnStvDt15Yd+KWk7ffKLAi9LXsGPLnn0wA9CEUo4otH1TdULfEpMo4KIzhgIptJMrX848phcFBxTu2JDwefSkwCOeUPBEJ9MdzcP+ix9PHqMUBVYTQlBw2yDr9EizPwTDFEXO1IfL69/Pn+Bz+MY995QXApLhRFQHHHBFfa4JOIYQ39X0HBRcuXbABgpsEN1zjXlxIFQHPOcaQcZRdxAXXCiwwHUGleiWEwI5gSEKxJGRIIYKJFGhQM992FSIrW0kn0MHNFXTTcIxVWN/TDbZXIoK1ETfcI2hKNUYXEAxHBdjjDGcgfalSMYOO3DhhRAxkAFlTcNdeAUXV2gI5VNcZrnlGMaBR1BTIxb0BGsK/IAQn1wRJyIUG7ypJRgXyskFClZ9qWaUdqKIpwJ6KjQkRxAypQVOLDQllJOklhpbiihEhyiVdIo5kKv+YNAHhWvEpfjcbWNEl+IOOg6HAoUCQUFjZDW6SkYSSQArEJQLIGcQCigwBcFB+DVbKBkibqDsAWD8quytkrpqLLLK/maSBU3pdpOVZprq7rtFpQgFeCgcaOyWpxlLxhUlUpjigmV5kSJ99P070IJzXjupQkw0lelAXkLV50ANf6cWjApcUVDGGj+F8LJS6evQphxx8TBOJMOr8sosDZwxlfcKnO+VY8CYK3suj+illQbu4KuywiY81YgiF3QAa38aBMafSE8s0NHcOSupQL8OVKa3A4E7YoFFM5TyVBiZnDWI0T3IVAxAmY0em1tDF5UTIi5lEKYDyagAjTVemOH+hh36yJSWTrMs+OAL+5yEmBs4wYWMk6JY52nQTYqlU2R2CSHPY2DIhZtwakjGBokvbuLCpnmt6Z5LkhG06LmCfgCKkJIRgxAEogmyRF9/rZDYt++b1Q4xmCmEfcCjGAN44VIqL5d5yk1QkVGqnqid7HEe5+tVYqklij7HcCTh4K8sYJFmOsXFjA1CBXe+GCaKrVNj+JzjBgRKtaCF7V+HIvpjm166uQMqyIdiMKIbMUVHZACDcTB1mwJBJHdhy5SrGkUfnUGhgjxiT/LoJBByOc9qiKKQtgaSoG4BbVgcJB0UkBWTONkIQzAqinC+974fhe+GLiHZkHR3EghehHf+k2qKE5wAMIIUkSsfI91UUoc7ghDMCWnK2Nw65rt7FYuHJcmcUxK1s6L8jSCuOiIOx9hD/w0KZSOL4KtCxhQMJpCAQXqfGx04tYmcxm8mtNrVThiz3s1kBxBSHaGGcoB6pWmJExwdGRc5Eh2eTilYPJEE2RglMpkJeGMKHheOJzvanemQS7TIaUL3KCesTkYbaN2brvc5xTHOjzGZl5jqBSai7MAJBFPT5ITIyF6KxJEAxI4aM/ijsnVqBzVRmxCktMAdtCeOFOlLio6EKAOdjUBPy9+y+JdBm3QKPSMU1lCmxJQYkm5gvkxnR4B5RkgO0ztN8gJ1vBAtFDhtDIH+gwkUUcS4x4GMhuoMaEXYeZBIksSgFAGiRsZwBIAOdHB4GpVNPEeGnQ2HQ0xhkUA3akczFhSNJlEoRvDkPY0gVDx4UhdHV7ofgs4NpB5N6MksQlKHPpQ/JtvBpw6SUpb6VD8uhRhrGmoTH1pEpBWpKUdOihRyKmCnBOnpT6cqnqAK5Jv2mYlRK8KFEDDtq2ANq1id0IEOOEGsaE0rWLmj1ra69a1wVSsTIROYutr1rnjNq173ylfJIGRpcQ2sYAdL2MIa9rCITeyf2KpWxq4VKnNtyVYpAljEktWsil1rZjcr2B10p6CqARRT4FPRGKh0o0PqKmdXy9rWuva1cHX+LFply7So5JMlk2WJUj3CVJgkDbQFAcN6FACBPkl1pamdKVXjE9O6NUVQWk3jS2qKJ/wpwJw3Vcpv5+abMQDBmRAz7U+Tu9zYWBVkGjVKb0caA+9p6UtcrGNHX7PdjQFnu8dlKXnL+5rzcqW/LtltKJOk3A8y1KY7qe+e7vtZMjzhtPrdXYH5OxT/gq0341wm6ip4q4tcSbxGUbBWDiLiqe6Xwsz9XzuLCsny1a890SwthIdS4quQuMHlPTGK1dvcPcH0KBdtTYdFKWOk1Dg/A6mxT3W8Y6JYeL28VQr9XkhRUea3KEdmMIqZ3BO6va9/A/rPQIxT0U5pGCrIrKH+xIDa46f8+JHjUQCIjYzjBd94yxIuCvRqYix94St6U8qk8ZBHHDBgMkWOQxHK+rqpJ785mOHxkm60pKH4YQrBM8nynSnM5Z3sIIRK9LOVUiU9DbatYAIhGKJRFKtHN6TRbf4vhl89nkslMJULEoJVdN0TTbunzlTtdE6emKY+Q85K8yJDvV62pyRO5U1Qaa+rYy1rOH901tSOTUr7AiHh1ArKIvG1n4Bt4jwPBY/G3pPM6IMwU2cQ1XLsGoubaO0VX3ve2X5NT+FHIQ59u9fktvGv8ZwQpOqElPVaNZdI2U/K5UhMxdskoRNIpsYletoqtrfGNwZg5kgVfkJGz67+SZsTcRNEyREu+IRtMs1g0U9952PQl8nnIDOzyWESosptJTtfSG/cx+70eIOl0qgDWDrNPDF5kgO+ZHM3+SMGhXXGXxr0OMNG6QJBOXKd/vR19vznHPd5TMA9G7KvBOsOZnrKEWLw8KhdmPQWO9XtfQCJ8lxlZlcJ2rXOUWE3J+8wifrU733vA2Rg52XE+9UDjuSsv73vXCcP4F8i+HoTnuqGR3zi8y2byZ9k749HbeStrpzKyz3sZ8y8THLLHM+bBPQEZ/vKXwOGKQM9Ob552+XnfnquqH710iW9dhmvZU6PfjY+Y2JfsGneudUobqgH++0Levhbu+ZAVUYJ65f+4/qSwN74KmcOFC4Xdi9kIL1wR10GAyd1y5Mwjsl/zhjEuPnBt37xgyo+f/2elP110cfmh37pRxfYRVdxcXqGJxXjNxxapADlgnG4h3/ANXDgJ3vKAQXvlSEbE4CyAQYZkHuRNX0xZhCZZz6p5Csw4gRZBU+SJ4HctWn7d3yzYXtPcX6ysW3OZ38fRELV5xQZCDoUIk470X3AR1/EB4M5JoMGgWlEYR03KF65p3nr5RvMN0oEUk+aBxJEyGNGmH9IuFz8d3IhIAUwVhTmt4U0AWKml127F3h2xEszEYLBlxTfF4Ph1xBPkAEfKARQNRQBiIYicVxrOILSd3ce9SX+ubR6GSAE3BJ3dHiEFGiHFoiH4KEFEJIBTJCFMMGBgAgS+TWIX8d7RXiI38aEKaEATCAEHxgDTMAEchh9dOaFkZiEd8gQT5ApYCAFISBnRqcTHHhhSYEnpOUlmgiLoWiMbkhrdPGKp1gsTNBeCpABR9CLp8dojWdffYUQdUiLk2iLM8UFR/CBR8CMK8EELNKJHtFeABWNxehmHuZ+lDeHkqIlWjVXudgpMfAENpUdCNV+D6SNkDhusXciegVKBZErxkFy2HYUR1BSG/N7c0iIbRiPyqgw1bR6r6gFDRNZ/CiRE6mD20hPMbI3opcRt7gQJzmESdGQ+8iS//iOvWf+iBkHFTRSj17DkYUIj+64gycXkD05EJ3yPvOHjvdnkrOXkixoFC5ZUA75EFOokz5BlNFEjvJVbchYkTkJdtsoJg34gL4EbkipjbNHkUWxlEsYPTx5jCLIhV1GlTj5kTq4ky85i3Y2i7OUgiuoTmB5lGOZQ0rZlHAZkxF5lX6Je245kf0Yl/C4lVsUhHmZTnuJkn0pkz1xBCFgiqDoiKI4dqV3mJtplXOZlRPJmJ/jmCWJEWFJYpOJW2V5mYopmFj5mWR5FFxAhhvjmVeZmFB5eiE5T1h4mheRmu6xminRAk2hkDiRh1lojRixQxCYdEyxAYzIJri5lqDplK+plT7+uXQDaRHC6SfEiRIVcxw9AZE54ZwLqSnWuJ57ZRzVKZfWGZuyCZLb6XjdWRHfeXLheRJQwh48YZ7nuZsrsX0tIVoKcAKuWJU5KJu6CZujWZ9pxxBeIIBkFJkKkZ9jp4E7AaAB6qCnOJgv8QQbcARa8D0KepuIaRD1Y0PzeZ0XI5vbeBC/CJkagaFZt58nYRwzNhMc2qGi+aHyeZ7v6aLA+CphBBz+qH6JCJ/cOYECWR02CBFYIgVh9TpMYqEJYaMvcR59aBM96qOBOaAgijJDWqRryTMvFJj8WIrIqAUgYAIc6RuPYgJdmjVR2hBe8IxMkQFk0qfygym2WR7sWRr+qrkT8pcT5ONFAqqSUVmmHVkQVgKHhEmkUaF8BoEfbfSCTgQVdTqjCjEGuihnrohgYKAF4YgpFDo4WqqlB8WcLRM5iuqhYDqEVMlXBoGm6ISNhVFQNUKPexJWJoBmYcUUYPWnCmACYJUEECAEX2VTf6KHTFCGC2GJChAC5Pguq4qjSyUfOyeV2OKpFbaoSckTJ6p+DHqr4oKW8cmkFqlIUxFW0eIwwypbxtoCX6WszMo0aEJDXaWH+khZEKJh4YOU0ikQnORg2iokmTkS5nensfqj2teZN5miBbGiGaWm+VcfllqxwwUB0opkwjVI2OKwArGUDeNM0ioR/VqnK4P+lM+RJal0o5S3sCERgKlKruIasYY5seeqluvqfoCVso2Xi0/QHuBqNWjjM86yUEdAnoQTlquyJE+gSYnmOCnLWzT7EUf7sGGqEt6aEYqGoqbxli26m1kriwqxtQIxBi0AAdXnEeexo9j6MF6Sl0+gAX7qp+rYqj6rtSQLZDlbf4Hrfd8hBSNSrimUmx5ZthA7Yih5s2xLAe0oEUUit6YSlkkQA1WGoTtguQrbtx1hfnY3gIzrtWP6QIPaFQuQIU3rqI37s2Z6ur+xXjvwtiFRJAnCMki5IGDAuzKLEGPwt+t0tgsVAp67FIzWnINbEgSKnRthoICKuAqTmyybber+6ryoexENM7n4qSQtqydech22g7C7Y7tQR7zsdbxpGaTry66zubyl+xCsgQJPsCTSG0oMKryvKWemGL91mVBOWxK65pqvlrwfcXT96xDZipKAObygmxFXpryaCbpfK65PuRFg4FD3q6D8qLaCqQBmyb7qmVQhgJwh0SWYKLuyGhG8xmtGKZkM0bkhcY2cl1RzJiQPLMKxy7WLy1uu+1F5mMDu+xTBG3pDPLv4yRspUSSaiL529G+foVcwvBDBm7tYm8M2rL5Y7L8xWcESTGSN9MNz86UffMM6jLYRUcQscbDZ2bVPrETByZcNwQV6yL0FrMWTSlNmjMMT3MdH3GX+XzzDYrwx5qvCIOzHIzwRQfyqVwu7r/sQLWzCErHAeDi1QuyUcobHf0wRJDXDWwyVXvzIbKiFg7wnjWy2n+y4EhECo5sSxlvDeZxUPoN0qCnHDyHD2xrB8MsQIex1iIy9bvwQLgTGzHtQzIhoFPvLOwzLqgwRqXHKJCEFGcDMm5xptuwQVZzLe7zLCtHLvoy8g8rNPIUhMEnNwTxQkcUFt8gUIZBP/Oiqs5uNyDsRDfkS9FG91czFIXrNDkHHdjy72yzOB+HN3xyaUMcRgESFRrzM+nzOU7kstyg/xtuIolxhBuVVMMGKbdzQBcrPCtzAA3XI7UsRBF3QwHzQGiH+S6rhwfF7wb90BBJ9BNMIzUTaeZEEby7BBLPnxDFByRGBy83J07wM0ig90ia1Ed8EHyzd0oGshRNN0xxt0SobygKRGhsdy9Y8xWmsv/OszA9R0lHm1eWsEfJkp6mawUw91iAB1SusXpE0tc7hn21d08np0Q/hz0FtwBcRjv+8uBjFFFSUz6PMESzNGghqvyp8xsnYem9dYPSUIRtAHE1hkAUrOw9DH9uUIYFtrqK8KWCAJkvb0Vo9yQZZ1B9Bxh7hQGs0EL7qyGq9EUsNvYDaxE39nP0VSUdgwrSEgZEd2VwAYy+LKN+TJALhOUUyKK+40ugxZrn3qRQgqSzh0xP+sQOtvFS3W8jh1njGcpELlrre/d2BcdiKbc6nCN7mjVdI/NMBJwRAYSX8ghBRC6lSEU7uaoB1sUaA1njnvd8HWKgV4YH4XNsagdqE3V6qDTJN4T5YTcywzdUnx7olyiaJTd7ax98WTqj/e8vr3d7/UtqsrTnyXdxBWN9RnBcILiX6feH7PdoSAeCefNrYDRJeYOByChUK7toMTtYOnmQQ3iUMHdaSqKkQ4VkKgSiJ8143vrZ3c6sK2BReOb2XhyqqQs6T2p8Hus/VwQQhkLBVrcRAzhEE/rzccZ3yJtg9bBFLPRCttuAZQdXCJ+RfXWB4kigaszmTAmOZm32kY9z+a1pv8kIvB1K2oXKxLiGcebqLrNzXBPGMWugRYZ4RM05ATFrmdN3mhL3jFJ7KNIrGClxgLtxBMNJyAsG7vrvanxMdF4Lcfq5B7Va2oHq/JOGyFZPoHKHRX54RTEy4dUaFSXrrF6EFNzvhPy7sNFUq8kHDCqGLGcsnJUJF4XtVBsk10RLZBHnKqgFxD9fcmc4Rt3jo1QpNHOHiJv3rsCoSkc5+mi7WQNpcXkbsA7UDhtskxx5Jou4Sx11v4xNkpevmgBID8e56WuDlR63jwW6SY+7Q12k3NdlBaBkV7mPjwu0UKKAjSeI5dJSB0D3wMbVnJ70QcXJd2AI6UrgDiE7+oiXKZpzeEP+X0zuNxW5+AIFa6drr4a9NEWl+Eef+V+V+0oiiKHL9RfgrSPirJbzigPYxPChyIdjjMY7jgFzi6xr3aSPk7jSyMxqS6ppiKFLwp0IQ8+Asz/Fsqx+J7Aph6y6B0fCbMm6O8BFh9paOETfvnQc/uwUPi1NvI0BRSFA0vYwjKTJCTr8NTUFTJYk77vZGbB2/EETvKohbR11yAKfKygHO9sO+sPM+EVpuz+BeUHas9uP6EeL+9miO6Whu4F7DpQYtRQVxS7lEFRQSFUGYI75jRKwyvbD+SwSBR8Q+Bv3mgHuR3HLoBVN7+zKfk5af3hEBfSyR+aYR44v+uvZR7cwCn+MSEfcUgTQjs7cnXTUCUSZOhTFLctyScu+IKPgotCNQLqYDgXAFKKvEeCtXT+Kc/RvXauawe/wp7xCv3BIZ8HjQ4fwAQUbgQIEKCB4kaBDhQoYNHT5MCFEiRCYxJkJUeJGgFy8ZpGgE6SVGDC8TxyiIMQZkRoFQUHDh4mTDGCcxYMoko4DLQC4GdQrsWXAnGSEvuRzYcIDMBicxNyQcClKqw4w9VZKB8lQiS4hIk5LxsmFDSapRG/68yDXtQ7VbGbYt2NYLCgVKhShQoFXgAQVgpv49yNcv2zEhmGiEezAxYMYRG0+McfjxYodjMmQ48rjhkwxPNJ7+vIoYoRO8JJcqJXOyJ9nUCry4FniyJGyBSfB+JcNlgwIUrHP61jyQcvCCwcfEQK3Y7NvlbP9SHr4QbmK8C1FAeS3yysIQmYlfLOydbQzxE6NH/742PUMwGbRMnnr8SPnvIncMFi0VPeD968/6f0sz+ZjDqDmqnnNOvwDfaguKMV4DAy8FkgiMNgAZ4gw/quhzC6MLG+uvMS0y0HCqEFMjz78xnuDsIxNf/PDED4ubUbjHBuQIIbTKyk/BA33U8ay2xhDiKwdlO2gHi2ociCMFPOtwpSiZ3OwIs2QErCIQQRpwPS5C2OE+/iQks0wzq4uRyh4TZAzLgbp8QgEIfjj+YLAdzzLwPxj1lFI6IRdKgkIywBgLwoM6kqzG40ZSr0821VwoTgVCeMIvN/+KrM3PUkxvDCY8ghTSSwFE70xTT0U1VVUVWCCvI+4ksFFHF5zVMena2g0vL0jDrcLkPjzishKpWvXMKUMl6In7PlXgrlDbew9Bkzj97ksxkaVyVP9Khe+vLgWSVMIY4swTqjXPDRJIxf70tqRXyw3uVS2ixXbdepPdYSAt7sqACeA+HHFY86bN9ztPQb2XSW3X43bL+KgFV4ETkqAXVungTVddPzW2kUFvMyXjiAfoXe/VXxOmEWVlDwJDihBQOiC0D7Xc8yElZX7MWoFRZpjnjB/+lZZLiAUCA+ecMD4a3YFsMzplWqUr2N6fFZOxy+PoOllAk31OqFivvzaTIS6CfZJJkGtl6IiUiDvYRa7TfBttjiH6tkC7ZaUaiqc3XogvBYxuSwsFdliOJrySaLohq1NkQoEjEp9KJPfijntlxY+I+kNoIfJCCibC3GHwMJ+oEyG1IZdKZ8rhXv3YmiHjkEe2kLY1MBRq2ntqgnbISm+p9SXTNxzIXFKixcUbMQSYHovTtNZ9tnyzzAEmkSEtyM5gByZY5B5zvAwj63TjPnX7+Z7NB/p1iWg3ly2w4drBiQgFho69vnBXjHvuTSBzB/3NTIL+BKg/J3RgXCwaGhj+7jI49iHkAC+DEvpUNj2ERK9GNIvNE0LwshhI4V+HekIMJoWDtWlGdRI8X9wWNrAZWUxHDcwJQsAQIQk54VapYghpJFSiJwmwBf37X5mcMMABFvCALCofQWASuh3EbCJg0KDjdoZCSFkwUhT8EMgOcBkmMGGKDPHCq0JAMm+Rj4rbWt0KXccwpLmQTwNxQk1uopfa8e0gTIHJ7X4nEC9AAC8Q0JBtJBS7g9RtfQsUwhO4YDQvaKEiCujXF89IJStWEIsXas8BQvc4xiiwWah7yAkn+R01EqdhmmphG2GoFrGgRjW622NurNISOsZQhiwa1gFYlDWEGBI8BzjCy/D+kj0RiosJZBxlvSp5kGXOrAHOe8yIMvDBh7QtmSl82yn5852ivfBuLJxbHcHZqaEBBia6fIIWuEDNa2KrmQN5p3/ixEmIBIVuoeNlQ0TZzuCUsp/jDJpmmvcE1rixfQDFGyw9JE9C8tOhV3xIPNOztYnYUyIUraYZH2rKNCI0nH+RVKsgsAMpGFQ4qwyoHRO6UZYySaISJU7j8im2/mBUbCEQAihbulKUaTOliEGVSN/1za1IMnexXONOdzoGJup0Ii+9ZHr4MlOaguRV1DwYMpX6U575VH0JlVQHyWJSoSBmmh8tSEPfuFWlCkEIRHmrQKMKrrkG5zWJCmX3esj+ItoJIQNGG1FOE/Y+CbXQodpyk1qWpxyiYmSL7DxqQsqZPray9CcWJWzYHALTxzBqIpoMkwhB10Tj4ZQgRJpcT79KysN2S32LPSieEPNYuUlWrSqtrGV3gtnMkimiddWMZyUCWiWJLkxUfZNp3+RXrYZKRv5UKBURu82tqFI0nHFqx85imQgmNbf8vOwKoTqjDE3FohrpybzIENjsGhatmoGua2uUWPNYNy0dQW5001pCj36Xn26Fa3DGi8nOeKG9PDnRDIWwQeZmc7UcpVx8I+tdxs7OrPnVb07421//XpOpgzvwZuvKWcAEE7XdXV9/PKUAL5YmxO6tLYRVqCb++la3sWxpLmUT8mIJd5illsvKVVAgKBLHB1QrysAYL3Leh0jhMqiZTwgi/OB/TpnCHF7ojb3J0yxP+Ec+BjNIorcDCrkEnsAFjJNDA4ZX7QCyqRMhE9YcIRjOd7VXeApSFGBDKtfLq+/9soUXwgVl4WWVvXUfYcO86ItEL0JX2FGRpVJOLsT5xTK8y7UOMtl7PXchY9jNUq7wSkAj688x7rLscsOi0KHkmJdmdKwnaUEoTAhfAIpQc7eIsPjESXkNcfKM57YDZ9VaV33G1qmVhuWESKHQKImMFmAta2qf0Yp3krRG+FIZX/9a2yHozEMi9GZRqQ8KhDOIHp2AAmT+m5rZVw40saI97WrX29rTwzaap/I5iIAhTM0yam426VRed1V9C2zWBvRm5tjkGKlnnC5XFyJte1eccschd6Px7ZtsX8R/S4Yg5Ng8uIwLRHsODmdYwEKX3sSG0xlGX8TbbXGav83YdRbxbwGUAQwTxMk8j1SSHQ5RrqnlNWTazsMV93KYm0/mpa551H1GVo0MmI1SWbFN9AXuJ7y44xdSbEZq3fQ3MX0jdIFmqA7gQaVjE9VSh3tXr9TbwuZ8Wzjn4ya1sMmAT7zHHLNoVsiOotsShAIS6oAy/0inOv297TqOe+QHi3cMjVgDo8V85jW/+X9TXiBaeBnhGNMTzpf+3vSn53zYJbSBpHeN7q+HfW9RDHbqSt72PBsLcV5qE5j03ve/B37wfW8x4eeJyebVSfGVv3zmCz/skD+t2QtJJggoXqQ/oJOyuZzq23f/oVZPj8VQJeeDHF8qIUS5EutXTekjpKR46fl6Qsh27UL/3Wv1fv6vCX5S0gsMMIGVMRiDLZoe8xMzfVMYhHgN+/OlJ+oLK+M+qMMt/aNAKuI/4vi4iDE0MKoL9XsMACs6KmvA7QOQo8OL1qu/eJu5CazAFnyeC4yXuIqtgwBBoNCWcUm/Zfu8wrM//7CnsXu8FFzBwXPBIlSmEUNAkAi2CosUCdmttugJU5keUpu6IbT+QhNSCMGTOB2MQCP0Qp6BQc3IDiY0HcJZpNwYkuIDjm3jmpO4wrfzwdVDQTjsQnj7wjtUkzDUDMPQQDd6jV8xwIuoQZ45CR4MQoeBlEDkwvvzMjx0RJdCwgthAikbFAAsnAHMnvJzEwHswGxqP3EKP2RRRMcDRUZ8xFNMDz18jFxzvTMhPw8EKexSoZ5AKdZRkwXEP9rbQlS0vdjzxcXYuySUijBRIuFrGkWsjMuYvZ4CukWUrxC0wx7MRV68PVKUiGW6ngyAmQ9Jr79Axs24DHpbj5OIPyEMRQiUxnRkQWqUPGuECAsSHG0kqb5rjAW7tG9ciPZgkY6SwF30M1P+nMZoZEeac8ffGoNshD9xBIn2wKslkxEccAAo8B1ho0NUokh1DMg6HEi4K8jN0sZmiZmOHAi+GLpBO5E4uQIGU0hSyiwYy0EV7MdD3EiLE0kMEQInchpICZaSQzCQ4IuPEEC/8rxFq0mNLEVnzMiZrLmiFMj1iIGzckiN6Aj62KJllDqmhK9nREqltDesxMj0eEqeREOpxIzACLdqbC1EjEmujDWvhEkqOQ6oTLGL2KLYEYkYoEdZc0uLrL21ZEuifB6vjMuStMGJKCm1+pRyZLS9JLunq8i/1MvARJnCYDGd+kYiKZtQwoyV3CrGlMms9EfIrDbPJEJ56qAkwxj+ZDwAC7AA9mGqEBBLMCNNcySVvhTNpZTMe+GCs/IkM6wqhngglDDEgSipJKq42czJpGzKz7zNMENO2mSSTFKiVgsBKSgRL6AgL5hEKZqfkIiBHeDMtGhJW4RGo1zOo2xOanvO5FSTs9mIMNLG7lAkLvCL/yO0BZsULxqII7DKyggWwpSxrbTNKjzP0kTP9GxL6Gmi0GBKtaknZRGmMokBIaC/jfirqRiRhhw0ZcE8RXrMA9VKgytQ5iRRBP0uxuQMSDqC2cCWLXqx1ZCIDJQKMBgJaoqiyNCfR6IUEmzEEFWtEQVR5TRR2VTQARShlwnPiegIykOPL2GMFjkUcNP+z3z8FNgsULmQEN9RklzRFRPMCy59Ky7VG4UTiLHgUhvyUgUwttvwUgcJHRQ4AC+tpTcsUegcUhUaz69MjaYSsKjRTm0UAgC9keoc0IYIAcUsP5y6Cr7QtIbwt058S8oKCgihodkwC3u6k+qAELywFFpcOSg4Pns6rzB5kPCqMr780Dv9x1I7EQAbxCeloAPglym9kFd9zAdqDCJRHr4YzpCB1B6dQEzlAiiIAT26E2HtGqHgjXzRCbQ4gJd4vrGMjQckgysoCXwEUjvVU1V1rnY7EVOVK/aIol4Vsw3rR29jDCmwAMeRiquKVJgMCqu4nXVLmp7MiSy9VzLgi5P+wDNaRAt/DR5pjUK8AEJYFNJeWiC8BMg65VYa81b9eELhgL2H4DcflMvQ9DlhZAgWKB6QUJJ3zcUoTAovfY1LVYhMlRB20wmXaNaheNZQVQiL6k4y4B1pPdgksQkvKIqFDdKGXVU6bNW3slWQisT1kE61pJuLnQrB+IsImSlPQwiLwp/bOdaTnTtl3QkR8tS5ANVoHVUKYVpkTDDaGIOJ3Fb29FkCBVqs49NwtTuw1FArfAJyRYjuYIxgullQVDmBiAHfIdbcaxKt4NKnCDVRy73VOFOwKJO32lsvzak3Tbq9PdiMgDQ6taW09Q8801ex2DOevVyQpaSi/Q4HBc3+i5jZyLEQ1KUmqNXFi/yycSMacwXW2cVcLgk11hs1qvtcHt3dI9S573DRU72II4hbw6RExiBU3ErTOezdc3TdNwqTdfpYIF1PXiQ2gxCkwfHc81DQ37WrDBjKEm0PWDsCGWxFY6FBQopWrFALx/NKZanQ5rUjzAQxz0Xb2gWMc+uJcXOSgGNd0IVE7x1U40TViZBRj13G5bOk3Am8OXXfhIkTkXIrNjTPCqZd/JUIhAsdjjCUJuGl/83bC1FFkBjaAl6fDPiLAwYpVIlaMmE9HfnFGJZhM0nes+3ZdcTgv1A5r+gVsOgXHBZSFBXdxtCgJJVfiEAORFVhoFC+Bcb+LbF1SWSRlJGSAuvkXRuuXtGcyqOSCd4wEO4FwyE2J6UtXZ/cIKmoWKo5FYQ4uSdev9ZtUYLCWCzOYSrZ4gOgOHHKiisYVmo9UC6gC8GCYDGeiqN1XqnYIEHdCxRujIITJ1wMYb+MYvIU0DoGjC0mg2I6ASYYClaayNJpOzDwI7wwX3ci5EmjW/vVV01aSAVQZIQQnJ0BYbdT20Sb4VvG5VzW5V3mZa9xFsVgXjXuZV8U4KkgXfMiov9JZu5hJwEEX4/V2N2Jqlk+ZGxpASmQGe1T5SxWSkzmWwmhYkgeiOsYCNFrOy9lt0EuZp+snr/YIDDZvO/kPDCJKHL1VOT+yzFqZq3BwosfUC9tpl5LLsGyJAgS8lAhdIk5ApyHeBU5CV/mOWUlfebKoCbByEuCiOXK8GMDDoEXK4yoihAem2TnKhM/yjjHrGSBlgiOIOgI1KG001awoM8wXmeT2NFQkhM6wQ/LKN6LsFuHmI+FzIBSzuB2fgvZteVhVupU6ToLBuALVumH6IiWduoblkoJoRDAbRK6AE/JHYskqKURbogS1kS8aJUOoBgnuFDGYFpHXeuL6AjwNIkdIGPFEJ8rLlRRkRiKeQ+ArmqGjWoH6qKUvl+HmAuiWD0PHMN6JQNydismSz40EetI6WhhVhUggID+1Ag+dIhEkoqOQFf+fQI3cquLuo7kVF0PUI7pwt7mwNaMAxhsvLbqrUbs21Bs2tgRxxYCyAZAhZjsCqrs800VzNZsn+5pgfDskEDNehptxzJtqJZk4lBt1l5tOnZtd1vLBSo7QDSIkyCUWtOLDUAcL+Bj3kgKhcsLRCKD31YiMoZCCdnknfiUlZTFhti7+Mi05tq7+sWI54Zu1H5Jy+Vmbv0bvwy8AsTqo9mRuciLA6BFPGvZKKSrmk7GD16IMMrjQflVxuAuh+CCaAaKBQIdIfi3ZnHN1PUoLlWKj+XSMwkLCRECE2S9kgULwr2NOO2fUs3SFm9TMuAVG+Lx6K5uIL7ubUHqp9ZEovn+CYnMi0l1jZYlmrjKing1tMj27YhuCE5DD7zVveMdNBB/Ey2Y21fhzwzf3otBw0otq5NaczQ0iITmjbFc8g2wqCRAN286L5cwMHJmbOr2c+suchq7a8+1J/y57ZJFC6fFCmh1c1qU8PXG8oXAoKa7Ky64gqZQPnVivqnSJzAvv3v2y7ZACzUtVj7L1E6OCgn31+sIip+4AkafVgpm8/NCDj5KOlgpyBqLjUBvIcvoVRnZWyEwWz7C17HYAb3Qs95QubAwUwMTi7f67QPYoimKDoSTYS8vP08niC5isefIU3Phi3lN51OPC4KV8CSwCZ1gPZ+QEAdniWaVkLF6wnj+F7/lyPXaC2peB7uROLABv7W3NezLgJcQ+YHFwEdzFhttH4gTOAGJ6arbWFPYIHfGHtgJCYqi8ImdmPKMcNr2jdhxRg0oiCtcV+UhT5dB13eGOfIgXmocAniGOI59RHKB8KMZwhCqy8yEFxAyMWKIFYiptaGJ3xFVb9ZBCbU5r/M7Z6w8T4mwQA2Sz9Y/9xOUT/nwE+m/BhCxJmurProqZog4ewjBSWedjyYyeeX1ANy+bQmL0OqlIIvBfXHF3VvBy5VCyXHHLdOSwHtemci2P2LANnm7Xvmq91FpFGIKJ87gxkgpaBVi7CW8OIGHECTI+XDNaGi8SOXcfN7/Bmz+lOh5wpdYRcN6eYoaa4+reNrNkuuPYoKA6oNlCUGdhnflTn9tFnkSRHU6fhx9hn2VMYBwNBWL2AT9bqVpooGJWiOLd7KM+OuPMvmX7M0xGrI1shfelnpOv95WtUm3RVJ3aZ/T4Q9wUz4USH2nT5R6KIoTvkIIFhikhvAbBUg86i9j609LE2bolMhCgrVa8G+dw3+TIQMIMgLJPFFg8CDCGAMXMmSooCFEhxHJcOGigIuXiVwKPnmiccfEkBMfiixp8iRKkSRTsmyZcqVLgTBNHokxhsxDKDehbCB5MSbQoEKHEi1q9OhIpDGfgBy4o+lApkZnLkRolarEklgXcoH+SnSr0rARwYo1SRbpWYZPbMokEwMKGScoNhw4sKEs3rx69/I12zekVIFOLlYEIzDw16Qu0+IU2fUo479DI/+lPDnlmJttvaBQgMKLlw0bMkoubfo06pCWyyK2KuSwV6FgVw9kfPbx1NRhaevlHdN3Y93ChxPvO0bKT92IIy6XrbilbcexnRdPXD241su/r3Pv7j0li4MHlE9XW377WPQqpUP+rr54ZOC1gcp3b/8+XosHO5AX2TzobO89FxFuRdXH3YFKxafdYvg5+KBu+l01IYUVWnjhWf/RN+BLfoVUoHUQrnfdgtQ1KCKKKeI1BgUHOdEfYOedCJFv0X0o44z+KjaUIFonHQgcjzoKqSMYSSgwHowTaShgVUzSyF5uQ2aV4o8bSnkllh2m5MVBSZAxGkOcKbDDGKENNFoSdy20ZFQ4shRgjhw2BCKDWAZZWpVOZrknn9gJxBkZQhykpkAWkcElacmRgQJcQghhaFUVGQSbf25q+WSc6d3Y3kBO9IQCF4ci5KVVodplkJcDoQDGGIIqEINhMrkI2WcKvBiXAqRNxKVueWbaJ7BXwuTqQGPEgGShD42hABgbQKEAoRskUeYVFs1l17MbuPoam5QaKKePHn7EKRk8VfssGJCCkasCUFRkKl0VxfAaGWCgQMYOMWAkxL0yhbouGDG8eEX+T4JuEOoVB8F1gEHjPXskTqB6JlAMF4nZLq6EGcqTZt/yBWSwIWc5E6TlxiYhqRaF+mdn8V5E8EWETUqQm92+Ca64qkHp8ZdwCXRAuiQh2m5FGTk7EBhIOgHFuqSN4TNOoVr0tEJCGOklT1+++5DFqzLLxb1EQwtGsxft4GXC645xxVMW2RVrlHuBLDLdQpJM0rqhQpGtoUOrLBAY9PJkqH4q6+etkpaiBCd0OUNEp4kKXMGQhAq8htBdkmdM0qoJj4UQFwAfnKtMoCURQ8VuScvqBigkYdjXCiSxt5GhOyFExWOggIITmel3K7kjAmhl3cWLeLdgClH+kN/Jrev+sMQUGWT4zDbbfKkWuvp5qc6bGgUVo05JKpDnivY8kEWgKdQ04GxFLdCzbgmReajLNjt7/FxAEcMGZe4/2kMscgXUJQxsO9gb86CwO4kNpmM8Ex7xGme8CTpoJmYKFNQGwiWDwGU0OyDUqT5jptCMZjRjEA23aqa4cJGBYVpo0q92tDOkKLAinhoDpAxFtIqU62D12oHsZieQtnkhX7VZWdaeRaoXyYVLT0MXs56ngDGsC4jSwwnXVDaGwUytcA+ZV48cF0MxUrCMJBqO9VboF4Yhqy1jhOG4xDKYV2WEV2RY1gYPEipPQWswotFMqwxCptocBFT1+olnPJMRQTn+yllzhIuR2tUTUeELJLl6WJqg4Kq68Cp9weve8PRkxlH2Co0qnAobZfjG+XivT2DzlyhRU6JQrpKUtqyMKSuFSohN6WbZaSWfXvm+WuKJhbSU4C2TKcvFYaiZFtKlgXjZS+7hDH1qhNCzJocT7VFzOLOMoC+VKU7JUOZO5oHmUFKJKWSCkkDXNKM5cWkido6znnkpJ2tOmc6ZrTOc7XzcO8sYz774ip72PKiCFpdPdAKFjSTJFrJqREauBJSCA53nP4mpKYRyNIwTJUoahZLKhzRrbSuR6C/j2NGLHvOe4OwoTFuaUaOEtKG8XImgUrU9habUnTFl6UvLMreYEjX+qBtVSk1jcqz5PE1UiYolK1XKUaBCNapG/WhRszrToyIlqZfBI5dihVIIAvSnCDLmVXuq1bWSdasg1ad17EIXq3azn2WFKVU1WtA3ObOvFGLrBBlDNpZ6FaNw9Gc1C1XRwJ4Vq2htLGDrlpYj7IebRSmsTOnK07ZSbrHGy6tBuarR04A2ssI5Sx4FGRbMXnWsblWsWc/o2NmmprSmra1IGObX3VqFoYbVrEN4e9IZItS2Cf0tfG5LN9S6ZrVwrdM0VXmp2zTlVQMRFGhOiqgWWsUJAzPIZ7bZwp7ITib04lWuuHSr7G5XnlSCrmyVG6y0HAACEFAADhxI0+cid6f+0U0pdWVlmGXJ7Ig/waFF3JWZZe0xbFywywHkdTnN6VBSP5EUEN33Mcj2xj3GlS85N4vU84BBChWjV4ikK1oAQ6mPLezM+PxlPkWtCwoZCdVFjga48ciufxW2yA0lBYUk6HTD8e3wdz4MYoKKuKux8cJaFBACJlg2s25M7EYDjBO54OtZMY7ajFdGvorNNWaTm2MW25ZFQ8VgB18O8ZFdmuQlAwufYgmMF5gQAilTeTdYps1wvWdmZhW4dGHu1E3GwLC86fiKFzmhoKJmqHURWclXTi5tOYtpOu/JzquNgZ75DFTGrVh4Wr6IkSwZqg04gQuewom7QjfMRb1Oegz+HtwPsyi9NZMkYfyEc3W+WVXchoWPhpQJVDC3gSukdnb9E4jr0HteS4vM00jl81OF+mdkntoLbhMvFz6VEYRcTldeqJhnJkc6PrKaa6Qx0jbtSIZKk5bDr31snItiLv0xi7tThGW5vIy3XJ2tXPfSIYWpHTJrIwUj/42bKg/wBDED19TEPajCsVzxum76KI0GWpd1nBzvju5PuVpXAR2dJhxmvM5NlrNY4FQQQUoh29O9uD1bbleNqzXfX9Em0pjlBOVdJcIIaYoSkxU1NS+kiE95OtSjLvWpU73qVr861rOu9a2PSetd3zrYp/71sHu96l3fs1Xsq4AX3vxDGSD+O9zjLneoV5nj+Nmrz4cSviG6GiGw+5dBqjVwsa6swpCGCYLfpfjFM77xjn885CMv+clTvvKGm7zGLK95xWd+85LvfOMpi5AQeBfQGxdI4j2v+tV7Xl/9vQ/egx2WGrq6f6yuCO+GOb2SJSc5Fd41p0//8JjjJS0F6UAStNAxBRwhnDpPjZtfb5/Yd/woc4yBt//dQ/Fikdkn1SbpKBl+eAffv6UmvrZFQjYaxaD5m30+aqJvZWLLzcPlH9nLi6//3xjL/eKC/2nIX1rVm5F5BwDen/Qd1lQIF3wtTv+93y0J4LABG5IZIAIKS/41oKbZnVa0X9uRkgSOFpNl2r3+ldIFDgnDPRC+hZaP+J8xHWBphCAL0t8GZiBxwOAJLoSrQAvPXRrErSBicWCWRSDFiWAB1iAQ3mAOescOEoqKIeEEKqARSiGL2ZIMBuFpJeFmHUfeLeFwGEsbDd8TqiAJ9uDOVSEIFuEMLlMZasoDyp4XdgcUQEWfUeH5zZ8Z5mFw8Zbw0c0VCqFpCFuDvCEcxmF15I1AHEEGcFMKppgWPmL6lUQgvQrcjInJdYmodAmR9csJ6YSrwEptQIWvhdckog7sZJfPpFf4LcQf2iDsTQYhFuJRnEp5YZFBvIh1CYSjkM6pzFWzyYoesdXQJeIijqEeLgTcGCMU9twRhkT+vuxLv+jWTahLrlBjroRPEoDEM3oBv/yMQSTaT3DZNjqKg+nHTZjNq+hXK0LinMmGB3ZHPEEY7l1OqAxNvxHYRdhFtRCM0QFO7u2QGhKVEMCFIlZZI54EDkDAD4CcHZYgM9ZfSbDPHfnMAR0NpCDKRRpE9qWNRDZVyMFFjd1YRzaVzBTcRQxZkfFdAhZTGzbEsrhgFwLF3okKIg4Nq70YjM1kDa2EXcBa0ZhWQd6hGIoEui2AAiCf8i3LGrKjn5WE5zAEwAxj5bzGVNKLkcDFUyKj0CnPAEHLAWRlpFgEwJgPQ6xjS1bgiqROO0IG0OGEr93ilt3LAQkc0BXQSpT+z6DsiHDtJV/2pV/+JWA601KepSNGhEQGzBb5HaR4zmLODDWSBmKimdAl2qKFH9nYRIE5ARAFpEriIQGmJWXdEfaNl614k1LMZFiFmeRE0UXoZPTAj4PdVlCaIXCgGwTsgBRU4mA+JFo6o5sVkULcHti0GkkQTnE65koQkREJJ++4jmFMjXIaUYGdEFmyIme64mcuI0Q8YLtMz5dcAYNdZzMShTyCDT1GSqr5iz5yAT+qS/gAJFvNJm0CRRI8ATdlVxjyJnZGokhMIplMDfwAEOqp4oCSjrz5J8tpBk+cG3hNjn8OEoGSQcLUHb6IJ2Hun35OxBv6RKhEkmd9UlH+0GKqrOI2fZt49eJ4pNatlIpWyed8Kog0XWgfol8ariQFOmRDaAETsNJFNE1YJWMgGiJxuOiLokVBACmOJilazB2TNqmTakCbSZ1HMKV7aWf3WIwqrh8NCilq1GGGNiSAZEB+KqlQlkXqsR6apunqxYAUNN5BbukxqhKYyNWYsiSXVtB+ssRg1WmcDuUJXuGbsuGXDqqg3ukrUulJZIbp2ej9AWqeWiCjBqmh3t2jYqGV9imIOSqixuSm3uikQqqMjgQDRmrwaWqoNiVEguqnriWhUuqkmmqrjmCqwmNYlGIlNkWzeUmucqKzDM16PcQo1lFqsUtWBerxfCqsXur+ePKnvRXFOEbjN17RIVXjwHEGJIGEynjn1ITjwV3em+FVpR6qoSYrmc5quSqjEiJFR1IkT8BFRlKryW1kv2VrkBGajVEERVxe0BRruE4fsgaksUpqrJYpnA4FWALOVu6aIGEruQnEVSYLm7kZsJKZu1aOvlBFYGasxm4sx3YsYP7rGRKsp4rsucqqURymTUjmvk7ryj5lyWTrIRnJFt3Ror1ZycTWqa5qcZArpjJrz/ogp8aEcgZnqw0n7xVaDq0EzEropEBMF3nr5elXzvWrzn4Hz5KsyZYsmGahUiAogPaQvAWeHeERJcXrSsBbuEHL5GQXQqgouHZq1XbH1Yb+rKt6pgnGbbP+LN4Kx9yiq7gO4N3ubfVpreDyLcBS7eDuZqEWLtfmLOPG4OHCLcz1ZtA+7rJireUOR9/6qZ1SrixmbnYqK+hCX+Q6Loj67OeO7shiruoGYOkOrLnqLQ5ubeui7ud4LO7mru7uLu/ibt7SLeJmbe1eLo30rvEeL/ImL/L+rt9KLvEOr+1Cr4hsrr+e6uzOqPT+YPaiCPXan/V67/Z6bvg6SPeyKuECbeqO73Gp7/S+7sJpYLqyL43Kb0gQDGkCD+QCL/6R6urSL/z67x1N0rIxWI5KrVKULwr+b+MCsPYy8BBFmoc2xAEUY14gMK0+7wI7sAKz797+SKyP9ttATDCFHoUFM+/6XrAGFyYD76IgZWkIU7BelHDlmh8gFmwKT+H2mgmdvvAII4UMp6/+mi6q3rDdEnELwfBe/HDiBjHsVqkRL4byRrEUTzEVe6wJ024TC+8TbzF5IjFfyCAXKI8QkyHrNm/gcjEaB4UImwYYqxEOCqLihm4az3FKrDEbqyHk6O3i4rAW07Efh0QI9DBetHHwmuY8pVZd3NEnnqJ6mZxTkfFAyCzqsTAoqmIqstcfZzJREDILpdaZfUo9co3l1AYmbzDENeZDPKukaesUVcyHgikHDRHqQOMq/xs6apgm5zJLcLKHQMqz7Bu6INxNdeUro+/+/EKKXK3rKtfrvAmRCv8M76xPeqEeXJRkyqCkLmfzLuOxGytdD33cvqJKv6GaM/NvBFWOdx3sKruFxJ5wWToBwKjzKo+lhWqzPZclN/OUhCyb5nCFKHMB7szaM5txTyUtoUEmZo4PpcXTVqyLi/ho+4TnQ2hmdd6zRTcEL//Szc6kmyEcF+gOF50uE0OQQY/B0K4z0zJ0RAydDd3F02GEdI4PddbzRdtzRo/IzdIeM3tnaFQ04Boz9yDyeCBovJ2tSkPEXN3Ro7EwhGYX+ZBoTUd1Z1IUT8mbYBjEaKJX+D2LINcwDRdy7Eq1WJNwPjtv9HKu6DrxWK/1Jpf1GKv+dRwLLFvPtVDc9PnasFfLMV3vdUrYtR5n518BY289k2AjBCFdRWEbdmLzU2BXyGH31mKf1IQ8tmLbImRbNmQHNmYfBGUrtmZ/dmNPdmR3NmdvNmOLtmnPjGOnNmmrdmgjdmT7xGtf9mqztm2ntmTDNmij9mxXdm33dmnjdmuPdmwPt3AfN18nt2l5gQErt3M/N3RHt3RPN3VXt3VfN3Znt3ZvN3d39wRhpFUwTFf7yHiXDmRQ6NCEhKKpRnn/zDm2d0Sst1XTiGWtt0vI2wE0N81y364cBCi2kG5V8qwona/BxbCexHy3ROUcCVT3RX6XRXoTkiAnuKpgrEHCN0P+5DeFr1WGIRjREHBR0HSkQMZ1Es6HkIVPj4TUEIVxOsbj+AbvlbiunbjDKgSBZUQ2vk97dYbWAMzljffNxoSQfXSK35OIC/nNemdJcGaQAxzlyMaKKxc2Axy0lJeYjMbDGHjLgAn8xHKuMExnZFdnYCVcXgSaAR3YcBCXzIt+tCWYywyFpW3FIEpn/GdntEtnfEbLZMSbi9maP4p3ks6YNO2al1faWlEoQgvucVCeWwvGzBHQsQu6eUmeX3l2tVkikfkoQwoQHaei5HmV6+qeo0+1OjTTlImOk44CPcSyOZG+atDujEmZVHr6MA/XnNiY40TFpOQRyURPiDq0hMb+eCQBivnahOGOpdfGrh9KxYBKp5P6KINGneNQweza5GR5xnifRfQEj8E50AnMePGKrwHPnRu7TLQMRrwKdqUtiq15vnhGuovKU2jkrRt6TyA6TiD7nmO7tCsSrwwNm1d7m2e7ivRefufKW5RLxdgYSCT83ohxuxQRmEkKxRvKDmQfTjDMu6BYEoyHxh9J3li1zKgMr+wOXHDRq8DFDhxAx3MXm8HF/qyymLlN3oTb+8QMjtH8NcI8TGCMArX8x0uPpNQ8isUM0DTNyyu822i8xXsB0p/UyhAGoejQwZ8bzIsx703OFVxBy6jbrDTLxuiRxQ7EW6j8AYA7S8eMoxn+3fiAfIPrXtU7vMCAhA8NkdOzi60EzNXXBtAg/Iv0pKIkQbqfW8Kv/ABfbLxH/A4Qfba2Pc7jt1y6SypjvNJd/AfDvMT0fbiBp+tJj138fclBSoG5vbWWy0nBs9wrvlug/cUKPcgfPskTWkWg2PFEfc5jzgF0BqlgTgjrPqxxaIsbCY+bOXkBD08kUt8MSqzYUXcaxAY4tNTEjKIcP4yJsvMz/8wHEIci0t/g/MRLKywl2KeofYvzEfB4/zpjTosbivAXmqSJfuHpmvQ7P6kjrBf0TqLFj/kckKHMlV00OUCQUcCFCxmDA8lwGbgwoQKBBB0qfDjRYEWKCBcq0Lj+AYyCKxssJlGAImNBjRsrYlRY8CFCg1BGljToxeHMkxwPkExCxskGBU5W1lRAUwHMjWAMjlk4RqJIkhWbxoRYMOhBmBYNSnTJUOJDrSZXNkxp8mZOBTs1UuXKkGZFogo49vyJlW5du3fx5tW7FSwKKGQ+bhhDE4xfwFdiGAQjmPDADVxoQmxI+IrDoijGXKk8lgzMrkO9oLD4OKiX0GRixPjreSSUMSgOIGRNxjBiMqRdivVqeapKlTGcdK5plWcM2WsnY958MOxu2n8RS5Q+VAGYlV0vSs7K+2HtxNsNJkmMwomTMWQOgMwt8CTcA+gfDyTI8rlr2MCLKyQc2/n+14dM6cuuO+gSi2GD4GyyTibvOBsIv/QoeigyFPx6LbYrxojPNBQWG2wo5RbST6uFNgxpAyEmq265FBWEaLUYPlMIw8fAe3CD/YSS7LfgrmLuOcA2YKy61IJzIgYcP5tRv9BCy0wBpvSKUsop9/LiICtBIwkFL0SaK7SRtqyoy+CGqswnyBxqSwgFdtgAJi/W1Og9g5zQKAk3a6rMI4vMLFOjK8jYkE3qvPAJxTrPcpPCL8Ps00qbtkOoTpK8ME4gmrAU9KmUtPQC0TuhWDRNh+Kc89Khrnxty07bapVUBVJLoi2DLG0oN1VRzXKkRwM9KQakKjUOVpN4dSsikh73e0ujRws1NFBWX7UUtFEvvVSh4aqtVtcwYUKqojVjXfbZXVPKtNKRCqqVJ1hjkLVQBVDUcyc9AR2TjFIxhWvPZem1KLJe72XTTUjBbVekHXad1c+zjA3UOBQKArcm49rKVdPhUGWUS42C09RKiWeVF7A/A1bgAOyoTFnllVm2awcvUG5Z5plpllIIQEO1aL2aee7Z55+BzguKHYIu2uijZ765M9GQbtrpp9GTE+qpf+bCpzDLpVrrrbm+q84Auw5b7LysJnfss9FOW+212W7b7bfhjlvuuemu2+678c5b77357tvvvwEPXPDBCS/c8MMRT1zxxfUKCAA7" /></p>
 </section>
-<section id="block-parameters" class="level2">
-<h2>Block Parameters</h2>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <section id="a-or-acin-input" class="level4">
 <h4>A or ACIN input</h4>
-<ul>
-<li>Specifies if the A input should be taken directly from the a port or
+<p>Specifies if the A input should be taken directly from the a port or
 from the cascaded acin port. The acin port can only be connected to
-another DSP48 block.</li>
-</ul>
+another DSP48 block.</p>
 </section>
 <section id="b-or-bcin-input" class="level4">
 <h4>B or BCIN input</h4>
-<ul>
-<li>Specifies if the B input should be taken directly from the b port or
+<p>Specifies if the B input should be taken directly from the b port or
 from the cascaded bcin port. The bcin port can only be connected to
-another DSP48 block.</li>
-</ul>
+another DSP48 block.</p>
 </section>
-<section id="pattern-detection" class="level4">
-<h4>Pattern Detection</h4>
-<ul>
-<li><h4 id="reset-p-register-on-pattern-detection">Reset p register on
-pattern detection</h4>
+</section>
+<section id="pattern-detection" class="level3">
+<h3>Pattern Detection</h3>
+<section id="reset-p-register-on-pattern-detection" class="level4">
+<h4>Reset p register on pattern detection</h4>
 <p>If selected and the pattern is detected, reset the p register on the
-next cycle</p></li>
-<li><h4 id="pattern-input">Pattern Input</h4>
-<ul>
-<li><h4 id="pattern-input-from-c-port">Pattern Input from c port</h4>
+next cycle</p>
+</section>
+<section id="pattern-input" class="level4">
+<h4>Pattern Input</h4>
+<section id="pattern-input-from-c-port" class="level5">
+<h5>Pattern Input from c port</h5>
 <p>When selected, the pattern used in pattern detection is read from the
-c port.</p></li>
-<li><h4 id="using-pattern-attribute-48bit-hex-value">Using Pattern
-Attribute (48bit hex value)</h4>
+c port.</p>
+</section>
+<section id="using-pattern-attribute-48bit-hex-value" class="level5">
+<h5>Using Pattern Attribute (48bit hex value)</h5>
 <p>Value is used in pattern detection logic which is best described as
-an equality check on the output of the adder/subtractor/logic
-unit.</p></li>
-<li><h4 id="pattern-attribute">Pattern attribute</h4>
-<p>A 48-bit value that is used in the pattern detector.</p></li>
-</ul></li>
-<li><h4 id="mask-input">Mask Input</h4>
-<ul>
-<li><h4 id="mask-input-from-c-port">Mask input from c port</h4>
-When selected, the mask used in pattern detection is read from the c
-port.</li>
-</ul></li>
-<li><h4 id="using-mask-attribute-48-bit-hex-value">Using Mask Attribute
-(48 bit hex value)</h4>
+an equality check on the output of the adder/subtractor/logic unit.</p>
+</section>
+<section id="pattern-attribute" class="level5">
+<h5>Pattern attribute</h5>
+<p>A 48-bit value that is used in the pattern detector.</p>
+</section>
+</section>
+<section id="mask-input" class="level4">
+<h4>Mask Input</h4>
+<section id="mask-input-from-c-port" class="level5">
+<h5>Mask input from c port</h5>
+<p>When selected, the mask used in pattern detection is read from the c
+port.</p>
+</section>
+<section id="using-mask-attribute-48-bit-hex-value" class="level5">
+<h5>Using Mask Attribute (48 bit hex value)</h5>
 <p>48-bit value used to mask out certain bits during pattern
-detection.</p></li>
-<li><h4 id="mask-attribute">Mask attribute</h4>
+detection.</p>
+</section>
+<section id="mask-attribute" class="level5">
+<h5>Mask attribute</h5>
 <p>A 48-bit value used to mask out certain bits during a pattern
 detection. A value of 0 passes the bit, and a value of 1 masks out the
-bit.</p></li>
-<li><h4 id="select-rounding-mask">Select rounding mask</h4>
+bit.</p>
+</section>
+</section>
+<section id="select-rounding-mask" class="level4">
+<h4>Select rounding mask</h4>
 <p>Selects special masks that can be used for symmetric or convergent
 rounding in the pattern detector. The choices are Select mask, Mode1,
-and Mode2.</p></li>
-</ul>
+and Mode2.</p>
 </section>
 </section>
 <section id="optional-ports-tab" class="level3">
 <h3>Optional Ports tab</h3>
-<ul>
-<li><h4 id="input-ports">Input Ports</h4>
-<ul>
-<li><h4 id="consolidate-control-port">Consolidate control port</h4>
+<section id="input-ports" class="level4">
+<h4>Input Ports</h4>
+<section id="consolidate-control-port" class="level5">
+<h5>Consolidate control port</h5>
 <p>When selected, combines the opmode, alumode, carry_in and
 carry_in_sel ports into one 15-bit port. Bits 0 to 6 are the opmode,
 bits 7 to 10 are the alumode port, bit 11 is the carry_in port, and bits
 12 to 14 are the carry_in_sel port. This option should be used when the
-Opmode block is used to generate a DSP48E instruction.</p></li>
-<li><h4 id="provide-c-port">Provide c port</h4>
+Opmode block is used to generate a DSP48E instruction.</p>
+</section>
+<section id="provide-c-port" class="level5">
+<h5>Provide c port</h5>
 <p>When selected, the c port is made available. Otherwise, the c port is
-tied to &#39;0&#39;.</p></li>
-<li><h4 id="provide-global-reset-port">Provide global reset port</h4>
+tied to &#39;0&#39;.</p>
+</section>
+<section id="provide-global-reset-port" class="level5">
+<h5>Provide global reset port</h5>
 <p>When selected, the port rst is made available. This port is connected
-to all available reset ports based on the pipeline selections.</p></li>
-<li><h4 id="provide-global-enable-port">Provide global enable port</h4>
+to all available reset ports based on the pipeline selections.</p>
+</section>
+<section id="provide-global-enable-port" class="level5">
+<h5>Provide global enable port</h5>
 <p>When selected, the optional en port is made available. This port is
 connected to all available enable ports based on the pipeline
-selections.</p></li>
-</ul></li>
-<li><h4 id="cascadable-ports">Cascadable Ports</h4>
-<ul>
-<li><h4 id="provide-pcin-port">Provide pcin port</h4>
+selections.</p>
+</section>
+</section>
+<section id="cascadable-ports" class="level4">
+<h4>Cascadable Ports</h4>
+<section id="provide-pcin-port" class="level5">
+<h5>Provide pcin port</h5>
 <p>When selected, the pcin port is exposed. The pcin port must be
-connected to the pcout port of another DSP48 block.</p></li>
-<li><h4 id="provide-carry-cascade-in-port">Provide carry cascade in
-port</h4>
+connected to the pcout port of another DSP48 block.</p>
+</section>
+<section id="provide-carry-cascade-in-port" class="level5">
+<h5>Provide carry cascade in port</h5>
 <p>When selected, the carry cascade in port is exposed. This port can
 only be connected to a carry cascade out port on another DSP48E
-block.</p></li>
-<li><h4 id="provide-multiplier-sign-cascade-in-port">Provide multiplier
-sign cascade in port</h4>
+block.</p>
+</section>
+<section id="provide-multiplier-sign-cascade-in-port" class="level5">
+<h5>Provide multiplier sign cascade in port</h5>
 <p>When selected, the multiplier sign cascade in port (multsigncascin)
 is exposed. This port can only be connected to a multiplier sign cascade
-out port of another DSP48E block.</p></li>
-</ul></li>
-<li><h4 id="output-ports">Output Ports</h4>
-<ul>
-<li><h4 id="provide-carryout-port">Provide carryout port</h4>
+out port of another DSP48E block.</p>
+</section>
+</section>
+<section id="output-ports" class="level4">
+<h4>Output Ports</h4>
+<section id="provide-carryout-port" class="level5">
+<h5>Provide carryout port</h5>
 <p>When selected, the carryout output port is made available. When the
 mode of operation for the adder/subtractor is set to one 48-bit adder,
 the carryout port is 1-bit wide. When the mode of operation is set to
@@ -153,305 +171,251 @@ two 24 bit adders, the carryout port is 2 bits wide. The MSB corresponds
 to the second adder&#39;s carryout and the LSB corresponds to the first
 adder&#39;s carryout. When the mode of operation is set to four 12 bit
 adders, the carryout port is 4 bits wide with the bits corresponding to
-the addition of the 48 bit input split into 4 12-bit sections.</p></li>
-<li><h4 id="provide-pattern-detect-port">Provide pattern detect
-port</h4>
+the addition of the 48 bit input split into 4 12-bit sections.</p>
+</section>
+<section id="provide-pattern-detect-port" class="level5">
+<h5>Provide pattern detect port</h5>
 <p>When selected, the pattern detection output port is provided. When
 the pattern, either from the mask or the c register, is matched the
-pattern detection port is set to &#39;1&#39;.</p></li>
-<li><h4 id="provide-pattern-bar-detect-port">Provide pattern bar detect
-port</h4>
+pattern detection port is set to &#39;1&#39;.</p>
+</section>
+<section id="provide-pattern-bar-detect-port" class="level5">
+<h5>Provide pattern bar detect port</h5>
 <p>When selected, the pattern bar detection (patternbdetect) output port
 is provided. When the inverse of the pattern, either from the mask or
 the c register, is matched the pattern bar detection port is set to
-&#39;1&#39;.</p></li>
-<li><h4 id="provide-overflow-port">Provide overflow port</h4>
+&#39;1&#39;.</p>
+</section>
+<section id="provide-overflow-port" class="level5">
+<h5>Provide overflow port</h5>
 <p>When selected, the overflow output port is provided. This port
 indicates when the operation in the DSP48E has overflowed beyond the bit
 P[N] where N is between 1 and 46. N is determined by the number of 1s in
-the mask whether set by the GUI mask field or the c port input.</p></li>
-<li><h4 id="provide-underflow-port">Provide underflow port</h4>
+the mask whether set by the GUI mask field or the c port input.</p>
+</section>
+<section id="provide-underflow-port" class="level5">
+<h5>Provide underflow port</h5>
 <p>When selected, the underflow output port is provided. This port
 indicates when the operation in the DSP48E has underflowed. Underflow
 occurs when the number goes below –P[N] where N is determined by the
 number of 1s in the mask whether set by the GUI mask field or the c port
-input.</p></li>
-</ul></li>
-<li><h4 id="cascadable-ports-1">Cascadable Ports</h4>
-<ul>
-<li><h4 id="provide-acout-port">Provide ACOUT port</h4>
+input.</p>
+</section>
+</section>
+<section id="cascadable-ports-1" class="level4">
+<h4>Cascadable Ports</h4>
+<section id="provide-acout-port" class="level5">
+<h5>Provide ACOUT port</h5>
 <p>When selected, the acout output port is made available. The acout
-port must be connected to the acin port of another DSP48E
-block.</p></li>
-<li><h4 id="provide-bcout-port">Provide BCOUT port</h4>
+port must be connected to the acin port of another DSP48E block.</p>
+</section>
+<section id="provide-bcout-port" class="level5">
+<h5>Provide BCOUT port</h5>
 <p>When selected, the bcout output port is made available. The bcout
-port must be connected to the bcin port of another DSP48E
-block.</p></li>
-<li><h4 id="provide-pcout-port">Provide PCOUT port</h4>
+port must be connected to the bcin port of another DSP48E block.</p>
+</section>
+<section id="provide-pcout-port" class="level5">
+<h5>Provide PCOUT port</h5>
 <p>When selected, the pcout output port is made available. The pcout
-port must be connected to the pcin port of another DSP48 block.</p></li>
-<li><h4 id="provide-multiplier-sign-cascade-out-port">Provide multiplier
-sign cascade out port</h4>
+port must be connected to the pcin port of another DSP48 block.</p>
+</section>
+<section id="provide-multiplier-sign-cascade-out-port" class="level5">
+<h5>Provide multiplier sign cascade out port</h5>
 <p>When selected, the multiplier sign cascade out port (multsigncascout)
 is made available. This port can only be connected to the multiplier
 sign cascade in port of another DSP48E block and is used to support
 96-bit accumulators/adders and subtracters which are built from two
-DSP48Es.</p></li>
-<li><h4 id="provide-carry-cascade-out-port">Provide carry cascade out
-port</h4>
+DSP48Es.</p>
+</section>
+<section id="provide-carry-cascade-out-port" class="level5">
+<h5>Provide carry cascade out port</h5>
 <p>When selected, the carry cascade out port (carrycascout) is made
 available. This port can only be connected to the carry cascade in port
-of another DSP48E block.</p></li>
-</ul></li>
-</ul>
+of another DSP48E block.</p>
+</section>
+</section>
 </section>
 <section id="pipelining-tab" class="level3">
 <h3>Pipelining tab</h3>
-<p>Pipeline Options</p>
-<section id="length-of-aacin-pipeline" class="level4">
-<h4>Length of a/acin pipeline</h4>
-<ul>
-<li>Specifies the length of the pipeline on input register A. A pipeline
-of length 0 removes the register on the input.</li>
-</ul>
+<section id="pipeline-options" class="level4">
+<h4>Pipeline Options</h4>
+<section id="length-of-aacin-pipeline" class="level5">
+<h5>Length of a/acin pipeline</h5>
+<p>Specifies the length of the pipeline on input register A. A pipeline
+of length 0 removes the register on the input.</p>
 </section>
-<section id="length-of-bbcin-pipeline" class="level4">
-<h4>Length of b/bCIN pipeline</h4>
-<ul>
-<li>Specifies the length of the pipeline for the b input whether it is
-read from b or bcin.</li>
-</ul>
+<section id="length-of-bbcin-pipeline" class="level5">
+<h5>Length of b/bCIN pipeline</h5>
+<p>Specifies the length of the pipeline for the b input whether it is
+read from b or bcin.</p>
 </section>
-<section id="length-of-acout-pipeline" class="level4">
-<h4>Length of acout pipeline</h4>
-<ul>
-<li>Specifies the length of the pipeline between the a/acin input and
-the acout output port. A pipeline of length 0 removes the register from
-the acout pipeline length. Must be less than or equal to the length of
-the a/acin pipeline.</li>
-</ul>
+<section id="length-of-acout-pipeline" class="level5">
+<h5>Length of acout pipeline</h5>
+<p>Specifies the length of the pipeline between the a/acin input and the
+acout output port. A pipeline of length 0 removes the register from the
+acout pipeline length. Must be less than or equal to the length of the
+a/acin pipeline.</p>
 </section>
-<section id="length-of-bcout-pipeline" class="level4">
-<h4>Length of bcout pipeline</h4>
-<ul>
-<li>Specifies the length of the pipeline between the b/bcin input and
-the bcout output port. A pipeline of length 0 removes the register from
-the bcout pipeline length. Must be less than or equal to the length of
-the b/bcin pipeline.</li>
-</ul>
+<section id="length-of-bcout-pipeline" class="level5">
+<h5>Length of bcout pipeline</h5>
+<p>Specifies the length of the pipeline between the b/bcin input and the
+bcout output port. A pipeline of length 0 removes the register from the
+bcout pipeline length. Must be less than or equal to the length of the
+b/bcin pipeline.</p>
 </section>
-<section id="pipeline-c" class="level4">
-<h4>Pipeline c</h4>
-<ul>
-<li>Indicates whether the input from the c port should be
-registered.</li>
-</ul>
+<section id="pipeline-c" class="level5">
+<h5>Pipeline c</h5>
+<p>Indicates whether the input from the c port should be registered.</p>
 </section>
-<section id="pipeline-p" class="level4">
-<h4>Pipeline p</h4>
-<ul>
-<li>Indicates whether the outputs p and pcout should be registered.</li>
-</ul>
+<section id="pipeline-p" class="level5">
+<h5>Pipeline p</h5>
+<p>Indicates whether the outputs p and pcout should be registered.</p>
 </section>
-<section id="pipeline-multiplier" class="level4">
-<h4>Pipeline multiplier</h4>
-<ul>
-<li>Indicates whether the internal multiplier should register its
-output.</li>
-</ul>
+<section id="pipeline-multiplier" class="level5">
+<h5>Pipeline multiplier</h5>
+<p>Indicates whether the internal multiplier should register its
+output.</p>
 </section>
-<section id="pipeline-opmode" class="level4">
-<h4>Pipeline opmode</h4>
-<ul>
-<li>Indicates whether the opmode port should be registered.</li>
-</ul>
+<section id="pipeline-opmode" class="level5">
+<h5>Pipeline opmode</h5>
+<p>Indicates whether the opmode port should be registered.</p>
 </section>
-<section id="pipeline-alumode" class="level4">
-<h4>Pipeline alumode</h4>
-<ul>
-<li>Indicates whether the alumode port should be registered.</li>
-</ul>
+<section id="pipeline-alumode" class="level5">
+<h5>Pipeline alumode</h5>
+<p>Indicates whether the alumode port should be registered.</p>
 </section>
-<section id="pipeline-carry-in" class="level4">
-<h4>Pipeline carry in</h4>
-<ul>
-<li>Indicates whether the carry in port should be registered.</li>
-</ul>
+<section id="pipeline-carry-in" class="level5">
+<h5>Pipeline carry in</h5>
+<p>Indicates whether the carry in port should be registered.</p>
 </section>
-<section id="pipeline-carry-in-select" class="level4">
-<h4>Pipeline carry in select</h4>
-<ul>
-<li>Indicates whether the carry in select port should be
-registered.</li>
-</ul>
+<section id="pipeline-carry-in-select" class="level5">
+<h5>Pipeline carry in select</h5>
+<p>Indicates whether the carry in select port should be registered.</p>
+</section>
 </section>
 </section>
 <section id="resetenable-ports-tab" class="level3">
 <h3>Reset/Enable Ports tab</h3>
 <section id="reset-port-for-aacin" class="level4">
 <h4>Reset port for a/acin</h4>
-<ul>
-<li>When selected, a port rst_a is made available. This resets the
-pipeline register for port a when set to &#39;1&#39;.</li>
-</ul>
+<p>When selected, a port rst_a is made available. This resets the
+pipeline register for port a when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-bbcin" class="level4">
 <h4>Reset port for b/bcin</h4>
-<ul>
-<li>When selected, a port rst_b is made available. This resets the
-pipeline register for port b when set to &#39;1&#39;.</li>
-</ul>
+<p>When selected, a port rst_b is made available. This resets the
+pipeline register for port b when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-c" class="level4">
 <h4>Reset port for c</h4>
-<ul>
-<li>When selected, a port rst_c is made available. This resets the
-pipeline register for port c when set to &#39;1&#39;.</li>
-</ul>
+<p>When selected, a port rst_c is made available. This resets the
+pipeline register for port c when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-multiplier" class="level4">
 <h4>Reset port for multiplier</h4>
-<ul>
-<li>When selected, a port rst_m is made available. This resets the
-pipeline register for the internal multiplier when set to &#39;1&#39;.</li>
-</ul>
+<p>When selected, a port rst_m is made available. This resets the
+pipeline register for the internal multiplier when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-p" class="level4">
 <h4>Reset port for P</h4>
-<ul>
-<li>When selected, a port rst_p is made available. This resets the
-output register when set to &#39;1&#39;.</li>
-</ul>
+<p>When selected, a port rst_p is made available. This resets the output
+register when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-carry-in" class="level4">
 <h4>Reset port for carry in</h4>
-<ul>
-<li>When selected, a port rst_carryin is made available. This resets the
-pipeline register for carry in when set to &#39;1&#39;.</li>
-</ul>
+<p>When selected, a port rst_carryin is made available. This resets the
+pipeline register for carry in when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-alumode" class="level4">
 <h4>Reset port for alumode</h4>
-<ul>
-<li>When selected, a port rst_alumode is made available. This resets the
-pipeline register for the alumode port when set to &#39;1&#39;.</li>
-</ul>
+<p>When selected, a port rst_alumode is made available. This resets the
+pipeline register for the alumode port when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-controls-opmode-and-carry_in_sel" class="level4">
 <h4>Reset port for controls (opmode and carry_in_sel)</h4>
-<ul>
-<li>When selected, a port rst_ctrl is made available. This resets the
+<p>When selected, a port rst_ctrl is made available. This resets the
 pipeline register for the opmode register (if available) and the
-carry_in_sel register (if available) when set to &#39;1&#39;.</li>
-</ul>
+carry_in_sel register (if available) when set to &#39;1&#39;.</p>
 </section>
 <section id="enable-port-for-first-aacin-register" class="level4">
 <h4>Enable port for first a/acin register</h4>
-<ul>
-<li>When selected, an enable port ce_a1 for the first a pipeline
-register is made available.</li>
-</ul>
+<p>When selected, an enable port ce_a1 for the first a pipeline register
+is made available.</p>
 </section>
 <section id="enable-port-for-second-aacin-register" class="level4">
 <h4>Enable port for second a/acin register</h4>
-<ul>
-<li>When selected, an enable port ce_a2 for the second a pipeline
-register is made available.</li>
-</ul>
+<p>When selected, an enable port ce_a2 for the second a pipeline
+register is made available.</p>
 </section>
 <section id="enable-port-for-first-bbcin-register" class="level4">
 <h4>Enable port for first b/bcin register</h4>
-<ul>
-<li>When selected, an enable port ce_b1 for the first b pipeline
-register is made available.</li>
-</ul>
+<p>When selected, an enable port ce_b1 for the first b pipeline register
+is made available.</p>
 </section>
 <section id="enable-port-for-second-bbcin-register" class="level4">
 <h4>Enable port for second b/bcin register</h4>
-<ul>
-<li>When selected, an enable port ce_b2 for the second b pipeline
-register is made available.</li>
-</ul>
+<p>When selected, an enable port ce_b2 for the second b pipeline
+register is made available.</p>
 </section>
 <section id="enable-port-for-c" class="level4">
 <h4>Enable port for c</h4>
-<ul>
-<li>When selected, an enable port ce_c for the port C register is made
-available.</li>
-</ul>
+<p>When selected, an enable port ce_c for the port C register is made
+available.</p>
 </section>
 <section id="enable-port-for-multiplier" class="level4">
 <h4>Enable port for multiplier</h4>
-<ul>
-<li>When selected, an enable port ce_m for the multiplier register is
-made available.</li>
-</ul>
+<p>When selected, an enable port ce_m for the multiplier register is
+made available.</p>
 </section>
 <section id="enable-port-for-p" class="level4">
 <h4>Enable port for p</h4>
-<ul>
-<li>When selected, an enable port ce_p for the port P output register is
-made available.</li>
-</ul>
+<p>When selected, an enable port ce_p for the port P output register is
+made available.</p>
 </section>
 <section id="enable-port-for-carry-in" class="level4">
 <h4>Enable port for carry in</h4>
-<ul>
-<li>When selected, an enable port ce_carry_in for the carry in register
-is made available.</li>
-</ul>
+<p>When selected, an enable port ce_carry_in for the carry in register
+is made available.</p>
 </section>
 <section id="enable-port-for-alumode" class="level4">
 <h4>Enable port for alumode</h4>
-<ul>
-<li>When selected, an enable port ce_alumode for the alumode register is
-made available.</li>
-</ul>
+<p>When selected, an enable port ce_alumode for the alumode register is
+made available.</p>
 </section>
 <section id="enable-port-for-multiplier-carry-in" class="level4">
 <h4>Enable port for multiplier carry in</h4>
-<ul>
-<li>When selected, an enable port mult_carry_in for the multiplier
-register is made available.</li>
-</ul>
+<p>When selected, an enable port mult_carry_in for the multiplier
+register is made available.</p>
 </section>
 <section id="enable-port-for-controls-opmode-and-carry_in_sel" class="level4">
 <h4>Enable port for controls (opmode and carry_in_sel)</h4>
-<ul>
-<li>When selected, the enable port ce_ctrl is made available. The port
-ce_ctrl controls the opmode and carry in select registers.</li>
-</ul>
+<p>When selected, the enable port ce_ctrl is made available. The port
+ce_ctrl controls the opmode and carry in select registers.</p>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <section id="use-synthesizable-model" class="level4">
 <h4>Use synthesizable model</h4>
-<ul>
-<li>When selected, the DSP48E is implemented from an RTL description
+<p>When selected, the DSP48E is implemented from an RTL description
 which might not map directly to the DSP48E hardware. This is useful if a
 design using the DSP48E block is targeted at device families that do not
-contain DSP48E hardware primitives.</li>
-</ul>
+contain DSP48E hardware primitives.</p>
 </section>
 <section id="mode-of-operation-for-the-addersubtractor" class="level4">
 <h4>Mode of operation for the adder/subtractor</h4>
-<ul>
-<li>This mode can be used to implement small add-subtract functions at
+<p>This mode can be used to implement small add-subtract functions at
 high speed and lower power with less logic utilization. The adder and
 subtracter in the adder/subtracted/logic unit can also be split into two
 24-bit fields or four12-bit fields. This is achieved by setting the mode
-of operation to &quot;Two 24-bit adders&quot; or &quot;Four 12-bit adders&quot;.</li>
-</ul>
+of operation to &quot;Two 24-bit adders&quot; or &quot;Four 12-bit adders&quot;.</p>
 </section>
 <section id="use-adder-only" class="level4">
 <h4>Use adder only</h4>
-<ul>
-<li>When selected, the block is optimized in hardware for maximum
+<p>When selected, the block is optimized in hardware for maximum
 performance without using the multiplier. If an instruction using the
-multiplier is encountered in simulation, an error is reported.</li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+multiplier is encountered in simulation, an error is reported.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>

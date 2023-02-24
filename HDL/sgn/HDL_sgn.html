@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,20 +28,26 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Threshold</h1>
 </header>
-<h1 id="threshold">Threshold</h1>
+<section id="threshold" class="level1">
+<h1>Threshold</h1>
 <p>The Xilinx Threshold block tests the sign of the input number. If the
 input number is negative, the output of the block is -1; otherwise, the
 output is 1. The output is a signed fixed-point integer that is 2 bits
 long. The block has one input and one output.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink® model.</p>
 <p>Parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <p>The block parameters do not control the output data type because the
 output is always a signed fixed-point integer that is 2 bits long.</p>
-<h2 id="xilinx-logicore">Xilinx LogiCORE</h2>
+</section>
+<section id="xilinx-logicore" class="level2">
+<h2>Xilinx LogiCORE</h2>
 <p>The Threshold block does not use a Xilinx LogiCORE™™.</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,13 +28,17 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Not Equals</h1>
 </header>
-<h1 id="not-equals">Not Equals</h1>
+<section id="not-equals" class="level1">
+<h1>Not Equals</h1>
 <p>Perform element-wise not equal to relational operation on the inputs.
 The top input corresponds to the first operand.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Relational Operations</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABICAYAAABIk43cAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFVElEQVR4nO2bv28TVxzAP+/uHAc7dlDBLkgEiaYDQkYqHYoSFYZY/Q8YUiFVSaWWqUsHFtqlS1sxonSpqqC0SZBYOgRVAjkMVIDaSlUrZwLUASESX4KxoSbhcncd/ANj++x757MbjD+j733zfZ+887v3/doWtm3bvCYo//cEuonW7KIQolvz8BWnm7WpLMC9e5/5PplOMjp6wfHaa3Ub92V7lb5sr6IBrK+vMzs7y9TUFLFYrK0/GAyOEAy+JRUzMBDDsrbZ3s5KxWlalMePr2FZm+7GA8zOznL27Fnm5uZIpVLE43GppGUGBw+xd++HCBHwFO+Fp0//4Pnzh67GKgBTU1MkEgnS6TTJZJJMJiOd1KuobRvo+hz5/HVs25CKy+evuxaFkmwsFiOVSnkWbkd0fX2Rzc1/yOVusLV1H9vedhG3zdbWfXK5G1L5KhtUPB6vE3aDH6KlV9jYuIxlPQOa1SY2lvWMjY3LLcbV89JuXCvcCv9Ei1jWJro+j2U5r65lGaUx7jalauoePfF4nEuXLrUM9Fu0jGGskc1eafj+tW2DbPYKhrEmlbNMnWwmk2FycrJpUKdEyxQKf1EopIFqYYNCIU2h8LdUzmpeks1kMiSTSdLpNIlEomFAp0XLFFcwC1iAhWE8Ipu9IpWzlopsrWgqlaobPDCwn1jsIw+i21KixRgTXV8oTVFB1xewbVMqby0agK7rdaKNDhY2Bqb5GMvakkpimnlM86n05Ewzx+rqd9i2jWnmpeNr0QAuXrzYUhTAeL6Ori8QiY4jhCqVKBId50n+JoahS8XJjm+GBjA9PQ3g6mxsGDpP8jelhYVQPQv7hWjWXRRCOLZlAoGYpxW2bbOjwqOjFxx7UJ5LvPIKy24a5RUOBNqrrrzQVj27U4V1vfFd03bx7lV4Yf4qufzbHRGemJhoWMj40qmQFV59uMHi4lVGRvZ3ZIWdKjff2jIVYayG1z+e/oqjiUmOJiYZG5tmZeUeRxOTbGw8ITp8Ai2wx6+pOJaqLZvkMqjqEIMDh7Ds+orkx59mAHjwYJUzZ86xtPRD5ZplbaGIAd/mkUqlKoekZDJZOTv4Jlt9ZlaJOo779puv+fKLcwS04sHFtg3Ws4tSHYdWlEvVWmHPz9lq3BQHp09/wu3bv7O2lmHfvjdLr9osLX1KOOzfM7f6ObuyslIpaE6dOtX+e9ZtFTQ//z0nT45z7drP3L37J3fu/MatW5/7KlpNdamaSCSYmZlpT1am3Mvl8hw8eICxsfekyz1ZGlVw8Xjc+23crbpWltHRC5XduLawUaDYJD9//rzjyaOWnSpaxqmCU+BFk9zp5FHNThcFHEtVqSZ5NzsVZTQtgqpGpGKWl5cb1uQavGiS1z6X6ibd5U6FooQY3v0BANlHv5R6yq1xqslf2qBqd7F0Ol23QXWrjhVCYXj3BKpSXNVtM08+t+xYq5ZxXc+6aZJ3q6wLhd9BVcIgBAiBpg4RCh+TylmLpyZ5p4WDwYMEgweg+u4Raunj0BGpnNV4apJD54RVNUp46BhC1B/bhVAJD72Lqg1L5Swj3SSvxm9hIQJEh99HCOeDnRAK0ei4p8+ApZrkjfBTOBI5jlAGgGZfNhMIJUgkclwqH5Rk3TbJnfBDOBQ6jBZ4A+HiuC5Q0AJ7CIUOS+VTwH2TvBntCEeHT7ArdKTh+7RZ3K7QETRtt+sY6SZ5M4rCv6IF5P5ZxROSiWkWJOMGMc1/XY/3pXjfSXSkSf4q0pftVfqyvUrL3fhVxNPX5nvthyGv1W3cl+1V+rK9Sl+2V+nL9ip92V6lL9ur9GV7lb5sr/Ifz+BTfFa4JHEAAAAASUVORK5CYII=" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Not Equals block has two input signals and one output signal. The
 block compares two inputs using element-wise not equals relational
 operation. The first input corresponds to the top input port and the
@@ -43,7 +47,9 @@ signal matches the dimensions of the input signals. An element of the
 output signal is true if the corresponding element of the first input
 signal is not equal to the corresponding element of the second signal;
 otherwise the element is false.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data type support for the block is:</p>
 <ul>
 <li>The data types of the input signals can be of any integer,
@@ -56,7 +62,11 @@ inputs are not scalar, their dimension must match.</li>
 scalar. Otherwise, it matches the dimensions of the non-scalar
 input.</li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Not Equals block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

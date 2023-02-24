@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,44 +28,59 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">AIE Kernel</h1>
 </header>
-<h1 id="aie-kernel">AIE Kernel</h1>
+<section id="aie-kernel" class="level1">
+<h1>AIE Kernel</h1>
 <p>This block allows you to import an AI Engine kernel.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/User-Defined Functions</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The AIE Kernel block allows you to import an AI Engine kernel which
 is a C/C++ program. This block supports importing Window, Stream,
 Cascade, and Run time parameter as arguments to kernel function. This
 block also allows you to import a function template with typename
 template parameter T, and a non-type (integral) template parameter
 N.</p>
-<h2 id="parameters">Parameters</h2>
-<h4 id="kernel-header-file">Kernel header file</h4>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="kernel-header-file" class="level4">
+<h4>Kernel header file</h4>
 <ul>
 <li>Mandatory string. Name of the header file that contains the kernel
 function declaration. The string could be just the file name, a relative
 path to the file or an absolute path of the file. Use the browse button
 to choose the file.</li>
 </ul>
-<h4 id="kernel-function">Kernel function</h4>
+</section>
+<section id="kernel-function" class="level4">
+<h4>Kernel function</h4>
 <ul>
 <li>Mandatory string. Name of the kernel function for which the block is
 to be created. This function should be declared in the kernel header
 file.</li>
 </ul>
-<h4 id="kernel-init-function">Kernel init function</h4>
+</section>
+<section id="kernel-init-function" class="level4">
+<h4>Kernel init function</h4>
 <ul>
 <li>Optional string. Name of the initialization function used by the
 kernel function.</li>
 </ul>
-<h4 id="kernel-source-file">Kernel source file</h4>
+</section>
+<section id="kernel-source-file" class="level4">
+<h4>Kernel source file</h4>
 <ul>
 <li>Mandatory string. Name of the source file that contains the kernel
 function definition. The string could be the file name, a relative path
 to the file or an absolute path of the file.</li>
 </ul>
-<h4 id="kernel-search-paths">Kernel search paths</h4>
+</section>
+<section id="kernel-search-paths" class="level4">
+<h4>Kernel search paths</h4>
 <ul>
 <li><p>Optional vector of strings. If the kernel header file or the
 kernel source file are not found using the value provided through the
@@ -77,7 +92,9 @@ paths for the kernel header file and the kernel source file. The
 environment variable can be used in either ${ENV} or $ENV
 format.</p></li>
 </ul>
-<h4 id="preprocessor-options">Preprocessor options</h4>
+</section>
+<section id="preprocessor-options" class="level4">
+<h4>Preprocessor options</h4>
 <ul>
 <li><p>Optional preprocessor arguments for downstream compilation with
 specific preprocessor options.</p>
@@ -86,5 +103,8 @@ multiple can be selected: -Dname and -Dname=definition separated by a
 comma. That is, the optional argument must begin with -D and if the
 option definition value is not provided, it is assumed to be 1.</p></li>
 </ul>
+</section>
+</section>
+</section>
 </body>
 </html>

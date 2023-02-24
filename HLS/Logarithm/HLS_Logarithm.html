@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,16 +28,22 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Log</h1>
 </header>
-<h1 id="log">Log</h1>
+<section id="log" class="level1">
+<h1>Log</h1>
 <p>Compute element-wise natural logarithm of input</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Log block returns the logarithm value for the provided input. The
 block supports input of all data types except Boolean. The input can be
 scalar, vector, or matrix.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data types accepted at the inputs of the block are:</p>
 <ul>
 <li><p>Data Types: Input supports signals of integer, fixed-point, and
@@ -46,7 +52,11 @@ inputs.</p></li>
 <li><p>Complex Number Support: No</p>
 <p>The output has the same dimension and type as the input.</p></li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Log block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,16 +28,20 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Data Type Conversion</h1>
 </header>
-<h1 id="data-type-conversion">Data Type Conversion</h1>
+<section id="data-type-conversion" class="level1">
+<h1>Data Type Conversion</h1>
 <p>Convert the input to the data type of the output.</p>
 <p>The block warns or errors out when an integer or fixed-point output
 overflows during simulation. To configure, select Configuration
 Parameters → Diagnostics → Data Validity. In the Data Validity pane, set
 Wrap or Saturate to Overflow.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Signal Attributes</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Data Type Conversion block has one input and one output. It
 converts the value of the input signal to the data type of the output.
 This conversion tries to preserve the mathematical value of the input
@@ -68,14 +72,18 @@ Then set Saturate on overflow to either warning or error.</li>
 <li>Conversions where the output data type is floating point follow the
 rules implemented in the C language.</li>
 </ul>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>The input signal can be double, single, an integer, boolean, Xilinx
 supported half or Xilinx supported fixed-point data type.</p>
 <p>The data type of the output is specified the mask parameters.</p>
 <p>The input can be real or complex, and scalar, vector, or matrix. The
 output signal has the same complexity and dimensions as the input
 signal.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Output data type<br />
 This parameter specifies the data type of the output signal. If
 <code>fixed</code> is specified, more parameters are available.</p>
@@ -358,5 +366,7 @@ you specify in the Simulink Editor. To configure, select
 Simulation → Model Configuration Parameters → Diagnostics → Data
 Validity for your model in the Simulink Editor, then set the Wrap on
 overflow or Saturate on overflow parameter.</p>
+</section>
+</section>
 </body>
 </html>

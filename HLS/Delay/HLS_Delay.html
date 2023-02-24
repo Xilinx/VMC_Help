@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,27 +28,37 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Delay</h1>
 </header>
-<h1 id="delay">Delay</h1>
+<section id="delay" class="level1">
+<h1>Delay</h1>
 <p>Delay input signal by specified number of samples</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Signal Operations</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFi0lEQVRoge2aTWgUVxzAf29nNqub7Eba7EpLLdhAEbti9SKNDYKhLaKnerIHiQeTBi20PQQ9NRf1YAOiogQDhkBjqKWgED3YRCQ2Yin2g72JFBQ1ySSuWdM16+zM9JDdbZL9yLzd2TTd7O/49v3f+/9m3sy+jxGWZVmsEFz/dQJLiZrvRyHEUuXhKLkGa15ZgAcPvnA8mVJSX38m528rahhXZMuVRZ9ZWTyedXg870jFVFUFMM0EiUREKk5V/Tx/fgPTnLFXX6r1RVi1aj11dfsQwu1ks3mZnv6VV6+e2qrr2DAuVNSydDStl2j0JpalS8VFozdti4JDssWITkxcYmbmL6amhonHH2FZCRtxCeLxR0xNDUv1V7SsE6LJEiYnL2OaL4F8M1gL03zJ5OTlReplUpSsc6KzmOYMmvYdppn77pqmnqxj76U0l4JlnRZNoetjRCIDWZ9fy9KJRAbQ9bGCci5ItlSiKWKxP4jFwsBcYZ1YLEws9qd8wkmkZUstmmL2DkYAEzDR9WdEIgOy6c5DSraq6g0Cgf0FiCakRGdjDDStL5miC03rw7IMqX4XIjWpsNAxjOeYZlyqE8OIYhjTUjGzcVOMjp7DsiwMIyodvxApWf3VBJrWh8/fgBCKVEc+fwMvoiPouiYVJ1s/H9LPrK5rvIiOSA8pIRR8/gbc7oBsl47hApiYmODkyZNomr2ruNyFc3m4AC5evEh7ezs7d+5kfHzcVoPLWTiXhwugubmZUChEOBymqamp5MLT03GOH/+dPXu+T5d1dt5h374faW0doLV1gETClGpzLrk8XACBQIDBwcElE75//yGtn+/F46lN3+FoNE5Hxw66unbT1bUbVS18JpvLI91iMBjMELaLrPDWrRtYv/5NgPSQjkbjXLhwj8OHr3P69C+2+85Grhs37/ItFJYhLUz24dfdfYW9n7Zz/twP88qFUPDXNvLlVx/T0bGDs2d3MTo6ze3bj6T6z+eREs74nw0Gg/T39xMKhaQ7UZQaentG6Ow8ny57/HiM7u4TtLW10NbWMq++EG7c7rWYZpzf7j1l1661AHi9bnS9uNnSXI9wOMyhQ4cQC48/xsfHaWpqSt9Zu/vG2ebM167d4MiRb7hz5yeqq73p8t7eS1y5co3h4REaGz/g4MF3efjwPv39YbzeKny+Kk6caEJR5Dfp6+vPYFnWPI9QKMTg4OB82YUVwuGwLdlsok+ePGX79k+4evUSmza9lzVOdnFgh/r6M4yNjWWIBoPBf5/ZbFfCDtlEDcNg//5Wjh79eklFU2QTheQLStO0nBXykWu5d+zYt9TV1dHS0pw1rpSiQE4PFaCnp8cx0Vu3fqav7zJ37w5ljSu1KJDTQwU4cOAAMDuTCgQWn8blW8CfOnUOTZtg8+bt6bLm5s/o6Di6JKIAQ0NDWT0y3sbzfhQi4wW1VDsVhZJ6G2dDaj2b2qmQpZCdihSq6sOywDBeSMdmtCVTeal3KlwuL7VrPgIg8ux6ck+5cJbtToUQLvy1DZAckj5/A9GpoZxD1A7LdqfCW/0+iqsahAAhUJUavNVbZNOdR0HrqFILezxv4/G8BXNHj1CSx6HrCkkZKOJEoFTCiuKnumYLQmQ+YUIoVNdsRVFrC8q5qLMep4WFcOOv/RAhcqclhAu/v6GgM+CiT/GcFPb5tiFcVUC+1Y5AuDz4fNukc3XkfNYJYa93A6r7NYSNlAQuVPfreL0bpPpz7OS9GGF/bSOrvRuzPqf54lZ7N6Kqa2zHOPpNxazwbVT34guJuSiKDzAwjJhk3CoM42/b9R3/WkbXJ9H1SaebdYQV9R1URbZcWVGyiy7e/48UtHgvty/qV9QwrsiWKxXZcqUiW65UZMuVimy5UpEtVyqy5UpFtlz5BxMAPvLFNBcPAAAAAElFTkSuQmCC" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The delay block produces an output signal by delaying the input
 signal by the number of samples specified in the block dialog box. If
 the latency of the block is N, then the N-1 first output samples are
 always 0, and the N-th output sample is the first input sample.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>All data types are supported.</p>
 <p>Input can be a vector or a matrix. If input is a vector or a matrix
 and the latency value is a scalar, the scalar value will apply to all
 the elements of the input.</p>
 <p>Output is complex if the input is complex.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Latency</p>
 <p>The Latency parameter specifies the number of samples by which the
 input signal is delayed.</p>
 <p>Latency should be a real, non-negative, scalar integer with minimum
 value as 1 and maximum value as 2^25.</p>
+</section>
+</section>
 </body>
 </html>

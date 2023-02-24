@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,13 +28,17 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Window Processing</h1>
 </header>
-<h1 id="window-processing">Window Processing</h1>
+<section id="window-processing" class="level1">
+<h1>Window Processing</h1>
 <p>Assemble an output matrix by applying the kernel subsystem to
 submatrices (windows) of the input matrix in row-major order</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Ports and Subsystems</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAABdCAYAAACfDvnaAAAACXBIWXMAAA7EAAAOxAGVKw4bAAANlklEQVR4nO2deXAU152Av9c9h445JKTRAQZz2YnX4hDR6kCIcGQDoYAEF6ZweZfLDuXUBmIKi3W8FDZU2X/ESRzDQnnJpiA+gMVHvF7Csssdr4WwQQYhBEVBgErWSBpdo9E509O9f4wEAmlASD2a1tR8/01Pz69f96f3+t0SmqZpxIhKpEgnIEb4MN3vSyHEYKUjxgAIVfjeVy7AtWtrdE9MDP0YN25byO9ixXIUE5MbxcTkRjExuVHMAytURsNieYS4uHE6xnOhqgqK0qBbzC5MJgeNjYdR1XbdY/fp+hG5aj+Ji3uclJSnkaShk2yv98uIyR0yxXJCwkTdxWqaH7f7XTyeY2iaX7e4wdgK9fWf4fdX6xr3YRgSWcBuz8fpnIUQ+oqtrd1Le/t12ttvYLWOwmodgxCyLrG93i9paflah5T2H4PnXIHTOaNTrFm3qN3Fdh6hru5DVLVZh+h+2tv/jMdzVIdYA8PAcgXJyXOx2wvCLDaIqvqoqXkfVfUNIHYAv7+OurqPgMiPxxhSrhASKSmLSEiYjBAW3eKGEtuFotRSX/8f/X7/alobbvd7aJoykGTqhuHkCiGTmvoM8fHfRpIGT2wXbW2VNDeffWjBquqjuvr3BAKtA0mmrhhKrhBmXK7lWK2PDkpRHAqP5zA+XzWaFujT+aqqUFe3F0WpHUgydccwciUpnvT057BYMiMqNvgblbq6vWhaRx/OVWhsPEh7+40BpDI8GEKuLNtIT/8xJlNq2Jo7D0sg0Irb/cF9i+dgk+d0xJs8oYi4XFlOIj19NSaTU5c2ZhcDEduFz/cNjY3/HUKwcZo8oYioXLPZRUbGaiQpUdek6CG2i+bms7S1XbpLsNGaPKGImFyLZThpac8hSXEIYUyxXdTX/yeK0giondcwVpMnFBGRazank57+YyTJCug3TyscYoNxFdzuD+h6XEZr8oQiMn3LIkAg0IiqPrg2+jAEAp7OHKY/gYCHqqodgDBckycUEZHr99Xidu/B7piqayUKwOGcRpPnBIri1TUugN/v1j1mOInYO9fvd+NtKulzR0FfEcKEw/ldJClB17hDkYjWlsMjWCAw40yagSTF6Rh36BHxdm5YBAuBJKw4k76r68DDUCPicqFvgl9++V/YvfvA7c8birfyyis7bn/+7W8/ZdOmf2Xu3LU0NbV0Co7H4SwCen+vv/POWfbsqdDtPoyGIeTCgwVPL8rmi/89d/tzZeV1LpRfvf35VEk5RUWTOXRoKw5HYvCgkJBlOw7nNF3b0kMFQ93x/QQXTptEaWkwlzU1tWAyyQgBzc3B9uZXX1VSUDCBaYXP4/E088orO/inDdt48WdvMW/eJiovJQOCI0f+zIIF+1i79hCVlcHar6pqbNx4nGXLPmXJko84fvwGH310ie3bvwJg584yVq36DIDz56tZv/5/BuFpDBxDyYXQgp1OG8OGObh58xanT1eQk/MEOTl/Q2lpBdevf0NGRgo2250asiQJzBYTb29dT3HxMv5932ns9hx+8YsSdu6cz9tvz6Wurg2AY8eu09rq5913f8TOnfPZsuVP5OYO59y5KgDKy6sRQqBpUFZ2i/z8RwbvgQwACaC2tpY333wTt9sY7bhQgoumZ1PyRTmnSi5QMHUi+QUTOFVS3lkkZ/eIM3HiYwC4XEk0NbWCcNHaCpmZdoSAnJxMAC5cqCE3dzgASUlx2GwWrFYT1dUtaBp0dCh861spXLtWz9mzxpMbypsEsGvXLjZs2MCsWbOoqakZ1ISFojfBRUXZlJZWUHr6Arm5T5KX9yRnzlyi5FQ5RdMn94ghy3cKJk3TEMKEJJmIT/g2ECyOIbhUVVXv/E5VNSRJ8Nhjwzh58gajRyeRnZ1BWVkVVVXNjBzpCNNd949Q3iSAFStWkJWVRUVFBbNnzzas4MLCiZw5U4mqatjtCTidNtrbOyg/f5X8/AkPjGc2m7BaLTQ0JGO1jqW09P8AmDAhjdLSvwJQX99GW5uf1NQE8vIe4Xe/O0d2diaTJ2fwxz9eYcyY5PDdcD8J5U0CcLlcHD161PCCbbYE4uOtTOosbgGyssaTkBhHfLy1T/E2vfo8Ty16mRUr9zJ27HA0TWPWrDEkJ8exbNmn/OQnB9m8eQZCQF7eCE6d+gtTpmTgciVw86aH/PwR4brVfhPKm+i+J0ZNTQ2zZ8+moqLi9g+MsvjabHbp3hetaQG83i/x+27pFnOwGTduG9XV1Xd5O3r0KGlpaXfXltPS0u7KwUbiTg5WH3xyHxFCxuEowGRO0S1mJLjXW1cOFr3tZnPx4kWysrIAY22bEBf3OMOGzUfV2nSLqak+GhoO4huiuXfcuG2398To7m3x4sU9h/xqampYunTp4KawDyQkTCQ5eQGSZELGrktMTfNT27B3yIrtTndvWVlZbN++/e5i+d53rlGw2/MZNmy+7iv8wjFrIxLc663HO7e3EyLPYC0EG9r0JhY6Z2K43e6QJwwW1641sHDhPoYPt6NpGmazzKuv/iOLFw/OQrB7OX78BmfOfENx8VTdrh0uQnkzAezevTuiYrt48kkX+/cvRgiJ5uZ85sx5kR/+8AUsOg3JPkyOnTlzNDNnjtbnwmEmlDcTwMqVK4FgT5XL5Rr81HUjuBBsKSNGPEpqaio1NW4WLXqW6dMLsVjMrFv3U1avXoOiBPD7/Wzf/ivGjx9LSclp1q//Z4QQzJv3fTZuLKas7Dw///lrWK1W7PZE3nijgKqqyxQXH8FkErS3B/jlL7+HLEs9jl2+XEdp6V9Zty6fZ575hLy8EdTUtCBJgt/8Zg43bjSyfv1hbDYzU6Zkcu1aA1u3zo3IMzt27Fiv3kwAqampFBcXD3qieiJwuZZjsWRw5coNvN5mMjMzkGWZwsI8nnpqIS+9tJGFC+exatU/cOjQETZteoM9e/6NNWs28Ic/vM/IkY+wZMkK6urqWbt2Ax9//D5paUm89trzfPDBf+HzBZgzZyzLlk2istJNbW0bZWW3ehzrQpIEV6/W8957PyIpKY5Fi/ZTVdXMO++cZfnySSxc+DibN/8pgs+MkBnSMEN+kmTl8uUGCgv/npyc7/HCC+vYtWs7shzskcrJCY76lJWdo6go+B4sKMjl3LlyfD4f9fUNjBo1EiEEH374exITEykvr+DZZ1cxY8Y0Dh48Q3V1C1OnjmT37vO8/vrndHQEyM7O6PVYdzIzbSQlBedjpaTE4/X6uHq1/vZ5M2c+OliP6aEwxJ4YsmwjJWU+kyZd4MSJg72eY7EE+46DIzjBXipVVZEkqdcNSE0mmaSkJPbufbrHO/bAgWc4efImr7/+OYsXP8HSpVk9jqWk3Bkb7j66BHc20rxzWWNugBrxnHtnIZiNvjyk73wnm5MnvwCgpORLsrMnYjabSUtL5fLlK2iaxtNPL6eq6hsyMqyUlp4C4OOPL/H111UcOHCFmzc9/OAH41m7NpeKCnevxx7EqFFOLlwIdtKfOHGj3/cfTiKac81mF2lpKxHCSl//zoqLf8bq1Wv47LODqKrKjh2/AmDbtjd57rmfoigKCxbMwWo9wZYtU9m8+SRms4zNZuGtt76PxSKzceNx4uJMaJrGli0z6OgI9Dh2/fr9Vy6sXj2Fl146zP79lTzxRComU8TzSQ967Vu+/aUQYetbtliG43It69wawfjrhe7l4kU3mqaRlZXGvn0Xqapq5sUX88J6zd7o3rd8LxHJuV0LwfRG05SwijWZ7GgIAkoTVqvMhg1HsFhkrFaZX/96TliuORAiVCwrYVoI1kQgoMdeUj2RpHicSX8HQGPDYcaPh08+WRKWa+lFZBaC+euoqXm3cz6xCT2LZbtjKt6mEl0XbQkh43AWoqEhAIezCE/jUd3/OPUmYrUARWmgyXMiuGJdx3+QIoSM3TEVs1m/nrbExGwkORGBAARCsmB3TNN9haLeRLSKpyheGhuOoWodoPMMC70EW+PGYLEOR3RbkiIQyLINm/1vBxw/nES8/q6qrXgaj6GqbYYTbDIlk5g4sZcddgRCyJjN6SQkGmfc+14iLhdAVdtpbDyOEvDqPkeqv4IlyYrDWXhXju0tflzcOKxxoweQyvBhCLkAmubD03gCRWlAQ7/lnP0RLITA7igAYXpgXU8ImcTESbq+4/XCMHKDBPA2fY7ir9V1ve7DCk5InIAsOxB9fDzB+AXIsj5zu/TCYHKDW/N5m0rw+27puhVQXwVbLCM6N9V+uFZisLlU1LlDjzEwnFwIjrp4vV/R0X4TBrGIlmU7NntOP5s4xmsiGVJuEI2WlnJaW68MShEthAm7o3BAi7SN1kQysFwAjbbWS7S1VoS5kiWwO3KR5IFuemasJpLB5QZpa7tGi7csbDk4PuHx4I6x92n2PGxsIzSRDDEToy90dPwFVVOw23N1e6d1VYLCgRAyNtsUFH8DgYAnLNd4EENGLoDfd4smz+eYLem6xQw2XwJh2ctRluJR1cjtETmk5AIoSj2KUh/pZAwJhsQ7N0b/iMmNYmJyo5iY3CgmJjeKicmNYh44bzmG8enXvOX7eI8xBIgVy1FMTG4UE5MbxcTkRjExuVFMTG4UE5MbxcTkRjExuVFMTG4UE5MbxcTkRjExuVFMTG4UE5MbxcTkRjExuVHM/wMGlBQqXowuGgAAAABJRU5ErkJggg==" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Window Processing block is a masked subsystem for assembling an
 output matrix by applying a kernel subsystem to sub matrices of the
 input matrix in row-major order. You customize the Window Processing
@@ -94,10 +98,14 @@ size.</li>
 </ul></li>
 <li>The kernel must not contain an if-action subsystem.</li>
 </ul>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>There are no restrictions on the data types of the input or output
 signals.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Window size</p>
 <p>This parameter specifies the size of the window. Enter a 2-element
 vector of real positive integers, for example [5,3], for the Window
@@ -113,5 +121,7 @@ the Window size. The dimensions of the output are as follows:</p>
 <li>Min, Nin if Same as Input is selected for Output size.</li>
 <li>Min-Mwin+1, Min-Nwin+1 if Valid is selected for Output size.</li>
 </ul>
+</section>
+</section>
 </body>
 </html>

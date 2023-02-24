@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Common Options in Block Parameter Dialog Boxes</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Common Options in Block Parameter Dialog Boxes</h1>
+</header>
+<section id="common-options-in-block-parameter-dialog-boxes" class="level1">
+<h1>Common Options in Block Parameter Dialog Boxes</h1>
+<p>Each Xilinx® block has several controls and configurable parameters,
+seen in its Block Parameters dialog box. This dialog box can be accessed
+by double-clicking on the block. Many of these parameters are specific
+to the block. Block-specific parameters are described in the
+documentation for the block.</p>
+<p>The remaining controls and parameters are common to most blocks.
+These common controls and parameters are described below.</p>
+<p>Each dialog box contains four buttons: OK, Cancel, Help, and Apply.
+Apply applies configuration changes to the block, leaving the box open
+on the screen. Help displays HTML help for the block. Cancel closes the
+box without saving changes. OK applies changes and closes the box.</p>
+<section id="precision" class="level2">
+<h2>Precision</h2>
+<p>The fundamental computational mode in the Xilinx blockset is
+arbitrary precision fixed-point arithmetic. Most blocks give you the
+option of choosing the precision, for example, the number of bits and
+binary point position.</p>
+<p>By default, the output of Xilinx blocks is full precision; that is,
+sufficient precision to represent the result without error. Most blocks
+have a User-Defined precision option that fixes the number of total and
+fractional bits.</p>
+</section>
+<section id="arithmetic-type" class="level2">
+<h2>Arithmetic type</h2>
+<p>In the Arithmetic Type field of the Block Parameters dialog box, you
+can choose unsigned or signed (two&#39;s complement) as the data type of the
+output signal.</p>
+</section>
+<section id="number-of-bits" class="level2">
+<h2>Number of bits</h2>
+<p>Fixed-point numbers are stored in data types characterized by their
+word size as specified by Number of bits, Binary point, and Arithmetic
+type parameters. The maximum number of bits supported is 4096.</p>
+</section>
+<section id="binary-point" class="level2">
+<h2>Binary point</h2>
+<p>The binary point is the means by which fixed-point numbers are
+scaled. The Binary point parameter indicates the number of bits to the
+right of the binary point (for example, the size of the fraction) for
+the output port. The binary point position must be between zero and the
+specified number of bits.</p>
+</section>
+<section id="overflow-and-quantization" class="level2">
+<h2>Overflow and Quantization</h2>
+<p>When user-defined precision is selected, errors can result from
+overflow or quantization. Overflow errors occur when a value lies
+outside the representable range. Quantization errors occur when the
+number of fractional bits is insufficient to represent the fractional
+portion of a value.</p>
+<p>The Xilinx fixed-point data type supports several options for
+user-defined precision. For overflow the options are to Saturate to the
+largest positive/smallest negative value, to Wrap (for example, to
+discard bits to the left of the most significant representable bit), or
+to Flag as error (an overflow as a Simulink® error) during simulation.
+Flag as error is a simulation only feature. The hardware generated is
+the same as when Wrap is selected.</p>
+<p>For quantization, the options are to Round to the nearest
+representable value (or to the value furthest from zero if there are two
+equidistant nearest representable values), or to Truncate (for example,
+to discard bits to the right of the least significant representable
+bit).</p>
+<p>The following is an image showing the Quantization and Overflow
+options.</p>
+<p>Figure: Quantization and Overflow Options</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>Round (unbiased: +/- inf) also known as &quot;Symmetric Round (towards +/-
+inf)&quot; or &quot;Symmetric Round (away from zero)&quot;. This is similar to the
+MATLAB® <code>round()</code> function. This method rounds the value to
+the nearest desired bit away from zero and when there is a value at the
+midpoint between two possible rounded values, the one with the larger
+magnitude is selected. For example, to round 01.0110 to a Fix_4_2, this
+yields 01.10, because 01.0110 is exactly between 01.01 and 01.10 and the
+latter is further from zero.</p>
+<p>Round (unbiased: even values) also known as &quot;Convergent Round (toward
+even)&quot; or &quot;Unbiased Rounding&quot;. Symmetric rounding is biased because it
+rounds all ambiguous midpoints away from zero which means the average
+magnitude of the rounded results is larger than the average magnitude of
+the raw results. Convergent rounding removes this by alternating between
+a symmetric round toward zero and symmetric round away from zero. That
+is, midpoints are rounded toward the nearest even number. For example,
+to round 01.0110 to a Fix_4_2, this yields 01.10, because 01.0110 is
+exactly between 01.01 and 01.10 and the latter is even. To round 01.1010
+to a Fix_4_2, this yields 01.10, because 01.1010 is exactly between
+01.10 and 01.11 and the former is even.</p>
+<p>It is important to realize that whatever option is selected, the
+generated HDL model and Simulink model behave identically.</p>
+</section>
+<section id="latency" class="level2">
+<h2>Latency</h2>
+<p>Many elements in the Xilinx blockset have a latency option. This
+defines the number of sample periods by which the block&#39;s output is
+delayed. One sample period might correspond to multiple clock cycles in
+the corresponding FPGA implementation (for example, when the hardware is
+over-clocked with respect to the Simulink model). Model Composer does
+not perform extensive pipelining; additional latency is usually
+implemented as a shift register on the output of the block.</p>
+</section>
+<section id="provide-synchronous-reset-port" class="level2">
+<h2>Provide Synchronous Reset Port</h2>
+<p>Selecting the Provide Synchronous Reset Port option activates an
+optional reset (rst) pin on the block.</p>
+<p>When the reset signal is asserted the block goes back to its initial
+state. Reset signal has precedence over the optional enable signal
+available on the block. The reset signal has to run at a multiple of the
+block&#39;s sample rate. The signal driving the reset port must be
+Boolean.</p>
+</section>
+<section id="provide-enable-port" class="level2">
+<h2>Provide Enable Port</h2>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted. Reset signal has precedence over the enable
+signal. The enable signal has to run at a multiple of the block &#39;s
+sample rate. The signal driving the enable port must be Boolean.</p>
+</section>
+<section id="sample-period" class="level2">
+<h2>Sample Period</h2>
+<p>Data streams are processed at a specific sample rate as they flow
+through Simulink. Typically, each block detects the input sample rate
+and produces the correct sample rate on its output. Xilinx blocks Up
+Sample and Down Sample provide a means to increase or decrease sample
+rates.</p>
+<p>Specify Explicit Sample Period</p>
+<p>If you select Specify explicit sample period rather than the default,
+you can set the sample period required for all the block outputs. This
+is useful when implementing features such as feedback loops in your
+design. In a feedback loop, it is not possible for Model Composer to
+determine a default sample rate, because the loop makes an input sample
+rate depend on a yet-to-be-determined output sample rate. Model Composer
+under these circumstances requires you to supply a hint to establish
+sample periods throughout a loop.</p>
+</section>
+<section id="use-behavioral-hdl-otherwise-use-core" class="level2">
+<h2>Use Behavioral HDL (otherwise use core)</h2>
+<p>When this checkbox is checked, the behavioral HDL generated by the
+M-code simulation is used instead of the structural HDL from the
+cores.</p>
+<p>The M-code simulation creates the C simulation and this C simulation
+creates behavioral HDL. When this option is selected, it is this
+behavioral HDL that is used for further synthesis. When this option is
+not selected, the structural HDL generated from the cores and HDL
+templates (corresponding to each of the blocks in the model) is used
+instead for synthesis. Cores are generated for each block in a design
+once and cached for future netlisting. This capability ensures the
+fastest possible netlist generation while guaranteeing that the cores
+are available for downstream synthesis and place and route tools.</p>
+</section>
+<section id="use-xtremedsp-slice" class="level2">
+<h2>Use XtremeDSP Slice</h2>
+<p>This field specifies that if possible, use the XtremeDSP slice (DSP48
+type element) in the target device. Otherwise, CLB logic are used for
+the multipliers.</p>
+</section>
+<section id="display-shortened-port-names" class="level2">
+<h2>Display shortened port names</h2>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
+</section>
+</section>
+</body>
+</html>

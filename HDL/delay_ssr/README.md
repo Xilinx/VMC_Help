@@ -40,23 +40,23 @@ synchronous design (with a few rare exceptions).
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
 #### Optional Ports  
-* #### Provide synchronous reset port  
-  Activates an optional reset (rst) pin on the block. When the reset
+##### Provide synchronous reset port  
+Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block's sample
 rate. The signal driving the reset port must be Boolean.
 
-* #### Provide enable port  
-  Activates an optional enable (en) pin on the block. When the enable
+##### Provide enable port  
+Activates an optional enable (en) pin on the block. When the enable
 signal is not asserted the block holds its current state until the
 enable signal is asserted again or the reset signal is asserted. Reset
 signal has precedence over the enable signal. The enable signal has to
 run at a multiple of the block 's sample rate. The signal driving the
 enable port must be Boolean.
 
-#### Latency  
-* Latency is the number of cycles of delay. The latency can be zero,
+##### Latency  
+Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port check box is not checked. The
 latency must be a non-negative integer. If the latency is zero, the
 Vector Delay block collapses to a wire during logic synthesis. If the
@@ -67,12 +67,12 @@ flip-flop (or multiple flip-flops if the data width is greater than 1).
 Parameters specific to the Implementation tab are as follows:
 
 #### Implement using behavioral HDL: 
-* Uses behavioral HDL as the implementation. This allows the downstream logic synthesis tool to
+Uses behavioral HDL as the implementation. This allows the downstream logic synthesis tool to
   choose the best implementation.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../HDL/dds_compiler_v6_0/README.md).
 
 ## Logic Synthesis using Behavioral HDL
 

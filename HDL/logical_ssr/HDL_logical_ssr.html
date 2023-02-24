@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -35,10 +35,6 @@ inputs.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control the processing of multiple data samples on every sample
-period. This blocks enable 1-D vector data support for the primary block
-operation.</p>
 <p>The Vector Logical Block performs bitwise logical operations on
 fixed-point numbers. Operands are zero padded and sign extended as
 necessary to make binary point positions coincide. The logical operation
@@ -54,20 +50,15 @@ as it facilitates logic collapsing in synthesis and mapping.</p>
 <p>Parameters specific to the Basic tab are as follows:</p>
 <section id="logical-function" class="level4">
 <h4>Logical function</h4>
-<blockquote>
 <p>Specifies one of the following bitwise logical operators: AND, NAND,
 OR, NOR, XOR, XNOR.</p>
-</blockquote>
 </section>
 <section id="number-of-inputs" class="level4">
 <h4>Number of inputs</h4>
-<blockquote>
 <p>Specifies the number of inputs (1 - 1024).</p>
-</blockquote>
 </section>
 <section id="logical-reduction-operation" class="level4">
 <h4>Logical Reduction Operation</h4>
-<blockquote>
 <p>When the number of inputs is specified as 1, a unary logical
 reduction operation performs a bit-wise operation on the single operand
 to produce a single bit result. The first step of the operation applies
@@ -78,7 +69,12 @@ bit of the operand using the same logical operator. The logical
 reduction operator implements the same functionality as that of the
 logical reduction operation in HDLs. The output of the logical reduction
 operation is always Boolean.</p>
-</blockquote>
+</section>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control the
+processing of multiple data samples on every sample period. This blocks
+enable 1-D vector data support for the primary block operation.</p>
 </section>
 </section>
 <section id="output-type-tab" class="level3">
@@ -86,11 +82,9 @@ operation is always Boolean.</p>
 <p>Parameters specific to the Output Type tab are as follows:</p>
 <section id="align-binary-point" class="level4">
 <h4>Align binary point</h4>
-<blockquote>
 <p>Specifies that the block must align binary points automatically. If
 not selected, all inputs must have the same binary point position.</p>
-</blockquote>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>

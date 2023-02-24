@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -30,8 +30,8 @@ vertical-align: middle;
 </header>
 <section id="cordic-60" class="level1">
 <h1>CORDIC 6.0</h1>
-<p>The Xilinx CORDIC block implements a generalized coordinate
-rotational digital computer (CORDIC) algorithm and is AXI compliant.</p>
+<p>The CORDIC block implements a generalized coordinate rotational
+digital computer (CORDIC) algorithm and is AXI compliant.</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYUAAAEJCAYAAAB7UTvrAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAgAElEQVR4nO3deXgTdf7A8ffkKL04Wtq0pZyCIlJEWEQWccHWA49FcVEOryooIogHiLLQBWTrciNKBQ8s4qKg/hBU0FW7iCiuIILcdwsIpfd9pGlmfn+UhpZOSgulbZLP63l8HkwyM9+kbd6ZmSRfRdM0DSGEEAIwNPQAhBBCNB6m6q5UFKW+xiGEEKIeOTtIVG0UAH78/UydD0YIIUTD6dc91Ol1cvhICCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEg0RBCCGEgwEgPT2duXPnkpaW1tDjEUII0YAMAPHx8UyaNInIyEhSU1MbekxCCCEaiAEgOjqaiIgI9uzZQ1RUVL2EYfPGr2u9zNPR95Cfn1sn29+9cys52Zm1WmbRnBg2//crtmz+jqWLYqtcP2HMcI4nHqmT8QkhREMwAAQHB5OQkFCvYVj9wdJaL/Pm8nX4+zerk+1/9cUnZGfVLgrl+t50C089O6VOxiGEEI2JYzpOi8VCQkICUVFRjjDUxO6dW1k0JwYFhb79b+Wx0RPY8sO3rHh3EWazF0GWUGJiF/PTpm/4Zv2npKYk0+fGSPbv2UlszHimzHydRbOncjzxCCU2K8MfGcON/W9j5XuL2bL5W1RVpXffATw2egLRD0SxeNkacrKz+Ne05zCZvSgttTFj9lK8fXwZ99hgelzfl/TUMxiMRqbPWuJ0zD8kbOBk0lHadehEl4ge3HXvcABG3HMjby7/nLWfvM/WLZsoLbVxy8B7eeChJx3Lb/7vV/z26xaenTSTdxbP4rdtWwhv056CgrxL+VkIIUSDqzRH8/lhqIl5sS8z+/UVhISGM+WFkeRkZ5GdlcnMee8QbAnj788/zt5d2zEajZw4foz41d9iMBhZv/Yjpsx8nZ82fQPAgqWrKCos4IkHB/Lnm25h7Sfv8/GGrSiKwtpP3q80yXRaSjJPPjOZa3vcwCcfvsv6tau4f8QokhIP8drbn9C8RQBPjBhIakoylpCwKmPudl1vOne5lvGTZpKbk8WH77/JXfcOJ+nYIYItYTRrHoDZ5EVc/FpU1c4Dd93AkBGjqqwnNSWZTQkbWPF/GyksLGDI7b1q9eALIURjYzr/AovFwqpVq4iIiLjgwjabjbycLELDWgPw6sL3ytYREsas6RMwm80cPbSPvNxsADp36YbBYKy0jt07t/HLlo2MGzkYALtdJSc7k569+/Hck/cTefsgbrljMIqiOJYJCQtn8fwZrIyPIyM9hev+1Lfs8tBwmrcIACAgMIiC/FzQiUJFEd17kXjkILaSEjZv/JoBt96NwWDAy9ubF8YMw9vbh9ycbKzFRVWWPZF4mKvO3id//2Z0vKrLBR8zIYRozKpEITU1lWHDhtVo4QrP05XMmv4CSz/4kqDgUGJjxjsuN5ubVLmt2ezF/Q8+weAHoitdPnnGQhKPHiTh63WMfuhOln/8X8d1by58hdvv/ht/ibyTDetWc+zIAQAMhsofu6i4d+H8Pihc3+cvbN/6I1t++JbY+ctIPHqQ/3z5CUtXfInJZGbIQP09AE3TUDj3IKiqesHtuZumvmYCmlb9uXoy7yZGNE3DWuJ5vw+XwstsICk5j1L7hf9uxeVTKQqpqamOQ0flJ52rXdhkpkVgEEnHDtOuQyemvDCSZybOoKiokMCWFrKzMtixbQv9BtyO2exVaVmbzQbANd168n+rljH4gWgKC/KJf2sBjz75HJ+tXs7DI8czauwktv78vWNvAyAjPY2w8Laoqp1NCesJa9Wm1ndcMSjYSqwA9I+6k68+/xiTyUxgkIVjRw8SbAnDZDKz89efycpMd4y3ojbtO3LowG5U1U5ebg5HDu2r9ThcWXN/L65p3wKDwcmrAyFq6UxGEflFVf/WRP1xvLQ+PwgJCQk1WsHEKbN5NWY8I4ffxpVXdyUsvA233XkfT0cP4rVZU3hk1LO8GzcHq7W40nKdOnflqUfupk+/SNq068iYRwfx/FNDuaZbT/z9m5GedobRD9/FuMfvpcf1fQkMsjiWvW9oNLExzzLpmYe5e/AINn//NQf376rVHe/esw9TJ44i6dhhelzfl60/f0//W+4C4NrrepOXm82zTwxh2y8/cMegobw2u+q7jULDWtOnXxSjhg9kXuxLXH1N9xrtnbgDCYI+VdXYcyyL48n52FXP+F2oC6qqkZScL0FoBBRN07S0tDQiIyMrBcFisaAoCj/+fqahxygaGQmCPlXV2JeUTU5+CQBd2regRVMvDM6OswoAVE0jO6+E/UnZF76xqBP9uoc6fQFrAli+fHmVILiDjPQUZk+fUOXyrt178egTzzXAiFyfBEHf+UEAOHQih+uuakkTs9Hp+TdPp2lQYlM5eCKnoYcizlI0TdPS09OJj48nOjqa4ODgc1fKnoKoQIKgTy8I5by9jFx3VUuM8pjpsqsaOw9lUFxib+iheJTq9hQUrZqD4BIFUU6CoK+6IJRr0dSLLu3ksTufqmrsP55Ndp7zx05cHtVFQb46W1yQBEFfTYIAkJ1Xwh9pBXLiuQJV1fgjtUCC0AhJFES1JAj6ahqEcidTCsjNL0GVMKCqGjn5JZxMLWjooQgdEgXhlARBX22DUO7giRxspSoe8q5lXZoGtlI5sdyYSRSELgmCvosNApSdVN2bmIXqwVVQtbLPccihtMZLoiCqkCDou5QglCuy2jl4IscjDyOpqsbBEznyTqNGTqIgKpEg6KuLIJTLyrVyKr3Qo14tq6rGqbRCsnKtDT0UcQESBeEgQdBXl0Eod+JMPnmFNo84lKRqGrkFNk6k5Df0UEQFaWlpupdLFAQgQXDmcgSh3IHj2dhK3f+bVG2lKgdOyFdYNDaRkZG6M2xKFIQEwYnLGQQAu11j77Fstz6MZFfP3kcX/jpsZ1+dX5201GQO7P292tvUdp76/Lwcoh8omxFTb776vbu2M23S6Bqvz9nUyxIFDydB0He5g1CuyFrKYTc98ayqGodO5FBkLW3oodS737f/jwP7djq9PiM9he+++uyi118X89WXT49wfhiqTLIjPIcEQV99BaFcRq6V5PRCwoJ83eZnoaoap9MLyXTBE8slVitTJ45CVe1c2fncDJRZmen86x/PYbfbKS218WLMHJo2a8ELY4ax7KOyaYXHjRzMsy/OJP6t+ZhMZlq1bkfvPw+oso3F82fw+2+/8P47C9mwbjWrv/wfAP9Z/ykH9uxkyIhRVeahb9LE27F8+Xz12VmZvDL5aYJDWhEYFFxlO9WpOPVyVFSU48tQZU/BQ0kQ9NV3EMolOU481+tmLwtVg7xCG8fPuOaJ5U0J62kZZGFe3Ifc0PdmSmxlvwsfLHudmyLvYP6Sjxj+6NO8/cYs3eV9fP24Y9BQBg+N1g0CwJDhI+ne8wYefeJ5WrVux5GDewH48fv/MODWux3z0L/21sf0j7qL9WtX6a7nw+VxDBkxitgFywgIDKrV/bRYLCQkJFTZY5AoeCAJgr6GCkK5A8ezKXWDE8+lpSoHjrvuieWkY4e4pltPALr1uN4x5e7Bfb9z3Z/6ABBxXS8OHah+Zsqa6h91Jz9t+gabzcaRg/vodl1vQsLCWf3B27w0/hH+8+Un5OboP56JR8+NtXvPPrXetsViYdWqsuDs2bOHsWPHShQ8jQRBX0MHAaDUfvYTzy68u6Ce/dS2K8+zrGkaytkJMDRNQ6PsviiK4vjZaKp29m+o8t+RvbT2H8z7S+SdbNn8Hb9t3UyvPjdhMBgc89DPfn0F9w19vLrROsaq2mu/7dTUVIYNGwaUnWOIi4uTKHgSCYK+xhCEcoXFpRw6meuSYVBVjUMncygsdu0Ty23bd2Tfnh0AbP9ls+Pyq6+5jh2//gTA7p1buarLtfj6+ZOXW/Y9TlZrMSeSDgOgKAZsJc5/nxSDwXFYKrBlMGazmf+s/z9uvvWvQNV56Ett+utq274j+8+O9detm3Vv44zeFMxyTsGDSBD0NaYglMvIKeZMZpFLhUFVNc5kFJGR43onls834Na/knL6D8Y+dg/bt/6Ir68fAA+NfIYtP3zHhDHD+eTDdxn9zGTMZjN9+kUyadxDvDF3Gh06XQ1odO3Wk5XxcXz39VrdbbRpewWH9+9m8fwZANx08x38+stmx+Ep3XnoD+yusp4R0eNYGR/Hc6MfoMRqrdUc8XpBAJlkxyNIEPQ1xiCUUxSIuCKQpr7mRj+Vp3b2xPKeY5ke/Q2wrqRf91AA3SmY5S2pbk6CoK8xBwHKnmj3J2XTs3NLzKbGvUNfalfZn5QtQdCxasUSftv6U5XLn5/8KmHhbRtgROfoBQFkT8GtSRD0NfYgVOTnbeLaToGN9meoqhq7jmRS4OLnETxNv+6hpKamEhxc9bMNjfsliLhoEgR9rhQEgILiUo780ThPPKuqxuE/ciUILkovCCBRcEsSBH2uFoRyadnFpGQ1rhPPqqqRklVEenZxQw9F1DGJgpuRIOhz1SCUSzydR0FxaaM4bq9pZXswiafzGnoo4jKQKLgRCYI+Vw8CnDvxXGpv+E88y4ll9yZRcBMSBH3uEIRytlKVfYnZDXoYSVU19iV6xjwQnkqi4AYkCPrcKQjl8otsHD3dMCeeVVXj6Klc8ots9b5tUX8kCi5OgqDPHYNQLjWzmNTs4noNg6pqpGYVk5olJ5bdnUTBhUkQ9LlzEModO5VLkbV+TjxrGhRaSzl2OvfCNxYuT6LgoiQI+jwhCFD2RL03MRu7evmP7dvVsnMZcmLZM0gUXJAEQZ+nBKGcrVRl72U+8Vz2VdhyYtmTSBRcjARBn6cFoVx+oY3E03mXJQyqqnHsdB75hXJi2ZNIFFyIBEGfpwah3JnMItJz6vbEs6pqZZ+kziyqs3UK1yBRcBESBH2eHoRyR/7Io6jEXqvv03dG0zSKSuwcPSWfWPZEEgUXIEHQJ0E4R9M09iVmYa+DvQW7WrauugiMcD0ShUZOgqBPglBVia3s6ycu5TBS+SeWS2xyYtlTSRQaMQmCPgmCc7kFNpKS8y5qj0FVNRKT88iTE8seTaLQSEkQ9EkQLiw5o4jMXGut9hhUVSMj18qZDDmx7OkMAOnp6cydO5e0tLSGHo9AguCMBKHmjpzMpdhWsxPPmqZRXGLnyEn5xLI4G4X4+HgmTZpEZGQkqampDT0mjyZB0CdBqB1V09h3LJuafNO2XS37dLQqJ5YFZ6MQHR1NREQEe/bsISoqql7CsHnj17Ve5unoe8jPr5tXM7t3biUnO7PK5RPGDOd44hGny13MuPPzc3k6+p4L3k6CoE+CcHGsNvsFTzyrqsb+pGxKbPZ6HJlozAxQNldnQkJCvYZh9QdLa73Mm8vX4e/frE62/9UXn5CdVTUKF3Ix4/b3b8aby9dVexsJgj4JwqXJLSjh+Jl83TDYVY3jZ/LJLZDHVpxjKv+HxWIhISGBqKgoRxhqYvfOrSyaE4OCQt/+t/LY6Als+eFbVry7CLPZiyBLKDGxi/lp0zd8s/5TUlOS6XNjJPv37CQ2ZjxTZr7OotlTOZ54hBKbleGPjOHG/rex8r3FbNn8Laqq0rvvAB4bPYHoB6JYvGwNOdlZ/Gvac5jMXpSW2pgxeynePr6Me2wwPa7vS3rqGQxGI9NnLXE65h8SNnAy6SjTZy9hzap4ftu2hfA27SkoKPvAzqmTSVW2sXnj145xvzh1LjOnjCU3J5uiwgLGPB9Dj159dbeXn5fDuJH3sfzjBB4feis33/ZXjh7ej73URtdr/8SxQ3swKaWsW7eWo0eP8vjjj+Pl5YXNZuOjjz4iLCyMKVOm8N///pdOnTqRlpbGwoUL6dKlS21/3i5FglA3TqcX0szPTEDTJo4XHaqqkZVn5XR6YQOPTjQ2ld59VB6G8j2GmpgX+zL/nL+Mt1d+xeEDe8nJziI7K5OZ897hjWVrsBYXs3fXdoxGIyeOH2PJ+5/z2FMTCAgMYsrM1/lp0zcALFi6irlv/Jslr81EVVXWfvI+i99by5L3vyAgMKjSCbO0lGSefGYyr731Mf2j7mL92lUYFANJiYd49InneWXu25w6kUhqSrLumLtd15vOXa5l4tQ52O0qmxI2EBf/Gc+9/E+Sjh5yuo1773/UMe7MzDT63TyQRe98ykvT5rPi3UU1erwUg8I13XoyfdYSTp08zpVXduKLtZ+QlZVJUlISf/zxB7GxsXz77bfcd999xMfHc+LECdauXcuPP/7IrFmz2LRpE4ri3nsUEoS6dehkLlabiqaVfcOq1WbnsJxYFjpM519gsVhYtWoVERERF1zYZrORl5NFaFhrAF5d+F7ZOkLCmDV9AmazmaOH9pGXmw1A5y7dMBiMldaxe+c2ftmykXEjBwNgt6vkZGfSs3c/nnvyfiJvH8Qtdwyu9CQYEhbO4vkzWBkfR0Z6Ctf9qewVekhoOM1bBAAQEBhEQX4uhIRVex9OJB7mqrPj8vdvRserulS7jXItW1rYvWMb325Yg6ZBbk7WBR+vch06di4bY0AAtw+4HoNBITAwkJycHNq2bcvEiROZM2cOycnJ9O/fnwMHDtCrVy+MRiPh4eF07969xttyRaomQahrZd92mkWvq4MALvu3qwrXVSUKqampDBs2rEYLO3uxOmv6Cyz94EuCgkOJjRnvuNxsblLltmazF/c/+ASDH4iudPnkGQtJPHqQhK/XMfqhO1n+8X8d17258BVuv/tv/CXyTjasW82xIwcAMBgqf+yipm/HUzh3R9Sz30/vbBvlvlizErPZzLy4D0k+fZKpE0ZecFvljMayMGqAXYMiqx27qlFstTNj4osMHTqCQffcywcfvM++vXuxlthR1bLblY0Zikvsjv93N1abKl/VfBlYS+zsOJTh+LcQeio9i6ampjrOKdRkT8FkMtMiMIikY4fRNI2/P/84yadOUlRUSGBLC9lZGezYtgWbreorPput7FOT13Tr6TiEVFiQT9yCV8jPz+WDZa/ToWNnRo2dhJ9/M8feBkBGehph4W1RVTubEtZTqrP+C1EMCrYSK23ad+TQgd2oqp2c7EyOHNpX7TbKx52RkUpYeFsANn7zBaW22n8K1K5qHDmZR0FxaVkUbKUkJycTGt6G/EIrn61ZQ2FRMa1at2PHjh0UFJVwNPE4u3fvxlpip8ha6pb/qapKmxB/fL2rvGYRl6iwuJTC4tKGHoZoxBxROD8ICQkJNVrBxCmzeTVmPCOH38aVV3clLLwNt915H09HD+K1WVN4ZNSzvBs3B6u18tyunTp35alH7qZPv0jatOvImEcH8fxTQ7mmW0/8/ZuRnnaG0Q/fxbjH76XH9X0JDLI4lr1vaDSxMc8y6ZmHuXvwCDZ//zUH9++q1R3v3rMPUyeOorioiD79ohg1fCDzYl/i6mu6o2ma7jb2793pGPetdwxm/bpVvPDUMELCwgFY9+mKWo0BoMhaysmU/LLdBuDxUaMZ99QTjBh6Hw89HM1X678gOzuLP9/Yj9tv6U/szGn06NkTk8m9nzANChIGIRqAommalpaWRmRkZKUgWCwWFEXhx9/PNPQYPYKvt4k2If7ovSPVbrfz8aoPGTr8Qex2O/3+/Cc2bf4Fbx+f+h9oPVM1OJmSL69uhahD/bqHOj28bgJYvnx5lSC4g4z0FGZPn1Dl8q7de/HoE8/V+fa2/vw9n658t8rlg4Y8TL8Bt1e7bGFx2R6DXhiMRiOHDx0kqn9fzF5mxowd7xFBgHN7DBIGIeqHommalp6eTnx8PNHR0QQHB5+7UvYU6l11ewyeTPYYhKg71e0pKFo1b9GRKDQMCYM+CYMQdaO6KMhXZzdC5YeS5G3klcnJZyEuP4lCIyVh0CdhEOLykig0YhIGfRIGIS4fiUIjJ2HQJ2EQ4vKQKLgACYM+CYMQdU+i4CIkDPokDELULYmCC5Ew6JMwCFF3JAouRsKgT8IgRN2QKLggCYM+CYMQl06i4KIkDPokDEJcGomCC5Mw6JMwCHHxJAouTsKgT8IgxMWRKLgBCYM+CYMQtSdRcBMSBn0SBiFqR6LgRiQM+iQMQtScRMHNSBj0SRiEqBmJghuSMOiTMAhxYRIFNyVh0CdhEKJ6EgU3JmHQJ2EQwjmJgpuTMOiTMAihT6LgASQM+iQMQlQlUfAQEgZ9EgYhKpMoeBAJgz4JgxDnSBQ8jIRBn4RBiDISBQ8kYdAnYRBCouCxJAz6JAzC00kUPJiEQZ+EQXgyiYKHkzDokzAITyVREBIGJyQMwhNJFAQgYXBGwiA8jURBOEgY9EkYhCeRKIhKJAz6JAzCU0gURBUSBn0SBuEJJApCl4RBn4RBuDuJgnBKwqBPwiDcmURBVEvCoE/CINyVASA9PZ25c+eSlpbW0OMRjZCEQZ+EQbgyZ8/3BoD4+HgmTZpEZGQkqamp9Tow4RokDPokDMJVOXu+NwBER0cTERHBnj17iIqKqpcwbN74da2XeTr6HvLzc+tk+7t3biUnO7PK5RPGDOd44hGny13MuC9F9ANR5Ofl1Os2nZEw6JMwNIwhA3vVepm01GQO7P292tvo/Y3v3bWdaZNGX9J69SxdFMuWzd/Verm64Oz53gAQHBxMQkJCvYZh9QdLa73Mm8vX4e/frE62/9UXn5CdVTUKF3Ix43YnEgZ9EgbX8Pv2/3Fg306n12ekp/DdV5/V+XqdeerZKfS96ZZaL1cXnD3fO36DLRYLCQkJREVFOW5YE7t3bmXRnBgUFPr2v5XHRk9gyw/fsuLdRZjNXgRZQomJXcxPm77hm/WfkpqSTJ8bI9m/ZyexMeOZMvN1Fs2eyvHEI5TYrAx/ZAw39r+Nle8tZsvmb1FVld59B/DY6AlEPxDF4mVryMnO4l/TnsNk9qK01MaM2Uvx9vFl3GOD6XF9X9JTz2AwGpk+a4nTMf+QsIGTSUeZPnsJa1bF89u2LYS3aU9BQR4Ap04mVdnG5o1fO8b94tS5zJwyltycbIoKCxjzfAw9evXV3V5+fi7PPXk/LQJaMvCvD9Cm7RW8ufAVzF5e+Pk1ZfKMhRgMxhqvr6GVh6FNiD8GpaFH03iUh+FkSj6FxaUNPRy3U2K1MnXiKFTVzpWdIxyX79v9G3ELZuDt7Yuff1P+PnMR1uIiXhgzjGUffQPAuJGDefbFmcS/NR+TyUyr1u3o/ecBVbaxeP4Mfv/tF1atWEK/AQN5ZfLTBIe0IjAo2HGb5W8vYOuWTZSW2rhl4L3cNXh4pfWW2mxVnv8MBv339CyaE0PPXn1RDAa++vxjWgS0JOnYQW67628c3LeLo4f388S4l+l1w01VtvvAQ0/yx4ljvPL3cfj5N6Vb9+tJOnaIV+a+XaPH8/zn+4SEBCwWS+V3H5WHobwgNTEv9mX+OX8Zb6/8isMH9pKTnUV2ViYz573DG8vWYC0uZu+u7RiNRk4cP8aS9z/nsacmEBAYxJSZr/PTprIf2oKlq5j7xr9Z8tpMVFVl7Sfvs/i9tSx5/wsCAoPQtHMvTdNSknnymcm89tbH9I+6i/VrV2FQDCQlHuLRJ57nlblvc+pEIqkpybpj7nZdbzp3uZaJU+dgt6tsSthAXPxnPPfyP0k6esjpNu69/1HHuDMz0+h380AWvfMpL02bz4p3Fzl9jIwGI0cO7uOlafO5ZeC9zH/1ZabNWsK8uA+58uoINqxbXav1NQblYdBkj6ESgwLtQv3xaSJ7DHVtU8J6WgZZmBf3ITf0vZkSWwkA82Jf4uXpC5i/5CPCwtvw1eerdZf38fXjjkFDGTw0WjcIAEOGj6R7zxsY9sgYPlwex5ARo4hdsIyAwCAAVFXFbPIiLn4tS97/nNX/fgsfn8rr1Xv+uxCDwUB2Vjovxsxh+KNP89nH7zPpH/N48pnJ/OfLT3S3q6oqHyx7g/tHjGLh0tXk5mShKDV/lXb+8335HkOV31yLxcKqVauIiIjQW08lNpuNvJwsQsNaA/DqwvfK1hESxqzpEzCbzRw9tI+83GwAOnfphsFgrLSO3Tu38cuWjYwbORgAu10lJzuTnr378dyT9xN5+yBuuWNwpTsbEhbO4vkzWBkfR0Z6Ctf9qewVdUhoOM1bBAAQEBhEQX4uhIRVex9OJB7mqrPj8vdvRserulS7jXItW1rYvWMb325Yg6ZBbk5WtdsJtoQSbAmjxGrlyKG9/GPSkwCUFBfzpxtuqvX6GgMvk4GmvibsciypElUFQy3+OEXNJB07xDXdegLQrcf1KCjY7aVkZ6bTpl1HACK6X8/Pm78j8rZBl7y9xKOHGBE9FoDuPftw/NhhDAYDXt7evDBmGN7ePuTmZGMtLqq0nLPnvwvp0PFqAJo1b0H7Dlc6/p2fn+d0u8cTDxP95PMA/PmmKDas0w+iMxWf7/fs2cPYsWOrRiE1NZVhw4bVaIXOfu9nTX+BpR98SVBwKLEx4x2Xm81NqtzWbPbi/gefYPAD0ZUunzxjIYlHD5Lw9TpGP3Qnyz/+r+O6Nxe+wu13/42/RN7JhnWrOXbkAECVXTStBi9jNU1D4dwdUVW12m2U+2LNSsxmM/PiPiT59EmmThhZ7XbMXl4AGE1GmjZtweJllY9brlkVX6v1NbSApl5c3a4FBjl+VIld1diXmEVBsa2hh+J2NE1zvDjUNA0N7ey/K95GRVEMQOXfS3up/WK26Nieai9bPvHoQf7z5ScsXfElJpNZ92S3s+e/CzEYDRX+XeHFs6Y53a6maeeeiC/ihUjF5/uIiAji4uIqHz5KTU11HGOqyZ6CyWSmRWAQSccOo2kaf3/+cZJPnaSoqJDAlhayszLYsW0LtrO7eRXZbGV/NNd06+k4hFRYkE/cglfIz8/lg2Wv06FjZ0aNnYSff7NKtc1ITyMsvC2qamdTwnpKddZ/IYpBwVZipU37jhw6sBtVtZOTnfzhZFIAAByqSURBVMmRQ/uq3Ub5uDMyUgkLbwvAxm++oNRWsycBo9GEJSSMfbt/A2DDutXs3bX9otfXEAKbNZEg6LCrGnuPZZFb0Hh/dq6sbfuO7NuzA4Dtv2wGyv6eAoOCSTp2GIBdO7bRuUs3fP38ycste9ee1VrMiaSy6xXFgK3E+fOFYjA4Dku1bd+R/We39+vWsu1lpKcSbAnDZDKz89efycpMx2azOdZbWmqr0fNfbTnbbnib9o53Pf1vc0Kt1nn+832Vcwp6N6iJiVNm82rMeEYOv40rr+5KWHgbbrvzPp6OHsRrs6bwyKhneTduDlZrcaXlOnXuylOP3E2ffpG0adeRMY8O4vmnhnJNt574+zcjPe0Mox++i3GP30uP6/sSGGRxLHvf0GhiY55l0jMPc/fgEWz+/msO7t9Vqweke88+TJ04iuKiIvr0i2LU8IHMi32Jq6/pjqZputvYv3enY9y33jGY9etW8cJTwwgJCwdg3acrarTtF2Pm8sa86Ywf9Tc2b/yKKzpdfUnrq08tmzWhc9vmEoTz2FWNPUezyCuUIFwuA279Kymn/2DsY/ewfeuP+Pr6ATBx6hzm/fNFXnhqGFkZadwxaChms5k+/SKZNO4h3pg7jQ6drgY0unbrycr4OL77eq3uNtq0vYLD+3ezeP4MRkSPY2V8HM+NfoASqxVN07j2ut7k5Wbz7BND2PbLD9wxaCivzZ7iWO/3363Xff4rKiy4pPvubLsPRo/l/XcWMuHpEXh5e2M01fxcll4QABRN07S0tDQiIyOr3EBRFH78/cwl3RnhPlo29+aqNs0kCOexqxq7j2ZSUCTvOBL169D+3WiaRudrruXz//s3aSnJjHz6xQsu1697KECVIMDZt6QuX75ctxiuLiM9hdnTJ1S5vGv3Xjz6xHN1vr2tP3/PpyvfrXL5oCEP02/A7XW+vfoU1MKbK1tLEM5XatfYczSTAnkLqktZtWIJv239qcrlz09+1XEYty7Fxown57zPRfn4+jFjzluXtF6vJk14NeZZzF5eeDXx5h+vxtV4WWfP94qmaVp6ejrx8fFER0cTHHzu/biypyAALAHedAyXIJyv1F62hyCfSRCupl/3UFJTUys935dTtGreoiNRECGBPlzRqqkEoQJNA7uqsutIFkVWCYJwPf26hzp9d6Z8wkY4FdrShw5hEoSKzgUhkyLrxbzNUYjGTaIgdIUF+dI+1F+CUIGmQam9LAjFJRIE4Z4kCqKKVsF+tAvxkyBUoGkapXaN349kYpUgCDcmURCVtLb40cYiQahI0zRspRq7jmRitUkQhHuTKAiHNiH+tA72lSBUoGkaJaVlh4xKbGpDD0eIy06iIABoG+pPeJAEoSJHEA5nUlIqQRCeQaIgaB/mT1hLCUJFmgZWW9kegk2CIDyIRMHDdWjVlNBAHwlCBZoGxSV2dh+VIAjPI1HwYFeEN8USIEGoqCwIpew6kkWpXYIgPI9EwUN1at2MoBbeGCUIDqqmUWwt20MotcvEQcIzSRQ80JVtmtOyeRMJQgWqplF0Ngh2CYLwYBIFD6IoZ4PQrIkcMqpAVTUKraXsOZolU4sKjydR8BCKAp3bNqdFUwlCRaqmUVhcyp5jEgQhQKLgERQFrm7Xghb+XhKEClRVI7+olL2JWagSBCEAiYLbUxTo0q4FzSUIlaiqRl6RjX3HslGdf3u8EB5HouDGFEWhS/sWNPczSxAqUFWNvEIb+xIlCEKcT6LgpgyKwjUdWtDUV4JQkapq5BTY2J+U7XSSESE8mUTBDRkMCl07tMDfR4JQkV3VyMkv4cDxbKQHQuiTKLgZg0Eh4ooA/LxNEoQKVFUjO7+EgxIEIaolUXAjxrNB8PUxYVAkCOXsqkZWrpVDJ3MkCEJcgETBTRgNCt06BuLTxChBqMCuamTmWjl0IqehhyKES5AouAGjUYKgR1U1MrKLOfxHbkMPRQiXIVFwcSajgW4dA/CWIFRiVzXSsos5KkEQolYkCi7MZDRwbacAvL1MSA/OsasaqVlFHDuV19BDEcLlSBRclNlk4NpOgTQxGyUIFdhVjZSMIhKTJQhCXAyJgguSIOizqxpn0gtJOpPf0EMRwmVJFFyMl7ksCF4mgwShAruqcTq9kBMSBCEuiUTBhXiZDXTvFIjZZECRIjioqsaptAJOphQ09FCEcHkSBRfRxGzk2isDMRsVCUIFqqpxMqWAP9IkCELUBYmCC2jiZaR7p0BMEoRKVFXjeEoBpyUIQtQZiUIj5+1l5NpOgZiMcg6hIlXVSDqTT3J6YUMPRQi3IlFoxHyalAXBaJAgVKSqGonJeZzJKGrooQjhdiQKjZRPExPXdgqQIJxHVTWOnc4jJVOCIMTlIFFohHy9TXTrWHYOQZyjqhpHTuWSllXc0EMRwm1JFBoZv7NBMEoQKlFVjcN/5JKeLUEQ4nKSKDQi/j5mIjoGYJTJcSpRVY1DJ3PIyLE29FCEcHsGgPT0dObOnUtaWlpDj8dj+ftKEPSoqsbBExIEIeqLASA+Pp5JkyYRGRlJampqQ4/J4zT1NRNxhQThfKqqceBEDpm5EgQh6osBIDo6moiICPbs2UNUVNQlh2HLD98yd+akOhlgTWze+HWtl4l+IIr8vByWLoply+bvqlw/ZGCvuhjaBTXzM9NVglCFqmrsP55NlgRBiHplAAgODiYhIaFOw1CfVn+w9KKXferZKfS96ZY6HE3N+fmYy04qSxAqUVWNfUnZZOeVNPRQ3E4TLyNNvIwNPQzRiDlONFssFhISEoiKinKEoSYeHXIzN/a/jeTTJ8nJymTarCUA5GRnMvm5aE6dTGLQkIcZMnwkW374lhXvLsJs9iLIEkpM7GLSUpKJjRmP0WTCWlzM1H++TqvW7Vg0eyrHE49QYrMy/JEx3Nj/Nt3tr/3kffbv2UlszHgSjx7klTlv06p1O1JTkpn0zEO8/cEGZk4ZS25ONkWFBYx5PoYevfo6ll80J4aevfpyw42RTJ04ClW1c2XniEt5TGtM0zSsNjuqWi+bcxlWm4qtVB6UumY2GbiiVVMAjvyRK4+x0FXp3Ufnh6EmFIOBLhE9ePKZyfz7vTf4cs1KOnTqzMnjR3n3o28oLirkiQfvYMjwkWRnZTJz3jsEW8L4+/OPs3fXdvbu3s5fou5kyPCRHD64h8yMNBKPHgRgwdJVFBUW8MSDA/nzTbdgMBiqbP/e+x/l38veYMrM11nx7iJ+2vQN9z/4BD99/x8G3HIXmZlp9Lt5ILffNYSjh/axeMGMSlEotylhPS2DLLw0bT47f/2Z9etWXczjWSuFxaXsS8ymTYg/srNQWZsQf06m5FNYXNrQQ3ELikGhTagfGqAAbUP8OJacj6ZqDT000chUeZa1WCysWlW7J8SI7mXH36+4sgsnjh8BoEtED8xmM02bNafUVnYYwBISxqzpE3j52Uc5fGA3ebnZ9Op9E59++C5vzJuGtbiYiO692L1zG79s2ci4kYN58ZmHsNtVcrIzLziOAbfczY+bvgHKzjMMuOWvtGxpYfeObUwcO4I3X/snuTlZussmHTvENd16AtCtx/Uo1M+zdGFxKSdT8pG/zcoMSlkYfL3lXdN1IbylL2ajwfFbbTIZCG/p26BjEo1Tlb+41NRUhg0bVquV2O1lr+Y0VYWzv3ZGY9U/5lnTX2DpB18SFBxKbMx4ADp17kr86u/4308bWTx/OncOGorZ7MX9Dz7B4AeiazWOtu07kpOdSeqZ02RnZdD+iitZsyoes9nMvLgPST59kqkTRuouq2ma4xtINU1Do/6epcvDIHsMlZWHQfYYLk1gsyb4+ZowVPi+FIOi4OdrIrBZE3l3l6ik0p5Camqq49BRRETNj6vv3rENgL27ttOh41W6tykttVFUVEhgSwvZWRns2LYFm62E775ey6mTSdx86908NvoFDu7fzTXdevLT2Vf8hQX5xC14pdrt22w2x79v/MutvPXGvxznIDIyUgkLbwvAxm++oLTCbStq274j+/bsAGD7L5trfN/riuwx6JM9hkvj523CEuBTKQjlDIqCJcBHHltRiSMK5wchISGhxis5dGA3k8Y9xJ7ff+XuwSN0b2Mymbntzvt4OnoQr82awiOjnuXduDlYQloxZ+aLjB/1Nz547w3uf3AUffpF0qZdR8Y8OojnnxrqOKzjTKfOXXnqkbsB6H/LXXy7YQ0Dbi37/1vvGMz6dat44alhhISFA7Du0xVV1jHg1r+ScvoPxj52D9u3/oivr1+N739dkTDokzBcHLPRQGuLX7VfqKgo0Mbih8lY9Xyd8EyKpmlaWloakZGRlYJgsVhQFIUffz9T7QqiH4hi8bI1+DdtXk9Ddn++3iY5lKRD1ZBDSTWkKAodWvnjZTJe+Ft2NbCW2kk6nY+qySsST9Cveyiak5+1CWD58uVVgtDYrFqxhN+2/lTl8ucnv+o4POQu5ByDPjnHUHNhLX3xMtXwa9eVsrerhrX04ZRMWuTxFE3TtPT0dOLj44mOjiY4OPjclTXYUxCXj+wx6JM9huoFNvUiOMAHQy1/cVRVIzWriCz50KDbq25PQdGcXYNEoTGQMOiTMOjz9TbSJqTpRf++qBqcOJNHkdVetwMTjUp1UZCzS42cnHzWJyefqzKZFNpYLu0FhEGBNhZ/TCZ5FeKpJAouQMKgT8JwjqIotLU0dXzW5lIYDGVxqYt1CdcjUXAREgZ9EoYyoS198DIpdTKft6JAE5OB0JY+l74y4XIkCi5EwqDP08MQ0MyLZn5mlDo88aQYFJr7mQlo6lVn6xSuQaLgYiQM+jw1DD5NjFgCfHU/sXypFEXBEuiLdxPPekw9nUTBBUkY9HlaGIxG5bK/M82glH2jqtEo5xc8hUTBRUkY9HlKGBQF2lr8qY9vpzAYOHvi+fJvSzQ8iYILkzDo84QwhAb64uVlgHr4incFhSZeBkID5au2PYFEwcVJGPS5cxia+3vR3N98Wc4jOGNQFJr7m2nub663bYqGIVFwAxIGfe4YBm8vE6EtfRvkMwSKohDa0g9vL/d5PEVVEgU3IWHQ505hMBnLptRsyK88MSjQJtQPk5x4dlsSBTciYdDnDmFQzt6HxjDtgdEAreXEs9tqBL9ioi5JGPS5ehhCAnzwMhvrbe7w6pSdeDZiCZBPPLsjiYIbkjDoc9UwNPfzonlTr0b1TbkGBVo09aK5n3zi2d1IFNyUhEGfq4XB22wkNOjyfGL5UhkUhdAgX7zNxoYeiqhDEgU3JmHQ5yphMBoU2oQ27rk0yk48+2M0yFOJu5CfpJuTMOhr7GFoTCeWL8RogNYhvnLi2cWkpaXpXu4Cv3LiUkkY9DXmMAQH+ODtZXCJOQ0URcHHy0iwnHh2KZGRkaSmpla5XKLgISQM+hpjGJr5ehHQtIlLBKGcoigENG1CU9+GPfE8ZGCvWi+TlprMgb2/V3ubzRu/rnLZ3l3bmTZp9CWtty7l5+UQ/UBUjW+/Z88eoqKiqoRBouBBJAz6GlMYmngZCQv2bdTnEZwxKNAq2JcmXq514vn37f/jwL6dTq/PSE/hu68+q/P1NrSIiAjdMDT8X4GoV+VhuNxfuexqysNwMiWfwuLSBhmD0WCgbUjDfmL5UpV/1faxU3nY6+HVR4nVytSJo1BVO1d2jnBcvm/3b8QtmIG3ty9+/k35+8xFWIuLeGHMMJZ99A0A40YO5tkXZxL/1nxMJjOtWrej958HVNnG4vkz+P23X1i1Ygn9BgzklclPExzSisCgYMdtlr+9gK1bNlFaauOWgfdy1+DhldZbarOx4t1FmM1eBFlCiYldjMHJyfnX5/6DwoJ8kk+dYNE7n7Jo9lSOJx6hxGZl+CNjuLH/bWz54dsq66uthIQEoqKiHGFISEjAYrHInoInkj0GfQ29x9Da4usW7+IxGhRaW/zqZVubEtbTMsjCvLgPuaHvzZTYSgCYF/sSL09fwPwlHxEW3oavPl+tu7yPrx93DBrK4KHRukEAGDJ8JN173sCwR8bw4fI4howYReyCZQQEBgGgqipmkxdx8WtZ8v7nrP73W/j4VF5vdlYmM+e9wxvL1mAtLmbvru1O75PBYMSrSRMWvfMpP20qC9iCpauY+8a/WfLaTFRVrdX6nLFYLCQkJFTZY5A9BQ8lewz6GmqPwRLgjbeXyS3ewaMoCt5eJiwB3qRmFV/WbSUdO8Q13XoC0K3H9Sgo2O2lZGem06ZdRwAiul/Pz5u/I/K2QZe8vcSjhxgRPRaA7j37cPzYYQwGA17e3rwwZhje3j7k5mRjLS6qtJwlJIxZ0ydgNps5emgfebnZ1W6nS9ceAOzeuY1ftmxk3MjBANjtKjnZmbVenzMWi4VVq1Y5wjB27FiJgieTMOir7zA09TUT0MzbrX4GBgMENPOm0Gonv9B22bajaZrjhLymaWhoZ/9d8TYqilJ17gl7qf1itujYnmovWz7x6EH+8+UnLF3xJSaTWfdk96zpL7D0gy8JCg4lNmb8Bbdi9io7YW82e3H/g08w+IHoS1qfM6mpqQwbNgwoO8cQFxcnh488nRxK0ldfh5K8zEZaBbv2eQRnDAqEB/vhdRk/8dy2fUf27dkBwPZfNgNgNJoIDAom6dhhAHbt2EbnLt3w9fMnLzcHAKu1mBNJZdcrigFbSYnTbSgGg+OwVNv2Hdl/dnu/bi3bXkZ6KsGWMEwmMzt//ZmszHRsNptjvaWlNoqKCglsaSE7K4Md27ZgsznfXkXXdOvpOIRUWJBP3IJXLml9FaWmpjrOKURERDjOKciegpA9Bicu9x6DwaDQLsTPLQ4ZOaMo0C7Ej6On81AvwyuPAbf+lW83fMbYx+6h67V/wte37FzGxKlzmPfPF/Hy8iYgMIjRz0zGbDbTp18kk8Y9hCU0nA6drgY0unbryfSXxxDQMphbBt5bZRtt2l7B4f27WTx/BiOixzH9paf4cu1HdOjYGU3TuPa63ix/az7PPjGEiOuu545BQ3lt9hQG3feQY7233XkfT0cPIjSsNY+MepZ34+bQ+88D8PGt/txLn36RbP35e8Y8OghVtTPskTGYTGbd9ZUfRqspvSAAKJqmOf1JKYrCj7+fqdWGhOvy9TZJGHSoGpclDG1D/PDxNjXK7zWqS6oGRcU2TqQUNPRQxFn9uocCVAkCyFtSRQWyx6DvcuwxBAX44NPE7BGPs0EBnyZmglr4kJ5ddOEFGsiqFUv4betPVS5/fvKrhIW3rfPtxcaMJycrs9JlPr5+zJjzVp1vS49eEED2FIQO2WPQV1d7DE19zYQH+aF42Bk9TYU/0gsu64lnUTP9uoeSmppKcHBwles87NdS1IScfNZXFyefvcwGWnlgEAAUA4QH+eFl9sA73wjpBQEkCsIJCYO+SwmDQVFo6+F7YGWfePZ3+/MorkyiIJySMOi72DCEl39i2ZOfDxUwGQyEW3wbeiTCCYmCqJaEQV9twxDU3BtfbxNu8C0Wl0wxgJ+3iaDm3g09FKFDfkXFBUkY9NU0DH4+ZU+AcsjkHEVRCGrujZ+PvAGysZEoiBqRMOi7UBi8TAZaB/t75InlC1EM0DrYHy+TPDiNifw0RI1JGPQ5C4NBUWgT6t6fWL5UigJtQv1kL6oRMQCkp6czd+5cp3N2ClFOwqBPLwytLD6YjUaJQjUUBcxGI62CZSrPxsIAEB8fz6RJk5zO2SlERRIGfRXD0LK5N/7eZglCDSgK+PmYaSknnhsFA0B0dLTTqdkuxpYfvmXuzEl1MsCa0Js/FS48X6uz5S7GyOG3kZnuOUGVMOgzKNAu1B9LgLdLzbHc0AyK4phTQjQsE5R9sk1vajZXsfqDpdx088BaLVM+72ptlxPnFBaXcuJMHv4+5oYeSqPiZTaholJqUxt6KC7FZDJgu6g5DkRdcmS5fGq2imGoiUeH3MyN/W8j+fRJcrIymTZrCQA52ZlMfi6aUyeTGDTkYYYMH6k7r2haSjKxMeMxmkxYi4uZ+s/XadW6ne68pHrWfvI++/fsJDZmPC9Onas7X6vedivOu3rTzXfwr2nPYTJ7UVpqY8bspbQMCtHd3muzplBUVICqqpw6eZxxE6dzTUSPs2NZwW+//kSJ1crcxSvx8fFl5pSx5OZkU1RYwJjnY+jRqy8r31vMls3foqoqvfsO4LHREzi4bxdvLnwFs5cXfn5NmTxjId4+jf8DPkVWO0VW+UMWwl1UevfR+XN21oRiMNAlogfT/vUmPXvfyJdrVgJw8vhRXpn7DnHx6/j0w2UAuvOKbvzuC/4SdScLl67m+cmxZGakOZ2XVM+99z9KQGAQU2a+7nS+Vr3tVpx3NS0lmSefmcxrb31M/6i7WL92VbX318+/GVNmvs7YF/7BsjfnOq5r26ETi5d9RkT3XvzvpwQyM9Pod/NAFr3zKS9Nm8+KdxcBZSFb/N5alrz/BQGBQWiaxvxXX2barCXMi/uQK6+OYMM6/TllhRDicqpyAK/inJ01FdG97Nj9FVd2YdN3X9KhU2e6RPTAbDZjNjen9OyTs968or1638TUiaNIPnWCm2/9KxHde7F0UazuvKTlE2U7ozdfq7PtNm8R6FguJCycxfNnsDI+joz0FK77U98a3d+OV3bhRNIRx+XX9rgBgGBLKAV5ebRsaWH3jm18u2ENmga5OVkA9Ozdj+eevJ/I2wdxyx2DsZWUcOTQXv4x6UkASoqL+dMNN9XgkRdCiLpVJQoV5+ysKbu97KuENVWl/ItdjMaqJ4z05hXt1Lkr8au/438/bWTx/OncOWio03lJL8TZfK0Xms/0zYWvcPvdf+MvkXeyYd1qjh05UP39LS27v6qqVjqZaDKem3ZQ0zS+WLMSs9nMvLgPST59kqkTRgIwecZCEo8eJOHrdYx+6E6WffQNTZu2YPGyz2p1f4UQoq5VOnx0/pydNbV7xzYA9u7aToeOV+nextm8ot99vZZTJ5O4+da7eWz0Cxzcv1t3XtLq2Gxl38+uN1+rs+1WnHc1Iz2NsPC2qKqdTQnrHXs2zuzaudVxf9tfoX9/ATIyUh2Tc2z85gtKbTby83P5YNnrdOjYmVFjJ+Hn34zCgnwsIWHs2/0bABvWrWbvru3VjkEIIS4Hx8t5vUmcQ0L0T7ae79CB3Xz1+WqKi4t4deF77NqxteqGnMwr+mLMXObMfBFvbx9UTWXilNm063BllXlJq9Opc1eeeuRuXnv7kyrztTrb7oIlHznmXb1vaDSxMc8SFBzCPUMe4bXZU7j9r/fTpet1utsrsVqJmTiKUyeP8/L0BU7Hdesdg5n20lP878f/ctfg4QAkfL2W9LQzjH74LsxmMz2u70tgkIUXY+aycNYUzGYzfv5NufnWuBo99kIIUZcUTdO0tLQ0IiMjq0ziXJOZ16IfiGLxsjX4N21eT0NuWIvmxNCzV19uiryjoYcihBAXpV/3UJxNumkCWL58eZUgNDaNZf7UwKDG99gIIURdUTRN09LT04mPjyc6OrrSFG0yR7MQQrif6vYUFM3ZNUgUhBDCHVUXBfnqbCGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4SBSGEEA4X/OpsIYQQ7qfamddqu5AQQgj3JIePhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOEgUhBBCOPw/ehyq/QyipaQAAAAASUVORK5CYII=" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
@@ -100,18 +100,14 @@ and or the OR of all tlasts.</li>
 </section>
 <section id="optimization" class="level4">
 <h4>Optimization:</h4>
-<ul>
-<li>When you select Blocking mode for the AXI behavior, you can then
+<p>When you select Blocking mode for the AXI behavior, you can then
 select whether the core is configured for minimum Resources or maximum
-Performance.</li>
-</ul>
+Performance.</p>
 </section>
 <section id="displaying-port-names-on-the-block-icon" class="level4">
 <h4>Displaying Port Names on the Block Icon:</h4>
-<ul>
-<li>You can select Display shortened port names to trim the length of
-the AXI port names on the block icon.</li>
-</ul>
+<p>You can select Display shortened port names to trim the length of the
+AXI port names on the block icon.</p>
 </section>
 </section>
 </section>
@@ -121,144 +117,181 @@ the AXI port names on the block icon.</li>
 <h3>Page 1 tab</h3>
 <section id="functional-selection" class="level4">
 <h4>Functional selection</h4>
-<ul>
-<li><h4 id="rotate">Rotate</h4>
+<section id="rotate" class="level5">
+<h5>Rotate</h5>
 <p>When selected, the input vector, (real, imag), is rotated by the
 input angle using the CORDIC algorithm. This generates the scaled output
-vector, Zi * (real’, imag’).</p></li>
-<li><h4 id="translate">Translate</h4>
+vector, Zi * (real’, imag’).</p>
+</section>
+<section id="translate" class="level5">
+<h5>Translate</h5>
 <p>When selected, the input vector (real, imag) is rotated using the
 CORDIC algorithm until the imag component is zero. This generates the
 scaled output magnitude, Zi * Mag(real, imag), and the output phase,
-Atan(imag/real).</p></li>
-<li><h4 id="sin_and_cos">Sin_and_Cos</h4>
+Atan(imag/real).</p>
+</section>
+<section id="sin_and_cos" class="level5">
+<h5>Sin_and_Cos</h5>
 <p>When selected, the unit vector is rotated, using the CORDIC
 algorithm, by input angle. This generates the output vector (Cos( ),
-Sin( )).</p></li>
-<li><h4 id="sinh_and_cosh">Sinh_and_Cosh</h4>
+Sin( )).</p>
+</section>
+<section id="sinh_and_cosh" class="level5">
+<h5>Sinh_and_Cosh</h5>
 <p>When selected, the CORDIC algorithm is used to move the vector (1,0)
 through hyperbolic angle p along the hyperbolic curve. The hyperbolic
 angle represents the log of the area under the vector (real, imag) and
 is unrelated to a trigonometric angle. This generates the output vector
-(Cosh(p), Sinh(p)).</p></li>
-<li><h4 id="arc_tan">Arc_Tan</h4>
+(Cosh(p), Sinh(p)).</p>
+</section>
+<section id="arc_tan" class="level5">
+<h5>Arc_Tan</h5>
 <p>When selected, the input vector (real, imag) is rotated (using the
 CORDIC algorithm) until the imag component is zero. This generates the
-output angle, Atan(imag/real).</p></li>
-<li><h4 id="arc_tanh">Arc_Tanh</h4>
+output angle, Atan(imag/real).</p>
+</section>
+<section id="arc_tanh" class="level5">
+<h5>Arc_Tanh</h5>
 <p>When selected, the CORDIC algorithm is used to move the input vector
 (real, imag) along the hyperbolic curve until the imag component reaches
 zero. This generates the hyperbolic “angle,” Atanh(imag/real). The
 hyperbolic angle represents the log of the area under the vector (real,
-imag) and is unrelated to a trigonometric angle.</p></li>
-<li><h4 id="square_root">Square_Root</h4>
+imag) and is unrelated to a trigonometric angle.</p>
+</section>
+<section id="square_root" class="level5">
+<h5>Square_Root</h5>
 <p>When selected a simplified CORDIC algorithm is used to calculate the
-positive square root of the input.</p></li>
-</ul>
+positive square root of the input.</p>
+</section>
 </section>
 <section id="architectural-configuration" class="level4">
 <h4>Architectural configuration</h4>
 <p>Configuration:</p>
-<ul>
-<li><h4 id="word_serial">Word_Serial</h4>
-<p>Select for a hardware result with a small area.</p></li>
-<li><h4 id="parallel">Parallel</h4>
-<p>Select for a hardware result with high throughput.</p></li>
-</ul>
+<section id="word_serial" class="level5">
+<h5>Word_Serial</h5>
+<p>Select for a hardware result with a small area.</p>
+</section>
+<section id="parallel" class="level5">
+<h5>Parallel</h5>
+<p>Select for a hardware result with high throughput.</p>
+</section>
 </section>
 <section id="pipelining-mode" class="level4">
 <h4>Pipelining mode</h4>
-<ul>
-<li><h4 id="no_pipelining">No_Pipelining</h4>
-<p>The CORDIC core is implemented without pipelining.</p></li>
-<li><h4 id="optimal">Optimal</h4>
+<section id="no_pipelining" class="level5">
+<h5>No_Pipelining</h5>
+<p>The CORDIC core is implemented without pipelining.</p>
+</section>
+<section id="optimal" class="level5">
+<h5>Optimal</h5>
 <p>The CORDIC core is implemented with as many stages of pipelining as
-possible without using any additional LUTs.</p></li>
-<li><h4 id="maximum">Maximum</h4>
+possible without using any additional LUTs.</p>
+</section>
+<section id="maximum" class="level5">
+<h5>Maximum</h5>
 <p>The CORDIC core is implemented with a pipeline after every shift-add
-sub stage.</p></li>
-</ul>
+sub stage.</p>
+</section>
 </section>
 <section id="data-format" class="level4">
 <h4>Data format</h4>
-<ul>
-<li><h4 id="signedfraction">SignedFraction</h4>
+<section id="signedfraction" class="level5">
+<h5>SignedFraction</h5>
 <p>Default setting. The real and imag inputs and outputs are expressed
 as fixed-point 2’s complement numbers with an integer width of
-2-bits.</p></li>
-<li><h4 id="unsignedfraction">UnsignedFraction</h4>
+2-bits.</p>
+</section>
+<section id="unsignedfraction" class="level5">
+<h5>UnsignedFraction</h5>
 <p>Available only for Square Root functional configuration. The real and
 imag inputs and outputs are expressed as unsigned fixed-point numbers
-with an integer width of 1-bit.</p></li>
-<li><h4 id="unsignedinteger">UnsignedInteger</h4>
+with an integer width of 1-bit.</p>
+</section>
+<section id="unsignedinteger" class="level5">
+<h5>UnsignedInteger</h5>
 <p>Available only for Square Root functional configuration. The real and
-imag inputs and outputs are expressed as unsigned integers.</p></li>
-</ul>
+imag inputs and outputs are expressed as unsigned integers.</p>
+</section>
 </section>
 <section id="phase-format" class="level4">
 <h4>Phase format</h4>
-<ul>
-<li><h4 id="radians">Radians</h4>
+<section id="radians" class="level5">
+<h5>Radians</h5>
 <p>The phase is expressed as a fixed-point 2’s complement number with an
-integer width of 3-bits, in radian units.</p></li>
-<li><h4 id="scaled_radians">Scaled_Radians</h4>
+integer width of 3-bits, in radian units.</p>
+</section>
+<section id="scaled_radians" class="level5">
+<h5>Scaled_Radians</h5>
 <p>The phase is expressed as fixed-point 2’s complement number with an
 integer width of 3-bits, with pi-radian units. One scaled-radian equals
-Pi * 1 radians.</p></li>
-</ul>
+Pi * 1 radians.</p>
+</section>
 </section>
 <section id="inputoutput-options" class="level4">
 <h4>Input/Output Options</h4>
-<ul>
-<li><h4 id="input-width">Input width</h4>
+<section id="input-width" class="level5">
+<h5>Input width</h5>
 <p>Controls the width of the input ports cartesian_tdata_real,
 cartesian_tdata_imag, and phase_tdata_phase. The Input width range 8 to
-48 bits.</p></li>
-<li><h4 id="output-width">Output width</h4>
+48 bits.</p>
+</section>
+<section id="output-width" class="level5">
+<h5>Output width</h5>
 <p>Controls the width of the output ports dout_tdata_real,
 dout_tdata_imag, and dout_tdata_phase. The Output width range 8 to 48
-bits.</p></li>
-</ul>
+bits.</p>
+</section>
 </section>
 <section id="round-mode" class="level4">
 <h4>Round mode</h4>
-<ul>
-<li><h4 id="truncate">Truncate</h4>
-<p>The real, imag, and phase outputs are truncated.</p></li>
-<li><h4 id="round_pos_inf">Round_Pos_Inf</h4>
-<p>The real, imag, and phase outputs are rounded (1/2 rounded
-up).</p></li>
-<li><h4 id="round_pos_neg_inf">Round_Pos_Neg_Inf</h4>
+<section id="truncate" class="level5">
+<h5>Truncate</h5>
+<p>The real, imag, and phase outputs are truncated.</p>
+</section>
+<section id="round_pos_inf" class="level5">
+<h5>Round_Pos_Inf</h5>
+<p>The real, imag, and phase outputs are rounded (1/2 rounded up).</p>
+</section>
+<section id="round_pos_neg_inf" class="level5">
+<h5>Round_Pos_Neg_Inf</h5>
 <p>The real, imag, and phase outputs are rounded (1/2 rounded up, -1/2
-rounded down).</p></li>
-<li><h4 id="nearest_even">Nearest_Even</h4>
+rounded down).</p>
+</section>
+<section id="nearest_even" class="level5">
+<h5>Nearest_Even</h5>
 <p>The real, imag, and phase outputs are rounded toward the nearest even
-number (1/2 rounded down and 3/2 is rounded up).</p></li>
-</ul>
+number (1/2 rounded down and 3/2 is rounded up).</p>
+</section>
 </section>
 </section>
 <section id="page-2-tab" class="level3">
 <h3>Page 2 tab</h3>
 <section id="advanced-configuration-parameters" class="level4">
 <h4>Advanced Configuration Parameters</h4>
-<ul>
-<li><h4 id="iterations">Iterations</h4>
+<section id="iterations" class="level5">
+<h5>Iterations</h5>
 <p>Controls the number of internal add-sub iterations to perform. When
 set to zero, the number of iterations performed is determined
-automatically based on the required accuracy of the output.</p></li>
-<li><h4 id="precision">Precision</h4>
+automatically based on the required accuracy of the output.</p>
+</section>
+<section id="precision" class="level5">
+<h5>Precision</h5>
 <p>Configures the internal precision of the add-sub iterations. When set
 to zero, internal precision is determined automatically based on the
 required accuracy of the output and the number of internal
-iterations.</p></li>
-<li><h4 id="compensation-scaling">Compensation scaling</h4>
+iterations.</p>
+</section>
+<section id="compensation-scaling" class="level5">
+<h5>Compensation scaling</h5>
 <p>Controls the compensation scaling module used to compensate for
 CORDIC magnitude scaling. CORDIC magnitude scaling affects the Vector
 Rotation and Vector Translation functional configurations, and does not
 affect the SinCos, SinhCosh, ArcTan, ArcTanh and Square Root functional
 configurations. For the latter configurations, compensation scaling is
-set to No Scale Compensation.</p></li>
-<li><h4 id="coarse-rotation">Coarse rotation</h4>
+set to No Scale Compensation.</p>
+</section>
+<section id="coarse-rotation" class="level5">
+<h5>Coarse rotation</h5>
 <p>Controls the instantiation of the coarse rotation module.
 Instantiation of the coarse rotation module is the default for the
 following functional configurations: Vector rotation, Vector
@@ -270,104 +303,134 @@ Square Root configurations. The standard CORDIC algorithm operates over
 the first quadrant. Coarse Rotation extends the CORDIC operational range
 to the full circle by rotating the input sample into the first quadrant
 and inverse rotating the output sample back into the appropriate
-quadrant.</p></li>
-</ul>
+quadrant.</p>
+</section>
 </section>
 <section id="optional-ports" class="level4">
 <h4>Optional ports</h4>
-<ul>
-<li><h4 id="standard">Standard</h4>
-<ul>
-<li><h4 id="aclken">aclken</h4>
+<section id="standard" class="level5">
+<h5>Standard</h5>
+<section id="aclken" class="level6">
+<h6>aclken</h6>
 <p>When this signal is not asserted, the block holds its current state
 until the signal is asserted again or the aresetn signal is asserted.
 The aresetn signal has precedence over this clock enable signal. This
 signal has to run at a multiple of the blocks sample rate. The signal
-driving this port must be Boolean.</p></li>
-<li><h4 id="aresetn">aresetn</h4>
+driving this port must be Boolean.</p>
+</section>
+<section id="aresetn" class="level6">
+<h6>aresetn</h6>
 <p>When this signal is asserted, the block goes back to its initial
 state. This reset signal has precedence over the optional aclken signal
 available on the block. The reset signal has to run at a multiple of the
-block&#39;s sample rate. The signal driving this port must be
-Boolean.</p></li>
-<li><h4 id="tready">tready</h4>
-<p>Adds dout_tready port if Blocking mode is activated.</p></li>
-</ul></li>
-<li><h4 id="cartesian">Cartesian</h4>
-<ul>
-<li><h4 id="tlast">tlast</h4>
-<p>Adds a tlast input port to the Cartesian input channel.</p></li>
-<li><h4 id="tuser">tuser</h4>
-<p>Adds a tuser input port to the Cartesian input channel.</p></li>
-<li><h4 id="tuser-width">tuser width</h4>
-<p>Specifies the bit width of the Cartesian tuser input port.</p></li>
-</ul></li>
-<li><h4 id="phase">Phase</h4>
-<ul>
-<li><h4 id="tlast-1">tlast</h4>
-<p>Adds a tlast input port to the Phase input channel.</p></li>
-<li><h4 id="tuser-1">tuser</h4>
-<p>Adds a tuser input port to the Phase input channel.</p></li>
-<li><h4 id="tuser-width-1">tuser width</h4>
-<p>Specifies the bit width of the Phase tuser input port.</p></li>
-</ul></li>
-<li><h4 id="tlast-behavior">Tlast behavior</h4>
-<ul>
-<li><h4 id="null">Null</h4>
-<p>Data output port.</p></li>
-<li><h4 id="pass_cartesian_tlast">Pass_Cartesian_TLAST</h4>
-<p>Data output port.</p></li>
-<li><h4 id="pass_phase_tlast">Pass_Phase_TLAST</h4>
-<p>Data output port.</p></li>
-<li><h4 id="or_all_tlasts">OR_all_TLASTS</h4>
-<p>Pass the logical OR of all the present TLAST input ports.</p></li>
-<li><h4 id="and_all_tlasts">AND_all_TLASTS</h4>
-<p>Pass the logical AND of all the present TLAST input ports</p></li>
-</ul></li>
-</ul>
+block&#39;s sample rate. The signal driving this port must be Boolean.</p>
+</section>
+<section id="tready" class="level6">
+<h6>tready</h6>
+<p>Adds dout_tready port if Blocking mode is activated.</p>
+</section>
+</section>
+<section id="cartesian" class="level5">
+<h5>Cartesian</h5>
+<section id="tlast" class="level6">
+<h6>tlast</h6>
+<p>Adds a tlast input port to the Cartesian input channel.</p>
+</section>
+<section id="tuser" class="level6">
+<h6>tuser</h6>
+<p>Adds a tuser input port to the Cartesian input channel.</p>
+</section>
+<section id="tuser-width" class="level6">
+<h6>tuser width</h6>
+<p>Specifies the bit width of the Cartesian tuser input port.</p>
+</section>
+</section>
+<section id="phase" class="level5">
+<h5>Phase</h5>
+<section id="tlast-1" class="level6">
+<h6>tlast</h6>
+<p>Adds a tlast input port to the Phase input channel.</p>
+</section>
+<section id="tuser-1" class="level6">
+<h6>tuser</h6>
+<p>Adds a tuser input port to the Phase input channel.</p>
+</section>
+<section id="tuser-width-1" class="level6">
+<h6>tuser width</h6>
+<p>Specifies the bit width of the Phase tuser input port.</p>
+</section>
+</section>
+<section id="tlast-behavior" class="level5">
+<h5>Tlast behavior</h5>
+<section id="null" class="level6">
+<h6>Null</h6>
+<p>Data output port.</p>
+</section>
+<section id="pass_cartesian_tlast" class="level6">
+<h6>Pass_Cartesian_TLAST</h6>
+<p>Data output port.</p>
+</section>
+<section id="pass_phase_tlast" class="level6">
+<h6>Pass_Phase_TLAST</h6>
+<p>Data output port.</p>
+</section>
+<section id="or_all_tlasts" class="level6">
+<h6>OR_all_TLASTS</h6>
+<p>Pass the logical OR of all the present TLAST input ports.</p>
+</section>
+<section id="and_all_tlasts" class="level6">
+<h6>AND_all_TLASTS</h6>
+<p>Pass the logical AND of all the present TLAST input ports</p>
+</section>
+</section>
 </section>
 <section id="flow-control" class="level4">
 <h4>Flow control</h4>
-<ul>
-<li><h4 id="axi-behavior">AXI behavior</h4>
-<ul>
-<li><h4 id="nonblocking">NonBlocking</h4>
+<section id="axi-behavior" class="level5">
+<h5>AXI behavior</h5>
+<section id="nonblocking" class="level6">
+<h6>NonBlocking</h6>
 <p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
 input channel does not block the execution of an operation if data is
-received on another input channel.</p></li>
-<li><h4 id="blocking">Blocking</h4>
+received on another input channel.</p>
+</section>
+<section id="blocking" class="level6">
+<h6>Blocking</h6>
 <p>Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
-another input channel.</p></li>
-</ul></li>
-<li><h4 id="optimization-1">Optimization</h4>
+another input channel.</p>
+</section>
+</section>
+<section id="optimization-1" class="level5">
+<h5>Optimization</h5>
 <p>When NonBlocking mode is selected, the following optimization options
 are activated:</p>
-<ul>
-<li><h4 id="resources">Resources</h4>
-<p>Core is configured for minimum resources.</p></li>
-<li><h4 id="performance">Performance</h4>
-<p>Core is configured for maximum performance.</p></li>
-</ul></li>
-</ul>
+<section id="resources" class="level6">
+<h6>Resources</h6>
+<p>Core is configured for minimum resources.</p>
+</section>
+<section id="performance" class="level6">
+<h6>Performance</h6>
+<p>Core is configured for maximum performance.</p>
+</section>
+</section>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <section id="block-icon-display" class="level4">
 <h4>Block Icon Display</h4>
-<ul>
-<li><h4 id="display-shortened-port-names">Display shortened port
-names</h4>
-This option is ON by default. When unselected, the full AXI name of each
-port is displayed on the block icon.</li>
-</ul>
+<section id="display-shortened-port-names" class="level5">
+<h5>Display shortened port names</h5>
+<p>This option is ON by default. When unselected, the full AXI name of
+each port is displayed on the block icon.</p>
+</section>
 </section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>CORDIC LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=cordic;v=latest;d=pg105-cordic.pdf">PG105</a>)</p>
+<p>CORDIC LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg105-cordic&amp;ft:locale=en-US">PG105</a>)</p>
 </section>
 </section>
 </body>

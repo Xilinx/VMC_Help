@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,23 +28,33 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">IFFT</h1>
 </header>
-<h1 id="ifft">IFFT</h1>
+<section id="ifft" class="level1">
+<h1>IFFT</h1>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAABpCAYAAADC+TqgAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAJgUlEQVR4nO2da4xcVR3Af+fOa1/tvme7QGoboSl12khAxUQbthsjpkaMRqmVhNaSAta02MJWoWirMaVdwBJSDIVYSdCUDxqJ4Ad1S4yJJH6gSRnodtOWPijdnd30uezO7OzM8cPsbrqP2c7s3HNmzp3z+7S5c+f8z8z+ch73nPMfIaWUWCyKcYpdAUt54J/tRSGErnpYPEK2DnJW0QCS79zhemUs3iTQdiTra7brtGjBimbRghXNogUrmkULVjSLFm446/QU85Yh6+5UU3bVLZAehXivmvKvJ9iIOPMqjA6qj+US5SNa3R3Ipb8GX6jYNXGHvrdg8ESxa5Ez5dF1qpYslUAcewpx6iVIx9XEmIgVR5x7zSjJoBxaNMWSiXQCeeI5uPg/QEDNbdC4Uk28dBKuHYezf3K/bMV4u0VT3ZKl4/DR7xAD74xdkIgTz8Pwmcx4zW1Sg4ieXwFp98tWjHdF0yCZOPc69L49+bocRXz4JKSuAS5ujEklEB/ugORV98rUiDdF09GSffJX+PiNmV9PXkFEt0Mq4U68VBxx9lUY7HGnvCLgPdGUD/zjEPsX4szvZ79v6CPo2Y1IFyhbegSuvAefvFlYOUXGW6LpkOzSu4iTL5JLtygu/hfOv1HATFRC8jKi55mc4pUy3hFNw+ySq0cRPXvIazB+9nW4/F6mZcqXVGJsvDec/3tLDG+IpnxMNoK81oPo3gkyleebJeL4byDRm99703E4uQ+GzuQZrzQxXzQNkjF8FnHs55nnWHMtI7odUkM53S7SIzDwb0R/19zilSBmi6ZcsiQkYojo4wXPIMXIwFg3eINyZBqZ6EOcfKGgeKWGuaKplkymIHkJ8f5jMPqpO2Ve64ZTL8w+OUgnEB88NffWs0QxUzTlkqVh9Coc3QLJK64WLWL/hN6/Z2awU0nH4fhuSFxwNWYpYJ5oyndhSEh9iji6BTEyoCSCOP0yDB6f3GqlEtD7NuLSu0piFhuzRNOx1Wd0GPH+VogrbFVkGtH9C0heBCkz3fTwWcTpV9TFLDLmiFa9BPm5vWolSyUQH3TA0Gl1McYZHUJEnwAhQPgQx3bM4dGJOZizTSiVgqFBGFU4SB6+DCMurU/mQvwC4shDmTHhyEV9cYuAmC33hhCitA4QVyxFNm8CJ6guRjqO6N0LyfPqYniUQNuRrCfVzek6AeLdiP79c1vOyRUnhGx5HPzN6mKUIWaJBhpkE+CrRC7YjvTVK4pRfpgnGuiRzamCBR3gzFMUo7wwUzRQL5vwga8WueAJcCrVxCgjzBUN9Mjmb0S2bFU7ASkDzBYNNMjmB38rsnkLiICaGGWA+aKBetmcACK0ENn8CF75ynTjnW9NsWxSBKFiCbLpR3jpa9OFt74x5d1oEKpWIBt+ANi0q/ngAAwMDNDZ2Ul/f3+x61M4ymULQfWXkPXfVlO+4WRzyAE4ePAgHR0drFq1ilgsprViSlA+ZgvBvDaYf6+a8g0mm0MOwLp164hEIkSjUdrb261suSBCyLrVULNSTfmGks2hiUX1WCxGe3s70WiUSCRCV1cXLS0tpbWoPhdyXIi/fPUad61+gBP/eZMDf/wLTz+7n/ra2onXt218ACmZdn3rhjU8/8oBSCeIXUoyr8pHZcjhvq/UsvfRm5V9rFIk0HZkosEadygcDgNTdm9MlS0ajZovGuQk21TRzvf2sWvbo5PuyXYdmUT0v8yDO/7G2q818PUvzlfxKUqeQNsR+vr6pjVY4XB48qwzHA7T1dU1IZlnGO9GpYIMPwAigAz/BHx2XXSqQ+Pd6LSNj+FwmEOHDhGJRIpRT3VU1UJzK4xkkU36wHFgfj1UVkGoMvP39WS7DjA6mtkta5nkUDQaZdOmTdNFi8VirFmzphj1U4ZsaoNbt2W2gVdkuSntgBgTraKKA68d4s9v/WPi5T17dmW9vvreexDdT2dOTtGg9sMYwPUORSIR9u/fP1m0mcZoxrPgm4jFjyCd/M4abNy4jl27npx07cCBP0y/nkpkJLuc/edpyomZJpWTxmgz3WA8t9yPXPxw3pLljJVsGjNJBmOHU/r7+7PeYCYC+ZkNcNN94GTrKwvESjYj2RwSUkrZ2dlJR0fH9GcfpXY4JScc5Ge3QPMq8FnJdDL+HG2mhsoPsH79eiCzQtDcbPChDOFDLvkZ1N9tJSsShw8fntEhs47bzYYTQC7dCfNXWMmKxGzH7cw5QDwbvgrkst2ImtvswL9EMV80fzUy8ixULkSq2tdvJSsYs0UL1CKX74NQCziK9vNbyVzBWNFksBlW7INAAziKPoaVzDXMFK3ipoxk/trMspEKrGSuYp5oVYuRy58DX426RWwrmeuYJdq8pchle8BfpS6GlUwJ5ohWfStyxYtqY6RH9EsWbM1kfUxq+OXiImKOaKm0+kR88SswdEld+VPxNyNbdwIgPu6AlLuJmUsJs1YGvJSIz6lAtv4S/PVjLdo5xIVnMPG3OMexifjyQUciPiGQ4R+DMx8QmZlzoBXZ8F11MYuMWaKBJxLxybrvQWDR5Od/Igg1K5GVK5TELDbmiQZGJ+KT1V+Gmq9mDiFPCxuEpg3gb3I1ZilgpmhgZiK+0GJoXDv7GNMJIls2ey5FlrmigVGJ+KS/Dtm8OdNqzYqD8NUjG9YWFK/UMFs0MCMRnwhA+Kc5byuXIghVdyGr755bvBLEfNGgxBPxCWTTQwh/Y37rsk4QGn+YeaDrAbwhGpRuIr7a1VB5O3JOrWFgrCVVtGNYI94RDUouEZ+s+nwmtZWY465fIcBXg2xen1O8UsZbokHpJOIL3AxNG5CFbsgUAai4HWruKaycIuM90aD4ificGmTLY4BLjyhECNnwHQgucqe8IuBN0aB4ifiEHxneDE61u/vlRHAsY1G1e2VqxLuigZ4xW/33kdVfGL+AbBibKQqf+/GcKmTTw5j4bzOvxvmiejbqBKDxQahcnulOq+/M4aHsHBE+CC2C2m+oKV8h3hcNNLRsmUR8suH+uc8wc44VQtZ9C0IL1cZxGXM2PhZKvBsR+y2yYpma8gMtmZ+qHh1QU/71+GohqSGOi5SPaACJU4jEqWLXoiwpj67TUnSsaBYtWNEsWrCiWbRgRbNowYpm0YIVzaKFGx4gtljyYU6pRWdx0GLJC9t1WrRgRbNowYpm0YIVzaIFK5pFC1Y0ixasaBYtWNEsWrCiWbRgRbNowYpm0YIVzaIFK5pFC1Y0ixasaBYtWNEsWrCiWbTwf6dHBDCgiDlhAAAAAElFTkSuQmCC" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/DSP/Window IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block implements the Inverse FFT targeted for AI Engines which
 use the rounding method and saturates the output samples on
 overflow.</p>
-<h2 id="parameters">Parameters</h2>
-<h3 id="main">Main</h3>
-<h4 id="inputoutput-data-type">Input/Output data type</h4>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output data type</h4>
 <ul>
 <li>Describes the type of individual data samples input to and output
 from the filter function. Supported types are cint16, cint32 and
 cfloat.</li>
 </ul>
-<h4 id="ifft-size">IFFT size</h4>
+</section>
+<section id="ifft-size" class="level4">
+<h4>IFFT size</h4>
 <ul>
 <li>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 4 to 11
@@ -54,24 +64,32 @@ processor.</li>
 </ul>
 <p><strong>Note</strong>: To understand more on achieving the 4096 point
 size FFT, refer to the AI Engine examples in <a href="https://github.com/Xilinx/Vitis_Model_Composer">GitHub</a>.</p>
-<h4 id="input-window-size-number-of-samples">Input Window Size (Number
-of Samples)</h4>
+</section>
+<section id="input-window-size-number-of-samples" class="level4">
+<h4>Input Window Size (Number of Samples)</h4>
 <ul>
 <li>Describes the number of samples used as an input to the IFFT.</li>
 </ul>
-<h4 id="scale-output-down-by-2">Scale output down by 2^</h4>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
 <ul>
 <li>Describes the power of 2 to scale the result by prior to
 output.</li>
 </ul>
-<h3 id="advanced">Advanced</h3>
-<h4 id="target-input-throughput">Target input throughput</h4>
+</section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
+<section id="target-input-throughput" class="level4">
+<h4>Target input throughput</h4>
 <ul>
 <li>Specifies the rate at which data samples should be processed. The
 default value is 200.</li>
 </ul>
-<h4 id="specify-the-number-of-cascade-stages">Specify the number of
-cascade stages</h4>
+</section>
+<section id="specify-the-number-of-cascade-stages" class="level4">
+<h4>Specify the number of cascade stages</h4>
 <ul>
 <li>When this option is not enabled, the tool will determine the filter
 configuration that best achieves the specified input sampling rate. When
@@ -79,10 +97,16 @@ this option is enabled and the &#39;Number of cascade stages&#39; is specified,
 the tool will guarantee the same. In such cases, however, the specified
 sample rate constraint may not be achieved.</li>
 </ul>
-<h4 id="number-of-cascade-stages">Number of cascade stages</h4>
+</section>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages</h4>
 <ul>
 <li>This determines the number of kernels the FFT will be divided over
 in series to improve throughput.</li>
 </ul>
+</section>
+</section>
+</section>
+</section>
 </body>
 </html>

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,12 +28,16 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Interface Spec</h1>
 </header>
-<h1 id="interface-spec">Interface Spec</h1>
+<section id="interface-spec" class="level1">
+<h1>Interface Spec</h1>
 <p>Specify the RTL interfaces for a subsystem</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Tools</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Interface Spec block allows you to control what RTL interfaces
 should be synthesized for the ports of the subsystem in which the
 Interface Spec block is instantiated. This affects only code generation
@@ -92,9 +96,13 @@ High-Level Synthesis User Guide (<a href="https://docs.xilinx.com/access/sources
 </ul>
 <p>The interface specification block currently supports subsystems with
 at most 8 input ports and 8 output ports.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data type support is not applicable to the Interface Spec block.</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The parameters for the Interface Specification block fall into the
 following groups.</p>
 <ul>
@@ -192,5 +200,7 @@ are as follows. | Video Format | Video Component Options |
 |--------------|-------------------------| | Mono | N/A | | YUV 4:2:2 |
 Y, U, V | | YUV 4:4:4 | Y, U, V | | RGB | R, G, B |</p>
 <p>Table 3. Video Component Option</p>
+</section>
+</section>
 </body>
 </html>

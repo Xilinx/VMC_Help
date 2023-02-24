@@ -7,7 +7,7 @@
 The Concat block performs a concatenation of n bit vectors
 represented by unsigned integer numbers, for example, n unsigned numbers
 with binary points at position zero.
-The [Reinterpret](reinterpret.html) block provides capabilities
+The [Reinterpret](../../HDL/reinterpret/README.md) block provides capabilities
 that can extend the functionality of the Concat block.
 
 ## Block Interface
@@ -29,6 +29,6 @@ Specifies number of inputs, between 2 and 1024,
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 The Concat block does not use a LogiCORE™.

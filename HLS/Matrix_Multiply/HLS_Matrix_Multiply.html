@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,17 +28,23 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Matrix Multiply</h1>
 </header>
-<h1 id="matrix-multiply">Matrix Multiply</h1>
+<section id="matrix-multiply" class="level1">
+<h1>Matrix Multiply</h1>
 <p>Compute matrix product of two input signals. The first operand is the
 top input on the block.</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Matrices and Linear Algebra</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABKCAYAAABXeBGcAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAJHUlEQVR4nO2cbWwT5x3Af8+dL8YmtkPBDrRVUQlCAqypGmvHGGFtwhBSIyq1/QAqq9ppMCG0VkIVHypUqWorteVjV6ShabRrKUyq9kJD2wEOG2N0HdAvy0BLG7ppKWA7CX4JOPH57tkH44zEdmKfnfgQ95MiIft5+Ycf99xz9/8/CCmlxMG2KI0OwGFqXFN9KYSYrTjueMotZFMKAujv/1ndg3GYSFvbW2W/c5Y4m+MIsjmOIJsz7T3IDrjd9+F232+pb1NTCNPUyeWuWZ7f5QqQSBzDNEctj2F57lmfsUo8njDz529CCK2hcaTTnzdEkK2XOJ/vu8yf/5hFORLTHCMa3U8yeQIpdUsxSKkzOPghuh611L9WFIDBwUH27t1LPB5vSBDFCAKBTgKB9QhR/UUupYFpXica3U82e4VU6gyjo/1ImatyHJ1ksodM5p9Vx1AvFIADBw6we/duOjo6iMViDQumENJddz2Gz/eQZTmGkeDq1V+Qyw0XPmVo6LcYRgqo7M2WlDojI2dJp/9WdQz1RAF45plnCIfD9Pb20tnZ2TBJQrgIBrfg9a5AiKaq+0upo+tRotFfYhgjRd/FYu9hmtlpxzHNHJnMv0gkTlQdQ71RAILBIJFIpCJJR49+ybJlP2dw8EZ9A1HmEAr9GLd7saV7jpQ6Y2P/IRY7UPZmbhgJhoZ+M+VSJ2WObHaA4eHfUenVNpOMbxJCoVCRpFIcOdLH4sUtfPzxV3ULQlWbaW3dhqaFLMrJcuPGBeLxQ9PeZ0ZHvyaV+lPJTYOUJrncMIODHyClWXUcM8GEXdxkSZNJpcY4f/4Ke/a0093dV5cAXK67WLjwp6hqACHUqvtLqZNOf87w8B+Ayv5SS28aJKY5Qjz+ruUd30xQtM0OhUIcPny4ZONPPvmKhx9eTHv7fQwMpLl8OV3T5E1Ni2ht3Y4Qcy3KyZFMniCZ7KG65ah402Cao0SjBzCM+i7dtVIkKBaLsXnz5pKNjxzpY9OmZSiK4NFHl3L06JeWJ9a0Vlpbt6MobktpDSlzDA39nnT675bmL2waID93LPYuhpGwNNZMMmEfG4vF6OzspLe3t2iZi0av88UXV3j99b/y5ptnyGRyeL0a27Z929rMIr8dNs0xS90NI0UuV9tuM78d3wcIdL3RjxelGRc0WU4kEqG1tXW8YXd3H1u2hHnppXXjn61f/x6XLl1jyZJ5VU+sZweJxz/A519jaXkD8PnXkE6dQdetP2DX0nc2UADi8XiRnFAoNKHhRx/18eSTyyd89sQTy+nutr7M6XqcdOoMUhqW+guh4vOvQdOClmOwO0JKKffu3cvu3buL5AghZiWjqmnBmq4kKY2ar6RG0tb21tQp72effRbIv1EIBmf/X2PhSrIqqXAl3c6SyiGmKruarSuowJ16JU11Bdkq3eDck4qxlSC4cyWVS/XYThDcmZLKpXpsKQjuPEnlsgi2FQS3SKrwJehkhFDxB9pxafPrHFmecqmXF144Pv7n5577lLVrD7Bhw/t0dPyal1/+M6ZZvCEol+qxtSDIpyLmNN2PprVa+lHVFhQLyb9KmJx66esb4vnn/8jAQIodOz7m6tV80vCNN9Zz7NhWjh/fyrlzV7h4cbBorHL5OFsLmjPnfhYs2IKq+tFcoap/XOo8UsmTZLNX6h5bqdTLsmXzeeqpMLHYdXbtWs3Chc0T+oyN5ZfrYNBbNF6pfFwsFrOvoIIcq+VW+WqcQ4yOfl3nyPKUS72cPv1fDh58nBMnLo233bPnJF1dh1iz5le0t99HKDS35Ji3pnp6e3vZuXOnPQXZXQ6UT73s2rWaRYua2bHjO+NtX331Ebq7t3D27E+IRkf48MOLJce8NdUTDod5++237SfodpBza+qlq+sQPT3/5siR6TPMmqayYUMb585dLvquVDYhFArZq7L0dpADtaVePvtsoGSbctkE2xQu3i5yoPrUy4sv9rBx40E2bHif4eEMTz/9raI25VI9tkg33E5yZoK2trfK5uEaXrh4p8sp0NPTUyQHbuaDCoWLhXWws7OTSCQyoWF//zU2bTrM3Xf7EALcbhevvPIwDzyw0HJQjpz/Uy4PV1Xh4sqVQY4f38qxY1vZufNB9u07ZzmgpqZFBINP1yAnVxc5LpcP1eWvaYyZZMIuriCpcCVNRTI5yr33Wv/FpMzWXNVjmrUVGCqKl0DLDwFIXItgGMmaxpsJirbZhafZcDhc1PjixUG6ug6RyeQYG8tx8ODjlifW9SFisXfxBdpRcIGF2rhm3yoyN9xkMv0WIlAJtKxFkq+MCwTWkUhEMM3buHBx+fIFdHdvIRL5Efv3d7F9ezeGYb3APJdLkEqcxJRjVFq2eytCqHi8YTzelRQKECvsic//IEJ4xnsJ4SLQ8gMUZWZerFplgqDJT7NTsWJFEFUVxGLXawrAMEZIJnowzQyWJXmW0uxbRaWSPN6lNwv1b6l9EAKhuPEH1gHWaiJmgnFBpV41TMU336QZHs4QChW/ma0W0xwlca2HnJ6EKk/BQV6Su+ke/BUUnGhaEI9nRcnDYQIFVZmLP/B9hLDHWzAXVFa4CHDhQpyNGw8CoCiC117rQFXr84tIqZNKncLnW42mLYBqK3uEiqYF8fvXkUqdLnlCQVG8+Pzfm1qiUHG55tHcvIp0+hyNPiPkAnjnnXemldPWNo/e3h0zGoyUBqnUGZp9q2hy34OodqkRCi4tQKDlEVLJU5MOcuU3BVRwrFIIFa3pbrxzw9y4/o/qYqgztihcnIhkJH0ej5HB41lqoUZOQVW9BFo6SCVP3TwKWbwpmA4hVObMWYI0M2Qy9TusVi22KlycjMfThscbtlbIKCWmzJFO/QWtKYjHs9zSoWSkQTp9nmx2oPq+FTJt6a9dyWT6MYwxmn2rqpckBIrQCLR01BaEUPH5HyJxLXXzwNfsYmtBANnsAOlUBpdWfF+sBFX1A7maTs6pivfmY8DsY3tBkH/roOtDjQ6jIdhjs+9QFkeQzXEE2Zxpt9kOs4OlbbbzX2o3HmeJszmOIJvjCLI5jiCb4wiyOY4gm+MIsjmOIJvjCLI5jiCb4wiyOY4gm+MIsjmOIJvjCLI5jiCb4wiyOf8DFeWrBUG0q8IAAAAASUVORK5CYII=" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Matrix Multiply block has two input ports and one output port.
 The output signal is the matrix product of the input signals where the
 first operand corresponds to the top input.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>The data type of the input signals can be any floating-point,
 fixed-point, integer, or Boolean. The input signals can be real or
 complex. The input signals can be scalar, vector, or matrix, but they do
@@ -153,7 +159,11 @@ if either T1 or T2 are signed.</td>
 </tbody>
 </table>
 <p>Table 2. Output Data Type</p>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Matrix Multiply block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

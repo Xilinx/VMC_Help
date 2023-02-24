@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -44,51 +44,53 @@ arithmetic type. For example, a number can be converted to a signed
 <p>Parameters specific to the Basic Tab are as follows.</p>
 <section id="output-type" class="level4">
 <h4>Output Type</h4>
-<ul>
-<li>Specify the output data type.
+<p>Specify the output data type.</p>
 <ul>
 <li>Boolean</li>
 <li>Fixed-point</li>
 <li>Floating-point</li>
-</ul></li>
 </ul>
 </section>
 <section id="arithmetic-type" class="level4">
 <h4>Arithmetic Type</h4>
-<ul>
-<li>If the Output Type is specified as Fixed-point, you can select
-Signed (2’s comp) or Unsigned.</li>
-</ul>
+<p>If the Output Type is specified as Fixed-point, you can select Signed
+(2’s comp) or Unsigned.</p>
 </section>
 <section id="fixed-point-precision" class="level4">
 <h4>Fixed-point Precision</h4>
-<ul>
-<li><h4 id="number-of-bits">Number of bits</h4>
-Specifies the bit location of the binary point, where bit zero is the
-least significant bit.</li>
-</ul>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
+<p>Specifies the bit location of the binary point, where bit zero is the
+least significant bit.</p>
 </section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
-<ul>
-<li>Specifies the bit location of the binary point.</li>
-</ul>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
+<p>Specifies the bit location of the binary point.</p>
+</section>
 </section>
 <section id="floating-point-precision" class="level4">
 <h4>Floating-point Precision</h4>
-<ul>
-<li><h4 id="single">Single</h4>
-<p>Specifies single precision (32 bits).</p></li>
-<li><h4 id="double">Double</h4>
-<p>Specifies double precision (64 bits).</p></li>
-<li><h4 id="custom">Custom</h4>
+<section id="single" class="level5">
+<h5>Single</h5>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level5">
+<h5>Double</h5>
+<p>Specifies double precision (64 bits).</p>
+</section>
+<section id="custom" class="level5">
+<h5>Custom</h5>
 <p>Activates the field below so you can specify the Exponent width and
-the Fraction width.</p></li>
-<li><h4 id="exponent-width">Exponent width</h4>
-<p>Specify the exponent width.</p></li>
-<li><h4 id="fraction-width">Fraction width</h4>
-<p>Specify the fraction width.</p></li>
-</ul>
+the Fraction width.</p>
+</section>
+<section id="exponent-width" class="level5">
+<h5>Exponent width</h5>
+<p>Specify the exponent width.</p>
+</section>
+<section id="fraction-width" class="level5">
+<h5>Fraction width</h5>
+<p>Specify the fraction width.</p>
+</section>
 </section>
 <section id="quantization" class="level4">
 <h4>Quantization</h4>
@@ -97,61 +99,53 @@ insufficient to represent the fractional portion of a value. The options
 are to Truncate (for example, to discard bits to the right of the least
 significant representable bit), or to Round (unbiased: +/- inf) or Round
 (unbiased: even values).</p>
-<ul>
-<li><p>Round (unbiased: +/- inf) also known as &quot;Symmetric Round (towards
-+/- inf)&quot; or &quot;Symmetric Round (away from zero)&quot;. This is similar to the
+<p>Round (unbiased: +/- inf) also known as &quot;Symmetric Round (towards +/-
+inf)&quot; or &quot;Symmetric Round (away from zero)&quot;. This is similar to the
 MATLAB round() function. This method rounds the value to the nearest
 desired bit away from zero and when there is a value at the midpoint
 between two possible rounded values, the one with the larger magnitude
 is selected. For example, to round 01.0110 to a Fix_4_2, this yields
 01.10, since 01.0110 is exactly between 01.01 and 01.10 and the latter
-is further from zero.</p></li>
-<li><p>Round (unbiased: even values) also known as &quot;Convergent Round
-(toward even)&quot; or &quot;Unbiased Rounding&quot;. Symmetric rounding is biased
-because it rounds all ambiguous midpoints away from zero which means the
-average magnitude of the rounded results is larger than the average
-magnitude of the raw results. Convergent rounding removes this by
-alternating between a symmetric round toward zero and symmetric round
-away from zero. That is, midpoints are rounded toward the nearest even
-number. For example, to round 01.0110 to a Fix_4_2, this yields 01.10,
-since 01.0110 is exactly between 01.01 and 01.10 and the latter is even.
-To round 01.1010 to a Fix_4_2, this yields 01.10, since 01.1010 is
-exactly between 01.10 and 01.11 and the former is even.</p></li>
-</ul>
+is further from zero.</p>
+<p>Round (unbiased: even values) also known as &quot;Convergent Round (toward
+even)&quot; or &quot;Unbiased Rounding&quot;. Symmetric rounding is biased because it
+rounds all ambiguous midpoints away from zero which means the average
+magnitude of the rounded results is larger than the average magnitude of
+the raw results. Convergent rounding removes this by alternating between
+a symmetric round toward zero and symmetric round away from zero. That
+is, midpoints are rounded toward the nearest even number. For example,
+to round 01.0110 to a Fix_4_2, this yields 01.10, since 01.0110 is
+exactly between 01.01 and 01.10 and the latter is even. To round 01.1010
+to a Fix_4_2, this yields 01.10, since 01.1010 is exactly between 01.10
+and 01.11 and the former is even.</p>
 </section>
 <section id="overflow" class="level4">
 <h4>Overflow</h4>
-<ul>
-<li>Overflow errors occur when a value lies outside the representable
+<p>Overflow errors occur when a value lies outside the representable
 range. For overflow the options are to Saturate to the largest
 positive/smallest negative value, to Wrap (for example, to discard bits
 to the left of the most significant representable bit), or to Flag as
 error (an overflow as a Simulink error) during simulation. Flag as error
 is a simulation only feature. The hardware generated is the same as when
-Wrap is selected.</li>
-</ul>
+Wrap is selected.</p>
 </section>
 <section id="optional-ports" class="level4">
 <h4>Optional Ports</h4>
-<ul>
-<li>Provide enable port activates an optional enable (en) pin on the
+<p>Provide enable port activates an optional enable (en) pin on the
 block. When the enable signal is not asserted the block holds its
 current state until the enable signal is asserted again or the reset
-signal is asserted.</li>
-</ul>
+signal is asserted.</p>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
-<ul>
-<li>The Latency value defines the number of sample periods by which the
+<p>The Latency value defines the number of sample periods by which the
 block&#39;s output is delayed. One sample period might correspond to
 multiple clock cycles in the corresponding FPGA implementation (for
 example, when the hardware is over-clocked with respect to the Simulink®
 model). Model Composer will not perform extensive pipelining unless you
 select the Pipeline for maximum performance option (described below);
 additional latency is usually implemented as a shift register on the
-output of the block.</li>
-</ul>
+output of the block.</p>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
@@ -159,8 +153,7 @@ output of the block.</li>
 <p>Parameters specific to the Implementation tab are as follows.</p>
 <section id="performance-parameters" class="level4">
 <h4>Performance Parameters</h4>
-<ul>
-<li><p>Pipeline for maximum performance: The XILINX LogiCORE can be
+<p>Pipeline for maximum performance: The XILINX LogiCORE can be
 internally pipelined to optimize for speed instead of area. Selecting
 this option puts all user defined latency into the core until the
 maximum allowable latency is reached. If the Pipeline for maximum
@@ -170,16 +163,15 @@ added on the output of the core.</p>
 <p>The Pipeline for maximum performance option adds the pipeline
 registers throughout the block, so that the latency is distributed,
 instead of adding it only at the end. This helps to meet tight timing
-constraints in the design.</p></li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+constraints in the design.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>

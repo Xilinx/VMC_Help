@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,37 +28,50 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">IFFT Stream</h1>
 </header>
-<h1 id="ifft-stream">IFFT Stream</h1>
+<section id="ifft-stream" class="level1">
+<h1>IFFT Stream</h1>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/DSP/Stream IO</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>Stream-based IFFT implementation targeted for AI Engines. The IFFT
 block has two stream ports per subframe processor to maximize
 performance. The specified value for SSR parameter should be of the form
 2^N, where N is a positive integer.</p>
-<h2 id="parameters">Parameters</h2>
-<h3 id="main">Main</h3>
-<h4 id="inputoutput-data-type">Input/Output Data Type:</h4>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output Data Type:</h4>
 <ul>
 <li>Describes the type of individual data samples input/output of the
 stream IFFT. It can be cint16, cint32, cfloat types.</li>
 </ul>
-<h4 id="ifft-size">IFFT Size:</h4>
+</section>
+<section id="ifft-size" class="level4">
+<h4>IFFT Size:</h4>
 <ul>
 <li>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 4 to 11
 inclusive.</li>
 </ul>
-<h4 id="input-frame-size-number-of-samples">Input Frame Size (Number of
-Samples):</h4>
+</section>
+<section id="input-frame-size-number-of-samples" class="level4">
+<h4>Input Frame Size (Number of Samples):</h4>
 <ul>
 <li>Specifies the number of samples for a particular frame. The value
 must be in the range 8 to 1024 and the default value is 64. The IFFT
 operation will not begin until this number of samples has been
 input.</li>
 </ul>
-<h4 id="scale-output-down-by-2">Scale Output Down by 2^:</h4>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale Output Down by 2^:</h4>
 <ul>
 <li><p>Describes the power of 2 shift down applied before output. The
 following table shows the range of valid values of this parameter for
@@ -86,7 +99,9 @@ different data types.</p>
 </tbody>
 </table></li>
 </ul>
-<h4 id="ssr">SSR:</h4>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR:</h4>
 <ul>
 <li>This parameter is intended to improve performance and support IFFT
 sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
@@ -97,15 +112,18 @@ stream inputs and there will be 8 subframe IFFTs each of point size
 2048. The specified IFFT size and SSR values should be such that (2 *
 IFFT size / SSR) is in the range of 16 and 4096.</li>
 </ul>
-<h3 id="advanced">Advanced</h3>
+</section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
 <p>Target Output Throughput (MSPS):</p>
 <ul>
 <li>Specifies the output sampling rate of the IFFT function in Mega
 Samples per Second (MSPS). The value must be in the range 1 to 1000 and
 the default value is 200.</li>
 </ul>
-<h4 id="specify-the-number-of-cascade-stages">Specify the Number of
-Cascade Stages:</h4>
+<section id="specify-the-number-of-cascade-stages" class="level4">
+<h4>Specify the Number of Cascade Stages:</h4>
 <ul>
 <li>When this option is not enabled, the tool will determine the IFFT
 configuration that best achieves the specified input sampling rate. When
@@ -115,5 +133,9 @@ operation over). This allows resources to be traded for higher
 performance, but the specified input sampling rate constraint may not be
 achieved. The value must be in the range of 1 to 9.</li>
 </ul>
+</section>
+</section>
+</section>
+</section>
 </body>
 </html>

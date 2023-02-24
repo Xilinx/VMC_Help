@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,7 +28,8 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Questa</h1>
 </header>
-<h1 id="questa">Questa</h1>
+<section id="questa" class="level1">
+<h1>Questa</h1>
 <p>The HDL <a href="blackbox.html">Black Box</a> block provides a way to
 incorporate existing HDL files into a model. When the model is
 simulated, co-simulation can be used to allow black boxes to
@@ -53,7 +54,8 @@ tool. In symbolic radix, Questa displays the actual values of an
 enumerated type, and also converts an object&#39;s value to an appropriate
 representation for other radix forms. Please refer to the Questa
 documentation for more information on symbolic radix.</p>
-<h2 id="block-parameters">Block Parameters</h2>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>The block parameters dialog box can be invoked by double-clicking the
 icon in your Simulink model.</p>
 <p>Basic tab<br />
@@ -160,7 +162,9 @@ co-Simulation in directory specifies ./questa as the directory in which
 Questa should run, the relative path ../foo.do in a script definition
 field refers to a file named foo.do in the directory that contains the
 .mdl.</p>
-<h2 id="fine-points">Fine Points</h2>
+</section>
+<section id="fine-points" class="level2">
+<h2>Fine Points</h2>
 <p>The time scale in Questa matches that in Simulink. For example, one
 second of Simulink simulation time corresponds to one second of Questa
 simulation time. This makes it easy to compare times at which events
@@ -210,5 +214,7 @@ set too low, then the simulation results are incorrect. The above model
 begins to fail when the Simulink system period setting is reduced below
 5e-7, which is the point at which Model Composer resorts to delta-delay
 stepping of the black boxes for data propagation.</p>
+</section>
+</section>
 </body>
 </html>

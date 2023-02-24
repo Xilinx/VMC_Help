@@ -54,38 +54,38 @@ of functions:
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 #### Output Type  
-> Specifies the output data type. Can be Boolean, Fixed-point, or
+Specifies the output data type. Can be Boolean, Fixed-point, or
 Floating-point.
 
 #### Arithmetic Type  
-> If the Output Type is specified as Fixed-point, you can select Signed
+If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
 
 #### Fixed-point Precision  
-* #### Number of bits  
-  Specifies the total number of bits, including the binary point bit
+##### Number of bits  
+Specifies the total number of bits, including the binary point bit
 width.
 
-* #### Binary point  
-  Specifies the bit location of the binary point, where bit zero is the
+##### Binary point  
+Specifies the bit location of the binary point, where bit zero is the
 least significant bit.
 
 #### Floating-point Precision  
-* #### Single  
-  Specifies single precision (32 bits).
+##### Single  
+Specifies single precision (32 bits).
 
-* #### Double  
-  Specifies double precision (64 bits).
+##### Double  
+Specifies double precision (64 bits).
 
-* #### Custom  
-  Activates the field below so you can specify the Exponent width and the
+##### Custom  
+Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-* #### Exponent width  
-  Specify the exponent width.
+##### Exponent width  
+Specify the exponent width.
 
-* #### Fraction width  
-  Specify the fraction width.
+##### Fraction width  
+Specify the fraction width.
 
 #### Quantization  
 Quantization errors occur when the number of fractional bits is
@@ -94,8 +94,8 @@ are to Truncate (for example, to discard bits to the right of the least
 significant representable bit), or to Round(unbiased: +/- inf) or Round
 (unbiased: even values).
 
-* #### Round(unbiased: +/- inf)  
-  Also known as "Symmetric Round (towards +/- inf)" or "Symmetric Round
+##### Round(unbiased: +/- inf)  
+Also known as "Symmetric Round (towards +/- inf)" or "Symmetric Round
 (away from zero)". This is similar to the MATLAB® `round()` function.
 This method rounds the value to the nearest desired bit away from zero
 and when there is a value at the midpoint between two possible rounded
@@ -115,66 +115,66 @@ as when Wrap is selected.
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 #### Interface Options  
-* #### Interface  
-  * #### None  
-    Implies that during HDL Netlist generation, this Gateway In will be
+##### Interface  
+###### None  
+Implies that during HDL Netlist generation, this Gateway In will be
 translated as an Input Port at the top level.
 
-  * #### AXI4-Lite  
-    Implies that during HDL Netlist generation, an AXI4-Lite interface will
+###### AXI4-Lite  
+Implies that during HDL Netlist generation, an AXI4-Lite interface will
 be created and this Gateway In will be mapped to one of the registers
 within the AXI4-Lite interface.
 
-* #### Auto assign address offset  
-  If the Gateway In is configured to be an AXI4-Lite interface, this
+##### Auto assign address offset  
+If the Gateway In is configured to be an AXI4-Lite interface, this
 option allows an address offset to be automatically assigned to the
 register within the AXI4-Lite interface that the Gateway In is mapped
 to.
 
-* #### Address offset  
-  If Auto assign address offset is not checked, then this entry box allows
+##### Address offset  
+If Auto assign address offset is not checked, then this entry box allows
 you to explicitly specify an address offset to use. Must be a multiple
 of 4.
 
-* #### Interface Name  
-  If the Gateway In is configured to be an AX4-Lite interface, assigns a
+##### Interface Name  
+If the Gateway In is configured to be an AX4-Lite interface, assigns a
 unique name to this interface. This name can be used to differentiate
 between multiple AXI4-Lite interfaces in the design. When using the IP
 Catalog flow, you can expect to see an interface in the IP that Model
 Composer creates with the name \<design_name\>\_\<interface_name\>\_
 s_axi.
 
-  **IMPORTANT**: The Interface Name must be composed of alphanumeric
+**IMPORTANT**: The Interface Name must be composed of alphanumeric
 characters (lowercase alphabetic) or an underscore (\_) only, and must
 begin with a lowercase alphabetic character. axi4_lite1 is acceptable,
 1Axi4-Lite is not.
 
-* #### Description  
-  Additional designer comments about this Gateway In that is captured in
+##### Description  
+Additional designer comments about this Gateway In that is captured in
 the interface documentation.
 
 #### Constraints  
-* #### IOB Timing Constraint  
-  In hardware, a Gateway In is realized as a set of input/output buffers
+##### IOB Timing Constraint  
+In hardware, a Gateway In is realized as a set of input/output buffers
 (IOBs). There are two constraint options: None, and Data Rate.
 
-  If None is selected, no timing constraints for the IOBs are put in the
+If None is selected, no timing constraints for the IOBs are put in the
 user constraint file produced by Model Composer. This means the paths
 from the IOBs to synchronous elements are not constrained.
 
-  If Data Rate is selected, the IOBs are constrained at the data rate at
+If Data Rate is selected, the IOBs are constrained at the data rate at
 which the IOBs operate. The rate is determined by System Clock Period
 provided on the System Generator token and the sample rate of the
 Gateway relative to the other sample periods in the design.
 
-* #### Specify IOB location constraints  
-  Checking this option allows IOB location constraints and I/O standards
+##### Specify IOB location constraints  
+Checking this option allows IOB location constraints and I/O standards
 to be specified.
 
-* #### IOB pad locations, e.g. {'MSB', ..., 'LSB'}  
-  IOB pin locations can be specified as a cell array of strings in this
+##### IOB pad locations, e.g. {'MSB', ..., 'LSB'}  
+IOB pin locations can be specified as a cell array of strings in this
 edit box. The locations are package-specific.
 
-* #### IO Standards, e.g. {'MSB', ..., 'LSB'}  
-  I/O standards can be specified as a cell array of strings in this edit
+##### IO Standards, e.g. {'MSB', ..., 'LSB'}  
+I/O standards can be specified as a cell array of strings in this edit
 box. The locations are package-specific.

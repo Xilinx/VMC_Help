@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -102,22 +102,18 @@ to sample the last value of the frame.</p>
 <p>Basic tab parameters are as follows.</p>
 <section id="sampling-rate-number-of-input-samples-per-output-sample" class="level4">
 <h4>Sampling Rate (number of input samples per output sample)</h4>
-<ul>
-<li>Must be an integer greater or equal to 2. This is the ratio of the
+<p>Must be an integer greater or equal to 2. This is the ratio of the
 output sample period to the input, and is essentially a sample rate
 divider. For example, a ratio of 2 indicates a 2:1 division of the input
 sample rate. If a non-integer ratio is desired, the Vector Up Sample
-block can be used in combination with the Vector Down Sample block.</li>
-</ul>
+block can be used in combination with the Vector Down Sample block.</p>
 </section>
 <section id="sample" class="level4">
 <h4>Sample</h4>
-<ul>
-<li>The Vector Down Sample block can sample either the first or last
+<p>The Vector Down Sample block can sample either the first or last
 value of a frame. This parameter will determine which of these two
-values is sampled.</li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+values is sampled.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>

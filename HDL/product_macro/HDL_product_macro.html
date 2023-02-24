@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,44 +28,56 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Product</h1>
 </header>
-<h1 id="product">Product</h1>
-<p>The Xilinx Product block implements a scalar or complex multiplier.
-It computes the product of the data on its two input channels, producing
+<section id="product" class="level1">
+<h1>Product</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Product block implements a scalar or complex multiplier. It
+computes the product of the data on its two input channels, producing
 the result on its output channel. For complex multiplication the input
 and output have two components: real and imaginary.</p>
-<p><img src="data:image/png;base64,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" /></p>
 <p>The Product block is ideal for generating a simple scalar or complex
 multiplier. If your implementation will use more complicated features
-such as AXI4 ports or a user-specified precision, use the Xilinx <a href="complexmultiplier60.html">Complex Multiplier 6.0</a> block (if you
-are configuring a complex multiplier) or Xilinx <a href="mult.html">Mult</a> block (if you are configuring a scalar
-multiplier) in your design instead of the Product block.</p>
+such as AXI4 ports or a user-specified precision, use the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;cmult&#39;,&#39;category&#39;,&#39;HDL&#39;))">Complex
+Multiplier 6.0</a> block (if you are configuring a complex multiplier)
+or <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;mult&#39;,&#39;category&#39;,&#39;HDL&#39;))">Mult</a>
+block (if you are configuring a scalar multiplier) in your design
+instead of the Product block.</p>
 <p>In the Vivado® design flow, the Product block is inferred as
 &quot;LogiCORE™ IP Complex Multiplier&quot; (if you have configured the Product
 block for complex multiplication) or “LogiCORE IP Multiplier” (if you
 have configured the Product block for scalar multiplication) for code
-generation. Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/cmpy/v6_0/pg104-cmpy.pdf">LogiCORE
-IP Complex Multiplier v6.0 Product Guide</a> or the <a href="https://www.xilinx.com/support/documentation/ip_documentation/mult_gen/v12_0/pg108-mult-gen.pdf">LogiCORE
+generation. Refer to the <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg104-cmpy&amp;ft:locale=en-US">LogiCORE
+IP Complex Multiplier v6.0 Product Guide</a> or the <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">LogiCORE
 IP Multiplier v12.0 Product Guide</a> for details about these LogiCORE
 IP.</p>
-<h2 id="block-parameters">Block Parameters</h2>
-<p>The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>Parameters specific to the block are as follows.</p>
-<p>Complex Multiplication<br />
-Specifies mode of operation: scalar multiplier (Complex Multiplication
-deselected) or complex multiplier (Complex Multiplication selected).</p>
-<p>Optimize for<br />
-Specifies whether your design will be optimized for Performance or for
-Resources when it is implemented in the Xilinx FPGA or SoC device.</p>
+<section id="complex-multiplication" class="level4">
+<h4>Complex Multiplication</h4>
+<p>Specifies mode of operation: scalar multiplier (Complex
+Multiplication deselected) or complex multiplier (Complex Multiplication
+selected).</p>
+</section>
+<section id="optimize-for" class="level4">
+<h4>Optimize for</h4>
+<p>Specifies whether your design will be optimized for Performance or
+for Resources when it is implemented in the FPGA or SoC device.</p>
 <p>Based on the settings for Complex Multiplication and Optimize for,
 and rate and type propagation (from the input data width), the latency
 value of the block will be derived automatically for a fully pipelined
 circuit. This latency value will be displayed on the block in the
 Simulink model.</p>
-<h2 id="logicore-documentation">LogiCORE™ Documentation</h2>
-<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/cmpy/v6_0/pg104-cmpy.pdf">LogiCORE
-IP Complex Multiplier v6.0</a></p>
-<p><a href="https://www.xilinx.com/support/documentation/ip_documentation/mult_gen/v12_0/pg108-mult-gen.pdf">LogiCORE
-IP Multiplier v12.0</a></p>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
+<p>LogiCORE IP Complex Multiplier v6.0 <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg104-cmpy&amp;ft:locale=en-US">(PG104)</a></p>
+<p>LogiCORE IP Multiplier v12.0 <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">(PG108)</a></p>
+</section>
+</section>
 </body>
 </html>

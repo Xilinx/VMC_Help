@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,12 +28,16 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Modulus</h1>
 </header>
-<h1 id="modulus">Modulus</h1>
+<section id="modulus" class="level1">
+<h1>Modulus</h1>
 <p>Performs element-wise modulus operation on the input signals</p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>Math Functions / Math Operations</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Modulus block takes two inputs. The first input is taken as
 dividend and the second input is considered as divisor. The output is
 the remainder after division. For each element of the dividend A,
@@ -45,7 +49,9 @@ floating-point data types and 0 for the rest of the data types.</p>
 <p>Note: For signed data types the remainder will have the same sign as
 the divisor B. If instead it should have the same sign as the dividend,
 use the Remainder block instead of the Modulus block.</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>Data types accepted at the inputs of the block are:</p>
 <ul>
 <li>The block supports all native Simulink® data types, as well as half
@@ -61,7 +67,11 @@ is decided by Vitis Model Composer data type propagation rules.</li>
 <li>The block operates on inputs of real numeric type only. For input of
 complex numeric type it issues an error.</li>
 </ul>
-<h2 id="parameters">Parameters</h2>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
 <p>The Modulus block has no parameters to set.</p>
+</section>
+</section>
 </body>
 </html>

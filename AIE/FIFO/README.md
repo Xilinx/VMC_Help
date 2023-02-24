@@ -20,4 +20,4 @@ combination of the two.
 ## Parameters
 
 #### FIFO Depth (32-bit words)  
-* Should be a positive integer value and the default value is `0`.
+Should be a positive integer value and the default value is `0`.

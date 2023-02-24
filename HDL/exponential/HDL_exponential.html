@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -43,48 +43,56 @@ input. Currently, only the floating-point data type is supported.</p>
 <p>Parameters specific to the Basic tab are as follows.</p>
 <section id="axi-interface" class="level4">
 <h4>AXI Interface</h4>
-<ul>
-<li><h4 id="flow-control">Flow Control</h4>
-<ul>
-<li><h4 id="blocking">Blocking</h4>
+<section id="flow-control" class="level5">
+<h5>Flow Control</h5>
+<section id="blocking" class="level6">
+<h6>Blocking</h6>
 <p>Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
-another input channel.</p></li>
-<li><h4 id="nonblocking">NonBlocking</h4>
+another input channel.</p>
+</section>
+<section id="nonblocking" class="level6">
+<h6>NonBlocking</h6>
 <p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
 input channel does not block the execution of an operation if data is
-received on another input channel.</p></li>
-</ul></li>
-<li><h4 id="optimize-goal">Optimize Goal</h4>
+received on another input channel.</p>
+</section>
+</section>
+<section id="optimize-goal" class="level5">
+<h5>Optimize Goal</h5>
 <p>When NonBlocking mode is selected, the following optimization options
 are activated.</p>
-<ul>
-<li><h4 id="resources">Resources</h4>
-<p>Block is configured for minimum resources.</p></li>
-<li><h4 id="performance">Performance</h4>
-<p>Block is configured for maximum performance.</p></li>
-</ul></li>
-</ul>
+<section id="resources" class="level6">
+<h6>Resources</h6>
+<p>Block is configured for minimum resources.</p>
+</section>
+<section id="performance" class="level6">
+<h6>Performance</h6>
+<p>Block is configured for maximum performance.</p>
+</section>
+</section>
 </section>
 <section id="block-memory-usage" class="level4">
 <h4>Block Memory Usage</h4>
-<ul>
-<li><h4 id="bmg-usage">BMG Usage</h4>
-<ul>
-<li><h4 id="no-usage">No Usage</h4>
-<p>Do not use Block Memory.</p></li>
-<li><h4 id="full-usage">Full Usage</h4>
-<p>Make full use of Block Memory.</p></li>
-</ul></li>
-</ul>
+<section id="bmg-usage" class="level5">
+<h5>BMG Usage</h5>
+<section id="no-usage" class="level6">
+<h6>No Usage</h6>
+<p>Do not use Block Memory.</p>
+</section>
+<section id="full-usage" class="level6">
+<h6>Full Usage</h6>
+<p>Make full use of Block Memory.</p>
+</section>
+</section>
 </section>
 <section id="latency-specification" class="level4">
 <h4>Latency Specification</h4>
-<ul>
-<li><h4 id="latency">Latency</h4>
-This defines the number of sample periods by which the block&#39;s output is
-delayed.</li>
-</ul>
+<section id="latency" class="level5">
+<h5>Latency</h5>
+<p>This defines the number of sample periods by which the block&#39;s output
+is delayed.</p>
+</section>
 </section>
 </section>
 <section id="optional-ports-tab" class="level3">
@@ -92,38 +100,44 @@ delayed.</li>
 <p>Parameters specific to the Optional Ports tab are as follows.</p>
 <section id="input-channel-ports" class="level4">
 <h4>Input Channel Ports</h4>
-<ul>
-<li><h4 id="has-tlast">Has TLAST</h4>
-<p>Adds a tlast port to the input channel.</p></li>
-<li><h4 id="has-tuser">Has TUSER</h4>
-<p>Adds a tuser port to the input channel.</p></li>
-</ul>
+<section id="has-tlast" class="level5">
+<h5>Has TLAST</h5>
+<p>Adds a tlast port to the input channel.</p>
+</section>
+<section id="has-tuser" class="level5">
+<h5>Has TUSER</h5>
+<p>Adds a tuser port to the input channel.</p>
+</section>
 </section>
 <section id="control-options" class="level4">
 <h4>Control Options</h4>
-<ul>
-<li><h4 id="provide-enable-port">Provide enable port</h4>
-<p>Add an enable port to the block interface.</p></li>
-<li><h4 id="has-result-tready">Has Result TREADY</h4>
-<p>Add a TREADY port to the result channel.</p></li>
-</ul>
+<section id="provide-enable-port" class="level5">
+<h5>Provide enable port</h5>
+<p>Add an enable port to the block interface.</p>
+</section>
+<section id="has-result-tready" class="level5">
+<h5>Has Result TREADY</h5>
+<p>Add a TREADY port to the result channel.</p>
+</section>
 </section>
 <section id="exception-signals" class="level4">
 <h4>Exception Signals</h4>
-<ul>
-<li><h4 id="underflow">UNDERFLOW</h4>
-<p>Add an output port that serves as an underflow flag.</p></li>
-<li><h4 id="overflow">OVERFLOW</h4>
-<p>Add an output port that serves as an overflow flag.</p></li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+<section id="underflow" class="level5">
+<h5>UNDERFLOW</h5>
+<p>Add an output port that serves as an underflow flag.</p>
+</section>
+<section id="overflow" class="level5">
+<h5>OVERFLOW</h5>
+<p>Add an output port that serves as an overflow flag.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
 </section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf">PG060</a>)</p>
+<p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 </section>
 </section>
 </body>

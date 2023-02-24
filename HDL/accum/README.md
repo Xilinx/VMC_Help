@@ -35,7 +35,7 @@ where bit zero is the least significant bit.
 
 ##### Overflow  
 Refer to the section [Overflow and
-Quantization](common-options-in-block-parameter-dialog-boxes-aa1032308.html#val1538085362909__aa1032322).
+Quantization](matlab:helpview(vmcHelp('name','common-options'))).
 
 #### Feedback scaling  
 Specifies the feedback scale factor to be one of the following:
@@ -91,7 +91,7 @@ available in the target device. The default is Fabric.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 The Accumulator block always has a latency of 1.
 

@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,22 +28,28 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">Scalar2Vector</h1>
 </header>
-<h1 id="scalar2vector">Scalar2Vector</h1>
+<section id="scalar2vector" class="level1">
+<h1>Scalar2Vector</h1>
 <p>The Scalar2Vector block converts scalar type input to vector type
 output.</p>
-<h2 id="description">Description</h2>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>The Xilinx® Scalar2Vector block slices the binary value of the input
 scalar based on the Width parameter to produce a vector output. For
 example, if the input is 3720 ( binary value 111 010 001 000 ) of type
 <code>Ufix_12_0</code>, SSR is 4, and the Width parameter value is 3,
 then this block slices the input binary value into 4 groups, each of 3
 bits, so that it produces the output [0 1 2 7].</p>
-<h2 id="data-type-support">Data Type Support</h2>
+</section>
+<section id="data-type-support" class="level2">
+<h2>Data Type Support</h2>
 <p>The input must be a Boolean or unsigned fixed-point signal. The
 output type is normally unsigned with binary point at zero, but can be
 Boolean when the Width parameter is 1.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<h2 id="block-parameters">Block Parameters</h2>
+</section>
+<section id="block-parameters" class="level2">
+<h2>Block Parameters</h2>
 <p>Width: This parameter defines the number of bits for each element of
 output vector. This parameter is decided by:</p>
 <p>Width = Input data width (bits)/SSR</p>
@@ -53,5 +59,7 @@ parameters.</p>
 used to control the processing of multiple data samples on every sample
 period. This block enables 1-D vector support for the primary block
 operation.</p>
+</section>
+</section>
 </body>
 </html>

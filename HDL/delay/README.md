@@ -1,6 +1,6 @@
 # Delay
 
-The Xilinx Delay block implements a fixed delay of L cycles.
+The Delay block implements a fixed delay of L cycles.
 
 ![](./Images/block.png)
 
@@ -17,7 +17,6 @@ value parameter. The delay block supports a specified latency but no
 initial value other than zeros. The following figure shows the Delay
 block behavior when L=4 and Period=1s.
 
-
   
 ![](./Images/lua1538085457280.png)  
 
@@ -32,14 +31,14 @@ synchronous design (with a few rare exceptions).
 Parameters specific to the Basic tab are as follows:
 
 #### Provide synchronous reset port  
-* This option activates an optional reset (rst) pin on the block. When the
+This option activates an optional reset (rst) pin on the block. When the
 reset signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block's sample
 rate. The signal driving the reset port must be Boolean.
 
 #### Provide enable port 
-* This option activates an optional enable (en) pin on the block. When the
+This option activates an optional enable (en) pin on the block. When the
 enable signal is not asserted the block holds its current state until
 the enable signal is asserted again or the reset signal is asserted.
 Reset signal has precedence over the enable signal. The enable signal
@@ -47,7 +46,7 @@ has to run at a multiple of the block 's sample rate. The signal driving
 the enable port must be Boolean.
 
 #### Latency  
-* Latency is the number of cycles of delay. The latency can be zero,
+Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port checkbox is not checked. The
 latency must be a non-negative integer. If the latency is zero, the
 delay block collapses to a wire during logic synthesis. If the latency
@@ -59,12 +58,12 @@ is set to L=1, the block will generally be synthesized as a flip-flop
 Parameters specific to the Implementation tab are as follows:
 
 #### Implement using behavioral HDL  
-* Uses behavioral HDL as the implementation. This allows the downstream
+Uses behavioral HDL as the implementation. This allows the downstream
 logic synthesis tool to choose the best implementation.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../HDL/dds_compiler_v6_0/README.md).
 
 ## Logic Synthesis using Behavioral HDL
 

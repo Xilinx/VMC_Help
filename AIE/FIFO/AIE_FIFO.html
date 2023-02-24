@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,13 +28,17 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">FIFO</h1>
 </header>
-<h1 id="fifo">FIFO</h1>
+<section id="fifo" class="level1">
+<h1>FIFO</h1>
 <p>This block allows specification of the FIFO depth on a particular
 path.</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAABVCAYAAACxQf12AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAIU0lEQVR4nO2de2xT1x2Av+NnTAgkBDtpFkgBUdHUIFWVysZENRKpGmWVtmqrWFupQdWkrmzdQ22YYAj1sbGRCbpNdFtfSOuqslVbN8Y2qcVUrVZp66SxVSak5VHWAE3t0PIIxM979seN0xjyINzr6+vj80lRZJ/rX35X+XLOuecVIaWUaDQlxlPuBDTVgW+yQiGEU3loFGGiBnJS0QCyr91oezIaNfGvOjBhmW46NY6gRdM4ghZN4whT9tGUpq4dWX+T5TCidj4yn4HUgA1JAcG5iONPQ27InnguoHpFq78RueQx8AYthyrJQOTAXhg6XIrIZaE6m04bJSOfRhzsRvQ/D/mUDfFSiP5fKyUZVKNodkvWtxnOHID3fwND74CRvfp4RhbO98H7L1jPzWVUl2ilkgwAA/HOo5C/YCHmkBkDw3p+LqN6RCupZCNkzyF6N0E+fXUxezdB7rz1/FxIdYjmhGQFht5FHP8VGNPorxkpxPFfKtcvG4v6ojkpWYGBvYiP3wIjM3VMI2NeO/AX6/m5GLVFK4dkAEg43APZj0BO0t+SBmRPw+FtlGiQxDWoK1rZJCt8JoU4uHHyWs3ImNdcTZ+uwlBTtHJLVmC4Hw7/ZPz+mpEyy4ZPWM+xAlBPNLdINoI4/TokXi2utfJp+PAVs6xKUEs0l0lWQBx7ElInQObNflmqH/HeL6znWEGoI1rtdcgbttkjmZGxTTIAZA56vw/CC8IDvZvN96oIdSbV83m4OAQ5C1NABYbPQWrYepwxiMwg/Ps+80Vm0NbYlYCYbBeUEKKylnLXLEGG14MnYD2WkUEkd0Kqz3qsKsG/6sCEewbUaToBUn2mHFcyUDoVnoApbc0S67E0iokGWjaXop5ooGVzIWqKBlo2l6GuaKBlcxEegMHBQXp6ekgmk+XOx360bI4ykUMegF27dtHd3U1HRweJRMLRxBxBy+YYEzkkpJQymUzS0dFBPB4nGo0Si8WIRCKVN442FeOMswUW3ozXW9yDWNQ2j/i+l7jv4Ue4trWFzd/6Go/99Gke/9kzeDxjziORkl0b2/hqZwNnL+TZ8twH/PGNMyTO5JgXCXDPrXP43t1N+H3VcYZJ4UiEsQ4V8AGEw2FisRidnZ3E43E6OzuJxWLlybaUjNRsl8rW99rLtLVeM+XH77njNp7t2fLJGyODurkLh1j90BHqZ3rZ86NFLGwJ8t8jF/nGEyfoT2R46uH5pbgbVxKNRoscKsg2+qcciUSIxWJFFypJCZrRl/9Ry8lklj/8YCHLFoWYGfLw2aUz+dPWhby472MO/c+GbXgVwqUOFZrRojbjUtmUpSCbHRPbngCvH2pmzcp51ASKm+D5kQDL22fw6r/OWf85FcJ4FVYikbh8Uj0SibB7926i0Wg58nQMWRuGiNlcfuZLXXg93tGyz638NM8/tQP8QQjWwKwGCNbw0t59vPLGP4vi7PntM5wdTrN4bs24P6el0c/pc/nS3YgLGetQPB5n/fr1l4uWSCRYu3ZtOfJzjuY1sOCB0X7anj//jtbWT40WB4MBmFUP/gAEQyOihfjC7avZvv2HYwIZNM6ewby6o5waSACX98U++CjL8vbaEt+QuxjrUDQaZefOncVNZyKRGH0gULZGm3cXLPh60cNAONxIc3Nk9KuhoX7cj4ZCNZ9c19RI89wQgUPf5pbrM+x98ywX08UbUU4OZnmr9yK33jyrpLfkJi51qPBA4JnsArUQyAXrka13IT0WF0caOXOH038egOF+Pr98Fu3Xhrhj0zF6j6fI5SVvHx3mixuPsm5NI4tbbViMWSGMJxmMDG8kk8kJL1AC4UVe1w1zVoBlyczjqUT8u5A9O/r27x9fyOZnT7H6oSMkz+ZoDQfoWj2HDXc3WUy+spjIISGllD09PXR3d192gRIDth4/8vpHoW6p5WXeQqaRQ+8hDm6A/EWbElQH/6oDE1ZUPoB169YB0NXVRTgcdj7DUuGbgWz/MWLmAqSwWJPl08jzbyMObbF2YpDi7N+/f1yH1FrKPRb/bOTSHRBssr6020jB6TcRh3vMnUyacZlsKbc6m1PGIIMRWPYE+BrAY/EWjTQM/G1ke5zaxxaUEvVEC82HZdvBO9Pc3mYBYaThxAvQ/6JNyVUvaolWtwTZvg28NWD1v74YGTj2JHz4V3tyq3LUEa12MXLZz+2JZWTg3a1w+u/2xCvgbza/Z206vbuCUEc0mzcQiwv2bvKVvnpoecR8cXIDInfG1vhuR62nTtduIPYiWzaCrwWQkDuFOLUVUOsJVm8gvhpsXLIt59wJvoh57obwgq8J2Xin9RwrCLVEA9fJJmfcBLUrQIypZUUAaleYZVWCeqKBe2TzN8Pce8dvykXALPNXx1yomqJB+WXzBJFND8JkU18iiIw8aH2ivwJQVzQoo2wCGrvAcwXr0LyzofFe8zMKo7ZoUB7Z6m5Bhm4A4Z86pvAjQ0uhbqX1/FyM+qKBs7IF2pANX568ybwUEUA2fAUC6m7Lqw7RwBnZvLXIyDeLnzCvFBEw+2teNfcXVI9oUGLZPMjw/eAJWYgZQs69HxV/Lerd0VSUSrbZt0GgDYSFWT3hg2CbGUsxqk80sF+2pu8g62+fXr9sIkTQjKVYf02dSfXpkupDJHYga9othxKBa5BGFnI2TcT76u2L5RKqVzSA9DFE+pgtodQeBbNOdTadGsfRomkcQYumcQQtmsYRtGgaR5hyKbdGMx2uagPxJA5qNNNCN50aR9CiaRxBi6ZxBC2axhG0aBpH0KJpHEGLpnEELZrGEbRoGkfQomkcQYumcQQtmsYRtGgaR9CiaRxBi6ZxBC2axhG0aBpH+D/WIIBKsxnBlwAAAABJRU5ErkJggg==" /></p>
-<h2 id="library">Library</h2>
+<section id="library" class="level2">
+<h2>Library</h2>
 <p>AI Engine/Interfaces</p>
-<h2 id="description">Description</h2>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
 <p>This block allows specification of the FIFO depth on a particular
 path. Specifying the FIFO depth value can help avoid deadlock or
 stalling by creating more buffering in the paths. This block does not
@@ -42,11 +46,15 @@ affect functional simulation and will only impact the generated graph
 code. You can also set location constraints for the FIFO block using the
 Constraint manager. FIFOs can be either stream FIFOs, DMA FIFOs, or a
 combination of the two.</p>
-<h2 id="parameters">Parameters</h2>
-<h4 id="fifo-depth-32-bit-words">FIFO Depth (32-bit words)</h4>
-<ul>
-<li>Should be a positive integer value and the default value is
-<code>0</code>.</li>
-</ul>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="fifo-depth-32-bit-words" class="level4">
+<h4>FIFO Depth (32-bit words)</h4>
+<p>Should be a positive integer value and the default value is
+<code>0</code>.</p>
+</section>
+</section>
+</section>
 </body>
 </html>

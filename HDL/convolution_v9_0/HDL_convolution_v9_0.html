@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 20px;}.level3{margin-left: 30px;}.level4{margin-left: 40px;}h4 {color:red;}.level5{margin-left: 50px;}.level6{margin-left: 60px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -57,45 +57,57 @@ bits for each input bit.</p>
 <p>Parameters specific to the page_0 tab are as follows.</p>
 <section id="data-rates-and-puncturing" class="level4">
 <h4>Data Rates and Puncturing</h4>
-<ul>
-<li><h4 id="punctured">Punctured</h4>
-<p>Determines whether the block is punctured.</p></li>
-<li><h4 id="dual-output">Dual Output</h4>
-<p>Specifies a dual-channel punctured block.</p></li>
-<li><h4 id="input-rate">Input Rate</h4>
+<section id="punctured" class="level5">
+<h5>Punctured</h5>
+<p>Determines whether the block is punctured.</p>
+</section>
+<section id="dual-output" class="level5">
+<h5>Dual Output</h5>
+<p>Specifies a dual-channel punctured block.</p>
+</section>
+<section id="input-rate" class="level5">
+<h5>Input Rate</h5>
 <p>Punctured: Only the input rate can be modified. Its value can range
 from 2 to 12, resulting in a rate n/m encoder where n is the input rate
-and n&lt;m&lt;2n.</p></li>
-<li><h4 id="output-rate">Output Rate</h4>
+and n&lt;m&lt;2n.</p>
+</section>
+<section id="output-rate" class="level5">
+<h5>Output Rate</h5>
 <p>Not Punctured: Only the output rate can be modified. Its value can be
 integer values from 2 to 7, resulting in a rate 1/2 or rate 1/7 encoder,
-respectively</p></li>
-<li><h4 id="puncture-code0-and-code1">Puncture Code0 and Code1</h4>
+respectively</p>
+</section>
+<section id="puncture-code0-and-code1" class="level5">
+<h5>Puncture Code0 and Code1</h5>
 <p>The two puncture pattern codes are used to remove bits from the
 encoded data prior to output. The length of each puncture code must be
 equal to the puncture input rate, and the total number of bits set to 1
 in the two codes must equal the puncture output rate (m) for the codes
 to be valid. A 0 in any position indicates that the output bit from the
 encoder is not transmitted. See the associated LogiCORE™ data sheet for
-an example.</p></li>
-</ul>
+an example.</p>
+</section>
 </section>
 <section id="optional-pins" class="level4">
 <h4>Optional Pins</h4>
-<ul>
-<li><h4 id="tready">Tready</h4>
+<section id="tready" class="level5">
+<h5>Tready</h5>
 <p>Adds a tready pin to the block. Indicates that the slave can accept a
-transfer in the current cycle.</p></li>
-<li><h4 id="aclken">Aclken</h4>
+transfer in the current cycle.</p>
+</section>
+<section id="aclken" class="level5">
+<h5>Aclken</h5>
 <p>Adds a aclken pin to the block. This signal carries the clock enable
-and must be of type Bool.</p></li>
-<li><h4 id="aresetn">Aresetn</h4>
+and must be of type Bool.</p>
+</section>
+<section id="aresetn" class="level5">
+<h5>Aresetn</h5>
 <p>Adds a aresetn pin to the block. This signal resets the block and
 must be of type <code>Bool</code>. The signal must be asserted for at
 least 2 clock cycles, however, it does not have to be asserted before
 the decoder can start decoding. If this pin is not selected, Model
-Composer ties this pin to inactive (high) on the core.</p></li>
-</ul>
+Composer ties this pin to inactive (high) on the core.</p>
+</section>
 </section>
 </section>
 <section id="page_1-tab" class="level3">
@@ -103,27 +115,31 @@ Composer ties this pin to inactive (high) on the core.</p></li>
 <p>Parameters specific to the page_1 tab are as follows.</p>
 <section id="radix" class="level4">
 <h4>Radix</h4>
-<ul>
-<li><h4 id="convolution-code-radix">Convolution code radix</h4>
-<p>Select Binary, Octal, or Decimal.</p></li>
-<li><h4 id="convolution">Convolution</h4>
-<ul>
-<li><h4 id="constraint-length">Constraint length</h4>
+<section id="convolution-code-radix" class="level5">
+<h5>Convolution code radix</h5>
+<p>Select Binary, Octal, or Decimal.</p>
+</section>
+</section>
+<section id="convolution" class="level4">
+<h4>Convolution</h4>
+<section id="constraint-length" class="level5">
+<h5>Constraint length</h5>
 <p>Equals n+1, where n is the length of the constraint register in the
-encoder.</p></li>
-<li><h4 id="convolution-code">Convolution code</h4>
+encoder.</p>
+</section>
+<section id="convolution-code" class="level5">
+<h5>Convolution code</h5>
 <p>Array of binary convolution codes. Output rate is derived from the
-array length. Between 2 and 7 (inclusive) codes can be entered.</p></li>
-</ul></li>
-</ul>
-<p>Other parameters used by this block are explained in the topic <a href="common-options-in-block-parameter-dialog-boxes-aa1032308.html">Common
+array length. Between 2 and 7 (inclusive) codes can be entered.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
 </section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>Convolutional Encoder LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=convolution;v=latest;d=pg026_convolution.pdf">PG026</a>)</p>
+<p>Convolutional Encoder LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg026_convolution&amp;ft:locale=en-US">PG026</a>)</p>
 </section>
 </section>
 </body>
