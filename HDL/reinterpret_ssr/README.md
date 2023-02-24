@@ -4,6 +4,8 @@ The Vector Reinterpret block changes the vector input signal type
 without altering the binary representation. You can change the signal
 between signed and unsigned, and relocate the binary point.
 
+![](./Images/block.png)
+
 Hardware notes: In hardware this block costs nothing.
 
 Example: The input is 6 bits wide, signed with 2 fractional bits, and
@@ -13,15 +15,8 @@ of -2.0 (1110.00 in binary 2's complement) becomes an output of 56
 
 ## Description
 
-Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector data support for the primary block
-operation.
-
 The Vector Reinterpret block forces its output to a new type without any
 regard for retaining the numerical value represented by the input.
-
-![](./Images/block.png)
 
 The binary representation is passed through unchanged, so in hardware
 this block consumes no resources. The number of bits in the output will
@@ -65,24 +60,24 @@ cost in hardware.
 
 Parameters specific to the block are as follows.
 
-Force Arithmetic Type  
+#### Force Arithmetic Type  
 When checked, the Output Arithmetic Type parameter can be set and the
 output type is forced to the arithmetic type chosen according to the
 setting of the Output Arithmetic Type parameter. When unchecked, the
 arithmetic type of the output is unchanged from the arithmetic type of
 the input.
 
-Output Arithmetic Type  
+#### Output Arithmetic Type  
 The arithmetic type (unsigned or signed, 2's complement, Floating-point)
 to which the output is to be forced.
 
-Force Binary Point  
+#### Force Binary Point  
 When checked, the Output Binary Point parameter can be set and the
 binary point position of the output is forced to the position supplied
 in the Output Binary Point parameter. When unchecked, the arithmetic
 type of the output is unchanged from the arithmetic type of the input.
 
-Output Binary Point  
+#### Output Binary Point  
 The position to which the output's binary point is to be forced. The
 supplied value must be an integer between zero and the number of bits in
 the input (inclusive).
@@ -90,4 +85,4 @@ the input (inclusive).
 ## LogiCORE™ Documentation
 
 [LogiCORE IP Floating-Point Operator
-v7.1](https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf)
+v7.1](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
