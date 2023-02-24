@@ -44,7 +44,7 @@ Though three blocks are required in this construction, the hardware
 implementation is realized as simply a bus concatenation, which has no
 cost in hardware.
 
-## Block Parameters
+## Parameters
 
 Parameters specific to the block are as follows.
 
