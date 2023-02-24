@@ -6,7 +6,7 @@
 The Reciprocal block performs the reciprocal on the input.
 Currently, only the floating-point data type is supported.
 
-## Block Parameters
+## Parameters
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
