@@ -39,7 +39,7 @@ with the Xilinx Slice block or the Xilinx Concat block. To illustrate
 the block's use, consider the following scenario:
 
 Given two signals, one carrying signed data, and the other carrying two
-unsigned bits (a `UFix_2_0`), you should design a system that
+unsigned bits (a UFix_2_0), you should design a system that
 concatenates the two bits from the second signal onto the tail (least
 significant bits) of the signed signal.
 
@@ -47,7 +47,7 @@ You can do so using two Vector Reinterpret blocks and one Vector Concat
 block. The first Vector Reinterpret block is used to force the signed
 input signal to be treated as an unsigned value with its binary point at
 zero. The result is then fed through the Vector Concat block along with
-the other signal's `UFix_2_0`. The Concat operation is then followed by
+the other signal's UFix_2_0. The Concat operation is then followed by
 a second Vector Reinterpret that forces the output of the Vector Concat
 block back into a signed interpretation with the binary point
 appropriately repositioned.
@@ -85,4 +85,4 @@ the input (inclusive).
 ## LogiCORE™ Documentation
 
 LogiCORE IP Floating-Point Operator
-v7.1 [(PG060)]docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
+v7.1 [(PG060)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
