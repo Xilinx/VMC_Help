@@ -30,16 +30,15 @@ for details about these LogiCORE IP.
 
 ## Parameters
 
-
 Parameters specific to the block are as follows.
 
-Complex Multiplication  
+#### Complex Multiplication  
 Specifies mode of operation: scalar multiplier (Complex Multiplication
 deselected) or complex multiplier (Complex Multiplication selected).
 
-Optimize for  
+#### Optimize for  
 Specifies whether your design will be optimized for Performance or for
-Resources when it is implemented in the Xilinx FPGA or SoC device.
+Resources when it is implemented in the FPGA or SoC device.
 
 Based on the settings for Complex Multiplication and Optimize for, and
 rate and type propagation (from the input data width), the latency value
@@ -49,8 +48,8 @@ Simulink model.
 
 ## LogiCORE™ Documentation
 
-[LogiCORE IP Complex Multiplier
-v6.0](https://www.xilinx.com/support/documentation/ip_documentation/cmpy/v6_0/pg104-cmpy.pdf)
+LogiCORE IP Complex Multiplier
+v6.0 [(PG104)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)
 
-[LogiCORE IP Multiplier
-v12.0](https://www.xilinx.com/support/documentation/ip_documentation/mult_gen/v12_0/pg108-mult-gen.pdf)
+LogiCORE IP Multiplier
+v12.0 [(PG108)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)
