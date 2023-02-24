@@ -32,7 +32,7 @@ The example described below consists of a function xlmax which returns
 the maximum of its inputs. The second illustrates how to do simple
 arithmetic. The third shows how to build a finite state machine.
 
-### Configuring an MCode Block
+## Configuring an MCode Block
 
 The MATLAB Function parameter of an MCode block specifies the name of
 the block's M- code function. This function must exist in one of the
@@ -181,7 +181,6 @@ end
 
 is acceptable only if a and b are both boolean or both arithmetic.
 
-&nbsp;
 
 #### Constant Expressions  
 An expression is constant provided its value does not depend on the
@@ -195,7 +194,8 @@ c = xfix({xlSigned, 10, 2}, b + 3.345);
 ```
 
 can be used in any context that demands a constant.
-xfix() Conversion  
+
+##### xfix() Conversion  
 The xfix() conversion function converts a double to an xfix, or
 changes one xfix into another having different characteristics. A call
 on the conversion function looks like the following
@@ -258,9 +258,8 @@ x = xfix(proto, a);
 y = xfix(proto, b);
 ```
 
-&nbsp;
 
-xfix Properties: xl_arith, xl_nbits, and xl_binpt  
+#### xfix Properties: xl_arith, xl_nbits, and xl_binpt  
 Each xfix number has three properties: the arithmetic type, the bit
 width, and the binary point position. The MCode blocks provide three
 functions to get these properties of a fixed- point number. The results
@@ -276,9 +275,8 @@ Function n = xl_nbits(x) returns the width of the input number x.
 Function b = xl_binpt(x) returns the binary point position of the
 input number x.
 
-&nbsp;
 
-Bit-wise Operators: xl_or, xl_and, xl_xor, and xl_not  
+#### Bit-wise Operators: xl_or, xl_and, xl_xor, and xl_not  
 The MCode block provides four built-in functions for bit-wise logical
 operations: xl_or, xl_and, xl_xor, and xl_not.
 
@@ -286,7 +284,7 @@ Function xl_or, xl_and, and xl_xor perform bit-wise logical or,
 and, and xor operations respectively. Each function is in the form of
 
 ``` pre
-x = xl_op(a, b, ).
+x = xl_op(a, b, ...).
 ```
 
 Each function takes at least two fixed-point numbers and returns a
@@ -306,9 +304,8 @@ Z = xl_xor(a, b, c, d);
 N = xl_not(x);
 ```
 
-&nbsp;
 
-Shift Operators: xl_rsh, and xl_lsh  
+#### Shift Operators: xl_rsh, and xl_lsh  
 Functions xl_lsh and xl_rsh allow you to shift a sequence of bits of
 a fixed-point number. The function is in the form:
 
@@ -334,9 +331,8 @@ b = xl_rsh(a, 5);
 The output b is of type xlSigned with 21 bits and the binary point
 located at bit 21.
 
-&nbsp;
 
-Slice Function: xl_slice  
+#### Slice Function: xl_slice  
 Function xl_slice allows you to access a sequence of bits of a
 fixed-point number. The function is in the form:
 
@@ -361,27 +357,24 @@ b = xl_slice(a, 10, 4);
 c = xl_slice(a, xl_nbits(a)-1, xl_nbits(a)-1); 
 ```
 
-&nbsp;
 
-Concatenate Function: xl_concat  
+#### Concatenate Function: xl_concat  
 Function x = xl_concat(hi, mid, ..., low) concatenates two or more
 fixed-point numbers to form a single fixed-point number. The first input
 argument occupies the most significant bits, and the last input argument
 occupies the least significant bits. The output is an unsigned
 fixed-point number with binary point position at zero.
 
-&nbsp;
 
-Reinterpret Function: xl_force  
+#### Reinterpret Function: xl_force  
 Function x = xl_force(a, arith, binpt) forces the output to a new type
 with arith as its new arithmetic type and binpt as its new binary
 point position. The arith argument can be one of xlUnsigned,
 xlSigned, or xlBoolean. The binpt argument must be from 0 to the
 bit width inclusively. Otherwise, the block will throw an error.
 
-&nbsp;
 
-State Variables: xl_state  
+#### State Variables: xl_state  
 
 An MCode block can have internal state variables that hold their values
 from one simulation step to the next. A state variable is declared with
@@ -479,7 +472,7 @@ state variable into an FPGA, an error message is issued during model
 netlist time. The following are examples of using vector state
 variables.
 
-Delay Line
+### Delay Line
 
 The state variable in the following function is mapped into a delay
 line.
@@ -491,7 +484,7 @@ function q = delay(d, lat)
   r.push_front_pop_back(d);
 ```
 
-Line of Registers
+### Line of Registers
 
 The state variable in the following function is mapped into a line of
 registers.
@@ -503,7 +496,7 @@ function s = sum4(d)
   r.push_front_pop_back(d);
 ```
 
-Vector of Constants
+### Vector of Constants
 
 The state variable in the following function is mapped into a vector of
 constants.
@@ -515,7 +508,7 @@ function s = myadd(a, b, c, d, nbits, binpt)
   s = a*coef(0) + b*coef(1) + c*coef(2) + c*coef(3);
 ```
 
-Addressable Shift Register
+### Addressable Shift Register
 
 The state variable in the following function is mapped into an
 addressable shift register.
@@ -541,7 +534,7 @@ function q = addrsr(contents, addr, arith, nbits, binpt)
   q = mem(addr);
 ```
 
-Single Port RAM  
+### Single Port RAM  
 The state variable in the following function is mapped to a single port
 RAM in fabric (Distributed RAM).
 
@@ -572,7 +565,7 @@ function dout = ram(addr, we, din, depth, nbits, binpt,ram_enable)
 
 ## MATLAB Functions
 
-disp()  
+### disp()  
 Displays the expression value. In order to see the printing on the
 MATLAB console, the option Enable printing with disp must be checked on
 the Advanced tab of the MCode block parameters dialog box. The argument
@@ -662,7 +655,7 @@ disp(a == b)
 type: Bool, binary: 1, double: 1
 ```
 
-error()  
+### error()  
 Displays message and abort function. See MATLAB help on this function
 for more detailed information. Message formatting is not supported by
 the MCode block. For example:
@@ -673,7 +666,7 @@ if latency <=0
 end
 ```
 
-isnan()  
+### isnan()  
 Returns true for Not-a-Number. isnan(X) returns true when X is
 Not-a-Number. X must be a scalar value of double or Xilinx fixed-point
 number. This function is not supported for vectors or matrices. For
@@ -685,7 +678,7 @@ if isnan(incr) & incr == 1
 end
 ```
 
-NaN()  
+### NaN()  
 The NaN() function generates an IEEE arithmetic representation for
 Not-a-Number. A NaN is obtained as a result of mathematically undefined
 operations like 0.0/0.0 and inf-inf. NaN(1,N) generates a 1-by-N vector
@@ -699,7 +692,7 @@ else
 end
 ```
 
-num2Str()  
+### num2Str()  
 Converts a number to a string. num2str(X) converts the X into a
 string. X can be a scalar value of double, a Xilinx fixed-point
 number, or a vector state variable. The default number of digits is
@@ -712,7 +705,7 @@ if opcode <=0 | opcode >= 10
 end
 ```
 
-ones()  
+### ones()  
 The ones() function generates a specified number of one values.
 ones(1,N) generates a 1-by-N vector of ones. ones(M,N) where M
 must be 1. It's usually used with xl_state() function call. For
@@ -723,7 +716,7 @@ initialized to \[1, 1, 1, 1\].
 persitent m, m = xl_state(ones(1, 4), proto)
 ```
 
-zeros()  
+### zeros()  
 The zeros() function generates a specified number of zero values.
 zeros(1,N) generates a 1-by-N vector of zeros. zero(M,N) where M
 must be 1. It's usually used with xl_state() function call. For
@@ -734,9 +727,8 @@ initialized to \[0, 0, 0, 0\].
 persitent m, m = xl_state(zeros(1, 4), proto)
 ```
 
-&nbsp;
 
-FOR Loop  
+### FOR Loop  
 FOR statement is fully unrolled. The following function sums n
 samples.
 
@@ -760,9 +752,8 @@ function q = bitreverse(d)
   end
 ```
 
-&nbsp;
 
-Variable Availability  
+### Variable Availability  
 MATLAB code is sequential (for example, statements are executed in
 order). The MCode block requires that every possible execution path
 assigns a value to a variable before it is used (except as a left-hand
@@ -790,7 +781,7 @@ Here a, b, and x are available, but y and z are not. Variable
 y is not available because the if statement has no else, and variable
 z is not available because the switch statement has no otherwise part.
 
-Debug MCode  
+#### Debug MCode  
 There are two ways to debug your MCode. One is to insert disp()
 functions in your code and enable printing; the other is to use the
 MATLAB debugger. For usage of the disp() function, see the disp()
@@ -860,9 +851,8 @@ end
 The double() function call only has an effect when the M code is run
 from the console. The MCode block ignores the double() call.
 
-&nbsp;
 
-Passing Parameters  
+### Passing Parameters  
 It is possible to use the same M-function in different MCode blocks,
 passing different parameters to the M-function so that each block can
 behave differently. This is achieved by binding input arguments to some
@@ -898,9 +888,8 @@ compiled.
 The parameters can only be of type double or they can be logical
 numbers.
 
-&nbsp;
 
-Optional Input Ports  
+### Optional Input Ports  
 The parameter passing mechanism allows the MCode block to have optional
 input ports. Consider for example, the following M-function:
 
@@ -927,9 +916,8 @@ three input ports.
   
 ![](./Images/zrd1538085531656.png)  
 
-&nbsp;
 
-Constructing a State Machine  
+### Constructing a State Machine  
 There are two ways to build a state machine using an MCode block. One
 way is to specify a stateless transition function using a MATLAB
 function and pair an MCode block with one or more state register blocks.
@@ -964,9 +952,8 @@ function currentstate = fsm1(din)
   end
 ```
 
-&nbsp;
 
-Reset and Enable Signals for State Variables  
+### Reset and Enable Signals for State Variables  
 The MCode block can automatically infer register reset and enable
 signals for state variables when conditional assignments to the
 variables contain two or fewer branches.
@@ -1111,9 +1098,8 @@ never executed. For this to occur, the conditional must contain two
 branches that are executed after dead code is eliminated, and constant
 propagation is performed.
 
-&nbsp;
 
-Inferring Registers  
+### Inferring Registers  
 Registers are inferred in hardware by using persistent variables,
 however, the right coding style must be used. Consider the two code
 segments in the following function:
@@ -1142,9 +1128,8 @@ variable ff2, then assigned to out2. These two statements can be
 completed in one cycle, so a register is not inferred. If you need to
 insert delay into combinational logic, refer to the next topic.
 
-&nbsp;
 
-Pipelining Combinational Logic  
+### Pipelining Combinational Logic  
 The generated FPGA bitstream for an MCode block might contain many
 levels of combinational logic and hence a large critical path delay. To
 allow a downstream logic synthesis tool to automatically pipeline the
@@ -1156,9 +1141,8 @@ instruct the downstream logic synthesis tool to implement register
 re-timing or register balancing. As an alternative approach, you can use
 the vector state variables to model delays.
 
-&nbsp;
 
-Shift Operations with Multiplication and Division  
+### Shift Operations with Multiplication and Division  
 The MCode block can detect when a number is multiplied or divided by
 constants that are powers of two. If detected, the MCode block will
 perform a shift operation. For example, multiplying by 4 is equivalent
@@ -1168,9 +1152,8 @@ expanding the xfix container as needed. For example, a Fix_8_4
 number multiplied by 4 will result in a Fix_8_2 number, and a
 Fix_8_4 number multiplied by 64 will result in a Fix_10_0 number.
 
-&nbsp;
 
-Using the xl_state Function with Rounding Mode  
+### Using the xl_state Function with Rounding Mode  
 The xl_state function call creates an xfix container for the state
 variable. The container's precision is specified by the second argument
 passed to the xl_state function call. If precision uses xlRound for
@@ -1187,9 +1170,6 @@ persistent s, s = xl_state(init, {xlSigned, 8, 5});
 
 ## Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-block icon in a Simulink® model.
-
 
 ![](./Images/wqq1647547952612.png)
 
@@ -1199,4 +1179,4 @@ tab specifies a list of constant inputs and their values.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
