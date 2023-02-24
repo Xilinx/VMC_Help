@@ -1,8 +1,10 @@
 # Relational
 
-The Xilinx Relational block implements a comparator.
-
 ![](./Images/block.png)
+
+## Description
+
+The Relational block implements a comparator.
 
 The supported comparisons are the following:
 
@@ -16,18 +18,16 @@ The supported comparisons are the following:
 
 ## Block Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
 The only parameter specific to the Relational block is:
 
-- Comparison: specifies the comparison operation computed by the block.
+#### Comparison
+Specifies the comparison operation computed by the block.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
 [LogiCORE IP Floating-Point Operator
-v7.1](https://www.xilinx.com/support/documentation/ip_documentation/floating_point/v7_1/pg060-floating-point.pdf)
+v7.1](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
