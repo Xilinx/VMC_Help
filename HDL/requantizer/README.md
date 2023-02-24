@@ -20,9 +20,9 @@ The Requantize block is used to requantize and scale its input signals.
 If you are only performing one of these operations, but not both, you
 can use a different block in the HDL blockset to perform that operation.
 
-- To requantize your input without scaling, use the
+To requantize your input without scaling, use the
   [Convert](../../HDL/convert/README.md) block in the HDL blockset.
-- To scale your input without requantizing, use the [Scale](../../HDL/scale/README.md)
+To scale your input without requantizing, use the [Scale](../../HDL/scale/README.md)
   block in the HDL blockset.
 
 ### Quantization
