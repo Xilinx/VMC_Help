@@ -1,17 +1,20 @@
 # Product
 
-The Xilinx Product block implements a scalar or complex multiplier. It
+![](./Images/block.png)
+
+## Description
+
+The Product block implements a scalar or complex multiplier. It
 computes the product of the data on its two input channels, producing
 the result on its output channel. For complex multiplication the input
 and output have two components: real and imaginary.
 
-![](./Images/block.png)
 
 The Product block is ideal for generating a simple scalar or complex
 multiplier. If your implementation will use more complicated features
-such as AXI4 ports or a user-specified precision, use the Xilinx
-[Complex Multiplier 6.0](complexmultiplier60.html) block (if you are
-configuring a complex multiplier) or Xilinx [Mult](mult.html) block (if
+such as AXI4 ports or a user-specified precision, use the
+[Complex Multiplier 6.0](../../HDL/cmult/README.md) block (if you are
+configuring a complex multiplier) or [Mult](../../HDL/mult/README.md) block (if
 you are configuring a scalar multiplier) in your design instead of the
 Product block.
 
@@ -20,15 +23,13 @@ IP Complex Multiplier" (if you have configured the Product block for
 complex multiplication) or “LogiCORE IP Multiplier” (if you have
 configured the Product block for scalar multiplication) for code
 generation. Refer to the [LogiCORE IP Complex Multiplier v6.0 Product
-Guide](https://www.xilinx.com/support/documentation/ip_documentation/cmpy/v6_0/pg104-cmpy.pdf)
+Guide](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)
 or the [LogiCORE IP Multiplier v12.0 Product
-Guide](https://www.xilinx.com/support/documentation/ip_documentation/mult_gen/v12_0/pg108-mult-gen.pdf)
+Guide](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)
 for details about these LogiCORE IP.
 
-## Block Parameters
+## Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
 
 Parameters specific to the block are as follows.
 
