@@ -29,5 +29,5 @@ Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
-[LogiCORE IP Floating-Point Operator
-v7.1](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
+LogiCORE IP Floating-Point Operator
+v7.1 [(PG060)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
