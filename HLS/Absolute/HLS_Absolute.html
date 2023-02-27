@@ -31,18 +31,17 @@ vertical-align: middle;
 <section id="abs" class="level1">
 <h1>Abs</h1>
 <p>Compute element-wise absolute value of input signal</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD90lEQVRoge2az2/TVhzAPzbZ0lFBFJSkHPZDwKkQcUVsArHmsAntD+gOoBROVbUDh+aOhDhxQFQ9bBJLoAd62IlpkyaRQpGmTTutkncbFG1CKnZIaUQyZ67tXZY2TePEv5I0rj83y+/73vej9/zes/0E0zRN9gnioBPoJ5FONwVB6FcevmI1WDvKAjx79pXvyfSSEyfmLO/tq2EcygaVUDaodJ2NWxHFKPH4RTSt3It8bFGtrqDrbxzHOZY9cCDGwYOnHTfkN5XKsuMYx8NY02QU5T6mqTlubNC4emZVdZVS6cHQCbueoIZR2NNsPGzCnpeeYRL2ZZ0dFmHfNhXDIOzrDmqvCzveVHRDVVdRlAWi0eOOY2OxC36ns4MIQKlUIp/Pk81mSSaTnis1jDpv3/6KYdQdx/ohrChKWw8RIJ/Pk8vlmJiYQJZlTw2NjBzj6NFp4vGLnurxgpWHCJDNZkmn00iSRCaTcS08MnKMROJLgK0XhTNn7lKpdO5hO2WcYOUhAiSTSYrFoifhhqggvONb0m6x8tiajVOp1C5hu9gRLRRWuHr1+63rK1cecu/eilMPW1h13I6lp1XYDnZ79PLl05TL//DkyQseP37B+rrKpUu9eVVs13GyLO9eelKpFIuLi6TT6a6VOhm6oihw8+YE1679hGnC7dufIYq9+y7d7CFJEjMzM7tlZVlmcnKya2VuntHx8QTx+Htoms74eMJZ9g5p9kin08zPz+8cxrIsk8lkkCSpY8+6nYyePv2LzU0DgEePnjvN3zatHsVikVQqtd2z7QqMjY3tqiga/cCVqKpucv36MnNzn2OaMD39A2fPvs/o6Lve7VpoJwr/T1CKolgWaCUaPe5qeblz5zfOnfuQkyeTnDqV5Pz5j7h16xcPStZYeUQACoWCLVEv5HIf77i+ceNT39toYOURAZiamgLwbW88aJaWltp6RAASiQSzs7O+NtjY0AvCAocOfcLhw6OWZQVhgSNHvkAQDF/atuow31/xmonFLvDy5Z9dyzXKvH79HYbxL6Lo/6QFe+T3h2lqKMp9arU/kOVvMYwa4P/ph4HLmqZGqfQAVV0FQNNesbb2Dbq+gWlu+trWQGVbRRvo+gZra1+jaYqvn3gGJmsl2sAwVGT5LvX6qm/CA5HtJrpdTkdRFqlWf/dFuO+ydkWbIlhf/5FKZdmzcF9lnYtuU6n8TLn8EIBIJOaq/Z6us814EW1Qq0lomoKub7iKdyxbrbr7lFKvP6de/9tVbDOa9sp1rGNZXX/j6q/3XmDgm4p+EsoGlVA2qAidTpLvq/PGQTtRv6+GcSgbVELZoBLKBpVQNqiEskEllA0qoWxQCWWDyn+8Uga47RzHUAAAAABJRU5ErkJggg==" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions/Math Operations</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFJElEQVRoge2az4sTVxzAP29mkqzJZiJtEpF2C1baigTpellYugdd/AMqau2l7FLQw1LwsiIUelopVG9F7aV1KXRXkF4sa3HLrgeLrdBL21yloIdqJjEm2uyPycz0kKi72UwyL5nYbTaf2ybvO+/72fcj7715wnEchy2C8l8n8DLRGn0phHhZefiKW2dtKAtw9+4nvifTSXbv/tL1uy3VjXuy3UrTMStDKDRAKPSmVEwwmMC2y5TLeak4TdN5/PgnbHvZe4xUDQ3o69tFPP4hQgT8emRTnj79jdXVvz2X96UbtyrqOCaG8S3F4k0cx5SKKxZvSomCD7LtiGazsywv/0WhcIuVlfs4TtlDXJmVlfsUCrekc21L1g/R6ifkclex7SWg0erVwbaXyOWuNilXn5Zl/ROtYNvLGMZ32LZ769q2WS3jfVJaS0uyfos+wzQfks/P1R2/jmOSz89hmg9bSRloQbZTos8olX6nVEoDa4VNSqU0pdIfsumuQ0q206LPqLRgHrABG9N8RD4/J1VnPTzLBoM7SSQ+akG0LCVaibEwjJlqegqGMYPjWFL11sPzosLBxLIeY9srUhVYVhHLeiqdmGUVePDgIo7jYFlF6fh6eJY1V7MYxgxRfRghVKlKovowT4q3MU1DKk62fDOkxqxpGjwp3pbuUkKoRPVhAoGEVJzfKADZbJZz585hGM3/k/8HYTcPBeDy5cucPn2agwcPkslkmj5sswu7eSgAY2NjpFIp0uk0o6Ojvgq//dZhCoUXE1Q94aGhrykW5Sa+Rrh5KACJRIKFhYWOCdfS6RZ283g+QSWTyQ3CXvAq/NWl7zl29Mzzv48d/ZSZmYcdEXZruHWzca2wV54LY7uWOXHyfbLZAvPzd7hx41dyuQInTh5Gj43UptE29Rouk8ls/J1NJpNcuXKFVColVYGq9tMX3IXt1O5IFAKBJKFQlIuXPmd8bBIHh+np84RCO6UXKV5Z65FOp5mYmNgom8lkOH78uNSD166ZVfR13wmhoKlxAlqM/YNJ4vEEpllm/+BIZc2cn4UGPaJV1nqkUikuXLiwvv9kMhlGR0dJp9OeW1ZmczA/v0i5XBnb1679IL1m9kqtx8LCAslk8kXL1iuwY8eOhg+VEV1aWubUqTPMzn6DZa1y5MgHXL9+jEgk2L5dDfVEoTozGIbhWsAN2e3e1NQXHDp0gH373mFgIM3IyGucP/9Lm1r1cfPQAKanpzsqCnD27Gfr9rVTUwdaVGmOm4cGMD4+DlRWUolE49+9l7WBb4fFxcW6HhpAPB5ncnKy6UNaF5XfwLeDW4N1/KTi3r0/KZfnGoreufMxuh7a8LmmRVHVqFR9jdi0JxWKEia2/RAA+Uc/Vs+U22NTnlQIoaDHhqH6Bj2qD1MsLLq+UffKpjypCEfeRVUiIAQIgab2E44MStVZD+kVeKeFQ6E3CIVeh7W9R6jV16EDsumuo6XtRqeEVVUn0j+IEBtHlxAqkf79qFqslZSBNvZWfgsLEUCPvYcQ7ikJoaDrwy2/A25rI+mncDQ6hFCCQKPrSAKhhIhGh1rKt+1dsx/C4fAetMArCA/pCBS0wKuEw3ukc/XliKAdYT02wrbw3rrjtFHctvBeNG27VH2+3amoCP+MFmi8iailskKysKySZFwflvWPVIyvt2VMM4dp5vx8pK9sqXtQPdluZUvJikY3ybfUfeNuu1G/pbpxT7Zb6cl2Kz3ZbqUn2630ZLuVnmy30pPtVnqy3cq/B7HgkOtlKDsAAAAASUVORK5CYII=" /></p>
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Abs block computes element-wise absolute value on the input
 data.</p>
-</section>
-<section id="data-type-support" class="level2">
-<h2>Data Type Support</h2>
+<section id="data-type-support" class="level3">
+<h3>Data Type Support</h3>
 <p>Data type support is:</p>
 <ul>
 <li><p>Dimension: Input can be scalar, vector, or matrix.</p></li>
@@ -53,6 +52,7 @@ fixed point type.</p></li>
 </ul>
 <p>Output has the same dimension and data type as the input. Output of
 the Abs block is always real.</p>
+</section>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
