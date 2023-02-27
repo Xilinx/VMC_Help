@@ -2,11 +2,11 @@
 
 Extract a range of bits from a value
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -46,7 +46,7 @@ The output dimensions are the same as the input dimensions.
 
 ## Parameters
 
-Specify range as
+#### Specify range as
 
 The Specify range as parameter specifies the extraction range.
 
@@ -68,9 +68,8 @@ Following are the settings for the Specify range as parameter.
 | Top bit + width    | The width specifies the number of bits to extract. The Top bit of the range specifies the offset at which the range begins (offset of the most significant bit to be extracted).                                                            |
 | Top and bottom bit | The Top bit of the range specifies the offset of the most significant bit to be extracted. The bottom bit of the range gives the offset of the least significant bit to be extracted. The width of the extracted range is given implicitly. |
 
-Table 1. Specify Range As Parameter
 
-Slice width
+#### Slice width
 
 Specifies the width of the bit range to be extracted. Slice width is
 only enabled if the Specify range as parameter is set to Top bit + width
@@ -78,7 +77,7 @@ or Bottom bit + width.
 
 Enter a scalar positive integer value for Slice width.
 
-Bit position relative to
+#### Bit position relative to
 
 Defines the basis for offset specifications in both Top of bit range and
 Bottom of bit range sections of the block dialog box.
@@ -91,9 +90,8 @@ Following are the settings for the Bit position relative to parameter.
 | Binary point          | Defines the offset parameter as counting from the binary point of a fixed point value, with offset 0 denoting the least significant integer bit. A negative offset denotes a range starting in the fractional bits with offset -1 being the most significant fractional bit. A positive offset denotes a range starting in the integer portion of the value. |
 | Most Significant Bit  | Defines the offset parameter as counting from the MSB of the input value, with offset 0 denoting the MSB, offset -1 denoting the bit to the right of the MSB, etc. If the Most Significant Bit stetting is selected, the With offset parameter cannot specify a positive offset.                                                                             |
 
-Table 2. Bit Position Relative To Parameter
 
-With offset
+#### With offset
 
 Specifies the offset to be applied to the basis specified by the
 corresponding Bit position relative to parameter. The With offset
