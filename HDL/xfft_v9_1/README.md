@@ -62,26 +62,23 @@ DATA Channel Input Signals:
 
 [TABLE]
 
-## Block Parameters
+## Parameters
 
-The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-Transform Length  
-Transform_length  
+#### Transform Length  
+##### Transform_length  
 One of N = 2^((3..16)) = 8 - 65536.
 
-Architecture Configuration  
-Target Clock Frequency(MHz)  
+#### Architecture Configuration  
+##### Target Clock Frequency(MHz)  
 Enter the target clock frequency.
 
-Target Data Throughput(MSPS)  
+##### Target Data Throughput(MSPS)  
 Enter the target throughput.
 
-Architecture Choice  
+##### Architecture Choice  
 Choose one of the following.
 
 - automatically_select
@@ -90,7 +87,7 @@ Choose one of the following.
 - radix_2_burst_io
 - radix_2_lite_burst_io
 
-Transform Length Options  
+#### Transform Length Options  
 Run Time Configurable Transform Length  
 The transform length can be set through the nfft port if this option is
 selected. Valid settings and the corresponding transform sizes are
@@ -98,41 +95,40 @@ provided in the section titled Transform Size in the associated document
 Fast Fourier Transform LogiCORE IP Product Guide
 ([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)).
 
-&nbsp;
 
-Advanced tab  
+### Advanced tab  
 Parameters specific to the Advanced tab are as follows.
 
-Precision Options  
-Phase Factor Width  
+#### Precision Options  
+##### Phase Factor Width  
 Choose a value between 8 and 34, inclusive to be used as bit widths for
 phase factors.
 
-Scaling Options  
+#### Scaling Options  
 Select between Unscaled, Scaled, and Block Floating Point output data
 types.
 
-Rounding Modes  
-Truncation  
+##### Rounding Modes  
+###### Truncation  
 To be applied at the output of each rank.
 
-Convergent Rounding  
+##### Convergent Rounding  
 To be applied at the output of each rank.
 
-Control Signals  
-ACLKEN  
+#### Control Signals  
+##### ACLKEN  
 Enables the clock enable (aclken) pin on the core. All registers in the
 core are enabled by this control signal.
 
-ARESETn  
+##### ARESETn  
 Active-low synchronous clear input that always takes priority over
 ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
 cycle resets the core, but the response to the pulse is not in the cycle
 immediately following.
 
-Output Ordering  
-Cyclic Prefix Insertion  
+#### Output Ordering  
+##### Cyclic Prefix Insertion  
 Cyclic prefix insertion takes a section of the output of the FFT and
 prefixes it to the beginning of the transform. The resultant output data
 consists of the cyclic prefix (a copy of the end of the output data)
@@ -149,29 +145,29 @@ prefix length can be from 0 to 1023 samples, and a CP_LEN value of
 0010010110 produces a cyclic prefix consisting of the last 150 samples
 of the output data.
 
-Output ordering  
+##### Output ordering  
 Choose between Bit/Digit Reversed Order or Natural Order output.
 
-Throttle Schemes  
+#### Throttle Schemes  
 Select the tradeoff between performance and data timing requirements.
 
-Real Time  
+##### Real Time  
 This mode typically gives a smaller and faster design, but has strict
 constraints on when data must be provided and consumed.
 
-Non Real Time  
+##### Non Real Time  
 This mode has no such constraints, but the design might be larger and
 slower.
 
-Optional Output Fields  
-XK_INDEX  
+#### Optional Output Fields  
+##### XK_INDEX  
 The XK_INDEX field (if present in the Data Output channel) gives the
 sample number of the XK_RE/XK_IM data being presented at the same time.
 In the case of natural order outputs, XK_INDEX increments from 0 to
 (point size) -1. When bit reversed outputs are used, XK_INDEX covers the
 same range of numbers, but in a bit (or digit) reversed manner.
 
-OVFLO  
+##### OVFLO  
 The Overflow (OVFLO) field in the Data Output and Status channels is
 only available when the Scaled arithmetic is used. OVFLO is driven High
 during unloading if any point in the data frame overflowed.
@@ -181,48 +177,47 @@ channel. When an overflow occurs in the core, the data is wrapped rather
 than saturated, resulting in the transformed data becoming unusable for
 most applications
 
-Block Icon Display  
-Display shortened port names  
+#### Block Icon Display  
+##### Display shortened port names  
 On by default. When unchecked, data_tvalid, for example, becomes
 m_axis_data_tvalid.
 
-&nbsp;
 
-Implementation tab  
+### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 
-Memory Options  
-Data  
+#### Memory Options  
+##### Data  
 Option to choose between Block RAM and Distributed RAM. This option is
 available only for sample points 8 through 1024. This option is not
 available for Pipelined Streaming I/O implementation.
 
-Phase Factors  
+##### Phase Factors  
 Choose between Block RAM and Distributed RAM. This option is available
 only for sample points 8 till 1024. This option is not available for
 Pipelined Streaming I/O implementation.
 
-Number Of Stages Using Block RAM  
+##### Number Of Stages Using Block RAM  
 Store data and phase factor in Block RAM and partially in Distributed
 RAM. This option is available only for the Pipelined Streaming I/O
 implementation.
 
-Reorder Buffer  
+##### Reorder Buffer  
 Choose between Block RAM and Distributed RAM up to 1024 points transform
 size.
 
-Hybrid Memories  
+##### Hybrid Memories  
 Click check box to Optimize Block RAM Count Using Hybrid Memories.
 
-Optimize Options  
-Complex Multipliers  
+#### Optimize Options  
+##### Complex Multipliers  
 Choose one of the following.
 
 - Use CLB logic
 - Use 3-multiplier structure (resource optimization)
 - Use 4-multiplier structure (performance optimization)
 
-Butterfly Arithmetic  
+##### Butterfly Arithmetic  
 Choose one of the following:
 
 - Use CLB logic
@@ -230,7 +225,7 @@ Choose one of the following:
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
 ## Block Timing
 
@@ -240,7 +235,7 @@ consult the core data sheet.
 ## LogiCORE Documentation
 
 Fast Fourier Transform LogiCORE IP Product Guide
-([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf))
+([PG109](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft))
 
 Floating-Point Operator LogiCORE IP Product Guide
-([PG060](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=floating_point;v=latest;d=pg060-floating-point.pdf))
+([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
