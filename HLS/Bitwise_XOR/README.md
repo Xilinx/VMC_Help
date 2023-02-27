@@ -2,11 +2,12 @@
 
 Perform element and bit-wise Boolean XOR operation on the inputs
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
 
-![](./Images/block.png)
 
 ## Description
 
@@ -22,7 +23,6 @@ If one of the inputs is scalar, the output dimension is non-scalar. If
 both inputs are non-scalar, they must have the same dimension. The
 dimension can be scalar, vector, or matrix.
 
-Figure: Bitwise XOR
 
 ![](./Images/vgs1532106955955.png)
 

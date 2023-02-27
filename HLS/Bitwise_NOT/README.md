@@ -2,11 +2,12 @@
 
 Perform element and bit-wise Boolean NOT operation on the input
 
+
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -15,7 +16,6 @@ performs element and bit-wise Boolean NOT operation on the input. The
 dimension of the output signals matches the dimension of the input
 signals.
 
-Figure: Bitwise NOT
 
 ![](./Images/qea1532103705872.png)
 
