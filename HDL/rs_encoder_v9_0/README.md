@@ -6,11 +6,11 @@ Note: This block goes into the FPGA fabric and is a Licensed Core.
 Please visit the Xilinx web site to purchase the appropriate core
 license.
 
+## Description
+
 The Reed-Solomon (RS) codes are block-based error correcting codes with
 a wide range of applications in digital communications and storage. This
 block adheres to the AMBA® AXI4-Stream standard.
-
-
 
 They are used to correct errors in many systems such as digital storage
 devices, wireless or mobile communications, and digital video
