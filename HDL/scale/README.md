@@ -1,11 +1,14 @@
 # Scale
 
+![](./Images/block.png)
+
+## Description
+
 The Scale block scales its input by a power of two. The power can
 be either positive or negative. The block has one input and one output.
 The scale operation has the effect of moving the binary point without
 changing the bits in the container
 
-![](./Images/block.png)
 
 ## Parameters
 
