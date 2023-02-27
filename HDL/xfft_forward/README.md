@@ -171,7 +171,8 @@ frame ports added to the FFT block when the option is enabled:
 
 - The Provide start frame port option selection is valid only for
   Pipelined Streaming I/O architecture. See [Context Based Pipeline vs.
-  Radix Implementation](fft.html#xxu1538085368021__aa1035206) for a
+  Radix Implementation](#context-based-pipeline-vs.-radix-implementation)
+(fft.html#xxu1538085368021__aa1035206) for a
   description of the conditions under which Pipelined Streaming I/O
   architecture is implemented.
 - The option is valid only for input of type fixed point.
