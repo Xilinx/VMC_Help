@@ -2,11 +2,11 @@
 
 Perform element and bitwise Boolean AND operation on the inputs
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -19,7 +19,6 @@ signals. Unless an input is a scalar, the dimensions of all inputs must
 agree. A scalar value on one input is automatically expanded to match
 the dimension of the other input.
 
-Figure: Bitwise AND
 
 ![](./Images/zpc1532106555844.png)
 
