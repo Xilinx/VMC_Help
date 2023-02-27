@@ -60,53 +60,17 @@ described as follows:
 
 DATA Channel Input Signals:
 
+
+
+|                        |                                                                                                                                                                                                                                                                                                                          |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| c | A sub-field port that represents the Scaling Schedule field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)) for an explanation of the bits in this field.              |
+| c   | A sub-field port that represents the Forward Inverse field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)) for an explanation of the bits in this field.               |
+|       | A sub-field port that represents the Transform Size (NFFT) field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)) for an explanation of the bits in this field.         |
+|     | A sub-field port that represents the Cyclic Prefix Length (CP_LEN) field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)) for an explanation of the bits in this field. |
 [TABLE]
 
-<table cellpadding="4" cellspacing="0" summary="" id="eag1538085363587__aa1035015" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:66.66666666666666%" /></colgroup><tbody class="tbody">
-                        <tr class="row">
-                            <td class="entry cellrowborder" style="vertical-align:top;"><span class="ph signal">data_tdata_xn_im</span></td>
 
-                            <td class="entry cellrowborder" style="vertical-align:top;">
-                                <p class="p">Represents the imaginary component of the Data
-                                    Channel. The signal driving <span class="ph signal">xn_im</span> can be a signed data type of width S with
-                                    binary point at S-1, where S is a value between 8 and 34,
-                                    inclusive. eg: Fix_8_7, Fix_34_33.</p>
-
-                                <p class="p">Both <span class="ph signal">xn_re</span> and
-                                        <span class="ph signal">xn_im</span> signals must have
-                                    the same data type.</p>
-
-                                <p class="p">Refer to the document <span class="ph"><cite class="cite">Fast Fourier Transform LogiCORE IP Product
-                              Guide</cite> (<a class="xref" href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf" target="_blank">PG109</a>)</span> for an
-                                    explanation of the bits in this field.</p>
-
-                            </td>
-
-                        </tr>
-
-                        <tr class="row">
-                            <td class="entry cellrowborder" style="vertical-align:top;"><span class="ph signal">data_tdata_xn_re</span></td>
-
-                            <td class="entry cellrowborder" style="vertical-align:top;">
-                                <p class="p">Represents the real component of the Data
-                                    Channel. The signal driving <span class="ph signal">xn_re</span> can be a signed data type of width S with
-                                    binary point at S-1, where S is a value between 8 and 34,
-                                    inclusive. eg: Fix_8_7, Fix_34_33.</p>
-
-                                <p class="p">Both <span class="ph signal">xn_re</span> and
-                                        <span class="ph signal">xn_im</span> signals must have
-                                    the same data type.</p>
-
-                                <p class="p">Refer to the document <span class="ph"><cite class="cite">Fast Fourier Transform LogiCORE IP Product
-                              Guide</cite> (<a class="xref" href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf" target="_blank">PG109</a>)</span> for an
-                                    explanation of the bits in this field.</p>
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-</table>
 
 ## Parameters
 
