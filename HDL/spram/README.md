@@ -34,7 +34,7 @@ The behavior of the output port depends on the write mode selected (see
 below). When the WE is 0, the output port has the value at the location
 specified by the address line.
 
-## Block Parameters
+## Parameters
 
 ### Basic Tab  
 
