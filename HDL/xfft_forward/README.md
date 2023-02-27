@@ -44,7 +44,6 @@ The DFT is defined by the following equation:
 
 ![](./Images/avf1538085560865.png)
 
- 
 
 where N is the transform length, k is used to denote the frequency
 domain ordinal, and n is used to represent the time-domain ordinal.
@@ -111,8 +110,8 @@ The FFT block accepts inputs of varying bit widths with changeable
 binary point location, such as Fix_16_0 or Fix_30_10, etc. in unscaled
 block configuration. For the scaled configuration, the input is
 supported in the same format as the [Fast Fourier Transform
-9.1](fastfouriertransform91.html) block. The [Fast Fourier Transform
-9.1](fastfouriertransform91.html) block accepts input values only in the
+9.1](../../HDL/xfft_v9_1/README.md) block. The [Fast Fourier Transform
+9.1](../../HDL/xfft_v9_1/README.md) block accepts input values only in the
 normalized form in the format of Fix\_x\_\[x-1\] (for example,
 Fix_16_15), so the inputs are 2's complement with a single sign/integer
 bit.
@@ -129,7 +128,7 @@ Signed fixed point and floating point data types are supported.
 
 For floating point input, either scaled or unscaled data can be selected
 in the FFT block parameters. In the [Fast Fourier Transform
-9.1](fastfouriertransform91.html) block, the floating point data type is
+9.1](../../HDL/xfft_v9_1/README.md) block, the floating point data type is
 accepted only when the scaled configuration is selected by the user.
 
 ## Handling Overflow for Scaled Configuration
@@ -145,17 +144,16 @@ box adds `start_frame_in` and `start_frame_out` ports at the input and
 output of the FFT block. These ports are used to synchronize frames at
 the input and output of the FFT block.
 
-Figure: Adding Start Frame Ports
 
 ![](./Images/fyx1555437360561.png)
 
-You must provide a valid input at the `start_frame_in` port. When the
-`start_frame_in` signal is asserted, an impulse is generated at the
+You must provide a valid input at the start_frame_in port. When the
+start_frame_in signal is asserted, an impulse is generated at the
 start of every frame to signal the FFT block to start processing the
 frame. The frame size is the Transform Length entered in the block
 parameters dialog box.
 
-The `start_frame_out` port provides the information as to when the
+The start_frame_out port provides the information as to when the
 output frames start. An impulse at the start of every frame on the
 output side helps in tracking the block behavior.
 
@@ -163,11 +161,9 @@ The FFT block has a frame alignment requirement and these ports help the
 block operate in accordance with this requirement.
 
 The figure below shows that as soon as the output is processed by the
-FFT block the `start_frame_out` signal becomes High (1).
+FFT block the start_frame_out signal becomes High (1).
 
-Figure: Output
 
-  
 ![](./Images/uqm1538085562947.png)  
 
 The following apply to the Provide start frame port option and the start
@@ -182,10 +178,10 @@ frame ports added to the FFT block when the option is enabled:
 - Verilog is supported for netlist generation currently, when the
   Provide start frame port option is selected.
 
-Note: The first sample input to the FFT block may be ignored and users
+**Note**: The first sample input to the FFT block may be ignored and users
 are advised to drive the input data accordingly.
 
 ## LogiCORE Documentation
 
 [LogiCORE IP Fast Fourier Transform
-v9.1](https://www.xilinx.com/support/documentation/ip_documentation/xfft/v9_1/pg109-xfft.pdf)
+v9.1](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)
