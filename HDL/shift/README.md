@@ -1,12 +1,14 @@
 # Shift
 
-The Xilinx Shift block performs a left or right shift on the input
+![](./Images/block.png)
+
+## Description
+
+The Shift block performs a left or right shift on the input
 signal. The result will have the same fixed-point container as that of
 the input.
 
-![](./Images/block.png)
-
-## Block Parameters
+## Parameters
 
 Parameters specific to the Shift block are:
 
@@ -21,8 +23,8 @@ Parameters specific to the Shift block are:
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
-## Xilinx LogiCORE
+## LogiCORE
 
-The Shift block does not use a Xilinx LogiCORE™™.
+The Shift block does not use a LogiCORE™.
