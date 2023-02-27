@@ -1,16 +1,13 @@
 # Scale
 
-The Xilinx Scale block scales its input by a power of two. The power can
+The Scale block scales its input by a power of two. The power can
 be either positive or negative. The block has one input and one output.
 The scale operation has the effect of moving the binary point without
 changing the bits in the container
 
 ![](./Images/block.png)
 
-## Block Parameters
-
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
+## Parameters
 
 The only parameter that is specific to the Scale block is Scale factor
 s. It can be a positive or negative integer. The output of the block is
@@ -20,8 +17,8 @@ shift, on the other hand, might add logic).
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html).
+Boxes](../../GEN/common-options/README.md).
 
-## Xilinx LogiCORE
+## LogiCORE
 
-The Scale block does not use a Xilinx LogiCORE™.
+The Scale block does not use a LogiCORE™.
