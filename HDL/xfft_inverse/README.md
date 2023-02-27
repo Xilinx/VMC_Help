@@ -66,7 +66,7 @@ used.
 Adds start_frame_in and start_frame_out ports to the block. The
 signals on these ports can be used to synchronize frames at the input
 and output of the Inverse FFT block. See [Adding Start Frame Ports to
-Synchronize Frames](#adding-start-frame-ports-to-synchronize-frames)(fft.html#xxu1538085368021__aa1035227) for a
+Synchronize Frames](#adding-start-frame-ports-to-synchronize-frames) for a
 description of the operation of these two ports.
 
 ## Context Based Pipeline vs. Radix Implementation
