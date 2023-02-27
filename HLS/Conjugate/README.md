@@ -2,11 +2,11 @@
 
 Apply element-wise complex conjugate operation to the input signal
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 

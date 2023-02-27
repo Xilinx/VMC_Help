@@ -2,11 +2,11 @@
 
 Computes the real and imaginary components of the input
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -27,15 +27,15 @@ Data type support for the input port is:
 
 ## Parameters
 
-Output  
+#### Output  
 This parameter specifies the kind of output the block produces.
+##### Real and imag
+Outputs real and imaginary parts of the input signal as Re and Im outputs of the block, respectively.
 
-Settings for the Output parameter are:
+##### Real
+Outputs the real part of the input signal as Re output of the block.
 
-| Setting       | Description                                                                                                               |
-|---------------|---------------------------------------------------------------------------------------------------------------------------|
-| Real and imag | Outputs real and imaginary parts of the input signal as Re and Im outputs of the block, respectively.                     |
-| Real          | Outputs the real part of the input signal as Re output of the block.                                                      |
-| Imag          | Outputs imaginary part of the input signal as Im output of the block. If the input is real, the Im output is zero valued. |
+##### Imag
+Outputs imaginary part of the input signal as Im output of the block. If the input is real, the Im output is zero valued.
 
-Table 1. Output Parameters
+
