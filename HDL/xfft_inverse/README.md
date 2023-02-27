@@ -1,6 +1,6 @@
 # Inverse FFT
 
-The Xilinx Inverse FFT block performs a fast inverse (or backward)
+The Inverse FFT block performs a fast inverse (or backward)
 Fourier transform (IDFT), which undoes the process of Discrete Fourier
 Transform (DFT). The Inverse FFT maps the signal back from the frequency
 domain into the time domain.
@@ -9,11 +9,9 @@ domain into the time domain.
 
 The IDFT of a sequence {F_(n)} can be defined as:
 
-  
 
 ![](./Images/fvg1538085565883.png)
 
-  
 
 where N is the transform length, k is used to denote the frequency
 domain ordinal, and n is used to represent the time-domain ordinal.
@@ -21,11 +19,13 @@ domain ordinal, and n is used to represent the time-domain ordinal.
 The Inverse FFT (IFFT) is computed by conjugating the phase factors of
 the corresponding forward FFT.
 
+## Description
+
 The Inverse FFT block is ideal for implementing simple inverse Fourier
 transforms. If your Inverse FFT implementation will use more complicated
 transform features such as an AXI4-Stream-compliant interface, a real
 time throttle scheme, Radix-4 Burst I/O, or Radix-2 Lite Burst I/O, use
-the Xilinx [Fast Fourier Transform 9.1](fastfouriertransform91.html)
+the [Fast Fourier Transform 9.1](../../HDL/xfft_v9_1/README.md)
 block in your design instead of the Inverse FFT block.
 
 In the Vivado® design flow, the Inverse FFT block is inferred as
@@ -34,12 +34,10 @@ the document [LogiCORE IP Fast Fourier Transform
 v9.1](https://www.xilinx.com/support/documentation/ip_documentation/xfft/v9_1/pg109-xfft.pdf)
 for details on this LogicCore IP.
 
-## Block Parameters
+## Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
 
-Parameters specific to the Xilinx Inverse FFT block are:
+Parameters specific to the Inverse FFT block are:
 
 Transform Length  
 Select the desired point size ranging from 8 to 65536.
