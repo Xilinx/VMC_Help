@@ -183,5 +183,5 @@ are advised to drive the input data accordingly.
 
 ## LogiCORE Documentation
 
-[LogiCORE IP Fast Fourier Transform
-v9.1](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)
+LogiCORE IP Fast Fourier Transform
+v9.1([PG109])(https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)
