@@ -3,11 +3,12 @@
 Perform an element-wise conversion of complex input signals into
 magnitude and radiant phase angle
 
+
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
