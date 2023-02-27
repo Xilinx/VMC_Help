@@ -118,18 +118,16 @@ dialog box adds `start_frame_in` and `start_frame_out` ports at the
 input and output of the Inverse FFT block. These ports are used to
 synchronize frames at the input and output of the Inverse FFT block.
 
-Figure: Adding Start Frame Ports
 
-  
 ![](./Images/foy1538085566860.png)  
 
-You must provide a valid input at the `start_frame_in` port. When the
-`start_frame_in` signal is asserted, an impulse is generated at the
+You must provide a valid input at the start_frame_in port. When the
+start_frame_in signal is asserted, an impulse is generated at the
 start of every frame to signal the Inverse FFT block to start processing
 the frame. The frame size is the Transform Length entered in the block
 parameters dialog box.
 
-The `start_frame_out` port provides the information as to when the
+The start_frame_out port provides the information as to when the
 output frames start. An impulse at the start of every frame on the
 output side helps in tracking the block behavior.
 
@@ -137,9 +135,7 @@ The Inverse FFT block has a frame alignment requirement and these ports
 help the block operate in accordance with this requirement.
 
 The figure below shows that as soon as the output is processed by the
-Inverse FFT block the `start_frame_out` signal becomes High (1).
-
-Figure: Output
+Inverse FFT block the start_frame_out signal becomes High (1).
 
   
 ![](./Images/uqm1538085562947.png)  
@@ -149,14 +145,14 @@ frame ports added to the FFT block when the option is enabled:
 
 - The Provide start frame port option selection is valid only for
   Pipelined Streaming I/O architecture. See [Context Based Pipeline vs.
-  Radix Implementation](fft.html#xxu1538085368021__aa1035206) for a
+  Radix Implementation](#context-based-pipeline-vs-radix-implementation) for a
   description of the conditions under which Pipelined Streaming I/O
   architecture is implemented.
 - The option is valid only for input of type fixed point.
 - Verilog is supported for netlist generation currently, when the
   Provide start frame port option is selected.
 
-Note: The first sample input to the Inverse FFT block may be ignored and
+**Note**: The first sample input to the Inverse FFT block may be ignored and
 users are advised to drive the input data accordingly.
 
 ## LogiCORE™ Documentation
