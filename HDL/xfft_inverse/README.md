@@ -84,8 +84,8 @@ The Inverse FFT block accepts inputs of varying bit widths with
 changeable binary point location, such as Fix_16_0 or Fix_30_10, etc. in
 unscaled block configuration. For the scaled configuration, the input is
 supported in the same format as the [Fast Fourier Transform
-9.1](fastfouriertransform91.html) block. The [Fast Fourier Transform
-9.1](fastfouriertransform91.html) block accepts input values only in the
+9.1](../../HDL/xfft_v9_1/README.md) block. The [Fast Fourier Transform
+9.1](../../HDL/xfft_v9_1/README.md) block accepts input values only in the
 normalized form in the format of Fix\_x\_\[x-1\] (for example,
 Fix_16_15), so the inputs are 2's complement with a single sign/integer
 bit.
