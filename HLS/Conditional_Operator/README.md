@@ -4,11 +4,12 @@ Pass through input T when control input C satisfies a selected criteria;
 otherwise, pass through input F. The first and third input ports are
 data ports, and the second input port is the control port.
 
+
+![](./Images/block.png)
+
 ## Library
 
 Signal Routing
-
-![](./Images/block.png)
 
 ## Description
 
@@ -40,7 +41,7 @@ Data type support for the Conditional block is:
 
 ## Parameters
 
-Criteria for passing first input  
+#### Criteria for passing first input  
 This parameter is used to select the condition under which the block
 passes the first input (T). If the control input C meets the condition
 set in the Criteria for passing first input parameter, the block passes
@@ -54,22 +55,20 @@ Settings for the Criteria for passing first input parameter are:
 | C \> Threshold  | Select input T if control input C is greater than the Threshold parameter.                              |
 | C ~= 0          | Select input T if control input C is not equal to 0. Selecting C ~= 0 disables the Threshold parameter. |
 
-Table 1. Criteria for Passing First Input Settings
 
-Threshold  
+#### Threshold  
 This parameter assigns the switch threshold that determines which input
 the block passes to the output. Threshold parameter is rounded to the
 same data type as that of the C input.
 
-Settings  
+##### Settings  
 | Settings                             | Description                       |
 |--------------------------------------|-----------------------------------|
 | 0                                    | default value                     |
 | `real number`, `vector`, or `matrix` | any real scalar, vector or matrix |
 
-Table 2. Supported Threshold Settings
 
-TIP:
+**TIP**:
 To specify a non-scalar threshold, use brackets. For example, the
 following entries are valid: \[1 3 5\].
 
