@@ -22,7 +22,7 @@ when the Width parameter is 1.
 
 
 
-## Block Parameters
+## Parameters
 
 #### Width
 This parameter defines the number of bits for each element of
