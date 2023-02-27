@@ -140,7 +140,7 @@ a way that makes sure no overflow occurs.
 ## Adding Start Frame Ports to Synchronize Frames
 
 Selecting Provide start frame port in the FFT block properties dialog
-box adds `start_frame_in` and `start_frame_out` ports at the input and
+box adds start_frame_in and start_frame_out ports at the input and
 output of the FFT block. These ports are used to synchronize frames at
 the input and output of the FFT block.
 
