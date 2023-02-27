@@ -2,11 +2,11 @@
 
 Perform bitwise concatenation of input values into a single output value
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -20,7 +20,7 @@ input.
 
 ![](./Images/tsu1532103642843.png)
 
-## Data Type Support
+### Data Type Support
 
 Data type support for the Bit Concat block is:
 
