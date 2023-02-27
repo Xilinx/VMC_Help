@@ -2,17 +2,17 @@
 
 Compute element-wise absolute value of input signal
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions/Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
 The Abs block computes element-wise absolute value on the input data.
 
-## Data Type Support
+### Data Type Support
 
 Data type support is:
 

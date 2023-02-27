@@ -2,11 +2,11 @@
 
 Perform element and bitwise Boolean OR operation on the inputs
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 

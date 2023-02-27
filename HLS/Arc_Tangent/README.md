@@ -2,18 +2,18 @@
 
 Compute element-wise arctangent function of an argument.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
 
-![](./Images/block.png)
-
 ## Description
 
-The atan block returns the output of the atan (`x`) function for each
-element in array `x`.
+The atan block returns the output of the atan (x) function for each
+element in array x.
 
-## Data Type Support
+### Data Type Support
 
 Data types accepted at the inputs of the block are:
 

@@ -1,10 +1,12 @@
 # Vitis HLS
 
-The Xilinx Vitis™ HLS block allows the functionality of a Vitis HLS
+The Vitis™ HLS block allows the functionality of a Vitis HLS
 design to be included in a Model Composer design. The Vitis HLS design
 can include C, C++ and System C design sources.
 
 ![](./Images/block.png)
+
+## Description
 
 There are two steps to the method of including a Vitis HLS design into
 Model Composer. The first step is to use the Vitis HLS RTL Packaging
@@ -13,39 +15,37 @@ Vitis HLS documentation for more information regarding RTL Packaging.)
 The second step is to place the Vitis HLS block in your Model Composer
 design and specify the Vitis HDL Solution directory as the target.
 
-## Block Parameters Dialog Box
-
-Figure: Block Parameters Dialog Box
+## Parameters
 
 ![](./Images/vtg1602064866443.png)
 
-Solution  
+#### Solution  
 The path to the Solution space directory containing RTL packaged for
 Model Composer. This path is usually the path to a directory contained
 in a Vivado® HLS project. The path must be included in single quotes and
 must evaluate to a string.
 
-Browse  
+#### Browse  
 A standard directory browse button.
 
-Refresh  
+#### Refresh  
 Updates the block ports to the latest package contained in the solution
 space.
 
-Edit  
+#### Edit  
 Opens the Vitis HLS project associated with solution space.
 
-Use C simulation model if available  
+#### Use C simulation model if available  
 Use the C simulation model if it is available in the Vitis HLS package.
 As shown below, the simulation model being used is shown on the Vitis
 HLS block. In this case, an RTL-model is used because a C simulation
 model is not available.
 
-Display signal types  
+#### Display signal types  
 Signal types to be used to drive input ports and emanating from output
 ports are displayed on the block icon when checked.
 
-Output Sample Times  
+#### Output Sample Times  
 Select either the Simulink system period or the GCD of the inputs
 period.
 

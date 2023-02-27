@@ -2,17 +2,17 @@
 
 Compute element-wise four-quadrant inverse tangent of input signal.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
 The atan2 block returns the output of the function atan2(`y`,`x`).
 
-## Data Type Support
+### Data Type Support
 
 Data types accepted at the inputs of the block are:
 

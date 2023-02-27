@@ -1,11 +1,13 @@
 # Single Port RAM
 
-The Xilinx Single Port RAM block implements a random access memory (RAM)
+The Single Port RAM block implements a random access memory (RAM)
 with one data input and one data output port.
 
 ![](./Images/block.png)
 
-## Block Interface
+## Description
+
+### Block Interface
 
 The block has one output port and three input ports for address, input
 data, and write enable (WE). Values in a Single Port RAM are stored by
@@ -32,17 +34,16 @@ The behavior of the output port depends on the write mode selected (see
 below). When the WE is 0, the output port has the value at the location
 specified by the address line.
 
-## Block Parameters
+## Parameters
 
-The Block Parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
+### Basic Tab  
 
-Basic Tab  
 Parameters specific to the Basic tab are as follows.
-Depth  
+
+#### Depth  
 The number of words in the memory; must be a positive integer.
 
-Initial value vector  
+#### Initial value vector  
 The Initial value vector stores the initial contents of the memory. When
 the vector length exceeds the memory depth, values with index higher
 than depth are ignored. When the depth exceeds the vector length, memory
@@ -54,7 +55,7 @@ UltraRAM memory is initialized to all 0's during power up or device
 reset. If implemented in UltraRAM, the Single Port RAM block cannot be
 initialized to user defined values.
 
-Memory Type  
+#### Memory Type  
 Option to select whether the single-port RAM will be implemented using
 Distributed memory, Block RAM, or UltraRAM.
 
@@ -65,7 +66,7 @@ inferred or implemented as follows when the design is compiled:
   Distributed Memory Generator v8.0 LogiCORE IP will be inferred or
   implemented when the design is compiled. This LogiCORE IP is described
   in Distributed Memory Generator LogiCORE IP Product Guide
-  ([PG063](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf)).
+  ([PG063](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg063-dist-mem-gen&ft:locale=en-US)).
 - If the block will be implemented in block RAM or UltraRAM, the
   XPM_MEMORY_SPRAM (Single Port RAM) macro will be inferred or
   implemented when the design is compiled. For information on the
@@ -73,7 +74,7 @@ inferred or implemented as follows when the design is compiled:
   Architecture Libraries Guide
   ([UG974](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug974-vivado-ultrascale-libraries)).
 
-Write Mode  
+#### Write Mode  
 Specifies memory behavior when WE is asserted. Supported modes are: Read
 after write, Read before write, and No read On write. Read after write
 indicates the output value reflects the state of the memory after the
@@ -84,15 +85,15 @@ of address or state of the memory. There are device specific
 restrictions on the applicability of these modes. Also refer to the
 Write Modes and Hardware Notes topics below for more information.
 
-Provide reset port for output register  
+#### Provide reset port for output register  
 For block RAM or UltraRAM, exposes a reset port controlling the output
 register of the RAM. This port does not reset the memory contents to the
 initialization value.
 
-Note: For Block RAM or UltraRAM, the reset port is available only when
+**Note**: For Block RAM or UltraRAM, the reset port is available only when
 the latency of the Block RAM is greater than or equal to 1.
 
-Initial value for output register  
+#### Initial value for output register  
 For Block RAM, the initial value for the output register. The initial
 value is saturated and rounded as necessary according to the precision
 specified on the data port of the Block RAM.
@@ -102,8 +103,7 @@ UltraRAM output register cannot be initialized to user defined values.
 
 Other parameters used by this block are explained in the [Common Options
 in Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html)
-topic at the beginning of this chapter.
+Boxes](../../GEN/common-options/README.md).
 
 ## Write Modes
 
@@ -126,11 +126,9 @@ is the value of the location being written to. This means that the
 output can be either the old value (Read before write mode), or the new
 value (Read after write mode).
 
-Figure: Configuration for Read After Write
 
 ![](./Images/rzj1566417325083.png)
 
-Figure: Write Output
 
 ![](./Images/hsm1566416465747.png)
 
@@ -146,7 +144,7 @@ memory output to latch data during a write operation).
 ## LogiCORE™ and XPM Documentation
 
 Distributed Memory Generator LogiCORE IP Product Guide
-([PG063](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf))
+([PG063](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=ug193&ft:locale=en-US))
 (Distributed Memory)
 
 UltraScale Architecture Memory Resources User Guide
