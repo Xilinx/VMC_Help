@@ -1,6 +1,6 @@
 # FFT
 
-The Xilinx FFT (Fast Fourier Transform) block takes a block of time
+The Fast Fourier Transform (FFT) block takes a block of time
 domain waveform data and computes the frequency of the sinusoid signals
 that make up the waveform.
 
@@ -41,11 +41,10 @@ frequencies.
 
 The DFT is defined by the following equation:
 
-  
 
 ![](./Images/avf1538085560865.png)
 
-  
+ 
 
 where N is the transform length, k is used to denote the frequency
 domain ordinal, and n is used to represent the time-domain ordinal.
@@ -53,51 +52,48 @@ domain ordinal, and n is used to represent the time-domain ordinal.
 The FFT block is ideal for implementing simple Fourier transforms. If
 your FFT implementation will use more complicated transform features
 such as an AXI4-Stream-compliant interface, a real time throttle scheme,
-Radix-4 Burst I/O, or Radix-2 Lite Burst I/O, use the Xilinx [Fast
-Fourier Transform 9.1](fastfouriertransform91.html) block in your design
+Radix-4 Burst I/O, or Radix-2 Lite Burst I/O, use the [Fast
+Fourier Transform 9.1](../../HDL/xfft_v9_1/README.md) block in your design
 instead of the FFT block.
 
 In the Vivado® design flow, the FFT block is inferred as "LogiCORE IP
 Fast Fourier Transform v9.1" for code generation. Refer to the document
-[LogiCORE IP Fast Fourier Transform
-v9.1](https://www.xilinx.com/support/documentation/ip_documentation/xfft/v9_0/pg109-xfft.pdf)
+LogiCORE IP Fast Fourier Transform
+v9.1 [(PG109](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft))
 for details on this LogicCore IP.
 
-## Block Parameters
-
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink® model.
+## Parameters
 
 Parameters specific to the Xilinx FFT block are as follows.
 
-Transform Length  
+#### Transform Length  
 Select the desired point size ranging from 8 to 65536.
 
-Scale Result by FFT length  
+#### Scale Result by FFT length  
 If selected, data is scaled between FFT stages using a scaling schedule
 determined by the Transform Length setting. If not selected, data is
 unscaled, and all integer bit growth is carried to the output.
 
-Natural Order  
+#### Natural Order  
 If selected, the output of the FFT block will be ordered in natural
 order. If not selected, the output of the FFT block will be ordered in
 bit/digit reversed order.
 
-Optimize for  
+#### Optimize for  
 Directs the block to be optimized for either speed (Performance) or area
 (Resources) in the generated hardware.
 
-Note: If Resources is selected and the input sample period is 8 times
+**Note**: If Resources is selected and the input sample period is 8 times
 slower than the system sample period, the block implements Radix-2 Burst
 I/O architecture. Otherwise, Pipeline Streaming I/O architecture will be
 used.
 
-Optional Port  
-Provide start frame port  
-Adds `start_frame_in` and `start_frame_out` ports to the block. The
+#### Optional Port  
+##### Provide start frame port  
+Adds start_frame_in and start_frame_out ports to the block. The
 signals on these ports can be used to synchronize frames at the input
 and output of the FFT block. See [Adding Start Frame Ports to
-Synchronize Frames](fft.html#xxu1538085368021__aa1035227) for a
+Synchronize Frames](#adding-start-frame-ports-to-synchronize-frames) for a
 description of the operation of these two ports.
 
 ## Context Based Pipeline vs. Radix Implementation
