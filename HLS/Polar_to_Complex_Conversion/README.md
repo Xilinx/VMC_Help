@@ -3,11 +3,11 @@
 Element-wise conversion of real magnitude and angle representation
 signals into a complex signal
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -42,7 +42,6 @@ Outputs for the different input types are:
 | Both are matrix                                 | Matrix of same dimension                  |
 | One is scalar and the other is vector or matrix | Dimension is that of the vector or matrix |
 
-Table 1. Input/Output
 
 ## Parameters
 
