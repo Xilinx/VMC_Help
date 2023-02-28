@@ -2,11 +2,11 @@
 
 Element-wise multiplication of the input by a constant gain factor
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -54,19 +54,38 @@ parameters are available.
 
 Settings for the Gain data type parameter are:
 
-| Setting              | Description                                                                                                                                                                                                                                                         |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| double               | double precision floating-point                                                                                                                                                                                                                                     |
-| single               | single precision floating-point                                                                                                                                                                                                                                     |
-| int8                 | 8-bit signed integer                                                                                                                                                                                                                                                |
-| uint8                | 8-bit unsigned integer                                                                                                                                                                                                                                              |
-| int16                | 16-bit signed integer                                                                                                                                                                                                                                               |
-| uint16               | 16-bit unsigned integer                                                                                                                                                                                                                                             |
-| int32                | 32-bit signed integer                                                                                                                                                                                                                                               |
-| uint32               | 32-bit unsigned integer                                                                                                                                                                                                                                             |
-| fixed                | fixed-point                                                                                                                                                                                                                                                         |
-| half                 | half precision floating-point                                                                                                                                                                                                                                       |
-| data type expression | A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
+##### double
+double precision floating-point
+
+##### single
+single precision floating-point
+
+##### int8
+8-bit signed integer
+
+##### uint8
+8-bit unsigned integer
+
+##### int16
+16-bit signed integer
+
+##### uint16
+16-bit unsigned integer
+
+##### int32
+32-bit signed integer
+
+##### uint32
+32-bit unsigned integer
+
+##### fixed
+fixed-point
+
+##### half
+half precision floating-point
+
+##### data type expression
+A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
 
 Unless the **Output data type same as input** parameter is enabled, the
 output data type will be a function of the input type and the specified
