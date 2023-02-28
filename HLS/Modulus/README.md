@@ -2,11 +2,12 @@
 
 Performs element-wise modulus operation on the input signals
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
 
-![](./Images/block.png)
 
 ## Description
 
@@ -16,14 +17,13 @@ remainder after division. For each element of the dividend A, compute
 the modulus operation (remainder after division) with regard to the
 corresponding element of the divisor B, as follows:
 
-``` pre
 M = mod(A, B) = A - B .* floor(A ./ B)
-```
+
 
 The block can handle division by 0 by returning the NaN output for
 floating-point data types and 0 for the rest of the data types.
 
-Note: For signed data types the remainder will have the same sign as the
+**Note**: For signed data types the remainder will have the same sign as the
 divisor B. If instead it should have the same sign as the dividend, use
 the Remainder block instead of the Modulus block.
 
