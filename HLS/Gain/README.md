@@ -120,11 +120,11 @@ at the limits of the output data type.
 
 Settings for the Saturate on integer overflow parameter are:
 
-| Setting   | Description |
-|-----------|-------------|
-| Unchecked | Wrap around |
-| Checked   | Saturation  |
+##### Unchecked
+Wrap around
 
+##### Checked
+Saturation
 
 When overflow is detected, the Diagnostic Viewer displays messages that
 depend on the diagnostic action you specify in the Simulink Editor. To
