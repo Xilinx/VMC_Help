@@ -3,11 +3,11 @@
 Perform element-wise equal to relational operation on the inputs. The
 top input corresponds to the first operand.
 
+![](./Images/block.png)
+
 ## Library
 
 Relational Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -15,7 +15,6 @@ The Equals block performs element-wise comparison of inputs for
 equality. The block has two input ports and one output port. The output
 is true if the first input is equal to the second input.
 
-Figure: Equals Block
 
 ![](./Images/kvx1532103642824.png)
 
