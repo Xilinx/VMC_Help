@@ -3,11 +3,11 @@
 Perform element-wise greater than or equal relational operation on the
 inputs. The top input corresponds to the first operand.
 
+![](./Images/block.png)
+
 ## Library
 
 Relational Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -17,7 +17,6 @@ and the lower input is the second input. The block returns true if the
 first input is greater than or equal to the second input. The output
 equals 1 for true and 0 for false.
 
-Figure: Greater Equals Block
 
 ![](./Images/zuk1532106555754.png)
 
@@ -43,7 +42,6 @@ Outputs for the different input types are:
 | Both are matrix                                 | Matrix of same dimension                  |
 | One is scalar and the other is vector or matrix | Dimension is that of the vector or matrix |
 
-Table 1. Input/Output
 
 ## Parameters
 
