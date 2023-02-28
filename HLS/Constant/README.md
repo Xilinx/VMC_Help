@@ -35,22 +35,18 @@ block.
 You can enter any expression that MATLAB® evaluates as a scalar or
 matrix.
 
-| Choices | Description    |
-|---------|----------------|
-| 1.0     | Constant Value |
-
-
+##### 1.0
+Constant Value
 
 #### Interpret vector parameters as 1-D  
 Specifies whether the constant value should be interpreted as a 1-D
 array.
-| Choices | Description                                                                                                                                       |
-|---------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| On      | If the specified constant value is a scalar, row matrix, or column matrix, then the output is a 1-D array. Otherwise, the output is a 2-D matrix. |
-| Off     | The output is a 2-D scalar or matrix.                                                                                                             |
+##### On
+If the specified constant value is a scalar, row matrix, or column matrix, then the output is a 1-D array. Otherwise, the output is a 2-D matrix.
 
-
-
+##### Off
+The output is a 2-D scalar or matrix.
+                                                                                                          
 #### Sample time  
 Specifies block sample time as a numerical value. The sample time of a
 block indicates when, during simulation, the block generates outputs or
