@@ -2,18 +2,18 @@
 
 Perform element-wise conjugate transpose operation on the input signal.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Matrices and Linear Algebra
 
-![](./Images/block.png)
 
 ## Description
 
 The Hermitian block performs a conjugate transpose operation on the
 input signal.
 
-Figure: Hermitian Block
 
 ![](./Images/gse1532106955868.png)
 
