@@ -2,11 +2,11 @@
 
 Compute the inverse of a matrix using QR factorization
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Matrices and Linear Algebra
-
-![](./Images/block.png)
 
 ## Description
 
