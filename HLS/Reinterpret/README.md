@@ -3,11 +3,11 @@
 Element-wise reinterpretation of the input type into a compatible output
 type with the same bit width.
 
+![](./Images/block.png)
+
 ## Library
 
 Signal Attributes
-
-![](./Images/block.png)
 
 ## Description
 
@@ -15,8 +15,6 @@ The Reinterpret block provides a mechanism for interpreting a value from
 a different data type. You can specify the output data type with the
 restriction that the bit widths of input and output data types must
 match.
-
-Figure: Reinterpret Block
 
 ![](./Images/exr1532106955895.png)
 
@@ -52,30 +50,50 @@ Following are the supported output data types.
 | fixed           | Same bit width fixed-point data with different fractional widths, all native data types if the bit width matches |
 | half            | half, int16, uint16, 16 bit fixed-point data type                                                                |
 
-Table 1. Input/Output
 
 ## Parameters
 
-Output data type
+#### Output data type
 
 This parameter specifies the output data type for reinterpreting the
 input data. If fixed is specified more parameters are available.
 
 Following are the settings for the Output data type parameter.
 
-| Setting              | Description                                                                                                                                                                                                                                                       |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| double               | Double precision floating point                                                                                                                                                                                                                                   |
-| single               | Single precision floating point                                                                                                                                                                                                                                   |
-| int8                 | 8-bit signed integer                                                                                                                                                                                                                                              |
-| uint8                | 8-bit unsigned integer                                                                                                                                                                                                                                            |
-| int16                | 16-bit signed integer                                                                                                                                                                                                                                             |
-| uint16               | 16-bit unsigned integer                                                                                                                                                                                                                                           |
-| int32                | 32-bit signed integer                                                                                                                                                                                                                                             |
-| uint32               | 32-bit unsigned integer                                                                                                                                                                                                                                           |
-| boolean              | Boolean                                                                                                                                                                                                                                                           |
-| fixed                | Fixed-point                                                                                                                                                                                                                                                       |
-| half                 | Half precision floating-point                                                                                                                                                                                                                                     |
-| data type expression | A string that specifies the output data type. See Working with Data Type Expression in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
+##### double
+Double precision floating point
 
-Table 2. Output Data Type Parameter
+##### single
+Single precision floating point
+
+##### int8
+8-bit signed integer
+
+##### uint8
+8-bit unsigned integer
+
+##### int16
+16-bit signed integer
+
+##### uint16
+16-bit unsigned integer
+
+##### int32
+32-bit signed integer
+
+##### uint32
+32-bit unsigned integer
+
+##### boolean
+Boolean
+
+##### fixed
+Fixed-point
+
+##### half
+Half precision floating-point
+
+##### data type expression
+A string that specifies the output data type. See Working with Data Type Expression in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
+
+
