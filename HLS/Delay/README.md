@@ -2,11 +2,11 @@
 
 Delay input signal by specified number of samples
 
+![](./Images/block.png)
+
 ## Library
 
 Signal Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -27,7 +27,7 @@ Output is complex if the input is complex.
 
 ## Parameters
 
-Latency
+#### Latency
 
 The Latency parameter specifies the number of samples by which the input
 signal is delayed.

@@ -3,11 +3,11 @@
 Performs element-wise greater than relational operation on the inputs.
 The top input corresponds to the first operand.
 
+![](./Images/block.png)
+
 ## Library
 
 Relational Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -20,7 +20,6 @@ output signal is true if the corresponding element of the first input
 signal is greater than the corresponding element of the second signal.
 Otherwise the element is false.
 
-Figure: Greater Block
 
 ![](./Images/dsl1532106555815.png)
 

@@ -31,10 +31,10 @@ vertical-align: middle;
 <section id="real-imag-to-complex" class="level1">
 <h1>Real-Imag to Complex</h1>
 <p>Computes the complex output from real and imaginary input.</p>
+<p><img src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
-<p><img src="data:image/png;base64,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" /></p>
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
@@ -72,78 +72,54 @@ non-scalar, they must agree on dimensions.</li>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<p>Input<br />
-Input is a drop down menu parameter which specifies whether real,
+<section id="input" class="level4">
+<h4>Input</h4>
+<p>Input is a drop down menu parameter which specifies whether real,
 imaginary, or both of the parts of the output signal are specified as
-inputs. Settings<br />
-Following are settings for the Input parameter.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Real and imag</td>
-<td>Real and imaginary parts of the output signal are specified using Re
-and Im inputs of the block, respectively.</td>
-</tr>
-<tr class="even">
-<td>Real</td>
-<td>The block has only Re input in this case. Real part of the output
+inputs.</p>
+<section id="settings" class="level5">
+<h5>Settings</h5>
+<p>Following are settings for the Input parameter.</p>
+<section id="real-and-imag" class="level6">
+<h6>Real and imag</h6>
+<p>Real and imaginary parts of the output signal are specified using Re
+and Im inputs of the block, respectively.</p>
+</section>
+<section id="real" class="level6">
+<h6>Real</h6>
+<p>The block has only Re input in this case. Real part of the output
 signal is specified using the Re input of the block, while its imaginary
-part is specified using the Imag part parameter.</td>
-</tr>
-<tr class="odd">
-<td>Imag</td>
-<td>The block has only Im input in this case. Imaginary part of the
+part is specified using the Imag part parameter.</p>
+</section>
+<section id="imag" class="level6">
+<h6>Imag</h6>
+<p>The block has only Im input in this case. Imaginary part of the
 output signal is specified using the Im input of the block, while its
-real part is specified using the Real part parameter.</td>
-</tr>
-</tbody>
-</table>
-<p>Table 1. Input Parameter</p>
-<p>Real part<br />
-Specify the constant real part of the output signal when Input is set to
-Imag. This parameter is visible only when you set Input to Imag.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Choices</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>The value of the Real part parameter must be a numeric, real-valued
-scalar, vector, or matrix.</td>
-</tr>
-</tbody>
-</table>
-<p>Table 2. Real Part Parameter</p>
-<p>Imag part<br />
-Specify the constant imaginary part of the output signal when Input is
-set to Real. This parameter is visible only when you set Input to
+real part is specified using the Real part parameter.</p>
+</section>
+</section>
+</section>
+<section id="real-part" class="level4">
+<h4>Real part</h4>
+<p>Specify the constant real part of the output signal when Input is set
+to Imag. This parameter is visible only when you set Input to Imag.</p>
+<section id="0" class="level5">
+<h5>0</h5>
+<p>The value of the Real part parameter must be a numeric, real-valued
+scalar, vector, or matrix.</p>
+</section>
+</section>
+<section id="imag-part" class="level4">
+<h4>Imag part</h4>
+<p>Specify the constant imaginary part of the output signal when Input
+is set to Real. This parameter is visible only when you set Input to
 Real.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Choices</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>The value of the Imag part parameter must be a numeric, real-valued
-scalar, vector, or matrix.</td>
-</tr>
-</tbody>
-</table>
-<p>Table 3. Imag Part Parameter</p>
+<section id="0-1" class="level5">
+<h5>0</h5>
+<p>The value of the Imag part parameter must be a numeric, real-valued
+scalar, vector, or matrix.</p>
+</section>
+</section>
 </section>
 </section>
 </body>

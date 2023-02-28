@@ -2,11 +2,11 @@
 
 Provides a delay of one sample period
 
+![](./Images/block.png)
+
 ## Library
 
 Signal Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -30,8 +30,7 @@ Data type support is:
 
 ## Parameters
 
-Initial Condition
-
+#### Initial Condition
 Specifies the initial value.
 
 The Initial Condition can be scalar, vector, or matrix, of real or

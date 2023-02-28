@@ -3,11 +3,12 @@
 Perform element-wise not equal to relational operation on the inputs.
 The top input corresponds to the first operand.
 
+![](./Images/block.png)
+
 ## Library
 
 Relational Operations
 
-![](./Images/block.png)
 
 ## Description
 

@@ -2,11 +2,11 @@
 
 Compute element-wise natural logarithm of input
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 

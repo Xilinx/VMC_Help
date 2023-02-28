@@ -2,11 +2,12 @@
 
 Multiply the elements of the input signal
 
+
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -30,30 +31,27 @@ can perform element-wise multiplication on real or complex number data.
 
 ## Parameter
 
-Multiply over
+#### Multiply over
 
 The Multiply over parameter value is used to decide whether elements
 will be multiplied in all dimensions or in one of the dimensions.
 
-Following are the settings for the Multiply over parameter.
+##### All dimensions
+Multiply all elements of the input signal (output is scalar)
 
-| Setting             | Description                                                                                  |
-|---------------------|----------------------------------------------------------------------------------------------|
-| All dimensions      | Multiply all elements of the input signal (output is scalar)                                 |
-| Specified dimension | This option shows an edit box, Dimension, where the specific dimension value can be entered. |
+##### Specified dimension
+This option shows an edit box, Dimension, where the specific dimension value can be entered.
 
-Table 1. Multiply Over Parameter
 
-Dimension
+#### Dimension
 
 The Dimension parameter is displayed only if the Multiply over parameter
 value is set to Specified dimension.
 
-Following are the settings for the Dimension parameter.
+##### 1
+Multiply input over row dimension. Output is a row matrix.
 
-| Setting | Description                                                      |
-|---------|------------------------------------------------------------------|
-| 1       | Multiply input over row dimension. Output is a row matrix.       |
-| 2       | Multiply input over column dimension. Output is a column matrix. |
+##### 2
+Multiply input over column dimension. Output is a column matrix.
 
-Table 2. Dimension Parameter
+

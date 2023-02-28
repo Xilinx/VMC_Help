@@ -2,11 +2,11 @@
 
 Combines scalar and vector inputs into a larger vector output.
 
+![](./Images/block.png)
+
 ## Library
 
 Signal Routing
-
-![](./Images/block.png)
 
 ## Description
 
@@ -24,11 +24,10 @@ inputs block parameter. When the value of the block parameter is
 changed, the input ports are added or removed starting from the last
 port at the bottom left.
 
-Figure: Mux Diagram
 
 ![](./Images/rto1555288259632.png)
 
-Note: This figure shows how the Mux block computes output port
+**Note**: This figure shows how the Mux block computes output port
 dimensions.
 
 ## Data Type Support
@@ -46,7 +45,6 @@ Inputs
   int8, uint16, int16, uint32, int32, and boolean), and Model Composer
   supported half and fixed-point data types.
 
-&nbsp;
 
 Outputs  
 - The block has one output port.
@@ -56,11 +54,16 @@ Outputs
 
 ## Parameters
 
-Number of inputs  
+#### Number of inputs  
 The value for the parameter must be a finite positive integer. When the
 value of the parameter changes, the input ports are either added or
 removed starting from the last port at the bottom left.
 
-[TABLE]
+##### 2
+The block icon is initially created with two input ports.
 
-Table 1. Number of Inputs Settings
+##### N
+A finite positive integer value.
+
+The block icon is redrawn with the specified number of input ports.
+

@@ -2,16 +2,16 @@
 
 Perform an element-wise exponential value of the input
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
 
-![](./Images/block.png)
-
 ## Description
 
 The Exp block returns the exponential e^(x) for each element in
-array `x`. The block supports all data types except Boolean. The input
+array x. The block supports all data types except Boolean. The input
 can be scalar, vector or matrix.
 
 ## Data Type Support

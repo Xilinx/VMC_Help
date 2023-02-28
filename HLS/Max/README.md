@@ -3,11 +3,11 @@
 Outputs the maximum value of an input or element-wise maximum value of
 multiple inputs.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions/Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -52,9 +52,13 @@ of the inputs.
 
 ## Parameters
 
-Number of inputs  
+#### Number of inputs  
 This parameter determines the number of inputs.
 
-[TABLE]
+##### 1
+Initially, the block icon has a single input.
 
-Table 1. Number of Inputs
+##### N
+A positive integer value.
+
+The block icon is redrawn with the specified number of input ports.

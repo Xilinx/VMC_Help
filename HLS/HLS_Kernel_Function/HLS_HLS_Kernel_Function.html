@@ -43,15 +43,15 @@ interface.</p>
 proper HLS IP (an IP with interface specification using HLS pragmas).
 The primary use of this block is to co-simulate AI Engine domain with
 HLS.</p>
-<p>Note: This block does not participate in HLS code generation and
-should not be part of the HLS subsystem in a design.</p>
-<p>Note: Use this block to connect with AI Engine blocks using the AIE
-to HLS Kernel or HLS to AIE blocks and co-simulate a design with both AI
-Engines and PL components.</p>
+<p><strong>Note</strong>: This block does not participate in HLS code
+generation and should not be part of the HLS subsystem in a design.</p>
+<p><strong>Note</strong>: Use this block to connect with AI Engine
+blocks using the AIE to HLS Kernel or HLS to AIE blocks and co-simulate
+a design with both AI Engines and PL components.</p>
 <p>The block also accepts templatized HLS functions.</p>
-<p>Function arguments can be either of <code>hls::stream</code> type or
-of <code>scalar</code> or <code>vector</code> types. For example the
-following is a valid HLS function signature:</p>
+<p>Function arguments can be either of hls::stream type or of scalar or
+vector types. For example the following is a valid HLS function
+signature:</p>
 <pre class="pre"><code>void func(hls::stream&lt;unsigned int&gt; &amp;in, const ap_uint&lt;8&gt; (&amp;param_in)[32], hls::stream&lt;unsigned int&gt; &amp;out, ap_uint&lt;8&gt; param_out);</code></pre>
 <p>For stream inputs and outputs, this block accepts variable size
 signals and produces variable size outputs. For stream inputs and
@@ -59,7 +59,50 @@ outputs, the data width can only be 32, 64, or 128 bit wide.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<p>[TABLE]</p>
+<section id="kernel-header-file" class="level4">
+<h4>Kernel header file</h4>
+<p>String, Mandatory</p>
+<p>The name of the HLS kernel header file that contains the function
+declaration. The string could be just the file name, a relative path to
+the file or an absolute path of the file. Use the browse button to
+select the file.</p>
+</section>
+<section id="kernel-function" class="level4">
+<h4>Kernel function</h4>
+<p>String, Mandatory</p>
+<p>The name of the kernel function in C/C++ for which HLS Kernel block
+is to be created.</p>
+</section>
+<section id="kernel-source-file" class="level4">
+<h4>Kernel source file</h4>
+<p>String, optional</p>
+<p>The name of the source file that contains the kernel function
+implementation (definition). The string could be just the file name, a
+relative path to the file or the absolute path of the file.</p>
+<p>You can specify both the declaration and the definition of the
+function in the header file and leave this field empty.</p>
+</section>
+<section id="kernel-search-paths" class="level4">
+<h4>Kernel search paths</h4>
+<p>Vector of Strings, Optional</p>
+<p>If the kernel header file or the kernel source file is not found
+using the value provided through the &#39;Kernel header file&#39; or &#39;Kernel
+source file&#39; fields respectively, then the paths provided through
+&#39;Kernel search paths&#39; are used to locate the files.</p>
+<p>This parameter allows use of environment variables while specifying
+paths for the kernel header file and the kernel source file. The
+environment variable can be used in either ${ENV} or $ENV format.</p>
+</section>
+<section id="preprocessor-options" class="level4">
+<h4>Preprocessor Options</h4>
+<p>Optional</p>
+<p>Optional preprocessor arguments for downstream compilation with
+specific preprocessor options.</p>
+<p>The following two preprocessor option formats will be accepted and
+multiple can be selected. -Dname and -Dname=definition. That is, the
+optional argument must begin with the -D string and if the option
+definition value is not provided, it is assumed to be 1.</p>
+</section>
 </section>
 </section>
 </body>

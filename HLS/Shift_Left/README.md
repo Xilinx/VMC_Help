@@ -3,11 +3,11 @@
 Perform logical shift left of input over a constant number of bit
 positions specified by a non-negative integer parameter
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -19,7 +19,6 @@ integer. The default value is 0. The output is of the same type,
 dimension, and numeric type (real or complex) as the input. The input
 type must be integral or fixed-point.
 
-Figure: Shift Left Block
 
 ![](./Images/noa1532106955929.png)
 
@@ -30,8 +29,7 @@ Figure: Shift Left Block
 
 ## Parameters
 
-Shift by
-
+#### Shift by
 This parameter specifies the number of bit positions over which the
 shift takes place.
 

@@ -2,11 +2,11 @@
 
 Compute the element-wise power function
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 

@@ -2,11 +2,11 @@
 
 Performs element-wise logical NOT operation on the input
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 

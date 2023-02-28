@@ -2,11 +2,11 @@
 
 Computes the complex output from real and imaginary input.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -41,37 +41,33 @@ Data type support for the input port is as follows.
 
 ## Parameters
 
-Input  
+#### Input  
 Input is a drop down menu parameter which specifies whether real,
 imaginary, or both of the parts of the output signal are specified as
 inputs.
-Settings  
+##### Settings  
 Following are settings for the Input parameter.
 
-| Setting       | Description                                                                                                                                                                                 |
-|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Real and imag | Real and imaginary parts of the output signal are specified using Re and Im inputs of the block, respectively.                                                                              |
-| Real          | The block has only Re input in this case. Real part of the output signal is specified using the Re input of the block, while its imaginary part is specified using the Imag part parameter. |
-| Imag          | The block has only Im input in this case. Imaginary part of the output signal is specified using the Im input of the block, while its real part is specified using the Real part parameter. |
+###### Real and imag
+Real and imaginary parts of the output signal are specified using Re and Im inputs of the block, respectively.
 
-Table 1. Input Parameter
+###### Real
+The block has only Re input in this case. Real part of the output signal is specified using the Re input of the block, while its imaginary part is specified using the Imag part parameter.
 
-Real part  
+###### Imag
+The block has only Im input in this case. Imaginary part of the output signal is specified using the Im input of the block, while its real part is specified using the Real part parameter.
+
+
+#### Real part  
 Specify the constant real part of the output signal when Input is set to
 Imag. This parameter is visible only when you set Input to Imag.
 
-| Choices | Description                                                                                    |
-|---------|------------------------------------------------------------------------------------------------|
-| 0       | The value of the Real part parameter must be a numeric, real-valued scalar, vector, or matrix. |
+##### 0
+The value of the Real part parameter must be a numeric, real-valued scalar, vector, or matrix.
 
-Table 2. Real Part Parameter
-
-Imag part  
+#### Imag part  
 Specify the constant imaginary part of the output signal when Input is
 set to Real. This parameter is visible only when you set Input to Real.
 
-| Choices | Description                                                                                    |
-|---------|------------------------------------------------------------------------------------------------|
-| 0       | The value of the Imag part parameter must be a numeric, real-valued scalar, vector, or matrix. |
-
-Table 3. Imag Part Parameter
+##### 0
+The value of the Imag part parameter must be a numeric, real-valued scalar, vector, or matrix.

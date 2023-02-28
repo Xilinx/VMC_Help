@@ -3,11 +3,12 @@
 Element-wise computation of the reciprocal square root for a given
 argument
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
 
-![](./Images/block.png)
 
 ## Description
 
@@ -15,7 +16,6 @@ The Reciprocal Sqrt block returns the reciprocal square root for each
 element in an array. The block supports input of all data types except
 Boolean. The input can be a scalar, vector or a matrix.
 
-Figure: Reciprocal Sqrt Block
 
 ![](./Images/cco1532103642818.png)
 

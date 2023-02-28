@@ -3,11 +3,12 @@
 Compute bitwise XOR of the elements of the input over all dimensions or
 over a specified dimension
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
 
-![](./Images/block.png)
 
 ## Description
 
@@ -50,22 +51,19 @@ Figure: Reduction XOR Block
 
 ## Parameters
 
-Reduce over
+#### Reduce over
 
 This parameter specifies whether reduction takes place over all
 dimensions or over a specified dimension. If reduction is specified over
 all dimensions, the output signal is a scalar.
 
-Settings for the Reduce over parameter are:
+##### All dimensions
+Reduction takes place over all dimensions.
 
-| Setting             | Description                                                                    |
-|---------------------|--------------------------------------------------------------------------------|
-| All dimensions      | Reduction takes place over all dimensions.                                     |
-| Specified dimension | Reduction takes place over the dimension specified by the Dimension parameter. |
+##### Specified dimension
+Reduction takes place over the dimension specified by the Dimension parameter.
 
-Table 1. Reduce Over Parameter
-
-Dimension
+#### Dimension
 
 If the Reduce over parameter is set to Specified dimension, the
 Dimension parameter specifies over which dimension reduction takes
@@ -77,14 +75,11 @@ place.
   is 2, the output has dimensions M x 1.
 - If the input signal is scalar or 1 x 1, the output dimension is 1 x 1.
 
-Settings for the Dimension parameter are:
+##### 1
+Reduce over row dimension.
 
-| Setting | Description                   |
-|---------|-------------------------------|
-| 1       | Reduce over row dimension.    |
-| 2       | Reduce over column dimension. |
+##### 2
+Reduce over column dimension.
 
-Table 2. Dimension Parameter
-
-Note: If the reduce Dimension is specified to be 2 the input signal must
+**Note**: If the reduce Dimension is specified to be 2 the input signal must
 be two-dimensional.

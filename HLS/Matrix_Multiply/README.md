@@ -3,11 +3,11 @@
 Compute matrix product of two input signals. The first operand is the
 top input on the block.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Matrices and Linear Algebra
-
-![](./Images/block.png)
 
 ## Description
 
@@ -32,8 +32,6 @@ row in the table result in an error.
 | K                           | 1                            | K                            | K \>= 1                   |
 | K                           | 1 x M                        | K x M                        | K \>= 1, M \>= 1          |
 
-Table 1. Data Type Combinations
-
 The output data type is determined according to the following rules, in
 the order listed. T1 is a variable representing the type of the first
 operand; T2 is a variable representing the type of the second operand.
@@ -52,7 +50,6 @@ the Simulink® Matrix Product block.
 | boolean                    | T2                          | T2                                                                                                                                                                      |
 | T1                         | boolean                     | T1                                                                                                                                                                      |
 
-Table 2. Output Data Type
 
 ## Parameters
 

@@ -2,11 +2,11 @@
 
 Performs signum function (sign extraction) on the input.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions/Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -16,11 +16,10 @@ negative, respectively.
 
 When the input s is complex, the block output is calculated as:
 
-``` pre
 sign(s) = s./ abs(s) 
-```
 
-Where sign is the MATLAB® signum function, and `./` indicates
+
+Where sign is the MATLAB® signum function, and ./ indicates
 element-wise division.
 
 ## Data Type Support

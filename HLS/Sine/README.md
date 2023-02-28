@@ -2,16 +2,16 @@
 
 Element-wise computation of the sine function for the given input
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
 
-![](./Images/block.png)
-
 ## Description
 
-The Sine block returns the output of the function sin(`x`) for each
-element in array `x`.
+The Sine block returns the output of the function sin(x) for each
+element in array x.
 
 ## Data Type Support
 

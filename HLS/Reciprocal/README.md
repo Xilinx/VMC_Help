@@ -2,11 +2,11 @@
 
 Element-wise computation of the reciprocal for a given argument
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
