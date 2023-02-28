@@ -3,11 +3,11 @@
 Assemble an output matrix by applying the kernel subsystem to
 submatrices (windows) of the input matrix in row-major order
 
+![](./Images/block.png)
+
 ## Library
 
 Ports and Subsystems
-
-![](./Images/block.png)
 
 ## Description
 
@@ -66,7 +66,7 @@ Restrictions on the use of the Window Processing block are:
 - The kernel must not contain any of the following blocks:
   - Blocks that have internal state, such as the Unit Delay block.
   - The following Digital Signal Processing blocks: FFT and IFFT.
-  - Blocks created with the `xmcImportFunction` command.
+  - Blocks created with the xmcImportFunction command.
 - The kernel must not contain an if-action subsystem.
 
 ## Data Type Support
@@ -76,14 +76,15 @@ signals.
 
 ## Parameters
 
-Window size
+#### Window size
 
 This parameter specifies the size of the window. Enter a 2-element
 vector of real positive integers, for example \[5,3\], for the Window
-size. Please note that Window size cannot specify more than a total of
+size. 
+**Note** The Window size cannot specify more than a total of
 255 elements.
 
-Output size
+#### Output size
 
 This parameter specifies how the edges of the input image are treated.
 
