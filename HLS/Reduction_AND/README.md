@@ -3,11 +3,11 @@
 Compute bitwise AND of the elements of the input over all dimensions or
 over a specified dimension
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -18,16 +18,16 @@ output signal is the same as that of the input signal. The dimension of
 the output signals depends on whether the reduction takes place over all
 dimensions or over a specified dimension.
 
-- Reduce over all dimensions  
+### Reduce over all dimensions  
 The output is a scalar and it is the bitwise AND of the elements of the
 input signal.
 
-- Reduce over dimension 1  
+### Reduce over dimension 1  
 The output is a row vector (2-D) with as many elements as the number of
 columns of the input. Each element in the output is the bitwise AND
 reduction of the elements of the corresponding column of the input.
 
-- Reduce over dimension 2  
+### Reduce over dimension 2  
 The output is a column vector (2-D) containing as many elements as the
 number of rows of the input. Each element in the output is the bitwise
 AND reduction of the elements of the corresponding row of the input.
@@ -56,12 +56,13 @@ all dimensions, the output signal is a scalar.
 
 Following are the settings for the Reduce over parameter.
 
-| Setting             | Description                                                                                                                                                                                                                                                                                                                                              |
-|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| All dimensions      | The Reduce AND operator will be applied to all elements, producing a scalar output.                                                                                                                                                                                                                                                                      |
-| Specified dimension | The Reduce AND operator will be applied along the specified dimension, producing a vector output along the opposite dimension. When Dimension 1 is specified, the Reduction AND is applied along columns, producing a row vector as output. When Dimension 2 is specified, the Reduction AND is applied along rows, producing a column vector as output. |
+##### All dimensions
+The Reduce AND operator will be applied to all elements, producing a scalar output.
 
-Note: The dimension specified will be the one that gets reduced to
+##### Specified dimension
+The Reduce AND operator will be applied along the specified dimension, producing a vector output along the opposite dimension. When Dimension 1 is specified, the Reduction AND is applied along columns, producing a row vector as output. When Dimension 2 is specified, the Reduction AND is applied along rows, producing a column vector as output.
+
+**Note**: The dimension specified will be the one that gets reduced to
 size 1. For example, a 2-D M x N input matrix specifying Dimension 1
 (number of rows M) will result in a 1 x N row vector.
 
@@ -79,11 +80,12 @@ place.
 
 Following are the settings for the Dimension parameter.
 
-| Setting | Description                   |
-|---------|-------------------------------|
-| 1       | Reduce over row dimension.    |
-| 2       | Reduce over column dimension. |
+##### 1
+Reduce over row dimension.
+
+##### 2
+Reduce over column dimension.
 
 
-Note: If the reduce Dimension is specified to be 2 the input signal must
+**Note**: If the reduce Dimension is specified to be 2 the input signal must
 be two-dimensional.
