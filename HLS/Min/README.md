@@ -3,11 +3,12 @@
 Outputs the minimum value of an input or element-wise minimum value of
 multiple inputs.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions/Math Operation
 
-![](./Images/block.png)
 
 ## Description
 
@@ -52,9 +53,13 @@ the inputs.
 
 ## Parameters
 
-Number of inputs  
+#### Number of inputs  
 This parameter determines the number of inputs.
 
-[TABLE]
+##### 1
+Initially, the block icon is created with a single input.
 
-Table 1. Number of Inputs
+##### N
+A positive integer value.
+
+The block icon is redrawn with the specified number of input ports.
