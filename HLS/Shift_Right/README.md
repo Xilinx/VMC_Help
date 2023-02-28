@@ -3,11 +3,11 @@
 Performs arithmetic shift right of input over a constant number of bit
 positions specified by a non-negative integer parameter
 
+![](./Images/block.png)
+
 ## Library
 
 Logic and Bit Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -19,7 +19,6 @@ non-negative integer. The default value is 0. The output is of the same
 type, dimension, and numeric type (real or complex) as the input. The
 input data must be integer or fixed-point type.
 
-Figure: Shift Right Block
 
 ![](./Images/ata1532106555834.png)
 
@@ -31,8 +30,7 @@ data type and dimension are the same as that of input data.
 
 ## Parameters
 
-Shift by
-
+#### Shift by
 This parameter specifies the number of bit positions over which the
 shift takes place.
 
