@@ -2,18 +2,18 @@
 
 Element-wise computation of the hyperbolic sine for a given argument
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
 The sinh block returns the output of the function sinh(x), which is the
 hyperbolic sine, for each element in array x.
 
-The hyperbolic sine of `x` is:
+The hyperbolic sine of x is:
 
 ![](./Images/mvc1532106955958.png)
 
