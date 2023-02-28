@@ -3,11 +3,11 @@
 Perform element-wise addition on the input, column-wise, row-wise, or in
 all dimensions
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -31,28 +31,17 @@ Data type support for the block is:
 
 ## Parameters
 
-Sum over
+#### Sum over
+##### All dimensions
+Add all elements of the input signal (output is scalar)
 
-The Sum over parameter value is used to decide whether elements will be
-added in all dimensions or in one of the dimensions.
+##### Specified dimension
+This option shows an edit box, Dimension, where the specific dimension value can be entered.
 
-Following are settings for the Sum over parameter.
+#### Dimension
+##### 1
+Add input over row dimension. Output is a row matrix.
 
-| Setting             | Description                                                                                  |
-|---------------------|----------------------------------------------------------------------------------------------|
-| All dimensions      | Add all elements of the input signal (output is scalar)                                      |
-| Specified dimension | This option shows an edit box, Dimension, where the specific dimension value can be entered. |
+##### 2 
+Add input over column dimension. Output is a column matrix.
 
-Table 1. Sum Over Parameter
-
-Dimension
-
-The Dimension parameter is displayed only if the Sum over parameter
-value is set to Specified dimension.
-
-Settings for the Dimension parameter are:
-
-| Setting | Description                                                 |
-|:-------:|-------------------------------------------------------------|
-|    1    | Add input over row dimension. Output is a row matrix.       |
-|    2    | Add input over column dimension. Output is a column matrix. |
