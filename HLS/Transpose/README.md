@@ -4,9 +4,9 @@ Perform an element-wise transpose operation on the input signal
 
 ## Library
 
-Math Functions / Matrices and Linear Algebra
-
 ![](./Images/block.png)
+
+Math Functions / Matrices and Linear Algebra
 
 ## Description
 
