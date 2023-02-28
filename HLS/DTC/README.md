@@ -58,7 +58,7 @@ signal.
 ## Parameters
 
 #### Output data type  
-This parameter specifies the data type of the output signal. If `fixed`
+This parameter specifies the data type of the output signal. If fixed
 is specified, more parameters are available.
 
 ##### double
@@ -128,7 +128,7 @@ This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
 #### Fractional length  
-If the Output data type is set to `fixed`, the Fractional length
+If the Output data type is set to fixed, the Fractional length
 parameter specifies the number of bits to the right of the binary point.
 
 ##### 10
