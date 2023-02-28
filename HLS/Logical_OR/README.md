@@ -2,11 +2,11 @@
 
 Performs element-wise logical OR operation on inputs
 
+![](./Images/block.png)
+
 ## Library
 
-Logic and Bit Operations
-
-![](./Images/block.png)
+Logic and Bit Operation
 
 ## Description
 
@@ -14,7 +14,6 @@ The Logical OR block has two input ports and one output port. The block
 performs an element-wise logical OR operation on the inputs and produces
 a Boolean result on the output.
 
-Figure: Logical OR Block
 
 ![](./Images/mnx1532106955886.png)
 
