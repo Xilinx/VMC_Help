@@ -130,7 +130,7 @@ Boolean data type.
 * Constant value conversion attributes rounding and overflow for reading constant value parameter.
 
 ##### Data type Expression
-A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide [(UG1483)https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=ug1483-model-composer-sys-gen-user-guide)
+A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=ug1483-model-composer-sys-gen-user-guide))
 
 
 
