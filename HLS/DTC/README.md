@@ -2,6 +2,9 @@
 
 Convert the input to the data type of the output.
 
+
+![](./Images/block.png)
+
 The block warns or errors out when an integer or fixed-point output
 overflows during simulation. To configure, select Configuration
 Parameters → Diagnostics → Data Validity. In the Data Validity pane, set
@@ -10,8 +13,6 @@ Wrap or Saturate to Overflow.
 ## Library
 
 Signal Attributes
-
-![](./Images/block.png)
 
 ## Description
 
@@ -56,77 +57,89 @@ signal.
 
 ## Parameters
 
-Output data type  
+#### Output data type  
 This parameter specifies the data type of the output signal. If `fixed`
 is specified, more parameters are available.
 
-Settings for the Output data type parameter are as follows.
+##### double
+double precision floating point
 
-| Setting              | Description                                                                                                                                                                                                                                                         |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| double               | double precision floating point                                                                                                                                                                                                                                     |
-| single               | single precision floating point                                                                                                                                                                                                                                     |
-| int8                 | 8-bit signed integer                                                                                                                                                                                                                                                |
-| uint8                | 8-bit unsigned integer                                                                                                                                                                                                                                              |
-| int16                | 16-bit signed integer                                                                                                                                                                                                                                               |
-| uint16               | 16-bit unsigned integer                                                                                                                                                                                                                                             |
-| int32                | 32-bit signed integer                                                                                                                                                                                                                                               |
-| uint32               | 32-bit unsigned integer                                                                                                                                                                                                                                             |
-| logical              | boolean                                                                                                                                                                                                                                                             |
-| fixed                | Xilinx supported fixed-point                                                                                                                                                                                                                                        |
-| half                 | Xilinx supported half precision floating point                                                                                                                                                                                                                      |
-| data type expression | A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
+##### single
+single precision floating point
 
-Table 1. Output Data Type Parameter
+##### int8
+8-bit signed integer
 
-Signedness  
+##### uint8
+8-bit unsigned integer
+
+##### int16
+16-bit signed integer
+
+##### uint16
+16-bit unsigned integer
+
+##### int32
+32-bit signed integer
+
+##### uint32
+32-bit unsigned integer
+
+##### logical
+boolean
+
+##### fixed
+Xilinx supported fixed-point
+
+##### half
+Xilinx supported half precision floating point
+
+##### data type expression
+A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=ug1483-model-composer-sys-gen-user-guide))
+
+
+#### Signedness  
 If the Output data type is set to fixed, the Signedness parameter
 specifies whether the output is a signed fixed-point or unsigned
 fixed-point data type.
+##### Signed
+The output type contains both positive and negative numbers.
+
+##### Unsigned
+The output type contains only non-negative numbers.
 
 Settings for the Signedness parameter are as follows.
 
-| Setting  | Description                                                  |
-|----------|--------------------------------------------------------------|
-| Signed   | The output type contains both positive and negative numbers. |
-| Unsigned | The output type contains only non-negative numbers.          |
-
-Table 2. Signedness Parameter
-
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-&nbsp;
 
-Word length  
+#### Word length  
 If the Output data type is set to fixed, the Word length parameter
 specifies the number of bits used to represent it.
 
-| Choices | Description        |
-|---------|--------------------|
-| 16      |                    |
-| N       | A positive integer |
+##### 16
 
-Table 3. Word Length Parameter
+##### N
+A positive integer
+
 
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-Fractional length  
+#### Fractional length  
 If the Output data type is set to `fixed`, the Fractional length
 parameter specifies the number of bits to the right of the binary point.
 
-| Choices | Description |
-|---------|-------------|
-| 10      |             |
-| N       | An integer  |
+##### 10
 
-Table 4. Fractional Length Parameter
+##### N
+An integer
 
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-Round  
+#### Round  
 If the Output data type is set to fixed, the Round parameter allows you
 to select among five rounding and two truncation options.
 
@@ -156,51 +169,60 @@ setting for the Output data type parameter.
 
 Settings for the Round parameter are:
 
-| Setting                      | Description                  |
-|------------------------------|------------------------------|
-| Round to plus infinity       | Rounding to plus infinity    |
-| Round to zero                | Rounding to zero             |
-| Round to minus infinity      | Rounding to minus infinity   |
-| Round to infinity            | Rounding to infinity         |
-| Convergent rounding          | Convergent rounding          |
-| Truncation to minus infinity | Truncation to minus infinity |
-| Truncation to zero           | Truncation to zero           |
+##### Round to plus infinity
+Rounding to plus infinity
 
-Table 5. Round Parameter
+##### Round to zero
+Rounding to zero
 
-&nbsp;
+##### Round to minus infinity
+Rounding to minus infinity
 
-Overflow  
+##### Round to infinity
+Rounding to infinity
+
+##### Convergent rounding
+Convergent rounding
+
+##### Truncation to minus infinity
+Truncation to minus infinity
+
+##### Truncation to zero
+Truncation to zero
+
+
+#### Overflow  
 If the Output data type is set to `fixed`, the Overflow parameter
 specifies the overflow mode applied during conversion.
 
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-Settings for the Overflow parameter are:
+##### Saturation
+Saturation
 
-| Setting                    | Description                |
-|----------------------------|----------------------------|
-| Saturation                 | Saturation                 |
-| Saturation to Zero         | Saturation to zero         |
-| Symmetrical Saturation     | Symmetrical saturation     |
-| Wrap around                | Wrap around                |
-| Sign-Magnitude Wrap Around | Sign magnitude wrap around |
+##### Saturation to Zero
+Saturation to zero
 
-Table 6. Overflow Parameter
+##### Symmetrical Saturation
+Symmetrical saturation
 
-&nbsp;
+##### Wrap around
+Wrap around
 
-Type Expression  
+##### Sign-Magnitude Wrap Around
+Sign magnitude wrap around
+
+
+#### Type Expression  
 If the Output data type is set to data type expression, the Type
 Expression parameter specifies the output data type as a string.
 
 This parameter is available only if data type expression is selected as
 the setting for parameter Output data type.
 
-&nbsp;
 
-Saturate on integer overflow  
+#### Saturate on integer overflow  
 This parameter specifies whether integer overflow is handled by wrapping
 (default) or by saturating. This parameter is relevant only if the
 output is integral (int8, int16, int32, uint8, uint16, uint32).
@@ -213,12 +235,12 @@ on overflow.
 
 Settings for the Saturate on integer overflow parameter are:
 
-| Setting      | Description                                |
-|--------------|--------------------------------------------|
-| Not selected | Integer overflow is handled by wrapping.   |
-| Selected     | Integer overflow is handled by saturation. |
+##### Not Selected
+Integer overflow is handled by wrapping.
 
-Table 7. Saturate On Integer Overflow Parameter
+##### Selected
+Integer overflow is handled by saturation.
+
 
 If the Output data type is set to fixed and overflow is detected, the
 Diagnostic Viewer displays messages that depend on the diagnostic action
