@@ -2,19 +2,17 @@
 
 Perform element-wise unary minus operation on the input data
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
 The Negate block computes element-wise minus operation on the input
 data. The block handles signedness of real and imaginary parts
 separately in case of complex data input.
-
-Figure: Negate Block
 
 ![](./Images/cca1532106955931.png)
 
