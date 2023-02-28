@@ -2,11 +2,11 @@
 
 Element-wise computation of the square root for a given argument
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -14,7 +14,6 @@ The Sqrt block returns the square root for each element in array x. The
 block supports input of all data types except boolean. The input can be
 a scalar, vector or a matrix.
 
-Figure: Sqrt Block
 
 ![](./Images/xdr1532107405805.png)
 
