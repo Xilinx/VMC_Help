@@ -2,11 +2,12 @@
 
 Compute element-wise product of the input signals
 
+
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
-
-![](./Images/block.png)
 
 ## Description
 
@@ -59,11 +60,10 @@ as follows.
 | (fixed, Boolean)  | fixed       |
 | (int, Boolean)    | int         |
 
-Table 1. Input/Output
 
 ## Parameters
 
-Saturate on integer overflow
+#### Saturate on integer overflow
 
 This parameter specifies whether integer overflow is handled by wrapping
 (default) or by saturating. This parameter is relevant only if the
@@ -71,12 +71,11 @@ output is integral (int8, int16, int32, uint8, uint16, uint32).
 
 Settings for the Saturate on integer overflow parameter are:
 
-| Setting      | Description                                |
-|--------------|--------------------------------------------|
-| Not selected | Integer overflow is handled by wrapping.   |
-| Selected     | Integer overflow is handled by saturation. |
+##### Not selected
+Integer overflow is handled by wrapping.
 
-Table 2. Saturate on Integer Overflow Parameter
+##### Selected
+Integer overflow is handled by saturation.
 
 When overflow is detected, the Diagnostic Viewer displays messages that
 depend on the diagnostic action you specify in the Simulink Editor. To
