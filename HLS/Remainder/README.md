@@ -3,15 +3,12 @@
 Perform element-wise division on the input signal. The output is the
 remainder after the division.
 
+![](./Images/block.png)
+
 ## Library
 
 Math Functions / Math Operations
 
-  
-
-![](./Images/block.png)
-
-  
 
 ## Description
 
@@ -21,8 +18,6 @@ matrix dimensions. The dimensions of the inputs must match unless one
 input is a scalar. The output has the larger dimension of the two
 inputs. The block can handle division by 0 and produces NaN as the
 output only for floating-point data types double and single.
-
-Figure: Remainder Block
 
 ![](./Images/agk1532106555826.png)
 
