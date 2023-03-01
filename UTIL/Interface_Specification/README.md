@@ -91,56 +91,81 @@ following groups.
   Video Component. In the GUI dialog, these parameters appear in the
   'Output ports' tab.
 
-Figure: Function Protocol Parameters
 
 ![](./Images/nvm1556579254059.png)
 
 Parameters on the Function Protocol tab are as follows:
 
-Mode  
+#### Mode  
 The Mode parameter specifies the block-level I/O protocol.
 
 Following are the settings for the Mode parameter.
 
-| Setting                     | Description                                                     |
-|-----------------------------|-----------------------------------------------------------------|
-| AXI4-Lite Slave             | Specifies AXI4-Lite Slave as the block-level I/O protocol.      |
-| Handshake                   | Specifies a handshake protocol as the block-level I/O protocol. |
-| No block-level I/O Protocol | Specifies that there is no block-level I/O protocol.            |
+##### AXI4-Lite Slave
+Specifies AXI4-Lite Slave as the block-level I/O protocol.
 
-Table 1. Mode Parameter
+##### Handshake
+Specifies a handshake protocol as the block-level I/O protocol.
+
+##### No block-level I/O Protocol
+Specifies that there is no block-level I/O protocol.
+
 
 The default choice for the function protocol is 'AXI4-Lite Slave'.
 However, if the DUT does not have any scalar ports then Handshake is
 selected as default function protocol.
 
-Bundle  
+#### Bundle  
 The Bundle parameter is used in conjunction with the AXI4-Lite Slave
 interface to indicate that multiple ports should be grouped into the
 same interface. Enter a legal identifier in the C language (cannot
 contain spaces or special characters) for Bundle.
 
-Figure: Input Ports Tab
 
 ![](./Images/ovg1556579709290.png)
 
-Figure: Output Ports Tab
 
 ![](./Images/pcb1556579746789.png)
 
 Parameters on the Input ports and Output ports tabs are as follows.
 
-Mode  
+#### Mode  
 The Mode parameter specifies the I/O protocol for the input port or the
 output port.
 
 Settings for the Mode parameter are:
 
-[TABLE]
+##### Default
+Specifies to use AXI4-Lite Slave if port is scalar, and use AXI4-Stream if the port is non-scalar.
 
-Table 2. Mode Parameter
+##### AXI4-Stream
+Specifies AXI4-Stream protocol.
 
-Bundle  
+##### AXI4-Stream (video)
+Specifies AXI4-Stream (video) protocol. Allows you to specify Bundle, Video Format, and Video Component parameters.
+
+##### AXI4-Lite Slave
+Specifies AXI4-Lite Slave protocol. Allows you to specify Bundle and Offset parameters.
+
+##### FIFO
+Specifies a protocol for arrays whose elements are accessed in a sequential manner.
+
+##### Valid port
+Specifies a handshake protocol that only has a valid port. 
+
+##### Constant
+Specifies a mode in which no I/O protocol is added to the port. The mode is intended for configuration inputs which only change when the device is in reset mode.
+
+This mode only applies to Input ports.
+
+##### No protocol
+Specifies that no I/O protocol is added to the port.
+
+##### Block RAM
+Specifies Block RAM interface protocol.
+
+
+#### Bundle  
 The Bundle parameter applies to the input ports or output ports and it
 is used in conjunction with the AXI4-Stream (video) interfaces that have
 more than one color component. In this case there should be one port for
@@ -155,19 +180,19 @@ attribute will be grouped into the same AXI4-Lite Slave interface.
 Enter a legal identifier in the C language (cannot contain spaces or
 special characters) for Bundle.
 
-Offset  
+#### Offset  
 The Offset parameter applies to the input ports or output ports and it
 is used in conjunction with the AXI4-Lite Slave interface. The parameter
 allows you to specify the address offset for a port within the AXI4-Lite
 Slave address map.
 
-Video Format  
+#### Video Format  
 The Video Format parameter applies to the input ports or output ports
 and it specifies the color format for a video signal. It applies only to
 AXI4-Stream (video) interfaces. Options are Mono, YUV 4:2:2, YUV 4:4:4,
 and RGB.
 
-Video Component  
+#### Video Component  
 The VideoComponent parameter applies to the input ports or output ports
 and it specifies the color component for a video signal. It applies only
 to AXI4-Stream (video) interfaces that use a Video Format with more than
@@ -182,4 +207,4 @@ are as follows.
 | YUV 4:4:4    | Y, U, V                 |
 | RGB          | R, G, B                 |
 
-Table 3. Video Component Option
+
