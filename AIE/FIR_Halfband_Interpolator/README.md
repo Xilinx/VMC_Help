@@ -89,7 +89,7 @@ part) position.
 
 ##### **Example 1**:
 A 7-tap FIR halfband interpolator has coefficients (1, 0, 2, 5, 2, 0,
-1). This would be input as `taps[]= {1,2,5}` because the context of
+1). This would be input as taps[]= {1,2,5} because the context of
 halfband interpolation allows the remaining coefficients to be inferred.
 
 ##### **Example 2**:
@@ -105,7 +105,7 @@ Now, if the input has a data stream of all ones (i.e., 1, 1, 1, etc.):
 ### Advanced  
 #### Target input throughput (MSPS)  
 Specifies the rate at which data samples should be processed. The
-default value is `200`.
+default value is 200.
 
 #### Specify the number of cascade stages  
 When this option is not enabled, the tool will determine the filter
