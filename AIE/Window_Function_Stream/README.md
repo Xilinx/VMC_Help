@@ -85,5 +85,6 @@ This parameter is intended to improve performance and support FFT
   creates 8 stream inputs and there will be 8 subframe FFTs each of
   point size 2048. The specified FFT size and SSR values should be such
   that FFT size / SSR should not exceed 2048
+
 The Windowing utility accepts only powers of 2 as the number of
   inputs/outputs.
