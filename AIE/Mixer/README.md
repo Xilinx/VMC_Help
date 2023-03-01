@@ -26,13 +26,13 @@ in the range 16 to 4096. Default value is 32.
 This specifies the mixer operation modes. Two modes are supported by
 Mixer function:
 
-##### Single Input Mode:  
+##### Single Input Mode
 This is a DDS plus Mixer for a single data input port. Each data input
 sample is complex multiplied with the corresponding DDS sample to create
 a modulated signal that is written to the output window. This is the
 default Mixer mode.
 
-##### Dual Input Mode:  
+##### Dual Input Mode
 This is a special configuration for symmetrical carriers and two data
 input ports. Each data sample of the first input is complex multiplied
 with the corresponding DDS sample to create a modulated signal. Each
