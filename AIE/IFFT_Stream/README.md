@@ -59,8 +59,7 @@ This parameter is intended to improve performance and support IFFT
   that (2 \* IFFT size / SSR) is in the range of 16 and 4096.
 
 ### Advanced  
-Target Output Throughput (MSPS)
-
+#### Target Output Throughput (MSPS)
 Specifies the output sampling rate of the IFFT function in Mega
   Samples per Second (MSPS). The value must be in the range 1 to
   1000 and the default value is 200.
