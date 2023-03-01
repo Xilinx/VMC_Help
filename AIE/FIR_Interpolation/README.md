@@ -74,7 +74,7 @@ round for the value of 0.5.
 ### Advanced  
 #### Target input throughput (MSPS)  
 Specifies the rate at which data samples should be processed. The
-default value is `200`.
+default value is 200.
 
 #### Specify the number of cascade stages  
 When this option is not enabled, tool will determine the filter
