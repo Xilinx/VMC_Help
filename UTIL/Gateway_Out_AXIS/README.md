@@ -15,13 +15,11 @@ is primarily used with the HDL to AIE block. Note that the block name
 will be used as the AXIS name. The following figure shows an example of
 how the block gets connected.
 
-Figure: Gateway out AXI Usage
-
   
 ![](./Images/bdd1648735937836.png)  
 
 ## Parameters
 
-Sample Time  
+#### Sample Time  
 The sample time of the tready signal on the input side. In general, this
 parameter should match the sample time of your HDL design.

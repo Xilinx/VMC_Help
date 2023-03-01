@@ -36,7 +36,7 @@ times larger than the HDL domain sample period (specified in the HDL
 input gateway blocks) to avoid overflow of the internal buffers of the
 block.
 
-## Topology
+### Topology
 
 The image below depicts the topology of the connection between the AI
 Engine to HDL domain.
@@ -50,7 +50,7 @@ block.
 
 ## Parameters
 
-Output Data Type  
+#### Output Data Type  
 The following table shows different Output data types that are supported
 by AIE to HDL blocks and the corresponding input data type to the block.
 
@@ -62,9 +62,9 @@ by AIE to HDL blocks and the corresponding input data type to the block.
 | uint64           | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, uint64, single, single(c)        |
 | ufix128          | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, int64, uint64, single, single(c) |
 
-Output Sample Time  
+#### Output Sample Time  
 By default this parameter inherits the sample time from the tready
 input.
 
-Note: For more information on setting this block and examples, refer to
+**Note**: For more information on setting this block and examples, refer to
 [GitHub](https://github.com/Xilinx/Vitis_Model_Composer).

@@ -15,12 +15,12 @@ Engines.
 ## Parameters
 
 ### Main  
-* Input data type/Output data type  
+#### Input data type/Output data type  
 Describes the type of individual data samples input to and output from
 the filter function. int16, cint16, int32, cint32, float, cfloat.
 
 #### Filter coefficients data type  
-* Describes the type of individual coefficients of the filter taps. It
+Describes the type of individual coefficients of the filter taps. It
 should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:
 
@@ -34,25 +34,25 @@ also satisfy the following rules:
   data type is a float type.
 
 #### Specify filter coefficients via input port  
-* When this option is enabled, the tool allows you to specify reloadable
+When this option is enabled, the tool allows you to specify reloadable
 filter coefficients via input port.
 
 #### Filter coefficients  
-* Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
+Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where 'N' is a positive integer that represents the filter length and
 must be in the range 4 to 240 inclusive.
 
 #### Input window size (Number of samples)  
-* Describes the number of samples used as an input to the filter function.
+Describes the number of samples used as an input to the filter function.
 The number of values in the output window will be the Input window size
 divided by two by virtue of the halfband decimation factor.
 
 #### Scale output down by 2^  
-* Describes the power of 2 shift down applied to the accumulation of FIR
+Describes the power of 2 shift down applied to the accumulation of FIR
 terms before output. It must be in the range 0 to 61.
 
 #### Rounding mode  
-* Describes the selection of rounding to be applied during the shift down
+Describes the selection of rounding to be applied during the shift down
 stage of processing. The rounding options are as follows:
 
 1.  Floor (truncate)
@@ -64,16 +64,16 @@ stage of processing. The rounding options are as follows:
 7.  Round convergent to even
 8.  Round convergent to odd
 
-* Modes 2 to 7 round to the nearest integer. They differ only in how they
+Modes 2 to 7 round to the nearest integer. They differ only in how they
 round for the value of 0.5.
 
 ### Advanced  
-* Target input throughput (MSPS)  
+Target input throughput (MSPS)  
 Specifies the rate at which data samples should be processed. The
 default value is 200.
 
 #### Specify the number of cascade stages  
-* When this option is not enabled, the tool will determine the filter
+When this option is not enabled, the tool will determine the filter
 configuration that best achieves the specified input sampling rate. When
 the option is enabled, the 'Number of cascade stages' can be specified
 (which describes the number of AI Engine processors to split the
