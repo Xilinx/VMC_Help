@@ -17,18 +17,18 @@ The AIE to HLS kernel block reformats a signal driven by an AI Engine
 block so that the resulting signal matches the data type and complexity
 required by the input of an HLS Kernel block.
 
-## Topology
+### Topology
 
   
 ![](./Images/yyz1647631688897.png)  
 
 ## Parameters
 
-Output Data Type  
+#### Output Data Type  
 Possible values are: cint16, int32, uint32, cint32, int64, uint64,
 sfix128, ufix128, float, and cfloat
 
-Output Size  
+#### Output Size  
 The size of the output port. The output port is a variable sized signal
 whose maximum size is specified by the Output Size parameter. Default
 Output Size is '1'. For example if the input signal to the block is a
