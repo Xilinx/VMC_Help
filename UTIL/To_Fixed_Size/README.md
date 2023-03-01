@@ -27,20 +27,20 @@ Use this block when you need to connect a variable size signal to a
 block that does not accept a variable size signal. If the input variable
 size signal is not full, the output will not always be valid.
 
-Note: It is recommended that you monitor the Valid output to make sure
+**Note**: It is recommended that you monitor the Valid output to make sure
 you are not processing invalid outputs. You can also connect the Valid
 output to a triggered subsystem.
 
 ## Parameters
 
-Output Size  
+#### Output Size  
 This specifies the size of the output port:
 
-Inherit: Same as Input  
+##### Inherit: Same as Input  
 If this option is enabled, the block output size will be the same as
 input.
 
-Specify Output Size  
+##### Specify Output Size  
 When this option is selected, you can specify the value of the required
 output size.
 
