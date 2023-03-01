@@ -9,6 +9,8 @@ one or several black boxes.
   
 ![](./Images/block.png)  
 
+## Description
+
 During a simulation, each Questa block spawns one copy of Questa, and
 therefore uses one Questa license. If licenses are scarce, several black
 boxes can share the same block.
@@ -28,15 +30,12 @@ type, and also converts an object's value to an appropriate
 representation for other radix forms. Please refer to the Questa
 documentation for more information on symbolic radix.
 
-## Block Parameters
+## Parameters
 
-The block parameters dialog box can be invoked by double-clicking the
-icon in your Simulink model.
-
-Basic tab  
+### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-Run co-simulation in directory  
+#### Run co-simulation in directory  
 Questa is started in the directory named by this field. The directory is
 created if necessary. All black box files are copied into this
 directory, as are the auxiliary files Model Composer produces for
@@ -45,7 +44,7 @@ can be specified as an absolute or relative path. Relative paths are
 interpreted with respect to the directory in which the Simulink .mdl
 file resides.
 
-Open waveform viewer  
+#### Open waveform viewer  
 When this checkbox is selected, the Questa waveform window opens
 automatically, displaying a standard set of signals. The signals include
 all inputs and outputs of all black boxes and all clock and clock enable
@@ -54,11 +53,11 @@ with an auxiliary tcl script. To specify the script, select Add Custom
 Scripts and enter the script name (e.g., myscript.do) in the Script to
 Run After vsim field.
 
-Leave Questa open at end of simulation  
+#### Leave Questa open at end of simulation  
 When this checkbox is selected, the Questa session is left open after
 the Simulink simulation has finished.
 
-Skip compilation (use previous results)  
+#### Skip compilation (use previous results)  
 When this checkbox is selected, the Questa compilation phase is skipped
 in its entirety for all black boxes that are using the Questa block for
 HDL co-simulation. To select this option is to assert that: (1)
@@ -69,44 +68,43 @@ can greatly reduce the time required to start-up the simulation,
 however, if it is selected when inappropriate, the simulation can fail
 to run or run but produce false results.
 
-&nbsp;
 
-Advanced tab  
+### Advanced tab  
 Parameters specific to the Advanced tab are as follows:
 
-Include Unisim Libraries  
+#### Include Unisim Libraries  
 Selecting this check box enables the following path option in order to
 provide the path of the precompiled Unisim Library.
 
-Path  
+#### Path  
 This parameter represents the actual path of the precompiled Unisim
 Library.
 
-Enable Unisim Library for Verilog  
+#### Enable Unisim Library for Verilog  
 Selecting this check box ensures that Questa includes the Verilog UniSim
 library during simulation.
 
-Note: The Verilog unisim library must be mapped to UNISIMS_VER in
+**Note**: The Verilog unisim library must be mapped to UNISIMS_VER in
 Questa. In addition, selecting this check box ensures that the glbl.v
 module is compiled and invoked during simulation.
 
-Add custom scripts  
+#### Add custom scripts  
 The term “script” refers to a Tcl macro file (DO file) executed by
 Questa. Selecting this check box activates the fields Script to Run
 Before Starting Compilation, Script to Run in Place of "vsim", and
 Script to Run after "vsim". The DO file scripts named in these fields
 are not run unless this checkbox is selected.
 
-Script to run before starting compilation  
+#### Script to run before starting compilation  
 Enter the name of a Tcl macro file (DO file) that is to be executed by
 Questa before compiling black box HDL files.
 
-Note: For information on how to write a Questa macro file (DO file)
+**Note**: For information on how to write a Questa macro file (DO file)
 refer to the Tcl and macros (DO files) section in the Vitis Model
 Composer User Guide
 ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)).
 
-Script to run in place of "vsim"  
+#### Script to run in place of "vsim"  
 Questa uses the Tcl (tool command language) as the scripting language
 for controlling and extending the tool. Enter the name of a Questa Tcl
 macro file (DO file) that is to be executed by the Questa `do` command
@@ -133,7 +131,7 @@ This macro file can then reference `$toplevel` and `$blockname` as \$1
 and \$2, respectively. Thus, the command `vsim $1` inside of the macro
 file `foo.do` runs vsim on topLevel.
 
-Script to run after "vsim"  
+#### Script to run after "vsim"  
 Enter the name of a Tcl macro file (DO file) that is to be executed by
 Questa after all the HDL for black boxes has been successfully compiled,
 and after the Questa simulation has completed successfully. If the Open
@@ -167,16 +165,12 @@ event scheduling in co-simulation models.
 
 The following example is offered to illustrate the broader points.
 
-Figure: Example Model
-
 ![](./Images/ncp1649235186114.png)
 
 When the above model is run, the following waveforms are displayed by
 Questa:
 
-Figure: Example Time Scale
 
-  
 ![](./Images/lud1538085608944.png)  
 
 At the time scale presented here (the above shows a time interval of six
@@ -190,9 +184,6 @@ into immediate changes on outputs. Zooming in toward the three second
 event reveals how Model Composer has resolved the dependencies. Note the
 displayed time interval has shrunk to ~20 ms.
 
-Figure: Resolved Dependencies
-
-  
 ![](./Images/vxc1538085610155.png)  
 
 The above figure reveals that Model Composer has shifted the rising
@@ -204,8 +195,6 @@ shows that the HDL model for the first black box includes a propagation
 delay which Model Composer has effectively abstracted away through the
 use of large time scales. The actual delay through the first black box
 (exactly 1 ns) can be seen in the figure below.
-
-Figure: Delay Through the First Black Box
 
   
 ![](./Images/ehu1538085610970.png)  
