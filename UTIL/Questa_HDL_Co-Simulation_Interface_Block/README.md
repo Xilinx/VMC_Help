@@ -107,29 +107,29 @@ Composer User Guide
 #### Script to run in place of "vsim"  
 Questa uses the Tcl (tool command language) as the scripting language
 for controlling and extending the tool. Enter the name of a Questa Tcl
-macro file (DO file) that is to be executed by the Questa `do` command
+macro file (DO file) that is to be executed by the Questa do command
 at the point when Model Composer would ordinarily instruct Questa to
 begin a simulation. To start the simulation after the macro file starts
-executing, you must place a `vsim` command inside the macro file.
+executing, you must place a vsim command inside the macro file.
 
 Normally, if this parameter is left blank, or Add custom scripts is not
 selected, then Model Composer instructs Questa to execute the default
 command
 `vsim $toplevel -title {Model Composer Co-Simulation (from block $blockname}`
-Here `$toplevel` is the name of the top level entity for simulation
-(e.g., work.my_model_mti_block) and `$blockname` is the name of the
+Here $toplevel is the name of the top level entity for simulation
+(e.g., work.my_model_mti_block) and $blockname is the name of the
 Questa block in the Simulink model associated with the current
 co-simulation. To avoid problems, certain characters in the block name
 (e.g., newlines) are sanitized.
 
 If this parameter is not blank and Add custom scripts is selected, then
 Model Composer instead instructs Questa to execute
-`do $* $toplevel $blockname`. Here `$toplevel` and `$blockname` are as
-above and `$*` represents the literal text entered in the field. If, for
-example the literal text is '`foo.do`', then Questa executes `foo.do`.
-This macro file can then reference `$toplevel` and `$blockname` as \$1
-and \$2, respectively. Thus, the command `vsim $1` inside of the macro
-file `foo.do` runs vsim on topLevel.
+`do $* $toplevel $blockname`. Here $toplevel and $blockname are as
+above and $* represents the literal text entered in the field. If, for
+example the literal text is 'foo.do', then Questa executes foo.do.
+This macro file can then reference $toplevel and $blockname as \$1
+and \$2, respectively. Thus, the command vsim $1 inside of the macro
+file foo.do runs vsim on topLevel.
 
 #### Script to run after "vsim"  
 Enter the name of a Tcl macro file (DO file) that is to be executed by
