@@ -16,11 +16,11 @@ AI Engines.
 
 ### Main  
 #### Input data type/Output data type  
-* Describes the type of individual data samples input to and output from
+Describes the type of individual data samples input to and output from
 the filter function. int16, cint16, int32, cint32, float, cfloat.
 
 #### Filter coefficients data type  
-* Describes the type of individual coefficients of the filter taps. It
+Describes the type of individual coefficients of the filter taps. It
 should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:
 
@@ -34,11 +34,11 @@ also satisfy the following rules:
   data type is a float type.
 
 #### Specify filter coefficients via input port  
-* When this option is enabled, the tool allows you to specify reloadable
+When this option is enabled, the tool allows you to specify reloadable
 filter coefficients via the input port.
 
 #### Filter coefficients  
-* This field should only be supplied for the first half of the filter
+This field should only be supplied for the first half of the filter
 length plus the center tap for odd lengths i.e., taps\[\] = {c0, c1, c2,
 ..., cN \[, cCT\]} where N = (FILTER_LENGTH)/2 and cCT is the center tap
 where FILTER_LENGTH is odd. For example, a 7-tap filter might use coeffs
@@ -47,20 +47,20 @@ because the context of symmetry allows the remaining coefficients to be
 inferred.
 
 #### Filter length  
-* This is an unsigned integer which describes the number of taps in the
+This is an unsigned integer which describes the number of taps in the
 filter.
 
 #### Input frame size (Number of samples)  
-* Describes the number of samples used as an input to the filter function.
+Describes the number of samples used as an input to the filter function.
 The number of values in the output window will be the input window size
 by of virtue the single rate nature of this filter.
 
 #### Scale output down by 2^  
-* Describes power of 2 shift down applied to the accumulation of FIR terms
+Describes power of 2 shift down applied to the accumulation of FIR terms
 before output. It must be in range 0 to 61.
 
 #### Rounding mode  
-* Describes the selection of rounding to be applied during the shift down
+Describes the selection of rounding to be applied during the shift down
 stage of processing. The rounding options are as follows:
 
 1.  Floor (truncate)
@@ -72,15 +72,14 @@ stage of processing. The rounding options are as follows:
 7.  Round convergent to even
 8.  Round convergent to odd
 
-* Modes 2 to 7 round to the nearest integer. They differ only in how they
+Modes 2 to 7 round to the nearest integer. They differ only in how they
 round for the value of 0.5.
 
 #### Number of parallel input/output (SSR)  
-* This parameter specifies the number of input (or output) ports and must
+This parameter specifies the number of input (or output) ports and must
 be of the form 2^N, where N is a non-negative integer.
 
 ### Advanced  
 #### Number of cascade stages:
-
-- Specifies the number of cascade stages. The tool will guarantee the
+Specifies the number of cascade stages. The tool will guarantee the
   same.
