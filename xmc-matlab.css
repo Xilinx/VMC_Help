@@ -1,0 +1,53 @@
+/*
+ | This file is part of the DITA Open Toolkit project.
+ | See the accompanying license.txt file for applicable licenses.
+*/
+/* Stylesheet for producing MATLAB-type help for Model Composer
+ */
+/*
+ | (c) Copyright IBM Corp. 2004, 2005 All Rights Reserved.
+ */
+body {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: normal;
+}
+
+#title-block-header {
+display:none;
+}
+
+.level1
+{
+    margin-left: 0px;
+}
+
+.level2
+{
+    margin-left: 0px;
+}
+
+.level3
+{
+    margin-left: 15px;
+}
+
+.level4
+{
+    margin-left: 15px;
+}
+
+h4 {
+color:#c06838;
+}
+
+
+.level5
+{
+    margin-left: 15px;
+}
+
+.level6
+{
+    margin-left: 15px;
+}
