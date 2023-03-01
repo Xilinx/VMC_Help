@@ -20,7 +20,7 @@ This block provides an interface between the HDL and AI Engine blocks.
   HDL to AIE block can accept a transfer. A transfer takes place when
   both tvalid and tready are set to TRUE(1).
 
-## Topology
+### Topology
 
 The following figure depicts the connection between the HDL to AI Engine
 domains using the HDL to AIE block.
@@ -28,14 +28,12 @@ domains using the HDL to AIE block.
 Note: The bitwidth of the tdata input signal to the HDL to AIE block
 must match the PLIO bitwidth.
 
-Figure: HDL to AI Engine domains using the HDL to AIE block
 
-  
 ![](./Images/kvw1647641797578.png)  
 
 ## Parameters
 
-Output Data Type  
+#### Output Data Type  
 The following table shows the Output data types that are supported by
 the HDL to AIE blocks and the corresponding input data type to the
 block.
@@ -55,14 +53,14 @@ block.
 | float            | uint32, ufix64, ufix128   |
 | float(c)         | ufix64, ufix128           |
 
-Output Sample Time  
+#### Output Sample Time  
 Set the Output Sample Time to:  
 ![](./Images/ief1631890511197.png)  
 
 Note: For more information on setting this block and examples, refer to
 [GitHub](https://github.com/Xilinx/Vitis_Model_Composer).
 
-Samples per output frame  
+#### Samples per output frame  
 This determines the number of samples to be queued in the buffer before
 the block updates the frame. The size of the output frame should
 generally match the input size of the consuming AI Engine block.
