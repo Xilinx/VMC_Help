@@ -46,16 +46,16 @@ Engines.</p>
 <h2>Parameters</h2>
 <section id="main" class="level3">
 <h3>Main</h3>
-<ul>
-<li>Input data type/Output data type<br />
-Describes the type of individual data samples input to and output from
-the filter function. int16, cint16, int32, cint32, float, cfloat.</li>
-</ul>
+<section id="input-data-typeoutput-data-type" class="level4">
+<h4>Input data type/Output data type</h4>
+<p>Describes the type of individual data samples input to and output
+from the filter function. int16, cint16, int32, cint32, float,
+cfloat.</p>
+</section>
 <section id="filter-coefficients-data-type" class="level4">
 <h4>Filter coefficients data type</h4>
-<ul>
-<li><p>Describes the type of individual coefficients of the filter taps.
-It should be one of int16, cint16, int32, cint32, float, cfloat and must
+<p>Describes the type of individual coefficients of the filter taps. It
+should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
@@ -66,46 +66,35 @@ also a 32-bit type.</li>
 Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
-</ul></li>
 </ul>
 </section>
 <section id="specify-filter-coefficients-via-input-port" class="level4">
 <h4>Specify filter coefficients via input port</h4>
-<ul>
-<li>When this option is enabled, the tool allows you to specify
-reloadable filter coefficients via input port.</li>
-</ul>
+<p>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via input port.</p>
 </section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
-<ul>
-<li>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
+<p>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where &#39;N&#39; is a positive integer that represents the filter length and
-must be in the range 4 to 240 inclusive.</li>
-</ul>
+must be in the range 4 to 240 inclusive.</p>
 </section>
 <section id="input-window-size-number-of-samples" class="level4">
 <h4>Input window size (Number of samples)</h4>
-<ul>
-<li>Describes the number of samples used as an input to the filter
+<p>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be the Input
 window size divided by two by virtue of the halfband decimation
-factor.</li>
-</ul>
+factor.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
-<ul>
-<li>Describes the power of 2 shift down applied to the accumulation of
-FIR terms before output. It must be in the range 0 to 61.</li>
-</ul>
+<p>Describes the power of 2 shift down applied to the accumulation of
+FIR terms before output. It must be in the range 0 to 61.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<ul>
-<li>Describes the selection of rounding to be applied during the shift
-down stage of processing. The rounding options are as follows:</li>
-</ul>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</p>
 <ol type="1">
 <li>Floor (truncate)</li>
 <li>Ceiling</li>
@@ -116,30 +105,24 @@ down stage of processing. The rounding options are as follows:</li>
 <li>Round convergent to even</li>
 <li>Round convergent to odd</li>
 </ol>
-<ul>
-<li>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</li>
-</ul>
+<p>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</p>
 </section>
 </section>
 <section id="advanced" class="level3">
 <h3>Advanced</h3>
-<ul>
-<li>Target input throughput (MSPS)<br />
+<p>Target input throughput (MSPS)<br />
 Specifies the rate at which data samples should be processed. The
-default value is 200.</li>
-</ul>
+default value is 200.</p>
 <section id="specify-the-number-of-cascade-stages" class="level4">
 <h4>Specify the number of cascade stages</h4>
-<ul>
-<li>When this option is not enabled, the tool will determine the filter
+<p>When this option is not enabled, the tool will determine the filter
 configuration that best achieves the specified input sampling rate. When
 the option is enabled, the &#39;Number of cascade stages&#39; can be specified
 (which describes the number of AI Engine processors to split the
 operation over). However, this allows resource to be traded for higher
 performance and the specified input sampling rate constraint may not be
-achieved. The value must be in the range 1 to 9.</li>
-</ul>
+achieved. The value must be in the range 1 to 9.</p>
 </section>
 </section>
 </section>

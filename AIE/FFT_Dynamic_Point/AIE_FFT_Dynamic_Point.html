@@ -104,15 +104,15 @@ value &#39;<code class="ph codeph">5</code>&#39; describes a point size of
 </section>
 <section id="example-header-format" class="level2">
 <h2>Example Header Format</h2>
-<p>To implement the 32-point size FFT of &#39;<code>cint16</code>&#39; datatype,
-the format of the header that should be preceded to the input data
-window should be as shown.</p>
+<p>To implement the 32-point size FFT of &#39;cint16&#39; datatype, the format
+of the header that should be preceded to the input data window should be
+as shown.</p>
 <p><img src="data:image/png;base64,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" /></p>
 </section>
 <section id="example-input-to-dynamic-point-fft" class="level2">
 <h2>Example (Input to Dynamic Point FFT)</h2>
 <p>To implement the FFT of different sizes, say, 64, 32 and 128, of type
-<code>cint32</code>, the format of the input should be as follows.</p>
+cint32, the format of the input should be as follows.</p>
 <pre class="pre"><code>complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])</code></pre>
 </section>
 <section id="parameters" class="level2">
@@ -120,62 +120,46 @@ window should be as shown.</p>
 <section id="main" class="level3">
 <h3>Main</h3>
 <section id="input-data-typeoutput-data-type" class="level4">
-<h4>Input Data Type/Output Data Type:</h4>
-<ul>
-<li>Describes the type of individual data samples input/output of the
-dynamic point FFT. It can be <code>cint16</code>, <code>cint32</code>,
-<code>cfloat</code> types.</li>
-</ul>
+<h4>Input Data Type/Output Data Type</h4>
+<p>Describes the type of individual data samples input/output of the
+dynamic point FFT. It can be cint16, cint32, cfloat types.</p>
 </section>
 <section id="fft-maximum-size" class="level4">
-<h4>FFT Maximum Size:</h4>
-<ul>
-<li>Specifies the maximum FFT size that is supported by Dynamic point
+<h4>FFT Maximum Size</h4>
+<p>Specifies the maximum FFT size that is supported by Dynamic point
 FFT. You can perform different lengths of FFT on different input data
-windows. It must be a power of <code>2</code> with a minimum value of
-<code>16</code>. The maximum value supported by the library element is
-<code>65536</code>.</li>
-</ul>
+windows. It must be a power of 2 with a minimum value of 16. The maximum
+value supported by the library element is 65536.</p>
 </section>
 <section id="input-window-size" class="level4">
-<h4>Input Window Size:</h4>
-<ul>
-<li>Specifies the number of samples in the input window excluding the
-header. The value must be in the range <code>8</code> to
-<code>1024</code> and the default value is <code>64</code>.</li>
-</ul>
+<h4>Input Window Size</h4>
+<p>Specifies the number of samples in the input window excluding the
+header. The value must be in the range 8 to 1024 and the default value
+is 64.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output down by 2^:</h4>
-<ul>
-<li>Describes the power of 2 shift down applied to the accumulation of
-FIR terms before output. It must be in the range <code>0</code> to
-<code>61</code>.</li>
-</ul>
+<h4>Scale Output down by 2^</h4>
+<p>Describes the power of 2 shift down applied to the accumulation of
+FIR terms before output. It must be in the range 0 to 61.</p>
 </section>
 </section>
 <section id="advanced" class="level3">
 <h3>Advanced</h3>
 <section id="target-output-throughput-msps" class="level4">
-<h4>Target Output Throughput (MSPS):</h4>
-<ul>
-<li>Specifies the output sampling rate of the DDS function in Mega
-Samples per Second (MSPS). The value must be in the range <code>1</code>
-to <code>1000</code> and the default value is <code>200</code>.</li>
-</ul>
+<h4>Target Output Throughput (MSPS)</h4>
+<p>Specifies the output sampling rate of the DDS function in Mega
+Samples per Second (MSPS). The value must be in the range 1 to 1000 and
+the default value is 200.</p>
 </section>
 <section id="specify-the-number-of-cascade-stages" class="level4">
-<h4>Specify the Number of Cascade Stages:</h4>
-<ul>
-<li>When this option is not enabled, the tool will determine the FFT
+<h4>Specify the Number of Cascade Stages</h4>
+<p>When this option is not enabled, the tool will determine the FFT
 configuration that best achieves the specified input sampling rate. When
 the option is enabled, the Number of cascade stages can be specified
 (which describes the number of AI Engine processors to split the
 operation over). This allows resources to be traded for higher
 performance, but the specified input sampling rate constraint may not be
-achieved. The value must be in the range of <code>1</code> to
-<code>9</code>.</li>
-</ul>
+achieved. The value must be in the range of 1 to 9.</p>
 </section>
 </section>
 </section>

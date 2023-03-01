@@ -42,21 +42,23 @@ workspace.</p>
 <p>AI Engine blocks produce variable signal outputs. The Variable Size
 Signal to Workspace block allows you to write data into the MATLAB
 workspace in a structured format.</p>
-<p>Note: This block behaves similarly to the Simulink To Workspace block
-but will make it easier to analyze the output data by discarding empty
-sample in the input variable size signal and concatenating valid samples
-into a MATALB vector. This block can only be connected to a variable
-size signal. The settings of the block can be accessed from Simulink
-Model settings (Ctrl+E) under the Data Import/Export tab. In particular,
-here you can set all simulation outputs as a single Simulink Simulation
-Output object or as individual variables.</p>
+<p><strong>Note</strong>: This block behaves similarly to the Simulink
+To Workspace block but will make it easier to analyze the output data by
+discarding empty sample in the input variable size signal and
+concatenating valid samples into a MATALB vector. This block can only be
+connected to a variable size signal. The settings of the block can be
+accessed from Simulink Model settings (Ctrl+E) under the Data
+Import/Export tab. In particular, here you can set all simulation
+outputs as a single Simulink Simulation Output object or as individual
+variables.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<p>Variable Name<br />
-Using this parameter, you can specify the name for workspace
+<section id="variable-name" class="level4">
+<h4>Variable Name</h4>
+<p>Using this parameter, you can specify the name for workspace
 variable.</p>
-<p><strong>Parent topic:</strong> <a href="yjr1649167359223.html">Utility Blocks</a></p>
+</section>
 </section>
 </section>
 </body>

@@ -45,18 +45,15 @@ frame of input window data samples.</p>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
 <section id="inputoutput-data-type" class="level4">
-<h4>Input/Output Data Type:</h4>
-<ul>
-<li>Describes the type of individual data samples input/output of the
-dynamic point FFT. It can be cint16, cint32, or cfloat types.</li>
-</ul>
+<h4>Input/Output Data Type</h4>
+<p>Describes the type of individual data samples input/output of the
+dynamic point FFT. It can be cint16, cint32, or cfloat types.</p>
 </section>
 <section id="filter-coefficients-data-type" class="level4">
-<h4>Filter coefficients data type:</h4>
-<ul>
-<li>Describes the type of individual coefficients of the filter taps. It
+<h4>Filter coefficients data type</h4>
+<p>Describes the type of individual coefficients of the filter taps. It
 should be one of int16, int32, or float and must also satisfy the
-following rules:
+following rules:</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
 also complex.</li>
@@ -66,31 +63,26 @@ also a 32-bit type.</li>
 Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
-</ul></li>
 </ul>
 </section>
 <section id="filter-coefficients" class="level4">
-<h4>Filter coefficients:</h4>
-<ul>
-<li>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
+<h4>Filter coefficients</h4>
+<p>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where &#39;N&#39; is a positive integer that represents the filter length and
-must be in the range 4 to 240 inclusive.</li>
-</ul>
+must be in the range 4 to 240 inclusive.</p>
 </section>
 <section id="fft-maximum-size" class="level4">
-<h4>FFT Maximum Size:</h4>
-<ul>
-<li>Specifies the maximum FFT size that is supported by Dynamic point
+<h4>FFT Maximum Size</h4>
+<p>Specifies the maximum FFT size that is supported by Dynamic point
 FFT. You can perform different lengths of FFT on different input data
 frames. It must be a power of 2 with a minimum value of 16. The maximum
-value supported by the library element is 65536.</li>
-</ul>
+value supported by the library element is 65536.</p>
 </section>
 <section id="use-dynamic-point-size" class="level4">
-<h4>Use dynamic point size:</h4>
+<h4>Use dynamic point size</h4>
+<p>Describes whether to support run time selectable point size for the
+frames of data within the AIE window to be processed.</p>
 <ul>
-<li>Describes whether to support run time selectable point size for the
-frames of data within the AIE window to be processed.</li>
 <li>For dynamic FFT, point size specifies the maximum point size and
 data can have smaller point sizes based on the header information. It is
 not trivial to derive the corresponding window function for each point
@@ -105,31 +97,25 @@ it must be in the range FFT_POINT_SIZE + FFT_POINT_SIZE/2 to
 </ul>
 </section>
 <section id="input-window-size" class="level4">
-<h4>Input Window Size:</h4>
-<ul>
-<li>Specifies the number of samples in the input frame excluding the
+<h4>Input Window Size</h4>
+<p>Specifies the number of samples in the input frame excluding the
 header. The value must be in the range 16 to 65536 and the default value
-is 64.</li>
-</ul>
+is 64.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output down by 2^:</h4>
-<ul>
-<li>Describes the power of 2 shift down applied before output.</li>
-</ul>
+<h4>Scale Output down by 2^</h4>
+<p>Describes the power of 2 shift down applied before output.</p>
 </section>
 <section id="ssr" class="level4">
-<h4>SSR:</h4>
-<ul>
-<li>This parameter is intended to improve performance and support FFT
+<h4>SSR</h4>
+<p>This parameter is intended to improve performance and support FFT
 sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
 (which must be of the form 2^N, where N is a positive integer), the FFT
 operation is performed in parallel and the actual FFT size is divided by
 &#39;n&#39;. For example, a 16384 point FFT with SSR value of 8 creates 8 stream
 inputs and there will be 8 subframe FFTs each of point size 2048. The
 specified FFT size and SSR values should be such that FFT size / SSR
-should not exceed 2048.</li>
-</ul>
+should not exceed 2048.</p>
 </section>
 </section>
 </section>

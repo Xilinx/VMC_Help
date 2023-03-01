@@ -45,80 +45,68 @@ Engines.</p>
 <section id="main" class="level3">
 <h3>Main</h3>
 <section id="inputoutput-data-type" class="level4">
-<h4>Input/Output Data Type:</h4>
-<ul>
-<li>Describes the type of individual data samples output of the DDS
-function. It should be cint16, cint32, or cfloat.</li>
-</ul>
+<h4>Input/Output Data Type</h4>
+<p>Describes the type of individual data samples output of the DDS
+function. It should be cint16, cint32, or cfloat.</p>
 </section>
 <section id="input-frame-size-number-of-samples" class="level4">
-<h4>Input Frame Size (Number of Samples):</h4>
-<ul>
-<li>Specifies the number of samples in the input frame. The value must
-be in the range 8 to 1024 and the default value is 32.</li>
-</ul>
+<h4>Input Frame Size (Number of Samples)</h4>
+<p>Specifies the number of samples in the input frame. The value must be
+in the range 8 to 1024 and the default value is 32.</p>
 </section>
 <section id="mixer-mode" class="level4">
-<h4>Mixer Mode:</h4>
-<ul>
-<li>This specifies the mixer operation modes. Two modes are supported by
-Mixer function:
-<ul>
-<li><p>Single Input Mode:<br />
-This is a DDS plus Mixer for a single data input port. Each data input
-sample is complex multiplied with the corresponding DDS sample to create
-a modulated signal that is written to the output window. This is the
-default Mixer mode.</p></li>
-<li><p>Dual Input Mode:<br />
-This is a special configuration for symmetrical carriers and two data
+<h4>Mixer Mode</h4>
+<p>This specifies the mixer operation modes. Two modes are supported by
+Mixer function</p>
+<section id="single-input-mode" class="level5">
+<h5>Single Input Mode</h5>
+<p>This is a DDS plus Mixer for a single data input port. Each data
+input sample is complex multiplied with the corresponding DDS sample to
+create a modulated signal that is written to the output window. This is
+the default Mixer mode.</p>
+</section>
+<section id="dual-input-mode" class="level5">
+<h5>Dual Input Mode</h5>
+<p>This is a special configuration for symmetrical carriers and two data
 input ports. Each data sample of the first input is complex multiplied
 with the corresponding DDS sample to create a modulated signal. Each
 data sample of the second data input is complex multiplied with the
 conjugate (which is equivalent to a signal rotating in the opposite
 direction) of the DDS sample to create a second modulated signal. These
 two modulated signals are added together and written to the output
-window.</p></li>
-</ul></li>
-</ul>
+window.</p>
+</section>
 </section>
 <section id="number-of-parallel-inputoutput-ssr" class="level4">
 <h4>Number of parallel input/output (SSR):</h4>
-<ul>
-<li>This parameter specifies the number of input (or output) ports and
-must be of the form 2^N, where N is a non-negative integer.</li>
-</ul>
+<p>This parameter specifies the number of input (or output) ports and
+must be of the form 2^N, where N is a non-negative integer.</p>
 </section>
 <section id="phase-increment" class="level4">
-<h4>Phase Increment:</h4>
-<ul>
-<li>Specifies the phase increment between samples. The value must be in
+<h4>Phase Increment</h4>
+<p>Specifies the phase increment between samples. The value must be in
 the range 0 to 2^31 and the default value is 0. Input value 2^31
 corresponds to Pi (i.e., 180). Phase increment is calculated using the
-formula (Fo*(2^N)) / Fs where:
+formula (Fo*(2^N)) / Fs where:</p>
 <ul>
 <li>Fo = Output frequency.</li>
 <li>N = 32, which represents the accumulator width, and it is
 fixed.</li>
 <li>Fs = Sampling frequency.</li>
-</ul></li>
 </ul>
 </section>
 <section id="initial-phase-offset" class="level4">
-<h4>Initial Phase Offset:</h4>
-<ul>
-<li>Specifies the initial phase offset. The default value is 0.</li>
-</ul>
+<h4>Initial Phase Offset</h4>
+<p>Specifies the initial phase offset. The default value is 0.</p>
 </section>
 </section>
 <section id="advanced" class="level3">
 <h3>Advanced</h3>
 <section id="target-output-throughput-msps" class="level4">
-<h4>Target Output Throughput (MSPS):</h4>
-<ul>
-<li>Specifies the output sampling rate of the Mixer function in Mega
+<h4>Target Output Throughput (MSPS)</h4>
+<p>Specifies the output sampling rate of the Mixer function in Mega
 Samples per Second (MSPS). The value must be in the range 1 to 1000 and
-the default value is 200.</li>
-</ul>
+the default value is 200.</p>
 </section>
 </section>
 </section>

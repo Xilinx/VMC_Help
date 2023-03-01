@@ -49,60 +49,46 @@ N.</p>
 <h2>Parameters</h2>
 <section id="kernel-header-file" class="level4">
 <h4>Kernel header file</h4>
-<ul>
-<li>Mandatory string. Name of the header file that contains the kernel
+<p>Mandatory string. Name of the header file that contains the kernel
 function declaration. The string could be just the file name, a relative
 path to the file or an absolute path of the file. Use the browse button
-to choose the file.</li>
-</ul>
+to choose the file.</p>
 </section>
 <section id="kernel-function" class="level4">
 <h4>Kernel function</h4>
-<ul>
-<li>Mandatory string. Name of the kernel function for which the block is
+<p>Mandatory string. Name of the kernel function for which the block is
 to be created. This function should be declared in the kernel header
-file.</li>
-</ul>
+file.</p>
 </section>
 <section id="kernel-init-function" class="level4">
 <h4>Kernel init function</h4>
-<ul>
-<li>Optional string. Name of the initialization function used by the
-kernel function.</li>
-</ul>
+<p>Optional string. Name of the initialization function used by the
+kernel function.</p>
 </section>
 <section id="kernel-source-file" class="level4">
 <h4>Kernel source file</h4>
-<ul>
-<li>Mandatory string. Name of the source file that contains the kernel
+<p>Mandatory string. Name of the source file that contains the kernel
 function definition. The string could be the file name, a relative path
-to the file or an absolute path of the file.</li>
-</ul>
+to the file or an absolute path of the file.</p>
 </section>
 <section id="kernel-search-paths" class="level4">
 <h4>Kernel search paths</h4>
-<ul>
-<li><p>Optional vector of strings. If the kernel header file or the
-kernel source file are not found using the value provided through the
-&#39;Kernel header file&#39; or &#39;Kernel source file&#39; fields respectively, then
-the paths provided through &#39;Kernel search paths&#39; are used to find the
-files.</p>
+<p>Optional vector of strings. If the kernel header file or the kernel
+source file are not found using the value provided through the &#39;Kernel
+header file&#39; or &#39;Kernel source file&#39; fields respectively, then the paths
+provided through &#39;Kernel search paths&#39; are used to find the files.</p>
 <p>This parameter allows use of environment variables while specifying
 paths for the kernel header file and the kernel source file. The
-environment variable can be used in either ${ENV} or $ENV
-format.</p></li>
-</ul>
+environment variable can be used in either ${ENV} or $ENV format.</p>
 </section>
 <section id="preprocessor-options" class="level4">
 <h4>Preprocessor options</h4>
-<ul>
-<li><p>Optional preprocessor arguments for downstream compilation with
+<p>Optional preprocessor arguments for downstream compilation with
 specific preprocessor options.</p>
 <p>The following two preprocessor option formats are accepted and
 multiple can be selected: -Dname and -Dname=definition separated by a
 comma. That is, the optional argument must begin with -D and if the
-option definition value is not provided, it is assumed to be 1.</p></li>
-</ul>
+option definition value is not provided, it is assumed to be 1.</p>
 </section>
 </section>
 </section>

@@ -48,34 +48,26 @@ performance. The specified value for SSR parameter should be of the form
 <section id="main" class="level3">
 <h3>Main</h3>
 <section id="input-data-typeoutput-data-type" class="level4">
-<h4>Input Data Type/Output Data Type:</h4>
-<ul>
-<li>Describes the type of individual data samples input/output of the
-stream FFT. It can be <code>cint16</code>, <code>cint32</code>,
-<code>cfloat</code> types.</li>
-</ul>
+<h4>Input Data Type/Output Data Type</h4>
+<p>Describes the type of individual data samples input/output of the
+stream FFT. It can be cint16, cint32, cfloat types.</p>
 </section>
 <section id="fft-size" class="level4">
-<h4>FFT Size:</h4>
-<ul>
-<li>This is an unsigned integer which describes the point size of the
-transformation. This must be 2^N, where N is in the range <code>4</code>
-to <code>11</code> inclusive.</li>
-</ul>
+<h4>FFT Size</h4>
+<p>This is an unsigned integer which describes the point size of the
+transformation. This must be 2^N, where N is in the range 4 to 11
+inclusive.</p>
 </section>
 <section id="input-frame-size-number-of-samples" class="level4">
-<h4>Input Frame Size (Number of Samples):</h4>
-<ul>
-<li>Specifies the number of samples for a particular frame. The value
-must be in the range <code>8</code> to <code>1024</code> and the default
-value is <code>64</code>. The FFT operation will not begin until this
-number of samples has been input.</li>
-</ul>
+<h4>Input Frame Size (Number of Samples)</h4>
+<p>Specifies the number of samples for a particular frame. The value
+must be in the range 8 to 1024 and the default value is 64. The FFT
+operation will not begin until this number of samples has been
+input.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output Down by 2^:</h4>
-<ul>
-<li><p>Describes the power of 2 shift down applied before output. The
+<h4>Scale Output Down by 2^</h4>
+<p>Describes the power of 2 shift down applied before output. The
 following table shows the range of valid values of this parameter for
 different data types.</p>
 <table>
@@ -99,45 +91,37 @@ different data types.</p>
 <td>0</td>
 </tr>
 </tbody>
-</table></li>
-</ul>
+</table>
 </section>
 <section id="ssr" class="level4">
-<h4>SSR:</h4>
-<ul>
-<li>This parameter is intended to improve performance and support FFT
+<h4>SSR</h4>
+<p>This parameter is intended to improve performance and support FFT
 sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
 (which must be of the form 2^N, where N is a positive integer), the FFT
 operation is performed in parallel and the actual FFT size is divided by
 &#39;n&#39;. For example, a 16384 point FFT with SSR value of 8 creates 8 stream
 inputs and there will be 8 subframe FFTs each of point size 2048. The
 specified FFT size and SSR values should be such that (2 * FFT size /
-SSR) is in the range of 16 and 4096.</li>
-</ul>
+SSR) is in the range of 16 and 4096.</p>
 </section>
 </section>
 <section id="advanced" class="level3">
 <h3>Advanced</h3>
 <section id="target-output-throughput-msps" class="level4">
-<h4>Target Output Throughput (MSPS):</h4>
-<ul>
-<li>Specifies the output sampling rate of the FFT function in Mega
-Samples per Second (MSPS). The value must be in the range <code>1</code>
-to <code>1000</code> and the default value is <code>200</code>.</li>
-</ul>
+<h4>Target Output Throughput (MSPS)</h4>
+<p>Specifies the output sampling rate of the FFT function in Mega
+Samples per Second (MSPS). The value must be in the range 1 to 1000 and
+the default value is 200.</p>
 </section>
 <section id="specify-the-number-of-cascade-stages" class="level4">
-<h4>Specify the Number of Cascade Stages:</h4>
-<ul>
-<li>When this option is not enabled, the tool will determine the FFT
+<h4>Specify the Number of Cascade Stages</h4>
+<p>When this option is not enabled, the tool will determine the FFT
 configuration that best achieves the specified input sampling rate. When
 the option is enabled, the Number of cascade stages can be specified
 (which describes the number of AI Engine processors to split the
 operation over). This allows resources to be traded for higher
 performance, but the specified input sampling rate constraint may not be
-achieved. The value must be in the range of <code>1</code> to
-<code>9</code>.</li>
-</ul>
+achieved. The value must be in the range of 1 to 9.</p>
 </section>
 </section>
 </section>

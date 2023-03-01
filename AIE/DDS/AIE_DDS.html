@@ -46,53 +46,40 @@ for AI Engines.</p>
 <h3>Main</h3>
 <section id="output-data-type" class="level4">
 <h4>Output data type</h4>
-<ul>
-<li>Describes the types of individual data samples output of the DDS
-function. The supported data types are <code>cint16</code> and
-<code>cfloat</code>.</li>
-</ul>
+<p>Describes the types of individual data samples output of the DDS
+function. The supported data types are cint16 and cfloat.</p>
 </section>
 <section id="output-window-size-number-of-samples" class="level4">
 <h4>Output window size (Number of samples)</h4>
-<ul>
-<li>Specifies the number of samples in output window. The value must be
-in the range 8 to 1024 and the default value is <code>32</code>.</li>
-</ul>
+<p>Specifies the number of samples in output window. The value must be
+in the range 8 to 1024 and the default value is 32`.</p>
 </section>
 <section id="phase-increment" class="level4">
 <h4>Phase increment</h4>
-<ul>
-<li><p>Specifies the phase increment between samples. The value must be
-in the range <code>0</code> to <code>2^31</code> and the default value
-is <code>0</code>. Input value <code>2^31</code> corresponds to Pi
-(i.e., <code>180</code>).</p>
+<p>Specifies the phase increment between samples. The value must be in
+the range 0 to 2^31 and the default value is 0. Input value 2^31
+corresponds to Pi (i.e., 180).</p>
 <p>Phase increment is calculated using the formula (Fo*(2^N)) / Fs</p>
 <p>Where:</p>
 <ul>
-<li><code>Fo</code> = Output frequency</li>
-<li><code>N</code> = 32, which represents the accumulator width, and it
-is fixed</li>
-<li><code>Fs</code> = Sampling frequency</li>
-</ul></li>
+<li>Fo = Output frequency</li>
+<li>N = 32, which represents the accumulator width, and it is fixed</li>
+<li>Fs = Sampling frequency</li>
 </ul>
 </section>
 <section id="sample-time" class="level4">
 <h4>Sample time</h4>
-<ul>
-<li>Specifies the sample time for the block output port. The default
-value is <code>-1</code>.</li>
-</ul>
+<p>Specifies the sample time for the block output port. The default
+value is -1.</p>
 </section>
 </section>
 <section id="advanced" class="level3">
 <h3>Advanced</h3>
 <section id="target-output-throughput-msps" class="level4">
 <h4>Target output throughput (MSPS)</h4>
-<ul>
-<li>Specifies the output sampling rate of the DDS function in Mega
-Samples per Second (MSPS). The value must be in the range <code>1</code>
-to <code>1000</code> and the default value is <code>200</code>.</li>
-</ul>
+<p>Specifies the output sampling rate of the DDS function in Mega
+Samples per Second (MSPS). The value must be in the range 1 to 1000 and
+the default value is 200.</p>
 </section>
 </section>
 </section>
