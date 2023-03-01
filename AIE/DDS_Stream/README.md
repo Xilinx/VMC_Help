@@ -52,6 +52,6 @@ Specifies the sample time for the block output port. The default value
 ### Advanced  
 Target Output Throughput (MSPS):
 
-- Specifies the output sampling rate of the DDS function in Mega Samples
+Specifies the output sampling rate of the DDS function in Mega Samples
   per Second (MSPS). The value must be in the range 1 to 1000 and
   the default value is 200.
