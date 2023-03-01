@@ -77,7 +77,7 @@ parallel computation. It must be integer divisible by interpolation
 factor.
 
 ### Advanced  
-#### Number of cascade stages:
+#### Number of cascade stages
 
 Specifies the number of cascade stages. The tool will guarantee the
   same.
