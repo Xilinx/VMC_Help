@@ -15,7 +15,7 @@ AI Engine blocks produce variable signal outputs. The Variable Size
 Signal to Workspace block allows you to write data into the MATLAB
 workspace in a structured format.
 
-Note: This block behaves similarly to the Simulink To Workspace block but
+**Note**: This block behaves similarly to the Simulink To Workspace block but
 will make it easier to analyze the output data by discarding empty
 sample in the input variable size signal and concatenating valid samples
 into a MATALB vector. This block can only be connected to a variable
@@ -26,7 +26,7 @@ Output object or as individual variables.
 
 ## Parameters
 
-Variable Name  
+#### Variable Name  
 Using this parameter, you can specify the name for workspace variable.
 
-**Parent topic:** [Utility Blocks](yjr1649167359223.html)
+
