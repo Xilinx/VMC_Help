@@ -112,37 +112,37 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 ## Parameters
 
 ### Main  
-#### Input Data Type/Output Data Type:
+#### Input Data Type/Output Data Type
 
 Describes the type of individual data samples input/output of the
   dynamic point FFT. It can be cint16, cint32, cfloat types.
 
-#### FFT Maximum Size:
+#### FFT Maximum Size
 
 Specifies the maximum FFT size that is supported by Dynamic point FFT.
   You can perform different lengths of FFT on different input data
   windows. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by the library element is 65536.
 
-#### Input Window Size:
+#### Input Window Size
 
 Specifies the number of samples in the input window excluding the
   header. The value must be in the range 8 to 1024 and the default
   value is 64.
 
-#### Scale Output down by 2^:
+#### Scale Output down by 2^
 
 Describes the power of 2 shift down applied to the accumulation of FIR
   terms before output. It must be in the range 0 to 61.
 
 ### Advanced  
-#### Target Output Throughput (MSPS):
+#### Target Output Throughput (MSPS)
 
 Specifies the output sampling rate of the DDS function in Mega Samples
   per Second (MSPS). The value must be in the range 1 to 1000 and
   the default value is 200.
 
-#### Specify the Number of Cascade Stages:
+#### Specify the Number of Cascade Stages
 
 When this option is not enabled, the tool will determine the FFT
   configuration that best achieves the specified input sampling rate.
