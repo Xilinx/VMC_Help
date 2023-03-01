@@ -1,6 +1,6 @@
 # Questa
 
-The HDL [Black Box](blackbox.html) block provides a way to incorporate
+The HDL [Black Box](../../HDL/blackbox2/README.md) block provides a way to incorporate
 existing HDL files into a model. When the model is simulated,
 co-simulation can be used to allow black boxes to participate. The
 Questa HDL co-simulation block configures and controls co-simulation for
