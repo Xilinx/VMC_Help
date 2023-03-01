@@ -21,7 +21,7 @@ the filter function. Supported types are cint16, cint32, and cfloat.
 #### FFT size  
 This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 4 to 11
-inclusive. However, for `cint16` datatype, the FFT size can be 2^12,
+inclusive. However, for cint16 datatype, the FFT size can be 2^12,
 provided the FFT receives and outputs data to/from kernels on the same
 processor.
 
