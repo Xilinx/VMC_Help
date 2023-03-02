@@ -9,22 +9,16 @@ HDL/Interfaces
 
 ## Description
 
-This is a utility block that makes connecting between HDL and AI Engine
-domains easier by combining three HDL gateway blocks into one block. It
-is primarily used with the AIE to HDL block. Note that the block name
-will be used as the AXIS name. The following figure shows how the block
-is used.
+This block serves as a utility block to simplify the connection between an HDL block with an input AXI Stream port, which comprises three signal lines: the _tdata_ and _tvalid_ signals going in one direction, and the _tready_ signal going in the opposite direction. Note that in the generated HDL code, the block name will be used as the name for the AXIS port. 
 
-
+The following figure shows how the block is used when connecting AI Engine blocks to HDL blocks. 
   
-![](./Images/gib1648735406711.png)  
+![](./Images/gib1648735406711.png)
+
+This block can also be used to connect Simulink signals to an HDL block with an AXI Stream input as shown below:
+
+![](./Images/hdl_with_axis_in.png)
 
 ## Parameters
 
-#### Output Data Type  
-The output data type of the block. The output data type should match the
-receiving HDL design input.
-
-#### Sample Time  
-The output sample time. Refer to the AIE to HDL block help to learn more
-how to set this parameter.
+Refer to [Gateway In](../../HDL/gatewayin/README.md) block help to learn more about the parameters.
