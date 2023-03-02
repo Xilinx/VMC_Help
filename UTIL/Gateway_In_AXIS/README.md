@@ -21,10 +21,4 @@ is used.
 
 ## Parameters
 
-#### Output Data Type  
-The output data type of the block. The output data type should match the
-receiving HDL design input.
-
-#### Sample Time  
-The output sample time. Refer to the AIE to HDL block help to learn more
-how to set this parameter.
+Refer to [Gateway In](../../HDL/gatewayin/README.md) block help to learn more about the parameters.
