@@ -9,8 +9,7 @@ HDL/Interfaces
 
 ## Description
 
-This is a utility block that makes connecting to HDL blocks with AXI Stream port easier. An AXI Stream port consists of three signals, _tdata_ and _tvalid_ signals going in one direction, and _tready_, going in the oposite direction. Note that in the generated HDL code, the block name
-will be used as the name for the AXIS port. 
+This block serves as a utility block to simplify the connection between an HDL block with an input AXI Stream port, which comprises three signal lines: the _tdata_ and _tvalid_ signals going in one direction, and the _tready_ signal going in the opposite direction. Note that in the generated HDL code, the block name will be used as the name for the AXIS port. 
 
 The following figure shows how the block is used when connecting AI Engine blocks to HDL blocks. 
   
