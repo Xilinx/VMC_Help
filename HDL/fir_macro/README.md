@@ -29,8 +29,7 @@ Filter block.
 
 In the Vivado® design flow, the Digital FIR filter block is inferred as
 "LogiCORE™ IP FIR Compiler v7.2" for code generation. Refer to the
-document [LogiCORE IP FIR Compiler
-v7.2](https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf)
+document FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
 for details on this LogicCore IP.
 
 ## Parameters
@@ -97,7 +96,7 @@ types for Fractional Rate Change implementations. The value provided in
 this field defines the upsampling factor, or P for Fixed Fractional Rate
 (P/Q) resampling filter implementations.
 
-* #### Decimation Rate  
+#### Decimation Rate  
   Specifies the decimation rate of the filter. Any value greater than 1 is
 applicable to the all Decimation and Interpolation filter types for
 Fractional Rate Change implementations. The value provided in this field
@@ -128,6 +127,4 @@ usage and better filter response.
 ![](./Images/lfs1647631719145.png)
 
 ## LogiCORE™ Documentation
-
-[LogiCORE IP FIR Compiler
-v7.2](https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf)
+FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
