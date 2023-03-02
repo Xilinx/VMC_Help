@@ -19,7 +19,7 @@ Configuration Channel Input Signals:
 
 |                   |                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| config_tdata_fsel | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the [FIR Compiler V7.2 Product Guide](https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf) starting on page 5 for an explanation of the bits in this field. |
+| config_tdata_fsel | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) starting on page 5 for an explanation of the bits in this field. |
 
 ## Parameters
 
@@ -41,9 +41,7 @@ specified must divide without remainder into the number of coefficients.
 ##### Use Reloadable Coefficients  
 Check to add the coefficient reload ports to the block. The set of data
 loaded into the reload channel will not take action until triggered by a
-re-configuration synchronization event. Refer to the [FIR Compiler V7.2
-Product
-Guide](https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf)
+re-configuration synchronization event. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
 for a more detailed explanation of the RELOAD Channel interface timing.
 This block supports the xlGetReloadOrder function. See the Model
 Composer Utility function xlGetReloadOrder for details.
@@ -289,5 +287,4 @@ Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
-FIR Compiler LogiCORE IP Product Guide
-([PG149](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf))
+FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
