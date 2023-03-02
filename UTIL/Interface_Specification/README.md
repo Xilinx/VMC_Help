@@ -60,7 +60,7 @@ following considerations:
   interface that include start-of frame and end-of-line sideband
   signals. This follows the specifications described in the AXI4-Stream
   Video IP and System Design Guide
-  ([UG934](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_videoip;v=latest;d=ug934_axi_videoIP.pdf)).
+  ([UG934](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=ug934_axi_videoIP)).
 - An AXI4-Lite Slave interface allows you to implement one or more
   ports.
 - For further details refer to Interface Synthesis in the Vitis
