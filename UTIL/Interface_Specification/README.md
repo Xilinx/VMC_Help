@@ -65,7 +65,7 @@ following considerations:
   ports.
 - For further details refer to Interface Synthesis in the Vitis
   High-Level Synthesis User Guide
-  ([UG1399](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1399-vitis-hls)).
+  ([UG1399](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=ug1399-vitis-hls)).
 
 The interface specification block currently supports subsystems with at
 most 8 input ports and 8 output ports.
