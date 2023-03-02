@@ -41,7 +41,7 @@ Check to add the coefficient reload ports to the block. The set of data
 loaded into the reload channel will not take action until triggered by a
 re-configuration synchronization event. Refer to the [FIR Compiler V7.2
 Product
-Guide](https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf)
+Guide](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)
 for a more detailed explanation of the RELOAD Channel interface timing.
 This block supports the xlGetReloadOrder function. See the Model
 Composer Utility function xlGetReloadOrder for details.
@@ -95,7 +95,7 @@ Parameters specific to the Channel Specification tab are as follows.
 #### Interleaved Channel Specification  
 ##### Channel Sequence  
 Select Basic or Advanced. See theFIR Compiler LogiCORE IP Product Guide
-([PG149](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf))
+([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
 for an explanation of the advanced channel specification feature.
 
 ##### Number of Channels  
@@ -421,4 +421,4 @@ Boxes](../../GEN/common-options/README.md).
 ## LogiCORE™ Documentation
 
 FIR Compiler LogiCORE IP Product Guide
-([PG149](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf))
+([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
