@@ -49,8 +49,8 @@ generation (HDL, HLS, or AI Engine) to be performed.
 
 #### AIE Settings  
 ##### AIE Compiler Options  
-When enabled, this option provides control over compiler debug options,
-execution target options etc.
+When specified, these options provide control over AI Engine compiler. For a full list of compiler options refer to 
+[AI Engine Compiler Options](https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/AI-Engine-Compiler-Options). Specify the compiler options as a cell array of characters, for example, {'--stacksize=20', '--heapsize=1024'}. Use an empty cell array, {}, if you do not want to specify any compiler options. 
 
 ##### Create Testbench  
 When enabled, Vitis Model Composer generates the test vectors while
