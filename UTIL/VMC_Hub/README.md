@@ -65,7 +65,7 @@ enabled, it runs the AIE simulation after code generation and verfies that for e
 ##### Simulation timeout (cycles)  
 This determines the duration of the cycle accurate AIE simulation in terms of the number of cycles. By default, it runs for 50000 cycles, after which it terminates. It's important to note that this value is not directly linked to the simulation time in your Simulink design. If the number of cycles is insufficient, the Simulink simulation may generate more output than the AIE Simulation, leading to a partial match between the Simulink output and the AI Engine simulator during verification after running the AIE Simulation. To address this issue, you can increase the Simulation timeout, which will result in more output from the AIE simulator. However, not all partial matches are necessarily due to this factor. The picture below shows part of the output log that indicates a partial match:
 
-![](./Images/partail_match.png) 
+![](./Images/partial_match.png) 
 
 ##### Plot AIE Simulation Output and Estimate Throughput  
 When enabled, this option logs simulation data and allows visualization
