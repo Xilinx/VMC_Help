@@ -70,7 +70,7 @@ This determines the duration of the cycle accurate AIE simulation in terms of th
 ##### Plot AIE Simulation Output and Estimate Throughput  
 When enabled, this option logs simulation data and allows visualization of the outputs of the AI Engine subsystem in the [Simulation Data Inspector](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html). Along with that the throughput for each output is also calculated. Note that you can use the cursors in the Simulation Data Inspector to limit the range in which throughput is calculated. As you move the cursors, the throughput gets recalculated. See the screenshot below for an example of displaying the output of the AIE Simulation in the Simulation Data Inspector. 
 
-![](./Images/sdi_out.png)
+![](./Images/sdi_output.png)
 
 ##### Collect profiling statistics and enable 'printf' for debugging  
 When enabled, this option allows profiling data to be collected for
