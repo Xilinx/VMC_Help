@@ -66,16 +66,6 @@ stage of processing. The rounding options are as follows:
 Modes 2 to 7 round to the nearest integer. They differ only in how they
 round for the value of 0.5.
 
-### Advanced  
-#### Target input throughput (MSPS)  
-Specifies the rate at which data samples should be processed. The
-default value is 200.
-
-#### Specify the number of cascade stages  
-When this option is not enabled, the tool will determine the filter
-configuration that best achieves the specified input sampling rate. When
-the option is enabled, the 'Number of cascade stages' can be specified
-(which describes the number of AI Engine processors to split the
-operation over). However, this allows resource to be traded for higher
-performance and the specified input sampling rate constraint may not be
-achieved. The value must be in the range 1 to 9.
+#### Number of cascade stages  
+Determines the number of AI Engine processors to split the operation over. 
+This allows resource to be traded for higher performance. The value must be in the range 1 to 9.
