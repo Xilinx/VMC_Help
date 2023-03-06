@@ -22,7 +22,7 @@ error.
 If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
  
-#### Arithmetic type:  
+#### Arithmetic type
 ##### Signed (2’s comp)  
 The output is a Signed (2’s complement) number.
 
