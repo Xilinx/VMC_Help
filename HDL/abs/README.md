@@ -14,11 +14,11 @@ This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
 Full precision.
 
-#### Full  
+##### Full  
 The block uses sufficient precision to represent the result without
 error.
 
-#### User Defined  
+##### User Defined  
 If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
 
