@@ -1,4 +1,4 @@
-% Use this m file to generate the help.zip file for the product.
+% Use this m file to generate the help.zip file for the product right before shipping. 
 
 function process_block_help(NameValueArgs)
 
