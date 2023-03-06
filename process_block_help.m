@@ -1,3 +1,5 @@
+% Use this m file to generate the help.zip file for the product.
+
 function process_block_help(NameValueArgs)
 
 arguments
