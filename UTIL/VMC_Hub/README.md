@@ -60,7 +60,7 @@ When enabled, Vitis Model Composer generates test vectors while generating the c
 
 ##### Run cycle-approximate AIE Simulation (SystemC) after code generation  
 This option is only available if Create testbench is selected. When
-enabled, it runs the AIE simulation after code generation and verifies that for each output of the AI Engine Subsystem in the Simulink design, the output of AIE Simulation numerically matches the output of the Simulink desgin. 
+enabled, it runs the AIE simulation after code generation and verifies that for each output of the AI Engine Subsystem in the Simulink design, the output of AIE Simulation numerically matches the output of the Simulink design. 
 
 ##### Simulation timeout (cycles)  
 This determines the duration of the cycle-approximate AIE simulation in terms of the number of cycles. By default, it runs for 50000 cycles, after which it terminates. It's important to note that the number of cycles refers to the number of AI Engine clock cycles, which is not directly linked to the 'Stop Time' in your Simulink design. If the number of cycles is insufficient, the Simulink simulation may generate more output than the AIE Simulation, leading to a partial match between the Simulink output and the AI Engine simulator during verification after running the AIE Simulation. To address this issue, you can increase the Simulation timeout, which will result in more output from the AIE simulator. However, not all partial matches are necessarily due to this factor. The picture below shows part of the output log that indicates a partial match:
