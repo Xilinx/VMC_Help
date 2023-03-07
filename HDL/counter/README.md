@@ -104,15 +104,14 @@ rate. The signal driving the reset port must be Boolean.
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
-#### Implementation Details  
+
 ##### Use behavioral HDL (otherwise use core)  
 The block is implemented using behavioral HDL. This gives the downstream
 logic synthesis tool maximum freedom to optimize for performance or
 area.
-
-#### Core Parameters  
+ 
 ##### Implement using  
-  Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
+Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
 available in the target device. The default is Fabric.
 
 Other parameters used by this block are explained in the topic [Common
