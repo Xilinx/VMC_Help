@@ -36,12 +36,11 @@ place when both tvalid and tready are asserted.
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
-
-#### Data Port Parameters  
-##### FIFO depth  
+ 
+#### FIFO depth  
 Specifies the number of words that can be stored. Range 16-128K.
 
-##### Actual FIFO depth  
+#### Actual FIFO depth  
 A report field that indicates the actual FIFO depth. The actual depth of
 the FIFO depends on its implementation and the features that influence
 its implementation.
