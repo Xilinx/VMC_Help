@@ -38,8 +38,7 @@ When this option is enabled, the tool allows you to specify reloadable
 filter coefficients via the input port.
 
 #### Filter coefficients  
-This field should be specified with the asymmetric filter coefficients
-and must be in the range 4 to 240 inclusive.
+This field should be specified with the asymmetric filter coefficients. It could also be a MATLAB array variable. The number of filter coefficients must be in the range of 4 to 240 inclusive.
 
 #### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
@@ -71,4 +70,4 @@ Determines the number of AI Engine processors to split the operation over.
 This allows resources to be traded for higher throughput. The value must be in the range 1 to 9.
 
 ### Examples
-[AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.1/Examples/AIENGINE/DSPlib/fir)
+[AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)
