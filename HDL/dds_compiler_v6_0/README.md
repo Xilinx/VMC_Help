@@ -162,26 +162,25 @@ separately or instantiated together. Select one of the following.
   - Phase_Generator_and_SIN_COS_LUT
   - Phase_Generator_only
   - SIN_COS_LUT_only
-
-#### System Requirements  
-##### System Clock (MHz)  
+ 
+#### System Clock (MHz)  
 Specifies the frequency at which the block is clocked for the purposes
 of making architectural decisions and calculating phase increment from
 the specified output frequency. This is a fixed ratio off the System
 Clock.
 
-##### Number of Channels  
+#### Number of Channels  
 The channels are time-multiplexed in the DDS which affects the effective
 clock per channel. The DDS can support 1 to 16 time-multiplexed
 channels.
 
-##### Mode of Operation  
-###### Standard  
+#### Mode of Operation  
+##### Standard  
 The output frequency of the DDS waveform is a function of the system
 clock frequency, the phase width in the phase accumulator and the phase
 increment value.
 
-###### Rasterized  
+##### Rasterized  
 The DDS does not truncate the accumulated phase. Rasterized operation is
 intended for configurations where the desired frequency is a rational
 fraction of the system clock (output frequency = system frequency \*
@@ -194,13 +193,12 @@ for a detailed explanation of these modes.
 #### Parameter Selection  
 Select System_Parameters or Hardware_Parameters
 
-#### System Parameters  
-##### Spurious Free Dynamic Range (dB)  
+#### Spurious Free Dynamic Range (dB)  
 The targeted purity of the tone produced by the DDS. This sets the
 output width as well as internal bus widths and various implementation
 decisions.
 
-##### Frequency Resolution (Hz)  
+#### Frequency Resolution (Hz)  
 This sets the precision of the PINC and POFF values. Very precise values
 will require larger accumulators. Less precise values will cost less in
 hardware resource.
@@ -213,12 +211,12 @@ and Taylor_Series_Corrected are the only valid options for Noise
 Shaping. If Phase_Generator_Only is selected, then None is the only
 valid choice for Noise Shaping.
 
-#### Hardware Parameters  
-##### Phase Width  
+
+#### Phase Width  
 Equivalent to frequency resolution, this sets the width of the internal
 phase calculations.
 
-##### Output Width  
+#### Output Width  
 Broadly equivalent to SFDR, this sets the output precision and the
 minimum Phase Width allowable. However, the output accuracy is also
 affected by the choice of Noise Shaping.
@@ -233,18 +231,18 @@ Place only a Sine output port on the block.
 ##### Cosine  
 Place only a Cosine output port on the block.
 
-###### Polarity  
-###### Negative Sine  
+#### Polarity  
+##### Negative Sine  
 Negates the sine output.
 
-###### Negative Cosine  
+##### Negative Cosine  
 Negates the cosine output.
 
 #### Amplitude Mode  
 ##### Full_Range  
 Selects the maximum possible amplitude.
 
-##### Unit_Circle  
+#### Unit_Circle  
 Selects an exact power-of-two amplitude, which is about one half the
 Full_Range amplitude.
 
