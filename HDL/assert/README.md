@@ -50,10 +50,10 @@ Specifies double precision (64 bits).
 ##### Custom
 Activates the field below so you can specify the Exponent width and the Fraction width.
 
-##### Exponent width
+#### Exponent width
 Specify the exponent width.
 
-##### Fraction width
+#### Fraction width
 Specify the fraction width.
 
 ### Rate
