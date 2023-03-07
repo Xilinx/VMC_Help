@@ -247,14 +247,14 @@ Selects an exact power-of-two amplitude, which is about one half the
 Full_Range amplitude.
 
 ### Implementation tab  
-#### Implementation Options  
-##### Memory Type  
+ 
+#### Memory Type  
 Select between Auto, Distributed_ROM, or Block_ROM.
 
-##### Optimization Goal  
+#### Optimization Goal  
 Select between Auto, Area, or Speed.
 
-##### DSP48 Use  
+#### DSP48 Use  
 Select between Minimal, or Maximal. When set to Maximal, XtremeDSP
 slices are used to achieve to maximum performance.
 
@@ -283,17 +283,18 @@ the signal is internally registered for performance. A pulse of one
 cycle resets the core, but the response to the pulse is not in the cycle
 immediately following.
 
-#### Explicit Sample Period  
-##### Use explicit period  
+
+#### Use explicit period  
 When checked, the DDS Compiler block uses the explicit sample period
 that is specified in the dialog entry box below.
 
 ### AXI Channel Options tab  
-#### AXI Channel Options  
-##### TLAST  
+
+#### TLAST  
 Enabled when there is more than one DDS channel (as opposed to AXI
 channel), as TLAST is used to denote the transfer of the last
 time-division multiplied channel of the DDS. Options are as follows.
+
 ###### Not_Required  
 In this mode, no TLAST appears on the input PHASE channel nor on the
 output channels.
@@ -316,15 +317,15 @@ new configuration data from the CONFIG channel when there is new
 configuration data available. This allows the re-configuration to be
 synchronized with the cycle of time-division-multiplexed DDS channels.
 
-##### TREADY  
-###### Output TREADY  
+
+##### Output TREADY  
 When selected, the output channels will have a TREADY and hence support
 the full AXI handshake protocol with inherent back-pressure. If there is
 an input PHASE channel, its TREADY is also determined by this control,
 so that the datapath from input PHASE channel to output channels as a
 whole supports backpressure or not.
 
-##### TUSER Options  
+#### TUSER Options  
 Select one of the following options for the Input, DATA Output, and
 PHASE Output.
 
@@ -352,13 +353,13 @@ bits.
 This field determines the width of the bit field which is conveyed from
 input to output untouched by the DDS.
 
-##### Config Channel Options  
-###### Synchronization Mode  
-* On_Vector:  
+
+#### Synchronization Mode  
+##### On_Vector:  
 In this mode, the re-configuration data is applied when the channel
 starts a new cycle of time-division-multiplexed channels.
 
-* On_Packet:  
+##### On_Packet:  
 In this mode, available when TLAST is set to Packet Framing, the TLAST
 channel will trigger the re-configuration. This mode is targeted at the
 case where it is to be associated with the packets implied by the input
@@ -375,13 +376,14 @@ is selected as the Configuration Options field on the Basic tab, the
 Parameter Selection on the Basic tab is set to Hardware Parameters and
 Phase Increment Programmability field on the Phase Offset Angles tab is
 set to Fixed or Programmable.
-##### Output frequencies (MHz)  
+
+#### Output frequencies (MHz)  
 For each channel, an independent frequency can be entered into an array.
 This field is activated when Parameter Selection on the Basic tab is set
 to System Parameters and Phase Increment Programmability is Fixed or
 Programmable.
 
-##### Phase Angle Increment Values  
+#### Phase Angle Increment Values  
 This field is activated when Phase_Generator_and_SIN_COS_LUT is selected
 as the Configuration Options field on the Basic tab, the Parameter
 Selection on the Basic tab is set to Hardware Parameters and Phase
@@ -396,13 +398,13 @@ Specifies the phase offset to be None, Fixed, Programmable or Streaming.
 The choice of Fixed or Programmable adds the channel, data, and we input
 ports to the block.
 
-##### Phase Offset Angles (x2pi radians)  
+#### Phase Offset Angles (x2pi radians)  
 For each channel, an independent offset can be entered into an array.
 The entered values are multiplied by 2π radians. This field is activated
 when Parameter Selection on the Basic tab is set to System Parameters
 and Phase Increment Programmability is Fixed or Programmable.
 
-##### Phase Angle Offset Values  
+#### Phase Angle Offset Values  
 For each channel, an independent offset can be entered into an array.
 The entered values are multiplied by 2π radians. This field is activated
 when Parameter Selection on the Basic tab is set to Hardware Parameters
@@ -410,9 +412,10 @@ and Phase Increment Programmability is Fixed or Programmable.
 
 
 ### Advanced tab  
-Block Icon Display
 
-#### Display shortened port names  
+#### Block Icon Display
+
+##### Display shortened port names  
 This option is ON by default. When unselected, the full AXI name of each
 port is displayed on the block.
 
