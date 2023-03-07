@@ -69,3 +69,6 @@ round for the value of 0.5.
 #### Number of cascade stages  
 Determines the number of AI Engine processors to split the operation over. 
 This allows resources to be traded for higher throughput. The value must be in the range 1 to 9.
+
+### Examples
+[AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.1/Examples/AIENGINE/DSPlib/fir)
