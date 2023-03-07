@@ -30,7 +30,7 @@ Specifies the coefficient vector as a single MATLAB® row vector. The
 number of taps is inferred from the length of the MATLAB® row vector. If
 multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
-coefficients using the [FDATool](fdatool.html) block as well.
+coefficients using the [FDATool](../../UTIL/Xilinx_FDATool_Interface_Block/README.md) block as well.
 
 ##### Number of Coefficients Sets  
 The number of sets of filter coefficients to be implemented. The value
