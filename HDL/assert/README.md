@@ -33,11 +33,12 @@ If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
 
 #### Fixed-point Precision  
-##### Number of bits
+
+#### Number of bits
 Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-##### Binary point
+#### Binary point
 Position of the binary point in the fixed-point output.
 
 #### Floating-point Precision  
