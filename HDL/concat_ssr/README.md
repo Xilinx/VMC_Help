@@ -7,12 +7,6 @@ The output is cast to an unsigned value with the binary point at zero.
 
 ## Description
 
-Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector data support for the primary block
-operation.
-
-
 The [Vector Reinterpret](../../HDL/reinterpret/README.md) block provides
 capabilities that can extend the functionality of the Vector Concat
 block.
@@ -33,6 +27,12 @@ Parameters specific to this block are as follows:
 #### Number of Inputs
 Specifies number of inputs, between 2 and 1024,
   inclusively, to concatenate together.
+  
+#### Super Sample Rate (SSR)
+This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
