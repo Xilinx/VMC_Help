@@ -68,4 +68,4 @@ round for the value of 0.5.
 
 #### Number of cascade stages  
 Determines the number of AI Engine processors to split the operation over. 
-This allows resource to be traded for higher performance. The value must be in the range 1 to 9.
+This allows resources to be traded for higher throughput. The value must be in the range 1 to 9.
