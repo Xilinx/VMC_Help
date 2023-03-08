@@ -32,8 +32,9 @@ HLS Kernels?</h1>
 <section id="how-to-fix-buffer-overflow-errors-with-ai-engine-and-hls-kernels" class="level1">
 <h1>How to fix buffer overflow errors with AI Engine and HLS
 Kernels?</h1>
-<p>Each kernel input port&#39;s buffer has a maximum size of 65536 bytes.
-Buffer overflows can occur due to several reasons:</p>
+<p>Each input and output port for all the AI Engine blocks and the HLS
+Kernel block has a buffer that has a maximum size of 65536 bytes. Buffer
+overflows can occur due to several reasons:</p>
 <ol type="1">
 <li>Trying to send more than 65536 bytes into a kernel in a single
 invocation.</li>

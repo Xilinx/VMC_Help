@@ -8,7 +8,7 @@ arguments
 end
 
 
-
+root_folder = pwd;
 
 force_update = NameValueArgs.force_update;
 create_shipping_package = NameValueArgs.create_shipping_package;
@@ -75,7 +75,7 @@ for c=1:length(categories)
             writelines(text,'temp.md');
 
             %% Convert md to html
-            pandoc_cmd = strcat("/usr/local/bin/pandoc --from gfm --to html -s --embed-resources --no-highlight -c ./xmc-matlab.css --section-divs --metadata title=""",bname,""" temp.md ", ' -o', html_file);
+            pandoc_cmd = strcat("/usr/local/bin/pandoc --from gfm --to html -s --embed-resources --no-highlight -c ", root_folder, "/xmc-matlab.css --section-divs --metadata title=""",bname,""" temp.md ", ' -o', html_file);
             system(pandoc_cmd);
             disp(html_file + " got generated.");
             delete temp.md
