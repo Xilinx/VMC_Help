@@ -35,10 +35,10 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via the input port.
+filter coefficients via an input port.
 
 #### Filter coefficients  
-This field should be specified with the asymmetric filter coefficients. It could also be a MATLAB array variable. The number of filter coefficients must be in the range of 4 to 240 inclusive.
+This field specifies the asymmetric filter coefficients. It could also be a MATLAB array variable defined in the workspace.
 
 #### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
@@ -47,7 +47,7 @@ size also by virtue of the single rate nature of this function.
 
 #### Scale output down by 2^  
 Describes the power of 2 shift down applied to the accumulation of FIR
-terms before output. It must be in the range 0 to 61.
+terms before output.
 
 #### Rounding mode  
 Describes the selection of rounding to be applied during the shift down
@@ -67,7 +67,7 @@ round for the value of 0.5.
 
 #### Number of cascade stages  
 Determines the number of AI Engine processors to split the operation over. 
-This allows resources to be traded for higher throughput. The value must be in the range 1 to 9.
+This allows resources to be traded for higher throughput.
 
 ### Examples
 [AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)
