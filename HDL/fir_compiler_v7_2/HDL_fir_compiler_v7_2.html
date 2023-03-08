@@ -49,9 +49,8 @@ follows:</p>
 <td>A sub-field port that represents the fsel field in the Configuration
 Channel vector. fsel is used to select the active filter set. This port
 is exposed when the number of coefficient sets is greater than one.
-Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">FIR
-Compiler V7.2 Product Guide</a> for an explanation of the bits in this
-field.</td>
+Refer to the FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)
+for an explanation of the bits in this field.</td>
 </tr>
 </tbody>
 </table>
@@ -71,8 +70,8 @@ follows.</p>
 number of taps is inferred from the length of the MATLAB® row vector. If
 multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
-coefficients using the <a href="fdatool.html">FDATool</a> block as
-well.</p>
+coefficients using the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;Xilinx_FDATool_Interface_Block&#39;,&#39;category&#39;,&#39;UTIL&#39;))">FDATool</a>
+block as well.</p>
 </section>
 <section id="number-of-coefficients-sets" class="level5">
 <h5>Number of Coefficients Sets</h5>
@@ -84,11 +83,11 @@ coefficients.</p>
 <h5>Use Reloadable Coefficients</h5>
 <p>Check to add the coefficient reload ports to the block. The set of
 data loaded into the reload channel will not take action until triggered
-by a re-configuration synchronization event. Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">FIR
-Compiler V7.2 Product Guide</a> for a more detailed explanation of the
-RELOAD Channel interface timing. This block supports the
-xlGetReloadOrder function. See the Model Composer Utility function
-xlGetReloadOrder for details.</p>
+by a re-configuration synchronization event. Refer to the FIR Compiler
+LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)
+for a more detailed explanation of the RELOAD Channel interface timing.
+This block supports the xlGetReloadOrder function. See the Model
+Composer Utility function xlGetReloadOrder for details.</p>
 </section>
 </section>
 <section id="filter-specification" class="level4">
@@ -154,8 +153,8 @@ follows.</p>
 <h4>Interleaved Channel Specification</h4>
 <section id="channel-sequence" class="level5">
 <h5>Channel Sequence</h5>
-<p>Select Basic or Advanced. See theFIR Compiler LogiCORE IP Product
-Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf">PG149</a>)
+<p>Select Basic or Advanced. See the FIR Compiler LogiCORE IP Product
+Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)
 for an explanation of the advanced channel specification feature.</p>
 </section>
 <section id="number-of-channels" class="level5">
@@ -575,7 +574,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>FIR Compiler LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf">PG149</a>)</p>
+<p>FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)</p>
 </section>
 </section>
 </body>
