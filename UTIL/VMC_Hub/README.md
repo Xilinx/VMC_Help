@@ -48,7 +48,7 @@ the left. Different settings will display depending on the type of code
 generation (HDL, HLS, or AI Engine) to be performed.
 
 #### Code direcotry
-The generated code will be saved in the specified code directory. If the directory already exists, you will be notified about it. At times, reusing the same code directory can be advantageous. For example, if you have only changed the input data to an AI Engine design, after you have already ran the AIE simulator for an older input data, the tool will automatically skip the compilation phase and will directly jump to the simulation phase hence saving you time.
+The generated code will be saved in the specified code directory. In case the directory already exists, you will receive a notification. Utilizing the same code directory can have its advantages in certain situations. For instance, if you only modify the input data for an AI Engine design, but have already executed the AIE simulator for a previous input, the tool will skip the compilation phase and proceed directly to simulation, saving you time.
 
 #### AIE Settings  
 ##### AIE Compiler Options  
