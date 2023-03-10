@@ -47,6 +47,9 @@ Select the subsystem name for which to generate code from the list on
 the left. Different settings will display depending on the type of code
 generation (HDL, HLS, or AI Engine) to be performed.
 
+#### Code direcotry
+The generated code will be saved in the specified code directory. If the directory already exists, you will be notified about it. At times, reusing the same code directory can be advantageous. For example, if you have only changed the input data to an AI Engine design, after you have already ran the AIE simulator for an older input data, the tool will automatically skip the compilation phase and will directly jump to the simulation phase hence saving you time.
+
 #### AIE Settings  
 ##### AIE Compiler Options  
 When specified, the compiler options provide control over the AI Engine compiler. For a full list of compiler options refer to 
