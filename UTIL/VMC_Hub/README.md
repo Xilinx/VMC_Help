@@ -70,7 +70,7 @@ This determines the run duration of the cycle-approximate AIE simulation in term
 If the Simulation timeout value is too small, the AIE Simulation may not produce any output at all. However, another reason for no output is a deadlock in the system. The deadlock will not manifest itself in Simulink simulation because Simulink simulation is a functional simulation.
 
 ##### Plot AIE Simulation Output and Estimate Throughput  
-When enabled, this option logs simulation data and allows visualization of the outputs of the AI Engine subsystem in the [Simulation Data Inspector](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html). The throughput for each output is also calculated. You can use the cursors in the Simulation Data Inspector to limit the range in which throughput is calculated. As you move the cursors, the throughput gets recalculated. See the screenshot below for an example of displaying the output of the AIE Simulation in the Simulation Data Inspector. 
+When enabled, this option allows visualization of the outputs of the AI Engine subsystem in the [Simulation Data Inspector](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html). The throughput for each output is also calculated. You can use the cursors in the Simulation Data Inspector to limit the range in which throughput is calculated. As you move the cursors, the throughput gets recalculated. See the screenshot below for an example of displaying the output of the AIE Simulation in the Simulation Data Inspector. 
 
 ![](./Images/sdi_output.png)
 
