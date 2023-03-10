@@ -87,7 +87,7 @@ which can be viewed in the Vitis Analyzer.
 
 ##### Open Vitis Analyzer  
 Click to invoke the Vitis Analyzer tool. This option is only enabled
-after AI Engine Simulation has been ran at least once after enabling.
+after AI Engine Simulation has been ran at least once after enabling. If you are running trace or profile, it is recommended to use '--xlopt=0' AIE compiler option. This will give a greater visibility into the design.
 
 #### AIE Hardware Flow  
 To generate the hardware image, specify the platform in the Target pane
