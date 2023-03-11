@@ -57,7 +57,7 @@ Specifies the number of samples in the input frame excluding the
 Describes the power of 2 shift down applied before output.
 
 #### Use dynamic point size
-This option is primarily checked when the block is used with the [Dynamic point FFT block](../FFT_Dynamic_Point/READEM.md). When unchecked, each input frame will be of the size _Window size_ though the _Input size_ can be an integer multiple of the _Window size_ indicating the procesing of multiple frames together. When this option is checked, each window must be preceeded by a 256bit header to describe the run-time parameters of that window. Note that the _Window size_ parameter does not include this header. The format of the header is described in the table below. When checked, the _Windows size_ parameter describes the maximum window size which may be input.
+This option is primarily checked when the block is used with the [Dynamic point FFT block](../FFT_Dynamic_Point/README.md). When unchecked, each input frame will be of the size _Window size_ though the _Input size_ can be an integer multiple of the _Window size_ indicating the procesing of multiple frames together. When this option is checked, each window must be preceeded by a 256bit header to describe the run-time parameters of that window. Note that the _Window size_ parameter does not include this header. The format of the header is described in the table below. When checked, the _Windows size_ parameter describes the maximum window size which may be input.
 
 Field name	Location (TT_DATA sample)	Description
 Direction	0 (real part)	0 (inverse FFT) 1 (forward FFT)
