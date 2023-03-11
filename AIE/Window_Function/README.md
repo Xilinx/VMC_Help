@@ -5,13 +5,13 @@ Window function implementation targeted for AI Engines.
 
 ## Library
 
-AI Engine/DSP/Window IO
+AI Engine/DSP/Buffer IO
 
 ## Description
 
 Window function implementation targeted for AI Engines. This block is
-the utility to apply a windowing (scaling) function such as Hamming to a
-frame of input window data samples.
+applies a windowing function such as Hamming to a
+frame of input data samples.
 
 ## Parameters
 
@@ -20,7 +20,7 @@ frame of input window data samples.
 Describes the type of individual data samples input/output of the
   dynamic point FFT. It can be cint16, cint32, or cfloat types.
 
-#### Filter coefficients data type
+#### Window coefficients data type
 
 Describes the type of individual coefficients of the filter taps. It
   should be one of int16, int32, or float and must also satisfy the
@@ -34,14 +34,12 @@ Describes the type of individual coefficients of the filter taps. It
   - Filter coefficients data type must be a float type if the
     Input/Output data type is a float type.
 
-#### Filter coefficients
-
+#### Window coefficients
 Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
   where 'N' is a positive integer that represents the filter length and
   must be in the range 4 to 240 inclusive.
 
-#### FFT Maximum Size
-
+#### Window size
 Specifies the maximum FFT size that is supported by Dynamic point FFT.
   You can perform different lengths of FFT on different input data
   frames. It must be a power of 2 with a minimum value of 16. The
@@ -63,7 +61,7 @@ Describes whether to support run time selectable point size for the
   must be in the range FFT_POINT_SIZE + FFT_POINT_SIZE/2 to
   2\*FFT_POINT_SIZE.
 
-#### Input Window Size
+#### Input Size (Samples)
 
 Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default
@@ -72,14 +70,3 @@ Specifies the number of samples in the input frame excluding the
 #### Scale Output down by 2^
 
 Describes the power of 2 shift down applied before output.
-
-#### SSR
-
-This parameter is intended to improve performance and support FFT
-  sizes beyond the limitations of a single tile. For an SSR value of 'n'
-  (which must be of the form 2^N, where N is a positive integer), the
-  FFT operation is performed in parallel and the actual FFT size is
-  divided by 'n'. For example, a 16384 point FFT with SSR value of 8
-  creates 8 stream inputs and there will be 8 subframe FFTs each of
-  point size 2048. The specified FFT size and SSR values should be such
-  that FFT size / SSR should not exceed 2048.
