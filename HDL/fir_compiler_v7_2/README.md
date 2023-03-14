@@ -15,9 +15,10 @@ based on sub-field names. The sub-field ports are described as follows:
 
 Configuration Channel Input Signals:
 
-|                   |                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| config_tdata_fsel | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) for an explanation of the bits in this field. |
+| Input Signal | Description |
+|--------|-------------|
+| config_tdata_fsel     | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) for an explanation of the bits in this field. |
+
 
 ## Parameters
 
