@@ -13,6 +13,7 @@ with an AXI4-Stream-compliant interface.
 This block exposes the AXI CONFIG channel as a group of separate ports
 based on sub-field names. The sub-field ports are described as follows:
 
+
 Configuration Channel Input Signals:
 
 | Input Signal | Description |
