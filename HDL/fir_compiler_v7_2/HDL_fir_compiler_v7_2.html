@@ -43,6 +43,12 @@ ports based on sub-field names. The sub-field ports are described as
 follows:</p>
 <p>Configuration Channel Input Signals:</p>
 <table>
+<thead>
+<tr class="header">
+<th>Input Signal</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>config_tdata_fsel</td>
@@ -86,8 +92,8 @@ data loaded into the reload channel will not take action until triggered
 by a re-configuration synchronization event. Refer to the FIR Compiler
 LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)
 for a more detailed explanation of the RELOAD Channel interface timing.
-This block supports the xlGetReloadOrder function. See the Model
-Composer Utility function xlGetReloadOrder for details.</p>
+This block supports the xlGetReOrderedCoeff function. See the Model
+Composer Utility function xlGetReOrderedCoeff for details.</p>
 </section>
 </section>
 <section id="filter-specification" class="level4">
