@@ -182,8 +182,7 @@ equal to 1.
 ### Advanced tab  
 Parameters specific to the Advanced tab are as follows.
 
-#### Write Modes  
-##### Port A or Port B  
+#### Port A or Port B  
 When the Dual Port RAM block is implemented in block RAM, specifies
 memory behavior for port A or port B when WE is asserted. Supported
 modes are: Read after write, Read before write, and No read on write.
