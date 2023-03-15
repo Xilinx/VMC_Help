@@ -11,8 +11,8 @@ with prescaling.
 
 
 ### Basic tab  
-#### Common Options  
-##### Algorithm Type  
+ 
+#### Algorithm Type  
 * **Radix-2**: Non-restoring integer division using integer operands, allows
   a remainder to be generated. This is recommended for operand widths
   less than around 16 bits. This option supports both unsigned and
@@ -33,79 +33,79 @@ with prescaling.
   the use of DSP and block RAM primitives. Supports unsigned or two's
   complement signed numbers.
 
-#### Output channel  
-##### Remainder type  
+
+#### Remainder type  
 ###### Remainder  
 Only supported for Radix 2.
 
 ###### Fractional  
 Determines the number of bits in the fractional port output.
 
-##### Fractional width  
+#### Fractional width  
 If Fractional Remainder type is selected, this entry determines the
 number of bits in the fractional port output.
 
-#### Radix2 Options  
-##### Radix2 throughput  
+
+#### Radix2 throughput  
 Determines the interval in clocks between new data being input (and
 output). Choices are 1, 2, 4, and 8.
 
-#### High Radix Options  
-##### Detect divide by zero  
+
+#### Detect divide by zero  
 Determines if the core shall have a division-by-zero indication output
 port.
 
-#### AXI Interface  
-##### AXI behavior  
-###### NonBlocking  
+
+#### AXI behavior  
+##### NonBlocking  
 Performs an action only when a control packet and a data packet are
 presented to the block at the same time.
 
-###### Blocking  
+##### Blocking  
 Preforms an action when a data packet is presented to the block. The
 block uses the previous control information.
 
-##### AXI Implementation emphasis  
-###### Resources  
+#### AXI Implementation emphasis  
+##### Resources  
 Automatic (fully pipelined) or Manual (determined by following field).
 
-###### Performance  
+##### Performance  
 Implementation decisions target the highest speed.
 
-#### Latency Options  
-##### Latency configuration  
+
+#### Latency configuration  
 Automatic (fully pipelined) or Manual (determined by following field).
 
-##### Latency  
+#### Latency  
 This field determines the exact latency from input to output in terms of
 clock enabled clock cycles.
 
 
 ### Optional ports tab  
-#### Optional Ports  
-##### Divided Channel Ports  
-###### Has TUSER  
+
+#### Divided Channel Ports  
+##### Has TUSER  
 Adds a tuser input port to the dividend channel.
 
-###### Has TLAST  
+##### Has TLAST  
 Adds a tlast output port to the dividend channel.
 
-##### Divisor Channel Ports  
-###### Has TUSER  
+#### Divisor Channel Ports  
+##### Has TUSER  
 Adds a tuser input port to the divisor channel.
 
-###### Has TLAST  
+##### Has TLAST  
 Adds a tlast output port to the divisor channel.
 
-##### ACLKEN  
+#### ACLKEN  
 Specifies that the block has a clock enable port (the equivalent of
 selecting the Has ACLKEN option in the CORE Generator GUI).
 
-##### ARESETn  
+#### ARESETn  
 Specifies that the block has a reset port. Active-Low synchronous clear.
 A minimum ARESETn pulse of two cycles is required.
 
-##### m_axis_dout_tready  
+#### m_axis_dout_tready  
 Specifies that the block has a dout_tready output port.
 
 #### Input TLAST combination for output  
