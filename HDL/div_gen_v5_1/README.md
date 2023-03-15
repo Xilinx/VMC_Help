@@ -13,15 +13,20 @@ with prescaling.
 ### Basic tab  
  
 #### Algorithm Type  
-* **Radix-2**: Non-restoring integer division using integer operands, allows
+##### Radix-2
+Non-restoring integer division using integer operands, allows
   a remainder to be generated. This is recommended for operand widths
   less than around 16 bits. This option supports both unsigned and
   signed (2’s complement) divisor and dividend inputs.
-* **High_Radix**: Division with prescaling. This is recommended for operand
+  
+##### High_Radix
+Division with prescaling. This is recommended for operand
   widths greater than 16 bits, though the implementation requires the
   use of DSP48 (or variant) primitives. This option only supports signed
   (2’s complement) divisor and dividend inputs.
-* **LutMult**: A simple lookup estimate of the reciprocal of the divisor
+  
+##### LutMult
+A simple lookup estimate of the reciprocal of the divisor
   followed by a multiplier. Only the remainder output type is supported
   because of the bias required in the reciprocal estimate. This bias
   would introduce an offset (error) if used to create a fractional
