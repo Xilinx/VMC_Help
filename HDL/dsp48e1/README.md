@@ -27,13 +27,12 @@ DSP filters, and complex arithmetic without the use of general FPGA.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Input configuration  
-##### A or ACIN input  
+#### A or ACIN input  
 Specifies if the A input should be taken directly from the a port or
 from the cascaded acin port. The acin port can only be connected to
 another DSP48 block.
 
-##### B or BCIN input  
+#### B or BCIN input  
 Specifies if the B input should be taken directly from the b port or
 from the cascaded bcin port. The bcin port can only be connected to
 another DSP48 block.
@@ -41,72 +40,66 @@ another DSP48 block.
 **Note**: If the input to the block is NaN, you will see a behavioral
 simulation mismatch.
 
-#### DSP48E1 data-path configuration  
-##### SIMD Mode of Adder/Subtractor/Accumulator  
+#### SIMD Mode of Adder/Subtractor/Accumulator  
 This mode can be used to implement small add-subtract functions at high
 speed and lower power with less logic utilization. The adder and
 subtractor in the adder/subtracter/logic unit can also be split into two
 24-bit units or four 12-bit units.
 
-##### Do not use multiplier  
+#### Do not use multiplier  
 When selected, the block is optimized in hardware for maximum
 performance without using the multiplier. If an instruction using the
 multiplier is encountered in simulation, an error is reported.
 
-##### Use dynamic multiplier mode  
+#### Use dynamic multiplier mode  
 When selected, it instructs the block to use the dynamic multiplier
 mode. This indicates that the block is switching between A\*B and A:B
 operations on the fly and therefore needs to get the worst-case timing
 of the two paths.
 
-##### Use Preadder  
+#### Use Preadder  
 Use the 25-bit D data input to the pre-adder or alternative input to the
 multiplier. The pre-adder implements D + A as determined by the INMODE3
 signal.
 
-#### Pattern Detection  
-##### Reset p register on pattern detection  
+#### Reset p register on pattern detection  
 If selected and the pattern is detected, reset the p register on the
 next cycle
 
 #### Pattern Input  
-##### Pattern Input from c port  
+
+##### Pattern Input from c port:  
 When selected, the pattern used in pattern detection is read from the c
 port.
 
-###### Pattern Input  
-* Pattern Input from c port:  
-When selected, the pattern used in pattern detection is read from the c
-port.
-
-* Using Pattern Attribute (48bit hex value):  
+##### Using Pattern Attribute (48bit hex value):  
 Value is used in pattern detection logic which is best described as an
 equality check on the output of the adder/subtracter/logic unit
 
-* Pattern attribute:  
+#### Pattern attribute:  
 A 48-bit value that is used in the pattern detector.
 
-###### Mask Input:  
-* Mask input from c port  
+#### Mask Input:  
+##### Mask input from c port  
 When selected, the mask used in pattern detection is read from the c
 port.
 
-* Using Mask Attribute (48 bit hex value):  
+##### Using Mask Attribute (48 bit hex value):  
 Enter a 48-bit value used to mask out certain bits during pattern
 detection.
 
-* MODE1:  
+##### MODE1:  
 Selects rounding_mode 1.
 
-* MODE2:  
+##### MODE2:  
 Selects rounding_mode 2.
  
 
 ### Optional Ports tab  
 Parameters specific to the Optional Ports tab are:
 
-#### Input Ports  
-##### Consolidate control port  
+
+#### Consolidate control port  
 When selected, combines the opmode, alumode, carry_in,
 carry_in_sel, and inmode ports into one 20-bit port. Bits 0 to 6 are
 the opmode, bits 7 to 10 are the alumode port, bit 11 is the
@@ -114,33 +107,33 @@ carry_in port, bits 12 to 14 are the carry_in_sel port, and bits
 15-19 are the inmode bits. This option should be used when the Opmode
 block is used to generate a DSP48 instruction.
 
-##### Provide c port  
+#### Provide c port  
 When selected, the c port is made available. Otherwise, the c port is
 tied to '0'.
 
-##### Provide global reset port  
+#### Provide global reset port  
 When selected, the port rst is made available. This port is connected to
 all available reset ports based on the pipeline selections.
 
-##### Provide global enable port  
+#### Provide global enable port  
 When selected, the optional en port is made available. This port is
 connected to all available enable ports based on the pipeline
 selections.
 
-##### Provide pcin port  
+#### Provide pcin port  
 When selected, the pcin port is exposed. The pcin port must be
 connected to the pcout port of another DSP48 block.
 
-##### Provide carry cascade in port  
+#### Provide carry cascade in port  
 When selected, the carry cascade in port is exposed. This port can only
 be connected to a carry cascade out port on another DSP48E block.
 
-##### Provide multiplier sign cascade in port  
+#### Provide multiplier sign cascade in port  
 When selected, the multiplier sign cascade in port (multsigncascin) is
 exposed. This port can only be connected to a multiplier sign cascade
 out port of another DSP48E block.
 
-##### Provide carryout port  
+#### Provide carryout port  
 When selected, the carryout output port is made available. When the
 mode of operation for the adder/subtractor is set to one 48-bit adder,
 the carryout port is 1-bit wide. When the mode of operation is set to
@@ -151,48 +144,48 @@ bit adders, the carryout port is 4 bits wide with the bits
 corresponding to the addition of the 48 bit input split into 4 12-bit
 sections.
 
-##### Provide pattern detect port  
+#### Provide pattern detect port  
 When selected, the pattern detection output port is provided. When the
 pattern, either from the mask or the c register, is matched the pattern
 detection port is set to '1'.
 
-##### Provide pattern bar detect port  
+#### Provide pattern bar detect port  
 When selected, the pattern bar detection (patternbdetect) output port is
 provided. When the inverse of the pattern, either from the mask or the c
 register, is matched the pattern bar detection port is set to '1'.
 
-##### Provide overflow port  
+#### Provide overflow port  
 When selected, the overflow output port is provided. This port indicates
 when the operation in the DSP48E has overflowed beyond the bit P\[N\]
 where N is between 1 and 46. N is determined by the number of 1s in the
 mask whether set by the GUI mask field or the c port input.
 
-##### Provide underflow port  
+#### Provide underflow port  
 When selected, the underflow output port is provided. This port
 indicates when the operation in the DSP48E has underflowed. Underflow
 occurs when the number goes below –P\[N\] where N is determined by the
 number of 1s in the mask whether set by the GUI mask field or the c port
 input.
 
-##### Provide acout port  
+#### Provide acout port  
 When selected, the acout output port is made available. The acout
 port must be connected to the acin port of another DSP48E block.
 
-##### Provide bcout port  
+#### Provide bcout port  
 When selected, the bcout output port is made available. The bcout
 port must be connected to the bcin port of another DSP48E block.
 
-##### Provide pcout port  
+#### Provide pcout port  
 When selected, the pcout output port is made available. The pcout
 port must be connected to the pcin port of another DSP48 block.
 
-##### Provide multiplier sign cascade out port  
+#### Provide multiplier sign cascade out port  
 When selected, the multiplier sign cascade out port (multsigncascout) is
 made available. This port can only be connected to the multiplier sign
 cascade in port of another DSP48E block and is used to support 96-bit
 accumulators/adders and subtracters which are built from two DSP48Es.
 
-##### Provide carry cascade out port  
+#### Provide carry cascade out port  
 When selected, the carry cascade out port (carrycascout) is made
 available. This port can only be connected to the carry cascade in port
 of another DSP48E block.
@@ -252,46 +245,44 @@ Indicates to add a pipeline register to the INMODE input.
 
 ### Reset/Enable Ports tab  
 Parameters specific to the Reset/Enable tab are as follows.
-
-#### Provide Reset Ports  
-##### Reset port for a/acin  
+ 
+#### Reset port for a/acin  
 When selected, a port rst_a is made available. This resets the pipeline
 register for port a when set to '1'.
 
-##### Reset port for b/bcin  
+#### Reset port for b/bcin  
 When selected, a port rst_b is made available. This resets the pipeline
 register for port b when set to '1'.
 
-##### Reset port for c  
+#### Reset port for c  
 When selected, a port rst_c is made available. This resets the pipeline
 register for port c when set to '1'.
 
-##### Reset port for multiplier  
+#### Reset port for multiplier  
 When selected, a port rst_m is made available. This resets the pipeline
 register for the internal multiplier when set to '1'.
 
-##### Reset port for P  
+#### Reset port for P  
 When selected, a port rst_p is made available. This resets the output
 register when set to '1'.
 
-##### Reset port for carry in  
+#### Reset port for carry in  
 When selected, a port rst_carryin is made available. This resets the
 pipeline register for carry in when set to '1'.
 
-##### Reset port for alumode  
+#### Reset port for alumode  
 When selected, a port rst_alumode is made available. This resets the
 pipeline register for the alumode port when set to '1'.
 
-##### Reset port for controls (opmode and carry_in_sel)  
+#### Reset port for controls (opmode and carry_in_sel)  
 When selected, a port rst_ctrl is made available. This resets the
 pipeline register for the opmode register (if available) and the
 carry_in_sel register (if available) when set to '1'.
 
-##### Reset port for d and ad  
+#### Reset port for d and ad  
 
-##### Reset port for INMODE  
+#### Reset port for INMODE  
 
-### Provide Enable Ports  
 #### Enable port for first a/acin register  
 When selected, an enable port ce_a1 for the first a pipeline register is
 made available.
@@ -339,7 +330,7 @@ ce_ctrl controls the opmode and carry in select registers.
 #### Enable port for d  
 When selected, an enable port is added input register d.
 
-Enable port for ad  
+#### Enable port for ad  
 When selected, an enable port is add for the preadder output register
 ad.
 
