@@ -13,30 +13,32 @@ with an AXI4-Stream-compliant interface.
 This block exposes the AXI CONFIG channel as a group of separate ports
 based on sub-field names. The sub-field ports are described as follows:
 
+
 Configuration Channel Input Signals:
 
-|                   |                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| config_tdata_fsel | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) for an explanation of the bits in this field. |
+| Input Signal | Description |
+|--------|-------------|
+| config_tdata_fsel     | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) for an explanation of the bits in this field. |
+
 
 ## Parameters
 
 
 ### Filter Specification tab  
 Parameters specific to the Filter Specification tab are as follows.
-#### Filter Coefficients  
-##### Coefficient Vector  
+
+#### Coefficient Vector  
 Specifies the coefficient vector as a single MATLAB® row vector. The
 number of taps is inferred from the length of the MATLAB® row vector. If
 multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
 coefficients using the [FDATool](../../UTIL/Xilinx_FDATool_Interface_Block/README.md) block as well.
 
-##### Number of Coefficients Sets  
+#### Number of Coefficients Sets  
 The number of sets of filter coefficients to be implemented. The value
 specified must divide without remainder into the number of coefficients.
 
-##### Use Reloadable Coefficients  
+#### Use Reloadable Coefficients  
 Check to add the coefficient reload ports to the block. The set of data
 loaded into the reload channel will not take action until triggered by a
 re-configuration synchronization event. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
@@ -44,20 +46,20 @@ for a more detailed explanation of the RELOAD Channel interface timing.
 This block supports the xlGetReOrderedCoeff function. See the Model
 Composer Utility function xlGetReOrderedCoeff for details.
 
-#### Filter Specification  
-##### Filter Type  
+ 
+#### Filter Type  
 ###### Single_Rate  
 The data rate of the input and the output are the same.
 
-###### Interpolation  
+##### Interpolation  
 The data rate of the output is faster than the input by a factor
 specified by the Interpolation Rate Value.
 
-###### Decimation  
+##### Decimation  
 The data rate of the output is slower than the input by a factor
 specified in the Decimation Rate Value.
 
-###### Hilbert  
+##### Hilbert  
 Filter uses the Hilbert Transform.
 
 ###### Interpolated  
@@ -70,17 +72,17 @@ realizations of narrow-band filters and, with some minor enhancements,
 wide-band filters can be accommodated. The data rate of the input and
 the output are the same.
 
-##### Rate Change Type  
+#### Rate Change Type  
 This field is applicable to Interpolation and Decimation filter types.
 Used to specify an Integer or Fixed_Fractional rate change.
 
-##### Interpolation Rate Value  
+#### Interpolation Rate Value  
 This field is applicable to all Interpolation filter types and
 Decimation filter types for Fractional Rate Change implementations. The
 value provided in this field defines the up-sampling factor, or P for
 Fixed Fractional Rate (P/Q) resampling filter implementations.
 
-##### Decimation Rate Value  
+#### Decimation Rate Value  
 This field is applicable to the all Decimation and Interpolation filter
 types for Fractional Rate Change implementations. The value provided in
 this field defines the down-sampling factor, or Q for Fixed Fractional
@@ -89,23 +91,22 @@ Rate (P/Q) resampling filter implementations.
 
 ### Channel Specification tab  
 Parameters specific to the Channel Specification tab are as follows.
-
-#### Interleaved Channel Specification  
-##### Channel Sequence  
+ 
+#### Channel Sequence  
 Select Basic or Advanced. See the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) 
 for an explanation of the advanced channel specification feature.
 
-##### Number of Channels  
+#### Number of Channels  
 The number of data channels to be processed by the FIR Compiler block.
 The multiple channel data is passed to the core in a time-multiplexed
 manner. A maximum of 64 channels is supported.
 
-##### Sequence ID List  
+#### Sequence ID List  
 A comma delimited list that specifies which channel sequences are
 implemented.
 
-#### Parallel Channel Specification  
-##### Number of Paths  
+
+#### Number of Paths  
 Specifies the number of parallel data paths the filter is to process. As
 shown below, when more than one path is specified, the data_tdata input
 port is divided into sub-ports that represent each parallel path.  
@@ -113,19 +114,19 @@ port is divided into sub-ports that represent each parallel path.
 ![](./Images/qfl1538085406107.png)
 
 
-#### Hardware Oversampling Specification  
-##### Select format  
-###### Maximum_Possible  
+
+#### Select format  
+##### Maximum_Possible  
 Specifies that oversampling be automatically determined based on the din
 sample rate.
 
-###### Input_Sample_Period/Output_Sample_Period  
+##### Input_Sample_Period/Output_Sample_Period  
 Activates the Sample period. Enter the Sample Period specification.
 Selecting this option exposes the s_axis_data_tvalid port (called ND
 port on earlier versions of the core). With this port exposed, no input
 handshake abstraction and no rate-propagation takes place.
 
-###### Hardware Oversampling Rate  
+##### Hardware Oversampling Rate  
 Activates the Hardware Oversampling Rate. Enter the Hardware
 Oversampling Rate specification below.
 
@@ -139,11 +140,11 @@ produce implementations with intermediate levels of parallelism.
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 
-#### Coefficient Options  
-##### Coefficient Type  
+
+#### Coefficient Type  
 Specify Signed or Unsigned.
 
-##### Quantization  
+#### Quantization  
 Specifies the quantization method to be used for quantizing the
 coefficients. This can be set to one of the following:
 
@@ -152,18 +153,18 @@ coefficients. This can be set to one of the following:
   - Maximize_Dynamic_Range
   - Normalize_to_Centre_Coefficient
 
-##### Coefficient Width  
+#### Coefficient Width  
 Specifies the number of bits used to represent the coefficients.
 
-##### Best Precision Fractional Bits  
+#### Best Precision Fractional Bits  
 When selected, the coefficient fractional width is automatically set to
 maximize the precision of the specified filter coefficients.
 
-##### Coefficient Fractional Bits  
+#### Coefficient Fractional Bits  
 Specifies the binary point location in the coefficients datapath
 options.
 
-##### Coefficients Structure  
+#### Coefficients Structure  
 Specifies the coefficient structure. Depending on the coefficient
 structure, optimizations are made in the core to reduce the amount of
 hardware required to implement a particular filter configuration. The
@@ -180,8 +181,8 @@ The vector of coefficients specified must match the structure specified
 unless Inferred from coefficients is selected in which case the
 structure is determined automatically from these coefficients.
 
-#### Datapath Options  
-##### Output Rounding Mode  
+
+#### Output Rounding Mode  
   Choose one of the following:
 
   - Full_Precision
@@ -193,7 +194,7 @@ structure is determined automatically from these coefficients.
   - Convergent_Rounding_to_Even
   - Convergent_Rounding_to_Odd
 
-##### Output Width  
+#### Output Width  
 Specify the output width. Edit box activated only if the Rounding mode
 is set to a value other than Full_Precision.
 
@@ -223,13 +224,13 @@ setting might be required to improve performance at the expense of
 overall resource usage (this setting normally adds pipeline registers in
 critical paths).
 
-##### Goal  
+#### Goal  
   - Area
   - Speed
   - Custom
 
 
-##### List
+#### List
 A comma delimited list that specifies which optimizations are
 implemented by the block. The optimizations are as follows.
 
@@ -285,26 +286,26 @@ RAM selection to be either Block or Distributed should be used with
 caution, as inappropriate use can lead to inefficient resource usage -
 the default Automatic mode is recommended for most applications.
 
-##### Data Buffer Type  
+#### Data Buffer Type  
 Specifies the type of memory used to store data samples.
 
-##### Coefficient Buffer Type  
+#### Coefficient Buffer Type  
 Specifies the type of memory used to store the coefficients.
 
-##### Input Buffer Type  
+#### Input Buffer Type  
 Specifies the type of memory to be used to implement the data input
 buffer, where present.
 
-##### Output Buffer type  
+#### Output Buffer type  
 Specifies the type of memory to be used to implement the data output
 buffer, where present.
 
-##### Preference for other storage  
+#### Preference for other storage  
 Specifies the type of memory to be used to implement general storage in
 the datapath.
 
-#### DSP Slice Column Options  
-##### Multi-Column Support  
+
+#### Multi-Column Support  
 For device families with DSP slices, implementations of large high speed
 filters might require chaining of DSP slice elements across multiple
 columns. Where applicable (the feature is only enabled for multi-column
@@ -313,11 +314,11 @@ across the multiple-columns, which can be Automatic (based on the
 selected device for the project) or Custom (you select the length of the
 first and subsequent columns).
 
-##### Column Configuration  
+#### Column Configuration  
 Specifies the individual column lengths in a comma delimited list. (See
 the data sheet for a more detailed explanation.)
 
-##### Inter-Column Pipe Length  
+#### Inter-Column Pipe Length  
 Pipeline stages are required to connect between the columns, with the
 level of pipelining required being depending on the required system
 clock rate, the chosen device and other system-level parameters. The
@@ -325,80 +326,80 @@ choice of this parameter is always left for you to specify.
 
 
 ### Interface tab  
-#### Data Channel Options  
-##### TLAST  
+  
+#### TLAST  
 TLAST can either be Not_Required, in which case the block will not have
 the port, or Vector_Framing, where TLAST is expected to denote the last
 sample of an interleaved cycle of data channels, or Packet_Framing,
 where the block does not interpret TLAST, but passes the signal to the
 output DATA channel TLAST with the same latency as the datapath.
 
-##### Output TREADY  
+#### Output TREADY  
 This field enables the data_tready port. With this port enabled, the
 block will support back-pressure. Without the port, back-pressure is not
 supported, but resources are saved and performance is likely to be
 higher.
 
-##### Input FIFO  
+#### Input FIFO  
 Selects a FIFO interface for the S_AXIS_DATA channel. When the FIFO has
 been selected, data can be transferred in a continuous burst up to the
 size of the FIFO (default 16) or, if greater, the number of interleaved
 data channels. The FIFO requires additional FPGA logic resources.
 
-##### TUSER  
+#### Input/Output
 Select one of the following options for the Input and the Output.
-###### Not_Required  
+##### Not_Required  
 Neither of the uses is required; the channel in question will not have a
 TUSER field.
 
-###### User_Field  
+##### User_Field  
 In this mode, the block ignores the content of the TUSER field, but
 passes the content untouched from the input channel to the output
 channels.
 
-###### Chan_ID_Field  
+##### Chan_ID_Field  
 In this mode, the TUSER field identifies the time-division-multiplexed
 channel for the transfer.
 
-###### User and Chan_ID_Field  
+##### User and Chan_ID_Field  
 In this mode, the TUSER field will have both a user field and a chan_id
 field, with the chan_id field in the least significant bits. The minimal
 number of bits required to describe the channel will determine the width
 of the chan_id field, e.g. 7 channels will require 3 bits.
 
-#### Configuration Channel Options  
-##### Synchronization Mode  
-###### On_Vector  
+
+#### Synchronization Mode  
+##### On_Vector  
 Configuration packets, when available, are consumed and their contents
 applied when the first sample of an interleaved data channel sequence is
 processed by the block. When the block is configured to process a single
 data channel configuration packets are consumed every processing cycle
 of the block.
 
-###### On_Packet  
+##### On_Packet  
 Further qualifies the consumption of configuration packets. Packets will
 only be consumed once the block has received a transaction on the
 s_axis_data channel where s_axis_data_tlast has been asserted.
 
-##### Configuration Method  
-###### Single  
+#### Configuration Method  
+##### Single  
 A single coefficient set is used to process all interleaved data
 channels.
 
-###### By_Channel  
+##### By_Channel  
 A unique coefficient set is specified for each interleaved data channel.
 
-#### Reload Channel Options  
-##### Reload Slots  
+
+#### Reload Slots  
 Specifies the number of coefficient sets that can be loaded in advance.
 Reloaded coefficients are only applied to the block once the
 configuration packet has been consumed (Range 1 to 256).
 
-#### Control Options  
-##### ACLKEN
+
+#### ACLKEN
 Active-high clock enable. Available for MAC-based FIR implementations.
 
-##### ARESETn (active low)  
+#### ARESETn (active low)  
 Active-low synchronous clear input that always takes priority over
 ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
