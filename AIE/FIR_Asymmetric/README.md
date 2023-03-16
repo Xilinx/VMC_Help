@@ -26,6 +26,8 @@ When this option is enabled, the tool allows you to specify reloadable filter co
 #### Filter coefficients  
 This field specifies the asymmetric filter coefficients. It could also be a MATLAB array variable defined in the workspace.
 
+**_NOTE_** You can use the FDATool block to design the filter and use the coefficients directly in this field using the function _xlfda_numerator_. See the example below for more information.
+
 #### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
 Because this is a single rate filter, the number of samples in the output window will match the size of the input window.
@@ -49,4 +51,4 @@ Click on the button given here to access the constraint manager and add or updat
 
 
 ---
-**_NOTE:_**  For more details on this funciton and other AI Engine filter functions avaialble, please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html). 
+**_NOTE:_**  For more details on this function and other AI Engine filter functions available, please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html).
