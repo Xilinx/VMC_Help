@@ -11,6 +11,8 @@ Each floating point multiplier input can be in either the IEEE binary32 (FP32 or
 whereas the floating point adder only accepts binary32 inputs. Outputs are always in FP32 or single precision format.
 
 The following figure represents the DSPFP32 Floating Point Multiplier and Adder:
+
+
 ![](./Images/dspfp32_bd.png)
 
 ## Parameters
