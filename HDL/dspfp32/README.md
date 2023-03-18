@@ -8,7 +8,10 @@ The DSPFP32 block is an efficient building block for Floating Point DSP applicat
 The DSPFP32 block is an efficient building block for Floating Point DSP applications for Versal™ devices. 
 The DSPFP32 consists of a floating point multiplier and a floating point adder with separate outputs in the binary 32 format going into the internal logic. 
 Each floating point multiplier input can be in either the IEEE binary32 (FP32 or single-precision) or binary16 (FP16 or half-precision) format, 
-whereas the floating point adder only accepts binary32 inputs. Outputs are always in FP32 or single precision format. 
+whereas the floating point adder only accepts binary32 inputs. Outputs are always in FP32 or single precision format.
+
+The following figure represents the DSPFP32 Floating Point Multiplier and Adder:
+![](./Images/dspfp32_bd.png)
 
 ## Parameters
 
