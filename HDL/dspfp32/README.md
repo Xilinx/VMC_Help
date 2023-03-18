@@ -21,16 +21,15 @@ The block parameters dialog box can be invoked by double-clicking the icon in yo
 
 ### Basic
 
-    Parameters specific to the Basic tab are as follows.
+Input configuration
 
-    Input configuration
+#### A or ACIN input
+Specifies if the A input should be taken directly from the a port or from the cascaded acin port. The acin port can only be connected to another DSPFP32 block.
+        
+#### B or BCIN input
+Specifies if the B input should be taken directly from the b port or from the cascaded bcin port. The bcin port can only be connected to another DSPFP32 block.
 
-        A or ACIN input
-            Specifies if the A input should be taken directly from the a port or from the cascaded acin port. The acin port can only be connected to another DSPFP32 block.
-        B or BCIN input
-            Specifies if the B input should be taken directly from the b port or from the cascaded bcin port. The bcin port can only be connected to another DSPFP32 block.
-
-    Floating Point Type Selection
+Floating Point Type Selection
 
         A_FPTYPE Selects Floating Point Type for A
             Selects floating-point data type for A. B16 is for binary16 (half-precision) and B32 is for binary32 (single-precision).
