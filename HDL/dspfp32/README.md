@@ -2,6 +2,8 @@
 
 The DSPFP32 block is an efficient building block for Floating Point DSP applications for Versal™ devices.
 
+![](./Images/block.png)
+
 ## Description
 The DSPFP32 block is an efficient building block for Floating Point DSP applications for Versal™ devices. 
 The DSPFP32 consists of a floating point multiplier and a floating point adder with separate outputs in the binary 32 format going into the internal logic. 
