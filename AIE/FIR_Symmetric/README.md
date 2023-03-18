@@ -51,7 +51,7 @@ filter.
 Describes the number of samples used as an input to the filter function. Because this is a single rate filter, the number of samples in the output window will match the size of the input window.
 
 #### Scale output down by 2^  
-Sets the power of 2 shift down applied to the accumulator of FIR before output. It must be in range 0 to 61.
+Sets the power of 2 shift down applied to the accumulator of FIR before output. It must be in the range of 0 to 61.
 
 #### Rounding mode  
 Set the selection of rounding to be applied during the shift down stage of processing.
