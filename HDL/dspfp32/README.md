@@ -65,7 +65,7 @@ When selected, the d port is made available. Otherwise, the d port is tied to '0
 
 #### Provide global reset port
 
-When selected, the port rst is made available. This port is connected to all available reset ports based on the pipeline selections.
+When selected, the rst port is made available. This port is connected to all available reset ports based on the pipeline selections.
 
 #### Provide global enable port
 
