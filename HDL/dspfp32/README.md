@@ -22,31 +22,31 @@ The following figure represents the DSPFP32 Floating Point Multiplier and Adder:
 
 Parameters specific to the Basic tab are as follows.
 
-#### Input configuration
 
-#####  A or ACIN input
+
+####  A or ACIN input
 Specifies if the A input should be taken directly from the a port or from the cascaded acin port. The acin port can only be connected to another DSPFP32 block.
 
-##### B or BCIN input
+#### B or BCIN input
 Specifies if the B input should be taken directly from the b port or from the cascaded bcin port. The bcin port can only be connected to another DSPFP32 block.
 
-#### Floating Point Type Selection
 
-##### A_FPTYPE Selects Floating Point Type for A
+
+#### A_FPTYPE Selects Floating Point Type for A
 Selects floating-point data type for A. B16 is for binary16 (half-precision) and B32 is for binary32 (single-precision).
 
-##### B_D_FPTYPE Selects Floating Point Type for B and D
+#### B_D_FPTYPE Selects Floating Point Type for B and D
 Selects floating-point data type for B and D for multiplication. B16 is for binary16 (half-precision) and B32 is for binary32 (single-precision).
 
 **Note**: When set to B16, D cannot be sent directly to P1 for binary32 addition. It can be first multiplied by A = 1 and then sent to P0 as FPM for binary32 addition.
 
-#### DSPFP32 data-path configuration
 
-##### Do not use multiplier
+
+#### Do not use multiplier
 
 Selects usage of the multiplier. Enable this to save power when using only the Adder/Logic Unit.
 
-##### Use dynamic multiplier mode
+#### Use dynamic multiplier mode
 
 Selects the multiplier mode between dynamic or multiply.
 
