@@ -81,7 +81,7 @@ When selected, the fpa_invalid port is provided. This port indicates when the Ad
 
 #### Provide FPA_OVERFLOW port
 
-When selected, the fpa_overflow output port is provided. This port indicates when the overflow condition is detected on Addition operation i.e., overflow can occur during addition of two finite normal numbers that results exceed the maximum normalized value (32’h7F7FFFFF or 32’hFF7FFFFF).
+When selected, the fpa_overflow output port is provided. This port indicates when the overflow condition is detected on Addition operation i.e., overflow can occur during the addition of two finite normal numbers when results exceed the maximum normalized value (32’h7F7FFFFF or 32’hFF7FFFFF).
 
 #### Provide FPA_UNDERFLOW port
 
@@ -93,7 +93,7 @@ When selected, the fpm_invalid port is provided. This port indicates when the Mu
 
 #### Provide FPM_OVERFLOW port
 
-When selected, the fpm_overflow output port is provided. This port indicates when the overflow condition is detected on Multiplication operation i.e., overflow can occur during multiplication of two finite normal numbers that results exceed the maximum normalized value (32’h7F7FFFFF or 32’hFF7FFFFF).
+When selected, the fpm_overflow output port is provided. This port indicates when the overflow condition is detected on Multiplication operation i.e., overflow can occur during the multiplication of two finite normal numbers when results exceed the maximum normalized value (32’h7F7FFFFF or 32’hFF7FFFFF).
 
 #### Provide FPM_UNDERFLOW port
 
@@ -133,11 +133,11 @@ Specifies the length of the pipeline between the a/acin input and the acout outp
 
 #### Length of FPCREG pipeline
 
-Specifies the number of C input registers.  The pipeline of length 0 removes the register on the C input.
+Specifies the number of C input registers. The pipeline of length 0 removes the register on the C input.
 
 #### Length of FPOPMREG pipeline
 
-Specifies the number of OPMODE input registers.  The pipeline of length 0 removes the register on the fpopmode input.
+Specifies the number of OPMODE input registers. The pipeline of length 0 removes the register on the fpopmode input.
 
 #### Pipeline FPBREG
 
