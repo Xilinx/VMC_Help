@@ -10,9 +10,7 @@ AI Engine/User-Defined Functions
 
 ## Description
 
-The AIE Class Kernel block is used to import class-based kernels. This
-block also supports importing class templates to define a family of
-kernels.
+The AIE Class Kernel block enables you to import an AI Engine class kernel. This block supports importing Window, Buffer, Stream, Cascade, and Run time parameter as arguments to the kernel function. Additionally, this block allows you to import a function template with typename template parameter T, and a non-type (integral) template parameter N. 
 
 ## Parameters
 
