@@ -86,3 +86,26 @@ tr {
 table tr:nth-child(2n) {
   background-color: #f6f8fa;
 }
+
+
+.noteBox::before
+{
+content: "NOTE:";
+font-weight: bold;
+font-size: 11pt;
+color: #0096C7;
+}
+
+.noteBox
+{
+    border: 2px solid;
+  	border-radius: 5px;
+	padding: 10px;
+	margin: 10px 0;
+	width: 80%;
+	border-color: #0096C7;
+	background-color: rgba(0, 150, 199, 0.1);
+}
+
+
+

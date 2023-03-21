@@ -35,10 +35,7 @@ When this option is enabled, the tool allows you to specify reloadable filter co
 #### Filter coefficients  
 This field specifies the asymmetric filter coefficients. It could also be a MATLAB array variable defined in the workspace.
 
-<div class="noteBox">
-  You can use the FDATool block to design the filter and use the coefficients directly in this field using the function _xlfda_numerator_. 
-See the example below for more information.
-</div>
+**_NOTE_** You can use the FDATool block to design the filter and use the coefficients directly in this field using the function _xlfda_numerator_. See the example below for more information.
 
 #### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
@@ -56,9 +53,7 @@ Determines the number of AI Engine processors to split the operation over. This 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
 
-<div class="noteBox">
-If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
-</div>
+**_NOTE_** If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 
 ### Examples
 [AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)
