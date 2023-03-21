@@ -115,7 +115,7 @@ Selects the cascade output data i.e., whether B or D.
 
 When selected, the pcout output port is made available. The pcout port must be connected to the pcin port of another DSPFP32 block.
 
-#### PCOUTSEL Selects P cascade out
+#### PCOUTSEL Selects P cascade out
 
 Selects P cascade output data i.e., whether FPA or FPM.
 
