@@ -36,7 +36,7 @@ When this option is enabled, the tool allows you to specify reloadable filter co
 This field specifies the asymmetric filter coefficients. It could also be a MATLAB array variable defined in the workspace.
 
 <div class="noteBox">
-  You can use the FDATool block to design the filter and use the coefficients directly in this field using the function _xlfda_numerator_. 
+You can use the FDATool block to design the filter and use the coefficients directly in this field using the function "xlfda_numerator". 
 See the example below for more information.
 </div>
 
