@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -54,104 +54,95 @@ of general FPGA.</p>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows.</p>
-<section id="input-configuration" class="level4">
-<h4>Input configuration</h4>
-<section id="a-or-acin-input" class="level5">
-<h5>A or ACIN input</h5>
+<section id="a-or-acin-input" class="level4">
+<h4>A or ACIN input</h4>
 <p>Specifies if the A input should be taken directly from the a port or
 from the cascaded acin port. The acin port can only be connected to
 another DSP48 block.</p>
 </section>
-<section id="b-or-bcin-input" class="level5">
-<h5>B or BCIN input</h5>
+<section id="b-or-bcin-input" class="level4">
+<h4>B or BCIN input</h4>
 <p>Specifies if the B input should be taken directly from the b port or
 from the cascaded bcin port. The bcin port can only be connected to
 another DSP48 block.</p>
 <p><strong>Note</strong>: If the input to the block is NaN, you will see
 a behavioral simulation mismatch.</p>
 </section>
-</section>
-<section id="dsp48e1-data-path-configuration" class="level4">
-<h4>DSP48E1 data-path configuration</h4>
-<section id="simd-mode-of-addersubtractoraccumulator" class="level5">
-<h5>SIMD Mode of Adder/Subtractor/Accumulator</h5>
+<section id="simd-mode-of-addersubtractoraccumulator" class="level4">
+<h4>SIMD Mode of Adder/Subtractor/Accumulator</h4>
 <p>This mode can be used to implement small add-subtract functions at
 high speed and lower power with less logic utilization. The adder and
 subtractor in the adder/subtracter/logic unit can also be split into two
 24-bit units or four 12-bit units.</p>
 </section>
-<section id="do-not-use-multiplier" class="level5">
-<h5>Do not use multiplier</h5>
+<section id="do-not-use-multiplier" class="level4">
+<h4>Do not use multiplier</h4>
 <p>When selected, the block is optimized in hardware for maximum
 performance without using the multiplier. If an instruction using the
 multiplier is encountered in simulation, an error is reported.</p>
 </section>
-<section id="use-dynamic-multiplier-mode" class="level5">
-<h5>Use dynamic multiplier mode</h5>
+<section id="use-dynamic-multiplier-mode" class="level4">
+<h4>Use dynamic multiplier mode</h4>
 <p>When selected, it instructs the block to use the dynamic multiplier
 mode. This indicates that the block is switching between A*B and A:B
 operations on the fly and therefore needs to get the worst-case timing
 of the two paths.</p>
 </section>
-<section id="use-preadder" class="level5">
-<h5>Use Preadder</h5>
+<section id="use-preadder" class="level4">
+<h4>Use Preadder</h4>
 <p>Use the 25-bit D data input to the pre-adder or alternative input to
 the multiplier. The pre-adder implements D + A as determined by the
 INMODE3 signal.</p>
 </section>
-</section>
-<section id="pattern-detection" class="level4">
-<h4>Pattern Detection</h4>
-<section id="reset-p-register-on-pattern-detection" class="level5">
-<h5>Reset p register on pattern detection</h5>
+<section id="reset-p-register-on-pattern-detection" class="level4">
+<h4>Reset p register on pattern detection</h4>
 <p>If selected and the pattern is detected, reset the p register on the
 next cycle</p>
-</section>
 </section>
 <section id="pattern-input" class="level4">
 <h4>Pattern Input</h4>
 <section id="pattern-input-from-c-port" class="level5">
-<h5>Pattern Input from c port</h5>
+<h5>Pattern Input from c port:</h5>
 <p>When selected, the pattern used in pattern detection is read from the
 c port.</p>
-<section id="pattern-input-1" class="level6">
-<h6>Pattern Input</h6>
-<ul>
-<li><p>Pattern Input from c port:<br />
-When selected, the pattern used in pattern detection is read from the c
-port.</p></li>
-<li><p>Using Pattern Attribute (48bit hex value):<br />
-Value is used in pattern detection logic which is best described as an
-equality check on the output of the adder/subtracter/logic unit</p></li>
-<li><p>Pattern attribute:<br />
-A 48-bit value that is used in the pattern detector.</p></li>
-</ul>
 </section>
-<section id="mask-input" class="level6">
-<h6>Mask Input:</h6>
-<ul>
-<li><p>Mask input from c port<br />
-When selected, the mask used in pattern detection is read from the c
-port.</p></li>
-<li><p>Using Mask Attribute (48 bit hex value):<br />
-Enter a 48-bit value used to mask out certain bits during pattern
-detection.</p></li>
-<li><p>MODE1:<br />
-Selects rounding_mode 1.</p></li>
-<li><p>MODE2:<br />
-Selects rounding_mode 2.</p></li>
-</ul>
+<section id="using-pattern-attribute-48bit-hex-value" class="level5">
+<h5>Using Pattern Attribute (48bit hex value):</h5>
+<p>Value is used in pattern detection logic which is best described as
+an equality check on the output of the adder/subtracter/logic unit</p>
 </section>
+</section>
+<section id="pattern-attribute" class="level4">
+<h4>Pattern attribute:</h4>
+<p>A 48-bit value that is used in the pattern detector.</p>
+</section>
+<section id="mask-input" class="level4">
+<h4>Mask Input:</h4>
+<section id="mask-input-from-c-port" class="level5">
+<h5>Mask input from c port</h5>
+<p>When selected, the mask used in pattern detection is read from the c
+port.</p>
+</section>
+<section id="using-mask-attribute-48-bit-hex-value" class="level5">
+<h5>Using Mask Attribute (48 bit hex value):</h5>
+<p>Enter a 48-bit value used to mask out certain bits during pattern
+detection.</p>
+</section>
+<section id="mode1" class="level5">
+<h5>MODE1:</h5>
+<p>Selects rounding_mode 1.</p>
+</section>
+<section id="mode2" class="level5">
+<h5>MODE2:</h5>
+<p>Selects rounding_mode 2.</p>
 </section>
 </section>
 </section>
 <section id="optional-ports-tab" class="level3">
 <h3>Optional Ports tab</h3>
 <p>Parameters specific to the Optional Ports tab are:</p>
-<section id="input-ports" class="level4">
-<h4>Input Ports</h4>
-<section id="consolidate-control-port" class="level5">
-<h5>Consolidate control port</h5>
+<section id="consolidate-control-port" class="level4">
+<h4>Consolidate control port</h4>
 <p>When selected, combines the opmode, alumode, carry_in, carry_in_sel,
 and inmode ports into one 20-bit port. Bits 0 to 6 are the opmode, bits
 7 to 10 are the alumode port, bit 11 is the carry_in port, bits 12 to 14
@@ -159,41 +150,41 @@ are the carry_in_sel port, and bits 15-19 are the inmode bits. This
 option should be used when the Opmode block is used to generate a DSP48
 instruction.</p>
 </section>
-<section id="provide-c-port" class="level5">
-<h5>Provide c port</h5>
+<section id="provide-c-port" class="level4">
+<h4>Provide c port</h4>
 <p>When selected, the c port is made available. Otherwise, the c port is
 tied to &#39;0&#39;.</p>
 </section>
-<section id="provide-global-reset-port" class="level5">
-<h5>Provide global reset port</h5>
+<section id="provide-global-reset-port" class="level4">
+<h4>Provide global reset port</h4>
 <p>When selected, the port rst is made available. This port is connected
 to all available reset ports based on the pipeline selections.</p>
 </section>
-<section id="provide-global-enable-port" class="level5">
-<h5>Provide global enable port</h5>
+<section id="provide-global-enable-port" class="level4">
+<h4>Provide global enable port</h4>
 <p>When selected, the optional en port is made available. This port is
 connected to all available enable ports based on the pipeline
 selections.</p>
 </section>
-<section id="provide-pcin-port" class="level5">
-<h5>Provide pcin port</h5>
+<section id="provide-pcin-port" class="level4">
+<h4>Provide pcin port</h4>
 <p>When selected, the pcin port is exposed. The pcin port must be
 connected to the pcout port of another DSP48 block.</p>
 </section>
-<section id="provide-carry-cascade-in-port" class="level5">
-<h5>Provide carry cascade in port</h5>
+<section id="provide-carry-cascade-in-port" class="level4">
+<h4>Provide carry cascade in port</h4>
 <p>When selected, the carry cascade in port is exposed. This port can
 only be connected to a carry cascade out port on another DSP48E
 block.</p>
 </section>
-<section id="provide-multiplier-sign-cascade-in-port" class="level5">
-<h5>Provide multiplier sign cascade in port</h5>
+<section id="provide-multiplier-sign-cascade-in-port" class="level4">
+<h4>Provide multiplier sign cascade in port</h4>
 <p>When selected, the multiplier sign cascade in port (multsigncascin)
 is exposed. This port can only be connected to a multiplier sign cascade
 out port of another DSP48E block.</p>
 </section>
-<section id="provide-carryout-port" class="level5">
-<h5>Provide carryout port</h5>
+<section id="provide-carryout-port" class="level4">
+<h4>Provide carryout port</h4>
 <p>When selected, the carryout output port is made available. When the
 mode of operation for the adder/subtractor is set to one 48-bit adder,
 the carryout port is 1-bit wide. When the mode of operation is set to
@@ -203,63 +194,62 @@ adder&#39;s carryout. When the mode of operation is set to four 12 bit
 adders, the carryout port is 4 bits wide with the bits corresponding to
 the addition of the 48 bit input split into 4 12-bit sections.</p>
 </section>
-<section id="provide-pattern-detect-port" class="level5">
-<h5>Provide pattern detect port</h5>
+<section id="provide-pattern-detect-port" class="level4">
+<h4>Provide pattern detect port</h4>
 <p>When selected, the pattern detection output port is provided. When
 the pattern, either from the mask or the c register, is matched the
 pattern detection port is set to &#39;1&#39;.</p>
 </section>
-<section id="provide-pattern-bar-detect-port" class="level5">
-<h5>Provide pattern bar detect port</h5>
+<section id="provide-pattern-bar-detect-port" class="level4">
+<h4>Provide pattern bar detect port</h4>
 <p>When selected, the pattern bar detection (patternbdetect) output port
 is provided. When the inverse of the pattern, either from the mask or
 the c register, is matched the pattern bar detection port is set to
 &#39;1&#39;.</p>
 </section>
-<section id="provide-overflow-port" class="level5">
-<h5>Provide overflow port</h5>
+<section id="provide-overflow-port" class="level4">
+<h4>Provide overflow port</h4>
 <p>When selected, the overflow output port is provided. This port
 indicates when the operation in the DSP48E has overflowed beyond the bit
 P[N] where N is between 1 and 46. N is determined by the number of 1s in
 the mask whether set by the GUI mask field or the c port input.</p>
 </section>
-<section id="provide-underflow-port" class="level5">
-<h5>Provide underflow port</h5>
+<section id="provide-underflow-port" class="level4">
+<h4>Provide underflow port</h4>
 <p>When selected, the underflow output port is provided. This port
 indicates when the operation in the DSP48E has underflowed. Underflow
 occurs when the number goes below –P[N] where N is determined by the
 number of 1s in the mask whether set by the GUI mask field or the c port
 input.</p>
 </section>
-<section id="provide-acout-port" class="level5">
-<h5>Provide acout port</h5>
+<section id="provide-acout-port" class="level4">
+<h4>Provide acout port</h4>
 <p>When selected, the acout output port is made available. The acout
 port must be connected to the acin port of another DSP48E block.</p>
 </section>
-<section id="provide-bcout-port" class="level5">
-<h5>Provide bcout port</h5>
+<section id="provide-bcout-port" class="level4">
+<h4>Provide bcout port</h4>
 <p>When selected, the bcout output port is made available. The bcout
 port must be connected to the bcin port of another DSP48E block.</p>
 </section>
-<section id="provide-pcout-port" class="level5">
-<h5>Provide pcout port</h5>
+<section id="provide-pcout-port" class="level4">
+<h4>Provide pcout port</h4>
 <p>When selected, the pcout output port is made available. The pcout
 port must be connected to the pcin port of another DSP48 block.</p>
 </section>
-<section id="provide-multiplier-sign-cascade-out-port" class="level5">
-<h5>Provide multiplier sign cascade out port</h5>
+<section id="provide-multiplier-sign-cascade-out-port" class="level4">
+<h4>Provide multiplier sign cascade out port</h4>
 <p>When selected, the multiplier sign cascade out port (multsigncascout)
 is made available. This port can only be connected to the multiplier
 sign cascade in port of another DSP48E block and is used to support
 96-bit accumulators/adders and subtracters which are built from two
 DSP48Es.</p>
 </section>
-<section id="provide-carry-cascade-out-port" class="level5">
-<h5>Provide carry cascade out port</h5>
+<section id="provide-carry-cascade-out-port" class="level4">
+<h4>Provide carry cascade out port</h4>
 <p>When selected, the carry cascade out port (carrycascout) is made
 available. This port can only be connected to the carry cascade in port
 of another DSP48E block.</p>
-</section>
 </section>
 </section>
 <section id="pipelining-tab" class="level3">
@@ -334,59 +324,53 @@ output.</p>
 <section id="resetenable-ports-tab" class="level3">
 <h3>Reset/Enable Ports tab</h3>
 <p>Parameters specific to the Reset/Enable tab are as follows.</p>
-<section id="provide-reset-ports" class="level4">
-<h4>Provide Reset Ports</h4>
-<section id="reset-port-for-aacin" class="level5">
-<h5>Reset port for a/acin</h5>
+<section id="reset-port-for-aacin" class="level4">
+<h4>Reset port for a/acin</h4>
 <p>When selected, a port rst_a is made available. This resets the
 pipeline register for port a when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-bbcin" class="level5">
-<h5>Reset port for b/bcin</h5>
+<section id="reset-port-for-bbcin" class="level4">
+<h4>Reset port for b/bcin</h4>
 <p>When selected, a port rst_b is made available. This resets the
 pipeline register for port b when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-c" class="level5">
-<h5>Reset port for c</h5>
+<section id="reset-port-for-c" class="level4">
+<h4>Reset port for c</h4>
 <p>When selected, a port rst_c is made available. This resets the
 pipeline register for port c when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-multiplier" class="level5">
-<h5>Reset port for multiplier</h5>
+<section id="reset-port-for-multiplier" class="level4">
+<h4>Reset port for multiplier</h4>
 <p>When selected, a port rst_m is made available. This resets the
 pipeline register for the internal multiplier when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-p" class="level5">
-<h5>Reset port for P</h5>
+<section id="reset-port-for-p" class="level4">
+<h4>Reset port for P</h4>
 <p>When selected, a port rst_p is made available. This resets the output
 register when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-carry-in" class="level5">
-<h5>Reset port for carry in</h5>
+<section id="reset-port-for-carry-in" class="level4">
+<h4>Reset port for carry in</h4>
 <p>When selected, a port rst_carryin is made available. This resets the
 pipeline register for carry in when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-alumode" class="level5">
-<h5>Reset port for alumode</h5>
+<section id="reset-port-for-alumode" class="level4">
+<h4>Reset port for alumode</h4>
 <p>When selected, a port rst_alumode is made available. This resets the
 pipeline register for the alumode port when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-controls-opmode-and-carry_in_sel" class="level5">
-<h5>Reset port for controls (opmode and carry_in_sel)</h5>
+<section id="reset-port-for-controls-opmode-and-carry_in_sel" class="level4">
+<h4>Reset port for controls (opmode and carry_in_sel)</h4>
 <p>When selected, a port rst_ctrl is made available. This resets the
 pipeline register for the opmode register (if available) and the
 carry_in_sel register (if available) when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-d-and-ad" class="level5">
-<h5>Reset port for d and ad</h5>
+<section id="reset-port-for-d-and-ad" class="level4">
+<h4>Reset port for d and ad</h4>
 </section>
-<section id="reset-port-for-inmode" class="level5">
-<h5>Reset port for INMODE</h5>
+<section id="reset-port-for-inmode" class="level4">
+<h4>Reset port for INMODE</h4>
 </section>
-</section>
-</section>
-<section id="provide-enable-ports" class="level3">
-<h3>Provide Enable Ports</h3>
 <section id="enable-port-for-first-aacin-register" class="level4">
 <h4>Enable port for first a/acin register</h4>
 <p>When selected, an enable port ce_a1 for the first a pipeline register
@@ -445,8 +429,10 @@ ce_ctrl controls the opmode and carry in select registers.</p>
 <section id="enable-port-for-d" class="level4">
 <h4>Enable port for d</h4>
 <p>When selected, an enable port is added input register d.</p>
-<p>Enable port for ad<br />
-When selected, an enable port is add for the preadder output register
+</section>
+<section id="enable-port-for-ad" class="level4">
+<h4>Enable port for ad</h4>
+<p>When selected, an enable port is add for the preadder output register
 ad.</p>
 </section>
 <section id="enable-port-for-inmode" class="level4">

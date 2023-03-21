@@ -1,10 +1,13 @@
 % Use this m file to generate the help.zip file for the product.
 
+% NOTE pandoc should be on your path for this function to work. Use "pandoc
+% --version" on a terminal or a Command Prompt in Windows to check. 
+
 function process_block_help(NameValueArgs)
 
 arguments
     NameValueArgs.force_update (1,1) {mustBeNumericOrLogical} = false;
-    NameValueArgs.create_shipping_package (1,1) {mustBeNumericOrLogical} = false; 
+    NameValueArgs.create_shipping_package (1,1) {mustBeNumericOrLogical} = false;
 end
 
 
@@ -61,7 +64,7 @@ for c=1:length(categories)
             bname = bname{1}{1};
             fclose(fid);
 
-            %% Repalce any link to another help with proper matlab funciton
+            %% Repalce any link to another help with proper matlab function
             text = fileread('README.md');
             [first, last] = regexp(text,"(..\/..\/(GEN|HDL|AIE|HLS|UTIL)\/(.)*?\/README.md)");
 
@@ -75,7 +78,7 @@ for c=1:length(categories)
             writelines(text,'temp.md');
 
             %% Convert md to html
-            pandoc_cmd = strcat("/usr/local/bin/pandoc --from gfm --to html -s --embed-resources --no-highlight -c ", root_folder, "/xmc-matlab.css --section-divs --metadata title=""",bname,""" temp.md ", ' -o', html_file);
+            pandoc_cmd = strcat("pandoc --from gfm --to html -s --embed-resources --no-highlight -c ", root_folder, "/xmc-matlab.css --section-divs --metadata title=""",bname,""" temp.md ", ' -o', html_file);
             system(pandoc_cmd);
             disp(html_file + " got generated.");
             delete temp.md
