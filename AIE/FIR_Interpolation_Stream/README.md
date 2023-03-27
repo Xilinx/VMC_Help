@@ -77,9 +77,20 @@ The follwoing example shows how to set the parameters of this block and the equi
 
 <img src="./Images/example.png" width="600">
 
-The screen shot below, shows the same example but now with an SSR of 4.
+The screen shot below, shows the same example but now with an SSR of 4. 
 
 <img src="./Images/example_ssr.png" width="600">
+
+The MATLAB function block simply passes the input into the four outputs in a round robin fashion. The code for it is shown below:
+
+```
+function [y1, y2, y3, y4] = fcn(u)
+
+y1 = u(1:4:end);
+y2 = u(2:4:end);
+y3 = u(3:4:end);
+y4 = u(4:4:end);
+```
 
 
 ### References
