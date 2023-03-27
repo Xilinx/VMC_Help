@@ -14,32 +14,23 @@ filter targeted for AI Engines.
 ## Parameters
 
 ### Main  
-#### Input data type/Output data type  
-Describes the type of individual data samples input to and output from
-the filter function. int16, cint16, int32, cint32, float, cfloat.
+#### Input/Output data type  
+Set the data type of the block input and output. The data type of the input signal to the block must match this setting.
 
 #### Filter coefficients data type  
-Describes the type of individual coefficients of the filter taps. It
-should be one of int16, cint16, int32, cint32, float, cfloat and must
-also satisfy the following rules:
+Set the filter coefficients data type. This parameter's setting may be restricted based on the Input/Output data type. In particular,
 
-  - Complex types are only supported when the Input/Output data type is
-  also complex.
-  - 32-bit types are only supported when the Input/Output data type is
-  also a 32-bit type.
-  - Filter coefficients data type must be an integer type if the
-  Input/Output data type is an integer type.
-  - Filter coefficients data type must be a float type if the Input/Output
-  data type is a float type.
+* Complex types are only supported when the Input/Output data type is also complex.
+* 32-bit types are only supported when the Input/Output data type is also a 32-bit type.
+* Filter coefficients data type must be an integer type if the Input/Output data type is an integer type.
+* Filter coefficients data type must be a float type if the Input/Output data type is a float type.
 
-#### Specify filter coefficients via input port  
-When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via the input port.
+#### Use runtime coefficinet reloading  
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an input port
 
 #### Filter coefficients  
 Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
-where 'N' is a positive integer that represents the filter length and
-must be in the range 4 to 240 inclusive.
+where 'N' is a positive integer that represents the filter length.
 
 #### Interpolation factor  
 An unsigned integer which describes the interpolation factor of the
@@ -55,27 +46,25 @@ Describes power of 2 shift down applied to the accumulation of FIR terms
 before output. It must be in range 0 to 61.
 
 #### Rounding mode  
-Describes the selection of rounding to be applied during the shift down
-stage of processing. The rounding options are as follows:
-
-1.  Floor (truncate)
-2.  Ceiling
-3.  Round to positive infinity
-4.  Round to negative infinity
-5.  Round symmetrical to infinity
-6.  Round symmetrical to zero
-7.  Round convergent to even
-8.  Round convergent to odd
-
-Modes 2 to 7 round to the nearest integer. They differ only in how they
-round for the value of 0.5.
+Set the selection of rounding to be applied during the shift down stage of processing.
 
 #### Number of parallel input/output (SSR)  
 This parameter specifies the number of input (or output) ports and must
 be of the form 2^N, where N is a non-negative integer.
 
-### Advanced  
-#### Number of cascade stages:
+#### Interpolate polyphase
+Sets the number of interpolator polyphases which are executed in parallel with output data produced by each polyphase output directly its own output port (or ports when SSR>1). This parameter does not affect the number of input data ports and can be used in combination with SSR.
+The number of AIEs used is given by (Interpolation phase) * SSR^2 * (Number of cascade stages).
 
-Specifies the number of cascade stages. The tool will guarantee the
-  same.
+#### Number of cascade stages:
+Determines the number of AI Engine processors to split the operation over. This allows AI Engine tiles to be traded for higher throughput. See the example below on how the number of cascade stages affect the throughput. The value must be in the range 1 to 9.
+
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
+
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+### References
+This block uses the Vitis DSP library implementation of a FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html).
