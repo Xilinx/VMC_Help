@@ -53,8 +53,15 @@ This parameter specifies the number of input (or output) ports and must
 be of the form 2^N, where N is a non-negative integer.
 
 #### Interpolate polyphase
-Sets the number of interpolator polyphases which are executed in parallel with output data produced by each polyphase output directly its own output port (or ports when SSR>1). This parameter does not affect the number of input data ports and can be used in combination with SSR.
+Sets the number of interpolator polyphases over which the coefficients will be split to enable parallel computation of the outputs (see the reference for more details). The polyphases are executed parallelly and the output data is produced by combining the outputs of all the polyphases.
+
+This parameter should be a factor of the interpolation factor. 
+
+This parameter does not affect the number of input data ports and can be used in combination with SSR.
+
+<div class="noteBox">
 The number of AIEs used is given by (Interpolation phase) * SSR^2 * (Number of cascade stages).
+</div>
 
 #### Number of cascade stages:
 Determines the number of AI Engine processors to split the operation over. This allows AI Engine tiles to be traded for higher throughput. See the example below on how the number of cascade stages affect the throughput. The value must be in the range 1 to 9.
@@ -67,4 +74,6 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ### References
+[The Polyphase Implementation of Interpolation Filters in Digital Signal Processing](https://www.allaboutcircuits.com/technical-articles/digital-signal-processing-polyphase-implementation-interpolation-filter-dsp/)
+
 This block uses the Vitis DSP library implementation of a FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html).
