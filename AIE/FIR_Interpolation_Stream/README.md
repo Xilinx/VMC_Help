@@ -49,7 +49,7 @@ Set the selection of rounding to be applied during the shift down stage of proce
 
 #### Number of parallel input/output (SSR)  
 This parameter specifies the number of input (or output) ports and must
-be of the form 2^N, where N is a non-negative integer.
+be of the form 2^N, where N is a non-negative integer. The input data must be split over multiple ports,where each successive sample is sent to a different input port in a round-robin fashion
 
 #### Interpolate polyphase
 Sets the number of interpolator polyphases over which the coefficients will be split to enable parallel computation of the outputs (see the reference for more details). The polyphases are executed parallelly and the output data is produced by combining the outputs of all the polyphases.
