@@ -29,8 +29,7 @@ Set the filter coefficients data type. This parameter's setting may be restricte
 When this option is enabled, the tool allows you to specify reloadable filter coefficients via an input port
 
 #### Filter coefficients  
-Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
-where 'N' is a positive integer that represents the filter length.
+Specifies the filter coefficients as a vector.
 
 #### Interpolation factor  
 An unsigned integer which describes the interpolation factor of the
