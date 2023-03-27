@@ -72,10 +72,15 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-### Example
+### Examples
 The follwoing example shows how to set the parameters of this block and the equivalent block from the MathWorks DSP System toolbox so that they both have the same exact output. Note that we are using the DSP System toolbox command, designMultirateFIR to get the filter coefficients. 
 
 <img src="./Images/example.png" width="600">
+
+The screen shot below, shows the same example but now with an SSR of 4.
+
+<img src="./Images/example_ssr.png" width="600">
+
 
 ### References
 [The Polyphase Implementation of Interpolation Filters in Digital Signal Processing](https://www.allaboutcircuits.com/technical-articles/digital-signal-processing-polyphase-implementation-interpolation-filter-dsp/)
