@@ -73,7 +73,8 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ### Example
-The follwoing example shows how to set the parameters of this block and the equivalent block from the MathWorks DSP System toolbox so that they both have the same exact output.
+The follwoing example shows how to set the parameters of this block and the equivalent block from the MathWorks DSP System toolbox so that they both have the same exact output. Note that we are using the DSP System toolbox command, designMultirateFIR to get the filter coefficients. 
+
 <img src="./Images/example.png" width="600">
 
 ### References
