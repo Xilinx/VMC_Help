@@ -31,6 +31,14 @@ is described below.
 
 ![](./Images/iiu1648641803037.png)
 
+| Index      | Field Name          | Description  |
+| ------------- |:-------------:| -----:|
+| 1     | Direction |0 = Inverse FFT 1= Forward FFT |
+| 2      |Point size (radix 2 stages)     |Point size described as power of 2. For example, value '5' describes a point size of '32' |
+| 3 |Reserved     |   Reserved |
+| 4 |Status (output only)           |* 0 = Legal point size * 1 = Illegal point size     |
+
+
 <table 
 <colgroup>
 <col style="width: 33%" />
