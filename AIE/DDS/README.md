@@ -53,7 +53,7 @@ Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how
 * Output data type: cint16
 * Output Window size: 1024
 * Phase increment: 2^30 = 250e6*2^32/1e9
-* Sample time = 1e9*(Output Window Size)=1e9*1024
+* Sample time = (1e-9)*(Output Window Size)=(1e-9)*1024
 
 ### Related blocks
 [DDS Stream](../DDS_Stream/README.md) is another DDS block that uses stream interface instead of buffer interface and is also SSR capable.
