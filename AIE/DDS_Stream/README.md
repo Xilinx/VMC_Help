@@ -28,7 +28,7 @@ To increase output throughput, you should increase the Output Window Size.
 
 #### Number of Parallel Outputs (SSR)
 
-This parameter specifies the number of output ports and must be of the form 2^N, where N is a non-negative integer. 
+This parameter specifies the number of output ports and must be of the form 2^N, where N is a non-negative integer. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
 #### Phase Increment
 
@@ -48,6 +48,13 @@ Specifies the initial phase offset. The default value is 0.
 #### Sample Time
 
 Specifies the sample time for the block output port. The default value is -1 which will result in inheriting the sample time.
+
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
+
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
 
 ### Examples
 Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
@@ -71,4 +78,5 @@ We can use SSR to achieve freqencies larger than 1GHz. For example, assume you n
 <img src="./Images/dds_ssr.png" width="400">
 <img src="./Images/dds_ssr_out.png" width="400">
 
-
+### References
+This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
