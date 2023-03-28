@@ -28,8 +28,7 @@ is described below.
   data samples. As a result, the overheads incurred during kernel
   triggering are reduced and overall performance is increased
 
-<img src="./Images/dds_ssr_design.png" width="600">
-![](./Images/iiu1648641803037.png)
+<img src="./Images/iiu1648641803037.png" width="800">
 
 | Index      | Field Name          | Description  |
 | :------------- |:-------------| :-----|
@@ -45,8 +44,7 @@ To implement the 32-point size FFT of 'cint16' datatype, the format of
 the header that should be preceded to the input data window should be as
 shown.
 
-  
-![](./Images/ocm1648642213724.png)  
+<img src="./Images/ocm1648642213724.png" width="400"> 
 
 ## Example (Input to Dynamic Point FFT)
 
