@@ -8,8 +8,8 @@ AI Engine/DSP/Stream IO
 
 ## Description
 
-This block implements the stream-based Direct Digital Synthesizer (DDS)
-targeted for AI Engines.
+This block implements the Direct Digital Synthesizer (DDS)
+targeted for AI Engines and uses stream interface.
 
 ## Parameters
 
