@@ -18,7 +18,7 @@ Set the input/output data type.
 
 #### FFT size  
 This is an unsigned integer which describes the point size of the
-transformation. This must be 2^N, where N is in the range 4 to 16
+transformation. This must be 2^N, where N is in the range 4 to 12
 inclusive.
 
 #### Input Window Size(Number of Samples)  
