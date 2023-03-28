@@ -11,6 +11,9 @@ AI Engine/DSP/Buffer IO
 
 Longer description of the block
 
+Adding images
+<img src="./Images/dds_ssr_design.png" width="600">
+
 ## Parameters
 
 ### Name of Tab1
