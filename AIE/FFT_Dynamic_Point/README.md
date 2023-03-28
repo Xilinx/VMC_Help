@@ -98,6 +98,7 @@ In the above expression, the _ones(1,X)_ is simply a substitute for the data whi
 
 ### Related blocks
 [FFT](../FFT/README.md) is another FFT block that uses buffer interface.
+
 [FFT Stream](../FFT_Stream/README.md) is another FFT block that uses stream interface instead of buffer interface and is also SSR capable.
 
 ### References
