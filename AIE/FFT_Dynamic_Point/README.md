@@ -132,22 +132,19 @@ Specifies the number of samples in the input window excluding the
 
 #### Scale Output down by 2^
 
-Describes the power of 2 shift down applied to the accumulation of FIR
-  terms before output. It must be in the range 0 to 61.
+Describes the power of 2 shift down applied to the accumulation of FIR terms before output. It must be in the range 0 to 61.
 
-### Advanced  
-#### Target Output Throughput (MSPS)
 
-Specifies the output sampling rate of the DDS function in Mega Samples
-  per Second (MSPS). The value must be in the range 1 to 1000 and
-  the default value is 200.
+#### Number of cascade stages  
+This determines the number of kernels the FFT will be divided over in
+series to improve throughput.
 
-#### Specify the Number of Cascade Stages
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
 
-When this option is not enabled, the tool will determine the FFT
-  configuration that best achieves the specified input sampling rate.
-  When the option is enabled, the Number of cascade stages can be
-  specified (which describes the number of AI Engine processors to split
-  the operation over). This allows resources to be traded for higher
-  performance, but the specified input sampling rate constraint may not
-  be achieved. The value must be in the range of 1 to 9.
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+### References
+This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
