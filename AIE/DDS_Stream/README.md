@@ -63,7 +63,7 @@ We can use SSR to achieve freqencies larger than 1GHz. For example, assume you n
 * Output data type: cint16
 * Output Window Size: 1024
 * SSR: 8
-* Phase increment: 3\*2^29 = 3e9\*2^32/1e9/8
+* Phase increment: 3\*2^29 = (3e9)\*2^32/1e9/SSR
 * Initial Phase Offset = 0
 * Sample time = 1e9*(Output Window Size)/SSR = 1e9*128
 
