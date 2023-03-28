@@ -94,7 +94,7 @@ cint32, the format of the input should be as follows.
 complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 ```
 
-In the above expression, the _ones(1,X)_ is simply a substitute for the data which we are taking the FFT of.
+The terms "ones(1,X)" in the expression above are just replacements for the data that we are applying the FFT to.
 
 ### Related blocks
 [FFT](../FFT/README.md) is another FFT block that uses buffer interface.
