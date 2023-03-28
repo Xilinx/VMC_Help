@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector FFT Float</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vector FFT Float</h1>
+</header>
+<h1 id="vector-fft-float">Vector FFT Float</h1>
+<p>The Vector FFT Float block supports the FFT operation for vector
+single-precision floating-point inputs.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<h2 id="description">Description</h2>
+<p>The real part of the input data should be given to the in_re port,
+and the imaginary part should be given to the in_im port.</p>
+<p>When the in_valid is high, it indicates that the input data is valid.
+When out_valid is high, it indicates that the output data is valid. The
+valid indicator accompanies every set of input and output samples (for
+example, R number of samples). There is no back pressure flow control
+and once an FFT transform starts, R data samples must be input into the
+core every clock for N/R consecutive clocks, where N is the FFT length.
+However, for back-to-back transforms, the valid control input can stay
+high with no gaps.</p>
+<h3 id="data-type-support">Data Type Support</h3>
+<ul>
+<li>in_valid and out_valid are of Boolean data type.</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<h4 id="fft-length-n">FFT length (N)</h4>
+<p>N is the size of the transformation, and should be powers of 2 in the
+range of 2^3 to 2^16.</p>
+<h4 id="ssr-r">SSR (R)</h4>
+<p>R is the super sample rate, the number of samples processed in
+parallel every clock. Using a typical example with N=1024 and SSR=4, the
+core would compute one 1K FFT every 256 clock cycles, processing 4 input
+samples/clock.</p>
+<h4 id="block-ram_threshold">Block RAM_THRESHOLD</h4>
+<p>Is an implementation parameter with no functional implications. It
+controls the use of distributed RAM vs BRAM when implementing delay
+lines. It can be used to trade utilization numbers between these two
+types of resources. The higher the value, the more distributed RAM will
+be used instead of BRAM. Typical values to try are 258, 514, and
+1026.</p>
+</body>
+</html>
