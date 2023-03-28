@@ -32,7 +32,7 @@ This determines the number of kernels the FFT will be divided over in
 series to improve throughput.
 
 ### Examples
-For an example using the FFT block where the output is compared with DSP System toolbox FFT block clic [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/2022.2/Examples/AIENGINE/DSPlib/fft).
+For an example using the FFT block where the output is compared with DSP System toolbox FFT block click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fft).
 
 ### References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
