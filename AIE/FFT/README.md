@@ -31,6 +31,13 @@ Describes the power of 2 to scale the result by prior to output.
 This determines the number of kernels the FFT will be divided over in
 series to improve throughput.
 
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
+
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
 ### Examples
 For an example using the FFT block where the output is compared with DSP System toolbox FFT block click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fft).
 
