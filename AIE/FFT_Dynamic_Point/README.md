@@ -38,23 +38,6 @@ is described below.
 | 4 |Status (output only)           |0 = Legal point size <br /> 1 = Illegal point size     |
 
 
-## Example Header Format
-
-To implement the 32-point size FFT of 'cint16' datatype, the format of
-the header that should be preceded to the input data window should be as
-shown.
-
-<img src="./Images/ocm1648642213724.png" width="400"> 
-
-## Example (Input to Dynamic Point FFT)
-
-To implement the FFT of different sizes, say, 64, 32 and 128, of type
-cint32, the format of the input should be as follows.
-
-``` pre
-complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
-```
-
 ## Parameters
 
 ### Main  
@@ -93,7 +76,25 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ### Examples
+
+##### Example Design
 For an example using the FFT block where the output is compared with the MATLAB FFT function click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/Dynamic_FFT).
+
+##### Example of Header Format
+To implement the 32-point size FFT of 'cint16' datatype, the format of
+the header that should be prepended to the input data window is as follows:
+
+<img src="./Images/ocm1648642213724.png" width="400"> 
+
+##### Example input to Dynamic Point FFT
+To implement the FFT of different sizes, say, 64, 32 and 128, of type
+cint32, the format of the input should be as follows.
+
+``` pre
+complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
+```
+
+In the above expression, the _ones(1,X)_ is simply a substitute for the data which we are taking the FFT of.
 
 ### References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
