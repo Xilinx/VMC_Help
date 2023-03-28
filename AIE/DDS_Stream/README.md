@@ -20,7 +20,11 @@ Sets the output data type.
 
 #### Output Window Size (Number of Samples)
 
-Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32. Note that for SSR values greater than one, this value is to sum of the sizes of all the outputs.
+Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32. Note that for SSR values greater than one, this value is to sum of the sizes of all the outputs. 
+
+<div class="noteBox">
+To increase output throughput, you should increase the Output Window Size.
+</div>
 
 #### Number of Parallel Outputs (SSR)
 
@@ -29,9 +33,8 @@ This parameter specifies the number of output ports and must be of the form 2^N,
 #### Phase Increment
 
 Specifies the phase increment between samples. The value must be in
-  the range 0 to 2^31 and the default value is 0. Input value
-  2^31 corresponds to pi (i.e., 180). Phase increment is calculated
-  using the formula (Fo\*(2^N)) / Fs where:
+  the range 0 to 2^31 and the default value is 0. Phase increment is calculated
+  using the formula (Fo\*(2^N)) / Fs / SSR where:
   - Fo = Output frequency.
   - N = 32, which represents the accumulator width, and it is fixed.
   - Fs = Sampling frequency.
@@ -47,7 +50,7 @@ Specifies the initial phase offset. The default value is 0.
 Specifies the sample time for the block output port. The default value is -1 which will result in inheriting the sample time.
 
 ### Examples
-Assume you need the DDS to gnerate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
+Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
 * Output data type: cint16
 * Output Window size: 32
 * SSR: 1
@@ -55,5 +58,12 @@ Assume you need the DDS to gnerate a frequnecy of 250 MHz at 1Gsps. Here is how 
 * Initial Phase Offset = 0
 * Sample time = 1e9*32  (This is becasue the output window has 32 samples)
 
+We can use SSR to achieve freqencies larger than 1GHz. For example, assume you need to generate a freqency of 3GHz using 8 outputs. Here is how you set the parameters:
+* Output data type: cint16
+* Output Window Size: 1024
+* SSR: 8
+* Phase increment: 3*2^29 = 3e9*2^32/1e9/8
+* Initial Phase Offset = 0
+* Sample time = 1e9*(Output Window Size)/SSR = 1e9*128  (This is becasue the function produces 8 samples per output at each invocation for a total of 64 samples = Output Window Size)
 
 
