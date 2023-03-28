@@ -10,7 +10,7 @@ AI Engine/DSP/Buffer IO
 ## Description
 
 This block implements the Direct Digital Synthesizer (DDS) targeted for
-AI Engines that uses buffer interface.
+AI Engines and uses buffer interface.
 
 ## Parameters
 
@@ -49,7 +49,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ### Realted blocks
-[DDS Stream](../DDS_Stream/README.md) is another DDS block that uses stream interface instead of buffer interface.
+[DDS Stream](../DDS_Stream/README.md) is another DDS block that uses stream interface instead of buffer interface and is also SSR capable.
 
 ### References
 This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
