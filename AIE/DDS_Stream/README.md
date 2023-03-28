@@ -20,7 +20,7 @@ Sets the output data type.
 
 #### Output Window Size (Number of Samples)
 
-Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32. Note that for SSR values greater than one, this value is to sum of the sizes of all the outputs. 
+Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32. Note that for SSR values greater than one, this value is the sum of the sizes of all the outputs. 
 
 <div class="noteBox">
 To increase output throughput, you should increase the Output Window Size.
