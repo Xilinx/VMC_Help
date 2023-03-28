@@ -5,28 +5,29 @@
 
 ## Library
 
-AI Engine/DSP/Window IO
+AI Engine/DSP/Buffer IO
 
 ## Description
 
 This block implements the Direct Digital Synthesizer (DDS) targeted for
-AI Engines.
+AI Engines that uses buffer interface.
 
 ## Parameters
 
 ### Main  
 #### Output data type  
-Describes the types of individual data samples output of the DDS
-function. The supported data types are cint16 and cfloat.
+Sets the output data type.
 
 #### Output window size (Number of samples)  
-Specifies the number of samples in output window. The value must be in
-the range 8 to 1024 and the default value is 32`.
+Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32.
+
+<div class="noteBox">
+To increase output throughput, you should increase the Output Window Size.
+</div>
 
 #### Phase increment  
 Specifies the phase increment between samples. The value must be in the
-range 0 to 2^31 and the default value is 0. Input value 2^31
-corresponds to Pi (i.e., 180).
+range 0 to 2^31 and the default value is 0.
 
   Phase increment is calculated using the formula (Fo\*(2^N)) / Fs
 
@@ -35,12 +36,20 @@ corresponds to Pi (i.e., 180).
   - N = 32, which represents the accumulator width, and it is fixed
   - Fs = Sampling frequency
 
-#### Sample time  
-Specifies the sample time for the block output port. The default value
-is -1.
+For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the Phase Increment should be in 2^32/10.
 
-### Advanced  
-#### Target output throughput (MSPS)  
-Specifies the output sampling rate of the DDS function in Mega Samples
-per Second (MSPS). The value must be in the range 1 to 1000 and the
-default value is 200.
+#### Sample time  
+Specifies the sample time for the block output port. The default value is -1 which will result in inheriting the sample time.
+
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
+
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+### Realted blocks
+[DDS Stream](../DDS_Stream/README.md) is another DDS block that uses stream interface instead of buffer interface.
+
+### References
+This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
