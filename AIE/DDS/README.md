@@ -36,7 +36,7 @@ range 0 to 2^31 and the default value is 0.
   - N = 32, which represents the accumulator width, and it is fixed
   - Fs = Sampling frequency
 
-For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the Phase Increment should be in 2^32/10.
+For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the Phase Increment should be 2^32/10.
 
 #### Sample time  
 Specifies the sample time for the block output port. The default value is -1 which will result in inheriting the sample time.
