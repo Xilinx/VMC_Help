@@ -28,7 +28,7 @@ is described below.
   data samples. As a result, the overheads incurred during kernel
   triggering are reduced and overall performance is increased
 
-
+<img src="./Images/dds_ssr_design.png" width="600">
 ![](./Images/iiu1648641803037.png)
 
 | Index      | Field Name          | Description  |
