@@ -67,6 +67,7 @@ We can use SSR to achieve freqencies larger than 1GHz. For example, assume you n
 * Initial Phase Offset = 0
 * Sample time = 1e9*(Output Window Size)/SSR = 1e9*128
 
+<img src="./Images/dds_ssr_design.png" width="600">
 <img src="./Images/dds_ssr.png" width="400">
 <img src="./Images/dds_ssr_out.png" width="400">
 
