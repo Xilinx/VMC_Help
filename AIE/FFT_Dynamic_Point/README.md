@@ -80,7 +80,7 @@ Specifies the number of samples in the input window excluding the
 
 #### Scale Output down by 2^
 
-Describes the power of 2 shift down applied to the accumulation of FIR terms before output. It must be in the range 0 to 61.
+Describes the power of 2 shift down applied to output. It must be in the range 0 to 61.
 
 
 #### Number of cascade stages  
@@ -95,7 +95,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ### Examples
-For an example using the FFT block where the output is compared with the DSP System toolbox FFT block click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/Dynamic_FFT).
+For an example using the FFT block where the output is compared with the MATLAB FFT function click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/Dynamic_FFT).
 
 ### References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
