@@ -78,5 +78,8 @@ We can use SSR to achieve freqencies larger than 1GHz. For example, assume you n
 <img src="./Images/dds_ssr.png" width="400">
 <img src="./Images/dds_ssr_out.png" width="400">
 
+### Related blocks
+[DDS](../DDS/README.md) is another DDS block that uses buffer interface instead of stream interface.
+
 ### References
 This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
