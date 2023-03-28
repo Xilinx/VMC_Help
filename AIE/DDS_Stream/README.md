@@ -39,7 +39,7 @@ Specifies the phase increment between samples. The value must be in
   - N = 32, which represents the accumulator width, and it is fixed.
   - Fs = Sampling frequency.
 
-For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the _Phase Increment_ should be in 2^32/10.  
+For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the _Phase Increment_ should be 2^32/10.  
 
 #### Initial Phase Offset
 
