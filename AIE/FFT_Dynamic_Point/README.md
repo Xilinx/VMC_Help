@@ -32,72 +32,12 @@ is described below.
 ![](./Images/iiu1648641803037.png)
 
 | Index      | Field Name          | Description  |
-| ------------- |:-------------:| -----:|
-| 1     | Direction |0 = Inverse FFT 1= Forward FFT |
+| :------------- |:-------------| :-----|
+| 1     | Direction |0 = Inverse FFT <br /> 1= Forward FFT |
 | 2      |Point size (radix 2 stages)     |Point size described as power of 2. For example, value '5' describes a point size of '32' |
 | 3 |Reserved     |   Reserved |
-| 4 |Status (output only)           |* 0 = Legal point size * 1 = Illegal point size     |
+| 4 |Status (output only)           |0 = Legal point size <br /> 1 = Illegal point size     |
 
-
-<table 
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead class="thead" style="text-align:left;">
-<tr class="header row">
-<th id="d136037e92" class="entry cellrowborder"
-style="vertical-align: top">Index</th>
-<th id="d136037e95" class="entry cellrowborder"
-style="vertical-align: top">Field Name</th>
-<th id="d136037e98" class="entry cellrowborder"
-style="vertical-align: top">Description</th>
-</tr>
-</thead>
-<tbody class="tbody">
-<tr class="odd row">
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e92 ">1</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e95 ">Direction</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e98 "><ul>
-<li>0 = Inverse FFT</li>
-<li>1= Forward FFT</li>
-</ul></td>
-</tr>
-<tr class="even row">
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e92 ">2</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e95 ">Point size (radix 2 stages)</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e98 ">Point size described as power of 2. For example,
-value '<code class="ph codeph">5</code>' describes a point size of
-'<code class="ph codeph">32'</code></td>
-</tr>
-<tr class="odd row">
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e92 ">3</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e95 ">Reserved</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e98 ">Reserved</td>
-</tr>
-<tr class="even row">
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e92 ">4</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e95 ">Status (output only)</td>
-<td class="entry cellrowborder" style="vertical-align: top"
-headers="d136037e98 "><ul>
-<li>0 = Legal point size</li>
-<li>1 = Illegal point size</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
 
 ## Example Header Format
 
