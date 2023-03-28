@@ -53,7 +53,6 @@ Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how
 * Output data type: cint16
 * Output Window size: 32
 * Phase increment: 2^30 = 250e6*2^32/1e9
-* Initial Phase Offset = 0
 * Sample time = 1e9*(Output Window Size)=1e9*32
 
 ### Related blocks
