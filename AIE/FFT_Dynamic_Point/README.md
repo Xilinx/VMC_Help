@@ -96,5 +96,9 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 
 In the above expression, the _ones(1,X)_ is simply a substitute for the data which we are taking the FFT of.
 
+### Related blocks
+[FFT](../FFT/README.md) is another FFT block that uses buffer interface.
+[FFT Stream](../FFT_Stream/README.md) is another FFT block that uses stream interface instead of buffer interface and is also SSR capable.
+
 ### References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
