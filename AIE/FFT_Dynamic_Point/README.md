@@ -17,7 +17,7 @@ is described below.
 
 **Note**:
 
-- Every input frame must be appended by a header.
+- Every input frame must be prepended by a header.
 - If the FFT size (N) is smaller than the frame size, the block takes
   the N point FFT of the first N samples in the input frame, and
   discards the rest of the samples in the frame.
