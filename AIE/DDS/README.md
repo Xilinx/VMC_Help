@@ -22,7 +22,7 @@ Sets the output data type.
 Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32.
 
 <div class="noteBox">
-To increase output throughput, you should increase the Output Window Size.
+Increasing the number of samples per frame increases the output throughput.
 </div>
 
 #### Phase increment  
