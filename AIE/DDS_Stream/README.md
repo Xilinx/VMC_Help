@@ -18,12 +18,12 @@ targeted for AI Engines and uses stream interface.
 
 Sets the output data type.
 
-#### Output Window Size (Number of Samples)
+#### Samples per frame
 
 Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32. Note that for SSR values greater than one, this value is the sum of the sizes of all the outputs. 
 
 <div class="noteBox">
-To increase output throughput, you should increase the Output Window Size.
+Increasing the number of samples per frame increases the output throughput.
 </div>
 
 #### Number of Parallel Outputs (SSR)
@@ -39,7 +39,7 @@ Specifies the phase increment between samples. The value must be in
   - N = 32, which represents the accumulator width, and it is fixed.
   - Fs = Sampling frequency.
 
-For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the _Phase Increment_ should be 2^32/10.  
+For example, for a sampling frequency of 1 Gsps, output frequency of 100 MHz, and SSR of 4, the _Phase Increment_ should be 2^30/10.  
 
 #### Initial Phase Offset
 
@@ -59,7 +59,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 ### Examples
 Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
 * Output data type: cint16
-* Output Window size: 32
+* Samples per frame: 32
 * SSR: 1
 * Phase increment: 2^30 = 250e6*2^32/1e9
 * Initial Phase Offset = 0
@@ -68,11 +68,11 @@ Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how
 
 We can use SSR to achieve freqencies larger than 1GHz. For example, assume you need to generate a freqency of 3GHz using 8 outputs. Here is how you set the parameters:
 * Output data type: cint16
-* Output Window Size: 1024
+* Samples per frame: 1024
 * SSR: 8
 * Phase increment: 3\*2^29 = (3e9)\*2^32/1e9/SSR
 * Initial Phase Offset = 0
-* Sample time = (1e-9)*(Output Window Size)/SSR = (1e-9)*128
+* Sample time = 1e-9
 
 <img src="./Images/dds_ssr_design.png" width="600">
 <img src="./Images/dds_ssr.png" width="400">
