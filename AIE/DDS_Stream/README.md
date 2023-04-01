@@ -56,7 +56,7 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-### Examples
+## Examples
 Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
 * Output data type: cint16
 * Samples per frame: 32
@@ -78,8 +78,8 @@ We can use SSR to achieve freqencies larger than 1GHz. For example, assume you n
 <img src="./Images/dds_ssr.png" width="400">
 <img src="./Images/dds_ssr_out.png" width="400">
 
-### Related blocks
+## Related blocks
 [DDS](../DDS/README.md) is another DDS block that uses buffer interface instead of stream interface.
 
-### References
+## References
 This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
