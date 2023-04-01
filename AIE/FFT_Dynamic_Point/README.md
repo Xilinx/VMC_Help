@@ -75,18 +75,18 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-### Examples
+## Examples
 
-##### Example Design
+### Example Design
 For an example using the FFT block where the output is compared with the MATLAB FFT function click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/Dynamic_FFT).
 
-##### Example of Header Format
+### Example of Header Format
 To implement the 32-point size FFT of 'cint16' datatype, the format of
 the header that should be prepended to the input data window is as follows:
 
 <img src="./Images/ocm1648642213724.png" width="400"> 
 
-##### Example input to Dynamic Point FFT
+### Example input to Dynamic Point FFT
 To implement the FFT of different sizes, say, 64, 32 and 128, of type
 cint32, the format of the input should be as follows.
 
@@ -96,10 +96,10 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 
 The terms "ones(1,X)" in the expression above are just replacements for the data that we are applying the FFT to.
 
-### Related blocks
+## Related blocks
 [FFT](../FFT/README.md) is another FFT block that uses buffer interface.
 
 [FFT Stream](../FFT_Stream/README.md) is another FFT block that uses stream interface instead of buffer interface and is also SSR capable.
 
-### References
+## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
