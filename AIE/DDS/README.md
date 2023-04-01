@@ -18,7 +18,7 @@ AI Engines and uses buffer interface.
 #### Output data type  
 Sets the output data type.
 
-#### Output window size (Number of samples)  
+#### Samples per frame  
 Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32.
 
 <div class="noteBox">
@@ -51,9 +51,9 @@ If you are using non-default constraints for any of the kernels for the block, a
 ### Example
 Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
 * Output data type: cint16
-* Output Window size: 1024
+* Samples per frame : 1024
 * Phase increment: 2^30 = 250e6*2^32/1e9
-* Sample time = (1e-9)*(Output Window Size)=(1e-9)*1024
+* Sample time = 1e-9
 
 <img src="./Images/dds.png" width="400">
 <img src="./Images/dds_out.png" width="400">
