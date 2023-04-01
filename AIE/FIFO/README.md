@@ -23,4 +23,4 @@ combination of the two.
 Should be a positive integer value and the default value is 0.
 
 ## References
-To learn more about FIFO and different type of FIFOs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/FIFO-Depth).
+To learn more about FIFO and different types of FIFOs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/FIFO-Depth).
