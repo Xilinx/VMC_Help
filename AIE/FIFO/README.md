@@ -22,5 +22,5 @@ combination of the two.
 #### FIFO Depth (32-bit words)  
 Should be a positive integer value and the default value is 0.
 
-### References
+## References
 To learn more about FIFO and different type of FIFOs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/FIFO-Depth).
