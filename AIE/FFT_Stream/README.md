@@ -77,7 +77,7 @@ The amplitude for the input sinusoidal is set to 2^15. For the FFT Stream block 
 
 And the FFT block data types are set as shown below:
 
-![](./Images/fft_mask.png)
+<img src="./Images/fft_mask.png" width="800">
 
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
