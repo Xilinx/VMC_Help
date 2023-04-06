@@ -17,33 +17,25 @@ a positive integer.
 ## Parameters
 
 ### Main  
-#### Input Data Type/Output Data Type
+#### Input/Output Data Type
+Set the input/output data type.
 
-Describes the type of individual data samples input/output of the
-  stream FFT. It can be cint16, cint32, cfloat types.
+#### Point Size
+This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 4 to 16 inclusive.
 
-#### FFT Size
-
-This is an unsigned integer which describes the point size of the
-  transformation. This must be 2^N, where N is in the range 4 to 11
-  inclusive.
-
-#### Input Frame Size (Number of Samples)
-
-Specifies the number of samples for a particular frame. The value must
-  be in the range 8 to 1024 and the default value is 64. The FFT
-  operation will not begin until this number of samples has been input.
+#### Input Window Size (Number of Samples)
+Describes the total number of samples used as an input to the FFT block on all the ports. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^16, inclusive. 
 
 #### Scale Output Down by 2^
 
 Describes the power of 2 shift down applied before output. The
   following table shows the range of valid values of this parameter for
-  different data types.
+  different data types:
   
   | Data Type | Scale output down by 2^    |
   |-----------|----------------------------|
-  | cint16    | \[0, log2(FFT Size) + 15\] |
-  | cint32    | \[0, log2(FFT Size) + 31\] |
+  | cint16    | \[0, 60\] |
+  | cint32    | \[0, 60\] |
   | cfloat    | 0                          |
 
 
@@ -58,19 +50,9 @@ This parameter is intended to improve performance and support FFT
   point size 2048. The specified FFT size and SSR values should be such
   that (2 \* FFT size / SSR) is in the range of 16 and 4096.
 
-### Advanced  
-#### Target Output Throughput (MSPS)
+####  Number of Cascade Stages
 
-Specifies the output sampling rate of the FFT function in Mega Samples
-  per Second (MSPS). The value must be in the range 1 to 1000 and
-  the default value is 200.
+This determines the number of kernels the FFT will be divided over in series to improve throughput.
 
-#### Specify the Number of Cascade Stages
-
-When this option is not enabled, the tool will determine the FFT
-  configuration that best achieves the specified input sampling rate.
-  When the option is enabled, the Number of cascade stages can be
-  specified (which describes the number of AI Engine processors to split
-  the operation over). This allows resources to be traded for higher
-  performance, but the specified input sampling rate constraint may not
-  be achieved. The value must be in the range of 1 to 9.
+## References
+This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
