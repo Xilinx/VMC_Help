@@ -43,7 +43,7 @@ This parameter is intended to improve performance and support FFT
 
 ####  Number of Cascade Stages
 
-This determines the number of kernels the FFT will be divided over in series to improve throughput.
+This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
