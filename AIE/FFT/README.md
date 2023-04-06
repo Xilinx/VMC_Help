@@ -22,7 +22,7 @@ transformation. This must be 2^N, where N is in the range 4 to 12
 inclusive.
 
 #### Input Window Size(Number of Samples)  
-Describes the number of samples used as an input to the FFT. This parameter may be set to be an integer multiple of the FFT size, in which case multiple FFT iterations will be performed on a given input window, resulting in multiple iterations of output samples, reducing the number of times the kernel needs to be triggered to process a given number of input data samples. As a result, the overheads inferred during kernel triggering are reduced and overall performance is increased.
+Describes the number of samples used as an input to the FFT. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^12, inclusive.
 
 #### Scale output down by 2^  
 Describes the power of 2 to scale the result by prior to output.
