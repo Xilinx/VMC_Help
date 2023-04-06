@@ -38,11 +38,9 @@ This parameter is intended to improve performance and support FFT
   FFT operation is performed in parallel and the actual FFT size is
   divided by 'n'. For example, a 16384 point FFT with SSR value of 8
   creates 8 stream inputs and there will be 8 subframe FFTs each of
-  point size 2048. The specified FFT size and SSR values should be such
-  that (2 \* FFT size / SSR) is in the range of 16 and 4096.
+  point size 2048.
 
 ####  Number of Cascade Stages
-
 This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
 ## References
