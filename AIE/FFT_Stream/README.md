@@ -54,6 +54,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 ## Example
 Below is an example of using the FFT Stream block. We are comparing the results with the FFT block from MathWorks DSP System toolbox and the results match, except for quantization errors. 
 
+![](../Images/fft_stream_design.png)
 Here is how the design is setup:
 
 The MATLAB function block simply passes the input data to the outputs in a round robin way and the code is depicted below:
