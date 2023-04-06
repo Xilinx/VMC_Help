@@ -27,16 +27,7 @@ This is an unsigned integer which describes the point size of the transformation
 Describes the total number of samples used as an input to the FFT block on all the ports. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^16, inclusive. 
 
 #### Scale Output Down by 2^
-
-Describes the power of 2 shift down applied before output. The
-  following table shows the range of valid values of this parameter for
-  different data types:
-  
-  | Data Type | Scale output down by 2^    |
-  |-----------|----------------------------|
-  | cint16    | \[0, 60\] |
-  | cint32    | \[0, 60\] |
-  | cfloat    | 0                          |
+Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
 
 #### SSR
