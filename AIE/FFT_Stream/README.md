@@ -43,5 +43,37 @@ This parameter is intended to improve performance and support FFT
 ####  Number of Cascade Stages
 This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
+
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
+
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+## Example
+Below is an example of using the FFT Stream block. We are comparing the results with the FFT block from MathWorks DSP System toolbox and the results match, except for quantization errors. 
+
+Here is how the design is setup:
+
+The MATLAB function block simply passes the input data to the outputs in a round robin way and the code is depicted below:
+
+```
+function [y1, y2] = fcn(u)
+y1 = u(1:2:end);
+y2 = u(2:2:end);
+```
+The amplitude for the input sinusoidal is set to 2^15. For the FFT Stream block the parameters are set as in the table below:
+
+|Parameter| value|
+|---------|------|
+|Data type| cint32|
+|Point Size| 64|
+|Input window size| 64|
+|Scale output down by 2^| 6|
+|SSR|2|
+|Number of cascade stages| 1|
+
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
+
