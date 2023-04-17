@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -28,21 +28,17 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">HLS Kernel</h1>
 </header>
-<section id="hls-kernel" class="level1">
-<h1>HLS Kernel</h1>
+<h1 id="hls-kernel">HLS Kernel</h1>
 <p>This block lets you import an HLS kernel code with a streaming
 interface.</p>
 <p><img src="data:image/png;base64,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" /></p>
-<section id="library" class="level2">
-<h2>Library</h2>
+<h2 id="library">Library</h2>
 <p>HLS/User-Defined Functions</p>
-</section>
-<section id="description" class="level2">
-<h2>Description</h2>
+<h2 id="description">Description</h2>
 <p>The HLS Kernel block allows you to import an HLS kernel, which is a
 proper HLS IP (an IP with interface specification using HLS pragmas).
-The primary use of this block is to co-simulate AI Engine domain with
-HLS.</p>
+The primary use of this block is to co-simulate the AI Engine domain
+with HLS kernels.</p>
 <p><strong>Note</strong>: This block does not participate in HLS code
 generation and should not be part of the HLS subsystem in a design.</p>
 <p><strong>Note</strong>: Use this block to connect with AI Engine
@@ -54,36 +50,26 @@ vector types. For example the following is a valid HLS function
 signature:</p>
 <pre class="pre"><code>void func(hls::stream&lt;unsigned int&gt; &amp;in, const ap_uint&lt;8&gt; (&amp;param_in)[32], hls::stream&lt;unsigned int&gt; &amp;out, ap_uint&lt;8&gt; param_out);</code></pre>
 <p>For stream inputs and outputs, this block accepts variable size
-signals and produces variable size outputs. For stream inputs and
-outputs, the data width can only be 32, 64, or 128 bit wide.</p>
-</section>
-<section id="parameters" class="level2">
-<h2>Parameters</h2>
-<section id="kernel-header-file" class="level4">
-<h4>Kernel header file</h4>
+signals and produces variable size outputs.</p>
+<h2 id="parameters">Parameters</h2>
+<h4 id="kernel-header-file">Kernel header file</h4>
 <p>String, Mandatory</p>
 <p>The name of the HLS kernel header file that contains the function
 declaration. The string could be just the file name, a relative path to
 the file or an absolute path of the file. Use the browse button to
 select the file.</p>
-</section>
-<section id="kernel-function" class="level4">
-<h4>Kernel function</h4>
+<h4 id="kernel-function">Kernel function</h4>
 <p>String, Mandatory</p>
-<p>The name of the kernel function in C/C++ for which HLS Kernel block
-is to be created.</p>
-</section>
-<section id="kernel-source-file" class="level4">
-<h4>Kernel source file</h4>
+<p>The name of the kernel function in C/C++ for which the HLS Kernel
+block is to be created.</p>
+<h4 id="kernel-source-file">Kernel source file</h4>
 <p>String, optional</p>
 <p>The name of the source file that contains the kernel function
 implementation (definition). The string could be just the file name, a
 relative path to the file or the absolute path of the file.</p>
 <p>You can specify both the declaration and the definition of the
 function in the header file and leave this field empty.</p>
-</section>
-<section id="kernel-search-paths" class="level4">
-<h4>Kernel search paths</h4>
+<h4 id="kernel-search-paths">Kernel search paths</h4>
 <p>Vector of Strings, Optional</p>
 <p>If the kernel header file or the kernel source file is not found
 using the value provided through the &#39;Kernel header file&#39; or &#39;Kernel
@@ -92,9 +78,7 @@ source file&#39; fields respectively, then the paths provided through
 <p>This parameter allows use of environment variables while specifying
 paths for the kernel header file and the kernel source file. The
 environment variable can be used in either ${ENV} or $ENV format.</p>
-</section>
-<section id="preprocessor-options" class="level4">
-<h4>Preprocessor Options</h4>
+<h4 id="preprocessor-options">Preprocessor Options</h4>
 <p>Optional</p>
 <p>Optional preprocessor arguments for downstream compilation with
 specific preprocessor options.</p>
@@ -102,8 +86,86 @@ specific preprocessor options.</p>
 multiple can be selected. -Dname and -Dname=definition. That is, the
 optional argument must begin with the -D string and if the option
 definition value is not provided, it is assumed to be 1.</p>
-</section>
-</section>
-</section>
+<h2 id="supported-data-types">Supported Data Types</h2>
+<p>Please see the following table for a detailed list of supported data
+types for inputs and outputs.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Detail</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Scalar Types</strong></td>
+<td>Scalar of C/C++ Primitive (except double, bool)</td>
+<td><code>short</code>, <code>int8</code>, <code>int32</code>,
+<code>int64</code>, <code>int&amp;</code>, <code>float&amp;</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>AP Integer: ap_int/ap_uint<X>, 1 &lt;= X &lt;= 128</td>
+<td><code>ap_int&lt;32&gt;</code>, <code>ap_uint&lt;96&gt;</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Predefined complex types: cint16/cint32/cfloat/etc</td>
+<td><code>cint16</code>, <code>cfloat</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>std::complex with C/C++ primitive (except double, bool)</td>
+<td><code>std::complex&lt;int32&gt;</code>,
+<code>std::complex&lt;float&gt;</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>std::complex ap_int/ap_uint<X>, 1 &lt;= X &lt;= 64</td>
+<td><code>std::complex&lt;ap_int&lt;32&gt; &gt;</code>,
+<code>std::complex&lt;ap_uint&lt;64&gt; &gt;</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>AP AXI: ap_axis/ap_axiu, data width is 32/64/128</td>
+<td><code>ap_axis&lt;32, 0, 0, 0&gt;</code>,
+<code>ap_axiu&lt;64, 0, 0, 0&gt;</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>AXI Stream with ap_int/ap_uint, data width is 32/64/128</td>
+<td><code>hls::axis&lt;ap_int&lt;32&gt;, 0, 0, 0&gt;</code>,
+<code>hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt;</code></td>
+</tr>
+<tr class="even">
+<td><strong>Vector Types</strong></td>
+<td>Constant size array of any above Scalar Types. Must be passed by
+reference.</td>
+<td><code>int32 &amp;(arg[10])</code>,
+<code>std::complex&lt;ap_uint&lt;32&gt;&gt; &amp;(arg[20])</code>,
+<code>hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt; (&amp;arg)[30]</code></td>
+</tr>
+<tr class="odd">
+<td><strong>hls::stream</strong></td>
+<td>hls::stream with any of above Scalar Types. Must be passed by
+reference.</td>
+<td><code>hls::stream&lt;uint32&gt; &amp;arg</code>,
+<code>hls::stream&lt;std::complex&lt;float&gt; &gt; &amp;arg</code>,
+<code>hls::stream&lt;ap_axis&lt;32&gt; &gt; &amp;arg</code>,
+<code>hls::stream&lt;ap_int&lt;128&gt; &gt; &amp;arg</code>,
+<code>hls::stream&lt;std::complex&lt;ap_int&lt;16&gt; &gt; &amp;arg</code>,
+<code>hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt; &gt; &amp;arg</code></td>
+</tr>
+<tr class="even">
+<td><strong>template</strong></td>
+<td>Any template that is deducted into above supported types</td>
+<td><code>hls::stream&lt;ap_int&lt;BITS&gt; &gt;</code>,
+<code>hls::stream&lt;ap_uint&lt;BITS&gt; &gt;</code>,
+<code>hls::stream&lt;ap_axis&lt;BITS, 0, 0, 0&gt; &gt;</code>,
+<code>hls::stream&lt;ap_axiu&lt;BITS, 0, 0, 0&gt; &gt;</code></td>
+</tr>
+</tbody>
+</table>
 </body>
 </html>

@@ -13,8 +13,8 @@ HLS/User-Defined Functions
 
 The HLS Kernel block allows you to import an HLS kernel, which is a
 proper HLS IP (an IP with interface specification using HLS pragmas).
-The primary use of this block is to co-simulate AI Engine domain with
-HLS.
+The primary use of this block is to co-simulate the AI Engine domain with
+HLS kernels.
 
 **Note**: This block does not participate in HLS code generation and should
 not be part of the HLS subsystem in a design.
@@ -34,8 +34,7 @@ void func(hls::stream<unsigned int> &in, const ap_uint<8> (&param_in)[32], hls::
 ```
 
 For stream inputs and outputs, this block accepts variable size signals
-and produces variable size outputs. For stream inputs and outputs, the
-data width can only be 32, 64, or 128 bit wide.
+and produces variable size outputs. 
 
 ## Parameters
 #### Kernel header file
@@ -46,8 +45,7 @@ The name of the HLS kernel header file that contains the function declaration. T
 #### Kernel function
 String, Mandatory
 
-The name of the kernel function in C/C++ for which HLS Kernel block is to be created.
-
+The name of the kernel function in C/C++ for which the HLS Kernel block is to be created.
 
 #### Kernel source file
 String, optional
@@ -70,7 +68,21 @@ Optional preprocessor arguments for downstream compilation with specific preproc
 
 The following two preprocessor option formats will be accepted and multiple can be selected. -Dname and -Dname=definition. That is, the optional argument must begin with the -D string and if the option definition value is not provided, it is assumed to be 1.
 
+## Supported Data Types
+Please see the following table for a detailed list of supported data types for inputs and outputs.
 
+| Type	    | Detail	| Examples |
+| ----      | ----      | -------- |
+| **Scalar Types** | Scalar of C/C++ Primitive (except double, bool) | 	`short`, `int8`, `int32`, `int64`, `int&`, `float&` |
+|               | AP Integer: ap_int/ap_uint<X>, 1 <= X <= 128 | `ap_int<32>`, `ap_uint<96>` |
+|               | Predefined complex types: cint16/cint32/cfloat/etc | `cint16`, `cfloat` |
+|               | std::complex with C/C++ primitive (except double, bool) | `std::complex<int32>`, `std::complex<float>` |
+|               | std::complex  ap_int/ap_uint<X>, 1 <= X <= 64	| `std::complex<ap_int<32> >`, `std::complex<ap_uint<64> >` |
+|               | AP AXI: ap_axis/ap_axiu, data width is 32/64/128 | `ap_axis<32, 0, 0, 0>`, `ap_axiu<64, 0, 0, 0>` |
+|               | AXI Stream with ap_int/ap_uint, data width is 32/64/128 | `hls::axis<ap_int<32>, 0, 0, 0>`, `hls::axis<ap_uint<128> 0, 0, 0>` |
+| **Vector Types** | Constant size array of any above Scalar Types. Must be passed by reference. | `int32 &(arg[10])`, `std::complex<ap_uint<32>> &(arg[20])`, `hls::axis<ap_uint<128> 0, 0, 0> (&arg)[30]` |
+| **hls::stream** | hls::stream with any of above Scalar Types. Must be passed by reference. | `hls::stream<uint32> &arg`, `hls::stream<std::complex<float> > &arg`, `hls::stream<ap_axis<32> > &arg`, `hls::stream<ap_int<128> > &arg`, `hls::stream<std::complex<ap_int<16> > &arg`, `hls::stream<hls::axis<ap_uint<128> 0, 0, 0> > &arg` |
+| **template**	| Any template that is deducted into above supported types | `hls::stream<ap_int<BITS> >`, `hls::stream<ap_uint<BITS> >`, `hls::stream<ap_axis<BITS, 0, 0, 0> >`, `hls::stream<ap_axiu<BITS, 0, 0, 0> >` |
 
 
 
