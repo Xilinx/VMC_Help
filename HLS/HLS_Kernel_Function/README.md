@@ -52,9 +52,7 @@ and produces variable size outputs.
 
 ## Parameters
 #### Kernel header file
-String, Mandatory
-
-The name of the HLS kernel header file that contains the function declaration. The string could be just the file name, a relative path to the file or an absolute path of the file. Use the browse button to select the file.
+The name of the HLS kernel header file that contains the function declaration. The string could be just the file name, a relative path to the file, or an absolute path of the file. Use the browse button to select the file.
 
 #### Kernel function
 The name of the kernel function in C/C++ for which the HLS Kernel block is to be created.
@@ -90,6 +88,7 @@ Please see the following table for a detailed list of supported data types for i
 | **hls::stream** | hls::stream with any of above Scalar Types. Must be passed by reference. | `hls::stream<uint32> &arg`, `hls::stream<std::complex<float> > &arg`, `hls::stream<ap_axis<32> > &arg`, `hls::stream<ap_int<128> > &arg`, `hls::stream<std::complex<ap_int<16> > &arg`, `hls::stream<hls::axis<ap_uint<128> 0, 0, 0> > &arg` |
 | **template**	| Any template that is deducted into above supported types | `hls::stream<ap_int<BITS> >`, `hls::stream<ap_uint<BITS> >`, `hls::stream<ap_axis<BITS, 0, 0, 0> >`, `hls::stream<ap_axiu<BITS, 0, 0, 0> >` |
 
+## Examples
 
 
 
