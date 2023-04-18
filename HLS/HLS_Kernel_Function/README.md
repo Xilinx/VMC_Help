@@ -86,7 +86,7 @@ Please see the following table for a detailed list of supported data types for i
 |               | std::complex  ap_int/ap_uint<X>, 1 <= X <= 64	| `std::complex<ap_int<32> >`, `std::complex<ap_uint<64> >` |
 |               | AP AXI: ap_axis/ap_axiu, data width is 32/64/128 | `ap_axis<32, 0, 0, 0>`, `ap_axiu<64, 0, 0, 0>` |
 |               | AXI Stream with ap_int/ap_uint, data width is 32/64/128 | `hls::axis<ap_int<32>, 0, 0, 0>`, `hls::axis<ap_uint<128> 0, 0, 0>` |
-| **Vector Types** | Constant size array of any above Scalar Types. Must be passed by reference. | `int32 &(arg[10])`, `std::complex<ap_uint<32>> &(arg[20])`, `hls::axis<ap_uint<128> 0, 0, 0> (&arg)[30]` |
+| **Vector Types** | Constant size array of any of the above Scalar Types. Must be passed by reference. | `int32 &(arg[10])`, `std::complex<ap_uint<32>> &(arg[20])`, `hls::axis<ap_uint<128> 0, 0, 0> (&arg)[30]` |
 | **hls::stream** | hls::stream with any of above Scalar Types. Must be passed by reference. | `hls::stream<uint32> &arg`, `hls::stream<std::complex<float> > &arg`, `hls::stream<ap_axis<32> > &arg`, `hls::stream<ap_int<128> > &arg`, `hls::stream<std::complex<ap_int<16> > &arg`, `hls::stream<hls::axis<ap_uint<128> 0, 0, 0> > &arg` |
 | **template**	| Any template that is deducted into above supported types | `hls::stream<ap_int<BITS> >`, `hls::stream<ap_uint<BITS> >`, `hls::stream<ap_axis<BITS, 0, 0, 0> >`, `hls::stream<ap_axiu<BITS, 0, 0, 0> >` |
 
