@@ -1,7 +1,6 @@
 # HLS Kernel
 
-This block lets you import an HLS kernel code with a streaming
-interface.
+This block lets you import an HLS kernel IP and simulate it in Vitis Model Composer. 
 
 ![](./Images/block.png)
 
@@ -13,13 +12,29 @@ HLS/User-Defined Functions
 
 The HLS Kernel block allows you to import an HLS kernel, which is a
 proper HLS IP (an IP with interface specification using HLS pragmas).
-The primary use of this block is to co-simulate the AI Engine domain with
+You can use this block to co-simulate the AI Engine domain with
 HLS kernels.
+
+The code below is an example of an HLS kernel that can be imported using the HLS kernel block. Note that the interface is specified using the #pragma notation. To learn more about the interface pragma in HLS click [here](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/pragma-HLS-interface).  
+
+```
+void polar_clip(hls::stream<ap_axis<32, 0, 0, 0> > &in_sample, hls::stream<ap_axis<32, 0, 0, 0> > &out_sample) {
+#pragma HLS INTERFACE ap_ctrl_none port=return
+#pragma HLS INTERFACE axis port=out_sample
+#pragma HLS INTERFACE axis port=in_sample
+
+  //std::cerr << "Waiting for a value" << "\n";
+  ap_cint16 sample;
+
+  ap_axis<32, 0, 0, 0> out_x;
+  ap_axis<32, 0, 0, 0> in_x = in_sample.read();
+  ...
+```
 
 **Note**: This block does not participate in HLS code generation and should
 not be part of the HLS subsystem in a design.
 
-**Note**: Use this block to connect with AI Engine blocks using the AIE to
+**Note**: Use this block to connect with AI Engine blocks using the ../AIE to
 HLS Kernel or HLS to AIE blocks and co-simulate a design with both AI
 Engines and PL components.
 
