@@ -74,7 +74,7 @@ Optional preprocessor arguments for downstream compilation with specific preproc
 
 The following two preprocessor option formats will be accepted and multiple can be selected. -Dname and -Dname=definition. That is, the optional argument must begin with the -D string and if the option definition value is not provided, it is assumed to be 1.
 
-## Supported Data Types
+## Supported function arguments
 Please see the following table for a detailed list of supported data types for inputs and outputs.
 
 | Type	    | Detail	| Examples |
