@@ -32,7 +32,7 @@ void polar_clip(hls::stream<ap_axis<32, 0, 0, 0> > &in_sample, hls::stream<ap_ax
 ```
 
 **Note**: This block does not participate in HLS code generation and should
-not be part of the HLS subsystem in a design.
+not be part of an HLS subsystem (a subsystem that comprises of other HLS blocks). 
 
 **Note**: Use this block to connect with AI Engine blocks using the [AIE to HLS](../../UTIL/AIE_to_HLS/README.md) or [HLS to AIE](../../UTIL/HLS_to_AIE/README.md) blocks and co-simulate a design with both AI
 Engines and PL components.
