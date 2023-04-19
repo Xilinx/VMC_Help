@@ -47,6 +47,9 @@ Select the subsystem name for which to generate code from the list on
 the left. Different settings will display depending on the type of code
 generation (HDL, HLS, or AI Engine) to be performed.
 
+#### Code direcotry
+The generated code will be saved in the specified code directory. In case the directory already exists, you will receive a notification. Utilizing the same code directory can have its advantages in certain situations. For instance, if you only modify the input data for an AI Engine design, but have already executed the AIE simulator for a previous input, the tool will skip the compilation phase and proceed directly to simulation, saving you time.
+
 #### AIE Settings  
 ##### AIE Compiler Options  
 When specified, the compiler options provide control over the AI Engine compiler. For a full list of compiler options refer to 
@@ -63,12 +66,14 @@ This option is only available if Create testbench is selected. When
 enabled, it runs the AIE simulation after code generation and verifies that for each output of the AI Engine Subsystem in the Simulink design, the output of AIE Simulation numerically matches the output of the Simulink design. 
 
 ##### Simulation timeout (cycles)  
-This determines the duration of the cycle-approximate AIE simulation in terms of the number of cycles. By default, it runs for 50000 cycles, after which it terminates. It's important to note that the number of cycles refers to the number of AI Engine clock cycles, which is not directly linked to the 'Stop Time' in your Simulink design. If the number of cycles is insufficient, the Simulink simulation may generate more output than the AIE Simulation, leading to a partial match between the Simulink output and the AI Engine simulator during verification after running the AIE Simulation. To address this issue, you can increase the Simulation timeout, which will result in more output from the AIE simulator. However, not all partial matches are necessarily due to this factor. The picture below shows part of the output log that indicates a partial match:
+This determines the run duration of the cycle-approximate AIE simulation in terms of the number of cycles. By default, it runs for 50000 cycles, after which it terminates. It's important to note that the number of cycles refers to the number of AI Engine clock cycles, which is not directly linked to the 'Stop Time' in your Simulink design. If the number of cycles is insufficient, the AIE Simulation may generate fewer samples than the Simulink simulation, leading to a partial match between the Simulink output and the AI Engine simulator during verification after running the AIE Simulation. To address this issue, you can increase the Simulation timeout, which will result in more output from the AIE simulator. However, not all partial matches are necessarily due to this factor. The picture below shows part of the output log that indicates a partial match:
 
 ![](./Images/partial_match.png) 
 
+If the Simulation timeout value is too small, the AIE Simulation may not produce any output at all. However, another reason for no output is a deadlock in the system. The deadlock will not manifest itself in Simulink simulation because Simulink simulation is a functional simulation.
+
 ##### Plot AIE Simulation Output and Estimate Throughput  
-When enabled, this option logs simulation data and allows visualization of the outputs of the AI Engine subsystem in the [Simulation Data Inspector](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html). The throughput for each output is also calculated. You can use the cursors in the Simulation Data Inspector to limit the range in which throughput is calculated. As you move the cursors, the throughput gets recalculated. See the screenshot below for an example of displaying the output of the AIE Simulation in the Simulation Data Inspector. 
+When enabled, this option allows visualization of the outputs of the AI Engine subsystem in the [Simulation Data Inspector](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html). The throughput for each output is also calculated. You can use the cursors in the Simulation Data Inspector to limit the range in which throughput is calculated. As you move the cursors, the throughput gets recalculated. See the screenshot below for an example of displaying the output of the AIE Simulation in the Simulation Data Inspector. 
 
 ![](./Images/sdi_output.png)
 
@@ -82,7 +87,7 @@ which can be viewed in the Vitis Analyzer.
 
 ##### Open Vitis Analyzer  
 Click to invoke the Vitis Analyzer tool. This option is only enabled
-after AI Engine Simulation has been ran at least once after enabling.
+after AI Engine Simulation has been run at least once after enabling. If you are running trace or profile, it is recommended to use '--xlopt=0' AIE compiler option. This will give a greater visibility into the design.
 
 #### AIE Hardware Flow  
 To generate the hardware image, specify the platform in the Target pane

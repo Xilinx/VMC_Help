@@ -17,34 +17,17 @@ a positive integer.
 ## Parameters
 
 ### Main  
-#### Input Data Type/Output Data Type
+#### Input/Output Data Type
+Set the input/output data type.
 
-Describes the type of individual data samples input/output of the
-  stream FFT. It can be cint16, cint32, cfloat types.
+#### Point Size (FFT Size)
+This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 4 to 16 inclusive.
 
-#### FFT Size
-
-This is an unsigned integer which describes the point size of the
-  transformation. This must be 2^N, where N is in the range 4 to 11
-  inclusive.
-
-#### Input Frame Size (Number of Samples)
-
-Specifies the number of samples for a particular frame. The value must
-  be in the range 8 to 1024 and the default value is 64. The FFT
-  operation will not begin until this number of samples has been input.
+#### Input Window Size (Number of Samples)
+Describes the total number of samples used as an input to the FFT block on all the ports. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^16, inclusive. 
 
 #### Scale Output Down by 2^
-
-Describes the power of 2 shift down applied before output. The
-  following table shows the range of valid values of this parameter for
-  different data types.
-  
-  | Data Type | Scale output down by 2^    |
-  |-----------|----------------------------|
-  | cint16    | \[0, log2(FFT Size) + 15\] |
-  | cint32    | \[0, log2(FFT Size) + 31\] |
-  | cfloat    | 0                          |
+Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
 
 #### SSR
@@ -55,22 +38,47 @@ This parameter is intended to improve performance and support FFT
   FFT operation is performed in parallel and the actual FFT size is
   divided by 'n'. For example, a 16384 point FFT with SSR value of 8
   creates 8 stream inputs and there will be 8 subframe FFTs each of
-  point size 2048. The specified FFT size and SSR values should be such
-  that (2 \* FFT size / SSR) is in the range of 16 and 4096.
+  point size 2048.
 
-### Advanced  
-#### Target Output Throughput (MSPS)
+####  Number of Cascade Stages
+This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
-Specifies the output sampling rate of the FFT function in Mega Samples
-  per Second (MSPS). The value must be in the range 1 to 1000 and
-  the default value is 200.
 
-#### Specify the Number of Cascade Stages
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
 
-When this option is not enabled, the tool will determine the FFT
-  configuration that best achieves the specified input sampling rate.
-  When the option is enabled, the Number of cascade stages can be
-  specified (which describes the number of AI Engine processors to split
-  the operation over). This allows resources to be traded for higher
-  performance, but the specified input sampling rate constraint may not
-  be achieved. The value must be in the range of 1 to 9.
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+## Example
+Below is an example of using the FFT Stream block. We are comparing the results with the FFT block from MathWorks DSP System toolbox and the results match, except for quantization errors. 
+
+![](./Images/fft_stream_design.png)
+Here is how the design is setup:
+
+The MATLAB function block simply passes the input data to the outputs in a round robin way and the code is depicted below:
+
+```
+function [y1, y2] = fcn(u)
+y1 = u(1:2:end);
+y2 = u(2:2:end);
+```
+The amplitude for the input sinusoidal is set to 2^15. For the FFT Stream block the parameters are set as in the table below:
+
+|Parameter| value|
+|---------|------|
+|Data type| cint32|
+|Point Size| 64|
+|Input window size| 64|
+|Scale output down by 2^| 6|
+|SSR|2|
+|Number of cascade stages| 1|
+
+And the FFT block data types are set as shown below:
+
+<img src="./Images/fft_mask.png" width="800">
+
+## References
+This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
+

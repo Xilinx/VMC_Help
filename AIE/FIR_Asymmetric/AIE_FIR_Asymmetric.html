@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -30,33 +30,29 @@ vertical-align: middle;
 </header>
 <section id="fir-asymmetric" class="level1">
 <h1>FIR Asymmetric</h1>
-<p>This block implements the Single Rate Asymmetric FIR Filter targeted
-for AI Engines.</p>
+<p>Single Rate Asymmetric FIR Filter for AI Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
-<p>AI Engine/DSP/Window IO</p>
+<p>AI Engine/DSP/Buffer IO</p>
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>This block implements the Single Rate Asymmetric FIR Filter targeted
-for AI Engines.</p>
+<p>Single Rate Asymmetric FIR Filter for AI Engines.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
 <section id="main" class="level3">
 <h3>Main</h3>
-<section id="input-data-typeoutput-data-type" class="level4">
-<h4>Input data type/Output data type</h4>
-<p>Describes the type of individual data samples input to and output
-from the filter function. int16, cint16, int32, cint32, float,
-cfloat.</p>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output data type</h4>
+<p>Set the data type of the block input and output. The data type of the
+input signal to the block must match this setting.</p>
 </section>
 <section id="filter-coefficients-data-type" class="level4">
 <h4>Filter coefficients data type</h4>
-<p>Describes the type of individual coefficients of the filter taps. It
-should be one of int16, cint16, int32, cint32, float, or cfloat and must
-also satisfy the following rules:</p>
+<p>Set the filter coefficients data type. This parameter&#39;s setting may
+be restricted based on the Input/Output data type. In particular,</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
 also complex.</li>
@@ -71,60 +67,68 @@ Input/Output data type is a float type.</li>
 <section id="specify-filter-coefficients-via-input-port" class="level4">
 <h4>Specify filter coefficients via input port</h4>
 <p>When this option is enabled, the tool allows you to specify
-reloadable filter coefficients via the input port.</p>
+reloadable filter coefficients via an input port.</p>
 </section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
-<p>This field should be specified with the asymmetric filter
-coefficients and must be in the range 4 to 240 inclusive.</p>
+<p>This field specifies the asymmetric filter coefficients. It could
+also be a MATLAB array variable defined in the workspace.</p>
+<div class="noteBox">
+  You can use the FDATool block to design the filter and use the coefficients directly in this field using the function _xlfda_numerator_. 
+See the example below for more information.
+</div>
+
 </section>
 <section id="input-window-size-number-of-samples" class="level4">
 <h4>Input window size (Number of samples)</h4>
 <p>Describes the number of samples used as an input to the filter
-function. The number of values in the output window will be equal to
-input window size also by virtue of the single rate nature of this
-function.</p>
+function. Because this is a single rate filter, the number of samples in
+the output window will match the size of the input window. This must be
+in the range of 4 to 8192 inclusive.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
-<p>Describes the power of 2 shift down applied to the accumulation of
-FIR terms before output. It must be in the range 0 to 61.</p>
+<p>Sets the power of 2 shift down applied to the accumulator of FIR
+before output. It must be in the range 0 to 61 inclusive.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Describes the selection of rounding to be applied during the shift
-down stage of processing. The rounding options are as follows:</p>
-<ol type="1">
-<li>Floor (truncate)</li>
-<li>Ceiling</li>
-<li>Round to positive infinity</li>
-<li>Round to negative Infinity</li>
-<li>Round symmetrical to Infinity</li>
-<li>Round symmetrical to zero</li>
-<li>Round convergent to even</li>
-<li>Round convergent to odd</li>
-</ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
+<p>Set the selection of rounding to be applied during the shift down
+stage of processing.</p>
+</section>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages</h4>
+<p>Determines the number of AI Engine processors to split the operation
+over. This allows AI Engine tiles to be traded for higher throughput.
+See the example below on how the number of cascade stages affect the
+throughput. The value must be in the range 1 to 9.</p>
 </section>
 </section>
-<section id="advanced" class="level3">
-<h3>Advanced</h3>
-<section id="target-input-throughput-msps" class="level4">
-<h4>Target input throughput (MSPS)</h4>
-<p>Specifies the rate at which data samples should be processed. The
-default value is 200.</p>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. If you set the &quot;Number of
+cascade stages&quot; parameter to a value greater than one, multiple kernels
+will be used to process the input. You can use the constraint manager to
+optimize the performance of your design by setting specific constraints
+for each kernel (in this case, you need to first run your design).
+Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
 </section>
-<section id="specify-the-number-of-cascade-stages" class="level4">
-<h4>Specify the number of cascade stages</h4>
-<p>When this option is not enabled, the tool will determine the filter
-configuration that best achieves the specified input sampling rate. When
-the option is enabled, the &#39;Number of cascade stages&#39; can be specified
-(which describes the number of AI Engine processors to split the
-operation over). However, this allows resource to be traded for higher
-performance and the specified input sampling rate constraint may not be
-achieved. The value must be in the range 1 to 9.</p>
+<section id="examples" class="level3">
+<h3>Examples</h3>
+<p><a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir">AI
+Engine FIR Assymetric</a></p>
 </section>
+<section id="references" class="level3">
+<h3>References</h3>
+<p>This block uses the Vitis DSP library implementation of a FIR filter.
+For more details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html">here</a>.</p>
 </section>
 </section>
 </section>
