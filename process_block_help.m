@@ -1,5 +1,7 @@
 % Use this m file to generate the help.zip file for the product right before shipping. 
-
+%
+% This file requires MATLAB R2022a or later.
+%
 % NOTE pandoc should be on your path for this function to work. Use "pandoc
 % --version" on a terminal or a Command Prompt in Windows to check. 
 

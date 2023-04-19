@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -33,12 +33,11 @@ vertical-align: middle;
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANYAAABhCAYAAACqLF/jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFt0lEQVR4nO3dT2yTdRzH8c+v6+YYuIBbi/yRMA0gYUDwz8GDURknPXgxcWpCgAQTJUYlbhf/JCbqZZFEDBw4CAkJ4eDJ6Il0ylGjWdRtMtEMQXB2QyfDrd3W/jyM4cbajbXP73n6tO/XbU+7p98d3umvff7MWGutAHgqEvQAQDmKzvegMcavOYBQyrfgmzcsSZr4cofnwwDloPqJrryPsRQEHCAswAHCAhwgLMABwgIcICzAAcICHFjwOBbmEa2T7n1FduxK0JN4L3lGJj0Q9BShRVjFqInLxnYFPYU7l04GPUFosRQsxugFmZ52KZMOehKUGMIq1nCXzLm3iQuzEJYXiAu3ICyvEBdmICwvERduICyvERdEWG4QV8UjLFeIq6IRlkvEVbEIyzXiqkiE5QfiqjiE5RfiqiiE5SfiqhiE5TfiqghcNhKE4S6ZnnbZ5Q+6e411u93tGwsirKCM9MqM9DrbvZWIK0AsBYNS1zR1BTLKEmEFwK54RHbHMdmml4MeBY6wFPSZjbVI9x2c+iH1Z7DDwBnC8tOqp2XW75eN1AQ9CRwjLL/c84Ls2uekyB1BTwIfRCRpaGhIHR0dGhwcDHqeMmRkm16SXdtKVGUoXzMRSTp+/Lja29u1c+dOJZNJXwcrbxHZDW9IK5+UIrVBDwMH8jUTkaQ9e/aoublZ3d3damlpIS4vmKjs5nekhsekKqIqV/maiUpSLBZTIpFQS0vLzScmEolABi0LkRrZze9L9Ztve/nXdzGlh/b3aXVj9c1tj25fprbWeM7tY6msvu0b1choRhOTVnfVR7WqoVpfHd7g+Z+D/Ga+ISUSCcXjcUkzvryIx+Nz4kIBqupkt3RIS9dLi/z274GNS3T2442ztvVdTOXcPu2TL67ql8tpffDi6kInRhFyvSHF4/HZB4in45quEItUXS+77bC0tGnRUSGcbm1melk458yLeDyu06dPBzFjqNmaBtntR6XaNVKkeuFfQNmY2Ux3d7cOHDgw9zhWMplUa2ur78OFWu3d0rbDUrReMlUF76br/Ji27P7/xNxnHl+h53etyLn93X2rihoZ3pnZTHNzs44cOTI7rGQyeXO9yHLwNtWtl916SKpaKpniTr3csSH3Z6xc21Eabm1mzmesXE/AApZtkt36kRRdVnRUCKdcUUk3vhUcHBzM+wTkcef9U9/+cYyqouVrJipJJ06cIKpFsssf9jSqTetqcy738m2ftu+pBs9mwOLlayYqSXv37pU0dQZGLBbzfzogpDo7O3M2E5WkxsZGtbW1+T4UEHb53oj4xA04QFiAA1zoGKR1u6fupuSV2pUy/UelyVEv94oCEFbQvL5F2eVPpckLMsPfya55Vqri4sogsBQsF5lxmZ/ekkYvTP080ssddwNEWGXAZNPSrx9Kf309+wFuZx0Ywgq7bFrqPyYz2Jn7ceIKBGGFWTYl8/spaeCz+Z9HXL4jrLDKpqSBz6VLp27v+cTlK8IKo0xaGjor039scb9HXL4hrLDJpKV/vpU5f0gq5CgYcfmCsMIkOy5zvVfm3HuSsoXvh7icI6ywyE5I//ZLvW9KdrL4/RGXU4QVBtlJKXVFpqd9KjCvEJczhFXqbEaaGJLpPihlHJwDSFxOEFYps1aavCb98Jo0cc3d6xCX5wirZFkpc13m+1dlxq+6fzni8hRhlarJMZkfX5fSf/j3mtNxSTJLuGV1MbhspBRlUjI9bdLob/6/9nCXTNd+aZz/OFMMwipU8oyzXZu/v5Gu/+xs/wuavvQEBSOsApn0gHTpZNBjoETxGQtwgLAABwgLcICwAAcIC3CAsAAHCAtwgLAABwgLcMBYa/PeOMEY4+csQOjky2feU5rmaQ7APFgKAg4QFuAAYQEOEBbgAGEBDhAW4ABhAQ4QFuAAYQEOEBbgAGEBDhAW4ABhAQ4QFuAAYQEOEBbgAGEBDvwHvVAkYBDS1zgAAAAASUVORK5CYII=" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
-<p>AI Engine/DSP/Window IO</p>
+<p>AI Engine/DSP/Buffer IO</p>
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>This block implements the FFT targeted for AI Engines which use
-rounding method and saturates the output samples on overflow.</p>
+<p>This block implements FFT targeted for AI Engines.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -46,23 +45,23 @@ rounding method and saturates the output samples on overflow.</p>
 <h3>Main</h3>
 <section id="inputoutput-data-type" class="level4">
 <h4>Input/Output data type</h4>
-<p>Describes the type of individual data samples input to and output
-from the filter function. Supported types are cint16, cint32, and
-cfloat.</p>
+<p>Set the input/output data type.</p>
 </section>
 <section id="fft-size" class="level4">
 <h4>FFT size</h4>
 <p>This is an unsigned integer which describes the point size of the
-transformation. This must be 2^N, where N is in the range 4 to 11
-inclusive. However, for cint16 datatype, the FFT size can be 2^12,
-provided the FFT receives and outputs data to/from kernels on the same
-processor.</p>
-<p><strong>Note</strong>: To understand more on achieving the 4096 point
-size FFT, refer to the AI Engine examples in <a href="https://github.com/Xilinx/Vitis_Model_Composer">GitHub</a>.</p>
+transformation. This must be 2^N, where N is in the range 4 to 12
+inclusive.</p>
 </section>
 <section id="input-window-sizenumber-of-samples" class="level4">
 <h4>Input Window Size(Number of Samples)</h4>
-<p>Describes the number of samples used as an input to the FFT.</p>
+<p>Describes the number of samples used as an input to the FFT. This
+parameter should be an integer multiple of the <em>Point Size</em>, in
+which case multiple FFT iterations will be performed on a given input
+window. This reduces the number of times the kernel needs to be
+triggered and as a result the overhead incurred due to triggering the
+kernel is reduced and overall throughput increases. This parameter must
+be in the range of 2^4 and 2^12, inclusive.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
@@ -74,6 +73,32 @@ size FFT, refer to the AI Engine examples in <a href="https://github.com/Xilinx/
 series to improve throughput.</p>
 </section>
 </section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. If you set the &quot;Number of
+cascade stages&quot; parameter to a value greater than one, multiple kernels
+will be used to process the input. You can use the constraint manager to
+optimize the performance of your design by setting specific constraints
+for each kernel (in this case, you need to first run your design).
+Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p>For an example using the FFT block where the output is compared with
+the DSP System toolbox FFT block click <a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fft">here</a>.</p>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>This block uses the Vitis DSP library implementation of FFT. For more
+details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html">here</a>.</p>
 </section>
 </section>
 </body>
