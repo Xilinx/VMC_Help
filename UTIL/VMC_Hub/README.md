@@ -30,8 +30,7 @@ Data type support is not applicable to the Vitis Model Composer Hub
 block.
 
 ## Parameters
-  
-![](./Images/vbk1663246159437.png)  
+<img src="./Images/vbk1663246159437.png" width="600">
 
 The following section describes the configurable options available in
 each pane of the Vitis Model Composer Hub block.
@@ -68,14 +67,14 @@ enabled, it runs the AIE simulation after code generation and verifies that for 
 ##### Simulation timeout (cycles)  
 This determines the run duration of the cycle-approximate AIE simulation in terms of the number of cycles. By default, it runs for 50000 cycles, after which it terminates. It's important to note that the number of cycles refers to the number of AI Engine clock cycles, which is not directly linked to the 'Stop Time' in your Simulink design. If the number of cycles is insufficient, the AIE Simulation may generate fewer samples than the Simulink simulation, leading to a partial match between the Simulink output and the AI Engine simulator during verification after running the AIE Simulation. To address this issue, you can increase the Simulation timeout, which will result in more output from the AIE simulator. However, not all partial matches are necessarily due to this factor. The picture below shows part of the output log that indicates a partial match:
 
-![](./Images/partial_match.png) 
+<img src="./Images/partial_match.png" width="600">
 
 If the Simulation timeout value is too small, the AIE Simulation may not produce any output at all. However, another reason for no output is a deadlock in the system. The deadlock will not manifest itself in Simulink simulation because Simulink simulation is a functional simulation.
 
 ##### Plot AIE Simulation Output and Estimate Throughput  
 When enabled, this option allows visualization of the outputs of the AI Engine subsystem in the [Simulation Data Inspector](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html). The throughput for each output is also calculated. You can use the cursors in the Simulation Data Inspector to limit the range in which throughput is calculated. As you move the cursors, the throughput gets recalculated. See the screenshot below for an example of displaying the output of the AIE Simulation in the Simulation Data Inspector. 
 
-![](./Images/sdi_output.png)
+<img src="./Images/sdi_output.png" width="600">
 
 ##### Collect profiling statistics and enable 'printf' for debugging  
 When enabled, this option allows profiling data to be collected for
