@@ -2,7 +2,7 @@
 
 Control implementation of the model.
 
-![](./Images/ttd1532103642779.png)
+![](./Images/block.png)
 
 ## Library
 
