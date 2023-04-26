@@ -13,6 +13,10 @@ AI Engine/User-Defined Functions
 The AIE Graph block allows you to import an AI Engine program that
 consists of a dataflow graph specification written in C++.
 
+<div class="noteBox">
+This block does not support graph classes with 'input_plio' or 'output_plio' ports.
+</div>
+
 ## Parameters
 
 #### Graph file  
