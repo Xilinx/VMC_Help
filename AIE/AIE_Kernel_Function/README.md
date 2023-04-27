@@ -10,7 +10,12 @@ AI Engine/User-Defined Functions
 
 ## Description
 
-The AIE Kernel block enables you to import an AI Engine kernel, which is a C/C++ program. This block supports importing Window, Buffer, Stream, Cascade, and Run time parameter as arguments to the kernel function. Additionally, this block allows you to import a function template with typename template parameter T, and a non-type (integral) template parameter N. 
+The AIE Kernel block enables you to import an AI Engine kernel, which is a C/C++ program. This block supports importing Window, Buffer, Stream, Cascade, and Run time parameter as arguments to the kernel function. Additionally, this block allows you to import a function template with typename template parameter T, and a non-type (integral) template parameter N.
+
+<div class="noteBox">
+If your kernel is a class based kernel, you should use the 
+AIE Class block to import the kernel.
+</div>
 
 ## Parameters
 #### Kernel header file
@@ -34,6 +39,11 @@ This parameter allows use of environment variables while specifying paths for th
 Optional preprocessor arguments for downstream compilation with specific preprocessor options.
 
 The following two preprocessor option formats are accepted and multiple can be selected: -Dname and -Dname=definition separated by a comma. That is, the optional argument must begin with -D and if the option definition value is not provided, it is assumed to be 1.
+
+## Related blocks
+Use [AIE Class](../AIE_Class_Kernel_Function/README.md) block to import a class based kernel.
+
+Use [AIE Graph](../AIE_Graph_Function/README.md) block to import an AI Engine graph.
 
 
 
