@@ -42,5 +42,9 @@ Optional preprocessor arguments for downstream compilation with specific preproc
 
 The following two preprocessor option formats are accepted and multiple can be selected: -D<name> and -D<name>=<definition> separated by a comma. That is, the optional argument must begin with -D and if the option <definition> value is not provided, it is assumed to be 1.
   
-### Examples
+## Related blocks
+Use [AIE Kernel](../AIE_Class_Kernel_Function/README.md) block to import a non class based kernel.
+
+Use [AIE Graph](../AIE_Graph_Function/README.md) block to import an AI Engine graph.
+
   
