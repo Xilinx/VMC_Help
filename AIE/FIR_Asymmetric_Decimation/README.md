@@ -74,4 +74,4 @@ Modes 2 to 7 round to the nearest integer. They differ only in how they
 round for the value of 0.5.
 
 #### Number of cascade stages  
-This determines the number of kernels the FFT will be divided over in series to improve throughput.
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
