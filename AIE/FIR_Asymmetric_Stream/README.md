@@ -70,8 +70,5 @@ round for the value of 0.5.
 This parameter specifies the number of input (or output) ports and must
 be of the form 2^N, where N is a non-negative integer.
 
-### Advanced  
 #### Number of cascade stages
-
-Specifies the number of cascade stages. The tool will guarantee the
-  same.
+This determines the number of kernels the FFT will be divided over in series to improve throughput.
