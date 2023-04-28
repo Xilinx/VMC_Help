@@ -78,4 +78,4 @@ This parameter specifies the number of input (or output) ports and must
 be of the form 2^N, where N is a non-negative integer.
 
 #### Number of cascade stages:
-This determines the number of kernels the FFT will be divided over in series to improve throughput.
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
