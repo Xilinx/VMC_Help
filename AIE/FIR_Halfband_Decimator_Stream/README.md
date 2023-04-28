@@ -75,9 +75,6 @@ be of the form 2^N, where N is a non-negative integer.
 Number of decimation polyphases into which data is split into for
 parallel computation. It must be integer divisible by interpolation
 factor.
-
-### Advanced  
+  
 #### Number of cascade stages
-
-Specifies the number of cascade stages. The tool will guarantee the
-  same.
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
