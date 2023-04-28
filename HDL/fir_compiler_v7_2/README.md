@@ -43,8 +43,7 @@ Check to add the coefficient reload ports to the block. The set of data
 loaded into the reload channel will not take action until triggered by a
 re-configuration synchronization event. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
 for a more detailed explanation of the RELOAD Channel interface timing.
-This block supports the xlGetReOrderedCoeff function. See the Model
-Composer Utility function xlGetReOrderedCoeff for details.
+This block supports the xlGetReOrderedCoeff function; see Appendix A of the Vitis Model Composer User Guide (UG1483) for examples of how to use this function.
 
  
 #### Filter Type  
