@@ -39,9 +39,8 @@ Engines and PL components.
 
 The block also accepts templatized HLS functions.
 
-Function arguments can be either of hls::stream type or of scalar or
-vector types. For example the following is a valid HLS function
-signature:
+Function arguments can be either of hls::stream type or of scalar or vector types. At least one input hls::stream type and one output hls::stream are needed. 
+For example the following is a valid HLS function signature:
 
 ``` pre
 void func(hls::stream<unsigned int> &in, const ap_uint<8> (&param_in)[32], hls::stream<unsigned int> &out, ap_uint<8> param_out);
