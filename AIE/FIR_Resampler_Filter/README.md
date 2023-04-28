@@ -81,9 +81,5 @@ stage of processing. The rounding options are as follows:
 Modes 2 to 7 round to the nearest integer. They differ only in how they
 round for the value of 0.5.
 
-### Advanced  
 #### Number of cascade stages  
-This determines the number of kernels over which the function will be
-split. A higher number of cascade stages will result in higher
-throughput at the expense of resources. The value must be in the range 1
-to 9.
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
