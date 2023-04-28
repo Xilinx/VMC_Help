@@ -102,16 +102,5 @@ Now, if the input has a data stream of all ones (i.e., 1, 1, 1, etc.):
 - If the parameter is set, the expected output will be: \[1, 2^3, 2,
   2^3...\]=\[1, 8, 2, 8..\]
 
-### Advanced  
-#### Target input throughput (MSPS)  
-Specifies the rate at which data samples should be processed. The
-default value is 200.
-
-#### Specify the number of cascade stages  
-When this option is not enabled, the tool will determine the filter
-configuration that best achieves the specified input sampling rate. When
-the option is enabled, the 'Number of cascade stages' can be specified
-(which describes the number of AI Engine processors to split the
-operation over). However, this allows resource to be traded for higher
-performance and the specified input sampling rate constraint may not be
-achieved. The value must be in the range 1 to 9.
+### Number of cascade stages  
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
