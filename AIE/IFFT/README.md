@@ -36,18 +36,6 @@ Describes the number of samples used as an input to the IFFT.
 #### Scale output down by 2^  
 Describes the power of 2 to scale the result by prior to output.
 
-### Advanced  
-#### Target input throughput  
-Specifies the rate at which data samples should be processed. The
-default value is 200.
-
-#### Specify the number of cascade stages  
-When this option is not enabled, the tool will determine the filter
-configuration that best achieves the specified input sampling rate. When
-this option is enabled and the 'Number of cascade stages' is specified,
-the tool will guarantee the same. In such cases, however, the specified
-sample rate constraint may not be achieved.
-
 #### Number of cascade stages  
 This determines the number of kernels the FFT will be divided over in
 series to improve throughput.
