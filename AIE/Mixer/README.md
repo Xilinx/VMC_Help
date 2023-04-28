@@ -53,7 +53,5 @@ Where:
   - N = 32, which represents the accumulator width, and it is fixed
   - Fs = Sampling frequency
 
-#### Target input throughput (MSPS)  
-Specifies the input sampling rate of the function in Mega Samples per
-Second (MSPS). The value must be in the range 1 to 1000 and the
-default value is 200.
+#### Number of cascade stages
+This determines the number of kernels the Mixer will be divided over in series to improve throughput.
