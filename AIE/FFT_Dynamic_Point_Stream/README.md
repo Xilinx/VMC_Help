@@ -149,19 +149,6 @@ This parameter is intended to improve performance and support FFT
   point size 2048. The specified FFT size and SSR values should be such
   that FFT size / SSR should not exceed 2048.
 
-### Advanced  
-#### Target Output Throughput (MSPS)
+#### Number of Cascade Stages
 
-Specifies the output sampling rate of the FFT function in Mega Samples
-  per Second (MSPS). The value must be in the range 1 to 1000 and the
-  default value is 200.
-
-#### Specify the Number of Cascade Stages
-
-When this option is disabled, the tool will determine the FFT
-  configuration that best achieves the specified input sampling rate.
-  When the option is enabled, the Number of cascade stages can be
-  specified (which describes the number of AI Engine processors to split
-  the operation over). This allows resources to be traded for higher
-  performance, but the specified input sampling rate constraint may not
-  be achieved. The value must be in the range of 1 to 9.
+This determines the number of kernels the FFT will be divided over in series to improve throughput.
