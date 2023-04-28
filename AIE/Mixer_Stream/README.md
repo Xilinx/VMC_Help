@@ -57,9 +57,5 @@ Specifies the phase increment between samples. The value must be in
 #### Initial Phase Offset
 Specifies the initial phase offset. The default value is 0.
 
-### Advanced  
-#### Target Output Throughput (MSPS)
-
-Specifies the output sampling rate of the Mixer function in Mega
-  Samples per Second (MSPS). The value must be in the range 1 to
-  1000 and the default value is 200.
+#### Number of cascade stages
+This determines the number of kernels the Mixer will be divided over in series to improve throughput.
