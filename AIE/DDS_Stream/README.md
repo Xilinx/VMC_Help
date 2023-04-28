@@ -46,8 +46,11 @@ For example, for a sampling frequency of 1 Gsps, output frequency of 100 MHz, an
 Specifies the initial phase offset. The default value is 0.
 
 #### Sample Time
+Specifies the sample time for the output signal.
 
-Specifies the sample time for the block output port. The default value is -1 which will result in inheriting the sample time. Note this specifies simulation sample time in Simulink and is not related to the final throughput in hardware. 
+<div class="noteBox">
+The propagated block sample time in Simulink is equal to "Sample time" multipled by "Samples per frame" divided by "SSR".
+</div>
 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
