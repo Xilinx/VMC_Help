@@ -71,14 +71,5 @@ stage of processing. The rounding options are as follows:
 Modes 2 to 7 round to the nearest integer. They differ only in how they
 round for the value of 0.5.
 
-### Advanced  
-#### Target input throughput (MSPS)  
-Specifies the rate at which data samples should be processed. The
-default value is 200.
-
-#### Specify the number of cascade stages  
-When this option is not enabled, tool will determine the filter
-configuration that best achieves the specified input sampling rate. When
-the option is enabled and the 'Number of cascade stages' is specified,
-the tool will guarantee the same. In such cases, however, the specified
-input sampling rate constraint may not be achieved.
+#### Number of cascade stages  
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
