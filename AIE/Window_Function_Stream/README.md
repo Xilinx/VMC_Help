@@ -14,17 +14,17 @@ Window function implementation targeted for AI Engines. This block is
 the utility to apply a windowing (scaling) function such as Hamming to a
 frame of input Stream data samples.
 
-The Windowing utility block is only expected to work with FFTs, which
-only allow 2^n inputs/output ports.
+The Windowing utility block is only expected to work with FFTs which
+only allow 2^n input/output ports.
 
 ## Parameters
 
-#### Input/Output Data Type
+#### Input/Output data type
 
 Describes the type of individual data samples input/output of the
-  dynamic point FFT. It can be cint16, cint32, and cfloat types.
+  FFT. It can be cint16, cint32, and cfloat types.
 
-#### Filter coefficients data type
+#### Function coefficient data type
 Describes the type of individual coefficients of the filter taps. It
   should be one of int16, int32, or float and must also satisfy the
   following rules:
@@ -37,16 +37,16 @@ Describes the type of individual coefficients of the filter taps. It
 - Filter coefficients data type must be a float type if the
     Input/Output data type is a float type.
 
-#### Filter coefficients
+#### Function coefficients
 
 Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
   where 'N' is a positive integer that represents the filter length and
   must be in the range 4 to 240 inclusive.
 
-#### FFT Maximum Size
+#### FFT/IFFT point size
 
-Specifies the maximum FFT size that is supported by Dynamic point FFT.
-  You can perform different lengths of FFT on different input data
+Specifies the maximum FFT/IFFT size that is supported by the FFT block.
+  You can perform different lengths of FFT/IFFT on different input data
   frames. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by the library element is 65536.
 
@@ -65,7 +65,7 @@ Describes whether to support run time selectable point size for the
   must be in the range FFT_POINT_SIZE + FFT_POINT_SIZE/2 to
   2\*FFT_POINT_SIZE.
 
-#### Input Window Size
+#### Input frame size (Number of Samples)
 
 Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default

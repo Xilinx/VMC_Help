@@ -11,16 +11,16 @@ AI Engine/DSP/Buffer IO
 
 Window function implementation targeted for AI Engines. This block is
 applies a windowing function such as Hamming to a
-frame of input data samples.
+frame of input data samples. It is usually used in conjunction with an FFT block.
 
 ## Parameters
 
 #### Input/Output data type
 
 Describes the type of individual data samples input/output of the
-  dynamic point FFT. It can be cint16, cint32, or cfloat types.
+  FFT. It can be cint16, cint32, or cfloat types.
 
-#### Window coefficients data type
+#### Function coefficient data type
 
 Describes the type of individual coefficients of the filter taps. It
   should be one of int16, int32, or float and must also satisfy the
@@ -34,19 +34,19 @@ Describes the type of individual coefficients of the filter taps. It
   - Filter coefficients data type must be a float type if the
     Input/Output data type is a float type.
 
-#### Window coefficients
+#### Function coefficients
 Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
   where 'N' is a positive integer that represents the filter length and
   must be in the range 4 to 240 inclusive.
 
-#### Window size
-Specifies the maximum FFT size that is supported by Dynamic point FFT.
-  You can perform different lengths of FFT on different input data
+#### FFT/IFFT point size
+Specifies the maximum FFT/IFFT size that is supported by the FFT block.
+  You can perform different lengths of FFT/IFFT on different input data
   frames. It must be a power of 2 with a minimum value of 16. The
-  maximum value supported by the library element is 65536.
+  maximum value supported by this block is 65536.
 
 
-#### Input size (Samples)
+#### Input frame size (Number of Samples)
 
 Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default
