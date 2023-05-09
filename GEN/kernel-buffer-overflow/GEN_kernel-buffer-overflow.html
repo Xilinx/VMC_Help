@@ -33,11 +33,9 @@ HLS Kernels?</h1>
 <h1>How to fix buffer overflow errors with AI Engine and HLS
 Kernels?</h1>
 <p>Each input and output port for all the AI Engine blocks and the HLS
-Kernel block has a buffer that has a maximum size of 65536 bytes. Buffer
+Kernel block has a buffer. Buffer
 overflows can occur due to several reasons:</p>
 <ol type="1">
-<li>Trying to send more than 65536 bytes into a kernel in a single
-invocation.</li>
 <li>If Simulink sends more data into the kernel than the kernel
 processes, the kernel&#39;s input buffer will eventually overflow.</li>
 <li>If Simulink takes less data from the kernel then the kernel
