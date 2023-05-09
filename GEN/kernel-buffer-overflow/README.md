@@ -13,7 +13,7 @@ Signal Size is a block mask property associated with each stream or cascade outp
 
 ![](images/mask.png)
 
-In the example above, the stream output of this block will be a [variable-size signal](../../GEN/variable-size-signals/README.md) with a maximum size of 4 samples as shown below:
+In the example above, the stream output of this block will be a [variable-size signal](../../GEN/variable-size-signal/README.md) with a maximum size of 4 samples as shown below:
 
 ![](images/block_with_output_stream.png)
 
