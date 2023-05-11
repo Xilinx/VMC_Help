@@ -3,7 +3,7 @@
 Each input and output port for all the AI Engine blocks and the HLS Kernel block has a buffer. Buffer overflows can occur due to several reasons:
 
 1. If Simulink sends more data into the kernel than the kernel processes, the kernel's input buffer will eventually overflow.
-2. If Simulink takes less data from the kernel then the kernel generates, the kernel's output buffer will eventually overflow and cause the kernel process to block. Eventually the input buffer will overflow as well.
+2. If Simulink takes less data from the kernel than the kernel generates, the kernel's output buffer will eventually overflow and cause the kernel process to block. Eventually the input buffer will overflow as well.
 
 You must configure the kernel's Signal Size property correctly to ensure Simulink exchanges the correct amount of data with the kernel. Continue reading to learn more.
 
