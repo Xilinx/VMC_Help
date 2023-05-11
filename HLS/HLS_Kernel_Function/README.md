@@ -35,10 +35,9 @@ not be part of an HLS subsystem (a subsystem that comprises of other HLS blocks)
 </div>
 
 
-<div class="noteBox">
 Use this block to connect with AI Engine blocks using the [AIE to HLS](../../UTIL/AIE_to_HLS/README.md) or [HLS to AIE](../../UTIL/HLS_to_AIE/README.md) blocks and co-simulate a design with both AI
 Engines and PL components.
-</div>
+
 
 The block also accepts templatized HLS functions.
 
