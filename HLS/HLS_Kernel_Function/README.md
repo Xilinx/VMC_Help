@@ -12,8 +12,6 @@ HLS/User-Defined Functions
 
 The HLS Kernel block allows you to import an HLS kernel, which is a
 proper HLS IP (an IP with interface specification using HLS pragmas).
-You can use this block to co-simulate the AI Engine domain with
-HLS kernels.
 
 The code below is an example of an HLS kernel that can be imported using the HLS kernel block. Note that the interface is specified using the #pragma notation. To learn more about the interface pragma in HLS click [here](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/pragma-HLS-interface).  
 
@@ -31,11 +29,15 @@ void polar_clip(hls::stream<ap_axis<32, 0, 0, 0> > &in_sample, hls::stream<ap_ax
   ...
 ```
 
-**Note**: This block does not participate in HLS code generation and should
-not be part of an HLS subsystem (a subsystem that comprises of other HLS blocks). 
+<div class="noteBox">
+This block does not participate in HLS code generation and should
+not be part of an HLS subsystem (a subsystem that comprises of other HLS blocks).
+</div>
 
-**Note**: Use this block to connect with AI Engine blocks using the [AIE to HLS](../../UTIL/AIE_to_HLS/README.md) or [HLS to AIE](../../UTIL/HLS_to_AIE/README.md) blocks and co-simulate a design with both AI
+<div class="noteBox">
+Use this block to connect with AI Engine blocks using the [AIE to HLS](../../UTIL/AIE_to_HLS/README.md) or [HLS to AIE](../../UTIL/HLS_to_AIE/README.md) blocks and co-simulate a design with both AI
 Engines and PL components.
+</div>
 
 The block also accepts templatized HLS functions.
 
@@ -45,6 +47,7 @@ For example the following is a valid HLS function signature:
 ``` pre
 void func(hls::stream<unsigned int> &in, const ap_uint<8> (&param_in)[32], hls::stream<unsigned int> &out, ap_uint<8> param_out);
 ```
+For a complete list of supported function arguments, see the table below.
 
 For stream inputs and outputs, this block accepts variable size signals
 and produces variable size outputs. 
@@ -88,6 +91,6 @@ Please see the following table for a detailed list of supported data types for i
 | **Template**	| Any template that is deducted into above supported scalar/vector/stream types | `ap_uint<BITS>`, `std::complex<DATA_TYPE>`, `ap_axiu<BITS, 0, 0, 0>`, `hls::axis<ap_int<BITS>, 0, 0, 0> (&arg)[20]`, `hls::stream<ap_int<BITS> >`, `hls::stream<ap_uint<BITS> >`, `hls::stream<ap_axis<BITS, 0, 0, 0> >`, `hls::stream<ap_axiu<BITS, 0, 0, 0> >` |
 
 ## Examples
-
+[2d FFT with both AI Engines and HLS Kernel block](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/FFT2D)
 
 
