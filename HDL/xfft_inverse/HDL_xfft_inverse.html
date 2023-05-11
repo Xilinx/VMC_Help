@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -47,7 +47,7 @@ of the corresponding forward FFT.</p>
 Fourier transforms. If your Inverse FFT implementation will use more
 complicated transform features such as an AXI4-Stream-compliant
 interface, a real time throttle scheme, Radix-4 Burst I/O, or Radix-2
-Lite Burst I/O, use the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;xfft_v9_1&#39;,&#39;category&#39;,&#39;HDL&#39;))">Fast
+Lite Burst I/O, use the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;xfft_v9_1&#39;,&#39;category&#39;,&#39;../HDL/&#39;))">Fast
 Fourier Transform 9.1</a> block in your design instead of the Inverse
 FFT block.</p>
 <p>In the Vivado® design flow, the Inverse FFT block is inferred as
@@ -110,8 +110,8 @@ is implemented by default.</p>
 <p>The Inverse FFT block accepts inputs of varying bit widths with
 changeable binary point location, such as Fix_16_0 or Fix_30_10, etc. in
 unscaled block configuration. For the scaled configuration, the input is
-supported in the same format as the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;xfft_v9_1&#39;,&#39;category&#39;,&#39;HDL&#39;))">Fast
-Fourier Transform 9.1</a> block. The <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;xfft_v9_1&#39;,&#39;category&#39;,&#39;HDL&#39;))">Fast
+supported in the same format as the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;xfft_v9_1&#39;,&#39;category&#39;,&#39;../HDL/&#39;))">Fast
+Fourier Transform 9.1</a> block. The <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;xfft_v9_1&#39;,&#39;category&#39;,&#39;../HDL/&#39;))">Fast
 Fourier Transform 9.1</a> block accepts input values only in the
 normalized form in the format of Fix_x_[x-1] (for example, Fix_16_15),
 so the inputs are 2&#39;s complement with a single sign/integer bit.</p>

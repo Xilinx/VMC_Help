@@ -68,13 +68,19 @@ for c=1:length(categories)
 
             %% Repalce any link to another help with proper matlab function
             text = fileread('README.md');
-            [first, last] = regexp(text,"(..\/..\/(GEN|HDL|AIE|HLS|UTIL)\/(.)*?\/README.md)");
+
+            reg_expression = "\(\.\.\/(\.\.\/(GEN|HDL|AIE|HLS|UTIL)\/)?(.+?)\/README\.md\)";
+
+            [first, last] = regexp(text,reg_expression);
 
             while ~isempty(first)
                 string = text(first(1):last(1));
-                id = regexp(string,".*(GEN|HDL|AIE|HLS|UTIL)\/(.*)\/README\.md",'tokens');
-                text = replaceBetween(text,first(1),last(1),"matlab:helpview(vmcHelp('name','"+id{1}{2}+"','category','"+id{1}{1}+"'))");
-                [first, last] = regexp(text,"(..\/..\/(GEN|HDL|AIE|HLS|UTIL)\/(.)*?\/README.md)");
+                id = regexp(string,reg_expression,'tokens');
+                if isempty(id{1}{1})
+                    id{1}{1} = categories(c);
+                end
+                text = replaceBetween(text,first(1),last(1),"("+"matlab:helpview(vmcHelp('name','"+id{1}{2}+"','category','"+id{1}{1}+"'))"+")");
+                [first, last] = regexp(text,reg_expression);
             end
 
             writelines(text,'temp.md');
