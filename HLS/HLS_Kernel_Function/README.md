@@ -91,6 +91,6 @@ Please see the following table for a detailed list of supported data types for i
 | **Template**	| Any template that is deducted into above supported scalar/vector/stream types | `ap_uint<BITS>`, `std::complex<DATA_TYPE>`, `ap_axiu<BITS, 0, 0, 0>`, `hls::axis<ap_int<BITS>, 0, 0, 0> (&arg)[20]`, `hls::stream<ap_int<BITS> >`, `hls::stream<ap_uint<BITS> >`, `hls::stream<ap_axis<BITS, 0, 0, 0> >`, `hls::stream<ap_axiu<BITS, 0, 0, 0> >` |
 
 ## Examples
-[2d FFT with both AI Engines and HLS Kernel block](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/FFT2D)
+[2d FFT with both AI Engines and HLS Kernel blocks](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/FFT2D)
 
 
