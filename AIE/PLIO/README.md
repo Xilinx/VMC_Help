@@ -19,9 +19,14 @@ width to 64 and the PL design should create a 64-bit wide data. This way
 for every 64-bit sample generated in the PL domain at 500 MHz, the AI
 Engine kernel will receive two 32-bit wide samples at 1 GHz.
 
-Note that this block does not affect the result of functional simulation in Simulink. However, it will affect the generated Graph code.
+<div class="noteBox">
+This block does not affect the result of functional simulation in Simulink. However, it will affect the generated Graph code.
+</div>
 
-## Parameters
+<div class="noteBox">
+This block should be only placed at the boundry of the AI Engine subsystem and not within two AI Engine blocks.
+</div>
+
 #### PLIO width (bits) 
 Specifies PLIO width in bits. This can be only 32, 64, or 128 as these are the only acceptable bit-widths between PL and AI Engine array. 
 
