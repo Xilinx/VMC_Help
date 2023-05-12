@@ -24,7 +24,7 @@ This block does not affect the result of functional simulation in Simulink. Howe
 </div>
 
 <div class="noteBox">
-This block should be only placed at the boundry of the AI Engine subsystem and not within two AI Engine blocks.
+This block should be only placed at the boundaries of the AI Engine subsystem and not within two AI Engine blocks.
 </div>
 
 #### PLIO width (bits) 
