@@ -40,9 +40,8 @@ Model Composer.</p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The HLS Kernel block allows you to import an HLS kernel, which is a
-proper HLS IP (an IP with interface specification using HLS pragmas).
-You can use this block to co-simulate the AI Engine domain with HLS
-kernels.</p>
+proper HLS IP (an IP with interface specification using HLS
+pragmas).</p>
 <p>The code below is an example of an HLS kernel that can be imported
 using the HLS kernel block. Note that the interface is specified using
 the #pragma notation. To learn more about the interface pragma in HLS
@@ -58,11 +57,12 @@ click <a href="https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/pragma-HLS-inter
   ap_axis&lt;32, 0, 0, 0&gt; out_x;
   ap_axis&lt;32, 0, 0, 0&gt; in_x = in_sample.read();
   ...</code></pre>
-<p><strong>Note</strong>: This block does not participate in HLS code
-generation and should not be part of an HLS subsystem (a subsystem that
-comprises of other HLS blocks).</p>
-<p><strong>Note</strong>: Use this block to connect with AI Engine
-blocks using the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;AIE_to_HLS&#39;,&#39;category&#39;,&#39;../UTIL/&#39;))">AIE
+<div class="noteBox">
+This block does not participate in HLS code generation and should
+not be part of an HLS subsystem (a subsystem that comprises of other HLS blocks).
+</div>
+
+<p>Use this block to connect with AI Engine blocks using the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;AIE_to_HLS&#39;,&#39;category&#39;,&#39;../UTIL/&#39;))">AIE
 to HLS</a> or <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;HLS_to_AIE&#39;,&#39;category&#39;,&#39;../UTIL/&#39;))">HLS
 to AIE</a> blocks and co-simulate a design with both AI Engines and PL
 components.</p>
@@ -72,6 +72,8 @@ vector types. At least one input hls::stream type and one output
 hls::stream are needed. For example the following is a valid HLS
 function signature:</p>
 <pre class="pre"><code>void func(hls::stream&lt;unsigned int&gt; &amp;in, const ap_uint&lt;8&gt; (&amp;param_in)[32], hls::stream&lt;unsigned int&gt; &amp;out, ap_uint&lt;8&gt; param_out);</code></pre>
+<p>For a complete list of supported function arguments, see the table
+below.</p>
 <p>For stream inputs and outputs, this block accepts variable size
 signals and produces variable size outputs.</p>
 </section>
@@ -207,6 +209,8 @@ scalar/vector/stream types</td>
 </section>
 <section id="examples" class="level2">
 <h2>Examples</h2>
+<p><a href="https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/FFT2D">2d
+FFT with both AI Engines and HLS Kernel blocks</a></p>
 </section>
 </section>
 </body>
