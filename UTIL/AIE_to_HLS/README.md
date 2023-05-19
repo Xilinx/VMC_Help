@@ -17,9 +17,12 @@ The AIE to HLS kernel block reformats a signal driven by an AI Engine
 block so that the resulting signal matches the data type and complexity
 required by the input of an HLS Kernel block.
 
-### Topology
 
-  
+<div class="noteBox">
+This block is needed only if the output of the AI Engine block does not match the data type and complexity of the input to the HLS Kernel block. Otherwise, you can directly connect the AI Engine block to the HLS Kernel block.
+</div>
+
+### Topology
 ![](./Images/yyz1647631688897.png)  
 
 ## Parameters
@@ -42,3 +45,10 @@ Note:
     int32, int64, x_sfix128, uint8, uint16, uint32, uint64, x_ufix128.
 2.  The input can be real or complex, but complex inputs are supported
     only for int16 and int32.
+    
+### Examples
+[AIE to HLS Kernel with an interface block](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/AIE_HLS_with_interface/README.md)
+
+[AIE to HLS Kernel without an interface block](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/AIE_HLS_without_interface/README.md)
+
+
