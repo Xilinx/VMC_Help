@@ -69,7 +69,7 @@ for c=1:length(categories)
             %% Repalce any link to another help with proper matlab function
             text = fileread('README.md');
 
-            reg_expression = "\(\.\.\/(\.\.\/(GEN|HDL|AIE|HLS|UTIL)\/)?(.+?)\/README\.md\)";
+            reg_expression = "\(\.\.\/(?:\.\.\/)?((AIE|HDL|HLS|UTIL|GEN)\/)?(?:\/)?(.+?)\/README\.md\)";
 
             [first, last] = regexp(text,reg_expression);
 
@@ -78,6 +78,9 @@ for c=1:length(categories)
                 id = regexp(string,reg_expression,'tokens');
                 if isempty(id{1}{1})
                     id{1}{1} = categories(c);
+                else
+                    temp = id{1}{1};
+                    id{1}{1} = temp(1:end-1);
                 end
                 text = replaceBetween(text,first(1),last(1),"("+"matlab:helpview(vmcHelp('name','"+id{1}{2}+"','category','"+id{1}{1}+"'))"+")");
                 [first, last] = regexp(text,reg_expression);

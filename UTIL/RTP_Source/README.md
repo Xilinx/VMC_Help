@@ -20,7 +20,8 @@ If the RTP input is a vector, the 'RTP value' parameter should be a
 matrix. Each column represents an RTP input vector. A NaN column will
 produce an empty variable size signal output.
 
-The animation below shows how the block behaves when the value of the RTP is set to _[ones(8,1),nan(8,4),2*ones(8,1)\]_. Note the output of the block is a variable size signal. To learn more about variable size signals, click [here](../../GEN/variable-size-signal/README.md). 
+The animation below shows how the block behaves when the value of the RTP is set to _[ones(8,1),nan(8,4),2*ones(8,1)\]_. 
+Note the output of the block is a variable size signal. To learn more about variable size signals, click [here](../../GEN/variable-size-signal/README.md). 
 
 <img src="./Images/RTP_source.gif" width="500">
 
