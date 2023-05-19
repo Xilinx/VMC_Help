@@ -15,7 +15,7 @@ AI Engine/Tools
 
 The To Fixed Size block takes a variable size vector as an input and
 produces a fixed size vector as output. The block copies samples from
-the input to the output.
+the input to the output. To learn more about variable size signals click [here](../../GEN/variable_size_signals/README.md).
 
 The input to the block will be buffered until the number of samples
 reaches the Output Size. The buffered samples will then be transferred
@@ -27,9 +27,11 @@ Use this block when you need to connect a variable size signal to a
 block that does not accept a variable size signal. If the input variable
 size signal is not full, the output will not always be valid.
 
-**Note**: It is recommended that you monitor the Valid output to make sure
+<div class="noteBox">
+It is recommended that you monitor the Valid output to make sure
 you are not processing invalid outputs. You can also connect the Valid
 output to a triggered subsystem.
+</div>
 
 ## Parameters
 
