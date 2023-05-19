@@ -14,20 +14,20 @@ Utilities/Connectors
 
 This block provides an interface between the AI Engine and HDL blocks.
 
-- Input to the AIE to HDL block is a variable size signal (data) from
-  AIE blocks along with the tready signal which indicates that the
+- One input to the AIE to HDL block is a variable size signal that is produced by an
+  AIE block. Another input is a tready signal which indicates that the
   consumer (HDL) can accept a transfer.
-- Output from the AIE to HDL block is tdata and tvalid that indicates
+- Output from the AIE to HDL block is tdata and tvalid. The tvalid signal indicates
   the producer has valid data available. A transfer takes place when
   both tvalid and tready boolean signals are set to TRUE(1).
 
+
+<div class="noteBox">
 If the tready signal is FALSE (0), the block buffers the input data
 until the tready signal is TRUE(1). If during simulation, the tready
 signal remains FALSE(0) for an extended amount of time, eventually the
 internal buffer of the block will overflow and the simulation will stop.
-
-The tdata output is scalar but the data input is a variable size signal,
-making this block a multirate block.
+</div>
 
 If the HDL domain takes N clock cycles to process one input sample,
 tready will be TRUE(1) for one cycle out of the N clock cycles. In this
