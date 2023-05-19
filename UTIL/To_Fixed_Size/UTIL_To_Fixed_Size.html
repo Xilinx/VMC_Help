@@ -42,7 +42,10 @@ the output.</p>
 <h2>Description</h2>
 <p>The To Fixed Size block takes a variable size vector as an input and
 produces a fixed size vector as output. The block copies samples from
-the input to the output.</p>
+the input to the output. To learn more about variable size signals click
+<a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;variable_size_signal&#39;,&#39;category&#39;,&#39;GEN&#39;))">here</a>.</p>
+<p>This block is needed since some Simulink blocks do not accept
+Variable Size Signals.</p>
 <p>The input to the block will be buffered until the number of samples
 reaches the Output Size. The buffered samples will then be transferred
 to the out port, and the valid signal is set to true. When there are not
@@ -51,9 +54,12 @@ the valid port is set to false.</p>
 <p>Use this block when you need to connect a variable size signal to a
 block that does not accept a variable size signal. If the input variable
 size signal is not full, the output will not always be valid.</p>
-<p><strong>Note</strong>: It is recommended that you monitor the Valid
-output to make sure you are not processing invalid outputs. You can also
-connect the Valid output to a triggered subsystem.</p>
+<div class="noteBox">
+It is recommended that you monitor the Valid output to make sure
+you are not processing invalid outputs. You can also connect the Valid
+output to a Simulink triggered subsystem.
+</div>
+
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -68,9 +74,17 @@ input.</p>
 <section id="specify-output-size" class="level5">
 <h5>Specify Output Size</h5>
 <p>When this option is selected, you can specify the value of the
-required output size.</p>
+required output size. The specified output size cannot be smaller than
+the input size.</p>
 </section>
 </section>
+</section>
+<section id="related-blocks" class="level2">
+<h2>Related blocks</h2>
+<p><a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;To_Variable_Size&#39;,&#39;category&#39;,&#39;UTIL&#39;))">To
+Variable Size</a></p>
+<p><a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;Variable_Size_Signal_to_Workspace&#39;,&#39;category&#39;,&#39;UTIL&#39;))">Variable
+size signal to workspace</a></p>
 </section>
 </section>
 </body>
