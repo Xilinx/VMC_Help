@@ -23,7 +23,7 @@ produce an empty variable size signal output.
 This block allows you to verify the behavior of a kernel with an RTP input. A kernel with a synchronous RTP input will require a value at the RTP port at every invocation or else the kernel will not execute. As such during the times when the output of the RTP source block is an empty variable size signal, a kernel with a synchronous RTP input would not execute.
 
 The animation below shows how the block behaves when the value of the RTP is set to _[ones(8,1),nan(8,4),2*ones(8,1)\]_. 
-Note the output of the block is a variable size signal. To learn more about variable size signals, click [here](../../GEN/variable-size-signal/README.md). Here we are running the simulation one step at a time. In the four periods when the RTP value is a NaN vector, the output of the RTP source block is an empty variable size signal.
+Note the output of the block is a variable size signal. To learn more about variable size signals, click [here](../../GEN/variable-size-signal/README.md). In this animation we are running the simulation one step at a time. In the four periods when the RTP value is a NaN vector, the output of the RTP source block is an empty variable size signal.
 
 <img src="./Images/RTP_source.gif" width="500">
 
