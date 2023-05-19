@@ -29,6 +29,7 @@ signal remains FALSE(0) for an extended amount of time, eventually the
 internal buffer of the block will overflow and the simulation will stop.
 </div>
 
+
 If the HDL domain takes N clock cycles to process one input sample,
 tready will be TRUE(1) for one cycle out of the N clock cycles. In this
 case, the input sample time into the AIE to HDL block must be at least N
