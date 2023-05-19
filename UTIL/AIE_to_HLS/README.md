@@ -51,4 +51,6 @@ Note:
 
 [AIE to HLS Kernel without an interface block](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/AIE_HLS_without_interface/README.md)
 
+You can find more examples [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.1/Examples/AIENGINE_plus_PL/AIE_HLS).
+
 
