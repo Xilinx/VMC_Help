@@ -39,6 +39,15 @@ This represents the value which can be given as an input to an AI Engine
 block. This can be a scalar, vector, or a matrix and it accepts real or
 complex data.
 
+When the 'RTP Value' parameter is a row vector, at each time step, the output is set to one of the
+elements of the vector starting with the first element. If an element of
+the vector is NaN, at the corresponding sampling time, the output will
+be an empty variable size signal.
+
+If the 'RTP value' parameter is a
+matrix, each column represents an RTP vector at the output of the block. A NaN column will
+produce an empty variable size signal output.
+
 #### Sample Time  
 Specifies the interval between the times that the RTP source block
 output can change during simulation.
@@ -61,4 +70,6 @@ This option repeats the RTP block data from first value.
 
 [Design with vector RTP input](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE/Run_Time_Parameters/rtp_vector/README.md)
 
+## References
+To learn more about RTPs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/Runtime-Parameter-Specification).
 
