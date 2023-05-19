@@ -43,7 +43,7 @@ The image below depicts the topology of the connection between the AI
 Engine to HDL domain.
 
 Note: The PLIO width should match the bitwidth of the output data type
-of the AIE to HDL block and also the output type of the tdata Gateway In
+of the AIE to HDL block and also the output bitwidth of the tdata Gateway In
 block.
 
   
@@ -67,5 +67,6 @@ by AIE to HDL blocks and the corresponding input data type to the block.
 By default this parameter inherits the sample time from the tready
 input.
 
-**Note**: For more information on setting this block and examples, refer to
-[GitHub](https://github.com/Xilinx/Vitis_Model_Composer).
+## Examples
+For more information on setting this block and examples, refer to
+[AI Engine/HDL examples](https://github.com/Xilinx/Vitis_Model_Composer/tree/blob/Examples/AIENGINE_plus_PL/AIE_HDL).
