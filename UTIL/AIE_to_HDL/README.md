@@ -37,6 +37,9 @@ times larger than the HDL domain sample period (specified in the HDL
 input gateway blocks) to avoid overflow of the internal buffers of the
 block.
 
+Typically, overflow occurs when there are more incoming samples to the AIE to HDL block than there are outgoing samples. To address this issue, carefully examine the tready signal connected to the AIE to HDL block, such as by connecting it to a scope. If the tready signal remains at zero, review the HDL design. However, if the tready signal behaves as expected and is not always zero, one possible solution is to increase the sampling time of the input to the AIE to HDL block (and hence reduce the rate of the incoming samples). This can be achieved by adjusting the sample time of the source block leading into the AIE to HDL block.
+
+
 ### Topology
 
 The image below depicts the topology of the connection between the AI
