@@ -21,7 +21,7 @@ matrix. Each column represents an RTP input vector. A NaN column will
 produce an empty variable size signal output.
 
 The animation below shows how the block behaves when the value of the RTP is set to _[ones(8,1),nan(8,4),2*ones(8,1)\]_. 
-Note the output of the block is a variable size signal. To learn more about variable size signals, click [here](../../GEN/variable-size-signal/README.md). 
+Note the output of the block is a variable size signal. To learn more about variable size signals, click [here](../../GEN/variable-size-signal/README.md). Here we are running the simulation one step at a time. In the four periods when the RTP value is a NaN vector, the output of the RTP source block is an empty variable size signal.
 
 <img src="./Images/RTP_source.gif" width="500">
 
@@ -49,3 +49,10 @@ When this option is selected, block holds the final value.
 
 ##### Cyclic repetition  
 This option repeats the RTP block data from first value.
+
+## Related Examples
+[Design with scaler RTP input](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE/Run_Time_Parameters/rtp_scalar/README.md)
+
+[Design with vector RTP input](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE/Run_Time_Parameters/rtp_vector/README.md)
+
+
