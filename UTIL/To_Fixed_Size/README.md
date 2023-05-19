@@ -15,7 +15,9 @@ AI Engine/Tools
 
 The To Fixed Size block takes a variable size vector as an input and
 produces a fixed size vector as output. The block copies samples from
-the input to the output. To learn more about variable size signals click [here](../../GEN/variable_size_signals/README.md).
+the input to the output. To learn more about variable size signals click [here](../../GEN/variable_size_signal/README.md).
+
+This block is needed since some Simulink blocks do not accept Variable Size Signals. 
 
 The input to the block will be buffered until the number of samples
 reaches the Output Size. The buffered samples will then be transferred
@@ -30,7 +32,7 @@ size signal is not full, the output will not always be valid.
 <div class="noteBox">
 It is recommended that you monitor the Valid output to make sure
 you are not processing invalid outputs. You can also connect the Valid
-output to a triggered subsystem.
+output to a Simulink triggered subsystem.
 </div>
 
 ## Parameters
@@ -44,5 +46,10 @@ input.
 
 ##### Specify Output Size  
 When this option is selected, you can specify the value of the required
-output size.
+output size. The specified output size cannot be smaller than the input size.
+
+## Related blocks
+[To Variable Size](../To_Variable_Size/README.md)
+
+[Variable size signal to workspace](../Variable_Size_Signal_to_Workspace/README.md)
 
