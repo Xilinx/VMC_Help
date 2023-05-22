@@ -26,10 +26,6 @@ here you can set all simulation outputs as a single Simulink Simulation
 Output object or as individual variables.
 </div>
 
-<div class="noteBox">
-This block may lead to a crash in MATLAB R2022a. To resolve this issue, upgrade MATLAB to R2022a Update 6.
-</div>
-
 ## Parameters
 
 #### Variable Name  
