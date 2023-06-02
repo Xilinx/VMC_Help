@@ -10,7 +10,7 @@ AI Engine/User-Defined Functions
 
 ## Description
 
-The AIE Class Kernel block enables you to import an AI Engine class kernel. This block supports importing Window, Buffer, Stream, Cascade, and Run time parameter as arguments to the kernel function. Additionally, this block allows you to import a function template with typename template parameter T, and a non-type (integral) template parameter N. You can also import Class kernels with non-default constructors. 
+The AIE Class Kernel block allows you to import an AI Engine class kernel. This block supports importing Window, Buffer, Stream, Cascade, and Run time parameter as arguments to the kernel function. Additionally, this block allows you to import a function template with typename template parameter T, and a non-type (integral) template parameter N. You can also import Class kernels with non-default constructors. 
 
 If you use file scope variable, global variable, or static function scope variable to store the internal states of a C function kernel, when multiple instances of such a kernel are mapped to the same core, the internal state variables are shared across multiple instances and cause conflicts. You can avoid this problem using Class kernels.
 
