@@ -13,7 +13,7 @@ AI Engine/Tools; HLS/Tools; Utilities/Code Generation.
 The Vitis Model Composer Hub block governs the functionality of the Vitis Model Composer tool. It allows you to specify the desired outputs, set the directory path for the generated output, and determine the target device and design clock frequency. The block consists of three primary panes:
 
 - The Hardware Selection pane assists in selecting the appropriate device, board, or platform.
-- The Code Generation pane offers options for each valid PL, HLS, or AI Engine subsystem in the design.
+- The Code Generation pane offers options for each valid HDL, HLS, or AI Engine, as well as heterogeneous (AI Engine + PL) subsystems in the design.
 - The Settings pane allows for general tool settings.
 
 ## Hardware Selection tab
