@@ -22,6 +22,8 @@ This allows you to select a part, board, or platform to which your
 design is targeted. Vitis Model Composer obtains board and device data
 from the Vivado database.
 
+<img src="./Images/hardware_selection.png" width="600">
+
 
 
 
