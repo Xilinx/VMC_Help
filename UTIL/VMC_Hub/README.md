@@ -8,38 +8,31 @@ Control implementation of the model.
 
 AI Engine/Tools; HLS/Tools; Utilities/Code Generation.
 
-## Description
+## Overview
 
-The Vitis Model Composer Hub block controls the behavior of the Vitis
-Model Composer tool.
+The Vitis Model Composer Hub block governs the functionality of the Vitis Model Composer tool. It allows you to specify the desired outputs, set the directory path for the generated output, and determine the target device and design clock frequency. The block consists of three primary panes:
 
-You can specify the targeted design flow for the generated output, the
-directory path for the output, and the desired device and design clock
-frequency using the following tabs.
+- The Hardware Selection pane assists in selecting the appropriate device, board, or platform.
+- The Code Generation pane offers options for each valid PL, HLS, or AI Engine subsystem in the design.
+- The Settings pane allows for general tool settings.
 
-- The Hardware Selection pane helps with device or board selection.
-- The Code Generation pane provides options to select the output flow by
-  selecting subsystems and specifying Code directory. Different options
-  will be displayed depending on if the subsystem is targeting HDL, HLS,
-  or AIE.
+## Hardware Selection tab
+Clicking the browse button (…) displays the Device Chooser dialog box.
+This allows you to select a part, board, or platform to which your
+design is targeted. Vitis Model Composer obtains board and device data
+from the Vivado database.
 
 
-### Data Type Support
 
-Data type support is not applicable to the Vitis Model Composer Hub
-block.
+
+
 
 ## Parameters
 <img src="./Images/vbk1663246159437.png" width="600">
 
 The following section describes the configurable options available in
-each pane of the Vitis Model Composer Hub block.
+each pane of the Vitis Model Composer Hub block. 
 
-#### Hardware Selection  
-Clicking the browse button (…) displays the Device Chooser dialog box.
-This allows you to select a part, board, or platform to which your
-design is targeted. Vitis Model Composer obtains board and device data
-from the Vivado database.
 
 #### Code Generation  
 Select the subsystem name for which to generate code from the list on
