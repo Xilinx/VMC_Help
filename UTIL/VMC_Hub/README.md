@@ -24,17 +24,7 @@ from the Vivado database.
 
 <img src="./Images/hardware_selection.png" width="600">
 
-
-
-
-
-
-## Parameters
-<img src="./Images/vbk1663246159437.png" width="600">
-
-The following section describes the configurable options available in
-each pane of the Vitis Model Composer Hub block. 
-
+## Code Generation tab
 
 #### Code Generation  
 Select the subsystem name for which to generate code from the list on
