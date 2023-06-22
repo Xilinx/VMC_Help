@@ -38,7 +38,7 @@ Utilizing the same code directory can have its advantages in certain situations.
 
 ## Settings for AI Engine Subsystems
 <div class="noteBox">
-For an AI Engine subsystem, Vitis Model Composer generates a top level adaptive data flow (adf) graph. In addition, it can also generate a testbench. 
+When you select an AI Engine subsystem on the left panel and click the "Generate" button, Vitis Model Composer generates a top level adaptive data flow (adf) graph. In addition, it can also generate a testbench. 
 </div>
 
 ### AIE Compiler Options  
