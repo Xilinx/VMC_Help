@@ -27,13 +27,16 @@ from the Vivado database.
 ## Code Generation tab
 
 #### Code Generation  
-Select the subsystem name for which to generate code from the list on
-the left. Different settings will display depending on the type of the subsystem (HDL, HLS, or AI Engine).
+In this tap, to the left, you will see a list of the subsystems in your design. When you select a subsystem, different settings will display depending on the type of the subsystem selected (HDL, HLS, or AI Engine). 
 
 #### Code direcotry
-The generated code will be saved in the specified code directory. In case the directory already exists, you will receive a notification. Utilizing the same code directory can have its advantages in certain situations. For instance, if you only modify the input data for an AI Engine design, but have already executed the AIE simulator for a previous input, the tool will skip the compilation phase and proceed directly to simulation, saving you time.
+The generated code will be saved in the specified code directory. In case the directory already exists, you will receive a notification.
 
-#### AIE Settings  
+<div class="noteBox">
+Utilizing the same code directory can have its advantages in certain situations. For instance, if you only modify the input data for an AI Engine design, but have already executed the AIE simulator for a previous input, the tool will skip the compilation phase and proceed directly to simulation, saving you time.
+</div>
+
+## Settings for AI Engine Subsystems  
 ##### AIE Compiler Options  
 When specified, the compiler options provide control over the AI Engine compiler. For a full list of compiler options refer to 
 [AI Engine Compiler Options](https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/AI-Engine-Compiler-Options). Specify the compiler options as a cell array of characters, for example, {'--stacksize=20', '--heapsize=1024'}. Use an empty cell array, {}, if there is no need to specify any compiler options.
@@ -97,7 +100,7 @@ only enabled when a Linux HW System Type is selected.
 When enabled, hardware emulation will run immediately after code
 generation.
 
-#### HDL Settings  
+## Settings for HDL Subsystems   
 ##### Compilation Type  
 Specifies the type of compilation result that should be produced when
 the code generator is invoked. The default compilation type is IP
@@ -312,7 +315,7 @@ only enabled when a Linux HW System Type is selected.
 When enabled, a BOOT.BIN (for baremetal HW system) or SD card image (for
 Linux HW system) will be generated after code generation.
 
-#### HLS Settings  
+## Settings for HLS Subsystems 
 ##### Target  
 Select IP Catalog to export the design to the Vivado IP Catalog. After
 C/C++ code generation, Vitis High-Level Synthesis (HLS) is invoked to
