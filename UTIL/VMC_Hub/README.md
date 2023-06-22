@@ -28,8 +28,7 @@ from the Vivado database.
 
 #### Code Generation  
 Select the subsystem name for which to generate code from the list on
-the left. Different settings will display depending on the type of code
-generation (HDL, HLS, or AI Engine) to be performed.
+the left. Different settings will display depending on the type of the subsystem (HDL, HLS, or AI Engine).
 
 #### Code direcotry
 The generated code will be saved in the specified code directory. In case the directory already exists, you will receive a notification. Utilizing the same code directory can have its advantages in certain situations. For instance, if you only modify the input data for an AI Engine design, but have already executed the AIE simulator for a previous input, the tool will skip the compilation phase and proceed directly to simulation, saving you time.
