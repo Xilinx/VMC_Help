@@ -26,17 +26,21 @@ from the Vivado database.
 
 ## Code Generation tab
 
-#### Code Generation  
+### Code Generation  
 In this tap, to the left, you will see a list of the subsystems in your design. When you select a subsystem, different settings will display depending on the type of the subsystem selected (HDL, HLS, or AI Engine). 
 
-#### Code direcotry
+### Code direcotry
 The generated code will be saved in the specified code directory. In case the directory already exists, you will receive a notification.
 
 <div class="noteBox">
 Utilizing the same code directory can have its advantages in certain situations. For instance, if you only modify the input data for an AI Engine design, but have already executed the AIE simulator for a previous input, the tool will skip the compilation phase and proceed directly to simulation, saving you time.
 </div>
 
-## Settings for AI Engine Subsystems  
+## Settings for AI Engine Subsystems
+<div class="noteBox">
+For an AI Engine subsystem, Vitis Model Composer generates a top level adaptive data flow (adf) graph. In addition, it can also generate a testbench. 
+</div>
+
 ### AIE Compiler Options  
 When specified, the compiler options provide control over the AI Engine compiler. For a full list of compiler options refer to 
 [AI Engine Compiler Options](https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/AI-Engine-Compiler-Options). Specify the compiler options as a cell array of characters, for example, {'--stacksize=20', '--heapsize=1024'}. Use an empty cell array, {}, if there is no need to specify any compiler options.
