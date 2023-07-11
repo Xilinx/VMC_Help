@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via the input port.
+filter coefficients via a second input port.
 
 #### Filter coefficients  
 This field should be specified with the asymmetric filter coefficients
