@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via a second input port.
+filter coefficients via a second input port. This input port is an asynchronous RTP port. You can learn more about RTP ports [here](https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/Synchronous-and-Asynchronous-RTP). 
 
 #### Filter coefficients  
 This field should be specified with the asymmetric filter coefficients
