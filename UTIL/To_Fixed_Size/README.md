@@ -1,7 +1,7 @@
 # To Fixed Size
 
 This block takes a variable size vector as an input and produces a fixed
-size vector as output. The block copies samples from the input to the
+size vector as an output. The block copies samples from the input to the
 output.
 
   
