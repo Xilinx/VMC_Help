@@ -26,8 +26,8 @@ from the Vivado database.
 
 ## Code Generation tab
 
-### Code Generation  
-In this tap, to the left, you will see a list of the subsystems in your design. When you select a subsystem, different settings will display depending on the type of the subsystem selected (HDL, HLS, or AI Engine). 
+### Code Generation 
+To the left of this tab, a list displays all subsystems in your design. Selecting a subsystem reveals specific settings based on its type (HDL, HLS, or AI Engine). The tool automatically detects the subsystem type based on its internal blocks
 
 ### Code direcotry
 The generated code will be saved in the specified code directory. In case the directory already exists, you will receive a notification.
@@ -38,7 +38,7 @@ Utilizing the same code directory can have its advantages in certain situations.
 
 ## Settings for AI Engine Subsystems
 <div class="noteBox">
-When you choose an AI Engine subsystem from the left panel and click the "Generate" button, Vitis Model Composer creates a top-level adaptive data flow (ADF) graph. Furthermore, it has the capability to generate a testbench as well.
+Selecting an AI Engine subsystem in the left panel and clicking "Generate" creates a top-level adaptive data flow (ADF) graph and can also generate a testbench.
 </div>
 
 ### AIE Compiler Options  
@@ -49,18 +49,19 @@ When specified, the compiler options provide control over the AI Engine compiler
 For a full list of cycle-approximate System C AI Engine simulator options refer to [AI Engine Simulator Options](https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/Simulator-Options). Specify the AI Engine simulator options as a cell array of characters, for example, {'--enable-memory-check','--hang-detect-time=10'}. These options are used when "Run cycle-approximate AIE Simulation (SystemC) after code generation" is checked. 
 
 ### Create Testbench  
-When enabled, Vitis Model Composer generates test vectors while generating the code. Test vectors are gathered from the inputs and outputs of the AI Engine subsystem when the simulation is running and a text file containing the data is created for each port and saved in the 'data' directory under the specified code directory.
+When enabled, Vitis Model Composer generates test vectors alongside the code. These vectors are derived from the AI Engine subsystem's inputs and outputs during simulation. The data is saved in separate text files for each port within the 'data' directory of the specified code directory.
 
 ### Run cycle-approximate AIE Simulation (SystemC) after code generation  
-This option is only available if Create testbench is selected. When
-enabled, it runs the AIE simulation after code generation and verifies that for each output of the AI Engine Subsystem in the Simulink design, the output of AIE Simulation numerically matches the output of the Simulink design. 
+This option is available only when Create testbench is selected. Enabling it executes the AIE simulation after code generation and ensures numerical agreement between the AI Engine Subsystem's outputs in the Simulink design and the AIE Simulation outputs.
 
 ### Simulation timeout (cycles)  
-This determines the run duration of the cycle-approximate AIE simulation in terms of the number of cycles. By default, it runs for 50000 cycles, after which it terminates. It's important to note that the number of cycles refers to the number of AI Engine clock cycles, which is not directly linked to the 'Stop Time' in your Simulink design. If the number of cycles is insufficient, the AIE Simulation may generate fewer samples than the Simulink simulation, leading to a partial match between the Simulink output and the AI Engine simulator during verification after running the AIE Simulation. To address this issue, you can increase the Simulation timeout, which will result in more output from the AIE simulator. However, not all partial matches are necessarily due to this factor. The picture below shows part of the output log that indicates a partial match:
+The cycle-approximate AIE simulation's run duration is defined by the number of cycles. By default, it runs for 50,000 cycles before termination. It's important to note that the cycle count is specific to AI Engine clock cycles and not directly linked to the 'Stop Time' in your Simulink design.
+
+Insufficient cycle count may result in a partial match between Simulink output and AI Engine simulator during verification after running the AIE Simulation. To mitigate this, increasing the Simulation timeout generates more output from the AIE simulator. However, not all partial matches are necessarily due to this factor. The provided image displays part of the output log indicating a partial match.
 
 <img src="./Images/partial_match.png" width="600">
 
-If the Simulation timeout value is too small, the AIE Simulation may not produce any output at all. However, another reason for no output is a deadlock in the system. The deadlock will not manifest itself in Simulink simulation because Simulink simulation is a functional simulation.
+A small Simulation timeout value may cause no output from the AIE Simulation. However, no output can also be due to a system deadlock, which is not evident in Simulink simulation since it's a functional simulation.
 
 ### Plot AIE Simulation Output and Estimate Throughput  
 When enabled, this option allows visualization of the outputs of the AI Engine subsystem in the [Simulation Data Inspector](https://www.mathworks.com/help/simulink/slref/simulationdatainspector.html). The throughput for each output is also calculated. You can use the cursors in the Simulation Data Inspector to limit the range in which throughput is calculated. As you move the cursors, the throughput gets recalculated. See the screenshot below for an example of displaying the output of the AIE Simulation in the Simulation Data Inspector. 
@@ -77,32 +78,6 @@ which can be viewed in the Vitis Analyzer.
 
 ### Open Vitis Analyzer  
 Click to invoke the Vitis Analyzer tool. If you are running trace or profile, it is recommended to use '--xlopt=0' AIE compiler option. This will give a greater visibility into the design.
-
-### AIE Hardware Flow  
-To generate the hardware image, specify the platform in the Target pane
-and select the Create Testbench option in the AIE Settings panel.
-
-##### Generate Hardware Validation Code  
-When enabled, Vitis Model Composer generates code to be used for
-hardware validation.
-
-##### HW System Type  
-Choose between Baremetal or Linux hardware validation flow.
-
-##### Target  
-Specify the target for hardware validation flow.
-
-##### Common SW Dir  
-Provide the path to the folder containing the Petalinux common images.
-This option is only enabled when a Linux HW System Type is selected.
-
-##### Target SDK Dir  
-Provide the path to the folder containing the target SDK. This option is
-only enabled when a Linux HW System Type is selected.
-
-##### Run hardware emulation after code generation  
-When enabled, hardware emulation will run immediately after code
-generation.
 
 ## Settings for HDL Subsystems   
 ##### Compilation Type  
@@ -292,33 +267,6 @@ Clicking this button clears the remote IP cache. Clearing the cache
 saves disk space (the IP Cache can grow large, especially if your design
 uses many IP modules).
 
-#### HDL Hardware Flow  
-To generate the hardware image, specify the platform in the Target pane
-and select the Create Testbench option in the HDL Settings panel. The
-HDL hardware flow is only supported for Versal® devices.
-
-##### Generate Hardware Validation Code  
-When enabled, Vitis Model Composer generates code to be used for
-hardware validation.
-
-##### HW System Type  
-Choose between Baremetal or Linux hardware validation flow.
-
-##### Target  
-Specify the target for hardware validation flow.
-
-##### Common SW Dir  
-Provide the path to the folder containing the Petalinux common images.
-This option is only enabled when a Linux HW System Type is selected.
-
-##### Target SDK Dir  
-Provide the path to the folder containing the target SDK. This option is
-only enabled when a Linux HW System Type is selected.
-
-##### Generate (BOOT.BIN/SD card image) after code generation  
-When enabled, a BOOT.BIN (for baremetal HW system) or SD card image (for
-Linux HW system) will be generated after code generation.
-
 ## Settings for HLS Subsystems 
 ##### Target  
 Select IP Catalog to export the design to the Vivado IP Catalog. After
@@ -344,47 +292,21 @@ vectors while generating code.
 This parameter prompts you to enter a larger stack size. When Create and
 run testbench is enabled, the Testbench stack size option specifies the
 size of the testbench stack frame during C simulation (CSIM).
-Occasionally, the default stack frame size of 10 MB allocate for
+Occasionally, the default stack frame size of 10 MB allocated for
 execution of the testbench may be insufficient to run the test, due to
 large arrays allocated on the stack and/or deep nesting of subsystems.
 Typically when this happens, the test would fail with a segmentation
 fault and an associated error message. In such a case you can increase
 the size of the stack frame and rerun the test.
 
-#### HLS Hardware Flow  
-To generate the hardware image, specify the platform in the Target pane
-and select the Create Testbench option in the HLS Settings panel.
-Generate Hardware Validation Code.
+## Settings  
+Choose whether the Model Composer Hub block should consider your model as a legacy System Generator design. When selected, code generation won't require your HDL design to be in a subsystem.
 
-When enabled, Vitis Model Composer generates code to be used for
-hardware validation.
+## Hardware Flow  
+The hardware validation flow for AI Engines and PL in AMD Vitis™ Model Composer provides a methodology to verify AI Engine and PL-based applications on AMD hardware (AMD Versal™ devices). Vitis Model Composer provides the option to generate a hardware image targeting a specific platform for the Simulink® model. This hardware image can then be run on a board to verify whether the results from hardware match with the simulation output.
 
-##### HW System Type  
-Choose between Baremetal or Linux hardware validation flow.
+For leran more abot Hardware validation flow click [here](https://docs.xilinx.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/Hardware-Validation-Flow-for-AI-Engines-and-PL). 
 
-##### Target  
-Specify the target for hardware validation flow.
 
-##### Common SW Dir  
-Provide the path to the folder containing the Petalinux common images.
-This option is only enabled when a Linux HW System Type is selected.
-
-##### Target SDK Dir  
-Provide the path to the folder containing the target SDK. This option is
-only enabled when a Linux HW System Type is selected.
-
-##### Generate (BOOT.BIN/SD card image) after code generation  
-When enabled, a BOOT.BIN (for baremetal HW system) or SD card image (for
-Linux HW system) will be generated after code generation.
-
-#### Code Generation  
-Select a subsystem containing blocks from the AI Engine, HDL, or HLS
-blocksets and specify the corresponding Code Directory. The Code
-Directory can be specified by entering the complete directory path or
-using the Browse button to provide a path.
-
-##### Settings  
-Specify whether the Model Composer Hub block should treat your model as
-a legacy System Generator design.
 
 
