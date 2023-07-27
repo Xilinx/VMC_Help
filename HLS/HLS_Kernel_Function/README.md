@@ -81,7 +81,6 @@ Please see the following table for a detailed list of supported data types for i
 | ----      | ----      | -------- |
 | **Scalar Types** | Scalar of C/C++ Primitive (except double, bool) | 	`short`, `int8`, `int32`, `int64`, `int&`, `float&` |
 |               | AP Integer: ap_int/ap_uint<X>, 1 <= X <= 128 | `ap_int<32>`, `ap_uint<96>` |
-|               | Predefined complex types: cint16/cint32/cfloat/etc | `cint16`, `cfloat` |
 |               | std::complex with C/C++ primitive (except double, bool) | `std::complex<int32>`, `std::complex<float>` |
 |               | std::complex  ap_int/ap_uint<X>, 1 <= X <= 64	| `std::complex<ap_int<32> >`, `std::complex<ap_uint<64> >` |
 |               | AP AXI: ap_axis/ap_axiu, data width is 32/64/128 | `ap_axis<32, 0, 0, 0>`, `ap_axiu<64, 0, 0, 0>` |
