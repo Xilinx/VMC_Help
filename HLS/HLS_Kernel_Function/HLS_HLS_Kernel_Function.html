@@ -145,34 +145,29 @@ types for inputs and outputs.</p>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Predefined complex types: cint16/cint32/cfloat/etc</td>
-<td><code>cint16</code>, <code>cfloat</code></td>
-</tr>
-<tr class="even">
-<td></td>
 <td>std::complex with C/C++ primitive (except double, bool)</td>
 <td><code>std::complex&lt;int32&gt;</code>,
 <code>std::complex&lt;float&gt;</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>std::complex ap_int/ap_uint<X>, 1 &lt;= X &lt;= 64</td>
 <td><code>std::complex&lt;ap_int&lt;32&gt; &gt;</code>,
 <code>std::complex&lt;ap_uint&lt;64&gt; &gt;</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>AP AXI: ap_axis/ap_axiu, data width is 32/64/128</td>
 <td><code>ap_axis&lt;32, 0, 0, 0&gt;</code>,
 <code>ap_axiu&lt;64, 0, 0, 0&gt;</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>AXI Stream with ap_int/ap_uint, data width is 32/64/128</td>
 <td><code>hls::axis&lt;ap_int&lt;32&gt;, 0, 0, 0&gt;</code>,
 <code>hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt;</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Vector Types</strong></td>
 <td>Constant size array of any of the above Scalar Types. Must be passed
 by reference.</td>
@@ -180,7 +175,7 @@ by reference.</td>
 <code>std::complex&lt;ap_uint&lt;32&gt;&gt; (&amp;arg)[20]</code>,
 <code>hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt; (&amp;arg)[30]</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>hls::stream</strong></td>
 <td>hls::stream with any of above Scalar Types. Must be passed by
 reference.</td>
@@ -191,7 +186,7 @@ reference.</td>
 <code>hls::stream&lt;std::complex&lt;ap_int&lt;16&gt; &gt; &amp;arg</code>,
 <code>hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt; &gt; &amp;arg</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Template</strong></td>
 <td>Any template that is deducted into above supported
 scalar/vector/stream types</td>
