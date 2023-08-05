@@ -305,7 +305,7 @@ Choose whether the Model Composer Hub block should consider your model as a lega
 ## Hardware Flow  
 The hardware validation flow for AI Engines and PL in AMD Vitis™ Model Composer provides a methodology to verify AI Engine and PL-based applications on AMD hardware (AMD Versal™ devices). Vitis Model Composer provides the option to generate a hardware image targeting a specific platform for the Simulink® model. This hardware image can then be run on a board to verify whether the results from hardware match with the simulation output.
 
-For leran more abot Hardware validation flow click [here](https://docs.xilinx.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/Hardware-Validation-Flow-for-AI-Engines-and-PL). 
+To learn more about Hardware validation flow click [here](https://docs.xilinx.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/Hardware-Validation-Flow-for-AI-Engines-and-PL). 
 
 
 
