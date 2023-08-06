@@ -19,29 +19,17 @@ This block does not support graph classes with 'input_plio' or 'output_plio' por
 
 ## Parameters
 
-#### Graph file  
-Specifies whether the graph import should be done using the header file
-(\*.h) or using source file (\*.cpp). By default the header file is
-selected.
-
 #### Graph Header file(\*.h)  
-This is the mandatory string that specifies the file (.h), where the
+This is a mandatory string that specifies the file (.h), where the
 application graph class is defined and the Adaptive Data Flow (ADF)
-header (adf.h), kernel function prototypes are included. This parameter
-is only visible when you choose the Header file (\*.h) option in the
-Graph file.
-
-#### Graph Source file (\*.cpp)  
-This is the mandatory string that specifies the file (.cpp), where the adf
-dataflow graph is instantiated. This file should contain the main()
-function, from where the dataflow graph initializes and runs. This
-option is available only when the Source file (\*.cpp) is selected in
-Graph file.
+header (adf.h), kernel function prototypes are included.
 
 #### Graph class  
 This is a mandatory string that specifies the name of the graph class.
-This parameter is only visible when you choose the Header file (\*.h)
-option in the Graph file.
+
+<div class="noteBox">
+Use the namespace if the class definition is at the namespace scope, like "mynamespace::myclass"; otherwise, no namespace specification is required.
+</div>
 
 #### Graph search paths  
 This is a vector of strings that specifies the search paths where header
@@ -57,3 +45,6 @@ accepted and multiple can be selected: ‘-D\<name\>’ and
 ‘-D\<name\>=\<definition\>’. That is, the optional argument must begin
 with the '-D' string and if the option `<definition>` value is not
 provided, it is assumed to be 1.
+
+## Examples
+[Importing AI Engine graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Graph)
