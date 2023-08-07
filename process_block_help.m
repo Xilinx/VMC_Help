@@ -10,13 +10,23 @@ function process_block_help(NameValueArgs)
 arguments
     NameValueArgs.force_update (1,1) {mustBeNumericOrLogical} = false;
     NameValueArgs.create_shipping_package (1,1) {mustBeNumericOrLogical} = false;
+    NameValueArgs.git (1,1) {mustBeNumericOrLogical} = false;
 end
+
+
+setenv("LD_PRELOAD",'')
+
 
 
 root_folder = pwd;
 
 force_update = NameValueArgs.force_update;
 create_shipping_package = NameValueArgs.create_shipping_package;
+connect_with_git = NameValueArgs.git;
+
+if connect_with_git
+    system("git pull")
+end
 
 setenv('LD_PRELOAD',"");
 
@@ -86,12 +96,31 @@ for c=1:length(categories)
                 [first, last] = regexp(text,reg_expression);
             end
 
+            %% Replace any link to the Examples github with proper matlab function
+
+            reg_expression = "https:\/\/github\.com\/Xilinx\/Vitis_Model_Composer(\/[^)]+\/)(.+?)\)";
+
+            [first, last] = regexp(text,reg_expression);
+
+            while ~isempty(first)
+                string = text(first(1):last(1));
+                id = regexp(string,reg_expression,'tokens');
+                text = replaceBetween(text,first(1),last(1),"matlab:XmcExampleApi.getExample('"+id{1}{2}+"'))");
+                [first, last] = regexp(text,reg_expression);
+            end
+
             writelines(text,'temp.md');
+
 
             %% Convert md to html
             pandoc_cmd = strcat("pandoc --from gfm --to html -s --embed-resources --no-highlight -c ", root_folder, "/xmc-matlab.css --section-divs --metadata title=""",bname,""" temp.md ", ' -o', html_file);
             system(pandoc_cmd);
             disp(html_file + " got generated.");
+
+            if connect_with_git
+                system("git add " + html_file);
+            end
+            
             delete temp.md
             
         end
@@ -104,6 +133,11 @@ for c=1:length(categories)
 
     end
     cd("..")
+end
+
+if connect_with_git
+    system("git commit -m 'Updating html files'")
+    system("git push")
 end
 
 if create_shipping_package
