@@ -22,8 +22,15 @@ To learn more about class kernels click [here](https://docs.xilinx.com/r/en-US/u
 
 ## Parameters
 
+#### Kernel hearder file
+This mandatory string points to the header file (.h file) containing the class definition.
+
 #### Kernel class
 Mandatory string. Name of the kernel class which contains member variables and kernel member functions.
+
+<div class="noteBox">
+Use the namespace if the class definition is at the namespace scope, like "mynamespace::myclass"; otherwise, no namespace specification is required.
+</div>
 
 #### Kernel function
 Mandatory string. Name of the kernel member function for which the block is to be created. This function should be registered using the registerKernelClass method in the kernel header file. 
@@ -46,5 +53,8 @@ The following two preprocessor option formats are accepted and multiple can be s
 Use [AIE Kernel](../AIE_Kernel_Function/README.md) block to import a non class based kernel.
 
 Use [AIE Graph](../AIE_Graph_Function/README.md) block to import an AI Engine graph.
+
+## Examples
+[Importing a templatized class kernel as a block](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Class_Kernel_FIR)
 
   
