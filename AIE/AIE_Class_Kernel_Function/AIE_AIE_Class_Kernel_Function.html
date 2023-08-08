@@ -58,10 +58,19 @@ Use class kernels if your kernel needs to preserve internal states.
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
+<section id="kernel-hearder-file" class="level4">
+<h4>Kernel hearder file</h4>
+<p>This mandatory string points to the header file (.h file) containing
+the class definition.</p>
+</section>
 <section id="kernel-class" class="level4">
 <h4>Kernel class</h4>
 <p>Mandatory string. Name of the kernel class which contains member
 variables and kernel member functions.</p>
+<div class="noteBox">
+Use the namespace if the class definition is at the namespace scope, like &quot;mynamespace::myclass&quot;; otherwise, no namespace specification is required.
+</div>
+
 </section>
 <section id="kernel-function" class="level4">
 <h4>Kernel function</h4>
@@ -102,6 +111,11 @@ option <definition> value is not provided, it is assumed to be 1.</p>
 Kernel</a> block to import a non class based kernel.</p>
 <p>Use <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;AIE_Graph_Function&#39;,&#39;category&#39;,&#39;AIE&#39;))">AIE
 Graph</a> block to import an AI Engine graph.</p>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p><a href="matlab:XmcExampleApi.getExample(&#39;AIE_Class_Kernel_FIR&#39;)">Importing
+a templatized class kernel as a block</a></p>
 </section>
 </section>
 </body>
