@@ -62,6 +62,22 @@ Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how
 <img src="./Images/dds.png" width="400">
 <img src="./Images/dds_out.png" width="400">
 
+**DDS Block Example2:**
+
+![](./Images/DDS_Block_Ex1.png)
+
+**AIE and Simulink DDS output spectrum comparison:**
+
+![](./Images/DDS_SpectrumComparison.png)
+
+**DDS Block Example3:**
+
+![](./Images/DDS_Ex2.png)
+
+**AIE and Simulink DDS output spectrum comparison:**
+
+![](./Images/DDS_SpectrumComparisonEx2.png)
+
 ## Related blocks
 [DDS Stream](../DDS_Stream/README.md) is another DDS block that uses stream interface instead of buffer interface and is also SSR capable.
 
