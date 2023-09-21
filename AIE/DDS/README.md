@@ -62,7 +62,14 @@ Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how
 <img src="./Images/dds.png" width="400">
 <img src="./Images/dds_out.png" width="400">
 
-**DDS Block Example2:**
+**AIE and Simulink DDS Block Comparison Example1:**
+
+Assume you need the DDS to generate a frequnecy of 100 KHz at 4Msps. Here is how you set the parameters:
+* Phase increment: 1.0737e8 = 100e3*2^32/4e6
+* Sample time = 1/4e6
+* Output data type: cfloat
+* Samples per frame :256
+
 
 ![](./Images/DDS_Block_Ex1.png)
 
@@ -70,7 +77,13 @@ Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how
 
 ![](./Images/DDS_SpectrumComparison.png)
 
-**DDS Block Example3:**
+**AIE and Simulink DDS Block Comparison Example2:**
+
+Assume you need the DDS to generate a frequnecy of 10 KHz at 40 Ksps. Here is how you set the parameters:
+* Phase increment: 1.0737e9 = 10e3*2^32/40e3
+* Sample time = 1/40e3
+* Output data type: cfloat
+* Samples per frame :1024
 
 ![](./Images/DDS_Ex2.png)
 
