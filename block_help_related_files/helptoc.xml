@@ -16,7 +16,7 @@
         <!-- A Getting Started Guide usually comes first -->
 		
         <!-- Optional List of Examples, with hyperlinks to examples in other files -->
-        <tocitem target="GEN_examples.html" image="HelpIcon.HelpIcon.EXAMPLES">Examples and Tutorials
+        <tocitem target="matlab:xmcOpenExamples" image="HelpIcon.HelpIcon.EXAMPLES">Examples and Tutorials
         </tocitem>
         <!-- Optional List of Additional Documentation, with hyperlinks to PDF documents on website -->
 		<!-- Optional link or links to your or other Web sites -->
