@@ -96,6 +96,44 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 
 The terms "ones(1,X)" in the expression above are just replacements for the data that we are applying the FFT to.
 
+**FFT Dynamic Point Block Example1:**
+
+![](./Images/DynamicFFT_Ex1.png)
+
+**Simulink Dynamic Point FFT function:**
+
+``` pre
+function y = fcn(fftSize, u, frame_size, max_fft_size)
+
+out = complex(zeros(frame_size,1));
+
+for i = 0:frame_size/max_fft_size-1
+    frame_fft = fft(double(u(i*max_fft_size+1:(i+1)*max_fft_size)),fftSize);
+    out(i*max_fft_size+1:(i+1)*max_fft_size) = [frame_fft; zeros(max_fft_size - fftSize,1)];
+end
+y = single(out(1:frame_size));
+```
+
+**Difference between AIE FFT and Simulink FFT block outputs:**
+
+![](./Images/ErrorValue_Ex1.png)
+
+**AIE Dynamic Point FFT and Simulink Dynamic Point FFT Output Spectrum Comparison:**
+
+![](./Images/DynamicFFT_Comparison_Ex1.png)
+
+**FFT Dynamic Point Block Example2:**
+
+![](./Images/DynamicFFT_Ex2.png)
+
+**Difference between AIE FFT and Simulink FFT block outputs:**
+
+![](./Images/ErrorValue_Ex2.png)
+
+**AIE Dynamic Point FFT and Simulink Dynamic Point FFT Output Spectrum Comparison:**
+
+![](./Images/DynamicFFT_Comparison_Ex2.png)
+
 ## Related blocks
 [FFT](../FFT/README.md) is another FFT block that uses buffer interface.
 
