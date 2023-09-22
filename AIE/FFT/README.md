@@ -38,6 +38,39 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
+# FFT Block Examples 
+This example compares AI Engine FFT block in Vitis Model Composer with the Simulink FFT block.
+
+**Example with 1024 point FFT:**
+
+![](./Images/FFT_Example1.png) 
+
+**Complex_Signal_6KHz Subsystem blocks:**
+
+![](./Images/Complex_Signal_6KHz.png) 
+
+**Error_Computation Subsystem blocks:**
+
+![](./Images/Error_Computation.png) 
+
+**Comparison of AIE FFT and Simulink FFT Spectrum:**
+
+![](./Images/SpectrumComparison.png)
+
+**Difference between AIE FFT and Simulink FFT block outputs:**
+
+![](./Images/Error.png)
+
+
+**Example with 512 point FFT:**
+
+![](./Images/FFT_Example2.png) 
+
+**Comparison of AIE FFT and Simulink FFT Spectrum:**
+
+![](./Images/SpectrumComparison_Ex2.png)
+
+
 ## Examples
 For an example using the FFT block where the output is compared with the DSP System toolbox FFT block click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fft).
 
