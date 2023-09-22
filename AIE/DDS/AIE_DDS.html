@@ -61,7 +61,8 @@ Increasing the number of samples per frame increases the output throughput.
 <h4>Phase increment</h4>
 <p>Specifies the phase increment between samples. The value must be in
 the range 0 to 2^31 and the default value is 0.</p>
-<p>Phase increment is calculated using the formula (Fo*(2^N)) / Fs</p>
+<p>Phase increment is calculated using the formula
+<code>(Fo\*(2^N)) / Fs</code>.</p>
 <p>Where:</p>
 <ul>
 <li>Fo = Output frequency</li>
@@ -69,7 +70,49 @@ the range 0 to 2^31 and the default value is 0.</p>
 <li>Fs = Sampling frequency</li>
 </ul>
 <p>For example, for a sampling frequency of 1 Gsps and output frequency
-of 100 MHz, the Phase Increment should be 2^32/10.</p>
+of 100 MHz, the Phase Increment should be <code>2^32/10</code>.</p>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 <section id="sample-time" class="level4">
 <h4>Sample time</h4>

@@ -69,7 +69,8 @@ kernels used is equal to the value of SSR parameter.</p>
 <h4>Phase Increment</h4>
 <p>Specifies the phase increment between samples. The value must be in
 the range 0 to 2^31 and the default value is 0. Phase increment is
-calculated using the formula (Fo*(2^N)) / Fs / SSR where:</p>
+calculated using the formula <code>(Fo\*(2^N)) / Fs / SSR</code>
+where:</p>
 <ul>
 <li>Fo = Output frequency.</li>
 <li>N = 32, which represents the accumulator width, and it is
@@ -78,11 +79,53 @@ fixed.</li>
 </ul>
 <p>For example, for a sampling frequency of 1 Gsps, output frequency of
 100 MHz, and SSR of 4, the <em>Phase Increment</em> should be
-2^30/10.</p>
+<code>2^30/10</code>.</p>
 </section>
 <section id="initial-phase-offset" class="level4">
 <h4>Initial Phase Offset</h4>
 <p>Specifies the initial phase offset. The default value is 0.</p>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 <section id="sample-time" class="level4">
 <h4>Sample Time</h4>

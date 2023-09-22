@@ -46,6 +46,12 @@ is described below.
 Describes the type of individual data samples input/output of the
   dynamic point FFT. It can be cint16, cint32, cfloat types.
 
+#### Twiddle factor data type
+Describes the data type of the twiddle factors of the transform. It must be one of `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
+* 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
+* The twiddle factor data type must be an integer type if the input/output data type is an integer type.
+* The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
+
 #### FFT Maximum Size
 
 Specifies the maximum FFT size that is supported by Dynamic point FFT.
@@ -63,6 +69,30 @@ Specifies the number of samples in the input window excluding the
 
 Describes the power of 2 shift down applied to output. It must be in the range 0 to 61.
 
+#### Rounding mode
+
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 #### Number of cascade stages  
 This determines the number of kernels the FFT will be divided over in
