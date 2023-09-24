@@ -69,3 +69,32 @@ round for the value of 0.5.
 
 #### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over to improve throughput.
+
+## FIR Halfband Decimator Block Example1
+
+![](./Images/HBDecimator_Ex1.png)
+
+**Complex_Signals_2KHz_10KHz Subsystem Blocks:**
+
+![](./Images/Complex_Signals_2KHz_10KHz.png)
+
+**AIE and Simulink Halfband Decimator output spectrum comparison:**
+
+![](./Images/AIE_Simulink_HBDecimator_Comparison.png)
+
+## FIR Halfband Decimator Block Example2
+
+![](./Images/HBDecimator_Ex2.png)
+
+**Real_Signals_2KHz_10KHz Subsystem Blocks:**
+
+![](./Images/Real_Signals_2KHz_10KHz.png)
+
+**AIE and Simulink Halfband Decimator output spectrum comparison:**
+
+![](./Images/AIE_Simulink_HBDecimator_Comparison_Ex2.png)
+
+
+
+
+
