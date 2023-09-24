@@ -75,3 +75,19 @@ round for the value of 0.5.
 
 #### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+## FIR Asymmetric Decimation Block Example1
+
+![](./Images/AsymmetricDecimation_Ex1.png)
+
+**AIE and Simulink FIR Asymmetric Decimation Output Comparison:**
+
+![](./Images/AIE_Simulink_AsymmetricDecimation_Comparison.png)
+
+## FIR Asymmetric Decimation Block Example2
+
+![](./Images/AsymmetricDecimation_Ex2.png)
+
+**AIE and Simulink FIR Asymmetric Decimation Output Comparison:**
+
+![](./Images/AIE_Simulink_AsymmetricDecimation_Comparison_Ex2.png)
