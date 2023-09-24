@@ -78,3 +78,15 @@ factor.
   
 #### Number of cascade stages
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+**FIR Halfband Decimator Stream Example:**
+
+![](./Images/HalfBandDecimator_Stream_Ex1.png)
+
+**Complex_Signals_2KHz_10KHz subsystem blocks:**
+
+![](./Images/Complex_Signals_2KHz_10KHz.png)
+
+**AIE and Simulink Halfband Decimator Stream Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_HBDecimator_Stream_Comparison.png)
