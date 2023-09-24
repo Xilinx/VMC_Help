@@ -79,3 +79,15 @@ be of the form 2^N, where N is a non-negative integer.
 
 #### Number of cascade stages:
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+## FIR Asymmetric Decimation Stream Block Example
+
+![](./Images/FIR_AsymmetricDecimator_Stream_Ex1.png)
+
+**Complex_Signal_2KHz Subsystem blocks:**
+
+![](./Images/Complex_Signal_2KHz.png)
+
+**AIE and Simulink FIR Asymmetric Decimation Stream Output Comparison:**
+
+![](./Images/AIE_Simulink_FIR_AsymmetricDecimator_Comparison.png)
