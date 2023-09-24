@@ -59,7 +59,6 @@ This example compares AI Engine IFFT block in Vitis Model Composer with the Simu
 
 ![](./Images/IFFT_Realpart.png)
 
-
 **IFFT Signal Imaginary Part Comparison:**
 
 ![](./Images/IFFT_imagpart.png)
