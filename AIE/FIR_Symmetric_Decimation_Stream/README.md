@@ -87,3 +87,20 @@ be of the form 2^N, where N is a non-negative integer.
 
 #### Number of cascade stages:
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+**FIR Symmetric Decimation Stream Block Example1:**
+
+![](./Images/FIR_Symmetric_Decimation_Stream_Ex1.png)
+
+**AIE and Simulink FIR Symmetric Decimation Stream Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_OutputSpectrum_Comparison_Ex1.png)
+
+**FIR Symmetric Decimation Stream Block Example2:**
+
+![](./Images/FIR_Symmetric_Decimation_Stream_Ex2.png)
+
+**AIE and Simulink FIR Symmetric Filter Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_OutputSpectrum_Comparison_Ex2.png)
+
