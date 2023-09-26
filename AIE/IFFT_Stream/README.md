@@ -60,3 +60,43 @@ This parameter is intended to improve performance and support IFFT
 
 #### Number of Cascade Stages
 This determines the number of kernels the FFT will be divided over in series to improve throughput.
+
+# IFFT Stream Block Examples 
+
+This example compares AI Engine IFFT Stream block in Vitis Model Composer with the Simulink IFFT block.
+
+**IFFT Stream Block Example1:**
+
+![](./Images/IFFT_Stream_Ex1.png)
+
+**FFT_Complex_Signal_2MHz Subsystem blocks:**
+
+![](./Images/FFT_Complex_Signal_2MHz.png)
+
+**AIE_Simulink_TimeDomain_SignalComparison Subsystem blocks:**
+
+![](./Images/AIE_Simulink_TimeDomain_SignalComparison.png)
+
+**IFFT Stream Output Signal Real Part Comparison in Time-Domain:**
+
+![](./Images/AIE_Simulink_IFFTOut_RealPart_Comparison.png)
+
+**IFFT Stream Output Signal Imaginary Part Comparison in Time-Domain:**
+
+![](./Images/AIE_Simulink_IFFTOut_ImaginaryPart_Comparison.png)
+
+**IFFT Stream Block Example2:**
+
+![](./Images/IFFT_Stream_Ex2.png)
+
+**IFFT Stream Output Signal Real Part Comparison in Time-Domain:**
+
+![](./Images/AIE_Simulink_IFFTOut_RealPart_Comparison_Ex2.png)
+
+**IFFT Stream Output Signal Imaginary Part Comparison in Time-Domain:**
+
+![](./Images/AIE_Simulink_IFFTOut_ImaginaryPart_Comparison_Ex2.png)
+
+
+
+

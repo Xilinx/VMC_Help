@@ -78,3 +78,16 @@ factor.
 
 #### Number of cascade stages:
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+**FIR Halfband Interpolator Stream Example:**
+
+![](./Images/FIR_HBInterpolator_Stream_Ex1.png)
+
+**ComplexSignal_4KHz subsystem blocks:**
+
+![](./Images/ComplexSignal_4KHz.png)
+
+**AIE and Simulink Halfband Interpolator Stream Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_HBInterpolator_StreamComparison.png)
+

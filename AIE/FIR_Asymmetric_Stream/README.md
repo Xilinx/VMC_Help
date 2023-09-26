@@ -86,4 +86,18 @@ This parameter specifies the number of input (or output) paths and must
 be of the form 2^N, where N is a non-negative integer.
 
 #### Number of cascade stages
-This determines the number of kernels the FIR will be divided over in series to improve throughput. This value must be in the range 1 to 40, inclusive.
+
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+## FIR Asymmetric Stream Block Examples
+
+![](./Images/FIR_Asymmetric_Stream_Ex1.png)
+
+**Complex_Signal_2KHz subsystem blocks:**
+
+![](./Images/ComplexSignal_2KHz.png)
+
+**AIE and Simulink FIR Asymmetric Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_AsymmetricStream_Comparison.png)
+

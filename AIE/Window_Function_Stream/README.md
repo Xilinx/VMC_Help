@@ -88,3 +88,81 @@ This parameter is intended to improve performance and support FFT
 
 The Windowing utility accepts only powers of 2 as the number of
   inputs/outputs.
+
+# Examples 
+This example compares AI Engine Window Function Stream block in Vitis Model Composer with the Simulink Window Function.
+
+![](./Images/WindowStream_Ex1.png)
+
+The Window function block arranges the coefficients in a round robin way and multiplies with the input data,
+window function code is depicted below:
+
+
+```
+function [y1,y2] = WindowFunction(u1,u2,Coeffs)
+y1 = complex(zeros(128,1,'single'));
+y2 = complex(zeros(128,1,'single'));
+count = 0;
+count2 = 0;
+for i = 1:1:256
+   if(rem(i,2)==1)  
+   count = count + 1;
+   %Multiplication of odd samples with window coefficients
+   y1(count,1) = (Coeffs(i,1)*u1(count,1)); 
+   else           
+   count2 = count2 + 1;
+   %Multiplication of even samples with window coefficients
+   y2(count2,1) = (Coeffs(i,1)*u2(count2,1)); 
+
+   end
+end
+end
+```
+**Complex_Signal_5KHz Subsystem blocks:**
+
+![](./Images/Complex_Signal_5KHz.png)
+
+**Splitting Subsystem blocks:**
+
+![](./Images/Splitting_Subsystem.png)
+
+**EvenSamples selector block parameters:**
+
+![](./Images/EvenSamples_Selector_BlockParameters.png)
+
+**OddSamples selector block parameters:**
+
+![](./Images/OddSample_Selector_BlockParameters.png)
+
+**Window Function Stream block parameters:**
+
+![](./Images/WindowStreamBlockParameters.png)
+
+**Merging subsystem blocks:**
+
+![](./Images/Merging_Subsystem.png)
+
+**AIE_Simulink_WindowComparison subsystem blocks:**
+
+![](./Images/AIE_Simulink_WindowComparison.png)
+
+**AIE and Simulink Window Output Real Part Comparison:**
+
+![](./Images/WindowOutRealPart.png)
+
+**AIE and Simulink Window Output Imaginary Part Comparison:**
+
+![](./Images/WindowOutImaginaryPart.png)
+
+**Window Function Stream Block Example2:**
+
+![](./Images/WindowStream_Ex2.png)
+
+**AIE and Simulink Window Output Real Part Comparison:**
+
+![](./Images/WindowOut_RealPart_Ex2.png)
+
+**AIE and Simulink Window Output Imaginary Part Comparison:**
+
+![](./Images/WindowOut_imagpart_Ex2.png)
+

@@ -39,3 +39,34 @@ Describes the power of 2 to scale the result by prior to output.
 #### Number of cascade stages  
 This determines the number of kernels the FFT will be divided over in
 series to improve throughput.
+# IFFT Block Examples 
+
+This example compares AI Engine IFFT block in Vitis Model Composer with the Simulink IFFT block.
+
+**Example with 1024 IFFT size:**
+
+![](./Images/IFFT_example.png)
+
+**IFFT_Complex_Signal_4KHz Subsystem blocks:**
+
+![](./Images/IFFT_Complex_Signal_4KHz.png)
+
+**Error_Computation Subsystem blocks:**
+ 
+![](./Images/Error_Computation.png)
+
+**IFFT Signal Real Part Comparison:**
+
+![](./Images/IFFT_Realpart.png)
+
+**IFFT Signal Imaginary Part Comparison:**
+
+![](./Images/IFFT_imagpart.png)
+
+**Difference between AIE IFFT and Simulink IFFT block outputs:**
+
+![](./Images/IFFT_Error.png)
+
+
+
+

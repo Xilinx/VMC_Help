@@ -55,3 +55,20 @@ Where:
 
 #### Number of cascade stages
 This determines the number of kernels the Mixer will be divided over in series to improve throughput.
+
+# Examples 
+This example compares AI Engine Mixer block in Vitis Model Composer with the Simulink mixer block
+
+![](./Images/Mixer_Example.png) 
+
+**Simulink_Mixer Subsystem blocks:**
+
+![](./Images/Simulink_Mixer.png) 
+
+**Complex_Signal_200KHz Subsystem blocks:**
+
+![](./Images/Complex_Signal_200KHz.png) 
+
+**AIE and Simulink Mixer output spectrum comparison:**
+
+![](./Images/Mixer_output.png) 

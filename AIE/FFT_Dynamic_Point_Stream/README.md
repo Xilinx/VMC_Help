@@ -183,3 +183,45 @@ This parameter is intended to improve performance and support FFT
 #### Number of Cascade Stages
 
 This determines the number of kernels the FFT will be divided over in series to improve throughput.
+
+
+##Examples
+
+**Dynamic Point FFT Stream Block Example1:**
+
+![](./Images/DynamicFFT_Stream_Ex1.png)
+
+**Complex Signal 6KHz Subsystem blocks:**
+
+![](./Images/ComplexSignal_6KHz.png)
+
+**Simulink Dynamic Point FFT function:**
+
+``` pre
+function y = fcn(fftSize, u, frame_size, max_fft_size)
+
+out = complex(zeros(frame_size,1));
+
+for i = 0:frame_size/max_fft_size-1
+    frame_fft = fft(double(u(i*max_fft_size+1:(i+1)*max_fft_size)),fftSize);
+    out(i*max_fft_size+1:(i+1)*max_fft_size) = [frame_fft; zeros(max_fft_size - fftSize,1)];
+end
+y = single(out(1:frame_size));
+```
+**AIE_Simulink_FFTComparison Subsystem blocks:**
+
+![](./Images/AIE_Simulink_FFTComparison.png)
+
+**AIE Dynamic Point FFT and Simulink Dynamic Point FFT Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_DynamicFFT_Comparison.png)
+
+**Dynamic Point FFT Stream Block Example2:**
+
+![](./Images/DynamicFFT_Stream_Ex2.png)
+
+**AIE Dynamic Point FFT and Simulink Dynamic Point FFT Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_DynamicFFT_Comparison_Ex2.png)
+
+

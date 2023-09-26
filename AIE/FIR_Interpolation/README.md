@@ -73,3 +73,27 @@ round for the value of 0.5.
 
 #### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+**FIR Interpolation Block Example1:**
+
+![](./Images/FIR_Interpolation_Ex1.png)
+
+**AIE and Simulink FIR Interpolator Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_Interpolation_Comparison_Ex1.png)
+
+**FIR Interpolation Block Example2:**
+
+![](./Images/FIR_Interpolation_Ex2.png)
+
+**AIE and Simulink FIR Interpolator Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_Interpolation_Comparison_Ex2.png)
+
+**FIR Interpolation Block Example3:**
+
+![](./Images/FIR_Interpolation_Ex3.png)
+
+**AIE and Simulink FIR Interpolator Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_Interpolation_Comparison_Ex3.png)
