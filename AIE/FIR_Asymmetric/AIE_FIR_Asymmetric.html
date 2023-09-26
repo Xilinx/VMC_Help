@@ -71,6 +71,11 @@ Input/Output data type is a float type.</li>
 <p>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via an input port.</p>
 </section>
+<section id="provide-second-set-of-output-ports" class="level4">
+<h4>Provide second set of output ports</h4>
+<p>When this option is enabled, a second output port is added to the
+block producing the same data as the first output port.</p>
+</section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
 <p>This field specifies the asymmetric filter coefficients. It could
@@ -95,6 +100,48 @@ before output. It must be in the range 0 to 61 inclusive.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
+</section>
+<section id="rounding-mode-1" class="level4">
+<h4>Rounding mode</h4>
 <p>Set the selection of rounding to be applied during the shift down
 stage of processing.</p>
 </section>
@@ -103,7 +150,9 @@ stage of processing.</p>
 <p>Determines the number of AI Engine processors to split the operation
 over. This allows AI Engine tiles to be traded for higher throughput.
 See the example below on how the number of cascade stages affect the
-throughput. The value must be in the range 1 to 9.</p>
+throughput. This determines the number of kernels the FIR will be
+divided over in series to improve throughput. This value must be in the
+range 1 to 40, inclusive.</p>
 </section>
 </section>
 <section id="constraints" class="level3">

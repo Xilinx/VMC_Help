@@ -29,14 +29,39 @@ Increasing the number of samples per frame increases the output throughput.
 Specifies the phase increment between samples. The value must be in the
 range 0 to 2^31 and the default value is 0.
 
-  Phase increment is calculated using the formula (Fo\*(2^N)) / Fs
+  Phase increment is calculated using the formula `(Fo\*(2^N)) / Fs`.
 
   Where:
   - Fo = Output frequency
   - N = 32, which represents the accumulator width, and it is fixed
   - Fs = Sampling frequency
 
-For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the Phase Increment should be 2^32/10.
+For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the Phase Increment should be `2^32/10`.
+
+#### Rounding mode
+
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 #### Sample time  
 Specifies the sample time for the output signal.

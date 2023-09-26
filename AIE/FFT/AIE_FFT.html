@@ -49,6 +49,20 @@ vertical-align: middle;
 <h4>Input/Output data type</h4>
 <p>Set the input/output data type.</p>
 </section>
+<section id="twiddle-factor-data-type" class="level4">
+<h4>Twiddle factor data type</h4>
+<p>Describes the data type of the twiddle factors of the transform. It
+must be one of <code>cint16</code>, <code>cint32</code>, or
+<code>cfloat</code> and must also satisfy the following rules:</p>
+<ul>
+<li>32-bit twiddle factors are only supported when the input/output data
+type is also 32-bit.</li>
+<li>The twiddle factor data type must be an integer type if the
+input/output data type is an integer type.</li>
+<li>The twiddle factor data type must be <code>cfloat</code> if the
+input/output data type is a float type.</li>
+</ul>
+</section>
 <section id="fft-size" class="level4">
 <h4>FFT size</h4>
 <p>This is an unsigned integer which describes the point size of the
@@ -68,6 +82,48 @@ be in the range of 2^4 and 2^12, inclusive.</p>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 to scale the result by prior to output.</p>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of cascade stages</h4>
@@ -115,7 +171,7 @@ outputs:</strong></p>
 <section id="examples" class="level2">
 <h2>Examples</h2>
 <p>For an example using the FFT block where the output is compared with
-the DSP System toolbox FFT block click <a href="matlab:XmcExampleApi.getExample(&#39;fft&#39;)">here</a>.</p>
+the DSP System Toolbox FFT block click <a href="matlab:XmcExampleApi.getExample(&#39;fft&#39;)">here</a>.</p>
 </section>
 <section id="references" class="level2">
 <h2>References</h2>
