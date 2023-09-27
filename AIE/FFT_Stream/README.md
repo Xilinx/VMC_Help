@@ -81,7 +81,7 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-## Example
+## Examples
 Below is an example of using the FFT Stream block. We are comparing the results with the FFT block from MathWorks DSP System toolbox and the results match, except for quantization errors. 
 
 ![](./Images/fft_stream_design.png)
@@ -108,6 +108,31 @@ The amplitude for the input sinusoidal is set to 2^15. For the FFT Stream block 
 And the FFT block data types are set as shown below:
 
 <img src="./Images/fft_mask.png" width="800">
+
+**FFT Stream Block Example:**
+
+![](./Images/FFT_Stream_example.png)
+
+**Complex Signal 5MHz Subsystem blocks:**
+
+![](./Images/Complex_Signal_5MHz.png)
+
+**Merging Subsystem blocks:**
+
+![](./Images/Merging.png)
+
+**Splitting Subsystem blocks:**
+
+![](./Images/Splitting.png)
+
+**AIE_Simulink_FFT_Comparison Subsystem blocks:**
+
+![](./Images/AIE_Simulink_FFT_Comparison.png)
+
+**AIE and Simulink FFT Stream Output Spectrum Comparison:**
+
+![](./Images/FFT_Stream_Spectrum.png)
+
 
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).

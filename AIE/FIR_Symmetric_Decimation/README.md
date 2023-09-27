@@ -83,3 +83,15 @@ round for the value of 0.5.
 
 #### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+**FIR Symmetric Decimation Filter Example:**
+
+![](./Images/FIR_SymmetricDecimation_Ex1.png)
+
+**Simulink_FIRDecimation_Scaling Subsystem blocks:**
+
+![](./Images/Simulink_FIRDecimation_Scaling.png)
+
+**AIE and Simulink FIR Symmetric Decimaion Filter Ouput Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_FIR_SymmetricDecimation_Comparison.png)

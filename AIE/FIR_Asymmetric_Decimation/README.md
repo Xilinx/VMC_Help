@@ -96,4 +96,22 @@ Specifies the number of decimator polyphases that will be split up and executed 
 The number of AI Engine tiles used is given by `(Number of decimator polyphases) * (SSR)^2 * (Number of cascade stages)`.
 
 #### Number of cascade stages  
-This determines the number of kernels the FIR will be divided over in series to improve throughput. This value must be in the range 1 to 40, inclusive.
+
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+## FIR Asymmetric Decimation Block Example1
+
+![](./Images/AsymmetricDecimation_Ex1.png)
+
+**AIE and Simulink FIR Asymmetric Decimation Output Comparison:**
+
+![](./Images/AIE_Simulink_AsymmetricDecimation_Comparison.png)
+
+## FIR Asymmetric Decimation Block Example2
+
+![](./Images/AsymmetricDecimation_Ex2.png)
+
+**AIE and Simulink FIR Asymmetric Decimation Output Comparison:**
+
+![](./Images/AIE_Simulink_AsymmetricDecimation_Comparison_Ex2.png)
+

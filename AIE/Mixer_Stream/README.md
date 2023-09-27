@@ -59,3 +59,24 @@ Specifies the initial phase offset. The default value is 0.
 
 #### Number of cascade stages
 This determines the number of kernels the Mixer will be divided over in series to improve throughput.
+
+# Examples 
+This example compares AI Engine Mixer Stream block in Vitis Model Composer with the Simulink mixer block
+
+![](./Images/Mixer_Stream_Ex1.png) 
+
+**Complex_Signal_200KHz Subsystem blocks:**
+
+![](./Images/Complex_Signal_200KHz.png) 
+
+**AIE Mixer Stream and Simulink Mixer Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_MixerOutput_Comparison.png) 
+
+**AIE Mixer Stream Block Example2:**
+
+![](./Images/Mixer_Stream_Ex2.png) 
+
+**AIE Mixer Stream and Simulink Mixer Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_MixerOutput_Comparison_Ex2.png) 

@@ -119,7 +119,17 @@ y2 = u(2:4:end);
 y3 = u(3:4:end);
 y4 = u(4:4:end);
 ```
+**AIE FIR Interpolation Stream Block and Simulink FIR Interpolation Comparison Example:**
 
+![](./Images/FIR_Interpolator_Stream_Ex2.png)
+
+**ComplexSignal_2KHz Subsystem blocks:**
+
+![](./Images/ComplexSignal_2KHz.png)
+
+**AIE FIR Interpolation Stream and Simulink FIR Interpolation Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_FIRInterpolator_Stream_Comparison.png)
 
 ### References
 [The Polyphase Implementation of Interpolation Filters in Digital Signal Processing](https://www.allaboutcircuits.com/technical-articles/digital-signal-processing-polyphase-implementation-interpolation-filter-dsp/)

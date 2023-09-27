@@ -115,3 +115,27 @@ The number of AI Engine tiles used is given by `(Number of decimator polyphases)
 
 #### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+**FIR Resampler Filter Example1:**
+
+![](./Images/Resampler_Ex1.png)
+
+**ComplexSignal_15KHz subsystem blocks:**
+
+![](./Images/ComplexSignal_15KHz.png)
+
+**AIE and Simulink Resampler Filter Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_Spectrum_Comparison.png)
+
+**FIR Resampler Filter Example2:**
+
+![](./Images/Resampler_Ex2.png)
+
+**ComplexSignal_5KHz subsystem blocks:**
+
+![](./Images/ComplexSignal_5KHz_And_RandomNoise.png)
+
+**AIE and Simulink Resampler Filter Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_Comparison_Ex2.png)

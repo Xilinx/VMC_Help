@@ -121,3 +121,20 @@ Now, if the input has a data stream of all ones (i.e., 1, 1, 1, etc.):
 
 ### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
+
+**FIR Halfband Interpolator Block Example1:**
+
+![](./Images/HalfBand_Interpolator_Ex1.png)
+
+**AIE and Simulink Halfband Interpolator Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_HBInterpolator_Comparison.png)
+
+
+**FIR Halfband Interpolator Block Example2:**
+
+![](./Images/HalfBand_Interpolator_Ex2.png)
+
+**AIE and Simulink Halfband Interpolator Output Spectrum Comparison:**
+
+![](./Images/AIE_Simulink_HBInterpolator_Comparison_Ex2.png)

@@ -107,6 +107,28 @@ We can use SSR to achieve freqencies larger than 1GHz. For example, assume you n
 <img src="./Images/dds_ssr.png" width="400">
 <img src="./Images/dds_ssr_out.png" width="400">
 
+**AIE and Simulink DDS Stream Block Comparison Example1:**
+
+This example compares AI Engine DDS stream block in Vitis Model Composer with the Simulink DDS block.
+
+![](./Images/DDS_Stream_Ex1.png)
+
+**Fixed Point Scaling Subsystem blocks:**
+
+![](./Images/FixedPointScaling.png)
+
+**AI Engine DDS and Simulink DDS output spectrum comparison:**
+
+![](./Images/DDS_SpectrumComparison_Ex1.png)
+
+**AIE and Simulink DDS Stream Block Comparison Example2:**
+
+![](./Images/DDS_Stream_Ex2.png)
+
+**AI Engine DDS and Simulink DDS output spectrum comparison:**
+
+![](./Images/DDS_SpectrumComparisonEx2.png)
+
 ## Related blocks
 [DDS](../DDS/README.md) is another DDS block that uses buffer interface instead of stream interface.
 

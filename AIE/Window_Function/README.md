@@ -69,3 +69,24 @@ The locations are set to suit TT_DATA type. That is, for TT_DATA=cint16, directi
 Note that for TT_DATA=cfloat, the values in the header are expected as cfloat and are value-cast (not reinterpret-cast) to integers internally. The output window also has a header. This is copied from the input header except for the status field, which is inserted. The status field is ignored on input. If an illegal point size is entered, the output header will have this field set to a non-zero value and the remainder of the output window is undefined.
 
 When this option is checked, the window will operate on frames of _Window size_ or (_Window size_)/2^N down to 16. Since the window values cannot be faithfully determined by sampling or interpolating from the provided parent array, it is necessary when in this mode to provide an array holding the window values for each window size. Since this is a full array of (_Window size_)*(1+ 1/2 + 1/4 + …) the overall table size provided must be (_Window size_) * 2. For example, for (_Window size_)=64, the values of the window coefficients for a window size of 64 will occupy array indices 0 to 63. The coefficients for window size of 32 will occupy indices 64 thru 95, and those for windows size of 16 will occupy 96 thru 111.
+
+
+# Examples 
+This example compares AI Engine Window Function block in Vitis Model Composer with the Simulink Window Function block.
+
+![](./Images/WindowFunctionModel1.png)
+  
+**Complex_Signal_5KHz Subsystem blocks:**
+
+![](./Images/ComplexSignal_5KHz.png) 
+
+**AIE_Simulink_WindowComparison Subsystem blocks:**
+
+![](./Images/WindowComparison.png) 
+
+**AIE and Simulink Window Function Output Comparison:**
+
+![](./Images/WindowOut_Real.png) 
+
+![](./Images/WindowOut_Imag.png) 
+ 
