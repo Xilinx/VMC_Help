@@ -11,10 +11,8 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-
-ul.task-list[class]{list-style: none;}
+ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
-font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -73,10 +71,31 @@ Input/Output data type is a float type.</li>
 <p>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via input port.</p>
 </section>
+<section id="provide-second-set-of-input-ports" class="level4">
+<h4>Provide second set of input ports</h4>
+<p>When this option is enabled, a second stream input can be connected
+to the FIR, increasing available throughput. When using a second stream
+input, the data should be organized in a 128-bit interleaved pattern.
+For example, for a cint16 input samples 0-3 should be sent over the
+first stream and samples 4-7 should be sent over the second stream.</p>
+</section>
+<section id="provide-second-set-of-output-ports" class="level4">
+<h4>Provide second set of output ports</h4>
+<p>When this option is enabled, a second stream output is added to the
+block. The two output data streams are interleaved in a 128-bit pattern.
+For example, for cint16 output data, samples 0-3 will be sent on the
+first output stream and samples 4-7 will be sent on the second output
+stream.</p>
+</section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
 <p>This field should be specified with the asymmetric filter
 coefficients and must be in the range 4 to 240 inclusive.</p>
+</section>
+<section id="filter-length" class="level4">
+<h4>Filter length</h4>
+<p>When using reloadable filter coefficients, use this parameter to
+specify the number of taps in the filter.</p>
 </section>
 <section id="interpolation-factor" class="level4">
 <h4>Interpolation factor</h4>
@@ -86,9 +105,7 @@ filter. It must be in the range 3 to 16.</p>
 <section id="decimation-factor" class="level4">
 <h4>Decimation factor</h4>
 <p>An unsigned integer which describes the decimation factor of the
-filter. It must be in the range 2 to 16. The decimation factor should be
-less that the interpolation factor and should not be divisible by the
-interpolation factor.</p>
+filter. It must be in the range 2 to 16.</p>
 </section>
 <section id="input-window-size-number-of-samples" class="level4">
 <h4>Input window size (Number of samples)</h4>
@@ -106,19 +123,86 @@ FIR terms before output. It must be in the range 0 to 61.</p>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
 <p>Describes the selection of rounding to be applied during the shift
-down stage of processing. The rounding options are as follows:</p>
-<ol type="1">
-<li>Floor (truncate)</li>
-<li>Ceiling</li>
-<li>Round to positive infinity</li>
-<li>Round to negative infinity</li>
-<li>Round symmetrical to infinity</li>
-<li>Round symmetrical to zero</li>
-<li>Round convergent to even</li>
-<li>Round convergent to odd</li>
-</ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
+</section>
+<section id="number-of-parallel-inputoutput-ssr" class="level4">
+<h4>Number of parallel input/output (SSR)</h4>
+<p>This parameter specifies the number of input (or output) paths. SSR
+decomposition is currently unavailable for the FIR Resampler Filter
+Stream block. Please set this parameter to 1 and control Super Sample
+Rate operations by changing the number of interplator/decimator
+polyphases.</p>
+</section>
+<section id="number-of-interpolator-polyphases" class="level4">
+<h4>Number of interpolator polyphases</h4>
+<p>Specifies the number of interpolator polyphases over which the
+coefficients will be split to enable parallel computation of the
+outputs. The polyphases are executed in parallel; output data is
+produced by each polyphase directly.</p>
+<ul>
+<li>An interpolator polyphase value equal to the interpolation factor
+will result in an interpolate factor of polyphases, where each kernel is
+a single rate filter.</li>
+<li>An interpolator polyphase value less than the interpolation factor
+will result in the polyphase branches operating as independent
+interpolators.</li>
+</ul>
+<p>The number of AI Engine tiles used is given by
+<code>(Number of interpolator polyphases) * (SSR)^2 * (Number of cascade stages)</code>.</p>
+</section>
+<section id="number-of-decimator-polyphases" class="level4">
+<h4>Number of decimator polyphases</h4>
+<p>Specifies the number of decimator polyphases that will be split up
+and executed in a series of pipelined cascade stages, resulting in
+additional input paths.</p>
+<ul>
+<li>A decimator polyphase value of 1 means just one input leg.</li>
+<li>A decimator polyphase value equal to the decimation factor will
+result in a decimate factor of polyphases, operating as independent
+single rate filters connected by cascades.</li>
+<li>A decimator polyphase value less than the decimation factor will
+result in the polyphase branches operating as independent decimators
+connected by cascades.</li>
+</ul>
+<p>The number of AI Engine tiles used is given by
+<code>(Number of decimator polyphases) * (SSR)^2 * (Number of cascade stages)</code>.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of cascade stages</h4>
