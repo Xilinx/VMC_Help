@@ -22,28 +22,52 @@ Describes the type of individual data samples output of the DDS
 Specifies the number of samples in the input frame. The value must be
   in the range 8 to 1024 and the default value is 32.
 
-#### Mixer Mode
+#### Mixer mode  
 This specifies the mixer operation modes. Two modes are supported by
-  Mixer function
-##### Single Input Mode
-  This is a DDS plus Mixer for a single data input port. Each data input
-  sample is complex multiplied with the corresponding DDS sample to
-  create a modulated signal that is written to the output window. This
-  is the default Mixer mode.
+the Mixer function:
 
-##### Dual Input Mode
-  This is a special configuration for symmetrical carriers and two data
-  input ports. Each data sample of the first input is complex multiplied
-  with the corresponding DDS sample to create a modulated signal. Each
-  data sample of the second data input is complex multiplied with the
-  conjugate (which is equivalent to a signal rotating in the opposite
-  direction) of the DDS sample to create a second modulated signal.
-  These two modulated signals are added together and written to the
-  output window.
+* **Single Input Mode**: This is a DDS plus Mixer for a single data input port. Each data input
+sample is complex multiplied with the corresponding DDS sample to create
+a modulated signal that is written to the output window. This is the
+default Mixer mode.
+
+* **Dual Input Mode**: This is a special configuration for symmetrical carriers and two data
+input ports. Each data sample of the first input is complex multiplied
+with the corresponding DDS sample to create a modulated signal. Each
+data sample of the second data input is complex multiplied with the
+conjugate (which is equivalent to a signal rotating in the opposite
+direction) of the DDS sample to create a second modulated signal. These
+two modulated signals are added together and written to the output
+window.
 
 #### Number of parallel input/output (SSR):
 This parameter specifies the number of input (or output) ports and
   must be of the form 2^N, where N is a non-negative integer.
+
+#### Rounding mode
+
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 #### Phase Increment
 Specifies the phase increment between samples. The value must be in
@@ -57,11 +81,8 @@ Specifies the phase increment between samples. The value must be in
 #### Initial Phase Offset
 Specifies the initial phase offset. The default value is 0.
 
-#### Number of cascade stages
-This determines the number of kernels the Mixer will be divided over in series to improve throughput.
-
-# Examples 
-This example compares AI Engine Mixer Stream block in Vitis Model Composer with the Simulink mixer block
+## Examples 
+This example compares AI Engine Mixer Stream block in Vitis Model Composer with the Simulink mixer block.
 
 ![](./Images/Mixer_Stream_Ex1.png) 
 
