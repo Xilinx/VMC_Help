@@ -5,7 +5,7 @@ This block implements the FIR Halfband Interpolator targeted for AI Engines.
 
 ## Library
 
-AI Engine/DSP/Window IO
+AI Engine/DSP/Buffer IO
 
 ## Description
 

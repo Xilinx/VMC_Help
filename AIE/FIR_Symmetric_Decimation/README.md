@@ -5,7 +5,7 @@
 
 ## Library
 
-AIE Engine/DSP/Window IO
+AIE Engine/DSP/Buffer IO
 
 ## Description
 
