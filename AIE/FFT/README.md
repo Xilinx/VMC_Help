@@ -69,40 +69,17 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ## FFT Block Examples 
-This example compares AI Engine FFT block in Vitis Model Composer with the Simulink FFT block.
+These examples compare the AI Engine FFT block in Vitis Model Composer with the Simulink FFT block.
 
-**Example with 1024 point FFT:**
+***Click on the images below to open each model.***
 
-![](./Images/FFT_Example1.png) 
+**1024 point FFT:**
 
-**Complex_Signal_6KHz Subsystem blocks:**
+[![](./Images/FFT_Example1.png)](matlab:vmcHelpOpenExample('FFT_Ex1'))
 
-![](./Images/Complex_Signal_6KHz.png) 
+**512 point FFT:**
 
-**Error_Computation Subsystem blocks:**
-
-![](./Images/Error_Computation.png) 
-
-**Comparison of AIE FFT and Simulink FFT Spectrum:**
-
-![](./Images/SpectrumComparison.png)
-
-**Difference between AIE FFT and Simulink FFT block outputs:**
-
-![](./Images/Error.png)
-
-
-**Example with 512 point FFT:**
-
-![](./Images/FFT_Example2.png) 
-
-**Comparison of AIE FFT and Simulink FFT Spectrum:**
-
-![](./Images/SpectrumComparison_Ex2.png)
-
-
-## Examples
-For an example using the FFT block where the output is compared with the DSP System Toolbox FFT block click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fft).
+[![](./Images/FFT_Example2.png)](matlab:vmcHelpOpenExample('FFT_Ex2')) 
 
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
