@@ -41,7 +41,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 
-**FFT Stream Block Example:**
+**Mixed Radix FFT Stream Block Example:**
 
 ![](./Images/Mixed_Radix_FFTStream_Ex1.png)
 
