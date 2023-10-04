@@ -26,7 +26,7 @@ Describes the total number of frames used as an input to the DFT block per windo
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
 ####  Number of Cascade Stages
-This determines the number of kernels the DFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
+This determines the number of kernels the DFT will be divided over in series to improve throughput. For int data types, and DFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
 
 ### Constraints
