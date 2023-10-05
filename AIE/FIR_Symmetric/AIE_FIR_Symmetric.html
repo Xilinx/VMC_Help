@@ -11,10 +11,8 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-
-ul.task-list[class]{list-style: none;}
+ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
-font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -71,6 +69,21 @@ Input/Output data type is a float type.</li>
 <p>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via an input port.</p>
 </section>
+<section id="provide-second-set-of-input-ports" class="level4">
+<h4>Provide second set of input ports</h4>
+<p>When this option is enabled, a second input port can be connected to
+the FIR, increasing available throughput. In Simulink, both input ports
+should be connected to the same signal.</p>
+<p>This setting is an implementation trade-off between performance and
+data bank resources. When this option is disabled, the FIR performance
+may be limited by load contention; when this option is enabled, two RAM
+banks are used for input, reducing load contention.</p>
+</section>
+<section id="provide-second-set-of-output-ports" class="level4">
+<h4>Provide second set of output ports</h4>
+<p>When this option is enabled, a second output port is added to the
+block producing the same data as the first output port.</p>
+</section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
 <p>This field specifies the asymmetric filter coefficients. It could
@@ -101,8 +114,45 @@ before output. It must be in the range of 0 to 61.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Set the selection of rounding to be applied during the shift down
-stage of processing.</p>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of cascade stages</h4>
@@ -110,6 +160,8 @@ stage of processing.</p>
 over. This allows AI Engine tiles to be traded for higher throughput.
 See the example below on how the number of cascade stages affect the
 throughput.</p>
+<p>The number of AI Engine tiles used is determined by
+<code>(SSR)^2 * (Number of cascade stages)</code>.</p>
 </section>
 </section>
 <section id="constraints" class="level3">

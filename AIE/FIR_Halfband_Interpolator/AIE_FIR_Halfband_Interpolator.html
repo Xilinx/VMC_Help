@@ -11,10 +11,8 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-
-ul.task-list[class]{list-style: none;}
+ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
-font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -37,7 +35,7 @@ Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
-<p>AI Engine/DSP/Window IO</p>
+<p>AI Engine/DSP/Buffer IO</p>
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
@@ -75,6 +73,21 @@ Input/Output data type is a float type.</li>
 <p>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via the input port.</p>
 </section>
+<section id="provide-second-set-of-input-ports" class="level4">
+<h4>Provide second set of input ports</h4>
+<p>When this option is enabled, a second input port can be connected to
+the FIR, increasing available throughput. In Simulink, both input ports
+should be connected to the same signal.</p>
+<p>This setting is an implementation trade-off between performance and
+data bank resources. When this option is disabled, the FIR performance
+may be limited by load contention; when this option is enabled, two RAM
+banks are used for input, reducing load contention.</p>
+</section>
+<section id="provide-second-set-of-output-ports" class="level4">
+<h4>Provide second set of output ports</h4>
+<p>When this option is enabled, a second output port is added to the
+block producing the same data as the first output port.</p>
+</section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
 <p>Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
@@ -96,19 +109,44 @@ FIR terms before output. It must be in the range 0 to 61.</p>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
 <p>Describes the selection of rounding to be applied during the shift
-down stage of processing. The rounding options are as follows:</p>
-<ol type="1">
-<li>Floor (truncate)</li>
-<li>Ceiling</li>
-<li>Round to positive infinity</li>
-<li>Round to negative infinity</li>
-<li>Round symmetrical to infinity</li>
-<li>Round symmetrical to zero</li>
-<li>Round convergent to even</li>
-<li>Round convergent to odd</li>
-</ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 <section id="use-center-tap-to-upshift-data" class="level4">
 <h4>Use center tap to upshift data</h4>
@@ -130,15 +168,15 @@ coefficient types (i.e., int16 and cint16).</p>
 <p><strong>Note</strong>: When Upshift is enabled, the center tap value
 must be in the range 0 to 47.</p></li>
 </ul>
-<section id="example-1" class="level5">
-<h5><strong>Example 1</strong>:</h5>
+<section id="example-1" class="level6">
+<h6><strong>Example 1</strong>:</h6>
 <p>A 7-tap FIR halfband interpolator has coefficients (1, 0, 2, 5, 2, 0,
 1). This would be input as taps[]= {1,2,5} because the context of
 halfband interpolation allows the remaining coefficients to be
 inferred.</p>
 </section>
-<section id="example-2" class="level5">
-<h5><strong>Example 2</strong>:</h5>
+<section id="example-2" class="level6">
+<h6><strong>Example 2</strong>:</h6>
 <p>A 7-tap FIR halfband interpolator has coefficients (1, 2, 2, 1, 2, 1,
 3). Here &#39;3&#39; is the center tap value.</p>
 <p>Now, if the input has a data stream of all ones (i.e., 1, 1, 1,
