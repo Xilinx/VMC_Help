@@ -18,7 +18,7 @@ Set the input/output data type.
 
 
 #### Input Window Size(Number of Samples)  
-Describes the number of samples used as an input to the FFT. This parameter must be in the range of 2^0 and 2^32-1, inclusive.
+Describes the number of samples used as an input to the Vectorized Sample Delay. This parameter must be in the range of 2^0 and 2^32-1, inclusive.
 
 #### Maximum Sample Delay  
 Describes the maximum number of sample delay can be applied to the input signal.This parameter must be in the range of 2^0 and 2^32-1, inclusive.  
