@@ -5,7 +5,7 @@ This block implements the FIR Asymmetric Decimation filter targeted for AI Engin
 
 ## Library
 
-AI Engine/DSP/Window IO
+AI Engine/DSP/Buffer IO
 
 ## Description
 

@@ -11,10 +11,8 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-
-ul.task-list[class]{list-style: none;}
+ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
-font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -178,9 +176,11 @@ range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of cascade stages</h4>
+<h4>Number of Cascade Stages</h4>
 <p>This determines the number of kernels the FFT will be divided over in
-series to improve throughput.</p>
+series to improve throughput. For int data types, and FFT size of 2^N,
+the maximum cascade length is N/2 when N is even and (N+1)/2 when N is
+odd. For float data type, the maximum cascade length is N.</p>
 </section>
 </section>
 <section id="constraints" class="level3">

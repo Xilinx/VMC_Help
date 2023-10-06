@@ -89,7 +89,7 @@ This parameter is intended to improve performance and support FFT
 The Windowing utility accepts only powers of 2 as the number of
   inputs/outputs.
 
-# Examples 
+## Examples 
 This example compares AI Engine Window Function Stream block in Vitis Model Composer with the Simulink Window Function.
 
 ![](./Images/WindowStream_Ex1.png)

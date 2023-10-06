@@ -180,12 +180,10 @@ This parameter is intended to improve performance and support FFT
   point size 2048. The specified FFT size and SSR values should be such
   that FFT size / SSR should not exceed 2048.
 
-#### Number of Cascade Stages
+####  Number of Cascade Stages
+This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
-This determines the number of kernels the FFT will be divided over in series to improve throughput.
-
-
-##Examples
+## Examples
 
 **Dynamic Point FFT Stream Block Example1:**
 
