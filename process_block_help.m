@@ -106,7 +106,7 @@ for c=1:length(categories)
                 string = text(first(1):last(1));
                 id = regexp(string,reg_expression,'tokens');
                 if contains(string, 'Block_Help')
-                    text = replaceBetween(text,first(1),last(1),"matlab:XmcExampleApi.openExample('"+id{1}{2}+"'))");
+                    text = replaceBetween(text,first(1),last(1),"matlab:openVMCExample('"+id{1}{2}+"'))");
                 else
                     text = replaceBetween(text,first(1),last(1),"matlab:XmcExampleApi.getExample('"+id{1}{2}+"'))");
                 end
