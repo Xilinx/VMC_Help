@@ -105,10 +105,15 @@ for c=1:length(categories)
             while ~isempty(first)
                 string = text(first(1):last(1));
                 id = regexp(string,reg_expression,'tokens');
-                text = replaceBetween(text,first(1),last(1),"matlab:XmcExampleApi.getExample('"+id{1}{2}+"'))");
+                if contains(string, 'Block_Help')
+                    text = replaceBetween(text,first(1),last(1),"matlab:XmcExampleApi.openExample('"+id{1}{2}+"'))");
+                else
+                    text = replaceBetween(text,first(1),last(1),"matlab:XmcExampleApi.getExample('"+id{1}{2}+"'))");
+                end
                 [first, last] = regexp(text,reg_expression);
             end
-
+            
+            %% Write revisions to temporary MD file
             writelines(text,'temp.md');
 
 
