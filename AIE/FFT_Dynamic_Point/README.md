@@ -104,18 +104,13 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-## Examples
-
-### Example Design
-For an example using the FFT block where the output is compared with the MATLAB FFT function click [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/Dynamic_FFT).
-
-### Example of Header Format
+### Header Format
 To implement the 32-point size FFT of 'cint16' datatype, the format of
 the header that should be prepended to the input data window is as follows:
 
 <img src="./Images/ocm1648642213724.png" width="400"> 
 
-### Example input to Dynamic Point FFT
+### Input Format
 To implement the FFT of different sizes, say, 64, 32 and 128, of type
 cint32, the format of the input should be as follows.
 
@@ -125,43 +120,13 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 
 The terms "ones(1,X)" in the expression above are just replacements for the data that we are applying the FFT to.
 
-**FFT Dynamic Point Block Example1:**
+## Examples
 
-![](./Images/DynamicFFT_Ex1.png)
+***Click on the images below to open each model.***
 
-**Simulink Dynamic Point FFT function:**
+[![](./Images/DynamicFFT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DynamicFFT_Ex1)
 
-``` pre
-function y = fcn(fftSize, u, frame_size, max_fft_size)
-
-out = complex(zeros(frame_size,1));
-
-for i = 0:frame_size/max_fft_size-1
-    frame_fft = fft(double(u(i*max_fft_size+1:(i+1)*max_fft_size)),fftSize);
-    out(i*max_fft_size+1:(i+1)*max_fft_size) = [frame_fft; zeros(max_fft_size - fftSize,1)];
-end
-y = single(out(1:frame_size));
-```
-
-**Difference between AIE FFT and Simulink FFT block outputs:**
-
-![](./Images/ErrorValue_Ex1.png)
-
-**AIE Dynamic Point FFT and Simulink Dynamic Point FFT Output Spectrum Comparison:**
-
-![](./Images/DynamicFFT_Comparison_Ex1.png)
-
-**FFT Dynamic Point Block Example2:**
-
-![](./Images/DynamicFFT_Ex2.png)
-
-**Difference between AIE FFT and Simulink FFT block outputs:**
-
-![](./Images/ErrorValue_Ex2.png)
-
-**AIE Dynamic Point FFT and Simulink Dynamic Point FFT Output Spectrum Comparison:**
-
-![](./Images/DynamicFFT_Comparison_Ex2.png)
+[![](./Images/DynamicFFT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DynamicFFT_Ex2)
 
 ## Related blocks
 [FFT](../FFT/README.md) is another FFT block that uses buffer interface.

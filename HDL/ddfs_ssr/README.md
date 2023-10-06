@@ -44,9 +44,8 @@ Defines the depth of the Sin/Cos Table and should be an integer value.
 #### Sin/Cos Table Width  
 Defines the width of the Sin/Cos Table and should be an integer value.
 
-## Example
-This example compares the Vector DDFS block to a Simulink golden reference.
+## Examples
 
-***Click on the image below to open the model.***
+***Click on the images below to open the model.***
 
-[![](./Images/Vector_DDFS_Example1.png)](matlab:vmcHelpOpenExample('Vector_DDFS_Ex1'))
+[![](./Images/Vector_DDFS_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Vector_DDFS_Ex1)

@@ -98,26 +98,12 @@ The number of AI Engine tiles used is given by `(Number of interpolator polyphas
 #### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
-**FIR Interpolation Block Example1:**
+## Examples
 
-![](./Images/FIR_Interpolation_Ex1.png)
+***Click on the images below to open each model.***
 
-**AIE and Simulink FIR Interpolator Output Spectrum Comparison:**
+[![](./Images/FIR_Interpolation_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_InterpolationFilter_Ex1)
 
-![](./Images/AIE_Simulink_Interpolation_Comparison_Ex1.png)
+[![](./Images/FIR_Interpolation_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_InterpolationFilter_Ex2)
 
-**FIR Interpolation Block Example2:**
-
-![](./Images/FIR_Interpolation_Ex2.png)
-
-**AIE and Simulink FIR Interpolator Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_Interpolation_Comparison_Ex2.png)
-
-**FIR Interpolation Block Example3:**
-
-![](./Images/FIR_Interpolation_Ex3.png)
-
-**AIE and Simulink FIR Interpolator Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_Interpolation_Comparison_Ex3.png)
+[![](./Images/FIR_Interpolation_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_InterpolationFilter_Ex3)

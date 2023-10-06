@@ -89,15 +89,9 @@ be of the form 2^N, where N is a non-negative integer.
 
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
-## FIR Asymmetric Stream Block Examples
+## Examples
 
-![](./Images/FIR_Asymmetric_Stream_Ex1.png)
+***Click on the images below to open each model.***
 
-**Complex_Signal_2KHz subsystem blocks:**
-
-![](./Images/ComplexSignal_2KHz.png)
-
-**AIE and Simulink FIR Asymmetric Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_AsymmetricStream_Comparison.png)
+[![](./Images/FIR_Asymmetric_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_AsymmetricStream_Ex1)
 

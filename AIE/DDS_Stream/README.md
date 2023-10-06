@@ -86,48 +86,12 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ## Examples
-Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
-* Output data type: cint16
-* Samples per frame: 32
-* SSR: 1
-* Phase increment: 2^30 = 250e6*2^32/1e9
-* Initial Phase Offset = 0
-* Sample time = (1e-9)*(Output Window Size)
 
+***Click on the images below to open each model.***
 
-We can use SSR to achieve freqencies larger than 1GHz. For example, assume you need to generate a freqency of 3GHz using 8 outputs. Here is how you set the parameters:
-* Output data type: cint16
-* Samples per frame: 1024
-* SSR: 8
-* Phase increment: 3\*2^29 = (3e9)\*2^32/1e9/SSR
-* Initial Phase Offset = 0
-* Sample time = 1e-9
+[![](./Images/DDS_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DDS_Stream_Ex1)
 
-<img src="./Images/dds_ssr_design.png" width="600">
-<img src="./Images/dds_ssr.png" width="400">
-<img src="./Images/dds_ssr_out.png" width="400">
-
-**AIE and Simulink DDS Stream Block Comparison Example1:**
-
-This example compares AI Engine DDS stream block in Vitis Model Composer with the Simulink DDS block.
-
-![](./Images/DDS_Stream_Ex1.png)
-
-**Fixed Point Scaling Subsystem blocks:**
-
-![](./Images/FixedPointScaling.png)
-
-**AI Engine DDS and Simulink DDS output spectrum comparison:**
-
-![](./Images/DDS_SpectrumComparison_Ex1.png)
-
-**AIE and Simulink DDS Stream Block Comparison Example2:**
-
-![](./Images/DDS_Stream_Ex2.png)
-
-**AI Engine DDS and Simulink DDS output spectrum comparison:**
-
-![](./Images/DDS_SpectrumComparisonEx2.png)
+[![](./Images/DDS_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DDS_Stream_Ex2)
 
 ## Related blocks
 [DDS](../DDS/README.md) is another DDS block that uses buffer interface instead of stream interface.

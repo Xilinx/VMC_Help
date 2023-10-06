@@ -139,15 +139,9 @@ Now, if the input has a data stream of all ones (i.e., 1, 1, 1, etc.):
 #### Number of cascade stages:
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
-**FIR Halfband Interpolator Stream Example:**
+## Examples
 
-![](./Images/FIR_HBInterpolator_Stream_Ex1.png)
+***Click on the images below to open each model.***
 
-**ComplexSignal_4KHz subsystem blocks:**
-
-![](./Images/ComplexSignal_4KHz.png)
-
-**AIE and Simulink Halfband Interpolator Stream Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_HBInterpolator_StreamComparison.png)
+[![](./Images/FIR_HBInterpolator_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_HalfbandInterpolatorStream_Ex1)
 

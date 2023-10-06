@@ -81,57 +81,10 @@ If you are using non-default constraints for any of the kernels for the block, a
 </div>
 
 ## Examples
-Below is an example of using the FFT Stream block. We are comparing the results with the FFT block from MathWorks DSP System toolbox and the results match, except for quantization errors. 
 
-![](./Images/fft_stream_design.png)
-Here is how the design is setup:
+***Click on the images below to open each model.***
 
-The MATLAB function block simply passes the input data to the outputs in a round robin way and the code is depicted below:
-
-```
-function [y1, y2] = fcn(u)
-y1 = u(1:2:end);
-y2 = u(2:2:end);
-```
-The amplitude for the input sinusoidal is set to 2^15. For the FFT Stream block the parameters are set as in the table below:
-
-|Parameter| value|
-|---------|------|
-|Data type| cint32|
-|Point Size| 64|
-|Input window size| 64|
-|Scale output down by 2^| 6|
-|SSR|2|
-|Number of cascade stages| 1|
-
-And the FFT block data types are set as shown below:
-
-<img src="./Images/fft_mask.png" width="800">
-
-**FFT Stream Block Example:**
-
-![](./Images/FFT_Stream_example.png)
-
-**Complex Signal 5MHz Subsystem blocks:**
-
-![](./Images/Complex_Signal_5MHz.png)
-
-**Merging Subsystem blocks:**
-
-![](./Images/Merging.png)
-
-**Splitting Subsystem blocks:**
-
-![](./Images/Splitting.png)
-
-**AIE_Simulink_FFT_Comparison Subsystem blocks:**
-
-![](./Images/AIE_Simulink_FFT_Comparison.png)
-
-**AIE and Simulink FFT Stream Output Spectrum Comparison:**
-
-![](./Images/FFT_Stream_Spectrum.png)
-
+[![](./Images/FFT_Stream_example.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FFT_Stream_Ex1)
 
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).

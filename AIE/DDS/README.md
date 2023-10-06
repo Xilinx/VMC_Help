@@ -77,44 +77,13 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-## Example
-Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
-* Output data type: cint16
-* Samples per frame : 1024
-* Phase increment: 2^30 = 250e6*2^32/1e9
-* Sample time = 1e-9
+## Examples
 
-<img src="./Images/dds.png" width="400">
-<img src="./Images/dds_out.png" width="400">
+***Click on the images below to open each model.***
 
-**AIE and Simulink DDS Block Comparison Example1:**
+[![](./Images/DDS_Block_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DDS_Ex1)
 
-Assume you need the DDS to generate a frequnecy of 100 KHz at 4Msps. Here is how you set the parameters:
-* Phase increment: 1.0737e8 = 100e3*2^32/4e6
-* Sample time = 1/4e6
-* Output data type: cfloat
-* Samples per frame :256
-
-
-![](./Images/DDS_Block_Ex1.png)
-
-**AIE and Simulink DDS output spectrum comparison:**
-
-![](./Images/DDS_SpectrumComparison.png)
-
-**AIE and Simulink DDS Block Comparison Example2:**
-
-Assume you need the DDS to generate a frequnecy of 10 KHz at 40 Ksps. Here is how you set the parameters:
-* Phase increment: 1.0737e9 = 10e3*2^32/40e3
-* Sample time = 1/40e3
-* Output data type: cfloat
-* Samples per frame :1024
-
-![](./Images/DDS_Ex2.png)
-
-**AIE and Simulink DDS output spectrum comparison:**
-
-![](./Images/DDS_SpectrumComparisonEx2.png)
+[![](./Images/DDS_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DDS_Ex2)
 
 ## Related blocks
 [DDS Stream](../DDS_Stream/README.md) is another DDS block that uses stream interface instead of buffer interface and is also SSR capable.

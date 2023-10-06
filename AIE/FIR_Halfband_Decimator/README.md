@@ -103,32 +103,11 @@ When SSR = 1, 1 or 2 decimator polyphases can be used.
 
 This determines the number of kernels the FIR will be divided over to improve throughput.
 
-## FIR Halfband Decimator Block Example1
+## Examples
 
-![](./Images/HBDecimator_Ex1.png)
+***Click on the images below to open each model.***
 
-**Complex_Signals_2KHz_10KHz Subsystem Blocks:**
+[![](./Images/HBDecimator_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/HalfBandDecimator_Ex1)
 
-![](./Images/Complex_Signals_2KHz_10KHz.png)
-
-**AIE and Simulink Halfband Decimator output spectrum comparison:**
-
-![](./Images/AIE_Simulink_HBDecimator_Comparison.png)
-
-## FIR Halfband Decimator Block Example2
-
-![](./Images/HBDecimator_Ex2.png)
-
-**Real_Signals_2KHz_10KHz Subsystem Blocks:**
-
-![](./Images/Real_Signals_2KHz_10KHz.png)
-
-**AIE and Simulink Halfband Decimator output spectrum comparison:**
-
-![](./Images/AIE_Simulink_HBDecimator_Comparison_Ex2.png)
-
-
-
-
-
+[![](./Images/HBDecimator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/HalfBandDecimator_Ex2)
 

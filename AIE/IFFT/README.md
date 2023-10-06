@@ -64,34 +64,9 @@ The following modes are available:
 ####  Number of Cascade Stages
 This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
-## IFFT Block Examples 
+## Examples 
 
-This example compares AI Engine IFFT block in Vitis Model Composer with the Simulink IFFT block.
+***Click on the images below to open each model.***
 
-**Example with 1024 IFFT size:**
-
-![](./Images/IFFT_example.png)
-
-**IFFT_Complex_Signal_4KHz Subsystem blocks:**
-
-![](./Images/IFFT_Complex_Signal_4KHz.png)
-
-**Error_Computation Subsystem blocks:**
- 
-![](./Images/Error_Computation.png)
-
-**IFFT Signal Real Part Comparison:**
-
-![](./Images/IFFT_Realpart.png)
-
-**IFFT Signal Imaginary Part Comparison:**
-
-![](./Images/IFFT_imagpart.png)
-
-**Difference between AIE IFFT and Simulink IFFT block outputs:**
-
-![](./Images/IFFT_Error.png)
-
-
-
+[![](./Images/IFFT_example.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/IFFT_Ex1)
 

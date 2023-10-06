@@ -91,42 +91,10 @@ This parameter is intended to improve performance and support IFFT
 ####  Number of Cascade Stages
 This determines the number of kernels the IFFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
-## IFFT Stream Block Examples 
+## Examples 
 
-This example compares AI Engine IFFT Stream block in Vitis Model Composer with the Simulink IFFT block.
+***Click on the images below to open each model.***
 
-**IFFT Stream Block Example1:**
+[![](./Images/IFFT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/IFFT_Stream_Ex1)
 
-![](./Images/IFFT_Stream_Ex1.png)
-
-**FFT_Complex_Signal_2MHz Subsystem blocks:**
-
-![](./Images/FFT_Complex_Signal_2MHz.png)
-
-**AIE_Simulink_TimeDomain_SignalComparison Subsystem blocks:**
-
-![](./Images/AIE_Simulink_TimeDomain_SignalComparison.png)
-
-**IFFT Stream Output Signal Real Part Comparison in Time-Domain:**
-
-![](./Images/AIE_Simulink_IFFTOut_RealPart_Comparison.png)
-
-**IFFT Stream Output Signal Imaginary Part Comparison in Time-Domain:**
-
-![](./Images/AIE_Simulink_IFFTOut_ImaginaryPart_Comparison.png)
-
-**IFFT Stream Block Example2:**
-
-![](./Images/IFFT_Stream_Ex2.png)
-
-**IFFT Stream Output Signal Real Part Comparison in Time-Domain:**
-
-![](./Images/AIE_Simulink_IFFTOut_RealPart_Comparison_Ex2.png)
-
-**IFFT Stream Output Signal Imaginary Part Comparison in Time-Domain:**
-
-![](./Images/AIE_Simulink_IFFTOut_ImaginaryPart_Comparison_Ex2.png)
-
-
-
-
+[![](./Images/IFFT_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/IFFT_Stream_Ex2)

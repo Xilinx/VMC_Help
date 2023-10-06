@@ -100,36 +100,11 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-### Examples
-The follwoing example shows how to set the parameters of this block and the equivalent block from the MathWorks DSP System toolbox so that they both have the same exact output. Note that we are using the DSP System toolbox command, designMultirateFIR to get the filter coefficients. 
+## Examples
 
-<img src="./Images/example.png" width="600">
+***Click on the images below to open each model.***
 
-The screen shot below, shows the same example but now with an SSR of 4. 
-
-<img src="./Images/example_ssr.png" width="600">
-
-The MATLAB function block simply passes the input into the four outputs in a round robin fashion. The code for it is shown below:
-
-```
-function [y1, y2, y3, y4] = fcn(u)
-
-y1 = u(1:4:end);
-y2 = u(2:4:end);
-y3 = u(3:4:end);
-y4 = u(4:4:end);
-```
-**AIE FIR Interpolation Stream Block and Simulink FIR Interpolation Comparison Example:**
-
-![](./Images/FIR_Interpolator_Stream_Ex2.png)
-
-**ComplexSignal_2KHz Subsystem blocks:**
-
-![](./Images/ComplexSignal_2KHz.png)
-
-**AIE FIR Interpolation Stream and Simulink FIR Interpolation Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_FIRInterpolator_Stream_Comparison.png)
+[![](./Images/FIR_Interpolator_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex1)
 
 ### References
 [The Polyphase Implementation of Interpolation Filters in Digital Signal Processing](https://www.allaboutcircuits.com/technical-articles/digital-signal-processing-polyphase-implementation-interpolation-filter-dsp/)

@@ -96,33 +96,11 @@ Click on the button given here to access the constraint manager and add or updat
 
 **_NOTE_** If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 
-**FIR Symmetric Filter Block Example1:**
+## Examples
 
-![](./Images/FIR_Symmetric_Ex1.png)
+[![](./Images/FIR_Symmetric_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_Symmetric_Ex1)
 
-**Complex_Signal_4KHz subsystem blocks:**
-
-![](./Images/Complex_Signal_4KHz.png)
-
-**FIR_Symmetric_Coeff() subsystem blocks:**
-
-![](./Images/FIR_Symmetric_Coeff().png)
-
-**AIE and Simulink FIR Symmetric Filter Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_Output_Comparison.png)
-
-**FIR Symmetric Filter Block Example2:**
-
-![](./Images/FIR_Symmetric_Ex2.png)
-
-**AIE and Simulink FIR Symmetric Filter Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_Output_Comparison_Ex2.png)
-
-
-### Examples
-[AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)
+[AI Engine FIR Asymmetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)
 
 ---
 **_NOTE:_**  For more details on this function and other AI Engine filter functions available, please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html).

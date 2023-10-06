@@ -119,28 +119,11 @@ The number of AI Engine tiles used is given by `(Number of decimator polyphases)
 #### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
-**FIR Resampler Filter Stream Block Example1:**
+## Examples
 
-![](./Images/ResamplerStream_Ex1.png)
+***Click on the images below to open each model.***
 
-**ComplexSignal_10KHz subsystem blocks:**
+[![](./Images/ResamplerStream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Resampler_Stream_Ex1)
 
-![](./Images/ComplexSignal_10KHz.png)
-
-**AIE and Simulink Resampler Filter Stream Output Spectrum Comparison:**
-
-![](./Images/ResamplerOut_Comparison_Ex1.png)
-
-**FIR Resampler Filter Stream Block Example2:**
-
-![](./Images/ResamplerStream_Ex2.png)
-
-**ComplexSignal_100KHz subsystem blocks:**
-
-![](./Images/ComplexSignal_100KHz.png)
-
-**AIE and Simulink Resampler Filter Stream Output Spectrum Comparison:**
-
-![](./Images/ResamplerOut_Comparison_Ex2.png)
-
+[![](./Images/ResamplerStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Resampler_Stream_Ex2)
 

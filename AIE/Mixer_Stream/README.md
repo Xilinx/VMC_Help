@@ -81,23 +81,10 @@ Specifies the phase increment between samples. The value must be in
 #### Initial Phase Offset
 Specifies the initial phase offset. The default value is 0.
 
-## Examples 
-This example compares AI Engine Mixer Stream block in Vitis Model Composer with the Simulink mixer block.
+## Examples
 
-![](./Images/Mixer_Stream_Ex1.png) 
+***Click on the images below to open each model.***
 
-**Complex_Signal_200KHz Subsystem blocks:**
+[![](./Images/Mixer_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Mixer_stream_Ex1) 
 
-![](./Images/Complex_Signal_200KHz.png) 
-
-**AIE Mixer Stream and Simulink Mixer Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_MixerOutput_Comparison.png) 
-
-**AIE Mixer Stream Block Example2:**
-
-![](./Images/Mixer_Stream_Ex2.png) 
-
-**AIE Mixer Stream and Simulink Mixer Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_MixerOutput_Comparison_Ex2.png) 
+[![](./Images/Mixer_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Mixer_stream_Ex2) 

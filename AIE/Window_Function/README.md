@@ -70,21 +70,9 @@ Specifies the number of samples in the input frame excluding the
 Describes the power of 2 shift down applied before output.
 
 ## Examples 
-This example compares AI Engine Window Function block in Vitis Model Composer with the Simulink Window Function block.
 
-![](./Images/WindowFunctionModel1.png)
+***Click on the images below to open each model.***
+
+[![](./Images/WindowFunctionModel1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/WindowFunction_Ex1)
   
-**Complex_Signal_5KHz Subsystem blocks:**
-
-![](./Images/ComplexSignal_5KHz.png) 
-
-**AIE_Simulink_WindowComparison Subsystem blocks:**
-
-![](./Images/WindowComparison.png) 
-
-**AIE and Simulink Window Function Output Comparison:**
-
-![](./Images/WindowOut_Real.png) 
-
-![](./Images/WindowOut_Imag.png) 
  

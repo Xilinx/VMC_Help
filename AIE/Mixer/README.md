@@ -76,19 +76,9 @@ Where:
   - N = 32, which represents the accumulator width, and it is fixed
   - Fs = Sampling frequency
 
-## Examples 
-This example compares AI Engine Mixer block in Vitis Model Composer with the Simulink mixer block.
+## Examples
 
-![](./Images/Mixer_Example.png) 
+***Click on the images below to open each model.***
 
-**Simulink_Mixer Subsystem blocks:**
+[![](./Images/Mixer_Example.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Mixer_Ex1) 
 
-![](./Images/Simulink_Mixer.png) 
-
-**Complex_Signal_200KHz Subsystem blocks:**
-
-![](./Images/Complex_Signal_200KHz.png) 
-
-**AIE and Simulink Mixer output spectrum comparison:**
-
-![](./Images/Mixer_output.png) 

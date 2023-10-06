@@ -103,14 +103,8 @@ This determines the number of kernels the FIR will be divided over in series to 
 
 The number of AI Engine tiles used is determined by `(SSR)^2 * (Number of cascade stages)`.
 
-**FIR Symmetric Decimation Filter Example:**
+## Examples
 
-![](./Images/FIR_SymmetricDecimation_Ex1.png)
+***Click on the images below to open each model.***
 
-**Simulink_FIRDecimation_Scaling Subsystem blocks:**
-
-![](./Images/Simulink_FIRDecimation_Scaling.png)
-
-**AIE and Simulink FIR Symmetric Decimaion Filter Ouput Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_FIR_SymmetricDecimation_Comparison.png)
+[![](./Images/FIR_SymmetricDecimation_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_Symmetric_Decimation_Ex1)

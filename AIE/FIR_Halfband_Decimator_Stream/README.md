@@ -104,14 +104,8 @@ When SSR = 1, 1 or 2 decimator polyphases can be used.
 #### Number of cascade stages
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
-**FIR Halfband Decimator Stream Example:**
+## Examples
 
-![](./Images/HalfBandDecimator_Stream_Ex1.png)
+***Click on the images below to open each model.***
 
-**Complex_Signals_2KHz_10KHz subsystem blocks:**
-
-![](./Images/Complex_Signals_2KHz_10KHz.png)
-
-**AIE and Simulink Halfband Decimator Stream Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_HBDecimator_Stream_Comparison.png)
+[![](./Images/HalfBandDecimator_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_HalfBandDecimator_Stream_Ex1)

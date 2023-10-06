@@ -99,19 +99,11 @@ The number of AI Engine tiles used is given by `(Number of decimator polyphases)
 
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
-## FIR Asymmetric Decimation Block Example1
+## Examples
 
-![](./Images/AsymmetricDecimation_Ex1.png)
+***Click on the images below to open each model.***
 
-**AIE and Simulink FIR Asymmetric Decimation Output Comparison:**
+[![](./Images/AsymmetricDecimation_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_Asymmetric_Decimation_Ex1)
 
-![](./Images/AIE_Simulink_AsymmetricDecimation_Comparison.png)
-
-## FIR Asymmetric Decimation Block Example2
-
-![](./Images/AsymmetricDecimation_Ex2.png)
-
-**AIE and Simulink FIR Asymmetric Decimation Output Comparison:**
-
-![](./Images/AIE_Simulink_AsymmetricDecimation_Comparison_Ex2.png)
+[![](./Images/AsymmetricDecimation_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_Asymmetric_Decimation_Ex2)
 

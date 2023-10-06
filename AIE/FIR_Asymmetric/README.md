@@ -88,31 +88,13 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-## FIR Asymmetric Block Example1
+## Examples
 
-![](./Images/FIR_Asymmetric_Ex1.png)
+***Click on the images below to open each model.***
 
-**Simulink_FIR_and_Scaling Subsystem Blocks:**
+[![](./Images/FIR_Asymmetric_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_Asymmetric_Ex1)
 
-![](./Images/SimulinkFIR_and_Scaling_Ex1.png)
-
-**AIE and Simulink FIR Asymmetric Filter Output Spectrum Comparison:**
-
-![](./Images/AIE_Simulink_SpectrumComparison_Ex1.png)
-
-
-## FIR Asymmetric Block Example2
-
-![](./Images/FIR_Asymmetric_Ex2.png)
-
-**Simulink_FIR_and_Scaling Subsystem Blocks:**
-
-![](./Images/SimulinkFIR_and_Scaling_Ex2.png)
-
-**AIE and Simulink FIR Asymmetric Filter Output Sectrum Comparison:**
-
-![](./Images/AIE_Simulink_SpectrumComparison_Ex2.png)
-
+[![](./Images/FIR_Asymmetric_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_Asymmetric_Ex2)
 
 ### Examples
 [AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)

@@ -75,11 +75,11 @@ These examples compare the AI Engine FFT block in Vitis Model Composer with the 
 
 **1024 point FFT:**
 
-[![](./Images/FFT_Example1.png)](matlab:vmcHelpOpenExample('FFT_Ex1'))
+[![](./Images/FFT_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FFT_Ex1)
 
 **512 point FFT:**
 
-[![](./Images/FFT_Example2.png)](matlab:vmcHelpOpenExample('FFT_Ex2')) 
+[![](./Images/FFT_Example2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FFT_Ex2) 
 
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
