@@ -125,6 +125,15 @@ the Window size. The dimensions of the output are as follows:</p>
 <li>Min-Mwin+1, Min-Nwin+1 if Valid is selected for Output size.</li>
 </ul>
 </section>
+<section id="ram-type-not-visible-in-block-parameters" class="level4">
+<h4>RAM Type (not visible in block parameters)</h4>
+<p>By default, this block uses VRAM for line buffers. To use URAM
+instead, select the block on the Simulink canvas and execute the
+following MATLAB command:</p>
+<pre><code>set_param(gcb, &#39;RAMType&#39;, 1)</code></pre>
+<p>To switch back to VRAM, execute:</p>
+<pre><code>set_param(gcb, &#39;RAMType&#39;, 0)</code></pre>
+</section>
 </section>
 </section>
 </body>
