@@ -40,33 +40,14 @@ Model Composer.</p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The HLS Kernel block allows you to import an HLS kernel, which is a
-proper HLS IP (an IP with interface specification using HLS
-pragmas).</p>
-<p>The code below is an example of an HLS kernel that can be imported
-using the HLS kernel block. Note that the interface is specified using
-the #pragma notation. To learn more about the interface pragma in HLS
-click <a href="https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/pragma-HLS-interface">here</a>.</p>
-<pre><code>void polar_clip(hls::stream&lt;ap_axis&lt;32, 0, 0, 0&gt; &gt; &amp;in_sample, hls::stream&lt;ap_axis&lt;32, 0, 0, 0&gt; &gt; &amp;out_sample) {
-#pragma HLS INTERFACE ap_ctrl_none port=return
-#pragma HLS INTERFACE axis port=out_sample
-#pragma HLS INTERFACE axis port=in_sample
-
-  //std::cerr &lt;&lt; &quot;Waiting for a value&quot; &lt;&lt; &quot;\n&quot;;
-  ap_cint16 sample;
-
-  ap_axis&lt;32, 0, 0, 0&gt; out_x;
-  ap_axis&lt;32, 0, 0, 0&gt; in_x = in_sample.read();
-  ...</code></pre>
-<div class="noteBox">
-This block does not participate in HLS code generation and should
-not be part of an HLS subsystem (a subsystem that comprises of other HLS blocks).
-</div>
-
+proper HLS IP (an IP with interface specification using HLS pragmas).
+This block also accepts templatized HLS functions.</p>
+<p>This block is treated as an HLS subsystem for the purpose of code
+generation.</p>
 <p>Use this block to connect with AI Engine blocks using the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;AIE_to_HLS&#39;,&#39;category&#39;,&#39;UTIL&#39;))">AIE
 to HLS</a> or <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;HLS_to_AIE&#39;,&#39;category&#39;,&#39;UTIL&#39;))">HLS
 to AIE</a> blocks and co-simulate a design with both AI Engines and PL
 components.</p>
-<p>The block also accepts templatized HLS functions.</p>
 <p>Function arguments can be either of hls::stream type or of scalar or
 vector types. At least one input hls::stream type and one output
 hls::stream are needed. For example the following is a valid HLS
@@ -74,8 +55,10 @@ function signature:</p>
 <pre class="pre"><code>void func(hls::stream&lt;unsigned int&gt; &amp;in, const ap_uint&lt;8&gt; (&amp;param_in)[32], hls::stream&lt;unsigned int&gt; &amp;out, ap_uint&lt;8&gt; param_out);</code></pre>
 <p>For a complete list of supported function arguments, see the table
 below.</p>
-<p>For stream inputs and outputs, this block accepts variable size
-signals and produces variable size outputs.</p>
+<div class="noteBox">
+For stream inputs and outputs, this block accepts variable size signals and produces variable size outputs. 
+</div>
+
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -145,27 +128,27 @@ types for inputs and outputs.</p>
 </tr>
 <tr class="odd">
 <td></td>
+<td>ap_fixed/ap_ufixed, with 1 &lt;= W &lt;=128</td>
+<td><code>ap_fixed&lt;32,32&gt;</code>,
+<code>ap_ufixed&lt;96,64&gt;</code></td>
+</tr>
+<tr class="even">
+<td></td>
 <td>std::complex with C/C++ primitive (except double, bool)</td>
 <td><code>std::complex&lt;int32&gt;</code>,
 <code>std::complex&lt;float&gt;</code></td>
 </tr>
-<tr class="even">
-<td></td>
-<td>std::complex ap_int/ap_uint<X>, 1 &lt;= X &lt;= 64</td>
-<td><code>std::complex&lt;ap_int&lt;32&gt; &gt;</code>,
-<code>std::complex&lt;ap_uint&lt;64&gt; &gt;</code></td>
-</tr>
 <tr class="odd">
 <td></td>
-<td>AP AXI: ap_axis/ap_axiu, data width is 32/64/128</td>
-<td><code>ap_axis&lt;32, 0, 0, 0&gt;</code>,
-<code>ap_axiu&lt;64, 0, 0, 0&gt;</code></td>
+<td>std::complex with ap_int/ap_uint<X>, 1 &lt;= X &lt;= 64</td>
+<td><code>std::complex&lt;ap_int&lt;32&gt;&gt;</code>,
+<code>std::complex&lt;ap_uint&lt;64&gt;&gt;</code></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>AXI Stream with ap_int/ap_uint, data width is 32/64/128</td>
-<td><code>hls::axis&lt;ap_int&lt;32&gt;, 0, 0, 0&gt;</code>,
-<code>hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt;</code></td>
+<td>std::complex with ap_fixed/ap_ufixed<X>, 1 &lt;= X &lt;= 64</td>
+<td><code>std::complex&lt;ap_fixed&lt;64,32&gt;&gt;</code>,
+<code>std::complex&lt;ap_ufixed&lt;37,10&gt;&gt;</code></td>
 </tr>
 <tr class="odd">
 <td><strong>Vector Types</strong></td>
@@ -176,17 +159,37 @@ by reference.</td>
 <code>hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt; (&amp;arg)[30]</code></td>
 </tr>
 <tr class="even">
+<td><strong>Pointer Types</strong></td>
+<td>Pointer type of any of the above Scalar Types</td>
+<td><code>const int32_t *arg</code>,
+<code>std::complex&lt;ap_int&lt;32&gt;&gt; const* arg</code>,
+<code>ap_fixed&lt;57, 0, 0, 0&gt; *arg</code></td>
+</tr>
+<tr class="odd">
 <td><strong>hls::stream</strong></td>
 <td>hls::stream with any of above Scalar Types. Must be passed by
 reference.</td>
 <td><code>hls::stream&lt;uint32&gt; &amp;arg</code>,
-<code>hls::stream&lt;std::complex&lt;float&gt; &gt; &amp;arg</code>,
-<code>hls::stream&lt;ap_axis&lt;32&gt; &gt; &amp;arg</code>,
-<code>hls::stream&lt;ap_int&lt;128&gt; &gt; &amp;arg</code>,
-<code>hls::stream&lt;std::complex&lt;ap_int&lt;16&gt; &gt; &amp;arg</code>,
-<code>hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt; &gt; &amp;arg</code></td>
+<code>hls::stream&lt;std::complex&lt;float&gt;&gt; &amp;arg</code>,
+<code>hls::stream&lt;ap_axis&lt;32&gt;&gt; &amp;arg</code>,
+<code>hls::stream&lt;ap_int&lt;128&gt;&gt; &amp;arg</code>,
+<code>hls::stream&lt;std::complex&lt;ap_int&lt;16&gt;&gt; &amp;arg</code>,
+<code>hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt;&gt; &amp;arg</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>hls::stream with ap_axis/ap_axiu, data width is 32/64/128</td>
+<td><code>hls::stream&lt;ap_axis&lt;32, 0, 0, 0&gt;&gt; &amp;arg</code>,
+<code>hls::stream&lt;ap_axiu&lt;64, 0, 0, 0&gt;&gt; &amp;arg</code></td>
 </tr>
 <tr class="odd">
+<td></td>
+<td>hls::stream with hls::axis&lt;ap_int/ap_uint&gt;, data width is
+32/64/128</td>
+<td><code>hls::stream&lt;hls::axis&lt;ap_int&lt;32&gt;, 0, 0, 0&gt; &gt; &amp;arg</code>,
+<code>hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt; 0, 0, 0&gt; &gt; &amp;arg</code></td>
+</tr>
+<tr class="even">
 <td><strong>Template</strong></td>
 <td>Any template that is deducted into above supported
 scalar/vector/stream types</td>
@@ -194,10 +197,10 @@ scalar/vector/stream types</td>
 <code>std::complex&lt;DATA_TYPE&gt;</code>,
 <code>ap_axiu&lt;BITS, 0, 0, 0&gt;</code>,
 <code>hls::axis&lt;ap_int&lt;BITS&gt;, 0, 0, 0&gt; (&amp;arg)[20]</code>,
-<code>hls::stream&lt;ap_int&lt;BITS&gt; &gt;</code>,
-<code>hls::stream&lt;ap_uint&lt;BITS&gt; &gt;</code>,
-<code>hls::stream&lt;ap_axis&lt;BITS, 0, 0, 0&gt; &gt;</code>,
-<code>hls::stream&lt;ap_axiu&lt;BITS, 0, 0, 0&gt; &gt;</code></td>
+<code>hls::stream&lt;ap_int&lt;BITS&gt;&gt;</code>,
+<code>hls::stream&lt;ap_uint&lt;BITS&gt;&gt;</code>,
+<code>hls::stream&lt;ap_axis&lt;BITS, 0, 0, 0&gt;&gt;</code>,
+<code>hls::stream&lt;ap_axiu&lt;BITS, 0, 0, 0&gt;&gt;</code></td>
 </tr>
 </tbody>
 </table>
