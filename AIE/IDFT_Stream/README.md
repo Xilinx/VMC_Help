@@ -1,29 +1,60 @@
-# IDFT 
-IDFT implementation targeted for AI Engines.
+# IDFT Stream
+Stream-based IDFT implementation targeted for AI Engines.
   
 ![](./Images/block.png)  
 
 ## Library
 
-AI Engine/DSP/Buffer IO
+AI Engine/DSP/Stream IO
 
 ## Description
 
- IDFT implementation targeted for AI Engines.
+Stream-based IDFT implementation targeted for AI Engines.
 ## Parameters
 
 ### Main  
 #### Input/Output Data Type
 Set the input/output data type.
 
+#### Twiddle factor data type
+Describes the data type of the twiddle factors of the transform. It must be one of `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
+* 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
+* The twiddle factor data type must be an integer type if the input/output data type is an integer type.
+* The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
+
 #### Point Size (IDFT Size)
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 7 inclusive.
 
-#### Number Of Frames Per Window 
+#### Input Window Size
 Describes the total number of frames used as an input to the IDFT block per window.
  
 #### Scale Output Down by 2^
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
+
+#### Rounding mode
+
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 ####  Number of Cascade Stages
 This determines the number of kernels the IDFT will be divided over in series to improve throughput. For int data types, and IDFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
@@ -38,31 +69,9 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ## Examples
 
-**IDFT Stream Block Example1:**
+***Click on the images below to open each model.***
 
-![](./Images/IDFT_Stream_Ex1.png)
+[![](./Images/IDFT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/IDFT_Stream_Ex1)
 
-**AIE IDFT and Simulink IDFT Complex Output Signal Real Part Comparison**
-
-![](./Images/AIE_Simulink_IDFTStream_Signal_RealPart_Comparison.png)
-
-**AIE IDFT and Simulink IDFT Complex Output Signal Imaginary Part Comparison:**
-
-![](./Images/AIE_Simulink_IDFTStream_Signal_ImaginaryPart_Comparison.png)
-
-**IDFT Stream Block Example2:**
-
-![](./Images/IDFT_Stream_Ex2.png)
-
-**AIE IDFT and Simulink IDFT Complex Output Signal Real Part Comparison**
-
-![](./Images/AIE_Simulink_IDFTStream_Signal_RealPart_Comparison_Ex2.png)
-
-**AIE IDFT and Simulink IDFT Complex Output Signal Imaginary Part Comparison:**
-
-![](./Images/AIE_Simulink_IDFTStream_Signal_ImaginaryPart_Comparison_Ex2.png)
-
-
-
-
+[![](./Images/IDFT_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/IDFT_Stream_Ex2)
 

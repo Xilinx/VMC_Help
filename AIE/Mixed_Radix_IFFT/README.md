@@ -17,6 +17,12 @@ Mixed Radix IFFT implementation targeted for AI Engines.
 #### Input/Output Data Type
 Set the input/output data type.
 
+#### Twiddle factor data type
+Describes the data type of the twiddle factors of the transform. It must be one of `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
+* 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
+* The twiddle factor data type must be an integer type if the input/output data type is an integer type.
+* The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
+
 #### Point Size (IFFT Size)
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 12 inclusive.
 
@@ -30,7 +36,30 @@ Specifies the number of samples for a particular frame. The value must
 #### Scale Output Down by 2^
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
+#### Rounding mode
 
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 
 ####  Number of Cascade Stages
@@ -44,28 +73,11 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
+## Examples
 
-**Mixed Radix IFFT Block Example1:**
+***Click on the images below to open each model.***
 
-![](./Images/Mixed_Radix_IFFT_Ex1.png)
+[![](./Images/Mixed_Radix_IFFT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Mixed_Radix_IFFT_Ex1)
 
+[![](./Images/Mixed_Radix_IFFT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Mixed_Radix_IFFT_Ex2)
 
-**AIE and Simulink Radix IFFT Output Signal Real Part Comparison:**
-
-![](./Images/Mixed_Radix_IFFT_RealPart_Comparison.png)
-
-**AIE and Simulink Radix IFFT Output Signal Imaginary Part Comparison:**
-
-![](./Images/Mixed_Radix_IFFT_ImaginaryPart_Comparison.png)
-
-**Mixed Radix IFFT Block Example2:**
-
-![](./Images/Mixed_Radix_IFFT_Ex2.png)
-
-**AIE and Simulink Radix IFFT Output Signal Real Part Comparison:**
-
-![](./Images/Mixed_Radix_IFFT_RealPart_Comparison_Ex2.png)
-
-**AIE and Simulink Radix IFFT Output Signal Imaginary Part Comparison:**
-
-![](./Images/Mixed_Radix_IFFT_ImaginaryPart_Comparison_Ex2.png)

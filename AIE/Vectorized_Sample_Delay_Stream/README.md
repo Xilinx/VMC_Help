@@ -23,12 +23,9 @@ Describes the number of samples used as an input to the Vectorized Sample Delay 
 #### Maximum Sample Delay  
 Describes the maximum number of sample delay can be applied to the input signal.This parameter must be in the range of 2^0 and 2^32-1, inclusive.  
 
+## Examples
 
-**Vectorized Sample Delay Stream Block Example1:**
+***Click on the images below to open each model.***
 
-![](./Images/Vectorized_Sample_Delay_Stream_Ex1.png) 
-
-**AIE Vectorized Sample Delay Stream and Simulink Sample Delay Block Ouput Comparison:**
-
-![](./Images/SampleDelayStream_Comparison_Ex1.png) 
+[![](./Images/Vectorized_Sample_Delay_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Vectorized_SampleDelay_Stream_Ex1)
 
