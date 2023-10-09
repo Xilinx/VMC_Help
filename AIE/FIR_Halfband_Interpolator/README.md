@@ -84,6 +84,21 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
+#### Number of interpolator polyphases
+
+Specifies the number of interpolator polyphases over which the coefficients will be split to enable parallel computation of the outputs. The polyphases are executed in parallel; output data is produced by each polyphase directly. This parameter does not affect the number of input data paths; there will be `(SSR)` input phases irrespective of the value of this parameter.
+
+Currently, only 2 interpolator polyphases are supported for the halfband interpolators with SSR > 1. Input data is broadcast to the two polyphases and each polyphase produces half of the total output data. Their output data can be interleaved to produce a single output stream.
+
+The first polyphase is implemented using a single rate asymmetric filter that is configured to produce and consume data in parallel in `(SSR)` phases; each phase can operate at maximum throughput depending on the configuration.
+The first polyphase uses `(SSR)^2 * (Number of cascade stages)` kernels. 
+The second polyphase simplifies into a single kernel that does a single tap because halfband decimators only have one non-zero coefficient in the second coefficient phase. The second polyphase uses `(SSR)` kernels operating at maximum throughput.
+
+The overall theoretical input data rate is `(SSR) * (Number of output ports) * 1 GSa/s`.
+The overall theoretical output data rate is `(SSR) * (Number of decimator polyphases) * (Number of output ports) * 1GSa/s`.
+
+When SSR = 1, 1 or 2 interpolator polyphases can be used.
+
 #### Use center tap to upshift data  
 To upshift the data sample by the center tap coefficient (or its real
 part) position.
@@ -119,7 +134,7 @@ Now, if the input has a data stream of all ones (i.e., 1, 1, 1, etc.):
 - If the parameter is set, the expected output will be: \[1, 2^3, 2,
   2^3...\]=\[1, 8, 2, 8..\]
 
-### Number of cascade stages  
+#### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
 ## Examples

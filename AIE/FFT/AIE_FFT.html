@@ -50,8 +50,8 @@ vertical-align: middle;
 <section id="twiddle-factor-data-type" class="level4">
 <h4>Twiddle factor data type</h4>
 <p>Describes the data type of the twiddle factors of the transform. It
-must be one of <code>cint16</code>, <code>cint32</code>, or
-<code>cfloat</code> and must also satisfy the following rules:</p>
+must be <code>cint16</code> or <code>cfloat</code> and must also satisfy
+the following rules:</p>
 <ul>
 <li>32-bit twiddle factors are only supported when the input/output data
 type is also 32-bit.</li>
@@ -122,6 +122,17 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
+</section>
+<section id="use-widget-for-ssr-kernels" class="level4">
+<h4>Use Widget for SSR Kernels</h4>
+<p>This parameter is applicable to streaming and parallel (SSR&gt;1)
+implementations of the FFT. These implementations require stream to
+window conversions on the hardware.</p>
+<p>When this parameter is disabled, stream to window conversion will
+occur within the FFT kernels themselves.</p>
+<p>When this parameter is enabled, stream to window conversion will
+occur on its own AI Engine tiles. This will improve performance at the
+expense of additional tiles being used.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of Cascade Stages</h4>

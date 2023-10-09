@@ -17,7 +17,7 @@ AI Engine/DSP/Buffer IO
 Set the input/output data type.
 
 #### Twiddle factor data type
-Describes the data type of the twiddle factors of the transform. It must be one of `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
+Describes the data type of the twiddle factors of the transform. It must be `cint16` or `cfloat` and must also satisfy the following rules:
 * 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.

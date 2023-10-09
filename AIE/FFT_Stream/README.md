@@ -21,7 +21,7 @@ a positive integer.
 Set the input/output data type.
 
 #### Twiddle factor data type
-Describes the data type of the twiddle factors of the transform. It must be one of `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
+Describes the data type of the twiddle factors of the transform. It must be `cint16` or `cfloat` and must also satisfy the following rules:
 * 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
@@ -59,6 +59,13 @@ The following modes are available:
 * **None:** No saturation is performed and the value is truncated on the MSB side.
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
+
+#### Use Widget for SSR Kernels
+This parameter is applicable to streaming and parallel (SSR>1) implementations of the FFT. These implementations require stream to window conversions on the hardware.
+
+When this parameter is disabled, stream to window conversion will occur within the FFT kernels themselves.
+
+When this parameter is enabled, stream to window conversion will occur on its own AI Engine tiles. This will improve performance at the expense of additional tiles being used.
 
 #### SSR
 

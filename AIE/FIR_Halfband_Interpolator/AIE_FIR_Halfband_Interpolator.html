@@ -148,6 +148,34 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
+<section id="number-of-interpolator-polyphases" class="level4">
+<h4>Number of interpolator polyphases</h4>
+<p>Specifies the number of interpolator polyphases over which the
+coefficients will be split to enable parallel computation of the
+outputs. The polyphases are executed in parallel; output data is
+produced by each polyphase directly. This parameter does not affect the
+number of input data paths; there will be <code>(SSR)</code> input
+phases irrespective of the value of this parameter.</p>
+<p>Currently, only 2 interpolator polyphases are supported for the
+halfband interpolators with SSR &gt; 1. Input data is broadcast to the
+two polyphases and each polyphase produces half of the total output
+data. Their output data can be interleaved to produce a single output
+stream.</p>
+<p>The first polyphase is implemented using a single rate asymmetric
+filter that is configured to produce and consume data in parallel in
+<code>(SSR)</code> phases; each phase can operate at maximum throughput
+depending on the configuration. The first polyphase uses
+<code>(SSR)^2 * (Number of cascade stages)</code> kernels. The second
+polyphase simplifies into a single kernel that does a single tap because
+halfband decimators only have one non-zero coefficient in the second
+coefficient phase. The second polyphase uses <code>(SSR)</code> kernels
+operating at maximum throughput.</p>
+<p>The overall theoretical input data rate is
+<code>(SSR) * (Number of output ports) * 1 GSa/s</code>. The overall
+theoretical output data rate is
+<code>(SSR) * (Number of decimator polyphases) * (Number of output ports) * 1GSa/s</code>.</p>
+<p>When SSR = 1, 1 or 2 interpolator polyphases can be used.</p>
+</section>
 <section id="use-center-tap-to-upshift-data" class="level4">
 <h4>Use center tap to upshift data</h4>
 <p>To upshift the data sample by the center tap coefficient (or its real
@@ -189,11 +217,11 @@ etc.):</p>
 </ul>
 </section>
 </section>
-</section>
-<section id="number-of-cascade-stages" class="level3">
-<h3>Number of cascade stages</h3>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages</h4>
 <p>This determines the number of kernels the FIR will be divided over in
 series to improve throughput.</p>
+</section>
 </section>
 </section>
 <section id="examples" class="level2">
