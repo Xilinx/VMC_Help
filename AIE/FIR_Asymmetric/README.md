@@ -96,7 +96,6 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 [![](./Images/FIR_Asymmetric_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/FIR_Asymmetric_Ex2)
 
-### Examples
 [AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)
 
 ### References
