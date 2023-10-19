@@ -27,6 +27,10 @@ This is an unsigned integer which describes the point size of the transformation
 
 #### Input Window Size
 Describes the total number of frames used as an input to the IDFT block per window.
+
+<div class="noteBox">
+The name of this parameter refers to "Number of samples", but this is incorrect. It should refer to the number of frames. For example, for a 256 sample input to a 256-point IDFT, the input window size (number of frames) should equal 1.
+</div>
  
 #### Scale Output Down by 2^
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 

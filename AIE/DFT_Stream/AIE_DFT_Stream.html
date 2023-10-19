@@ -72,6 +72,10 @@ inclusive.</p>
 <h4>Input Window Size</h4>
 <p>Describes the total number of frames used as an input to the DFT
 block per window.</p>
+<div class="noteBox">
+The name of this parameter refers to &quot;Number of samples&quot;, but this is incorrect. It should refer to the number of frames. For example, for a 256 sample input to a 256-point DFT, the input window size (number of frames) should equal 1.
+</div>
+
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale Output Down by 2^</h4>
