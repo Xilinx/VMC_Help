@@ -40,6 +40,14 @@ Optional preprocessor arguments for downstream compilation with specific preproc
 
 The following two preprocessor option formats are accepted and multiple can be selected: -Dname and -Dname=definition separated by a comma. That is, the optional argument must begin with -D and if the option definition value is not provided, it is assumed to be 1.
 
+## Examples
+
+***Click on the images below to open each model.***
+
+This example shows import of kernel functions with int16 real and complex inputs and outputs.
+
+[![](./Images/AIE_Kernel_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/AIE_Kernel_Ex1)
+
 ## Related blocks
 Use [AIE Class](../AIE_Class_Kernel_Function/README.md) block to import a class based kernel.
 
