@@ -47,10 +47,10 @@ with the '-D' string and if the option `<definition>` value is not
 provided, it is assumed to be 1.
 
 ## Examples
-[Importing AIE ML graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_ML_Graph_Import), This exameple goes through the details of importing a graph block into Vitis Model Composer.
+[Importing AIE-ML graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_ML_Graph_Import)
 
-[Importing AI Engine graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Graph)
+[Importing AI Engine Graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Graph)
     
-[Importing Matrix Multiply graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/matrix_multiply)
+[Importing DSP Library Function (Matrix Multiply) as a Graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/matrix_multiply)
 
 
