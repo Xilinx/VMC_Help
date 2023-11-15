@@ -61,7 +61,7 @@ specified in the Decimation Rate Value.
 
 ##### Rate Change Type  
 This field is applicable to Interpolation and Decimation filter types.
-Used to specify an Integer or Fixed_Fractional rate change.
+For Vector FIRs, only an Integer rate change is supported.
 
 ##### Interpolation Rate Value  
 This field is applicable to all Interpolation filter types and
