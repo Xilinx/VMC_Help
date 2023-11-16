@@ -1,7 +1,7 @@
 # Vector FFT Float
 
 The Vector FFT Float block supports the FFT operation for vector 
-single-precision floating-point inputs.
+single-precision floating-point inputs. This block only supports Versal devices.
 
 ![](./Images/block.png)
 
@@ -33,7 +33,9 @@ of 2 in the range of 2^3 to 2^16.
 R is the super sample rate, the
 number of samples processed in parallel every clock. Using a typical
 example with N=1024 and SSR=4, the core would compute one 1K FFT every
-256 clock cycles, processing 4 input samples/clock.
+256 clock cycles, processing 4 input samples/clock. 
+
+The SSR is limited to 2 and 4.
 
 #### Block RAM_THRESHOLD 
 Is an implementation parameter with no functional implications. It controls 
