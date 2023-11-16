@@ -127,10 +127,21 @@ range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of Cascade Stages</h4>
-<p>This determines the number of kernels the IDFT will be divided over
-in series to improve throughput. For int data types, and IDFT size of
-2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N
-is odd. For float data type, the maximum cascade length is N.</p>
+<p>This determines the number of kernels the DFT will be divided over in
+series to improve throughput. When cascaded, each kernel will operate on
+a subset of the input signal and pass a partial result to the next
+kernel.</p>
+<p>Increasing the number of cascade stages will increase the number of
+inputs to the DFT block. The input signal should be distributed among
+the input ports in a round-robin fashion.</p>
+<p>For example, for a cascade length of 2:</p>
+<ul>
+<li><code>in[0]</code> should receive samples
+<code>1, 3, 5, ..., n-1</code> of the input signal</li>
+<li><code>in[1]</code> should receive samples
+<code>2, 4, 6, ..., n</code> of the input signal</li>
+</ul>
+<p>The maximum cascade length is 11.</p>
 </section>
 </section>
 <section id="constraints" class="level3">

@@ -61,7 +61,15 @@ The following modes are available:
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 ####  Number of Cascade Stages
-This determines the number of kernels the IDFT will be divided over in series to improve throughput. For int data types, and IDFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
+This determines the number of kernels the DFT will be divided over in series to improve throughput. When cascaded, each kernel will operate on a subset of the input signal and pass a partial result to the next kernel. 
+
+Increasing the number of cascade stages will increase the number of inputs to the DFT block. The input signal should be distributed among the input ports in a round-robin fashion. 
+
+For example, for a cascade length of 2:
+* `in[0]` should receive samples `1, 3, 5, ..., n-1` of the input signal 
+* `in[1]` should receive samples `2, 4, 6, ..., n` of the input signal
+
+The maximum cascade length is 11. 
 
 
 ### Constraints
