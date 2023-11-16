@@ -28,7 +28,7 @@ Increasing the number of samples per frame increases the output throughput.
 
 #### Number of Parallel Outputs (SSR)
 
-This parameter specifies the number of output ports and must be of the form 2^N, where N is a non-negative integer. The number of AI Engine kernels used is equal to the value of SSR parameter.
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
 #### Phase Increment
 

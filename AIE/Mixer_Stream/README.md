@@ -41,8 +41,8 @@ two modulated signals are added together and written to the output
 window.
 
 #### Number of parallel input/output (SSR):
-This parameter specifies the number of input (or output) ports and
-  must be of the form 2^N, where N is a non-negative integer.
+This parameter specifies the number of input (and output) ports of the Mixer block.
+The number of AI Engine kernels used is equal to the value of SSR parameter.
 
 #### Rounding mode
 
