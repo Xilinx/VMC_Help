@@ -48,7 +48,7 @@ distributed RAM will be used instead of BRAM. Typical values to try are
 258, 514, and 1026.
 
 #### SSR
-Super Sample Rate
+Super Sample Rate. It should be a power of 2.
 
 ## Scaling Ports  
 The scaling ports are called SI and SO. Their width matches the FFT size
