@@ -14,7 +14,7 @@ The AIE Graph block allows you to import an AI Engine program that
 consists of a dataflow graph specification written in C++.
 
 <div class="noteBox">
-This block does not support graph classes with 'input_plio' or 'output_plio' ports.
+This block does not support graph classes with 'input_plio' or 'output_plio' ports. Neither it supports a graph with more than one RTP input or one RTP output. 
 </div>
 
 ## Parameters
