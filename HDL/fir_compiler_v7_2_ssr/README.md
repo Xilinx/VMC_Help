@@ -64,16 +64,12 @@ This field is applicable to Interpolation and Decimation filter types.
 For Vector FIRs, only an Integer rate change is supported.
 
 ##### Interpolation Rate Value  
-This field is applicable to all Interpolation filter types and
-Decimation filter types for Fractional Rate Change implementations. The
-value provided in this field defines the up-sampling factor, or P for
-Fixed Fractional Rate (P/Q) resampling filter implementations.
+This field is applicable to all Interpolation filter types. The
+value provided in this field defines the up-sampling factor.
 
 ##### Decimation Rate Value  
-This field is applicable to the all Decimation and Interpolation filter
-types for Fractional Rate Change implementations. The value provided in
-this field defines the down-sampling factor, or Q for Fixed Fractional
-Rate (P/Q) resampling filter implementations.
+This field is applicable to all Decimation filter
+types. The value provided in this field defines the down-sampling factor.
 
 
 ##### Super Sample Rate (SSR)
