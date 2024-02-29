@@ -63,7 +63,7 @@ Please see the following table for a detailed list of supported data types for i
 |               | std::complex with C/C++ primitive (except double, bool) | `std::complex<int32>`, `std::complex<float>` |
 |               | std::complex with ap_int/ap_uint<X>, 1 <= X <= 64	| `std::complex<ap_int<32>>`, `std::complex<ap_uint<64>>` |
 |               | std::complex with ap_fixed/ap_ufixed<X>, 1 <= X <= 64	| `std::complex<ap_fixed<64,32>>`, `std::complex<ap_ufixed<37,10>>` |
-| **Vector Types** | Constant size array of any of the above Scalar Types. Must be passed by reference. | `int32 (&arg)[10]`, `std::complex<ap_uint<32>> (&arg)[20]`, `hls::axis<ap_uint<128> 0, 0, 0> (&arg)[30]` |
+| **Vector Types** | Constant size array of any of the above Scalar Types. Must be passed by reference. | `int32 (&arg)[10]`, `std::complex<ap_uint<32>> (&arg)[20]`, `hls::axis<ap_uint<128>, 0, 0, 0> (&arg)[30]` |
 | **Pointer Types** | Pointer type of any of the above Scalar Types | `const int32_t *arg`, `std::complex<ap_int<32>> const* arg`, `ap_fixed<57, 0, 0, 0> *arg` |
 | **hls::stream** | hls::stream with any of above Scalar Types. Must be passed by reference. | `hls::stream<uint32> &arg`, `hls::stream<std::complex<float>> &arg`, `hls::stream<ap_axis<32>> &arg`, `hls::stream<ap_int<128>> &arg`, `hls::stream<std::complex<ap_int<16>> &arg`, `hls::stream<hls::axis<ap_uint<128> 0, 0, 0>> &arg` |
 |               | hls::stream with ap_axis/ap_axiu, data width is 32/64/128 | `hls::stream<ap_axis<32, 0, 0, 0>> &arg`, `hls::stream<ap_axiu<64, 0, 0, 0>> &arg` |
