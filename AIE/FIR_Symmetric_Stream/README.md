@@ -59,7 +59,9 @@ filter.
 #### Input frame size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
 The number of values in the output window will be the input window size
-by of virtue the single rate nature of this filter.
+by of virtue the single rate nature of this filter. Note that 
+if the SSR is configured to a value greater than 1, the input frame size should 
+represent the cumulative total number of samples across all inputs.
 
 #### Scale output down by 2^  
 Describes power of 2 shift down applied to the accumulation of FIR terms
