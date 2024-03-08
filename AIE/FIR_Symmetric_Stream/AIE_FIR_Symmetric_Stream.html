@@ -106,7 +106,10 @@ filter.</p>
 <h4>Input frame size (Number of samples)</h4>
 <p>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be the input
-window size by of virtue the single rate nature of this filter.</p>
+window size by of virtue the single rate nature of this filter. Note
+that if the SSR is configured to a value greater than 1, the input frame
+size should represent the cumulative total number of samples across all
+inputs.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
