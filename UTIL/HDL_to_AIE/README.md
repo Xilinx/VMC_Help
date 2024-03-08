@@ -52,6 +52,8 @@ The following table shows the input data types that are needed to produce each o
 | uint64           | ufix64, ufix128           |
 | float            | uint32, ufix64, ufix128   |
 | cfloat           | ufix64, ufix128           |
+| bfloat16         | uint32, ufix64, ufix128   |
+
 
 #### Number of output samples  
 

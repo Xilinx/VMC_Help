@@ -41,13 +41,13 @@ When converting input to output data types, the AIE to HDL block only splits the
 
 The following table shows the input data types that are needed to produce each output data type.
 
-| Output Data Type | Input Data Type                                                                             |
-|------------------|---------------------------------------------------------------------------------------------|
-| int32            | int32                                                                                       |
-| uint32           | int8, uint8, int16, uint16, uint32, single, cint16                                          |
-| int64            | int64                                                                                       |
-| uint64           | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, uint64, single, single(c)        |
-| ufix128          | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, int64, uint64, single, single(c) |
+| Output Data Type | Input Data Type                                                                                       |
+|------------------|-------------------------------------------------------------------------------------------------------|
+| int32            | int32                                                                                                 |
+| uint32           | int8, uint8, int16, uint16, uint32, single, cint16, bfloat16                                          |
+| int64            | int64                                                                                                 |
+| uint64           | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, uint64, single, single(c), bfloat16        |
+| ufix128          | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, int64, uint64, single, single(c), bfloat16 |
 
 #### Output Sample Time  
 
