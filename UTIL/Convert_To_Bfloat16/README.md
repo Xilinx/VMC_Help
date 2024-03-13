@@ -15,6 +15,9 @@ On the Simulink canvas, the 'bfloat16' signal will have data type `x_bfloat16`. 
 
 This block does not support complex inputs. The output signal will have the same dimensions as the input signal.
 
+## Related blocks
+[Convert_From_Bfloat16](../Convert_From_Bfloat16/README.md)
+
 ## References
 
 `bfloat16` is a 16-bit floating point data type that is supported on AIE-ML devices. For more information on `bfloat16`, refer to [AI Engine-ML Kernel and Graph Programming Guide (UG1603)](https://docs.xilinx.com/r/en-US/ug1603-ai-engine-ml-kernel-graph/Floating-Point-Operations).
