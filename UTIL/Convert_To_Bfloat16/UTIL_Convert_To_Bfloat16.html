@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Convert To Bfloat16</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Convert To Bfloat16</h1>
+</header>
+<section id="convert-to-bfloat16" class="level1">
+<h1>Convert To Bfloat16</h1>
+<p>This block converts a Simulink floating point input to
+<code>bfloat16</code> data type for use with AI Engine blocks.</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP4AAABnCAYAAAAg///aAAAACXBIWXMAAA7EAAAOxAGVKw4bAAALnUlEQVR4nO3df0zU9R/A8efnI6joTjLwUDZnEzzK0XYo1vqBLYxMMWam1KQ1G8EYDuyHYi7c+of6A7ItQhwjWbaypQ3EaFTickxaWbPmUcgASyINOJf8Uk64+/5Bd1+Ru1N+3HF3n9fjz7sPn3vf3u8nn88dn+MUm81mQwihKep0D0AI4X1B7u5UFMVb4xBCeICrE3q34bv7QSGEb3N34JZTfSE0SMIXQoMkfCE0SMIXQoMkfCE0SMIXQoMkfCE0SMIXQoNuewGP8Lzh4WHa29uZOXPmdA/F48LDwzXxPH2dhO8DLBYLZrN5uofhNZGRkdM9BM2TU30fEBISgsFgQFVlOoR3yErzETqdjujoaIlfeIWsMh8i8QtvkRXmYyR+4Q2yunyQxC88TVaWj5L4hSfJqvJhEr/wFFlRPk7iF54gq8kPSPxiqslK8hMSv5hKsor8iMQvpoqsID8j8YupIKvHD0n8YrJk5fgpiV9MhqwaPybxi4mSz+P7OZ1Oh8Fg4OrVqx5/rEuXLnn8MYR3SPgBYO7cucydO9crjyXxBwY5RwwA165dY3h4eLqHIfyIhO/nent7+e2332hvb5/uoQg/IuH7sd7eXlpaWgDkH1iKcZHw/ZQ9eqvVOt1DEX5IwvdDEr2YLAnfz0j0YiqoAN3d3RQWFtLV1TXd4xFuSPRivFw1rQJUVFSQl5dHYmIinZ2dXh2YuDMSvZgIV02rANu2bSM2NhaTycSaNWucblhTU8OePXs8P1IxhkQvbufYsWNOb3fVtAqwYMEC6urqRsXf398/asPk5GTeeecdDw07cFy4cIENGzYQGRnJ0qVL2bFjBxaLZcL7G2/0ty6AhoYGoqOjiY6OJigoiKioKKKjozly5Ijb/Rw4cIDw8HDuvfdeYmJiWLt2LVeuXAFg3759bN26la6uLrZu3Tru53T69Gm6u7sB6Onp4emnn2bz5s2jttm9ezcGg4G4uDja2trG/RhacunSJQ4fPuz0PlcHdMebe3q9flT8hw4dGrWDqqoqXnnlFaqrq0lNTSUzM5MnnniC4uJiDz0d/2Oz2XjmmWdITU2lo6ODpqYmBgcHeeONNya0v/FG72wBPPzww7S0tNDS0sLChQtpbGykpaWFLVu23HZ/WVlZNDU1cf78eQwGA0ePHgXg+++/58MPP2T27Nnjf1LAoUOHHOHn5uaSkJAw6v5vvvkGk8lEc3MzBQUFLo9mgcxqtZKVlUVSUhKPPvooNTU1wEjIfX19ALz11luUl5ezc+dO6uvreffdd8fs59YDuj3+Udfq2+N3dboPoKoqFy5c4MyZM/T39xMXF0dOTs6UPml/derUKfR6PS+++CIwclHNe++9x+DgIFarlezsbFpbW7l27Rp79uwhOTmZ1157jaGhIa5fv47JZKKwsJDKykqWLl3KQw89hNVq5dlnn6W8vJyGhgaqq6uZMWMGRqORzMxM9u3bR39/P93d3SxZssSxAF5//XW3Y/3hhx/YtWsXc+bMITQ0lIqKCubMmeN0W6vVSk9PD0ajkSNHjnD58mV2797N3r17HdtUVlby1Vdfoaoq8fHxZGRkYLFY2Lt3Lz09PQwMDJCbm0tERASVlZU0Nzfz6aefUlJSwrlz5/jxxx8d+/ryyy/JyMgAYP369axfv36yU+N3jh8/Tl9fH99++y1ms5kHH3yQdevWOd02JyeH4eFhp3N+c9P2+Ovq6sb+OU+v1/PZZ5+5HZTRaARGPhwymdPYQNPU1ER8fPyo20JCQrjrrrtGTeSxY8fYsWMHVqsVVVWZOXMmZWVl5OfnU1FRwVNPPcXRo0exWq20tbWh1+ux2Wx88cUXlJaWsn//fs6dO0drayuqqjJr1iw+//xzcnJySEhIuG30ANnZ2ZSXl1NbW8s999zDRx99NGab8vJyjEYjixcv5uLFiyQmJrJlyxb0ej1FRUWOI/6VK1f45JNP2L9/PwcOHKChoYG2tjbMZjOPPfYYpaWl5Ofnc/DgQVatWsWKFSsoLS1l0aJFTj9cdPHiRUwmE8nJyaSkpPDnn39OcEb8188//8zq1asBCAsLQ6fTcfny5Qnt6+amTSYT27dvHxt+Z2cnzz//vNsdzZgxY0ID0AJXH5ZxN5FxcXHAyASZzWbuvvtuWltbsVgsnDp1ijVr1nD+/Hn++usvsrKyyMzMpLu7m46ODgCWL18+rjEODQ3R2dmJwWAARl4OnD17dsx2L7/8Mr/88gsdHR2kpqaSl5fndH+tra3ExMQQHByMoijcf//9NDc3ExYWxq+//kpubi7FxcX09PSMa4w1NTWkp6fz6quvjuv5BQJFUUa9xLMfJBRFcdw2NDR0R/u6uenY2FhKSkpGh9/Z2ek4JdDr9VMxfk257777OH369KjbBgcHqa+vdzmR8P9fpAMDA/T29mKz2XjggQf46aefqK+v5/HHHyc4OJiVK1dSVlZGWVkZhw8fdvwimch1+jabzelYXHnuuec4c+aM0/sURXG6v6qqKoKDg3n//ffH9T5HREQEjzzyCABPPvkkjY2Nd/yzgSI+Pp7vvvsOGPlb/MDAABEREcybNw+z2Qzg+GWtqiqDg4NO93Nz07GxsdTV1aHX6/8f/q0b2F+niju3evVq+vr6KC4uxmazYbFYyM3NpaamxuVE2vX29tLe3u4IKDExkdraWoKDgwkLC2PZsmU0NjY63tj54IMPxhxB3S2AmwUFBbFw4UJ+//13YORd9hUrVrj9mZMnTxIVFeX0vqioKJqamrhx4wZWqxWTyURMTAxms5nIyEgATpw4wY0bN+5onOvWreP48eOOsY33jCYQbNiwgbCwMJKSkti0aRMlJSUoikJ2djZpaWmkp6cTHh6OzWZj2bJlnD17lp07d47Zj7Po4b8397q6usZscOtrr40bN7Jx40bHoOz++OMPTz13v6MoCl9//TUZGRm8/fbb6HQ6Nm3aREFBAaqqUltbS1JSEtevX3dMJIx8nv7Wd+9XrlxJfn4+6enpAISGhpKVlcX27dsJDg7GaDQyb968UY9/8wIoKipyO9bS0lKysrKYPXs2er2egoKCMduUlZVRVVUFwPz5813+OXf+/Pls27aN7OxsFEUhMTGRJUuWsHbtWt58800aGhpISUkB4OOPPyYhIYHNmzdTXV3NCy+8wL///kt3dzexsbEUFRWRkpLCiRMnWLVqFbNmzeLgwYN3OAOBQ1EUSkpKxtyelpZGWlramNtddegsegDFZrPZCgsLycvLG7PBradwYur19/fT3Nw86YtzFi1a5Di6esrff/896f/A441xihGKojiNHv474r/00kvAyBV8CxYs8P4INezq1atyRZ7wmJMnTzptOgggPDycXbt2eX1QQgjPcnUgl4/lCqFBEr4QGiThC6FB8n/1A4Sn/t+9xWJh8eLFcrVmgJHwA4in4o+IiCAkJITQ0FD++ecf+StEAJBTfeGSqqoYDAZCQkKAkQ9lyXf1BQaZQeGUqqpER0ej0+lG3S5f1BkYZPbEGK6it5P4/Z/MnBjldtHbSfz+TWZNONxp9HYSv/+SGRPA+KO3k/j9k8yWmHD0dhK//5GZ0rjJRm8n8fsXmSUNm6ro7SR+/yEzpFFTHb2dxO8fZHY0yFPR20n8vk9mRmM8Hb2dxO/bZFY0xFvR20n8vktmRCO8Hb2dxO+bZDY0YLqit7PHD8hXrvkI+Tx+gJvu6O10Oh3Lly+f0Lf+iKkn4U+z8PBwj+4/NDTU6RdTTgf75/rF9FNsbr4xQ75QQwj/5a5feY0vhAZJ+EJokIQvhAZJ+EJokIQvhAZJ+EJokIQvhAZJ+EJokIQvhAZJ+EJo0G2v1VcUxRvjEEJ4kdvw5Tp9IQKTnOoLoUESvhAaJOELoUESvhAaJOELoUESvhAaJOELoUESvhAaJOELoUESvhAaJOELoUESvhAaJOELoUESvhAaJOELoUESvhAaJOELoUH/A0QlXZeoputoAAAAAElFTkSuQmCC" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/Tools</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block converts a Simulink floating point data type to a
+<code>bfloat16</code> data type for use with AI Engine blocks. The
+floating point input can be of type <code>double</code> or
+<code>single</code>.</p>
+<p>On the Simulink canvas, the &#39;bfloat16&#39; signal will have data type
+<code>x_bfloat16</code>. This data type is supported only by AI Engine
+blocks and should only be used in an AI Engine subsystem. However, the
+<strong>Convert To Bfloat16</strong> block should be placed outside the
+AI Engine subsystem.</p>
+<p>This block does not support complex inputs. The output signal will
+have the same dimensions as the input signal.</p>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p><code>bfloat16</code> is a 16-bit floating point data type that is
+supported on AIE-ML devices. For more information on
+<code>bfloat16</code>, refer to <a href="https://docs.xilinx.com/r/en-US/ug1603-ai-engine-ml-kernel-graph/Floating-Point-Operations">AI
+Engine-ML Kernel and Graph Programming Guide (UG1603)</a>.</p>
+</section>
+</section>
+</body>
+</html>
