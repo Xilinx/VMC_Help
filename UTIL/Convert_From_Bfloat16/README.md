@@ -5,7 +5,7 @@ This block converts an AI Engine `bfloat16` value to a Simulink floating point v
 
 ## Library
 
-AI Engine/Interfaces
+AI Engine/Tools
 
 ## Description
 
