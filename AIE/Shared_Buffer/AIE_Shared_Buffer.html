@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Shared Buffer</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Shared Buffer</h1>
+</header>
+<section id="shared-buffer" class="level1">
+<h1>Shared Buffer</h1>
+<p>This block allows access to a shared buffer within the AIE-ML memory
+tile.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/Interfaces</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block allows access to a shared buffer within the AIE-ML memory
+tile. Memory tiles are large memories that can be used to store
+intermediate results that would not fit in an AI Engine-ML data memory.
+Memory tiles can also be used to efficiently rearrange data.</p>
+<p>The Shared Buffer block can be connected with other AI Engine kernels
+in your design to read to and write from the shared buffer.</p>
+<div class="noteBox">
+This block requires an AIE-ML device to be selected in the Vitis Model Composer Hub block.
+</div>
+
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="data-type" class="level4">
+<h4>Data type</h4>
+<p>Data type contained in the shared buffer. The output of the
+<strong>Shared Buffer</strong> block will have this data type.</p>
+</section>
+<section id="number-of-buffers" class="level4">
+<h4>Number of buffers</h4>
+<p>Number of buffers instantiated in the memory tile. Multiple buffers
+can be instantiated to increase throughput. For example, when
+<strong>Number of buffers</strong> is 2 a ping-pong mechanism will be
+used. The maximum number of buffers is 8.</p>
+</section>
+<section id="buffer-dimension" class="level4">
+<h4>Buffer dimension</h4>
+<p>A vector of 1, 2, 3 or 4 elements defining the sizes over the various
+dimensions of the buffer. These sizes are defined in terms of
+samples.</p>
+<p>For example, to create a 64x64x2 buffer, set <strong>Buffer
+dimension</strong> to <code>[64,64,2]</code>.</p>
+</section>
+<section id="number-of-input-ports" class="level4">
+<h4>Number of input ports</h4>
+<p>The number of physical input ports that are used to write to the
+shared buffer. There are six ports that can be shared among all buffers
+located in a memory tile.</p>
+</section>
+<section id="number-of-output-ports" class="level4">
+<h4>Number of output ports</h4>
+<p>The number of physical output ports that will be used to read from
+this buffer. There are six ports that can be shared among all buffers
+located in a memory tile.</p>
+</section>
+<section id="input-tiling" class="level4">
+<h4>Input tiling</h4>
+<p>A MATLAB structure containing the tiling parameters for each input
+port. See <a href="#tiling-parameters">Tiling Parameters</a>. You can
+define the tiling parameters as variables in the MATLAB workspace and
+specify the variable name in this field.</p>
+</section>
+<section id="output-tiling" class="level4">
+<h4>Output tiling</h4>
+<p>A MATLAB structure containing the tiling parameters for each output
+port. See <a href="#tiling-parameters">Tiling Parameters</a>. You can
+define the tiling parameters as variables in the MATLAB workspace and
+specify the variable name in this field.</p>
+</section>
+</section>
+<section id="tiling-parameters" class="level2">
+<h2>Tiling Parameters</h2>
+<p>Tiling parameters define the order in which data is transferred to or
+from the memory tile on each port.</p>
+<p>The tiling parameters should be specified in a MATLAB structure with
+the following fields.</p>
+<ul>
+<li><strong><code>tiling_dimension</code></strong>: A vector of 1, 2, 3
+or 4 elements defining the sizes over the various dimensions of the
+tile. These sizes are defined in terms of samples.</li>
+<li><strong><code>offset</code></strong>: Multidimensional offset with
+respect to the starting element in the buffer.</li>
+<li><strong><code>tile_traversal</code></strong>: A vector of MATLAB
+structures defining the traversal parameters for each dimension of the
+buffer. Each structure has the following fields:
+<ul>
+<li><strong><code>dimension</code></strong>: The buffer dimension on
+which this traversing loop applies. For AIE-ML memory tiles, it could be
+the 0th, 1st, 2nd or 3rd dimension. The stride and wrap members of this
+structure are applied in the dimension specified.</li>
+<li><strong><code>stride</code></strong>: Represents the distance in
+terms of buffer element data type between consecutive inter-tile
+traversal in this dimension.</li>
+<li><strong><code>wrap</code></strong>: Number of tiles to access in
+this dimension.</li>
+</ul></li>
+<li><strong><code>packet_port_id</code></strong>: Multiple connections
+can go through a single port that are previously merged through a
+<code>pktmerge</code> block or split afterward with a
+<code>pktsplit</code> block. This member represents the output port ID
+of the connected <code>pktsplit</code> or the input port ID of the
+connected <code>pktmerge</code>. If this member is set to a specific id,
+the data transfer will only happen if the incoming or outgoing data
+block ID matches this ID.</li>
+<li><strong><code>repetition</code></strong>: Number of repetitions of
+tiling traversal scheme.</li>
+<li><strong><code>phase</code></strong>: Phase of tiling parameter
+resource sharing and execution.</li>
+<li><strong><code>boundary_dimension</code></strong>: Real data boundary
+dimension for padding.</li>
+</ul>
+<div class="noteBox">
+Not all fields are mandatory.
+
+<p>Within the tiling parameters structure, <code>tiling_dimension</code>
+and <code>offset</code> are the only mandatory fields.</p>
+<p>Within the <code>tile_traversal</code> structure,
+<code>dimension</code>, <code>stride</code>, and <code>wrap</code> are
+all mandatory fields.</p>
+</div>
+
+<p>The output size of each port can be determined from the tiling
+parameters as follows:</p>
+<p><code>output size = tiling_dimension * (total wraps in all dimensions) * repetition</code></p>
+<p>For a further description of the tiling parameters, see <a href="https://docs.xilinx.com/r/en-US/ug1603-ai-engine-ml-kernel-graph/Tiling-Parameters-and-Buffer-Descriptors">Tiling
+Parameters and Buffer Descriptors</a>.</p>
+<section id="tiling-parameter-examples" class="level3">
+<h3>Tiling Parameter Examples</h3>
+<section id="16x16-shared-buffer-implementing-a-matrix-transpose" class="level4">
+<h4>16x16 Shared Buffer implementing a Matrix Transpose</h4>
+<p>Write full contents of the buffer in one write:</p>
+<pre><code>inputTilingParams = struct( ...
+    &#39;tiling_dimension&#39;, [16, 16], ...
+    &#39;offset&#39;, [0, 0] ...
+)</code></pre>
+<p>Read full contents of buffer one sample at a time, transposed:</p>
+<pre><code>outputTilingParams = struct( ...
+    &#39;tiling_dimension&#39;, [1, 1], ...
+    &#39;offset&#39;, [0, 0], ...
+    &#39;tile_traversal&#39;, [struct(&#39;dimension&#39;, 1, &#39;stride&#39;, 1, &#39;wrap&#39;, 16), ...
+                       struct(&#39;dimension&#39;, 0, &#39;stride&#39;, 1, &#39;wrap&#39;, 16)] ...
+)</code></pre>
+</section>
+<section id="64x64-shared-buffer" class="level4">
+<h4>64x64 Shared Buffer</h4>
+<p>Write full contents of the buffer in a row-wise fashion:</p>
+<pre><code>inputTilingParams = struct( ...
+    &#39;tiling_dimension&#39;, [64, 1], ... 
+    &#39;offset&#39;, [0, 0], ...
+    &#39;tile_traversal&#39;, [struct(&#39;dimension&#39;, 1, &#39;stride&#39;, 1, &#39;wrap&#39;, 64)] ...
+)</code></pre>
+<p>Read full contents of the buffer in tiles of size 16x4:</p>
+<pre><code>outputTilingParams = struct( ...
+    &#39;tiling_dimension&#39;, [16, 4], ...
+    &#39;offset&#39;, [0, 0], ...
+    &#39;tile_traversal&#39;, [struct(&#39;dimension&#39;, 0, &#39;stride&#39;, 16, &#39;wrap&#39;, 4) ...
+                       struct(&#39;dimension&#39;, 1, &#39;stride&#39;, 4, &#39;wrap&#39;, 16)] ...
+)</code></pre>
+</section>
+</section>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>To learn more about Shared Buffers, refer to <a href="https://docs.xilinx.com/r/en-US/ug1603-ai-engine-ml-kernel-graph/AI-Engine-ML-Memory-Tile-Access">AI
+Engine-ML Kernel and Graph Programming Guide (UG1603)</a>.</p>
+</section>
+</section>
+</body>
+</html>
