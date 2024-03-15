@@ -25,7 +25,7 @@ Data type contained in the shared buffer. The output of the **Shared Buffer** bl
 
 #### Number of buffers
 
-Number of buffers instantiated in the memory tile. Multiple buffers can be instantiated to increase throughput. For example, when **Number of buffers** is 2 a ping-pong mechanism will be used. The maximum number of buffers is 8.
+Number of buffers instantiated in the memory tile. When **Number of buffers** is 2 a ping-pong mechanism will be used, increasing throughput. 
 
 #### Buffer dimension
 
@@ -62,7 +62,6 @@ The tiling parameters should be specified in a MATLAB structure with the followi
     * **`wrap`**: Number of tiles to access in this dimension.
 * **`packet_port_id`**: Multiple connections can go through a single port that are previously merged through a `pktmerge` block or split afterward with a `pktsplit` block. This member represents the output port ID of the connected `pktsplit` or the input port ID of the connected `pktmerge`. If this member is set to a specific id, the data transfer will only happen if the incoming or outgoing data block ID matches this ID.
 * **`repetition`**: Number of repetitions of tiling traversal scheme.
-* **`phase`**: Phase of tiling parameter resource sharing and execution.
 * **`boundary_dimension`**: Real data boundary dimension for padding.
 
 <div class="noteBox">

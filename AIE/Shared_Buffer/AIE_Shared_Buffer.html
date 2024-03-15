@@ -59,10 +59,9 @@ This block requires an AIE-ML device to be selected in the Vitis Model Composer 
 </section>
 <section id="number-of-buffers" class="level4">
 <h4>Number of buffers</h4>
-<p>Number of buffers instantiated in the memory tile. Multiple buffers
-can be instantiated to increase throughput. For example, when
+<p>Number of buffers instantiated in the memory tile. When
 <strong>Number of buffers</strong> is 2 a ping-pong mechanism will be
-used. The maximum number of buffers is 8.</p>
+used, increasing throughput.</p>
 </section>
 <section id="buffer-dimension" class="level4">
 <h4>Buffer dimension</h4>
@@ -135,8 +134,6 @@ the data transfer will only happen if the incoming or outgoing data
 block ID matches this ID.</li>
 <li><strong><code>repetition</code></strong>: Number of repetitions of
 tiling traversal scheme.</li>
-<li><strong><code>phase</code></strong>: Phase of tiling parameter
-resource sharing and execution.</li>
 <li><strong><code>boundary_dimension</code></strong>: Real data boundary
 dimension for padding.</li>
 </ul>
