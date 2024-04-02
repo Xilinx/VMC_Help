@@ -40,20 +40,19 @@ The following table shows the input data types that are needed to produce each o
 
 | Output Data Type | Input Data Type           |
 |------------------|---------------------------|
-| int8             | uint32, ufix64, ufix128   |
-| uint8            | uint32, ufix64, ufix128   |
-| int16            | uint32, ufix64, ufix128   |
-| uint16           | uint32, ufix64, ufix128   |
-| cint16           | uint32, ufix64, ufix128   |
-| int32            | int32, ufix64, ufix128    |
-| uint32           | uint32, ufix64, ufix128   |
-| cint32           | ufix64, ufix128           |
-| int64            | sfix64                    |
-| uint64           | ufix64, ufix128           |
-| float            | uint32, ufix64, ufix128   |
-| cfloat           | ufix64, ufix128           |
+| int8             | uint32, uint64, ufix128   |
+| uint8            | uint32, uint64, ufix128   |
+| int16            | uint32, uint64, ufix128   |
+| uint16           | uint32, uint64, ufix128   |
+| cint16           | uint32, uint64, ufix128   |
+| int32            | int32,  uint64, ufix128   |
+| uint32           | uint32, uint64, ufix128   |
+| cint32           | uint64, ufix128           |
+| int64            | int64                     |
+| uint64           | uint64, ufix128           |
+| float            | uint32, uint64, ufix128   |
+| cfloat           | uint64, ufix128           |
 | bfloat16         | uint32, ufix64, ufix128   |
-
 
 #### Number of output samples  
 
