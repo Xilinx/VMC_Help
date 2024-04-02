@@ -70,7 +70,7 @@ If you do not do this, the HDL to AIE block will output a variable-size signal t
 ## Input and Output period
 This block is a multirate block. The input period and the output period can be different depending on the setting of the parameters. The diagram below shows an example of how the output period changes based on the different settings.
 
-![](./Images/hdl_to_aie_period.png) 
+<img src="./Images/HDL_to_AIE_period.png" width="600">
 
 # Examples
 [An exmaple of importing RTL into Model Composer and connecting it to AIE Engine blocks](https://github.com/abehbood/Vitis_Model_Composer/tree/2023.2/Examples/AIENGINE_plus_PL/AIE_HDL/AIE_HDL_cosim_rtl_blackbox)
