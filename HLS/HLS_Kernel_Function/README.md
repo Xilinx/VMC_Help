@@ -40,8 +40,6 @@ The name of the kernel function in C/C++ for which the HLS Kernel block is to be
 #### Kernel source file
 The name of the source file that contains the kernel function implementation (definition). The string could be just the file name, a relative path to the file or the absolute path of the file.
 
-You can specify both the declaration and the definition of the function in the header file and leave this field empty.
-
 #### Kernel search paths
 If the kernel header file or the kernel source file is not found using the value provided through the 'Kernel header file' or 'Kernel source file' fields respectively, then the paths provided through 'Kernel search paths' are used to locate the files.
 
