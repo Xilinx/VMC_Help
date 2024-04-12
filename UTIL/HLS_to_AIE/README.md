@@ -28,7 +28,7 @@ types are: int32, int64, x_sfix128, uint32, uint64, x_ufix128.
 
 #### AIE Input Type  
 Possible values are: int8, int16, int32, int64, uint8, uint16, uint32,
-uint64, cint16, cint32,float, cfloat
+uint64, cint16, cint32, float, cfloat, bfloat16
 
 #### Output Size  
 The size of the output port. The output port is a variable sized signal

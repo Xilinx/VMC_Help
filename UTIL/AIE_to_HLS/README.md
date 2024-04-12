@@ -29,7 +29,7 @@ This block is needed only if the output of the AI Engine block does not match th
 
 #### Output Data Type  
 Possible values are: cint16, int32, uint32, cint32, int64, uint64,
-sfix128, ufix128, float, and cfloat
+sfix128, ufix128, float, cfloat
 
 #### Output Size  
 The size of the output port. The output port is a variable sized signal
@@ -42,7 +42,7 @@ such the output size must be equal to or larger than 8.
 Note:
 
 1.  The input data type must be one of the following: int8, int16,
-    int32, int64, x_sfix128, uint8, uint16, uint32, uint64, x_ufix128.
+    int32, int64, x_sfix128, uint8, uint16, uint32, uint64, x_ufix128, bfloat16.
 2.  The input can be real or complex, but complex inputs are supported
     only for int16 and int32.
     
