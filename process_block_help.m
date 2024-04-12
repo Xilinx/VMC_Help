@@ -14,7 +14,7 @@ arguments
 end
 
 
-setenv("LD_PRELOAD",'')
+% setenv("LD_PRELOAD",'')
 
 
 
@@ -28,7 +28,7 @@ if connect_with_git
     system("git pull")
 end
 
-setenv('LD_PRELOAD',"");
+% setenv('LD_PRELOAD',"");
 
 shipping_file_folder = 'shipping_folder';
 categories = ["AIE", "HDL", "HLS", "UTIL", "GEN"];
