@@ -62,23 +62,19 @@ input/output data type is an integer type.</li>
 input/output data type is a float type.</li>
 </ul>
 </section>
-<section id="point-size-idft-size" class="level4">
-<h4>Point Size (IDFT Size)</h4>
+<section id="idft-size" class="level4">
+<h4>IDFT size</h4>
 <p>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 3 to 7
 inclusive.</p>
 </section>
-<section id="input-window-size" class="level4">
-<h4>Input Window Size</h4>
+<section id="number-of-frames-per-window" class="level4">
+<h4>Number of frames per window</h4>
 <p>Describes the total number of frames used as an input to the IDFT
 block per window.</p>
-<div class="noteBox">
-The name of this parameter refers to &quot;Number of samples&quot;, but this is incorrect. It should refer to the number of frames. For example, for a 256 sample input to a 256-point IDFT, the input window size (number of frames) should equal 1.
-</div>
-
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output Down by 2^</h4>
+<h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 shift down applied before output. For
 <em>cfloat</em> data type, the value for this parameter must be
 zero.</p>
@@ -110,6 +106,14 @@ nearest odd number.</li>
 <strong>Ceiling</strong> modes. Other modes round to the nearest
 integer. They differ only in how they round for values that are exactly
 between two integers.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>This parameter is intended to improve performance by parallelizing
+the DFT processing. When this parameter is N&gt;1, the block will have N
+input ports and N output ports.</p>
+<div class="noteBox">The DFT/IDFT blocks&#39; behavior in SSR mode differs from that of the FFT/IFFT blocks. Each input port of the DFT/IDFT should receive the same input samples. This differs from the FFT/IFFT blocks, which expect the input samples to be split across the input ports.</div>
+
 </section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>

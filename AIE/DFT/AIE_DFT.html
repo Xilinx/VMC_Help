@@ -62,23 +62,19 @@ input/output data type is an integer type.</li>
 input/output data type is a float type.</li>
 </ul>
 </section>
-<section id="point-size-dft-size" class="level4">
-<h4>Point Size (DFT Size)</h4>
+<section id="dft-size" class="level4">
+<h4>DFT size</h4>
 <p>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 3 to 7
 inclusive.</p>
 </section>
-<section id="input-window-size" class="level4">
-<h4>Input Window Size</h4>
+<section id="number-of-frames-per-window" class="level4">
+<h4>Number of frames per window</h4>
 <p>Describes the total number of frames used as an input to the DFT
 block per window.</p>
-<div class="noteBox">
-The name of this parameter refers to &quot;Number of samples&quot;, but this is incorrect. It should refer to the number of frames. For example, for a 256 sample input to a 256-point DFT, the input window size (number of frames) should equal 1.
-</div>
-
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output Down by 2^</h4>
+<h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 shift down applied before output. For
 <em>cfloat</em> data type, the value for this parameter must be
 zero.</p>

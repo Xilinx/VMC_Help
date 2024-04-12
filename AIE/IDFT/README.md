@@ -22,17 +22,13 @@ Describes the data type of the twiddle factors of the transform. It must be `cin
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
-#### Point Size (IDFT Size)
+#### IDFT size
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 7 inclusive.
 
-#### Input Window Size
+#### Number of input frames per window
 Describes the total number of frames used as an input to the IDFT block per window.
-
-<div class="noteBox">
-The name of this parameter refers to "Number of samples", but this is incorrect. It should refer to the number of frames. For example, for a 256 sample input to a 256-point IDFT, the input window size (number of frames) should equal 1.
-</div>
  
-#### Scale Output Down by 2^
+#### Scale output down by 2^
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
 #### Rounding mode

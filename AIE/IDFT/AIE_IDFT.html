@@ -62,23 +62,19 @@ input/output data type is an integer type.</li>
 input/output data type is a float type.</li>
 </ul>
 </section>
-<section id="point-size-idft-size" class="level4">
-<h4>Point Size (IDFT Size)</h4>
+<section id="idft-size" class="level4">
+<h4>IDFT size</h4>
 <p>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 3 to 7
 inclusive.</p>
 </section>
-<section id="input-window-size" class="level4">
-<h4>Input Window Size</h4>
+<section id="number-of-input-frames-per-window" class="level4">
+<h4>Number of input frames per window</h4>
 <p>Describes the total number of frames used as an input to the IDFT
 block per window.</p>
-<div class="noteBox">
-The name of this parameter refers to &quot;Number of samples&quot;, but this is incorrect. It should refer to the number of frames. For example, for a 256 sample input to a 256-point IDFT, the input window size (number of frames) should equal 1.
-</div>
-
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output Down by 2^</h4>
+<h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 shift down applied before output. For
 <em>cfloat</em> data type, the value for this parameter must be
 zero.</p>
