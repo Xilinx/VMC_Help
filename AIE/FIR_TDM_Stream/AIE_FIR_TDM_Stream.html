@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FIR TDM Stream</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">FIR TDM Stream</h1>
+</header>
+<section id="fir-tdm-stream" class="level1">
+<h1>FIR TDM Stream</h1>
+<p>Time-Division Multiplexing FIR Filter for AI Engines.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/DSP/Stream IO</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>Time-Division Multiplexing FIR Filter for AI Engines.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output data type</h4>
+<p>Set the data type of the block input and output. The data type of the
+input signal to the block must match this setting.</p>
+</section>
+<section id="filter-coefficients-data-type" class="level4">
+<h4>Filter coefficients data type</h4>
+<p>Set the filter coefficients data type. This parameter&#39;s setting may
+be restricted based on the Input/Output data type. In particular,</p>
+<ul>
+<li>Complex types are only supported when the Input/Output data type is
+also complex.</li>
+<li>32-bit types are only supported when the Input/Output data type is
+also a 32-bit type.</li>
+<li>Filter coefficients data type must be an integer type if the
+Input/Output data type is an integer type.</li>
+<li>Filter coefficients data type must be a float type if the
+Input/Output data type is a float type.</li>
+</ul>
+</section>
+<section id="provide-second-set-of-output-ports" class="level4">
+<h4>Provide second set of output ports</h4>
+<p>When this option is enabled, a second output port is added to the
+block producing the same data as the first output port.</p>
+</section>
+<section id="provide-second-set-of-input-ports" class="level4">
+<h4>Provide second set of input ports</h4>
+<p>When this option is enabled, a second input port can be connected to
+the FIR, increasing available throughput. In Simulink, both input ports
+should be connected to the same signal.</p>
+<p>This setting is an implementation trade-off between performance and
+data bank resources. When this option is disabled, the FIR performance
+may be limited by load contention; when this option is enabled, two RAM
+banks are used for input, reducing load contention.</p>
+</section>
+<section id="filter-length" class="level4">
+<h4>Filter length</h4>
+<p>This field describes the number of taps (coefficients) in the
+filter.</p>
+</section>
+<section id="filter-coefficients" class="level4">
+<h4>Filter coefficients</h4>
+<p>This field specifies the filter coefficients.</p>
+<p>This field must be a one-dimensional vector with length equal to the
+<code>Filter length</code> multipled by
+<code>Number of TDM channels</code>. For example, <code>N</code>
+coefficients for <code>M</code> channels should be specified as
+follows:</p>
+<p><code>[coeffs0(1), coeffs0(2), ... coeffs0(N), coeffs1(1), coeffs1(2), ... coeffs(N), ... coeffsM(1), coeffsM(2), ... coeffsM(N)]</code></p>
+<div class="noteBox">
+You could also define the coefficients as an array variable in the MATLAB workspace and specify the variable name in this field.
+</div>
+
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
+<p>Sets the power of 2 shift down applied to the accumulator of FIR
+before output. It must be in the range 0 to 61 inclusive.</p>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="input-window-size-number-of-samples" class="level4">
+<h4>Input window size (Number of samples)</h4>
+<p>Describes the number of samples used as an input to the filter
+function. Because this is a single rate filter, the number of samples in
+the output window will match the size of the input window. This must be
+in the range of 4 to 8192 inclusive.</p>
+</section>
+<section id="number-of-tdm-channels" class="level4">
+<h4>Number of TDM channels</h4>
+<p>Describes the number of Time-Division Multiplexed (TDM) channels
+processed by the FIR.</p>
+<p>Each kernel requires storage for all taps and all channels it is
+required to operate on.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>This parameter specifies the number of input (or output) paths and
+must be of the form 2^N, where N is a non-negative integer.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
+</section>
+</section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. If you set the &quot;Number of
+cascade stages&quot; parameter to a value greater than one, multiple kernels
+will be used to process the input. You can use the constraint manager to
+optimize the performance of your design by setting specific constraints
+for each kernel (in this case, you need to first run your design).
+Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="references" class="level3">
+<h3>References</h3>
+<p>This block uses the Vitis DSP library implementation of a TDM FIR
+filter. For more details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html">here</a>.</p>
+</section>
+</section>
+</section>
+</body>
+</html>
