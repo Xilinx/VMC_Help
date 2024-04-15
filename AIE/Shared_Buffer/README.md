@@ -120,6 +120,11 @@ outputTilingParams = struct( ...
                        struct('dimension', 1, 'stride', 4, 'wrap', 16)] ...
 )
 ```
+## Examples
+
+***Click on the images below to open each model.***
+
+[![](./Images/Shared_Buffer_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/Shared_Buffer_Ex1)
 
 ## References
 
