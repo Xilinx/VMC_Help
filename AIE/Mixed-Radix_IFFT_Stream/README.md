@@ -1,5 +1,5 @@
 # Mixed Radix IFFT Stream
-
+Stream-based Mixed Radix IFFT implementation targeted for AI Engines.
   
 ![](./Images/block.png)  
 

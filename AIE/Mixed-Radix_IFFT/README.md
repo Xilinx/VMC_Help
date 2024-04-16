@@ -1,5 +1,5 @@
 # Mixed Radix IFFT 
-
+Mixed Radix FFT implementation targeted for AI Engines.
   
 ![](./Images/block.png)  
 
