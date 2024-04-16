@@ -54,8 +54,8 @@ performance. The specified value for SSR parameter should be of the form
 <section id="twiddle-factor-data-type" class="level4">
 <h4>Twiddle factor data type</h4>
 <p>Describes the data type of the twiddle factors of the transform. It
-must be <code>cint16</code> or <code>cfloat</code> and must also satisfy
-the following rules:</p>
+must be <code>cint16</code>, <code>cint32</code>, or <code>cfloat</code>
+and must also satisfy the following rules:</p>
 <ul>
 <li>32-bit twiddle factors are only supported when the input/output data
 type is also 32-bit.</li>
@@ -128,6 +128,18 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
+</section>
+<section id="twiddle-mode" class="level4">
+<h4>Twiddle Mode</h4>
+<p>This parameter controls the amplitude of the twiddle factors. It
+applies to <code>cint16</code> and <code>cint32</code> twiddle factors
+only; it does not apply to <code>cfloat</code> twiddle factors.</p>
+<p>Twiddle mode 0 means use max amplitude twiddles which saturate at
+<code>2^(N-1)-1</code>, where N is the number of bits in the type (e.g.
+<code>cint16</code> has 16 bits per component).</p>
+<p>Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e.
+<code>2^(N-1)</code>. This avoids saturation, but loses 1 bit of
+precision and so noise overall will be higher.</p>
 </section>
 <section id="use-widget-for-ssr-kernels" class="level4">
 <h4>Use Widget for SSR Kernels</h4>

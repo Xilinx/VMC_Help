@@ -30,6 +30,7 @@ vertical-align: middle;
 </header>
 <section id="fft" class="level1">
 <h1>FFT</h1>
+<p>FFT implementation targeted for AI Engines.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
@@ -50,8 +51,8 @@ vertical-align: middle;
 <section id="twiddle-factor-data-type" class="level4">
 <h4>Twiddle factor data type</h4>
 <p>Describes the data type of the twiddle factors of the transform. It
-must be <code>cint16</code> or <code>cfloat</code> and must also satisfy
-the following rules:</p>
+must be <code>cint16</code>, <code>cint32</code>, or <code>cfloat</code>
+and must also satisfy the following rules:</p>
 <ul>
 <li>32-bit twiddle factors are only supported when the input/output data
 type is also 32-bit.</li>
@@ -122,6 +123,18 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
+</section>
+<section id="twiddle-mode" class="level4">
+<h4>Twiddle Mode</h4>
+<p>This parameter controls the amplitude of the twiddle factors. It
+applies to <code>cint16</code> and <code>cint32</code> twiddle factors
+only; it does not apply to <code>cfloat</code> twiddle factors.</p>
+<p>Twiddle mode 0 means use max amplitude twiddles which saturate at
+<code>2^(N-1)-1</code>, where N is the number of bits in the type (e.g.
+<code>cint16</code> has 16 bits per component).</p>
+<p>Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e.
+<code>2^(N-1)</code>. This avoids saturation, but loses 1 bit of
+precision and so noise overall will be higher.</p>
 </section>
 <section id="use-widget-for-ssr-kernels" class="level4">
 <h4>Use Widget for SSR Kernels</h4>
