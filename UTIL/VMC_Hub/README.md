@@ -98,7 +98,7 @@ This parameter prompts you to enter a larger stack size. When Create and run tes
 ### Analyze (HDL)
 
 <div class="noteBox">
-For more information about the tasks available on this tab, refer to *Performing Analysis in Vitis Model Composer* in the Vitis Model Composer User Guide.
+For more information about the tasks available on this tab, refer to <a href="https://docs.amd.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/Performing-Analysis-in-Vitis-Model-Composer">Performing Analysis in Vitis Model Composer</a> in the Vitis Model Composer User Guide.
 </div>
 
 #### Target Directory
