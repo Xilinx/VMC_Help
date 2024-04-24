@@ -90,11 +90,17 @@ is shown below.
 
 To generate a 5 KHz sine wave in a system running
 at sample period of (1/100e6) or 100 MHz, use the following settings:
+
 Simulink System Period : 1/100e6 or 1e-8
+
 Sine Wave block input frequency : 5e3
+
 Phase Offset : 0
+
 SFDR : 90
+
 Explicit Sample Period: Unchecked
+
 Block Sample Period: N/A
 
 ![](./Images/case1_settings.png)
