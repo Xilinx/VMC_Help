@@ -77,23 +77,31 @@ various implementation decisions.
 
 #### Explicit Sample Period  
 If checked, the Sine Wave block uses the explicit sample time specified
-in the Sample Period box below. If not checked, the Model Composer base
-period will be used as block sample time.
+in the Sample Period box below. If not checked, Simulink System 
+Period will be used as block sample time.
 
 #### Sample Period  
 If Explicit Sample Period
 
-## Example
+## Case1:
 
 A simple use case of generating sinusoidal signal using Sine Wave block
 is shown below.
 
-To generate a 20 KHz sine wave with π/2 phase offset in a system running
-at sample period of (1/1e6) or 1 MHz, use the following specification on
-the Sine Wave block.
+To generate a 5 KHz sine wave in a system running
+at sample period of (1/100e6) or 100 MHz, use the following settings:
+Simulink System Period : 1/100e6 or 1e-8
+Sine Wave block input frequency : 5e3
+Phase Offset : 0
+SFDR : 90
+Explicit Sample Period: Unchecked
+Block Sample Period: N/A
+
+![](./Images/case1_settings.png)
 
 
-![](./Images/bnd1647546704015.png)
+![](./Images/case1_spectrum.png)
+
 
 These settings generate this sine wave:
 
