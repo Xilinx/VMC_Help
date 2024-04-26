@@ -35,7 +35,17 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via input port.
+filter coefficients via the input port.
+
+**AIE1 Devices:** Specify the filter coefficients as a vector of (N+1)/4+1 elements,
+where 'N' is the filter length.
+
+Consider a half-band filter of length 7 with coefficients `[1 0 2 5 2 0 1]`. In this case, the coefficients vector should be set to `[1 2 5]`. 
+
+**AIE-ML Devices:** Specifies the filter coefficients as a vector of (N+1)/2+1 elements,
+where 'N' the filter length.
+
+Consider a half-band filter of length 7 with coefficients `[1 0 2 5 2 0 1]`. In this case, the coefficients vector should be set to `[1 2 2 1 5]`.
 
 #### Provide second set of input ports
 When this option is enabled, a second stream input can be connected to the FIR, increasing available throughput. When using a second stream input, the data should be organized in a 128-bit interleaved pattern. For example, for a cint16 input samples 0-3 should be sent over the first stream and samples 4-7 should be sent over the second stream.
