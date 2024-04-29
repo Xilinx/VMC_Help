@@ -88,7 +88,7 @@ When "Explicit sample period" is enabled, the formula to set the Frequency in Hz
 
 Frequency(in Hz) = (Desired Frequency) * (Block Sample Period/Simulink System Period)
 
-Frequency(in Radians) = 2*pi*(Desired Frequency) * (Block Sample Period/Simulink System Period)
+Frequency(in Radians) = 2*pi* Desired Frequency * (Block Sample Period/Simulink System Period)
 
 ## Case1:
 
