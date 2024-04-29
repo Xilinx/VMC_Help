@@ -85,46 +85,121 @@ various implementation decisions.
 
 #### Explicit Sample Period  
 If checked, the Sine Wave block uses the explicit sample time specified
-in the Sample Period box below. If not checked, the sample period of this block will be equal to the Simulink system period setting in the Vitis Model Composer Hub block.
 
 #### Sample Period  
-Set the sample period of this block.
+
+When "Explicit sample period" is disabled, the sample period of this block will be equal to the Simulink system period setting in the Vitis Model Composer Hub block.
+
+When "Explicit sample period" is enabled, the formula to set the Frequency in Hz or in Radians as follows:
+
+Frequency(in Hz) = (Desired Frequency) * (Block Sample Period/Simulink System Period)
+
+Frequency(in Radians) = 2π * Desired Frequency * (Block Sample Period/Simulink System Period)
+
+## Case1:
+
+A simple use case of generating a sinusoidal signal when Simulink System Period 
+is 100 MHz and Explicit Sample Period is unchecked is shown below:
 
 
+To generate a 5 MHz sine wave in a system running
+at sample period of (1/100e6) or 100 MHz, use the following settings:
 
-## Example
+Simulink System Period setting in the hub block : 1/100e6 or 1e-8
 
-A simple use case of generating sinusoidal signal using Sine Wave block
-is shown below.
+Sine Wave block input frequency (in Hz) : 5e6
 
-To generate a 20 KHz sine wave with π/2 phase offset in a system running
-at sample period of (1/1e6) or 1 MHz, use the following specification on
-the Sine Wave block.
+Phase Offset : 0
+
+SFDR : 90
+
+Explicit Sample Period: Unchecked
+
+Block Sample Period: N/A
+
+![](./Images/case1_settings.png)
 
 
-![](./Images/bnd1647546704015.png)
-
-These settings generate this sine wave:
+Generated Sine Wave:
 
 
-![](./Images/uae1555437383080.png)
+![](./Images/Case1_Sine.png)
 
-Wavelength of sine wave = Simulink Sample Period / Frequency is
-selected, specifies the sample time for the block. =\> 1MHz/20KHz = 0.5
-\* 10⁻⁴
 
 The spectrum view of the sine wave is:
 
 
-![](./Images/mae1555437377586.png)
+![](./Images/case1_spectrum.png)
 
-Also:
 
-Number of Samples per period = (2π/(1/1e6 \* 20e3))
+## Case2:
 
-= 50 (Total number of samples in a single cycle)
+This use case generates a sinusoidal signal when Simulink System Period 
+is 100 MHz and Explicit Sample Period is checked and its value is same as 'Simulink System Period' is shown below:
 
-Number of offset samples = (π/2) \* (50/2π) = 50/4
+
+To generate a 5 MHz sine wave, use the following settings:
+
+Simulink System Period setting in the hub block : 1/100e6 or 1e-8
+
+Phase Offset : 0
+
+SFDR : 90
+
+Explicit Sample Period: Checked
+
+Block Sample Period: 1/100e6 or 1e-8
+
+Sine Wave block input frequency(in Hz) : (5e6) * (1e-8/1e-8)
+
+![](./Images/case2_settings.png)
+
+
+Generated Sine Wave:
+
+![](./Images/Case2_Sine.png)
+
+
+The spectrum view of the sine wave is:
+
+
+![](./Images/case2_spectrum.png)
+
+
+## Case3:
+
+This use case generates a sinusoidal signal when Simulink System Period 
+is 100 MHz and Explicit Sample Period is checked and its value is not same as 'Simulink System Period' is shown below:
+
+
+To generate a 5 MHz, sine wave use the following settings:
+
+Simulink System Period setting in the hub block : 1/100e6 or 1e-8
+
+Phase Offset : 0
+
+SFDR : 90
+
+Explicit Sample Period: Checked
+
+Block Sample Period: 1/50e6 or 2e-8
+
+Sine Wave block input frequency(in Hz) : (5e6) * (2e-8/1e-8)
+
+![](./Images/case3_settings.png)
+
+
+Generated Sine Wave:
+
+![](./Images/Case3_Sine.png)
+
+
+The spectrum view of the sine wave is:
+
+
+![](./Images/case3_spectrum.png)
+
+
 
 ## LogiCORE™ Documentation
 
