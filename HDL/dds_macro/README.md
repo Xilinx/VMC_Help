@@ -111,7 +111,7 @@ Explicit Sample Period: Unchecked
 
 Block Sample Period: N/A
 
-![](./Images/case2_settings.png)
+![](./Images/case1_settings.png)
 
 
 Generated Sine Wave:
