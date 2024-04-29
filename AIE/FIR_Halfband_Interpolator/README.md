@@ -37,6 +37,16 @@ also satisfy the following rules:
 When this option is enabled, the tool allows you to specify reloadable
 filter coefficients via the input port.
 
+**AIE1 Devices:** Specify the filter coefficients as a vector of (N+1)/4+1 elements,
+where 'N' is the filter length.
+
+Consider a half-band filter of length 7 with coefficients `[1 0 2 5 2 0 1]`. In this case, the coefficients vector should be set to `[1 2 5]`. 
+
+**AIE-ML Devices:** Specifies the filter coefficients as a vector of (N+1)/2+1 elements,
+where 'N' the filter length.
+
+Consider a half-band filter of length 7 with coefficients `[1 0 2 5 2 0 1]`. In this case, the coefficients vector should be set to `[1 2 2 1 5]`.
+
 #### Provide second set of input ports
 When this option is enabled, a second input port can be connected to the FIR, increasing available throughput. In Simulink, both input ports should be connected to the same signal.
 

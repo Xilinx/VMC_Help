@@ -81,6 +81,15 @@ as a Frequency (Hz) or an angular velocity (Radians) value.</p>
 <h4>Frequency</h4>
 <p>Specifies the frequency, either in Hertz or radians. The default is
 1.</p>
+<div class="noteBox">
+When &quot;Explicit sample period&quot; is enabled, the output frequency of this block may be different if the block&#39;s sample period differs from the Simulink system period setting in the Vitis Model Composer Hub block.
+
+<p>In this case, the Frequency or Radians parameter should be set as
+follows:</p>
+<p>Frequency/Radians = (Desired Frequency/Radians) * (Block Sample
+Period/Simulink System Period)</p>
+</div>
+
 </section>
 <section id="phase-offset" class="level4">
 <h4>Phase Offset</h4>
@@ -111,12 +120,13 @@ controls various implementation decisions.</p>
 <section id="explicit-sample-period" class="level4">
 <h4>Explicit Sample Period</h4>
 <p>If checked, the Sine Wave block uses the explicit sample time
-specified in the Sample Period box below. If not checked, the Model
-Composer base period will be used as block sample time.</p>
+specified in the Sample Period box below. If not checked, the sample
+period of this block will be equal to the Simulink system period setting
+in the Vitis Model Composer Hub block.</p>
 </section>
 <section id="sample-period" class="level4">
 <h4>Sample Period</h4>
-<p>If Explicit Sample Period</p>
+<p>Set the sample period of this block.</p>
 </section>
 </section>
 </section>

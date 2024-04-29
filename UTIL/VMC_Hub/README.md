@@ -153,7 +153,9 @@ Provides the ability to pass additional command line options to the AIE Simulato
 
 #### Simulation timeout (cycles)
 
-When enabled, it specifies the number of cycles for which AIE simulation is run. The default value is 50000.
+Specifies the number of cycles for which AIE simulation is run. The default value is 50000.
+
+There is no relation between the Simulink stop time/sample time and the AIE simulation timeout in cycles. If the AIE simulation appears to produce no output, it may be necessary to increase the simulation timeout parameter.
 
 #### Collect profiling statistics and enable 'printf' for debugging
 

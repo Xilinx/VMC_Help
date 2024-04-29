@@ -72,6 +72,22 @@ Input/Output data type is a float type.</li>
 <h4>Specify filter coefficients via input port</h4>
 <p>When this option is enabled, the tool allows you to specify
 reloadable filter coefficients via the input port.</p>
+<p><strong>AIE1 Devices:</strong> Specify the filter coefficients as a
+vector of (N+1)/4+1 elements, where &#39;N&#39; is the filter length.</p>
+<p>Consider a half-band filter of length 7 with coefficients
+<code>[1 0 2 5 2 0 1]</code>. In this case, the coefficients vector
+should be set to <code>[1 2 5]</code>.</p>
+<p><strong>AIE-ML Devices:</strong> Specifies the filter coefficients as
+a vector of (N+1)/2+1 elements, where &#39;N&#39; the filter length.</p>
+<p>Consider a half-band filter of length 7 with coefficients
+<code>[1 0 2 5 2 0 1]</code>. In this case, the coefficients vector
+should be set to <code>[1 2 2 1 5]</code>.</p>
+</section>
+<section id="filter-length" class="level4">
+<h4>Filter length</h4>
+<p>Specifies the total length of the filter. This parameter becomes
+visible when <em>Specify filter coefficients via input port</em> is
+enabled.</p>
 </section>
 <section id="provide-second-set-of-input-ports" class="level4">
 <h4>Provide second set of input ports</h4>
