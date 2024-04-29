@@ -132,8 +132,7 @@ This use case generates a sinusoidal signal when Simulink System Period
 is 100 MHz and Explicit Sample Period is checked and its value is same as 'Simulink System Period' is shown below:
 
 
-To generate a 5 MHz sine wave in a system running
-at sample period of (1/100e6) or 100 MHz, use the following settings:
+To generate a 5 MHz sine wave, use the following settings:
 
 Simulink System Period setting in the hub block : 1/100e6 or 1e-8
 
@@ -167,8 +166,7 @@ This use case generates a sinusoidal signal when Simulink System Period
 is 100 MHz and Explicit Sample Period is checked and its value is not same as 'Simulink System Period' is shown below:
 
 
-To generate a 5 MHz sine wave in a system running
-at sample period of (1/100e6) or 100 MHz, use the following settings:
+To generate a 5 MHz, sine wave use the following settings:
 
 Simulink System Period setting in the hub block : 1/100e6 or 1e-8
 
