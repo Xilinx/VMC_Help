@@ -81,12 +81,15 @@ in the Sample Period box below. If not checked, Simulink System
 Period will be used as block sample time.
 
 #### Sample Period  
-If Explicit Sample Period
+If Explicit Sample Period is checked 
 
 ## Case1:
 
-A simple use case of generating sinusoidal signal using Sine Wave block
-is shown below.
+A simple use case of generating sinusoidal signal when Simulink System Period 
+is 100 MHz and Explicit Sample Period is unchecked is shown below:
+
+Note: When Explicit Sample Period is unchecked sine wave block consider Simulink System Period
+as its block sample period
 
 To generate a 5 KHz sine wave in a system running
 at sample period of (1/100e6) or 100 MHz, use the following settings:
@@ -114,22 +117,13 @@ These settings generate this sine wave:
 
 ![](./Images/uae1555437383080.png)
 
-Wavelength of sine wave = Simulink Sample Period / Frequency is
-selected, specifies the sample time for the block. =\> 1MHz/20KHz = 0.5
-\* 10⁻⁴
 
 The spectrum view of the sine wave is:
 
 
 ![](./Images/mae1555437377586.png)
 
-Also:
 
-Number of Samples per period = (2π/(1/1e6 \* 20e3))
-
-= 50 (Total number of samples in a single cycle)
-
-Number of offset samples = (π/2) \* (50/2π) = 50/4
 
 ## LogiCORE™ Documentation
 
