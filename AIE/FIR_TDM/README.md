@@ -29,14 +29,6 @@ Set the filter coefficients data type. This parameter's setting may be restricte
 - Filter coefficients data type must be a float type if the Input/Output
   data type is a float type.
 
-#### Provide second set of output ports
-When this option is enabled, a second output port is added to the block producing the same data as the first output port.
-
-#### Provide second set of input ports
-When this option is enabled, a second input port can be connected to the FIR, increasing available throughput. In Simulink, both input ports should be connected to the same signal.
-
-This setting is an implementation trade-off between performance and data bank resources. When this option is disabled, the FIR performance may be limited by load contention; when this option is enabled, two RAM banks are used for input, reducing load contention.
-
 #### Filter length
 This field describes the number of taps (coefficients) in the filter.
 
