@@ -88,6 +88,6 @@ Specifies the initial phase offset. The default value is 0.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Mixer_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Mixer_stream_Ex1) 
+[![](./Images/Mixer_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/Mixer_stream_Ex1) 
 
-[![](./Images/Mixer_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Mixer_stream_Ex2) 
+[![](./Images/Mixer_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/Mixer_stream_Ex2) 

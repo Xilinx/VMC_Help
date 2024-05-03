@@ -151,7 +151,7 @@ This determines the number of kernels the FIR will be divided over in series to 
 
 ***Click on the images below to open each model.***
 
-[![](./Images/HalfBand_Interpolator_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/HalfBandInterpolator_Ex1)
+[![](./Images/HalfBand_Interpolator_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/HalfBandInterpolator_Ex1)
 
-[![](./Images/HalfBand_Interpolator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/HalfBandInterpolator_Ex2)
+[![](./Images/HalfBand_Interpolator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/HalfBandInterpolator_Ex2)
 
