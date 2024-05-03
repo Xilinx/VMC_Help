@@ -78,6 +78,9 @@ Specifies the phase increment between samples. The value must be in
   - N = 32, which represents the accumulator width, and it is fixed.
   - Fs = Sampling frequency.
 
+#### Reload initial phase via input port
+Allows the intial phase to be reloaded during simulation via an input port.
+
 #### Initial Phase Offset
 Specifies the initial phase offset. The default value is 0.
 

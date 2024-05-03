@@ -65,6 +65,9 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
+#### Reload initial phase via input port
+Allows the intial phase to be reloaded during simulation via an input port.
+
 #### Phase increment  
 This specifies the phase increment between the samples. The value should
 be in the range 0 to 2^31.
