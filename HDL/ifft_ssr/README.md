@@ -32,7 +32,7 @@ out_scale is used in if there is an internal overflow.
 Is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. SSR is the super sample rate, the
 number of samples processed in parallel every clock. Using a typical
-example with N=1024 and SSR=4, the core would compute one 1K IFFT every
+example with N=1024 and SSR=4, the core would compute one 1K IFFT for every
 256 clock cycles, processing 4 input samples/clock.
 
 #### Fixed-point precision 
