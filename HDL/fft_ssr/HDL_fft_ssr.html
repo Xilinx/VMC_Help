@@ -83,9 +83,12 @@ be used instead of BRAM. Typical values to try are 258, 514, and
 </section>
 <section id="bypass-reordering" class="level4">
 <h4>Bypass Reordering</h4>
-<p>If Bypass Reorderding is enabled, the output of the FFT block will be
-ordered in bit/digit reversed order. If it is disabled, the output of
-the FFT block will be ordered in natural order.</p>
+<p>If Input Reorder bypassing is disabled, then the module takes N
+samples in natural input order and outputs them in natural transposed
+order. If it is enabled, the output of the FFT block will be ordered in
+bit/digit reversed order.</p>
+<p>If Output Reorder bypassing is disabled, then vector FFT Produces
+Natural Output Order.</p>
 </section>
 <section id="use-corner-bender-or-matrix-transposer" class="level4">
 <h4>Use Corner Bender Or Matrix Transposer</h4>
