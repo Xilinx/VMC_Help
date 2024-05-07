@@ -49,8 +49,12 @@ distributed RAM will be used instead of BRAM. Typical values to try are
 
 #### Bypass Reordering 
 
-If Bypass Reorderding is enabled, the output of the FFT block will be ordered in bit/digit reversed order.
-If it is disabled, the output of the FFT block will be ordered in natural order.
+If Input Reorder bypassing is disabled, then IFFT accepts natural input order.
+
+If Output Reorder bypassing is disabled, 
+Then the module takes N samples in natural transposed input order and 
+outputs them in natural order.
+
 
 #### Use Corner Bender Or Matrix Transposer
 
