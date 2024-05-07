@@ -58,7 +58,7 @@ If Output Reorder bypassing is disabled, then vector FFT Produces Natural Output
 
 #### Use Corner Bender Or Matrix Transposer
 
-If it is enabled, the module takes N samples in natural input order and outputs them in in natural transposed order.
+If it is enabled, it does matrix transpose on the output of FFT.
 
 #### SSR
 Super Sample Rate, It should be a power of 2.
