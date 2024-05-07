@@ -52,6 +52,11 @@ distributed RAM will be used instead of BRAM. Typical values to try are
 If Bypass Reorderding is enabled, the output of the FFT block will be ordered in bit/digit reversed order.
 If it is disabled, the output of the FFT block will be ordered in natural order.
 
+#### Use Corner Bender Or Matrix Transposer
+
+If it is enabled, the module takes N samples in natural input order and outputs them in in natural transposed order.
+
+
 #### SSR
 Super Sample Rate.It should be a power of 2.
 
