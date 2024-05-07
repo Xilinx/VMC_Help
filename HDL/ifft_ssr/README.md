@@ -52,14 +52,13 @@ distributed RAM will be used instead of BRAM. Typical values to try are
 If Input Reorder bypassing is disabled, then IFFT accepts natural input order.
 
 If Output Reorder bypassing is disabled, 
-Then the module takes N samples in natural transposed input order and 
+then the module takes N samples in natural transposed input order and 
 outputs them in natural order.
 
 
 #### Use Corner Bender Or Matrix Transposer
 
-If it is enabled, the module takes N samples in natural input order and outputs them in in natural transposed order.
-
+If it is enabled, it does matrix transpose on the output of IFFT.
 
 #### SSR
 Super Sample Rate.It should be a power of 2.

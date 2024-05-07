@@ -85,14 +85,13 @@ be used instead of BRAM. Typical values to try are 258, 514, and
 <h4>Bypass Reordering</h4>
 <p>If Input Reorder bypassing is disabled, then IFFT accepts natural
 input order.</p>
-<p>If Output Reorder bypassing is disabled, Then the module takes N
+<p>If Output Reorder bypassing is disabled, then the module takes N
 samples in natural transposed input order and outputs them in natural
 order.</p>
 </section>
 <section id="use-corner-bender-or-matrix-transposer" class="level4">
 <h4>Use Corner Bender Or Matrix Transposer</h4>
-<p>If it is enabled, the module takes N samples in natural input order
-and outputs them in in natural transposed order.</p>
+<p>If it is enabled, it does matrix transpose on the output of IFFT.</p>
 </section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
