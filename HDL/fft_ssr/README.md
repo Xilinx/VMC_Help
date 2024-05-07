@@ -47,8 +47,13 @@ between these two types of resources. The higher the value, the more
 distributed RAM will be used instead of BRAM. Typical values to try are
 258, 514, and 1026.
 
+#### Bypass Reordering 
+
+If Bypass Reorderding is enabled, the output of the FFT block will be ordered in bit/digit reversed order.
+If it is disabled, the output of the FFT block will be ordered in natural order.
+
 #### SSR
-Super Sample Rate. It should be a power of 2.
+Super Sample Rate, It should be a power of 2.
 
 ## Scaling Ports  
 The scaling ports are called SI and SO. Their width matches the FFT size
