@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -79,9 +81,22 @@ types of resources. The higher the value, the more distributed RAM will
 be used instead of BRAM. Typical values to try are 258, 514, and
 1026.</p>
 </section>
+<section id="bypass-reordering" class="level4">
+<h4>Bypass Reordering</h4>
+<p>If Input Reorder bypassing is disabled, then the module takes N
+samples in natural input order and outputs them in natural transposed
+order. If it is enabled, the output of the FFT block will be ordered in
+bit/digit reversed order.</p>
+<p>If Output Reorder bypassing is disabled, then vector FFT Produces
+Natural Output Order.</p>
+</section>
+<section id="use-corner-bender-or-matrix-transposer" class="level4">
+<h4>Use Corner Bender Or Matrix Transposer</h4>
+<p>If it is enabled, it does matrix transpose on the output of FFT.</p>
+</section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
-<p>Super Sample Rate. It should be a power of 2.</p>
+<p>Super Sample Rate, It should be a power of 2.</p>
 </section>
 </section>
 <section id="scaling-ports" class="level2">

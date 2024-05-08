@@ -1,6 +1,6 @@
-# Vector FFT
+# Vector IFFT
 
-The Vector FFT block supports the FFT operation for vector type inputs.
+The Vector IFFT block supports the Inverse FFT operation for vector type inputs.
 
 ![](./Images/block.png)
 
@@ -13,8 +13,8 @@ When the in_valid is high it indicates that the input data is valid.
 When out_valid is high, it indicates that the output data is valid.
 The valid indicator accompanies every set of input and output samples
 (for example, R number of samples). There is no back pressure flow
-control and once an FFT transform starts, 'R' data samples must be input
-into the core every clock for N/R consecutive clocks. Where N is the FFT
+control and once an IFFT transform starts, 'R' data samples must be input
+into the core every clock for N/R consecutive clocks. Where N is the IFFT
 length. However, for back-to-back transforms, the valid control input
 can stay high with no gaps.
 
@@ -23,16 +23,16 @@ out_scale is used in if there is an internal overflow.
 
 ### Data Type Support
 
-- The number of in_scale bits must be equal to log2(FFT length).
+- The number of in_scale bits must be equal to log2(IFFT length).
 - in_valid and out_valid are of Boolean data type.
 
 ## Parameters
 
-#### FFT length (N) 
+#### IFFT length (N) 
 Is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. SSR is the super sample rate, the
 number of samples processed in parallel every clock. Using a typical
-example with N=1024 and SSR=4, the core would compute one 1K FFT every
+example with N=1024 and SSR=4, the core would compute one 1K IFFT for every
 256 clock cycles, processing 4 input samples/clock.
 
 #### Fixed-point precision 
@@ -49,26 +49,27 @@ distributed RAM will be used instead of BRAM. Typical values to try are
 
 #### Bypass Reordering 
 
-If Input Reorder bypassing is disabled, then the module takes N samples in 
-natural input order and outputs them in natural transposed order.
-If it is enabled, the output of the FFT block will be 
-ordered in bit/digit reversed order.
+If Input Reorder bypassing is disabled, then IFFT accepts natural input order.
 
-If Output Reorder bypassing is disabled, then vector FFT Produces Natural Output Order.
+If Output Reorder bypassing is disabled, 
+then the module takes N samples in natural transposed input order and 
+outputs them in natural order.
+
 
 #### Use Corner Bender Or Matrix Transposer
 
-If it is enabled, it does matrix transpose on the output of FFT.
+If it is enabled, it does matrix transpose on the output of IFFT.
 
 #### SSR
-Super Sample Rate, It should be a power of 2.
+Super Sample Rate.It should be a power of 2.
+
 
 ## Scaling Ports  
-The scaling ports are called SI and SO. Their width matches the FFT size
+The scaling ports are called SI and SO. Their width matches the IFFT size
 N, it is always log2(N). There is one SI bit for every add/subtract
 stage, where internal overflows can occur. If that bit is set to zero
 then no scaling happens and bit growth is addressed by increasing the
-internal data sizes bit, one bit every stage. If the bit is set to 1
+internal data sizes, one bit every stage. If the bit is set to 1
 then the stage divides by 2, and no internal data growth is required to
 prevent overflows.
 
