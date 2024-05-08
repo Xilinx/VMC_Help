@@ -48,4 +48,4 @@ Defines the width of the Sin/Cos Table and should be an integer value.
 
 ***Click on the images below to open the model.***
 
-[![](./Images/Vector_DDFS_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Vector_DDFS_Ex1)
+[![](./Images/Vector_DDFS_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/Vector_DDFS_Ex1)

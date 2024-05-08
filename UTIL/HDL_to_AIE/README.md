@@ -66,7 +66,7 @@ If the HDL subsystem does not produce valid data on every clock cycle, the AI En
 
 For example, if the HDL subsystem asserts `tvalid` every 4 HDL clock cycles, set the **Reduce output sample rate by a factor of** parameter to 4.
 
-If you do not do this, the HDL to AIE block will output a variable-size signal that is empty when there is no valid data. For analysis and viewing the signal on a scope, it is easier to work with variable-size signals that are full. For more information, see the [Variable-Size Signals Quick Guide](https://github.com/Xilinx/Vitis_Model_Composer/HEAD/2023.2/QuickGuides/Variable_Size_Signals).
+If you do not do this, the HDL to AIE block will output a variable-size signal that is empty when there is no valid data. For analysis and viewing the signal on a scope, it is easier to work with variable-size signals that are full. For more information, see the [Variable-Size Signals Quick Guide](https://github.com/Xilinx/Vitis_Model_Composer/HEAD/2024.1/QuickGuides/Variable_Size_Signals).
 
 ## Input and Output period
 This block is a multirate block. The input period and the output period can be different depending on the setting of the parameters. The diagram below shows an example of how the output period changes based on the different settings.
@@ -74,9 +74,9 @@ This block is a multirate block. The input period and the output period can be d
 <img src="./Images/HDL_to_AIE_period.png" width="800">
 
 # Examples
-[An example of importing RTL into Model Composer and connecting it to AI Engine blocks](https://github.com/abehbood/Vitis_Model_Composer/tree/2023.2/Examples/AIENGINE_plus_PL/AIE_HDL/AIE_HDL_cosim_rtl_blackbox)
+[An example of importing RTL into Model Composer and connecting it to AI Engine blocks](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/AIENGINE_plus_PL/AIE_HDL/AIE_HDL_cosim_rtl_blackbox)
 
-[Single Stream SSR FIR with PL + AI Engine](https://github.com/abehbood/Vitis_Model_Composer/tree/2023.2/Examples/AIENGINE_plus_PL/AIE_HDL/SingleStreamSSR_FIR_withPL)
+[Single Stream SSR FIR with PL + AI Engine](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/AIENGINE_plus_PL/AIE_HDL/SingleStreamSSR_FIR_withPL)
 
 
 

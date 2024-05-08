@@ -93,6 +93,6 @@ The Windowing utility accepts only powers of 2 as the number of
 
 ***Click on the images below to open each model.***
 
-[![](./Images/WindowStream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/WindowFunctionStream_Ex1)
+[![](./Images/WindowStream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/WindowFunctionStream_Ex1)
 
-[![](./Images/WindowStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/WindowFunctionStream_Ex2)
+[![](./Images/WindowStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/WindowFunctionStream_Ex2)

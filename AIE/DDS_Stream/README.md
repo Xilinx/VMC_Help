@@ -30,6 +30,9 @@ Increasing the number of samples per frame increases the output throughput.
 
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
+#### Reload initial phase via input port
+Allows the intial phase to be reloaded during simulation via an input port.
+
 #### Phase Increment
 
 Specifies the phase increment between samples. The value must be in
@@ -89,9 +92,9 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/DDS_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DDS_Stream_Ex1)
+[![](./Images/DDS_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/DDS_Stream_Ex1)
 
-[![](./Images/DDS_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/DDS_Stream_Ex2)
+[![](./Images/DDS_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/DDS_Stream_Ex2)
 
 ## Related blocks
 [DDS](../DDS/README.md) is another DDS block that uses buffer interface instead of stream interface.

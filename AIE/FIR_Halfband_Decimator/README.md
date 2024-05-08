@@ -117,7 +117,7 @@ This determines the number of kernels the FIR will be divided over to improve th
 
 ***Click on the images below to open each model.***
 
-[![](./Images/HBDecimator_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/HalfBandDecimator_Ex1)
+[![](./Images/HBDecimator_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/HalfBandDecimator_Ex1)
 
-[![](./Images/HBDecimator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/HalfBandDecimator_Ex2)
+[![](./Images/HBDecimator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/HalfBandDecimator_Ex2)
 
