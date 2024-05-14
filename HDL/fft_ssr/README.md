@@ -39,13 +39,9 @@ example with N=1024 and SSR=4, the core would compute one 1K FFT every
 Must be 27 bits or less, this is
 limited by the DSP48 multiplier A port size.
 
-#### Block RAM_THRESHOLD 
-Is an implementation parameter with no functional
-implications, it controls the use of distributed RAM vs BRAM when
-implementing delay lines. It can be used to trade utilization numbers
-between these two types of resources. The higher the value, the more
-distributed RAM will be used instead of BRAM. Typical values to try are
-258, 514, and 1026.
+#### Enable Rounding
+
+If it is selected, then the Vector FFT output rounds to the nearest integer.
 
 #### Bypass Reordering 
 
@@ -55,6 +51,19 @@ If it is enabled, the output of the FFT block will be
 ordered in bit/digit reversed order.
 
 If Output Reorder bypassing is disabled, then vector FFT Produces Natural Output Order.
+
+#### Block RAM_THRESHOLD
+ 
+Is an implementation parameter with no functional
+implications, it controls the use of distributed RAM vs BRAM when
+implementing delay lines. It can be used to trade utilization numbers
+between these two types of resources. The higher the value, the more
+distributed RAM will be used instead of BRAM. Typical values to try are
+258, 514, and 1026.
+
+#### Number of DSPs per Complex Multiplication
+
+User can select number of DSP slices (3 or 4)  per complex multiplication.
 
 #### Use Corner Bender Or Matrix Transposer
 
