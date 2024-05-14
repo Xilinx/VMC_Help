@@ -39,13 +39,9 @@ example with N=1024 and SSR=4, the core would compute one 1K IFFT for every
 Must be 27 bits or less, this is
 limited by the DSP48 multiplier A port size.
 
-#### Block RAM_THRESHOLD 
-Is an implementation parameter with no functional
-implications, it controls the use of distributed RAM vs BRAM when
-implementing delay lines. It can be used to trade utilization numbers
-between these two types of resources. The higher the value, the more
-distributed RAM will be used instead of BRAM. Typical values to try are
-258, 514, and 1026.
+#### Enable Rounding
+
+If it is selected, then the Vector IFFT output rounds to the nearest integer.
 
 #### Bypass Reordering 
 
@@ -55,6 +51,18 @@ If Output Reorder bypassing is disabled,
 then the module takes N samples in natural transposed input order and 
 outputs them in natural order.
 
+#### Block RAM_THRESHOLD 
+
+Is an implementation parameter with no functional
+implications, it controls the use of distributed RAM vs BRAM when
+implementing delay lines. It can be used to trade utilization numbers
+between these two types of resources. The higher the value, the more
+distributed RAM will be used instead of BRAM. Typical values to try are
+258, 514, and 1026.
+
+#### Number of DSPs per Complex Multiplication
+
+User can select number of DSP slices (3 or 4)  per complex multiplication.
 
 #### Use Corner Bender Or Matrix Transposer
 
@@ -62,7 +70,6 @@ If it is enabled, it does matrix transpose on the output of IFFT.
 
 #### SSR
 Super Sample Rate.It should be a power of 2.
-
 
 ## Scaling Ports  
 The scaling ports are called SI and SO. Their width matches the IFFT size
