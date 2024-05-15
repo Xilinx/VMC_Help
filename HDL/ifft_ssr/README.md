@@ -45,9 +45,9 @@ If it is selected, then the Vector IFFT output rounds to the nearest integer.
 
 #### Bypass Reordering 
 
-If Input Reorder bypassing is disabled, then IFFT accepts natural input order.
+If Input Reorder bypassing is enabled, then IFFT accepts natural input order.
 
-If Output Reorder bypassing is disabled, 
+If Output Reorder bypassing is enabled, 
 then the module takes N samples in natural transposed input order and 
 outputs them in natural order.
 

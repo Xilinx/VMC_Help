@@ -79,11 +79,13 @@ integer.</p>
 </section>
 <section id="bypass-reordering" class="level4">
 <h4>Bypass Reordering</h4>
-<p>If Input Reorder bypassing is disabled, then the module takes N
+<p>The FFT algorithm reorders the samples during processing such that
+data input in natural order is output in reversed order.</p>
+<p>If Input Reorder bypassing is enabled, then the module takes N
 samples in natural input order and outputs them in natural transposed
-order. If it is enabled, the output of the FFT block will be ordered in
+order. If it is disabled, the output of the FFT block will be ordered in
 bit/digit reversed order.</p>
-<p>If Output Reorder bypassing is disabled, then vector FFT Produces
+<p>If Output Reorder bypassing is enabled, then vector FFT Produces
 Natural Output Order.</p>
 </section>
 <section id="block-ram_threshold" class="level4">
