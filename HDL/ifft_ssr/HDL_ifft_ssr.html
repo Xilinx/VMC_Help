@@ -72,6 +72,19 @@ cycles, processing 4 input samples/clock.</p>
 <p>Must be 27 bits or less, this is limited by the DSP48 multiplier A
 port size.</p>
 </section>
+<section id="enable-rounding" class="level4">
+<h4>Enable Rounding</h4>
+<p>If it is selected, then the Vector IFFT output rounds to the nearest
+integer.</p>
+</section>
+<section id="bypass-reordering" class="level4">
+<h4>Bypass Reordering</h4>
+<p>If Input Reorder bypassing is enabled, then IFFT accepts natural
+input order.</p>
+<p>If Output Reorder bypassing is enabled, then the module takes N
+samples in natural transposed input order and outputs them in natural
+order.</p>
+</section>
 <section id="block-ram_threshold" class="level4">
 <h4>Block RAM_THRESHOLD</h4>
 <p>Is an implementation parameter with no functional implications, it
@@ -81,13 +94,10 @@ types of resources. The higher the value, the more distributed RAM will
 be used instead of BRAM. Typical values to try are 258, 514, and
 1026.</p>
 </section>
-<section id="bypass-reordering" class="level4">
-<h4>Bypass Reordering</h4>
-<p>If Input Reorder bypassing is disabled, then IFFT accepts natural
-input order.</p>
-<p>If Output Reorder bypassing is disabled, then the module takes N
-samples in natural transposed input order and outputs them in natural
-order.</p>
+<section id="number-of-dsps-per-complex-multiplication" class="level4">
+<h4>Number of DSPs per Complex Multiplication</h4>
+<p>User can select number of DSP slices (3 or 4) per complex
+multiplication.</p>
 </section>
 <section id="use-corner-bender-or-matrix-transposer" class="level4">
 <h4>Use Corner Bender Or Matrix Transposer</h4>
