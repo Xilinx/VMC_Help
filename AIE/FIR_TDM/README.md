@@ -87,5 +87,9 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ## Examples
 
+***Click on the images below to open each model.***
+
+[![](./Images/FIR_TDM_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/FIR_TDM_Ex1)
+
 ### References
 This block uses the Vitis DSP library implementation of a TDM FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html).
