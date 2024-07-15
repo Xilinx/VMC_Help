@@ -31,7 +31,7 @@ the function prototype must be as follows:
 _void init_function_name(void)_
 
 <div class="noteBox">
-  The initialization function is called only once when the first graph::run API is called.
+  The initialization function is called only once before the kernel function is called.
 </div>
 
 This function can be used to initialize global variables and set or clear rounding and saturation
