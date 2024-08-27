@@ -39,7 +39,24 @@ example with N=1024 and SSR=4, the core would compute one 1K FFT every
 Must be 27 bits or less, this is
 limited by the DSP48 multiplier A port size.
 
-#### Block RAM_THRESHOLD 
+#### Enable Rounding
+
+If it is selected, then the Vector FFT output rounds to the nearest integer.
+
+#### Bypass Reordering 
+
+The FFT algorithm reorders the samples during processing such that data input in natural order 
+is output in reversed order.
+
+If Input Reorder bypassing is enabled, then the module takes N samples in 
+natural input order and outputs them in natural transposed order.
+If it is disabled, the output of the FFT block will be 
+ordered in bit/digit reversed order.
+
+If Output Reorder bypassing is enabled, then vector FFT Produces Natural Output Order.
+
+#### Block RAM_THRESHOLD
+ 
 Is an implementation parameter with no functional
 implications, it controls the use of distributed RAM vs BRAM when
 implementing delay lines. It can be used to trade utilization numbers
@@ -47,8 +64,16 @@ between these two types of resources. The higher the value, the more
 distributed RAM will be used instead of BRAM. Typical values to try are
 258, 514, and 1026.
 
+#### Number of DSPs per Complex Multiplication
+
+User can select number of DSP slices (3 or 4)  per complex multiplication.
+
+#### Use Corner Bender Or Matrix Transposer
+
+If it is enabled, it does matrix transpose on the output of FFT.
+
 #### SSR
-Super Sample Rate
+Super Sample Rate, It should be a power of 2.
 
 ## Scaling Ports  
 The scaling ports are called SI and SO. Their width matches the FFT size

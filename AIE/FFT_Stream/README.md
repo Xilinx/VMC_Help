@@ -17,60 +17,89 @@ a positive integer.
 ## Parameters
 
 ### Main  
-#### Input Data Type/Output Data Type:
+#### Input/Output Data Type
+Set the input/output data type.
 
-- Describes the type of individual data samples input/output of the
-  stream FFT. It can be `cint16`, `cint32`, `cfloat` types.
+#### Twiddle factor data type
+Describes the data type of the twiddle factors of the transform. It must be `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
+* 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
+* The twiddle factor data type must be an integer type if the input/output data type is an integer type.
+* The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
-#### FFT Size:
+#### Point Size (FFT Size)
+This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 4 to 16 inclusive.
 
-- This is an unsigned integer which describes the point size of the
-  transformation. This must be 2^N, where N is in the range `4` to `11`
-  inclusive.
+#### Input Window Size (Number of Samples)
+Describes the total number of samples used as an input to the FFT block on all the ports. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^16, inclusive. 
 
-#### Input Frame Size (Number of Samples):
+#### Scale Output Down by 2^
+Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
-- Specifies the number of samples for a particular frame. The value must
-  be in the range `8` to `1024` and the default value is `64`. The FFT
-  operation will not begin until this number of samples has been input.
+#### Rounding mode
 
-#### Scale Output Down by 2^:
+Describes the selection of rounding to be applied during the shift down stage of processing.
 
-- Describes the power of 2 shift down applied before output. The
-  following table shows the range of valid values of this parameter for
-  different data types.
-  
-  | Data Type | Scale output down by 2^    |
-  |-----------|----------------------------|
-  | cint16    | \[0, log2(FFT Size) + 15\] |
-  | cint32    | \[0, log2(FFT Size) + 31\] |
-  | cfloat    | 0                          |
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
 
+No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
-#### SSR:
+#### Saturation mode
 
-- This parameter is intended to improve performance and support FFT
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
+
+#### Twiddle Mode
+This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
+
+Twiddle mode 0 means use max amplitude twiddles which saturate at `2^(N-1)-1`, where N is the number of bits in the type (e.g. `cint16` has 16 bits per component).
+
+Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e. `2^(N-1)`. This avoids saturation, but loses 1 bit of precision and so noise overall will be higher.
+
+#### Use Widget for SSR Kernels
+This parameter is applicable to streaming and parallel (SSR>1) implementations of the FFT. These implementations require stream to window conversions on the hardware.
+
+When this parameter is disabled, stream to window conversion will occur within the FFT kernels themselves.
+
+When this parameter is enabled, stream to window conversion will occur on its own AI Engine tiles. This will improve performance at the expense of additional tiles being used.
+
+#### SSR
+
+This parameter is intended to improve performance and support FFT
   sizes beyond the limitations of a single tile. For an SSR value of 'n'
   (which must be of the form 2^N, where N is a positive integer), the
   FFT operation is performed in parallel and the actual FFT size is
   divided by 'n'. For example, a 16384 point FFT with SSR value of 8
   creates 8 stream inputs and there will be 8 subframe FFTs each of
-  point size 2048. The specified FFT size and SSR values should be such
-  that (2 \* FFT size / SSR) is in the range of 16 and 4096.
+  point size 2048.
 
-### Advanced  
-#### Target Output Throughput (MSPS):
+####  Number of Cascade Stages
+This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
-- Specifies the output sampling rate of the FFT function in Mega Samples
-  per Second (MSPS). The value must be in the range `1` to `1000` and
-  the default value is `200`.
+### Constraints
+Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
 
-#### Specify the Number of Cascade Stages:
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
 
-- When this option is not enabled, the tool will determine the FFT
-  configuration that best achieves the specified input sampling rate.
-  When the option is enabled, the Number of cascade stages can be
-  specified (which describes the number of AI Engine processors to split
-  the operation over). This allows resources to be traded for higher
-  performance, but the specified input sampling rate constraint may not
-  be achieved. The value must be in the range of `1` to `9`.
+## Examples
+
+***Click on the images below to open each model.***
+
+[![](./Images/FFT_Stream_example.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/FFT_Stream_Ex1)
+
+## References
+This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html).
+

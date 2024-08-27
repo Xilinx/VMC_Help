@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector IFFT</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vector IFFT</h1>
+</header>
+<section id="vector-ifft" class="level1">
+<h1>Vector IFFT</h1>
+<p>The Vector IFFT block supports the Inverse FFT operation for vector
+type inputs.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The real part of the input data should be given to the in_re port,
+and the imaginary part should be given to the in_im port.</p>
+<p>When the in_valid is high it indicates that the input data is valid.
+When out_valid is high, it indicates that the output data is valid. The
+valid indicator accompanies every set of input and output samples (for
+example, R number of samples). There is no back pressure flow control
+and once an IFFT transform starts, &#39;R&#39; data samples must be input into
+the core every clock for N/R consecutive clocks. Where N is the IFFT
+length. However, for back-to-back transforms, the valid control input
+can stay high with no gaps.</p>
+<p>The in_scale input port is used if scaling is required. And out_scale
+is used in if there is an internal overflow.</p>
+<section id="data-type-support" class="level3">
+<h3>Data Type Support</h3>
+<ul>
+<li>The number of in_scale bits must be equal to log2(IFFT length).</li>
+<li>in_valid and out_valid are of Boolean data type.</li>
+</ul>
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="ifft-length-n" class="level4">
+<h4>IFFT length (N)</h4>
+<p>Is the size of the transformation, and should be powers of 2 in the
+range of 2^3 to 2^16. SSR is the super sample rate, the number of
+samples processed in parallel every clock. Using a typical example with
+N=1024 and SSR=4, the core would compute one 1K IFFT for every 256 clock
+cycles, processing 4 input samples/clock.</p>
+</section>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point precision</h4>
+<p>Must be 27 bits or less, this is limited by the DSP48 multiplier A
+port size.</p>
+</section>
+<section id="enable-rounding" class="level4">
+<h4>Enable Rounding</h4>
+<p>If it is selected, then the Vector IFFT output rounds to the nearest
+integer.</p>
+</section>
+<section id="bypass-reordering" class="level4">
+<h4>Bypass Reordering</h4>
+<p>If Input Reorder bypassing is enabled, then IFFT accepts natural
+input order.</p>
+<p>If Output Reorder bypassing is enabled, then the module takes N
+samples in natural transposed input order and outputs them in natural
+order.</p>
+</section>
+<section id="block-ram_threshold" class="level4">
+<h4>Block RAM_THRESHOLD</h4>
+<p>Is an implementation parameter with no functional implications, it
+controls the use of distributed RAM vs BRAM when implementing delay
+lines. It can be used to trade utilization numbers between these two
+types of resources. The higher the value, the more distributed RAM will
+be used instead of BRAM. Typical values to try are 258, 514, and
+1026.</p>
+</section>
+<section id="number-of-dsps-per-complex-multiplication" class="level4">
+<h4>Number of DSPs per Complex Multiplication</h4>
+<p>User can select number of DSP slices (3 or 4) per complex
+multiplication.</p>
+</section>
+<section id="use-corner-bender-or-matrix-transposer" class="level4">
+<h4>Use Corner Bender Or Matrix Transposer</h4>
+<p>If it is enabled, it does matrix transpose on the output of IFFT.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Super Sample Rate.It should be a power of 2.</p>
+</section>
+</section>
+<section id="scaling-ports" class="level2">
+<h2>Scaling Ports</h2>
+<p>The scaling ports are called SI and SO. Their width matches the IFFT
+size N, it is always log2(N). There is one SI bit for every add/subtract
+stage, where internal overflows can occur. If that bit is set to zero
+then no scaling happens and bit growth is addressed by increasing the
+internal data sizes, one bit every stage. If the bit is set to 1 then
+the stage divides by 2, and no internal data growth is required to
+prevent overflows.</p>
+<p>Generally, if the output data size is log2(N) bits larger than the
+input size, no scaling is required, and SI is set to all zeros. If the
+input and output data sizes are equal, then scaling on every stage is
+needed and SI should be set to all ones. In reality, scaling is data
+dependent and some combination of output size growth and non-zero SI
+bits are used. If partial scaling is used, the non-zero bits of SI
+should be the MSB ones. SI should be static, it should not change while
+data is being processed by the core (when VI is high).</p>
+<p>Another important requirement to avoid internal overflows is to have
+one MSB margin bit at the data inputs, that is the two MSBs of I.RE and
+I.IM should be the same. This prevents overflows in complex multipliers.
+If the two rules outlined above are followed, then internal overflows
+are impossible by design.</p>
+<p>The SO port is an indicator of internal overflows, it is not normally
+used, only attach an unsigned signals of size log2(N) to it.</p>
+</section>
+</section>
+</body>
+</html>

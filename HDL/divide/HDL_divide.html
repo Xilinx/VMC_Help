@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -42,50 +42,50 @@ divisor. Both inputs must be of the same data type.</p>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows</p>
-<section id="axi-interface" class="level4">
-<h4>AXI Interface</h4>
-<section id="flow-control" class="level5">
-<h5>Flow Control</h5>
-<section id="blocking" class="level6">
-<h6>Blocking</h6>
+<section id="flow-control" class="level4">
+<h4>Flow Control</h4>
+<section id="blocking" class="level5">
+<h5>Blocking</h5>
 <p>Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
 another input channel.</p>
 </section>
-<section id="nonblocking" class="level6">
-<h6>NonBlocking</h6>
+<section id="nonblocking" class="level5">
+<h5>NonBlocking</h5>
 <p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
 input channel does not block the execution of an operation if data is
 received on another input channel.</p>
 </section>
 </section>
-<section id="fixed-point-options" class="level5">
-<h5>Fixed-point Options</h5>
-<section id="algorithm-type" class="level6">
-<h6>Algorithm Type</h6>
-<ul>
-<li><p>Radix2: This is non-restoring integer division using integer
-operands and allows a remainder to be generated. This option is
-recommended for operand widths less than 16 bits. This option supports
-both unsigned (two&#39;s complement) and signed divisor and dividend
-inputs.</p></li>
-<li><p>High_Radix: This option is recommended for operand widths greater
-than 16 bits, though the implementation requires the use of DSP48 (or
-variant) primitives. This option only supports signed (two&#39;s complement)
-divisor and dividend inputs.</p></li>
-<li><p>LutMult: A simple lookup estimate of the reciprocal of the
-divisor followed by a multiplier. Only remainder output type is
-supported because of the bias required in the reciprocal estimate. This
-bias would introduce an offset (error) if used to create a fractional
-output. This is recommended for operand widths less than or equal to 12
-bits. This implementation uses DSP slices, block RAM, and a small number
-of FPGA logic primitives (registers and LUTs). For operand widths where
-either Radix2 or the LUTMult options are possible, the LUTMult solution
-offers a solution using fewer FPGA logic resources because of the use of
-DSP and block RAM primitives. Supports unsigned or two&#39;s complement
-signed numbers.</p></li>
-</ul>
+<section id="algorithm-type" class="level4">
+<h4>Algorithm Type</h4>
+<section id="radix2" class="level5">
+<h5>Radix2</h5>
+<p>This is non-restoring integer division using integer operands and
+allows a remainder to be generated. This option is recommended for
+operand widths less than 16 bits. This option supports both unsigned
+(two&#39;s complement) and signed divisor and dividend inputs.</p>
 </section>
+<section id="high_radix" class="level5">
+<h5>High_Radix</h5>
+<p>This option is recommended for operand widths greater than 16 bits,
+though the implementation requires the use of DSP48 (or variant)
+primitives. This option only supports signed (two&#39;s complement) divisor
+and dividend inputs.</p>
+</section>
+<section id="lutmult" class="level5">
+<h5>LutMult</h5>
+<p>A simple lookup estimate of the reciprocal of the divisor followed by
+a multiplier. Only remainder output type is supported because of the
+bias required in the reciprocal estimate. This bias would introduce an
+offset (error) if used to create a fractional output. This is
+recommended for operand widths less than or equal to 12 bits. This
+implementation uses DSP slices, block RAM, and a small number of FPGA
+logic primitives (registers and LUTs). For operand widths where either
+Radix2 or the LUTMult options are possible, the LUTMult solution offers
+a solution using fewer FPGA logic resources because of the use of DSP
+and block RAM primitives. Supports unsigned or two&#39;s complement signed
+numbers.</p>
 </section>
 <section id="output-fractional-width" class="level5">
 <h5>Output Fractional width</h5>
@@ -93,18 +93,18 @@ signed numbers.</p></li>
 the fractional part of the output.</p>
 </section>
 </section>
-<section id="optional-ports" class="level4">
-<h4>Optional Ports</h4>
-<section id="dividend-channel-ports" class="level5">
-<h5>Dividend Channel Ports</h5>
-<section id="has-tlast" class="level6">
-<h6>Has TLAST</h6>
+</section>
+<section id="optional-ports" class="level3">
+<h3>Optional Ports</h3>
+<section id="dividend-channel-ports" class="level4">
+<h4>Dividend Channel Ports</h4>
+<section id="has-tlast" class="level5">
+<h5>Has TLAST</h5>
 <p>Adds a TLAST port to the Input channel.</p>
 </section>
-<section id="has-tuser" class="level6">
-<h6>Has TUSER</h6>
+<section id="has-tuser" class="level5">
+<h5>Has TUSER</h5>
 <p>Adds a TUSER port to the Input channel.</p>
-</section>
 </section>
 </section>
 <section id="divisor-channel-ports" class="level4">
@@ -128,8 +128,9 @@ the fractional part of the output.</p>
 <h5>Has Result TREADY</h5>
 <p>Adds a TREADY port to the Result channel.</p>
 </section>
-<section id="output-tlast-behavior" class="level5">
-<h5>Output TLAST behavior</h5>
+</section>
+<section id="output-tlast-behavior" class="level4">
+<h4>Output TLAST behavior</h4>
 <p>Determines the behavior of the result_tlast output port.</p>
 <section id="pass_a_tlast" class="level6">
 <h6><strong>Pass_A_TLAST</strong></h6>
@@ -148,7 +149,6 @@ port.</p>
 <section id="and_all_tlasts" class="level6">
 <h6><strong>AND_all_TLASTS</strong></h6>
 <p>Pass the logical AND of all the present TLAST input ports.</p>
-</section>
 </section>
 </section>
 <section id="exception-signals" class="level4">

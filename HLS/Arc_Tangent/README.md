@@ -32,3 +32,4 @@ between -π and π.
 ## Parameters
 
 The Atan block has no parameters to set.
+

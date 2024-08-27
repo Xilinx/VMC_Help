@@ -19,7 +19,7 @@ Configuration Channel Input Signals:
 
 |                   |                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| config_tdata_fsel | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the [FIR Compiler V7.2 Product Guide](https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf) starting on page 5 for an explanation of the bits in this field. |
+| config_tdata_fsel | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) starting on page 5 for an explanation of the bits in this field. |
 
 ## Parameters
 
@@ -32,7 +32,7 @@ Specifies the coefficient vector as a single MATLAB row vector. The
 number of taps is inferred from the length of the MATLAB row vector. If
 multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
-coefficients using the [FDATool](fdatool.html) block as well.
+coefficients using the [FDATool](../../UTIL/Xilinx_FDATool_Interface_Block/README.md) block as well.
 
 ##### Number of Coefficients Sets  
 The number of sets of filter coefficients to be implemented. The value
@@ -41,9 +41,7 @@ specified must divide without remainder into the number of coefficients.
 ##### Use Reloadable Coefficients  
 Check to add the coefficient reload ports to the block. The set of data
 loaded into the reload channel will not take action until triggered by a
-re-configuration synchronization event. Refer to the [FIR Compiler V7.2
-Product
-Guide](https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf)
+re-configuration synchronization event. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
 for a more detailed explanation of the RELOAD Channel interface timing.
 This block supports the xlGetReloadOrder function. See the Model
 Composer Utility function xlGetReloadOrder for details.
@@ -63,19 +61,15 @@ specified in the Decimation Rate Value.
 
 ##### Rate Change Type  
 This field is applicable to Interpolation and Decimation filter types.
-Used to specify an Integer or Fixed_Fractional rate change.
+For Vector FIRs, only an Integer rate change is supported.
 
 ##### Interpolation Rate Value  
-This field is applicable to all Interpolation filter types and
-Decimation filter types for Fractional Rate Change implementations. The
-value provided in this field defines the up-sampling factor, or P for
-Fixed Fractional Rate (P/Q) resampling filter implementations.
+This field is applicable to all Interpolation filter types. The
+value provided in this field defines the up-sampling factor.
 
 ##### Decimation Rate Value  
-This field is applicable to the all Decimation and Interpolation filter
-types for Fractional Rate Change implementations. The value provided in
-this field defines the down-sampling factor, or Q for Fixed Fractional
-Rate (P/Q) resampling filter implementations.
+This field is applicable to all Decimation filter
+types. The value provided in this field defines the down-sampling factor.
 
 
 ##### Super Sample Rate (SSR)
@@ -289,5 +283,4 @@ Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 
-FIR Compiler LogiCORE IP Product Guide
-([PG149](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf))
+FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))

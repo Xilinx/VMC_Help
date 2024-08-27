@@ -1,11 +1,11 @@
 # IFFT
-
+IFFT implementation targeted for AI Engines.
   
 ![](./Images/block.png)  
 
 ## Library
 
-AI Engine/DSP/Window IO
+AI Engine/DSP/Buffer IO
 
 ## Description
 
@@ -16,38 +16,71 @@ the rounding method and saturates the output samples on overflow.
 
 ### Main  
 #### Input/Output data type  
-* Describes the type of individual data samples input to and output from
+Describes the type of individual data samples input to and output from
 the filter function. Supported types are cint16, cint32 and cfloat.
 
-#### IFFT size  
-* This is an unsigned integer which describes the point size of the
-transformation. This must be 2^N, where N is in the range 4 to 11
-inclusive. However, for cint16 datatype, the IFFT size can be 2^12,
-provided the IFFT receives and outputs data to/from kernels on the same
-processor.
+#### Twiddle factor data type
+Describes the data type of the twiddle factors of the transform. It must be `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
+* 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
+* The twiddle factor data type must be an integer type if the input/output data type is an integer type.
+* The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
-**Note**: To understand more on achieving the 4096 point size FFT, refer to
-the AI Engine examples in
-[GitHub](https://github.com/Xilinx/Vitis_Model_Composer).
+#### IFFT size  
+This is an unsigned integer which describes the point size of the
+transformation. This must be 2^N, where N is in the range 4 to 16
+inclusive. 
 
 #### Input Window Size (Number of Samples)  
-* Describes the number of samples used as an input to the IFFT.
+Describes the number of samples used as an input to the IFFT.
 
 #### Scale output down by 2^  
-* Describes the power of 2 to scale the result by prior to output.
+Describes the power of 2 to scale the result by prior to output.
 
-### Advanced  
-#### Target input throughput  
-* Specifies the rate at which data samples should be processed. The
-default value is 200.
+#### Rounding mode
 
-#### Specify the number of cascade stages  
-* When this option is not enabled, the tool will determine the filter
-configuration that best achieves the specified input sampling rate. When
-this option is enabled and the 'Number of cascade stages' is specified,
-the tool will guarantee the same. In such cases, however, the specified
-sample rate constraint may not be achieved.
+Describes the selection of rounding to be applied during the shift down stage of processing.
 
-#### Number of cascade stages  
-* This determines the number of kernels the FFT will be divided over in
-series to improve throughput.
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
+
+#### Twiddle Mode
+This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
+
+Twiddle mode 0 means use max amplitude twiddles which saturate at `2^(N-1)-1`, where N is the number of bits in the type (e.g. `cint16` has 16 bits per component).
+
+Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e. `2^(N-1)`. This avoids saturation, but loses 1 bit of precision and so noise overall will be higher.
+
+#### Use Widget for SSR Kernels
+This parameter is applicable to streaming and parallel (SSR>1) implementations of the FFT. These implementations require stream to window conversions on the hardware.
+
+When this parameter is disabled, stream to window conversion will occur within the FFT kernels themselves.
+
+When this parameter is enabled, stream to window conversion will occur on its own AI Engine tiles. This will improve performance at the expense of additional tiles being used.
+
+####  Number of Cascade Stages
+This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
+
+## Examples 
+
+***Click on the images below to open each model.***
+
+[![](./Images/IFFT_example.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/IFFT_Ex1)
+

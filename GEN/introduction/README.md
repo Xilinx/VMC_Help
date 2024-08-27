@@ -46,7 +46,6 @@ Composer:
 
 - Vitis Model Composer User Guide
   ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2021.2%20English&url=ug1483-model-composer-sys-gen-user-guide))
-- Vitis Model Composer Tutorial
-  ([UG1498](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2021.2%20English&url=ug1498-model-composer-sys-gen-tutorial))
+- [Vitis Model Composer Tutorial](https://github.com/Xilinx/Vitis_Model_Composer/blob/2024.1/Tutorials/README.md)
 - [Vitis Model Composer Product
-  Page](https://www.xilinx.com/products/design-tools/vivado/integration/model-composer.html)
+  Page](https://www.xilinx.com/products/design-tools/vitis/vitis-model-composer.html)

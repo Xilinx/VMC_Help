@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -115,8 +115,8 @@ AXI port names on the block icon.</p>
 <h2>Parameters</h2>
 <section id="page-1-tab" class="level3">
 <h3>Page 1 tab</h3>
-<section id="functional-selection" class="level4">
-<h4>Functional selection</h4>
+<section id="function" class="level4">
+<h4>Function</h4>
 <section id="rotate" class="level5">
 <h5>Rotate</h5>
 <p>When selected, the input vector, (real, imag), is rotated by the
@@ -164,9 +164,8 @@ imag) and is unrelated to a trigonometric angle.</p>
 positive square root of the input.</p>
 </section>
 </section>
-<section id="architectural-configuration" class="level4">
-<h4>Architectural configuration</h4>
-<p>Configuration:</p>
+<section id="configuration" class="level4">
+<h4>Configuration</h4>
 <section id="word_serial" class="level5">
 <h5>Word_Serial</h5>
 <p>Select for a hardware result with a small area.</p>
@@ -176,8 +175,8 @@ positive square root of the input.</p>
 <p>Select for a hardware result with high throughput.</p>
 </section>
 </section>
-<section id="pipelining-mode" class="level4">
-<h4>Pipelining mode</h4>
+<section id="pipeline" class="level4">
+<h4>Pipeline</h4>
 <section id="no_pipelining" class="level5">
 <h5>No_Pipelining</h5>
 <p>The CORDIC core is implemented without pipelining.</p>
@@ -227,20 +226,17 @@ integer width of 3-bits, with pi-radian units. One scaled-radian equals
 Pi * 1 radians.</p>
 </section>
 </section>
-<section id="inputoutput-options" class="level4">
-<h4>Input/Output Options</h4>
-<section id="input-width" class="level5">
-<h5>Input width</h5>
+<section id="input-width" class="level4">
+<h4>Input width</h4>
 <p>Controls the width of the input ports cartesian_tdata_real,
 cartesian_tdata_imag, and phase_tdata_phase. The Input width range 8 to
 48 bits.</p>
 </section>
-<section id="output-width" class="level5">
-<h5>Output width</h5>
+<section id="output-width" class="level4">
+<h4>Output width</h4>
 <p>Controls the width of the output ports dout_tdata_real,
 dout_tdata_imag, and dout_tdata_phase. The Output width range 8 to 48
 bits.</p>
-</section>
 </section>
 <section id="round-mode" class="level4">
 <h4>Round mode</h4>
@@ -266,23 +262,21 @@ number (1/2 rounded down and 3/2 is rounded up).</p>
 </section>
 <section id="page-2-tab" class="level3">
 <h3>Page 2 tab</h3>
-<section id="advanced-configuration-parameters" class="level4">
-<h4>Advanced Configuration Parameters</h4>
-<section id="iterations" class="level5">
-<h5>Iterations</h5>
+<section id="iterations" class="level4">
+<h4>Iterations</h4>
 <p>Controls the number of internal add-sub iterations to perform. When
 set to zero, the number of iterations performed is determined
 automatically based on the required accuracy of the output.</p>
 </section>
-<section id="precision" class="level5">
-<h5>Precision</h5>
+<section id="precision" class="level4">
+<h4>Precision</h4>
 <p>Configures the internal precision of the add-sub iterations. When set
 to zero, internal precision is determined automatically based on the
 required accuracy of the output and the number of internal
 iterations.</p>
 </section>
-<section id="compensation-scaling" class="level5">
-<h5>Compensation scaling</h5>
+<section id="compensation-scaling" class="level4">
+<h4>Compensation scaling</h4>
 <p>Controls the compensation scaling module used to compensate for
 CORDIC magnitude scaling. CORDIC magnitude scaling affects the Vector
 Rotation and Vector Translation functional configurations, and does not
@@ -290,8 +284,8 @@ affect the SinCos, SinhCosh, ArcTan, ArcTanh and Square Root functional
 configurations. For the latter configurations, compensation scaling is
 set to No Scale Compensation.</p>
 </section>
-<section id="coarse-rotation" class="level5">
-<h5>Coarse rotation</h5>
+<section id="coarse-rotation" class="level4">
+<h4>Coarse rotation</h4>
 <p>Controls the instantiation of the coarse rotation module.
 Instantiation of the coarse rotation module is the default for the
 following functional configurations: Vector rotation, Vector
@@ -304,7 +298,6 @@ the first quadrant. Coarse Rotation extends the CORDIC operational range
 to the full circle by rotating the input sample into the first quadrant
 and inverse rotating the output sample back into the appropriate
 quadrant.</p>
-</section>
 </section>
 <section id="optional-ports" class="level4">
 <h4>Optional ports</h4>
@@ -384,35 +377,32 @@ block&#39;s sample rate. The signal driving this port must be Boolean.</p>
 </section>
 </section>
 </section>
-<section id="flow-control" class="level4">
-<h4>Flow control</h4>
-<section id="axi-behavior" class="level5">
-<h5>AXI behavior</h5>
-<section id="nonblocking" class="level6">
-<h6>NonBlocking</h6>
+<section id="axi-behavior" class="level4">
+<h4>AXI behavior</h4>
+<section id="nonblocking" class="level5">
+<h5>NonBlocking</h5>
 <p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
 input channel does not block the execution of an operation if data is
 received on another input channel.</p>
 </section>
-<section id="blocking" class="level6">
-<h6>Blocking</h6>
+<section id="blocking" class="level5">
+<h5>Blocking</h5>
 <p>Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
 another input channel.</p>
 </section>
 </section>
-<section id="optimization-1" class="level5">
-<h5>Optimization</h5>
+<section id="optimization-1" class="level4">
+<h4>Optimization</h4>
 <p>When NonBlocking mode is selected, the following optimization options
 are activated:</p>
-<section id="resources" class="level6">
-<h6>Resources</h6>
+<section id="resources" class="level5">
+<h5>Resources</h5>
 <p>Core is configured for minimum resources.</p>
 </section>
-<section id="performance" class="level6">
-<h6>Performance</h6>
+<section id="performance" class="level5">
+<h5>Performance</h5>
 <p>Core is configured for maximum performance.</p>
-</section>
 </section>
 </section>
 </section>

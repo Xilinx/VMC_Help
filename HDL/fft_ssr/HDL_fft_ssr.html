@@ -11,15 +11,17 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -70,6 +72,22 @@ cycles, processing 4 input samples/clock.</p>
 <p>Must be 27 bits or less, this is limited by the DSP48 multiplier A
 port size.</p>
 </section>
+<section id="enable-rounding" class="level4">
+<h4>Enable Rounding</h4>
+<p>If it is selected, then the Vector FFT output rounds to the nearest
+integer.</p>
+</section>
+<section id="bypass-reordering" class="level4">
+<h4>Bypass Reordering</h4>
+<p>The FFT algorithm reorders the samples during processing such that
+data input in natural order is output in reversed order.</p>
+<p>If Input Reorder bypassing is enabled, then the module takes N
+samples in natural input order and outputs them in natural transposed
+order. If it is disabled, the output of the FFT block will be ordered in
+bit/digit reversed order.</p>
+<p>If Output Reorder bypassing is enabled, then vector FFT Produces
+Natural Output Order.</p>
+</section>
 <section id="block-ram_threshold" class="level4">
 <h4>Block RAM_THRESHOLD</h4>
 <p>Is an implementation parameter with no functional implications, it
@@ -79,9 +97,18 @@ types of resources. The higher the value, the more distributed RAM will
 be used instead of BRAM. Typical values to try are 258, 514, and
 1026.</p>
 </section>
+<section id="number-of-dsps-per-complex-multiplication" class="level4">
+<h4>Number of DSPs per Complex Multiplication</h4>
+<p>User can select number of DSP slices (3 or 4) per complex
+multiplication.</p>
+</section>
+<section id="use-corner-bender-or-matrix-transposer" class="level4">
+<h4>Use Corner Bender Or Matrix Transposer</h4>
+<p>If it is enabled, it does matrix transpose on the output of FFT.</p>
+</section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
-<p>Super Sample Rate</p>
+<p>Super Sample Rate, It should be a power of 2.</p>
 </section>
 </section>
 <section id="scaling-ports" class="level2">

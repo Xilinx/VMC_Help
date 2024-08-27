@@ -2,7 +2,7 @@
 
 Separates a vector input into a number of scalar and vector outputs.
 
-
+![](./Images/block.png)
 
 ## Library
 

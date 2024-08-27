@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -51,9 +51,8 @@ follows:</p>
 <td>A sub-field port that represents the fsel field in the Configuration
 Channel vector. fsel is used to select the active filter set. This port
 is exposed when the number of coefficient sets is greater than one.
-Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">FIR
-Compiler V7.2 Product Guide</a> starting on page 5 for an explanation of
-the bits in this field.</td>
+Refer to the FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)
+starting on page 5 for an explanation of the bits in this field.</td>
 </tr>
 </tbody>
 </table>
@@ -73,8 +72,8 @@ follows:</p>
 number of taps is inferred from the length of the MATLAB row vector. If
 multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
-coefficients using the <a href="fdatool.html">FDATool</a> block as
-well.</p>
+coefficients using the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;Xilinx_FDATool_Interface_Block&#39;,&#39;category&#39;,&#39;UTIL&#39;))">FDATool</a>
+block as well.</p>
 </section>
 <section id="number-of-coefficients-sets" class="level5">
 <h5>Number of Coefficients Sets</h5>
@@ -86,11 +85,11 @@ coefficients.</p>
 <h5>Use Reloadable Coefficients</h5>
 <p>Check to add the coefficient reload ports to the block. The set of
 data loaded into the reload channel will not take action until triggered
-by a re-configuration synchronization event. Refer to the <a href="https://www.xilinx.com/support/documentation/ip_documentation/fir_compiler/v7_2/pg149-fir-compiler.pdf">FIR
-Compiler V7.2 Product Guide</a> for a more detailed explanation of the
-RELOAD Channel interface timing. This block supports the
-xlGetReloadOrder function. See the Model Composer Utility function
-xlGetReloadOrder for details.</p>
+by a re-configuration synchronization event. Refer to the FIR Compiler
+LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)
+for a more detailed explanation of the RELOAD Channel interface timing.
+This block supports the xlGetReloadOrder function. See the Model
+Composer Utility function xlGetReloadOrder for details.</p>
 </section>
 </section>
 <section id="filter-specification" class="level4">
@@ -115,21 +114,17 @@ specified in the Decimation Rate Value.</p>
 <section id="rate-change-type" class="level5">
 <h5>Rate Change Type</h5>
 <p>This field is applicable to Interpolation and Decimation filter
-types. Used to specify an Integer or Fixed_Fractional rate change.</p>
+types. For Vector FIRs, only an Integer rate change is supported.</p>
 </section>
 <section id="interpolation-rate-value" class="level5">
 <h5>Interpolation Rate Value</h5>
-<p>This field is applicable to all Interpolation filter types and
-Decimation filter types for Fractional Rate Change implementations. The
-value provided in this field defines the up-sampling factor, or P for
-Fixed Fractional Rate (P/Q) resampling filter implementations.</p>
+<p>This field is applicable to all Interpolation filter types. The value
+provided in this field defines the up-sampling factor.</p>
 </section>
 <section id="decimation-rate-value" class="level5">
 <h5>Decimation Rate Value</h5>
-<p>This field is applicable to the all Decimation and Interpolation
-filter types for Fractional Rate Change implementations. The value
-provided in this field defines the down-sampling factor, or Q for Fixed
-Fractional Rate (P/Q) resampling filter implementations.</p>
+<p>This field is applicable to all Decimation filter types. The value
+provided in this field defines the down-sampling factor.</p>
 </section>
 <section id="super-sample-rate-ssr" class="level5">
 <h5>Super Sample Rate (SSR)</h5>
@@ -402,7 +397,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
-<p>FIR Compiler LogiCORE IP Product Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf">PG149</a>)</p>
+<p>FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)</p>
 </section>
 </section>
 </body>

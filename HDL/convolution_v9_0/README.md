@@ -30,24 +30,24 @@ The following figure shows the Block Parameters dialog box.
 
 ### page_0 tab  
 Parameters specific to the page_0 tab are as follows.
-#### Data Rates and Puncturing  
-##### Punctured  
+
+#### Punctured  
 Determines whether the block is punctured.
 
-##### Dual Output  
+#### Dual Output  
 Specifies a dual-channel punctured block.
 
-##### Input Rate  
+#### Input Rate  
 Punctured: Only the input rate can be modified. Its value can range from
 2 to 12, resulting in a rate n/m encoder where n is the input rate and
 n\<m\<2n.
 
-##### Output Rate  
+#### Output Rate  
 Not Punctured: Only the output rate can be modified. Its value can be
 integer values from 2 to 7, resulting in a rate 1/2 or rate 1/7 encoder,
 respectively
 
-##### Puncture Code0 and Code1  
+#### Puncture Code0 and Code1  
 The two puncture pattern codes are used to remove bits from the encoded
 data prior to output. The length of each puncture code must be equal to
 the puncture input rate, and the total number of bits set to 1 in the
@@ -79,12 +79,11 @@ Parameters specific to the page_1 tab are as follows.
 ##### Convolution code radix  
 Select Binary, Octal, or Decimal.
 
-#### Convolution  
-##### Constraint length  
+#### Constraint length  
 Equals n+1, where n is the length of the constraint register in the
 encoder.
 
-##### Convolution code  
+#### Convolution code  
 Array of binary convolution codes. Output rate is derived from the array
 length. Between 2 and 7 (inclusive) codes can be entered.
 

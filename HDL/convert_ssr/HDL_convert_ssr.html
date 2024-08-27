@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -37,10 +37,6 @@ truncating and wrapping do not.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector data support for the primary block
-operation.</p>
 <p>The Vector Convert block converts each input sample to a number of a
 desired arithmetic type. For example, a number can be converted to a
 signed (two&#39;s complement) or unsigned value.</p>
@@ -92,14 +88,14 @@ least significant bit.</p>
 <p>Activates the field below so you can specify the Exponent width and
 the Fraction width.</p>
 </section>
-<section id="exponent-width" class="level5">
-<h5>Exponent width</h5>
+</section>
+<section id="exponent-width" class="level4">
+<h4>Exponent width</h4>
 <p>Specify the exponent width.</p>
 </section>
-<section id="fraction-width" class="level5">
-<h5>Fraction width</h5>
+<section id="fraction-width" class="level4">
+<h4>Fraction width</h4>
 <p>Specify the fraction width.</p>
-</section>
 </section>
 <section id="quantization" class="level4">
 <h4>Quantization</h4>
@@ -141,7 +137,7 @@ Wrap is selected.</p>
 <section id="optional-ports" class="level4">
 <h4>Optional Ports</h4>
 <section id="provide-enable-port" class="level5">
-<h5>Provide enable port:</h5>
+<h5>Provide enable port</h5>
 <p>Activates an optional enable (en) pin on the block. When the enable
 signal is not asserted the block holds its current state until the
 enable signal is asserted again or the reset signal is asserted.</p>
@@ -158,25 +154,33 @@ select the Pipeline for maximum performance option (described below);
 additional latency is usually implemented as a shift register on the
 output of the block.</p>
 </section>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This blocks
+enable 1-D vector data support for the primary block operation.</p>
+</section>
 </section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <p>Parameters specific to the Implementation tab are as follows:</p>
 <section id="performance-parameters" class="level4">
 <h4>Performance Parameters</h4>
-<p>Pipeline for maximum performance<br />
-The LogiCORE™ can be internally pipelined to optimize for speed instead
-of area. Selecting this option puts all user defined latency into the
-core until the maximum allowable latency is reached. If the Pipeline for
-maximum performance option is not selected and latency is greater than
-zero, a single output register is put in the core and additional latency
-is added on the output of the core.</p>
+<section id="pipeline-for-maximum-performance" class="level5">
+<h5>Pipeline for maximum performance</h5>
+<p>The LogiCORE™ can be internally pipelined to optimize for speed
+instead of area. Selecting this option puts all user defined latency
+into the core until the maximum allowable latency is reached. If the
+Pipeline for maximum performance option is not selected and latency is
+greater than zero, a single output register is put in the core and
+additional latency is added on the output of the core.</p>
 <p>The Pipeline for maximum performance option adds the pipeline
 registers throughout the block, so that the latency is distributed,
 instead of adding it only at the end. This helps to meet tight timing
 constraints in the design.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
 </section>
 </section>
 </section>

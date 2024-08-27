@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -37,10 +37,6 @@ SRL16 followed by a flip-flop.</p>
 <p><img src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.</p>
 <p>The Vector Delay block implements a fixed delay of L cycles.</p>
 <p>The delay value is displayed on the block in the form z^(-L), which
 is the Z-transform of the block’s transfer function. Any data provided
@@ -63,18 +59,16 @@ used in synchronous design (with a few rare exceptions).</p>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows:</p>
-<section id="optional-ports" class="level4">
-<h4>Optional Ports</h4>
-<section id="provide-synchronous-reset-port" class="level5">
-<h5>Provide synchronous reset port</h5>
+<section id="provide-synchronous-reset-port" class="level4">
+<h4>Provide synchronous reset port</h4>
 <p>Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block&#39;s sample
 rate. The signal driving the reset port must be Boolean.</p>
 </section>
-<section id="provide-enable-port" class="level5">
-<h5>Provide enable port</h5>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
 <p>Activates an optional enable (en) pin on the block. When the enable
 signal is not asserted the block holds its current state until the
 enable signal is asserted again or the reset signal is asserted. Reset
@@ -82,8 +76,8 @@ signal has precedence over the enable signal. The enable signal has to
 run at a multiple of the block &#39;s sample rate. The signal driving the
 enable port must be Boolean.</p>
 </section>
-<section id="latency" class="level5">
-<h5>Latency</h5>
+<section id="latency" class="level4">
+<h4>Latency</h4>
 <p>Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port check box is not checked. The
 latency must be a non-negative integer. If the latency is zero, the
@@ -92,13 +86,18 @@ latency is set to L=1, the block will generally be synthesized as a
 flip-flop (or multiple flip-flops if the data width is greater than
 1).</p>
 </section>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This block
+enables 1-D vector support for the primary block operation.</p>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <p>Parameters specific to the Implementation tab are as follows:</p>
 <section id="implement-using-behavioral-hdl" class="level4">
-<h4>Implement using behavioral HDL:</h4>
+<h4>Implement using behavioral HDL</h4>
 <p>Uses behavioral HDL as the implementation. This allows the downstream
 logic synthesis tool to choose the best implementation.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;dds_compiler_v6_0&#39;,&#39;category&#39;,&#39;HDL&#39;))">Common

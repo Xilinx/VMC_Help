@@ -32,24 +32,22 @@ and cannot be expressed exactly in the specified fixed-point type, its
 value is rounded and saturated as needed. A positive value is
 implemented as an unsigned number, a negative value as signed.
 
-
 #### Output Type  
 Specifies the data type of the output. Can be Boolean, Fixed-point, or
 Floating-point.
 
-##### Arithmetic Type  
+#### Arithmetic Type  
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp), Unsigned, or DSP48 instruction as the Arithmetic Type.
 
-##### Fixed-point Precision  
-###### Number of bits  
+##### Number of bits  
 Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-###### Binary point  
+##### Binary point  
 Position of the binary point in the fixed-point output.
 
-##### Floating-point Precision  
+#### Floating-point Precision  
 ###### Single  
 Specifies single precision (32 bits).
 
@@ -60,13 +58,12 @@ Specifies double precision (64 bits)
 Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-###### Exponent width  
+#### Exponent width  
 Specifies the exponent width.
 
-###### Fraction width  
+#### Fraction width  
 Specifies the fraction width.
-
-##### Sample Period  
+ 
 ###### Sampled Constant  
 Allows a sample period to be associated with the constant output and
 inherited by blocks that the constant block drives. (This is useful

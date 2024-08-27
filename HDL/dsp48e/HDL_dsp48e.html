@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -60,9 +60,6 @@ another DSP48 block.</p>
 from the cascaded bcin port. The bcin port can only be connected to
 another DSP48 block.</p>
 </section>
-</section>
-<section id="pattern-detection" class="level3">
-<h3>Pattern Detection</h3>
 <section id="reset-p-register-on-pattern-detection" class="level4">
 <h4>Reset p register on pattern detection</h4>
 <p>If selected and the pattern is detected, reset the p register on the
@@ -80,10 +77,10 @@ c port.</p>
 <p>Value is used in pattern detection logic which is best described as
 an equality check on the output of the adder/subtractor/logic unit.</p>
 </section>
-<section id="pattern-attribute" class="level5">
-<h5>Pattern attribute</h5>
-<p>A 48-bit value that is used in the pattern detector.</p>
 </section>
+<section id="pattern-attribute" class="level4">
+<h4>Pattern attribute</h4>
+<p>A 48-bit value that is used in the pattern detector.</p>
 </section>
 <section id="mask-input" class="level4">
 <h4>Mask Input</h4>
@@ -97,12 +94,12 @@ port.</p>
 <p>48-bit value used to mask out certain bits during pattern
 detection.</p>
 </section>
-<section id="mask-attribute" class="level5">
-<h5>Mask attribute</h5>
+</section>
+<section id="mask-attribute" class="level4">
+<h4>Mask attribute</h4>
 <p>A 48-bit value used to mask out certain bits during a pattern
 detection. A value of 0 passes the bit, and a value of 1 masks out the
 bit.</p>
-</section>
 </section>
 <section id="select-rounding-mask" class="level4">
 <h4>Select rounding mask</h4>
@@ -263,35 +260,35 @@ bcout output port. A pipeline of length 0 removes the register from the
 bcout pipeline length. Must be less than or equal to the length of the
 b/bcin pipeline.</p>
 </section>
-<section id="pipeline-c" class="level5">
-<h5>Pipeline c</h5>
+</section>
+<section id="pipeline-c" class="level4">
+<h4>Pipeline c</h4>
 <p>Indicates whether the input from the c port should be registered.</p>
 </section>
-<section id="pipeline-p" class="level5">
-<h5>Pipeline p</h5>
+<section id="pipeline-p" class="level4">
+<h4>Pipeline p</h4>
 <p>Indicates whether the outputs p and pcout should be registered.</p>
 </section>
-<section id="pipeline-multiplier" class="level5">
-<h5>Pipeline multiplier</h5>
+<section id="pipeline-multiplier" class="level4">
+<h4>Pipeline multiplier</h4>
 <p>Indicates whether the internal multiplier should register its
 output.</p>
 </section>
-<section id="pipeline-opmode" class="level5">
-<h5>Pipeline opmode</h5>
+<section id="pipeline-opmode" class="level4">
+<h4>Pipeline opmode</h4>
 <p>Indicates whether the opmode port should be registered.</p>
 </section>
-<section id="pipeline-alumode" class="level5">
-<h5>Pipeline alumode</h5>
+<section id="pipeline-alumode" class="level4">
+<h4>Pipeline alumode</h4>
 <p>Indicates whether the alumode port should be registered.</p>
 </section>
-<section id="pipeline-carry-in" class="level5">
-<h5>Pipeline carry in</h5>
+<section id="pipeline-carry-in" class="level4">
+<h4>Pipeline carry in</h4>
 <p>Indicates whether the carry in port should be registered.</p>
 </section>
-<section id="pipeline-carry-in-select" class="level5">
-<h5>Pipeline carry in select</h5>
+<section id="pipeline-carry-in-select" class="level4">
+<h4>Pipeline carry in select</h4>
 <p>Indicates whether the carry in select port should be registered.</p>
-</section>
 </section>
 </section>
 <section id="resetenable-ports-tab" class="level3">

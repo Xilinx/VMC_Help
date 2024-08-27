@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -44,40 +44,37 @@ affect the throughput of data between the AI Engine domain and the
 programmable logic (PL) domain. For example, assume your PL domain is
 running at 500 MHz and your AI Engine is running at 1GHz and the
 datatype of the input signal to the AI Engine kernel that is directly
-connecting to PL is of type <code>int32</code>. For maximum throughput,
-you should set the PLIO width to 64 and the PL design should create a
-64-bit wide data. This way for every 64-bit sample generated in the PL
-domain at 500 MHz, the AI Engine kernel will receive two 32-bit wide
-samples at 1 GHz.</p>
-<p>Note that this block does not affect the result of functional
-simulation in Simulink. However, it will affect the generated Graph
-code.</p>
-</section>
-<section id="parameters" class="level2">
-<h2>Parameters</h2>
+connecting to PL is of type int32. For maximum throughput, you should
+set the PLIO width to 64 and the PL design should create a 64-bit wide
+data. This way for every 64-bit sample generated in the PL domain at 500
+MHz, the AI Engine kernel will receive two 32-bit wide samples at 1
+GHz.</p>
+<div class="noteBox">
+This block does not affect the result of functional simulation in Simulink. However, it will affect the generated Graph code.
+</div>
+
+<div class="noteBox">
+This block should be only placed at the boundaries of the AI Engine subsystem and not within two AI Engine blocks.
+</div>
+
 <section id="plio-width-bits" class="level4">
 <h4>PLIO width (bits)</h4>
-<ul>
-<li>Specifies PLIO width in bits. This can be only 32, 64, or 128 as
+<p>Specifies PLIO width in bits. This can be only 32, 64, or 128 as
 these are the only acceptable bit-widths between PL and AI Engine
-array.</li>
-</ul>
+array.</p>
 </section>
 <section id="specify-plio-frequency" class="level4">
 <h4>Specify PLIO frequency</h4>
-<ul>
-<li><p>This is necessary to get accurate thorughput results from the
-Cycle Approximate AI Engine Simulator (SystemC) which you can trigger
-from the Vitis Model Composer Hub block, but it does not affect the
-design in hardware. The default frequency is a quarter of the AI Engine
-frequency and the maximum supported frequency is half of the AI Engine
+<p>This is necessary to get accurate thorughput results from the Cycle
+Approximate AI Engine Simulator (SystemC) which you can trigger from the
+Vitis Model Composer Hub block, but it does not affect the design in
+hardware. The default frequency is a quarter of the AI Engine frequency
+and the maximum supported frequency is half of the AI Engine
 frequency.</p>
 <p>Note that you can also use the &quot;--pl-freq=<em>value</em>&quot; AI Engine
 Compiler option in the Vitis Model Composer Hub block to specify the
 interface frequency (in MHz) for all PLIOs in the design. The individual
-PLIO frequency settings will take precedence over the pl-freq
-value.</p></li>
-</ul>
+PLIO frequency settings will take precedence over the pl-freq value.</p>
 </section>
 </section>
 <section id="constraints" class="level2">

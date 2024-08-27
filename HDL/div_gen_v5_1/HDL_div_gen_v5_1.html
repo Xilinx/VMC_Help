@@ -19,7 +19,7 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -41,39 +41,38 @@ prescaling.</p>
 <h2>Block Parameters</h2>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
-<section id="common-options" class="level4">
-<h4>Common Options</h4>
-<section id="algorithm-type" class="level5">
-<h5>Algorithm Type</h5>
-<ul>
-<li><strong>Radix-2</strong>: Non-restoring integer division using
-integer operands, allows a remainder to be generated. This is
-recommended for operand widths less than around 16 bits. This option
-supports both unsigned and signed (2’s complement) divisor and dividend
-inputs.</li>
-<li><strong>High_Radix</strong>: Division with prescaling. This is
-recommended for operand widths greater than 16 bits, though the
-implementation requires the use of DSP48 (or variant) primitives. This
-option only supports signed (2’s complement) divisor and dividend
-inputs.</li>
-<li><strong>LutMult</strong>: A simple lookup estimate of the reciprocal
-of the divisor followed by a multiplier. Only the remainder output type
-is supported because of the bias required in the reciprocal estimate.
-This bias would introduce an offset (error) if used to create a
-fractional output. This is recommened for operand widths less than or
-equal to 12 bits. This implementation uses DSP slices, block RAM, and a
-small number of FPGA logic primitives (registers and LUTs). For operand
-widths where either Radix2 or the LUTMult options are possible, the
-LUTMult offers a solution using fewer FPGA logic resources because of
-the use of DSP and block RAM primitives. Supports unsigned or two&#39;s
-complement signed numbers.</li>
-</ul>
+<section id="algorithm-type" class="level4">
+<h4>Algorithm Type</h4>
+<section id="radix-2" class="level5">
+<h5>Radix-2</h5>
+<p>Non-restoring integer division using integer operands, allows a
+remainder to be generated. This is recommended for operand widths less
+than around 16 bits. This option supports both unsigned and signed (2’s
+complement) divisor and dividend inputs.</p>
+</section>
+<section id="high_radix" class="level5">
+<h5>High_Radix</h5>
+<p>Division with prescaling. This is recommended for operand widths
+greater than 16 bits, though the implementation requires the use of
+DSP48 (or variant) primitives. This option only supports signed (2’s
+complement) divisor and dividend inputs.</p>
+</section>
+<section id="lutmult" class="level5">
+<h5>LutMult</h5>
+<p>A simple lookup estimate of the reciprocal of the divisor followed by
+a multiplier. Only the remainder output type is supported because of the
+bias required in the reciprocal estimate. This bias would introduce an
+offset (error) if used to create a fractional output. This is recommened
+for operand widths less than or equal to 12 bits. This implementation
+uses DSP slices, block RAM, and a small number of FPGA logic primitives
+(registers and LUTs). For operand widths where either Radix2 or the
+LUTMult options are possible, the LUTMult offers a solution using fewer
+FPGA logic resources because of the use of DSP and block RAM primitives.
+Supports unsigned or two&#39;s complement signed numbers.</p>
 </section>
 </section>
-<section id="output-channel" class="level4">
-<h4>Output channel</h4>
-<section id="remainder-type" class="level5">
-<h5>Remainder type</h5>
+<section id="remainder-type" class="level4">
+<h4>Remainder type</h4>
 <section id="remainder" class="level6">
 <h6>Remainder</h6>
 <p>Only supported for Radix 2.</p>
@@ -83,110 +82,94 @@ complement signed numbers.</li>
 <p>Determines the number of bits in the fractional port output.</p>
 </section>
 </section>
-<section id="fractional-width" class="level5">
-<h5>Fractional width</h5>
+<section id="fractional-width" class="level4">
+<h4>Fractional width</h4>
 <p>If Fractional Remainder type is selected, this entry determines the
 number of bits in the fractional port output.</p>
 </section>
-</section>
-<section id="radix2-options" class="level4">
-<h4>Radix2 Options</h4>
-<section id="radix2-throughput" class="level5">
-<h5>Radix2 throughput</h5>
+<section id="radix2-throughput" class="level4">
+<h4>Radix2 throughput</h4>
 <p>Determines the interval in clocks between new data being input (and
 output). Choices are 1, 2, 4, and 8.</p>
 </section>
-</section>
-<section id="high-radix-options" class="level4">
-<h4>High Radix Options</h4>
-<section id="detect-divide-by-zero" class="level5">
-<h5>Detect divide by zero</h5>
+<section id="detect-divide-by-zero" class="level4">
+<h4>Detect divide by zero</h4>
 <p>Determines if the core shall have a division-by-zero indication
 output port.</p>
 </section>
-</section>
-<section id="axi-interface" class="level4">
-<h4>AXI Interface</h4>
-<section id="axi-behavior" class="level5">
-<h5>AXI behavior</h5>
-<section id="nonblocking" class="level6">
-<h6>NonBlocking</h6>
+<section id="axi-behavior" class="level4">
+<h4>AXI behavior</h4>
+<section id="nonblocking" class="level5">
+<h5>NonBlocking</h5>
 <p>Performs an action only when a control packet and a data packet are
 presented to the block at the same time.</p>
 </section>
-<section id="blocking" class="level6">
-<h6>Blocking</h6>
+<section id="blocking" class="level5">
+<h5>Blocking</h5>
 <p>Preforms an action when a data packet is presented to the block. The
 block uses the previous control information.</p>
 </section>
 </section>
-<section id="axi-implementation-emphasis" class="level5">
-<h5>AXI Implementation emphasis</h5>
-<section id="resources" class="level6">
-<h6>Resources</h6>
+<section id="axi-implementation-emphasis" class="level4">
+<h4>AXI Implementation emphasis</h4>
+<section id="resources" class="level5">
+<h5>Resources</h5>
 <p>Automatic (fully pipelined) or Manual (determined by following
 field).</p>
 </section>
-<section id="performance" class="level6">
-<h6>Performance</h6>
+<section id="performance" class="level5">
+<h5>Performance</h5>
 <p>Implementation decisions target the highest speed.</p>
 </section>
 </section>
-</section>
-<section id="latency-options" class="level4">
-<h4>Latency Options</h4>
-<section id="latency-configuration" class="level5">
-<h5>Latency configuration</h5>
+<section id="latency-configuration" class="level4">
+<h4>Latency configuration</h4>
 <p>Automatic (fully pipelined) or Manual (determined by following
 field).</p>
 </section>
-<section id="latency" class="level5">
-<h5>Latency</h5>
+<section id="latency" class="level4">
+<h4>Latency</h4>
 <p>This field determines the exact latency from input to output in terms
 of clock enabled clock cycles.</p>
 </section>
 </section>
-</section>
 <section id="optional-ports-tab" class="level3">
 <h3>Optional ports tab</h3>
-<section id="optional-ports" class="level4">
-<h4>Optional Ports</h4>
-<section id="divided-channel-ports" class="level5">
-<h5>Divided Channel Ports</h5>
-<section id="has-tuser" class="level6">
-<h6>Has TUSER</h6>
+<section id="divided-channel-ports" class="level4">
+<h4>Divided Channel Ports</h4>
+<section id="has-tuser" class="level5">
+<h5>Has TUSER</h5>
 <p>Adds a tuser input port to the dividend channel.</p>
 </section>
-<section id="has-tlast" class="level6">
-<h6>Has TLAST</h6>
+<section id="has-tlast" class="level5">
+<h5>Has TLAST</h5>
 <p>Adds a tlast output port to the dividend channel.</p>
 </section>
 </section>
-<section id="divisor-channel-ports" class="level5">
-<h5>Divisor Channel Ports</h5>
-<section id="has-tuser-1" class="level6">
-<h6>Has TUSER</h6>
+<section id="divisor-channel-ports" class="level4">
+<h4>Divisor Channel Ports</h4>
+<section id="has-tuser-1" class="level5">
+<h5>Has TUSER</h5>
 <p>Adds a tuser input port to the divisor channel.</p>
 </section>
-<section id="has-tlast-1" class="level6">
-<h6>Has TLAST</h6>
+<section id="has-tlast-1" class="level5">
+<h5>Has TLAST</h5>
 <p>Adds a tlast output port to the divisor channel.</p>
 </section>
 </section>
-<section id="aclken" class="level5">
-<h5>ACLKEN</h5>
+<section id="aclken" class="level4">
+<h4>ACLKEN</h4>
 <p>Specifies that the block has a clock enable port (the equivalent of
 selecting the Has ACLKEN option in the CORE Generator GUI).</p>
 </section>
-<section id="aresetn" class="level5">
-<h5>ARESETn</h5>
+<section id="aresetn" class="level4">
+<h4>ARESETn</h4>
 <p>Specifies that the block has a reset port. Active-Low synchronous
 clear. A minimum ARESETn pulse of two cycles is required.</p>
 </section>
-<section id="m_axis_dout_tready" class="level5">
-<h5>m_axis_dout_tready</h5>
+<section id="m_axis_dout_tready" class="level4">
+<h4>m_axis_dout_tready</h4>
 <p>Specifies that the block has a dout_tready output port.</p>
-</section>
 </section>
 <section id="input-tlast-combination-for-output" class="level4">
 <h4>Input TLAST combination for output</h4>

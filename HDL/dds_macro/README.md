@@ -57,17 +57,25 @@ Frequency (Hz) or an angular velocity (Radians) value.
 #### Frequency  
 Specifies the frequency, either in Hertz or radians. The default is 1.
 
+<div class="noteBox">
+When "Explicit sample period" is enabled, the output frequency of this block may be different if the block's sample period differs from the Simulink system period setting in the Vitis Model Composer Hub block.
+
+In this case, the Frequency or Radians parameter should be set as follows:
+
+Frequency/Radians = (Desired Frequency/Radians) * (Block Sample Period/Simulink System Period)
+</div>
+
 #### Phase Offset  
 Specifies the phase shift, either in Hertz or radians. The default is 0.
 
-### Output Selection  
-#### Sine_and_Cosine  
+#### Output Selection  
+##### Sine_and_Cosine  
 Places both a sine and cosine output port on the block.
 
-#### Sine  
+##### Sine  
 Places only a sine output port on the block.
 
-#### Cosine  
+##### Cosine  
 Places only a cosine output port on the block.
 
 #### Spurious Free Dynamic Range (SFDR)  
@@ -77,45 +85,47 @@ various implementation decisions.
 
 #### Explicit Sample Period  
 If checked, the Sine Wave block uses the explicit sample time specified
-in the Sample Period box below. If not checked, the Model Composer base
-period will be used as block sample time.
 
 #### Sample Period  
-If Explicit Sample Period
 
-## Example
+When "Explicit sample period" is disabled, the sample period of this block will be equal to the Simulink system period setting in the Vitis Model Composer Hub block.
 
-A simple use case of generating sinusoidal signal using Sine Wave block
-is shown below.
+When "Explicit sample period" is enabled, the formula to set the Frequency in Hz or in Radians as follows:
 
-To generate a 20 KHz sine wave with π/2 phase offset in a system running
-at sample period of (1/1e6) or 1 MHz, use the following specification on
-the Sine Wave block.
+`Frequency(in Hz) = (Desired Frequency) * (Block Sample Period/Simulink System Period)`
 
+`Frequency(in Radians) = 2π * Desired Frequency * (Block Sample Period/Simulink System Period)`
 
-![](./Images/bnd1647546704015.png)
+## Examples
+### Case 1:
 
-These settings generate this sine wave:
+Generate a 5 MHz sine wave in a system running at 100 MHz. The sample rate of the sine wave will be the same as the sample rate of the system.
 
+* **Simulink System Period setting in the hub block:** `1e-8`
+* **Sine Wave block input frequency (in Hz):** `5e6`
+* **Phase Offset:** `0`
+* **SFDR:** `90`
+* **Explicit Sample Period:** Unchecked
+* **Block Sample Period:** N/A
 
-![](./Images/uae1555437383080.png)
+![](./Images/Case1_Sine.png)
 
-Wavelength of sine wave = Simulink Sample Period / Frequency is
-selected, specifies the sample time for the block. =\> 1MHz/20KHz = 0.5
-\* 10⁻⁴
+![](./Images/case1_spectrum.png)
 
-The spectrum view of the sine wave is:
+### Case 2:
 
+Generate a 5 MHz sine wave in a system running at 100 MHz. The sample rate of the sine wave will be half the sample rate of the system (50 MHz).
 
-![](./Images/mae1555437377586.png)
+* **Simulink System Period setting in the hub block:** `1e-8`
+* **Sine Wave block input frequency(in Hz):** `(5e6) * (2e-8/1e-8)`
+* **Phase Offset:** `0`
+* **SFDR:** `90`
+* **Explicit Sample Period:** Checked
+* **Block Sample Period:** `2e-8`
 
-Also:
+![](./Images/Case3_Sine.png)
 
-Number of Samples per period = (2π/(1/1e6 \* 20e3))
-
-= 50 (Total number of samples in a single cycle)
-
-Number of offset samples = (π/2) \* (50/2π) = 50/4
+![](./Images/case3_spectrum.png)
 
 ## LogiCORE™ Documentation
 
