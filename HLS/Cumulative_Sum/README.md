@@ -76,3 +76,7 @@ Omits the Reset port.
 ##### Non-zero sample
 Triggers a reset operation at each sample time that the Reset input is not zero.
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

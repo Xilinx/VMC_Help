@@ -30,3 +30,7 @@ Abs block is always real.
 ## Parameters
 
 The Abs block has no parameters to set.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

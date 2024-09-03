@@ -239,3 +239,7 @@ Specify whether the Model Composer Hub block should treat your model as a legacy
 #### Number of parallel AI Engine builds
 
 To speed up model compilation, Vitis Model Composer can build the AI Engine blocks in parallel, taking advantage of multiple cores on your machine. This value can be increased up to maximum number of cores on your machine.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

@@ -101,3 +101,7 @@ impossible by design.
 
 The SO port is an indicator of internal overflows, it is not normally
 used, only attach an unsigned signals of size log2(N) to it.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

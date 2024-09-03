@@ -121,3 +121,7 @@ This determines the number of kernels the FIR will be divided over in series to 
 ***Click on the images below to open each model.***
 
 [![](./Images/Resampler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/FIR_Resampler_Ex1)
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

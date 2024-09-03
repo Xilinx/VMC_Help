@@ -107,3 +107,7 @@ This determines the number of kernels the FIR will be divided over in series to 
 [![](./Images/FIR_Interpolation_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/FIR_InterpolationFilter_Ex2)
 
 [![](./Images/FIR_Interpolation_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/FIR_InterpolationFilter_Ex3)
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

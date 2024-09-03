@@ -39,3 +39,7 @@ Outputs the real part of the input signal as Re output of the block.
 Outputs imaginary part of the input signal as Im output of the block. If the input is real, the Im output is zero valued.
 
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

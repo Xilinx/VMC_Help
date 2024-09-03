@@ -118,3 +118,7 @@ Vitis Model Composer now resolves rates and types deterministically, however
 in some cases, the use of Assert blocks might be necessary for some
 Model Composer HDL components, even if they are resolvable. These blocks
 might include Black Box components and certain IP blocks.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

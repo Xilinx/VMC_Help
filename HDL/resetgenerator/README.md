@@ -18,3 +18,7 @@ resets are no longer asserted after the input reset is detected.
 
 You specify the design sample rates in MATLAB® vector format as shown
 above. Any number of outputs can be specified.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

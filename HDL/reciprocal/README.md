@@ -47,3 +47,7 @@ Adds an output port that serves as a divide-by-zero flag.
 
 Floating-Point Operator LogiCORE IP Product Guide
 ([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

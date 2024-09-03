@@ -49,3 +49,7 @@ Composer:
 - [Vitis Model Composer Tutorial](https://github.com/Xilinx/Vitis_Model_Composer/blob/2024.1/Tutorials/README.md)
 - [Vitis Model Composer Product
   Page](https://www.xilinx.com/products/design-tools/vitis/vitis-model-composer.html)
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

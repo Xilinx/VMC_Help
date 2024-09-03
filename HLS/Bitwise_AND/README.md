@@ -31,3 +31,7 @@ signals are not supported for this operation.
 ## Parameters
 
 The Bitwise AND block has no parameters to set.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

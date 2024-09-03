@@ -22,3 +22,7 @@ This block can also be used to connect Simulink signals to an HDL block with an 
 ## Parameters
 
 Refer to [Gateway In](../../HDL/gatewayin/README.md) block help to learn more about the parameters.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

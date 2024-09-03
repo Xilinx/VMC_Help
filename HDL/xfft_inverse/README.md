@@ -159,3 +159,7 @@ users are advised to drive the input data accordingly.
 
 LogiCORE IP Fast Fourier Transform
 v9.1 [(PG109)](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

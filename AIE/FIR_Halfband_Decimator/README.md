@@ -121,3 +121,7 @@ This determines the number of kernels the FIR will be divided over to improve th
 
 [![](./Images/HBDecimator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/HalfBandDecimator_Ex2)
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

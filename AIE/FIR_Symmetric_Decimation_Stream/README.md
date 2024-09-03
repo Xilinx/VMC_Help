@@ -113,3 +113,7 @@ The number of AI Engine tiles used is determined by `(SSR)^2 * (Number of cascad
 
 [![](./Images/FIR_Symmetric_Decimation_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/FIR_SymmetricDecimatorStream_Ex2)
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

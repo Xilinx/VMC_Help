@@ -11,3 +11,7 @@ The probe accepts any Xilinx signal as input and produces a double
 signal as output. Indeterminate data on the probe input will result in
 an assertion of the output signal indicated by a value one. Otherwise,
 the probe output is zero.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

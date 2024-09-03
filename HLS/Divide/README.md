@@ -43,3 +43,7 @@ quotient are as follows:
 ## Parameters
 
 The Divide block has no parameters.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

@@ -22,3 +22,7 @@ output is always a signed fixed-point integer that is 2 bits long.
 ##  LogiCORE
 
 The Threshold block does not use a LogiCORE™.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

@@ -72,3 +72,7 @@ Please see the following table for a detailed list of supported data types for i
 [2d FFT with both AI Engines and HLS Kernel blocks](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/FFT2D)
 
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

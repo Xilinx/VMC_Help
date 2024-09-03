@@ -22,3 +22,7 @@ operation.
   26.
 - The number of bits on Input port B should be greater than or equal to
   17.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

@@ -30,3 +30,7 @@ Data types accepted at the inputs of the block:
 ## Parameters
 
 The Reciprocal block has no parameters to set.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

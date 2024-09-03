@@ -178,3 +178,7 @@ edit box. The locations are package-specific.
 ##### IO Standards, e.g. {'MSB', ..., 'LSB'}  
 I/O standards can be specified as a cell array of strings in this edit
 box. The locations are package-specific.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

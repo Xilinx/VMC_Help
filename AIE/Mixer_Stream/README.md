@@ -91,3 +91,7 @@ Specifies the initial phase offset. The default value is 0.
 [![](./Images/Mixer_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/Mixer_stream_Ex1) 
 
 [![](./Images/Mixer_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/Mixer_stream_Ex2) 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

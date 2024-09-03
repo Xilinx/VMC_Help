@@ -42,3 +42,7 @@ You can write a variable-size signal to MATLAB workspace using *Variable-Size Si
 <img src="./images/toWorkspace.PNG">
 </p>
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

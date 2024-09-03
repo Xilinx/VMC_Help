@@ -170,3 +170,7 @@ selected) then the delay line will not be terminated with a flip-flop,
 making it significantly slower. This can be remedied by using behavioral
 mode or by putting a Register or Delay block after the addressable shift
 register.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

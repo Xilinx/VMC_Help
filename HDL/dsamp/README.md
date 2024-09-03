@@ -91,3 +91,7 @@ Boxes](../../GEN/common-options/README.md).
 ## LogiCORE
 
 The Down Sample block does not use a LogiCORE™.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

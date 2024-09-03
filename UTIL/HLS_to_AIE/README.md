@@ -37,3 +37,7 @@ size is '1'. For example if the input is a vector of size 24, its
 datatype is `uint64`, and the output datatype is set to `uint8`, for
 each input sample, there will be 8 output samples. As such the Output
 Size should be set to 8x24=192 or larger.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

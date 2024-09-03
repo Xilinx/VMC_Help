@@ -85,3 +85,7 @@ Where:
 
 [![](./Images/Mixer_Example.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/Mixer_Ex1) 
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

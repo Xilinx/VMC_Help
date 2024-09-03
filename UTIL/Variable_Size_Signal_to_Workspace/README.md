@@ -32,3 +32,7 @@ Output object or as individual variables.
 Using this parameter, you can specify the name for workspace variable.
 
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

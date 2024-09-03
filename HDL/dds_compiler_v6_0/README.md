@@ -427,3 +427,7 @@ Boxes](../../GEN/common-options/README.md).
 
 DDS Compiler LogiCORE IP Product Guide
 ([PG141](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US))
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

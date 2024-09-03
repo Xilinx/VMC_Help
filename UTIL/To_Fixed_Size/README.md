@@ -51,3 +51,7 @@ Specify the output size for the second mode. For the first mode, the output size
 
 [Variable size signal to workspace](../Variable_Size_Signal_to_Workspace/README.md)
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

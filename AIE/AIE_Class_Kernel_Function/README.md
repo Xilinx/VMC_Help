@@ -58,3 +58,7 @@ Use [AIE Graph](../AIE_Graph_Function/README.md) block to import an AI Engine gr
 [Importing a templatized class kernel as a block](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Class_Kernel_FIR)
 
   
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.

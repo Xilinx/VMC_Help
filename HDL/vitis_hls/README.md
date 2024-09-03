@@ -91,3 +91,7 @@ period.
 - Because the Vitis HLS block has to use the GCC shipped in the Vivado
   Design Suite to compile dll on Win-64 platform, users cannot use
   arbitrary bitwidth integers in C designs on win-64 systems.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
