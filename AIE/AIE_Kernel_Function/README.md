@@ -25,7 +25,18 @@ Mandatory string. Name of the header file that contains the kernel function decl
 Mandatory string. Name of the kernel function for which the block is to be created. This function should be declared in the kernel header file. 
 
 #### Kernel init function
-Optional string. Name of the initialization function used by the kernel function.
+Optional string. Name of the initialization function used by the kernel function. An initialization function cannot return a value and cannot have input/output arguments, that is,
+the function prototype must be as follows:
+
+_void init_function_name(void)_
+
+<div class="noteBox">
+  The initialization function is called only once before the kernel function is called.
+</div>
+
+This function can be used to initialize global variables and set or clear rounding and saturation
+modes. It cannot use buffer or stream APIs to access memory or stream interfaces, but stream
+intrinsics (for example, get_ss() or put_ss()) can be used.
 
 #### Kernel source file
 Mandatory string. Name of the source file that contains the kernel function definition. The string could be the file name, a relative path to the file or an absolute path of the file.

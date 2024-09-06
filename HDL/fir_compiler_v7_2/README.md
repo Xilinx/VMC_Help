@@ -415,6 +415,18 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+## Examples
+
+***Click on the images below to open each model.***
+
+**Decimation Filter:**
+
+[![](./Images/FIR_Compiler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/HDL/FIR_Compiler_Ex1)
+
+**Interpolation Filter:**
+
+[![](./Images/FIR_Compiler_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/HDL/FIR_Compiler_Ex2)
+
 ## LogiCORE™ Documentation
 
 FIR Compiler LogiCORE IP Product Guide
