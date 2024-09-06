@@ -146,3 +146,5 @@ This block uses the Vitis DSP library implementation of FFT. For more details on
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

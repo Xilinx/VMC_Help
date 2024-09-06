@@ -95,3 +95,5 @@ Specifies the initial phase offset. The default value is 0.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

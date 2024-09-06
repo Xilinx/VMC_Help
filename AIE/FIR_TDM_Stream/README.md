@@ -102,3 +102,5 @@ This block uses the Vitis DSP library implementation of a TDM FIR filter. For mo
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

@@ -101,3 +101,5 @@ A string that specifies the output data type. See Working with Data Type Express
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

@@ -35,3 +35,5 @@ Describes the maximum number of sample delay can be applied to the input signal.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

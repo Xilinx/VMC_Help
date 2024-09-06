@@ -48,3 +48,5 @@ BRAM. Typical values to try are 258, 514, and 1026.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

@@ -243,3 +243,5 @@ To speed up model compilation, Vitis Model Composer can build the AI Engine bloc
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

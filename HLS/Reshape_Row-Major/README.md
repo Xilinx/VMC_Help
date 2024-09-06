@@ -55,3 +55,5 @@ The value of the Output dimensions parameter must be a two-element vector.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

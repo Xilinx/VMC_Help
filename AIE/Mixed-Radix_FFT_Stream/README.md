@@ -77,3 +77,5 @@ If you are using non-default constraints for any of the kernels for the block, a
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

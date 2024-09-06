@@ -75,3 +75,5 @@ The value of the Imag part parameter must be a numeric, real-valued scalar, vect
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

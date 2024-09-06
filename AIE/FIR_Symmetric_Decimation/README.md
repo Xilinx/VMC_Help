@@ -112,3 +112,5 @@ The number of AI Engine tiles used is determined by `(SSR)^2 * (Number of cascad
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

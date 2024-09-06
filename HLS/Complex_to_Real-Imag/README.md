@@ -43,3 +43,5 @@ Outputs imaginary part of the input signal as Im output of the block. If the inp
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

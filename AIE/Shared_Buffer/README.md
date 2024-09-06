@@ -132,3 +132,5 @@ To learn more about Shared Buffers, refer to [AI Engine-ML Kernel and Graph Prog
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

@@ -35,3 +35,5 @@ To learn more about FIFO and different types of FIFOs click [here](https://docs.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

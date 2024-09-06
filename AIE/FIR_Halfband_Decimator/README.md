@@ -125,3 +125,5 @@ This determines the number of kernels the FIR will be divided over to improve th
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

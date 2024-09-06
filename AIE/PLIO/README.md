@@ -42,3 +42,5 @@ You can specify location constraints for PLIO blocks. This will be reflected in 
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

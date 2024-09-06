@@ -49,3 +49,5 @@ Add input over column dimension. Output is a column matrix.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

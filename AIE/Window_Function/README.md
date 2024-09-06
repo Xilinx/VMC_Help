@@ -80,3 +80,5 @@ Describes the power of 2 shift down applied before output.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

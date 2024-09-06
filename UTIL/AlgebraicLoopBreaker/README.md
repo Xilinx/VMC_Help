@@ -37,3 +37,5 @@ For more information on algebraic loops, refer to [Algebraic Loop Concepts](http
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

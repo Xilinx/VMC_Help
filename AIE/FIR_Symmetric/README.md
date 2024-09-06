@@ -111,3 +111,5 @@ Click on the button given here to access the constraint manager and add or updat
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

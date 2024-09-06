@@ -67,3 +67,5 @@ The block icon is redrawn with the specified number of input ports.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

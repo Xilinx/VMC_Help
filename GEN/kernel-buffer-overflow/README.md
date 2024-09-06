@@ -73,3 +73,5 @@ For example if you feed the kernel with 16 samples, you would want to set the ou
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

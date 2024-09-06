@@ -53,3 +53,5 @@ Defines the width of the Sin/Cos Table and should be an integer value.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

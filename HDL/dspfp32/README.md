@@ -251,3 +251,5 @@ When a checkbox is selected on this tab, the specified signal is inverted.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

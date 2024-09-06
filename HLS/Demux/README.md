@@ -112,3 +112,5 @@ The width of each output port is already specified by the user. The sum of the w
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

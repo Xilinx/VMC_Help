@@ -26,3 +26,5 @@ Refer to [Gateway In](../../HDL/gatewayin/README.md) block help to learn more ab
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT

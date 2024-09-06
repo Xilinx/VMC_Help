@@ -38,3 +38,5 @@ value as 1 and maximum value as 2^25.
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
+
+SPDX-License-Identifier: MIT
