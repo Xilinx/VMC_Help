@@ -5,5 +5,5 @@
 This repository contains the Block Help documentation for Vitis Model Composer.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2023 Advanced Micro Devices, Inc.
 SPDX-License-Identifier: MIT
