@@ -329,3 +329,9 @@ Boxes](../../GEN/common-options/README.md).
 
 Reed-Solomon Encoder LogiCORE IP Product Guide
 ([PG025](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg025_rs_encoder&ft:locale=en-US))
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

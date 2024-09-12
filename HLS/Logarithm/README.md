@@ -28,3 +28,9 @@ Data types accepted at the inputs of the block are:
 ## Parameters
 
 The Log block has no parameters to set.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

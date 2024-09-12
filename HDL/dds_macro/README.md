@@ -131,3 +131,9 @@ Generate a 5 MHz sine wave in a system running at 100 MHz. The sample rate of th
 
 LogiCORE IP DDS Compiler v6.0 Product
 Guide [(PG141)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US)
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

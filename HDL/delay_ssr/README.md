@@ -99,3 +99,9 @@ slice. For a latency greater than L=33, multiple SRL/flip-flop sets are
 cascaded, albeit without using the dedicated cascade routes. For
 example, the following is the synthesis result for a 1-bit wide Vector
 Delay block with a latency of L=64.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

@@ -69,3 +69,9 @@ For example if you feed the kernel with 16 samples, you would want to set the ou
 
 :bulb: If you set the "Signal Size" parameter to smaller than what it should be, you may encounter buffer overflow. 
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

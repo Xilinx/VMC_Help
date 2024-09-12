@@ -65,3 +65,9 @@ width.
 ##### Binary point  
 Specifies the bit location of the binary point. Bit zero is the Least
 Significant Bit.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

@@ -101,3 +101,9 @@ sections of the block dialog box.
 Negative offsets specify bit positions to the right of the anchor (zero
 offset basis). Positive offsets specify bit positions to the left of the
 anchor.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

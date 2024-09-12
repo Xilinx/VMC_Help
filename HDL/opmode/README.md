@@ -479,3 +479,9 @@ individual Real and Imaginary control input ports.
 | Negate                  | op\[24:22\] | 0 or 1                                    | Select Negate to negate the Multiplier output                                                                                |
 
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

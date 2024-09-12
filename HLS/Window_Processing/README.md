@@ -108,3 +108,9 @@ To switch back to VRAM, execute:
 ```
 set_param(gcb, 'RAMType', 0)
 ```
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

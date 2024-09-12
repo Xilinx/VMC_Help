@@ -48,3 +48,9 @@ session, the underlying FDATool object is stored in the UserData
 parameter of the FDATool block. Use the xlfda_numerator()
 helper function and get_param() to extract information from the object
 as desired.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

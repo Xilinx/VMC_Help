@@ -33,3 +33,9 @@ The Normalization example uses an Algebraic Loop Breaker inside the AI Engine su
 
 For more information on algebraic loops, refer to [Algebraic Loop Concepts](https://www.mathworks.com/help/simulink/ug/algebraic-loops.html) in the Simulink documentation.
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT
