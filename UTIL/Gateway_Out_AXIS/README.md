@@ -18,3 +18,7 @@ The following figure shows an example of how the block is used to connect HDL bl
 
 #### Sample Time  
 The sample time of the _tready_ signal leaving the block. In general, the value of this parameter should match the sample time of your HDL design.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

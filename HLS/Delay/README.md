@@ -34,3 +34,7 @@ signal is delayed.
 
 Latency should be a real, non-negative, scalar integer with minimum
 value as 1 and maximum value as 2^25.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

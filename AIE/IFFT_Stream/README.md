@@ -105,3 +105,7 @@ This determines the number of kernels the IFFT will be divided over in series to
 [![](./Images/IFFT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/IFFT_Stream_Ex1)
 
 [![](./Images/IFFT_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/IFFT_Stream_Ex2)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

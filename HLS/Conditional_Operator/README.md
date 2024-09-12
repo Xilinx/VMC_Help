@@ -80,3 +80,7 @@ criteria, either T or F is selected to populate the output signal.
 Dependencies  
 Setting Criteria for passing first input to C ~= 0 disables this
 parameter.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -200,3 +200,7 @@ This determines the number of kernels the FFT will be divided over in series to 
 
 
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

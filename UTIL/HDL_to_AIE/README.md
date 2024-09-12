@@ -79,3 +79,7 @@ This block is a multirate block. The input period and the output period can be d
 
 
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

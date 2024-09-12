@@ -73,3 +73,7 @@ This option repeats the RTP block data from first value.
 ## References
 To learn more about RTPs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/Runtime-Parameter-Specification).
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

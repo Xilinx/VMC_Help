@@ -43,3 +43,7 @@ Used to disable multi-cycle path constraints on the generated signal
 from the Clock Enable Probe block. This is typically applied when the
 signal generated is used as separate timing signal that is not
 clock-enable related.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

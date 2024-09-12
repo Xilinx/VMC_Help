@@ -31,3 +31,7 @@ Data types accepted at the input of the block are:
 ## Parameters
 
 The Tangent block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

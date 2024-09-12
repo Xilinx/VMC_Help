@@ -27,3 +27,7 @@ The output has the same dimension and type as the input.
 ## Parameters
 
 The Log10 block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

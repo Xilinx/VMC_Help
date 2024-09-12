@@ -88,3 +88,7 @@ Boxes](../../GEN/common-options/README.md).
 
 The Vector Assert block does not use a LogiCORE™™ and does not
 use resources when implemented in hardware.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

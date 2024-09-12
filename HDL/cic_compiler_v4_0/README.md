@@ -162,3 +162,7 @@ Boxes](../../GEN/common-options/README.md).
 
 CIC Compiler LogiCORE IP Product Guide
 ([PG140](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg140-cic-compiler&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

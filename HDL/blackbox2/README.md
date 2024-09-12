@@ -351,3 +351,7 @@ this_block.setTopLevelLanguage('VHDL');
   this_block.addFile('word_parity_block.vhd');
   return;
 ```
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

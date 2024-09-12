@@ -54,3 +54,7 @@ Note:
 You can find more examples [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.1/Examples/AIENGINE_plus_PL/AIE_HLS).
 
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -34,3 +34,7 @@ between –π and π.
 ## Parameters
 
 The atan2 block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -83,3 +83,7 @@ Reduce over column dimension.
 
 **Note**: If the reduce Dimension is specified to be 2 the input signal must
 be two-dimensional.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

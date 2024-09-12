@@ -31,3 +31,7 @@ Describes the maximum number of sample delay can be applied to the input signal.
 
 [![](./Images/Vectorized_Sample_Delay_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2023.2/Examples/Block_Help/AIE/Vectorized_Sample_Delay_Ex2)
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

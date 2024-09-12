@@ -37,3 +37,7 @@ Data types support for the Lesser block is:
 ## Parameters
 
 The Lesser block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
