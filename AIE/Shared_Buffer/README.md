@@ -129,3 +129,8 @@ outputTilingParams = struct( ...
 ## References
 
 To learn more about Shared Buffers, refer to [AI Engine-ML Kernel and Graph Programming Guide (UG1603)](https://docs.xilinx.com/r/en-US/ug1603-ai-engine-ml-kernel-graph/AI-Engine-ML-Memory-Tile-Access).
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

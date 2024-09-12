@@ -84,3 +84,9 @@ This determines the number of kernels the FFT will be divided over in series to 
 
 [![](./Images/IFFT_example.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/IFFT_Ex1)
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

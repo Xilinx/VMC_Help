@@ -76,3 +76,9 @@ Describes the power of 2 shift down applied before output.
 [![](./Images/WindowFunctionModel1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/WindowFunction_Ex1)
   
  
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

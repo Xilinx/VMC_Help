@@ -107,3 +107,9 @@ Click on the button given here to access the constraint manager and add or updat
 ---
 **_NOTE:_**  For more details on this function and other AI Engine filter functions available, please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html).
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

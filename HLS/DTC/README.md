@@ -248,3 +248,9 @@ you specify in the Simulink Editor. To configure, select
 Simulation → Model Configuration Parameters → Diagnostics → Data
 Validity for your model in the Simulink Editor, then set the Wrap on
 overflow or Saturate on overflow parameter.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

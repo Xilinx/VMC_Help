@@ -54,3 +54,9 @@ provided, it is assumed to be 1.
 [Importing DSP Library Function (Matrix Multiply) as a Graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/matrix_multiply)
 
 
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

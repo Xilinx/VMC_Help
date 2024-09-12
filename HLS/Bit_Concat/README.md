@@ -40,3 +40,9 @@ Number of inputs
 Sets the number of inputs to be concatenated. The minimum number of
 inputs is 2, the maximum is 128. The sum of all input bit widths shall
 not exceed 1024 bits.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

@@ -401,3 +401,9 @@ Boxes](../../GEN/common-options/README.md).
 
 Reed-Solomon Decoder LogiCORE IP Product Guide
 ([PG107](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg107-rs-decoder&ft:locale=en-US))
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT

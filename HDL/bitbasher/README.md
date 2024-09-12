@@ -205,3 +205,9 @@ if `e` were 110110110 then `a1` would be 1000110110110.
 - Does not support masked parameterization on the bitbasher expressions.
 - An expression cannot contain only constants, that is, each expression
   must include at least one input port.
+
+--------------
+Copyright (C) 2024 Advanced Micro Devices, Inc.
+All rights reserved.
+
+SPDX-License-Identifier: MIT
