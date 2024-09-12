@@ -22,11 +22,13 @@ Use floating-point data type. Can be a constant or an expression. If the
 constant cannot be expressed exactly in the specified fixed-point type,
 its value is rounded and saturated as needed.
 
-#### Number of bits  
+#### Fixed-point Precision  
+
+##### Number of bits  
 Specifies the bit location of the binary point of the constant, where
 bit zero is the least significant bit.
 
-#### Binary point  
+##### Binary point  
 Position of the binary point.
 
 #### Floating-point Precision  
@@ -40,15 +42,14 @@ Specifies double precision (64 bits)
 Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-#### Exponent width  
+##### Exponent width  
 Specify the exponent width.
 
-#### Fraction width  
+##### Fraction width  
 Specify the fraction width.
 
 
 ### Output tab  
-
 #### Precision  
 This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
@@ -61,20 +62,21 @@ error.
 ##### User Defined  
 If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
- 
-#### Arithmetic type  
-##### Signed (2’s comp)  
+
+#### Fixed-point Output Type  
+##### Arithmetic type  
+###### Signed (2’s comp)  
 The output is a Signed (2’s complement) number.
 
-##### Unsigned  
+###### Unsigned  
 The output is an Unsigned number.
 
-#### Fixed-point Precision  
-##### Number of bits  
+##### Fixed-point Precision  
+###### Number of bits  
 Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-##### Binary point  
+###### Binary point  
 Position of the binary point in the fixed-point output.
 
 ##### Quantization  
@@ -99,11 +101,12 @@ if any of the following conditions are true:
 - The bit width of the constant or the input is less than 1 or is
   greater than 64.
 - The bit width of the input data is 1 and its data type is xlFix.
- 
-#### Implement using  
+
+#### Core Parameters  
+##### Implement using  
 Specifies whether to use distributed RAM or block RAM.
 
-#### Test for optimum pipelining  
+##### Test for optimum pipelining  
 Checks if the Latency provided is at least equal to the optimum pipeline
 length supported for the given configuration of the block. Latency
 values that pass this test imply that the core produced is optimized for
@@ -120,3 +123,7 @@ v12.0 [(PG108)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true
 
 LogiCORE IP Floating-Point Operator
 v7.1 [(PG060)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

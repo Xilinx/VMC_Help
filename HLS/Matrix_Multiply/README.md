@@ -54,3 +54,7 @@ the Simulink® Matrix Product block.
 ## Parameters
 
 The Matrix Multiply block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

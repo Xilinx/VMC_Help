@@ -55,28 +55,30 @@ bits for each input bit.</p>
 <section id="page_0-tab" class="level3">
 <h3>page_0 tab</h3>
 <p>Parameters specific to the page_0 tab are as follows.</p>
-<section id="punctured" class="level4">
-<h4>Punctured</h4>
+<section id="data-rates-and-puncturing" class="level4">
+<h4>Data Rates and Puncturing</h4>
+<section id="punctured" class="level5">
+<h5>Punctured</h5>
 <p>Determines whether the block is punctured.</p>
 </section>
-<section id="dual-output" class="level4">
-<h4>Dual Output</h4>
+<section id="dual-output" class="level5">
+<h5>Dual Output</h5>
 <p>Specifies a dual-channel punctured block.</p>
 </section>
-<section id="input-rate" class="level4">
-<h4>Input Rate</h4>
+<section id="input-rate" class="level5">
+<h5>Input Rate</h5>
 <p>Punctured: Only the input rate can be modified. Its value can range
 from 2 to 12, resulting in a rate n/m encoder where n is the input rate
 and n&lt;m&lt;2n.</p>
 </section>
-<section id="output-rate" class="level4">
-<h4>Output Rate</h4>
+<section id="output-rate" class="level5">
+<h5>Output Rate</h5>
 <p>Not Punctured: Only the output rate can be modified. Its value can be
 integer values from 2 to 7, resulting in a rate 1/2 or rate 1/7 encoder,
 respectively</p>
 </section>
-<section id="puncture-code0-and-code1" class="level4">
-<h4>Puncture Code0 and Code1</h4>
+<section id="puncture-code0-and-code1" class="level5">
+<h5>Puncture Code0 and Code1</h5>
 <p>The two puncture pattern codes are used to remove bits from the
 encoded data prior to output. The length of each puncture code must be
 equal to the puncture input rate, and the total number of bits set to 1
@@ -84,6 +86,7 @@ in the two codes must equal the puncture output rate (m) for the codes
 to be valid. A 0 in any position indicates that the output bit from the
 encoder is not transmitted. See the associated LogiCORE™ data sheet for
 an example.</p>
+</section>
 </section>
 <section id="optional-pins" class="level4">
 <h4>Optional Pins</h4>
@@ -117,13 +120,15 @@ Composer ties this pin to inactive (high) on the core.</p>
 <p>Select Binary, Octal, or Decimal.</p>
 </section>
 </section>
-<section id="constraint-length" class="level4">
-<h4>Constraint length</h4>
+<section id="convolution" class="level4">
+<h4>Convolution</h4>
+<section id="constraint-length" class="level5">
+<h5>Constraint length</h5>
 <p>Equals n+1, where n is the length of the constraint register in the
 encoder.</p>
 </section>
-<section id="convolution-code" class="level4">
-<h4>Convolution code</h4>
+<section id="convolution-code" class="level5">
+<h5>Convolution code</h5>
 <p>Array of binary convolution codes. Output rate is derived from the
 array length. Between 2 and 7 (inclusive) codes can be entered.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
@@ -131,9 +136,13 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>
 </section>
+</section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
 <p>Convolutional Encoder LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg026_convolution&amp;ft:locale=en-US">PG026</a>)</p>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
 </section>
 </body>

@@ -36,11 +36,12 @@ place when both tvalid and tready are asserted.
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
- 
-#### FIFO depth  
+
+#### Data Port Parameters  
+##### FIFO depth  
 Specifies the number of words that can be stored. Range 16-128K.
 
-#### Actual FIFO depth  
+##### Actual FIFO depth  
 A report field that indicates the actual FIFO depth. The actual depth of
 the FIFO depends on its implementation and the features that influence
 its implementation.
@@ -115,3 +116,7 @@ Macro (XPM), refer to UltraScale Architecture Libraries Guide
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -48,14 +48,17 @@ been deprecated. Please use the FIR Resampler Filter block instead.</p>
 <h3>Main</h3>
 <section id="inputoutput-data-type" class="level4">
 <h4>Input/Output data type</h4>
-<p>Describes the type of individual data samples input to and output
+<ul>
+<li>Describes the type of individual data samples input to and output
 from the filter function. int16, cint16, int32, cint32, float,
-cfloat.</p>
+cfloat.</li>
+</ul>
 </section>
 <section id="filter-coefficients-data-type" class="level4">
 <h4>Filter coefficients data type</h4>
-<p>Describes the type of individual coefficients of the filter taps. It
-should be one of int16, cint16, int32, cint32, float, cfloat and must
+<ul>
+<li><p>Describes the type of individual coefficients of the filter taps.
+It should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
@@ -66,47 +69,62 @@ also a 32-bit type.</li>
 Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
+</ul></li>
 </ul>
 </section>
 <section id="specify-filter-coefficients-via-input-port" class="level4">
 <h4>Specify filter coefficients via input port</h4>
-<p>When this option is enabled, the tool allows you to specify
-reloadable filter coefficients via input port.</p>
+<ul>
+<li>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via input port.</li>
+</ul>
 </section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
-<p>This field should be specified with the asymmetric filter
-coefficients and must be in the range 4 to 240 inclusive.</p>
+<ul>
+<li>This field should be specified with the asymmetric filter
+coefficients and must be in the range 4 to 240 inclusive.</li>
+</ul>
 </section>
 <section id="interpolation-factor" class="level4">
 <h4>Interpolation factor</h4>
-<p>An unsigned integer which describes the Interpolation factor of the
-filter. It must be in the range 3 to 16.</p>
+<ul>
+<li>An unsigned integer which describes the Interpolation factor of the
+filter. It must be in the range 3 to 16.</li>
+</ul>
 </section>
 <section id="decimation-factor" class="level4">
 <h4>Decimation factor</h4>
-<p>An unsigned integer which describes the decimation factor of the
+<ul>
+<li>An unsigned integer which describes the decimation factor of the
 filter. It must be in the range 2 to 16. The decimation factor should be
 less that the interpolation factor and should not be divisible by the
-interpolation factor.</p>
+interpolation factor.</li>
+</ul>
 </section>
 <section id="input-window-size-number-of-samples" class="level4">
 <h4>Input window size (Number of samples)</h4>
-<p>Describes the number of samples used as an input to the filter
+<ul>
+<li>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be the input
 window size multipled by the Interpolation factor and divided by the
 decimation factor. In this instance it would result in a fraction number
-of output samples which would be rounded down.</p>
+of output samples which would be rounded down.</li>
+</ul>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
-<p>Describes the power of 2 shift down applied to the accumulation of
-FIR terms before output. It must be in the range 0 to 61.</p>
+<ul>
+<li>Describes the power of 2 shift down applied to the accumulation of
+FIR terms before output. It must be in the range 0 to 61.</li>
+</ul>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Describes the selection of rounding to be applied during the shift
-down stage of processing. The rounding options are as follows:</p>
+<ul>
+<li>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</li>
+</ul>
 <ol type="1">
 <li>Floor (truncate)</li>
 <li>Ceiling</li>
@@ -117,13 +135,25 @@ down stage of processing. The rounding options are as follows:</p>
 <li>Round convergent to even</li>
 <li>Round convergent to odd</li>
 </ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
+<ul>
+<li>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</li>
+</ul>
 </section>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of cascade stages</h4>
-<p>This determines the number of kernels the FIR will be divided over in
-series to improve throughput.</p>
+<ul>
+<li>This determines the number of kernels over which the function will
+be split. A higher number of cascade stages will result in higher
+throughput at the expense of resources. The value must be in the range 1
+to 9.</li>
+</ul>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
 </section>
 </section>

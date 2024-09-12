@@ -182,7 +182,8 @@ equal to 1.
 ### Advanced tab  
 Parameters specific to the Advanced tab are as follows.
 
-#### Port A or Port B  
+#### Write Modes  
+##### Port A or Port B  
 When the Dual Port RAM block is implemented in block RAM, specifies
 memory behavior for port A or port B when WE is asserted. Supported
 modes are: Read after write, Read before write, and No read on write.
@@ -207,3 +208,7 @@ Distributed Memory Generator LogiCORE IP Product Guide
 UltraScale Architecture Memory Resources User Guide
 ([UG573](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf)) -
 XPM_MEMORY_TDPRAM Macro (UltraRAM)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

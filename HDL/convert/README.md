@@ -42,11 +42,11 @@ Specifies double precision (64 bits).
 Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-#### Exponent width  
+##### Exponent width  
 Specify the exponent width.
 
-#### Fraction width  
-Specify the fraction width.
+##### Fraction width  
+  Specify the fraction width.
 
 #### Quantization  
 Quantization errors occur when the number of fractional bits is
@@ -126,3 +126,7 @@ Boxes](../../GEN/common-options/README.md).
 
 Floating-Point Operator LogiCORE IP Product Guide
 ([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

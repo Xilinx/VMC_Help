@@ -190,29 +190,31 @@ separately or instantiated together. Select one of the following.</p>
 <li>SIN_COS_LUT_only</li>
 </ul>
 </section>
-<section id="system-clock-mhz" class="level4">
-<h4>System Clock (MHz)</h4>
+<section id="system-requirements" class="level4">
+<h4>System Requirements</h4>
+<section id="system-clock-mhz" class="level5">
+<h5>System Clock (MHz)</h5>
 <p>Specifies the frequency at which the block is clocked for the
 purposes of making architectural decisions and calculating phase
 increment from the specified output frequency. This is a fixed ratio off
 the System Clock.</p>
 </section>
-<section id="number-of-channels" class="level4">
-<h4>Number of Channels</h4>
+<section id="number-of-channels" class="level5">
+<h5>Number of Channels</h5>
 <p>The channels are time-multiplexed in the DDS which affects the
 effective clock per channel. The DDS can support 1 to 16
 time-multiplexed channels.</p>
 </section>
-<section id="mode-of-operation" class="level4">
-<h4>Mode of Operation</h4>
-<section id="standard" class="level5">
-<h5>Standard</h5>
+<section id="mode-of-operation" class="level5">
+<h5>Mode of Operation</h5>
+<section id="standard" class="level6">
+<h6>Standard</h6>
 <p>The output frequency of the DDS waveform is a function of the system
 clock frequency, the phase width in the phase accumulator and the phase
 increment value.</p>
 </section>
-<section id="rasterized" class="level5">
-<h5>Rasterized</h5>
+<section id="rasterized" class="level6">
+<h6>Rasterized</h6>
 <p>The DDS does not truncate the accumulated phase. Rasterized operation
 is intended for configurations where the desired frequency is a rational
 fraction of the system clock (output frequency = system frequency * N/M,
@@ -222,21 +224,25 @@ Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLat
 for a detailed explanation of these modes.</p>
 </section>
 </section>
+</section>
 <section id="parameter-selection" class="level4">
 <h4>Parameter Selection</h4>
 <p>Select System_Parameters or Hardware_Parameters</p>
 </section>
-<section id="spurious-free-dynamic-range-db" class="level4">
-<h4>Spurious Free Dynamic Range (dB)</h4>
+<section id="system-parameters" class="level4">
+<h4>System Parameters</h4>
+<section id="spurious-free-dynamic-range-db" class="level5">
+<h5>Spurious Free Dynamic Range (dB)</h5>
 <p>The targeted purity of the tone produced by the DDS. This sets the
 output width as well as internal bus widths and various implementation
 decisions.</p>
 </section>
-<section id="frequency-resolution-hz" class="level4">
-<h4>Frequency Resolution (Hz)</h4>
+<section id="frequency-resolution-hz" class="level5">
+<h5>Frequency Resolution (Hz)</h5>
 <p>This sets the precision of the PINC and POFF values. Very precise
 values will require larger accumulators. Less precise values will cost
 less in hardware resource.</p>
+</section>
 </section>
 <section id="noise-shaping" class="level4">
 <h4>Noise Shaping</h4>
@@ -247,16 +253,19 @@ and Taylor_Series_Corrected are the only valid options for Noise
 Shaping. If Phase_Generator_Only is selected, then None is the only
 valid choice for Noise Shaping.</p>
 </section>
-<section id="phase-width" class="level4">
-<h4>Phase Width</h4>
+<section id="hardware-parameters" class="level4">
+<h4>Hardware Parameters</h4>
+<section id="phase-width" class="level5">
+<h5>Phase Width</h5>
 <p>Equivalent to frequency resolution, this sets the width of the
 internal phase calculations.</p>
 </section>
-<section id="output-width" class="level4">
-<h4>Output Width</h4>
+<section id="output-width" class="level5">
+<h5>Output Width</h5>
 <p>Broadly equivalent to SFDR, this sets the output precision and the
 minimum Phase Width allowable. However, the output accuracy is also
 affected by the choice of Noise Shaping.</p>
+</section>
 </section>
 <section id="output-selection" class="level4">
 <h4>Output Selection</h4>
@@ -271,17 +280,17 @@ affected by the choice of Noise Shaping.</p>
 <section id="cosine" class="level5">
 <h5>Cosine</h5>
 <p>Place only a Cosine output port on the block.</p>
+<section id="polarity" class="level6">
+<h6>Polarity</h6>
 </section>
-</section>
-<section id="polarity" class="level4">
-<h4>Polarity</h4>
-<section id="negative-sine" class="level5">
-<h5>Negative Sine</h5>
+<section id="negative-sine" class="level6">
+<h6>Negative Sine</h6>
 <p>Negates the sine output.</p>
 </section>
-<section id="negative-cosine" class="level5">
-<h5>Negative Cosine</h5>
+<section id="negative-cosine" class="level6">
+<h6>Negative Cosine</h6>
 <p>Negates the cosine output.</p>
+</section>
 </section>
 </section>
 <section id="amplitude-mode" class="level4">
@@ -290,27 +299,30 @@ affected by the choice of Noise Shaping.</p>
 <h5>Full_Range</h5>
 <p>Selects the maximum possible amplitude.</p>
 </section>
-</section>
-<section id="unit_circle" class="level4">
-<h4>Unit_Circle</h4>
+<section id="unit_circle" class="level5">
+<h5>Unit_Circle</h5>
 <p>Selects an exact power-of-two amplitude, which is about one half the
 Full_Range amplitude.</p>
 </section>
 </section>
+</section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
-<section id="memory-type" class="level4">
-<h4>Memory Type</h4>
+<section id="implementation-options" class="level4">
+<h4>Implementation Options</h4>
+<section id="memory-type" class="level5">
+<h5>Memory Type</h5>
 <p>Select between Auto, Distributed_ROM, or Block_ROM.</p>
 </section>
-<section id="optimization-goal" class="level4">
-<h4>Optimization Goal</h4>
+<section id="optimization-goal" class="level5">
+<h5>Optimization Goal</h5>
 <p>Select between Auto, Area, or Speed.</p>
 </section>
-<section id="dsp48-use" class="level4">
-<h4>DSP48 Use</h4>
+<section id="dsp48-use" class="level5">
+<h5>DSP48 Use</h5>
 <p>Select between Minimal, or Maximal. When set to Maximal, XtremeDSP
 slices are used to achieve to maximum performance.</p>
+</section>
 </section>
 <section id="latency-options" class="level4">
 <h4>Latency Options</h4>
@@ -346,16 +358,21 @@ cycle resets the core, but the response to the pulse is not in the cycle
 immediately following.</p>
 </section>
 </section>
-<section id="use-explicit-period" class="level4">
-<h4>Use explicit period</h4>
+<section id="explicit-sample-period" class="level4">
+<h4>Explicit Sample Period</h4>
+<section id="use-explicit-period" class="level5">
+<h5>Use explicit period</h5>
 <p>When checked, the DDS Compiler block uses the explicit sample period
 that is specified in the dialog entry box below.</p>
 </section>
 </section>
+</section>
 <section id="axi-channel-options-tab" class="level3">
 <h3>AXI Channel Options tab</h3>
-<section id="tlast" class="level4">
-<h4>TLAST</h4>
+<section id="axi-channel-options" class="level4">
+<h4>AXI Channel Options</h4>
+<section id="tlast" class="level5">
+<h5>TLAST</h5>
 <p>Enabled when there is more than one DDS channel (as opposed to AXI
 channel), as TLAST is used to denote the transfer of the last
 time-division multiplied channel of the DDS. Options are as follows.</p>
@@ -386,8 +403,11 @@ configuration data available. This allows the re-configuration to be
 synchronized with the cycle of time-division-multiplexed DDS
 channels.</p>
 </section>
-<section id="output-tready" class="level5">
-<h5>Output TREADY</h5>
+</section>
+<section id="tready" class="level5">
+<h5>TREADY</h5>
+<section id="output-tready" class="level6">
+<h6>Output TREADY</h6>
 <p>When selected, the output channels will have a TREADY and hence
 support the full AXI handshake protocol with inherent back-pressure. If
 there is an input PHASE channel, its TREADY is also determined by this
@@ -395,8 +415,8 @@ control, so that the datapath from input PHASE channel to output
 channels as a whole supports backpressure or not.</p>
 </section>
 </section>
-<section id="tuser-options" class="level4">
-<h4>TUSER Options</h4>
+<section id="tuser-options" class="level5">
+<h5>TUSER Options</h5>
 <p>Select one of the following options for the Input, DATA Output, and
 PHASE Output.</p>
 <section id="not_required-1" class="level6">
@@ -428,19 +448,21 @@ of the chan_id field. For example, 7 channels will require 3 bits.</p>
 from input to output untouched by the DDS.</p>
 </section>
 </section>
-<section id="synchronization-mode" class="level4">
-<h4>Synchronization Mode</h4>
-<section id="on_vector" class="level5">
-<h5>On_Vector:</h5>
-<p>In this mode, the re-configuration data is applied when the channel
-starts a new cycle of time-division-multiplexed channels.</p>
+<section id="config-channel-options" class="level5">
+<h5>Config Channel Options</h5>
+<section id="synchronization-mode" class="level6">
+<h6>Synchronization Mode</h6>
+<ul>
+<li><p>On_Vector:<br />
+In this mode, the re-configuration data is applied when the channel
+starts a new cycle of time-division-multiplexed channels.</p></li>
+<li><p>On_Packet:<br />
+In this mode, available when TLAST is set to Packet Framing, the TLAST
+channel will trigger the re-configuration. This mode is targeted at the
+case where it is to be associated with the packets implied by the input
+TLAST indicator.</p></li>
+</ul>
 </section>
-<section id="on_packet" class="level5">
-<h5>On_Packet:</h5>
-<p>In this mode, available when TLAST is set to Packet Framing, the
-TLAST channel will trigger the re-configuration. This mode is targeted
-at the case where it is to be associated with the packets implied by the
-input TLAST indicator.</p>
 </section>
 </section>
 </section>
@@ -456,16 +478,15 @@ Phase_Generator_and_SIN_COS_LUT is selected as the Configuration Options
 field on the Basic tab, the Parameter Selection on the Basic tab is set
 to Hardware Parameters and Phase Increment Programmability field on the
 Phase Offset Angles tab is set to Fixed or Programmable.</p>
-</section>
-<section id="output-frequencies-mhz" class="level4">
-<h4>Output frequencies (MHz)</h4>
+<section id="output-frequencies-mhz" class="level5">
+<h5>Output frequencies (MHz)</h5>
 <p>For each channel, an independent frequency can be entered into an
 array. This field is activated when Parameter Selection on the Basic tab
 is set to System Parameters and Phase Increment Programmability is Fixed
 or Programmable.</p>
 </section>
-<section id="phase-angle-increment-values" class="level4">
-<h4>Phase Angle Increment Values</h4>
+<section id="phase-angle-increment-values" class="level5">
+<h5>Phase Angle Increment Values</h5>
 <p>This field is activated when Phase_Generator_and_SIN_COS_LUT is
 selected as the Configuration Options field on the Basic tab, the
 Parameter Selection on the Basic tab is set to Hardware Parameters and
@@ -475,6 +496,7 @@ range is 0 to the weight of the accumulator, for example,
 2Phase_Width-1.</p>
 </section>
 </section>
+</section>
 <section id="phase-offset-angles-tab" class="level3">
 <h3>Phase Offset Angles tab</h3>
 <section id="phase-offset-programmability" class="level4">
@@ -482,28 +504,27 @@ range is 0 to the weight of the accumulator, for example,
 <p>Specifies the phase offset to be None, Fixed, Programmable or
 Streaming. The choice of Fixed or Programmable adds the channel, data,
 and we input ports to the block.</p>
-</section>
-<section id="phase-offset-angles-x2pi-radians" class="level4">
-<h4>Phase Offset Angles (x2pi radians)</h4>
+<section id="phase-offset-angles-x2pi-radians" class="level5">
+<h5>Phase Offset Angles (x2pi radians)</h5>
 <p>For each channel, an independent offset can be entered into an array.
 The entered values are multiplied by 2π radians. This field is activated
 when Parameter Selection on the Basic tab is set to System Parameters
 and Phase Increment Programmability is Fixed or Programmable.</p>
 </section>
-<section id="phase-angle-offset-values" class="level4">
-<h4>Phase Angle Offset Values</h4>
+<section id="phase-angle-offset-values" class="level5">
+<h5>Phase Angle Offset Values</h5>
 <p>For each channel, an independent offset can be entered into an array.
 The entered values are multiplied by 2π radians. This field is activated
 when Parameter Selection on the Basic tab is set to Hardware Parameters
 and Phase Increment Programmability is Fixed or Programmable.</p>
 </section>
 </section>
+</section>
 <section id="advanced-tab" class="level3">
 <h3>Advanced tab</h3>
-<section id="block-icon-display" class="level4">
-<h4>Block Icon Display</h4>
-<section id="display-shortened-port-names" class="level5">
-<h5>Display shortened port names</h5>
+<p>Block Icon Display</p>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
 <p>This option is ON by default. When unselected, the full AXI name of
 each port is displayed on the block.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
@@ -511,10 +532,12 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>
 </section>
-</section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
 <p>DDS Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg141-dds-compiler&amp;ft:locale=en-US">PG141</a>)</p>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
 </section>
 </body>

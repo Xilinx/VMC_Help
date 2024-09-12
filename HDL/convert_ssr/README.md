@@ -10,6 +10,11 @@ truncating and wrapping do not.
 
 ## Description
 
+Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This blocks enable 1-D vector data support for the primary block
+operation.
+
 The Vector Convert block converts each input sample to a number of a
 desired arithmetic type. For example, a number can be converted to a
 signed (two's complement) or unsigned value.
@@ -49,10 +54,10 @@ Specifies double precision (64 bits).
 Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-#### Exponent width  
+##### Exponent width  
 Specify the exponent width.
 
-#### Fraction width  
+##### Fraction width  
 Specify the fraction width.
 
 #### Quantization  
@@ -93,7 +98,7 @@ is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.
 
 #### Optional Ports  
-##### Provide enable port
+##### Provide enable port: 
 Activates an optional enable (en) pin on the block.
 When the enable signal is not asserted the block holds its current state
 until the enable signal is asserted again or the reset signal is
@@ -109,17 +114,11 @@ select the Pipeline for maximum performance option (described below);
 additional latency is usually implemented as a shift register on the
 output of the block.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector data support for the primary block
-operation.
-
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
 
 #### Performance Parameters  
-##### Pipeline for maximum performance  
+Pipeline for maximum performance  
 The LogiCORE™ can be internally pipelined to optimize for speed
 instead of area. Selecting this option puts all user defined latency
 into the core until the maximum allowable latency is reached. If the
@@ -140,3 +139,7 @@ Boxes](../../GEN/common-options/README.md).
 
 Floating-Point Operator LogiCORE IP Product Guide
 ([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

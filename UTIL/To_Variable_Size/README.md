@@ -16,18 +16,23 @@ output, the output will be an empty variable size signal.
 
 ## Parameters
 
-#### Show Valid Input  
+Show Valid Input  
 If this option is enabled, the block will only accept the input data
 when the valid port is true.
 
-#### Output Size  
+Output Size  
 This specifies the size of the output port.
 
-##### Inherit : Same as Input  
+Inherit : Same as Input  
 If this option is enabled, the block will only accept the input data
 when the valid port is true.
 
-##### Specify Output Size  
+Specify Output Size  
 When this option is selected, you can specify the value of the required
 output size.
 
+**Parent topic:** [Utility Blocks](yjr1649167359223.html)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

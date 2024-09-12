@@ -53,19 +53,22 @@ operation is determined by the sub input port, which must be driven by a
 Boolean signal. When the sub input is 1, the block performs subtraction.
 Otherwise, it performs addition.</p>
 </section>
-<section id="provide-carry-in-port" class="level4">
-<h4>Provide carry-in port</h4>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<section id="provide-carry-in-port" class="level5">
+<h5>Provide carry-in port</h5>
 <p>When selected, allows access to the carry-in port, cin. The carry-in
 port is available only when User defined precision is selected and the
 binary point of the inputs is set to zero.</p>
 </section>
-<section id="provide-carry-out-port" class="level4">
-<h4>Provide carry-out port</h4>
+<section id="provide-carry-out-port" class="level5">
+<h5>Provide carry-out port</h5>
 <p>When selected, allows access to the carry-out port, cout. The
 carry-out port is available only when User defined precision is
 selected, the inputs and output are unsigned, and the number of output
 integer bits equals x, where x = max (integer bits a, integer bits
 b).</p>
+</section>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
@@ -97,8 +100,8 @@ error.</p>
 a reduced number of total bits and/or fractional bits.</p>
 </section>
 </section>
-<section id="arithmetic-type" class="level4">
-<h4>Arithmetic Type</h4>
+<section id="user-defined-precision" class="level4">
+<h4>User-Defined Precision</h4>
 <section id="fixed-point-precision" class="level5">
 <h5>Fixed-point Precision</h5>
 <section id="signed-2s-comp" class="level6">
@@ -109,14 +112,11 @@ a reduced number of total bits and/or fractional bits.</p>
 <h6>Unsigned:</h6>
 <p>The output is an Unsigned number.</p>
 </section>
-</section>
-</section>
-<section id="fixed-point-precision-1" class="level4">
-<h4>Fixed-point Precision</h4>
-<section id="number-of-bits" class="level5">
-<h5>Number of bits</h5>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
+</section>
 <section id="binary-point" class="level6">
 <h6>Binary point</h6>
 <p>Position of the binary point. in the fixed-point output.</p>
@@ -145,13 +145,15 @@ performance or area.</p>
 <p><strong>Note</strong>: For Floating-point operations, the block
 always uses the Floating-point Operator core.</p>
 </section>
-<section id="implement-using" class="level4">
-<h4>Implement using</h4>
+<section id="core-parameters" class="level4">
+<h4>Core Parameters</h4>
+<section id="implement-using" class="level5">
+<h5>Implement using</h5>
 <p>Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
 available in the target device. The default is Fabric.</p>
 </section>
-<section id="pipeline-for-maximum-performance" class="level4">
-<h4>Pipeline for maximum performance</h4>
+<section id="pipeline-for-maximum-performance" class="level5">
+<h5>Pipeline for maximum performance</h5>
 <p>The LogiCORE™ can be internally pipelined to optimize for speed
 instead of area. Selecting this option puts all user defined latency
 into the core until the maximum allowable latency is reached. If the
@@ -167,10 +169,14 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
 </section>
 </section>
+</section>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
 <p>Adder/Subtractor LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg120-c-addsub&amp;ft:locale=en-US">PG120</a>)</p>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
 </section>
 </body>

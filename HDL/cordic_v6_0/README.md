@@ -79,8 +79,7 @@ You can select Display shortened port names to trim the length of the
 ## Parameters
 
 ### Page 1 tab  
-#### Function 
-
+#### Functional selection  
 ##### Rotate  
 When selected, the input vector, (real, imag), is rotated by the input
 angle using the CORDIC algorithm. This generates the scaled output
@@ -119,7 +118,8 @@ imag) and is unrelated to a trigonometric angle.
 When selected a simplified CORDIC algorithm is used to calculate the
 positive square root of the input.
 
-#### Configuration  
+#### Architectural configuration  
+Configuration:
 
 ##### Word_Serial  
 Select for a hardware result with a small area.
@@ -127,7 +127,7 @@ Select for a hardware result with a small area.
 ##### Parallel  
 Select for a hardware result with high throughput.
 
-#### Pipeline 
+#### Pipelining mode  
 ##### No_Pipelining  
 The CORDIC core is implemented without pipelining.
 
@@ -163,12 +163,13 @@ The phase is expressed as fixed-point 2’s complement number with an
 integer width of 3-bits, with pi-radian units. One scaled-radian equals
 Pi \* 1 radians.
 
-#### Input width  
+#### Input/Output Options  
+##### Input width  
 Controls the width of the input ports cartesian_tdata_real,
 cartesian_tdata_imag, and phase_tdata_phase. The Input width range 8 to
 48 bits.
 
-#### Output width  
+##### Output width  
 Controls the width of the output ports dout_tdata_real, dout_tdata_imag,
 and dout_tdata_phase. The Output width range 8 to 48 bits.
 
@@ -188,18 +189,18 @@ The real, imag, and phase outputs are rounded toward the nearest even
 number (1/2 rounded down and 3/2 is rounded up).
 
 ### Page 2 tab  
-
-#### Iterations  
+#### Advanced Configuration Parameters  
+##### Iterations  
 Controls the number of internal add-sub iterations to perform. When set
 to zero, the number of iterations performed is determined automatically
 based on the required accuracy of the output.
 
-#### Precision  
+##### Precision  
 Configures the internal precision of the add-sub iterations. When set to
 zero, internal precision is determined automatically based on the
 required accuracy of the output and the number of internal iterations.
 
-#### Compensation scaling  
+##### Compensation scaling  
 Controls the compensation scaling module used to compensate for CORDIC
 magnitude scaling. CORDIC magnitude scaling affects the Vector Rotation
 and Vector Translation functional configurations, and does not affect
@@ -207,7 +208,7 @@ the SinCos, SinhCosh, ArcTan, ArcTanh and Square Root functional
 configurations. For the latter configurations, compensation scaling is
 set to No Scale Compensation.
 
-#### Coarse rotation  
+##### Coarse rotation  
 Controls the instantiation of the coarse rotation module. Instantiation
 of the coarse rotation module is the default for the following
 functional configurations: Vector rotation, Vector translation, Sin and
@@ -275,24 +276,24 @@ Pass the logical OR of all the present TLAST input ports.
 ###### AND_all_TLASTS  
 Pass the logical AND of all the present TLAST input ports
 
-  
-#### AXI behavior  
-##### NonBlocking  
+#### Flow control  
+##### AXI behavior  
+###### NonBlocking  
 Selects “Non-Blocking” mode. In this mode, the lack of data on one input
 channel does not block the execution of an operation if data is received
 on another input channel.
 
-##### Blocking  
+###### Blocking  
 Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
 another input channel.
 
-#### Optimization  
+##### Optimization  
 When NonBlocking mode is selected, the following optimization options
 are activated:
-##### Resources  
+###### Resources  
 Core is configured for minimum resources.
-##### Performance  
+###### Performance  
 Core is configured for maximum performance.
 
 
@@ -306,3 +307,7 @@ port is displayed on the block icon.
 
 CORDIC LogiCORE IP Product Guide
 ([PG105](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg105-cordic&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

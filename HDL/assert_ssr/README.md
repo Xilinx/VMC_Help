@@ -34,16 +34,16 @@ Floating-point.
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
 
-#### Fixed-point Precision  
-##### Number of bits
+##### Fixed-point Precision  
+###### Number of bits
 Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-##### Binary point
+###### Binary point
 Position of the binary point in the fixed-point output.
 
-#### Floating-point Precision  
-##### Single
+##### Floating-point Precision  
+###### Single
 Specifies single precision (32 bits).
 
 ###### Double  
@@ -53,11 +53,12 @@ Specifies double precision (64 bits).
 This block is listed in the following: Activates the field below so you
 can specify the Exponent width and the Fraction width.
 
-#### Exponent width
+###### Exponent width
 Specify the exponent width.
 
-#### Fraction width
+###### Fraction width
 Specify the fraction width.
+
 
 ### Rate  
 #### Assert rate  
@@ -88,3 +89,7 @@ Boxes](../../GEN/common-options/README.md).
 
 The Vector Assert block does not use a LogiCORE™™ and does not
 use resources when implemented in hardware.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -14,32 +14,32 @@ divisor. Both inputs must be of the same data type.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows
 
-
-#### Flow Control  
-##### Blocking  
+#### AXI Interface  
+##### Flow Control  
+###### Blocking  
 Selects “Blocking” mode. In this mode, the lack of data on one input
 channel does block the execution of an operation if data is received on
 another input channel.
 
-##### NonBlocking  
+###### NonBlocking  
 Selects “Non-Blocking” mode. In this mode, the lack of data on one input
 channel does not block the execution of an operation if data is received
 on another input channel.
 
- 
-#### Algorithm Type  
-##### Radix2
+##### Fixed-point Options  
+###### Algorithm Type  
+* Radix2:
 This is non-restoring integer division using integer operands and allows
 a remainder to be generated. This option is recommended for operand
 widths less than 16 bits. This option supports both unsigned (two's
 complement) and signed divisor and dividend inputs.
-##### High_Radix
+* High_Radix:
 This option is recommended for operand widths greater than 16 bits,
 though the implementation requires the use of DSP48 (or variant)
 primitives. This option only supports signed (two's complement) divisor
 and dividend inputs.
 
-##### LutMult
+* LutMult: 
 A simple lookup estimate of the reciprocal of the divisor followed by a
 multiplier. Only remainder output type is supported because of the bias
 required in the reciprocal estimate. This bias would introduce an offset
@@ -55,13 +55,13 @@ primitives. Supports unsigned or two's complement signed numbers.
 For Fixed-point division, this entry determines the number of bits in
 the fractional part of the output.
 
-### Optional Ports  
+#### Optional Ports  
 
-#### Dividend Channel Ports  
-##### Has TLAST
+##### Dividend Channel Ports  
+###### Has TLAST
 Adds a TLAST port to the Input channel.
 
-##### Has TUSER
+###### Has TUSER
 Adds a TUSER port to the Input channel.
 
 #### Divisor Channel Ports  
@@ -78,7 +78,7 @@ Adds an enable port to the block interface.
 ##### Has Result TREADY  
 Adds a TREADY port to the Result channel.
 
-#### Output TLAST behavior  
+##### Output TLAST behavior  
 Determines the behavior of the result_tlast output port.
 
 ###### **Pass_A_TLAST** 
@@ -114,3 +114,7 @@ Boxes](../../GEN/common-options/README.md).
 
 Floating-Point Operator LogiCORE IP Product Guide
 ([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

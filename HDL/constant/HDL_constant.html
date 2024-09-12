@@ -65,23 +65,25 @@ implemented as an unsigned number, a negative value as signed.</p>
 <h4>Output Type</h4>
 <p>Specifies the data type of the output. Can be Boolean, Fixed-point,
 or Floating-point.</p>
-</section>
-<section id="arithmetic-type" class="level4">
-<h4>Arithmetic Type</h4>
+<section id="arithmetic-type" class="level5">
+<h5>Arithmetic Type</h5>
 <p>If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp), Unsigned, or DSP48 instruction as the Arithmetic Type.</p>
-<section id="number-of-bits" class="level5">
-<h5>Number of bits</h5>
+</section>
+<section id="fixed-point-precision" class="level5">
+<h5>Fixed-point Precision</h5>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
 </section>
-<section id="binary-point" class="level5">
-<h5>Binary point</h5>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
 <p>Position of the binary point in the fixed-point output.</p>
 </section>
 </section>
-<section id="floating-point-precision" class="level4">
-<h4>Floating-point Precision</h4>
+<section id="floating-point-precision" class="level5">
+<h5>Floating-point Precision</h5>
 <section id="single" class="level6">
 <h6>Single</h6>
 <p>Specifies single precision (32 bits).</p>
@@ -95,20 +97,24 @@ where bit zero is the least significant bit.</p>
 <p>Activates the field below so you can specify the Exponent width and
 the Fraction width.</p>
 </section>
-</section>
-<section id="exponent-width" class="level4">
-<h4>Exponent width</h4>
+<section id="exponent-width" class="level6">
+<h6>Exponent width</h6>
 <p>Specifies the exponent width.</p>
 </section>
-<section id="fraction-width" class="level4">
-<h4>Fraction width</h4>
+<section id="fraction-width" class="level6">
+<h6>Fraction width</h6>
 <p>Specifies the fraction width.</p>
+</section>
+</section>
+<section id="sample-period" class="level5">
+<h5>Sample Period</h5>
 <section id="sampled-constant" class="level6">
 <h6>Sampled Constant</h6>
 <p>Allows a sample period to be associated with the constant output and
 inherited by blocks that the constant block drives. (This is useful
 mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.)</p>
+</section>
 </section>
 </section>
 </section>
@@ -120,6 +126,9 @@ sample periods are used to establish hardware clock periods.)</p>
 use the Opmode block.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
 </section>
 </section>

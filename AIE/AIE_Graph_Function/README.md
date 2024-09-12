@@ -13,23 +13,31 @@ AI Engine/User-Defined Functions
 The AIE Graph block allows you to import an AI Engine program that
 consists of a dataflow graph specification written in C++.
 
-<div class="noteBox">
-This block does not support graph classes with 'input_plio' or 'output_plio' ports.
-</div>
-
 ## Parameters
 
+#### Graph file  
+Specifies whether the graph import should be done using the header file
+(\*.h) or using source file (\*.cpp). By default the header file is
+selected.
+
 #### Graph Header file(\*.h)  
-This is a mandatory string that specifies the file (.h), where the
+This is the mandatory string that specifies the file (.h), where the
 application graph class is defined and the Adaptive Data Flow (ADF)
-header (adf.h), kernel function prototypes are included.
+header (adf.h), kernel function prototypes are included. This parameter
+is only visible when you choose the Header file (\*.h) option in the
+Graph file.
+
+#### Graph Source file (\*.cpp)  
+This is the mandatory string that specifies the file (.cpp), where the adf
+dataflow graph is instantiated. This file should contain the main()
+function, from where the dataflow graph initializes and runs. This
+option is available only when the Source file (\*.cpp) is selected in
+Graph file.
 
 #### Graph class  
 This is a mandatory string that specifies the name of the graph class.
-
-<div class="noteBox">
-Use the namespace if the class definition is at the namespace scope, like "mynamespace::myclass"; otherwise, no namespace specification is required.
-</div>
+This parameter is only visible when you choose the Header file (\*.h)
+option in the Graph file.
 
 #### Graph search paths  
 This is a vector of strings that specifies the search paths where header
@@ -46,5 +54,6 @@ accepted and multiple can be selected: ‘-D\<name\>’ and
 with the '-D' string and if the option `<definition>` value is not
 provided, it is assumed to be 1.
 
-## Examples
-[Importing AI Engine graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Graph)
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -40,27 +40,36 @@ vertical-align: middle;
 <h2>Description</h2>
 <p>The AIE Graph block allows you to import an AI Engine program that
 consists of a dataflow graph specification written in C++.</p>
-<div class="noteBox">
-This block does not support graph classes with &#39;input_plio&#39; or &#39;output_plio&#39; ports.
-</div>
-
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
+<section id="graph-file" class="level4">
+<h4>Graph file</h4>
+<p>Specifies whether the graph import should be done using the header
+file (*.h) or using source file (*.cpp). By default the header file is
+selected.</p>
+</section>
 <section id="graph-header-fileh" class="level4">
 <h4>Graph Header file(*.h)</h4>
-<p>This is a mandatory string that specifies the file (.h), where the
+<p>This is the mandatory string that specifies the file (.h), where the
 application graph class is defined and the Adaptive Data Flow (ADF)
-header (adf.h), kernel function prototypes are included.</p>
+header (adf.h), kernel function prototypes are included. This parameter
+is only visible when you choose the Header file (*.h) option in the
+Graph file.</p>
+</section>
+<section id="graph-source-file-cpp" class="level4">
+<h4>Graph Source file (*.cpp)</h4>
+<p>This is the mandatory string that specifies the file (.cpp), where
+the adf dataflow graph is instantiated. This file should contain the
+main() function, from where the dataflow graph initializes and runs.
+This option is available only when the Source file (*.cpp) is selected
+in Graph file.</p>
 </section>
 <section id="graph-class" class="level4">
 <h4>Graph class</h4>
 <p>This is a mandatory string that specifies the name of the graph
-class.</p>
-<div class="noteBox">
-Use the namespace if the class definition is at the namespace scope, like &quot;mynamespace::myclass&quot;; otherwise, no namespace specification is required.
-</div>
-
+class. This parameter is only visible when you choose the Header file
+(*.h) option in the Graph file.</p>
 </section>
 <section id="graph-search-paths" class="level4">
 <h4>Graph search paths</h4>
@@ -80,12 +89,10 @@ accepted and multiple can be selected: ‘-D&lt;name&gt;’ and
 begin with the &#39;-D&#39; string and if the option
 <code>&lt;definition&gt;</code> value is not provided, it is assumed to
 be 1.</p>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<p><a href="matlab:XmcExampleApi.getExample(&#39;AIE_Graph&#39;)">Importing AI
-Engine graph</a></p>
 </section>
 </section>
 </body>

@@ -46,14 +46,17 @@ for AI Engines.</p>
 <h3>Main</h3>
 <section id="input-data-typeoutput-data-type" class="level4">
 <h4>Input data type/Output data type</h4>
-<p>Describes the type of individual data samples input to and output
+<ul>
+<li>Describes the type of individual data samples input to and output
 from the filter function. int16, cint16, int32, cint32, float,
-cfloat.</p>
+cfloat.</li>
+</ul>
 </section>
 <section id="filter-coefficients-data-type" class="level4">
 <h4>Filter coefficients data type</h4>
-<p>Describes the type of individual coefficients of the filter taps. It
-should be one of int16, cint16, int32, cint32, float, cfloat and must
+<ul>
+<li><p>Describes the type of individual coefficients of the filter taps.
+It should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:</p>
 <ul>
 <li>Complex types are only supported when the Input/Output data type is
@@ -64,51 +67,66 @@ also a 32-bit type.</li>
 Input/Output data type is an integer type.</li>
 <li>Filter coefficients data type must be a float type if the
 Input/Output data type is a float type.</li>
+</ul></li>
 </ul>
 </section>
 <section id="specify-filter-coefficients-via-input-port" class="level4">
 <h4>Specify filter coefficients via input port</h4>
-<p>When this option is enabled, the tool allows you to specify
-reloadable filter coefficients via the input port.</p>
+<ul>
+<li>When this option is enabled, the tool allows you to specify
+reloadable filter coefficients via the input port.</li>
+</ul>
 </section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
-<p>This field should only be supplied for the first half of the filter
+<ul>
+<li>This field should only be supplied for the first half of the filter
 length plus the center tap for odd lengths i.e., taps[] = {c0, c1, c2,
 ..., cN [, cCT]} where N = (FILTER_LENGTH)/2 and cCT is the center tap
 where FILTER_LENGTH is odd. For example, a 7-tap filter might use coeffs
 (1, 3, 2, 5, 2, 3, 1). This could be input as taps[]= {1,3,2,5} because
 the context of symmetry allows the remaining coefficients to be
-inferred.</p>
+inferred.</li>
+</ul>
 </section>
 <section id="filter-length" class="level4">
 <h4>Filter length</h4>
-<p>This is an unsigned integer which describes the number of taps in the
-filter. The filter length must be in the range 4 to 240 and must be an
-integer multiple of the decimation factor.</p>
+<ul>
+<li>This is an unsigned integer which describes the number of taps in
+the filter. The filter length must be in the range 4 to 240 and must be
+an integer multiple of the decimation factor.</li>
+</ul>
 </section>
 <section id="decimation-factor" class="level4">
 <h4>Decimation factor</h4>
-<p>An unsigned integer which describes the decimation factor of the
+<ul>
+<li>An unsigned integer which describes the decimation factor of the
 filter. It must be in the range 2 to 3. For larger factors, use the FIR
-Asymmetric decimation filter.</p>
+Asymmetric decimation filter.</li>
+</ul>
 </section>
 <section id="input-window-size-number-of-samples" class="level4">
 <h4>Input window size (Number of samples)</h4>
-<p>Describes the number of samples used as an input to the filter
+<ul>
+<li>Describes the number of samples used as an input to the filter
 function. The number of values in the output window will be the input
 window size divided by decimation factor by virtue of the decimation
-factor.</p>
+factor.</li>
+</ul>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
-<p>Describes power of 2 shift down applied to the accumulation of FIR
-terms before output. It must be in range 0 to 61.</p>
+<ul>
+<li>Describes power of 2 shift down applied to the accumulation of FIR
+terms before output. It must be in range 0 to 61.</li>
+</ul>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Describes the selection of rounding to be applied during the shift
-down stage of processing. The rounding options are as follows:</p>
+<ul>
+<li>Describes the selection of rounding to be applied during the shift
+down stage of processing. The rounding options are as follows:</li>
+</ul>
 <ol type="1">
 <li>Floor (truncate)</li>
 <li>Ceiling</li>
@@ -119,13 +137,33 @@ down stage of processing. The rounding options are as follows:</p>
 <li>Round convergent to even</li>
 <li>Round convergent to odd</li>
 </ol>
-<p>Modes 2 to 7 round to the nearest integer. They differ only in how
-they round for the value of 0.5.</p>
+<ul>
+<li>Modes 2 to 7 round to the nearest integer. They differ only in how
+they round for the value of 0.5.</li>
+</ul>
 </section>
-<section id="number-of-cascade-stages" class="level4">
-<h4>Number of cascade stages</h4>
-<p>This determines the number of kernels the FIR will be divided over in
-series to improve throughput.</p>
+</section>
+<section id="advanced" class="level3">
+<h3>Advanced</h3>
+<section id="target-input-throughput-msps" class="level4">
+<h4>Target input throughput (MSPS)</h4>
+<ul>
+<li>Specifies the rate at which data samples should be processed. The
+default value is 200.</li>
+</ul>
+</section>
+<section id="specify-the-number-of-cascade-stages" class="level4">
+<h4>Specify the number of cascade stages</h4>
+<ul>
+<li>When this option is not enabled, the tool will determine the filter
+configuration that best achieves the specified input sampling rate. When
+the option is enabled and the &#39;Number of cascade stages&#39; is specified,
+the tool will guarantee the same. In such cases, however, the specified
+input sampling rate constraint may not be achieved.</li>
+</ul>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
 </section>
 </section>

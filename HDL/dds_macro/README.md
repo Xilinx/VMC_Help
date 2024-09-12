@@ -60,14 +60,14 @@ Specifies the frequency, either in Hertz or radians. The default is 1.
 #### Phase Offset  
 Specifies the phase shift, either in Hertz or radians. The default is 0.
 
-#### Output Selection  
-##### Sine_and_Cosine  
+### Output Selection  
+#### Sine_and_Cosine  
 Places both a sine and cosine output port on the block.
 
-##### Sine  
+#### Sine  
 Places only a sine output port on the block.
 
-##### Cosine  
+#### Cosine  
 Places only a cosine output port on the block.
 
 #### Spurious Free Dynamic Range (SFDR)  
@@ -121,3 +121,7 @@ Number of offset samples = (π/2) \* (50/2π) = 50/4
 
 LogiCORE IP DDS Compiler v6.0 Product
 Guide [(PG141)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

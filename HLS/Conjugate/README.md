@@ -34,3 +34,7 @@ imaginary part changes.
 ## Parameters
 
 The Conjugate block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

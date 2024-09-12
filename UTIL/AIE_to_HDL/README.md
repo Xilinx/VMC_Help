@@ -14,21 +14,20 @@ Utilities/Connectors
 
 This block provides an interface between the AI Engine and HDL blocks.
 
-- One input to the AIE to HDL block is a variable size signal that is produced by an
-  AIE block. Another input is a tready signal which indicates that the
+- Input to the AIE to HDL block is a variable size signal (data) from
+  AIE blocks along with the tready signal which indicates that the
   consumer (HDL) can accept a transfer.
-- Output from the AIE to HDL block is tdata and tvalid. The tvalid signal indicates
+- Output from the AIE to HDL block is tdata and tvalid that indicates
   the producer has valid data available. A transfer takes place when
   both tvalid and tready boolean signals are set to TRUE(1).
 
-
-<div class="noteBox">
 If the tready signal is FALSE (0), the block buffers the input data
 until the tready signal is TRUE(1). If during simulation, the tready
 signal remains FALSE(0) for an extended amount of time, eventually the
 internal buffer of the block will overflow and the simulation will stop.
-</div>
 
+The tdata output is scalar but the data input is a variable size signal,
+making this block a multirate block.
 
 If the HDL domain takes N clock cycles to process one input sample,
 tready will be TRUE(1) for one cycle out of the N clock cycles. In this
@@ -37,16 +36,13 @@ times larger than the HDL domain sample period (specified in the HDL
 input gateway blocks) to avoid overflow of the internal buffers of the
 block.
 
-Typically, overflow occurs when there are more incoming samples to the AIE to HDL block than there are outgoing samples. To address this issue, carefully examine the tready signal connected to the AIE to HDL block, such as by connecting it to a scope. If the tready signal remains at zero, review the HDL design. However, if the tready signal behaves as expected and is not always zero, one possible solution is to increase the sampling time of the input to the AIE to HDL block (and hence reduce the rate of the incoming samples). This can be achieved by adjusting the sample time of the source block that ultimately leads into the AIE to HDL block.
-
-
 ## Topology
 
 The image below depicts the topology of the connection between the AI
 Engine to HDL domain.
 
 Note: The PLIO width should match the bitwidth of the output data type
-of the AIE to HDL block and also the output bitwidth of the tdata Gateway In
+of the AIE to HDL block and also the output type of the tdata Gateway In
 block.
 
   
@@ -54,7 +50,7 @@ block.
 
 ## Parameters
 
-#### Output Data Type  
+Output Data Type  
 The following table shows different Output data types that are supported
 by AIE to HDL blocks and the corresponding input data type to the block.
 
@@ -66,10 +62,13 @@ by AIE to HDL blocks and the corresponding input data type to the block.
 | uint64           | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, uint64, single, single(c)        |
 | ufix128          | int8, uint8, int16, uint16, cint16, int32, uint32, cint32, int64, uint64, single, single(c) |
 
-#### Output Sample Time  
+Output Sample Time  
 By default this parameter inherits the sample time from the tready
 input.
 
-## Examples
-For more information on setting this block and examples, refer to
-[AI Engine/HDL examples](https://github.com/Xilinx/Vitis_Model_Composer/tree/blob/Examples/AIENGINE_plus_PL/AIE_HDL).
+Note: For more information on setting this block and examples, refer to
+[GitHub](https://github.com/Xilinx/Vitis_Model_Composer).
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

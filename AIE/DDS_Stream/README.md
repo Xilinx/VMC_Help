@@ -1,4 +1,5 @@
 # DDS Stream
+
   
 ![](./Images/block.png)  
 
@@ -8,81 +9,53 @@ AI Engine/DSP/Stream IO
 
 ## Description
 
-This block implements the Direct Digital Synthesizer (DDS)
-targeted for AI Engines and uses stream interface.
+This block implements the stream-based Direct Digital Synthesizer (DDS)
+targeted for AI Engines.
 
 ## Parameters
 
 ### Main  
-#### Output Data Type
+#### Output Data Type:
 
-Sets the output data type.
+* Describes the type of individual data samples output of the DDS
+  function. It should be `cint16` or `cfloat`.
 
-#### Samples per frame
+#### Output Frame Size (Number of Samples):
 
-Specifies the number of samples in the output frame. The value must be in the range of 8 to 1024 and the default value is 32. Note that for SSR values greater than one, this value is the sum of the sizes of all the outputs. 
+* Specifies the number of samples in the output frame. The value must be
+  in the range `8` to `1024` and the default value is `32`.
 
-<div class="noteBox">
-Increasing the number of samples per frame increases the output throughput.
-</div>
+#### Number of Parallel Outputs (SSR):
 
-#### Number of Parallel Outputs (SSR)
+* This parameter specifies the number of output ports and must be of the
+  form 2^N, where N is a non-negative integer.
 
-This parameter specifies the number of output ports and must be of the form 2^N, where N is a non-negative integer. The number of AI Engine kernels used is equal to the value of SSR parameter.
+#### Phase Increment:
 
-#### Phase Increment
-
-Specifies the phase increment between samples. The value must be in
-  the range 0 to 2^31 and the default value is 0. Phase increment is calculated
-  using the formula (Fo\*(2^N)) / Fs / SSR where:
+- Specifies the phase increment between samples. The value must be in
+  the range `0` to `2^31` and the default value is `0`. Input value
+  `2^31` corresponds to Pi (i.e., 180). Phase increment is calculated
+  using the formula (Fo\*(2^N)) / Fs where:
   - Fo = Output frequency.
   - N = 32, which represents the accumulator width, and it is fixed.
   - Fs = Sampling frequency.
 
-For example, for a sampling frequency of 1 Gsps, output frequency of 100 MHz, and SSR of 4, the _Phase Increment_ should be 2^30/10.  
+#### Initial Phase Offset:
 
-#### Initial Phase Offset
+- Specifies the initial phase offset. The default value is `0`.
 
-Specifies the initial phase offset. The default value is 0.
+#### Sample Time:
 
-#### Sample Time
-Specifies the sample time for the output signal.
+- Specifies the sample time for the block output port. The default value
+  is `-1`.
 
-<div class="noteBox">
-The propagated block sample time in Simulink is equal to "Sample time" multipled by "Samples per frame" divided by "SSR".
-</div>
+### Advanced  
+Target Output Throughput (MSPS):
 
-### Constraints
-Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
+- Specifies the output sampling rate of the DDS function in Mega Samples
+  per Second (MSPS). The value must be in the range `1` to `1000` and
+  the default value is `200`.
 
-<div class="noteBox">
-If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
-</div>
-
-## Examples
-Assume you need the DDS to generate a frequnecy of 250 MHz at 1Gsps. Here is how you set the parameters:
-* Output data type: cint16
-* Samples per frame: 32
-* SSR: 1
-* Phase increment: 2^30 = 250e6*2^32/1e9
-* Initial Phase Offset = 0
-* Sample time = (1e-9)*(Output Window Size)
-
-
-We can use SSR to achieve freqencies larger than 1GHz. For example, assume you need to generate a freqency of 3GHz using 8 outputs. Here is how you set the parameters:
-* Output data type: cint16
-* Samples per frame: 1024
-* SSR: 8
-* Phase increment: 3\*2^29 = (3e9)\*2^32/1e9/SSR
-* Initial Phase Offset = 0
-* Sample time = 1e-9
-
-<img src="./Images/dds_ssr_design.png" width="600">
-<img src="./Images/dds_ssr.png" width="400">
-<img src="./Images/dds_ssr_out.png" width="400">
-
-## Related blocks
-[DDS](../DDS/README.md) is another DDS block that uses buffer interface instead of stream interface.
-
-## References
-This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

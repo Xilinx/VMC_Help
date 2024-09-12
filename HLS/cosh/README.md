@@ -31,3 +31,7 @@ Output has the same dimension and data type as the input.
 ## Parameters
 
 The cosh block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

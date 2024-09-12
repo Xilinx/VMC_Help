@@ -1,13 +1,12 @@
 # Clock Enable Probe
 
-The Clock Enable (CE) Probe provides a mechanism for extracting
+The Xilinx Clock Enable (CE) Probe provides a mechanism for extracting
 derived clock enable signals from Xilinx signals in Model Composer
 models.
 
   
 ![](./Images/block.png)  
 
-## Description
 The probe accepts any Xilinx signal type as input, and produces a Bool
 output signal. The Bool output can be used at any point in the design
 where Bools are acceptable. The probe output is a cyclical pulse that
@@ -30,9 +29,12 @@ in the model is CLK probe that produces a Double representation of the
 hardware system clock. The scope output shows the output from the four
 Clock Enable probes in addition to the CLK probe output.
 
+Figure: Example Model with Attached Analysis Scope
 
   
 ![](./Images/pwa1649233016225.png)  
+
+Figure: Analysis Scope Output
 
 ![](./Images/grp1555432816856.png)
 
@@ -43,3 +45,7 @@ Used to disable multi-cycle path constraints on the generated signal
 from the Clock Enable Probe block. This is typically applied when the
 signal generated is used as separate timing signal that is not
 clock-enable related.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

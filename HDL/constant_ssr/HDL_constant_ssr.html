@@ -34,6 +34,10 @@ vertical-align: middle;
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAABLCAYAAABX0+SCAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEU0lEQVR4nO2dv28bZRiAn3OcYkdBCRFxo0oszJaCQAhQK5BisTIwhSESArbAgCIxFKSuHRnIwlDBRCRA6j/gTP0HKtwFCaI0InHOcR3ss32+O3/H4LoKsZ1cbMe+7+59puTLa/tV/Pi+n+/Z8H3fR4g1iWknIEyfZPcHwzCmmYcwAQZd9JNnf3n0uDiRZITJc2d1ZeDfkucbLgoW9CPIB7tHgqAPFMJP0A+0DAwFkUAY0B2EkUTCYGUpjeupaafSw6nlhDKvoGgjwY2ZBAvzN6adxkBKp/a0UxgabboD223zT6mBrG+OH20kAKjWHY4rTZSYMFa0kgCgUm1RqbZEhDGinQQAZsWmVndR+o7FQoWWEgAclRs0bXfgergQHG0l8H04KDWwHYWPiDAK2koAnV2xp8dWZ44uV4Sh0VoCAKV89osWngK5IAyH9hIAeJ7PfrEmM4YhiYQEAI6r2C/WUeLBldFm2TgItuPxtFhjPj070vO8upgaU0Z6ECkJAJQP5WoLNeIlIU4iRKY7AJhLJXn91susLM1NOxWtiIwEc6kkr92cB8D12lPOJpyUSqW+7ZGQoCtAQg5MX8ja2hqmafa0ay9BGAT4+68/+eSj2/z+y4NLY+v1Gt98tcF3W19MPLZQKJDL5XpE0FqCMAiglOLe3a95+733A8V/f/9bVt98dyqx2Wy2rwjaShAGAaBTtPPjT7+RuXkrUPzW3fu88VawN3bcsfl8vq8IWkoQFgGgI0E6nQ4cn0oHn7mMOzaTyfQVQTsJwiSAjmQyGXZ2doDOGGFzc1MvCUSA0TFNk/X1daAzRtje3tZHAhFgdEzTJJfLUSgUyGaz5PN5MpmMHsvG6ZdmQivAkyd/8PmnG5TLZQwjwcNff+aHBw9ZWHylb/xn6x9i1ar8W3nGxscf8OXWPd65vXYtsefpJwCA0b1JhWEYPHpc5M7qSuhqEZcXU1dayz85tUeqA5j0610XZ9/Lbl3ieQFA09mBMBz9BIAI7iIKg9nd3WV5ebmnPZISDLsNPJucofisMeZswkM/ASCiEsDwIpSrCaymy9JCKpQD0etAxgTPUT7sFy1aTptmq83+kYVSfiwOMYsEdAQ4OLZo2N6LNtvx2Duq0VZ+5I+zx16CfgJ0cVzF3lEVpx3tApdYS3CRAF08z2fv0MJuqciWvMVWgiACvIh9XuDSaHqRLIKNpQRXEaCL7/sclOrUGk7kilxiJ8EwAnTxfTg8aUTu/gixkmAUAc5iVmzMih2ZSUNsJBiXAF0q1RaHJ53Vxdmk3v/GyK4YnmXcAnSp1h0cp43T1nu0qIUEp5Yz0uOtpkuzdT0FKbarf6GLFhK4ngrlfn1U0LszE8aCSCCIBMKAMYF88UW86JEgbIdMhetHugPh/0fOhWhz6behRXWvXLgc6Q4EkUAQCQREAgGRQEAkEBAJBEQCAZFAQCQQEAkERAIBkUBAJBAQCQREAgGRQAD+A7KVEFyKeEWlAAAAAElFTkSuQmCC" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
+<p>Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.</p>
 <p>The Vector Constant block generates a constant that can be a
 fixed-point value, a Boolean value, or a DSP48 instruction. This block
 is similar to the Simulink® Vector Constant block, but can be used to
@@ -97,14 +101,14 @@ where bit zero is the least significant bit.</p>
 <p>Activates the field below so you can specify the Exponent width and
 the Fraction width.</p>
 </section>
-</section>
-<section id="exponent-width" class="level4">
-<h4>Exponent width</h4>
+<section id="exponent-width" class="level5">
+<h5>Exponent width</h5>
 <p>Specifies the exponent width.</p>
 </section>
-<section id="fraction-width" class="level4">
-<h4>Fraction width</h4>
+<section id="fraction-width" class="level5">
+<h5>Fraction width</h5>
 <p>Specifies the fraction width.</p>
+</section>
 </section>
 <section id="sample-period" class="level4">
 <h4>Sample Period</h4>
@@ -114,15 +118,12 @@ the Fraction width.</p>
 inherited by blocks that the Constant block drives. This is useful
 mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.</p>
-</section>
-</section>
-<section id="super-sample-rate-ssr" class="level4">
-<h4>Super Sample Rate (SSR)</h4>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This block
-enables 1-D vector data support for the primary block operation.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
+</section>
 </section>
 </section>
 </section>

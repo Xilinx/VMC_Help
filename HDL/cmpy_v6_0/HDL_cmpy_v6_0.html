@@ -45,8 +45,8 @@ are parameterizable.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<section id="page-1" class="level3">
-<h3>Page 1</h3>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are:</p>
 <section id="channel-a-options" class="level4">
 <h4>Channel A Options</h4>
@@ -163,10 +163,10 @@ selected.</p>
 <h5>Has TUSER</h5>
 <p>Adds a ctrl_user input port to the block.</p>
 </section>
-</section>
-<section id="tuser-width-2" class="level4">
-<h4>TUSER Width</h4>
+<section id="tuser-width-2" class="level5">
+<h5>TUSER Width</h5>
 <p>Specifies the bit width of the ctrl_tuser input port.</p>
+</section>
 </section>
 <section id="output-tlast-behavior" class="level4">
 <h4>Output TLAST Behavior</h4>
@@ -199,8 +199,10 @@ port.</p>
 <p>Pass the logical AND of all the present TLAST input ports.</p>
 </section>
 </section>
-<section id="latency-configuration" class="level4">
-<h4>Latency Configuration</h4>
+<section id="core-latency" class="level4">
+<h4>Core Latency</h4>
+<section id="latency-configuration" class="level5">
+<h5>Latency Configuration</h5>
 <section id="automatic" class="level6">
 <h6>Automatic</h6>
 <p>Block latency is automatically determined by Model Composer by
@@ -212,9 +214,10 @@ pipelining the underlying LogiCORE™ for maximum performance.</p>
 latency.</p>
 </section>
 </section>
-<section id="minimum-latency" class="level4">
-<h4>Minimum Latency</h4>
+<section id="minimum-latency" class="level5">
+<h5>Minimum Latency</h5>
 <p>Entry field for manually specifying the minimum block latency.</p>
+</section>
 </section>
 <section id="control-signals" class="level4">
 <h4>Control Signals</h4>
@@ -246,6 +249,9 @@ m_axis_dout_tvalid.</p>
 <section id="logicore-documentation" class="level2">
 <h2>LogiCORE™ Documentation</h2>
 <p>Complex Multiplier LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg104-cmpy&amp;ft:locale=en-US">PG104</a>)</p>
+<hr />
+<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT</p>
 </section>
 </section>
 </body>

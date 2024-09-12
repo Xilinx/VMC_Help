@@ -33,3 +33,7 @@ The output has the same dimension and data type as the input.
 ## Parameters
 
 The Reciprocal Square root block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

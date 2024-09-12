@@ -25,7 +25,8 @@ error.
 If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
 
-#### Arithmetic type:
+#### Fixed-point Output Type  
+Arithmetic type:
 
 ##### Signed (2’s comp)  
 The output is a Signed (2’s complement) number.
@@ -55,3 +56,7 @@ Boxes](../../GEN/common-options/README.md).
 
 [LogiCORE IP Floating-Point Operator
 v7.1](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

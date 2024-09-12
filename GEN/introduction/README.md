@@ -50,3 +50,7 @@ Composer:
   ([UG1498](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2021.2%20English&url=ug1498-model-composer-sys-gen-tutorial))
 - [Vitis Model Composer Product
   Page](https://www.xilinx.com/products/design-tools/vivado/integration/model-composer.html)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

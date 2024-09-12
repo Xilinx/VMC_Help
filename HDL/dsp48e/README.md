@@ -32,6 +32,7 @@ Specifies if the B input should be taken directly from the b port or
 from the cascaded bcin port. The bcin port can only be connected to
 another DSP48 block.
 
+### Pattern Detection  
 #### Reset p register on pattern detection  
 If selected and the pattern is detected, reset the p register on the
 next cycle
@@ -45,7 +46,7 @@ port.
 Value is used in pattern detection logic which is best described as an
 equality check on the output of the adder/subtractor/logic unit.
 
-#### Pattern attribute  
+##### Pattern attribute  
 A 48-bit value that is used in the pattern detector.
 
 #### Mask Input  
@@ -56,7 +57,7 @@ port.
 ##### Using Mask Attribute (48 bit hex value)  
 48-bit value used to mask out certain bits during pattern detection.
 
-#### Mask attribute  
+##### Mask attribute  
 A 48-bit value used to mask out certain bits during a pattern detection.
 A value of 0 passes the bit, and a value of 1 masks out the bit.
 
@@ -181,25 +182,25 @@ bcout output port. A pipeline of length 0 removes the register from the
 bcout pipeline length. Must be less than or equal to the length of the
 b/bcin pipeline.
 
-#### Pipeline c  
+##### Pipeline c  
 Indicates whether the input from the c port should be registered.
 
-#### Pipeline p  
+##### Pipeline p  
 Indicates whether the outputs p and pcout should be registered.
 
-#### Pipeline multiplier  
+##### Pipeline multiplier  
 Indicates whether the internal multiplier should register its output.
 
-#### Pipeline opmode  
+##### Pipeline opmode  
 Indicates whether the opmode port should be registered.
 
-#### Pipeline alumode  
+##### Pipeline alumode  
 Indicates whether the alumode port should be registered.
 
-#### Pipeline carry in  
+##### Pipeline carry in  
 Indicates whether the carry in port should be registered.
 
-#### Pipeline carry in select  
+##### Pipeline carry in select  
 Indicates whether the carry in select port should be registered.
 
 ### Reset/Enable Ports tab  
@@ -303,3 +304,7 @@ multiplier is encountered in simulation, an error is reported.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

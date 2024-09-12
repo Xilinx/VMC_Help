@@ -71,3 +71,7 @@ set to Real. This parameter is visible only when you set Input to Real.
 
 ##### 0
 The value of the Imag part parameter must be a numeric, real-valued scalar, vector, or matrix.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

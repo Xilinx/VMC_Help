@@ -14,19 +14,20 @@ This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
 Full precision.
 
-##### Full  
+#### Full  
 The block uses sufficient precision to represent the result without
 error.
 
-##### User Defined  
+#### User Defined  
 If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
- 
-#### Arithmetic type
-##### Signed (2’s comp)  
+
+#### Fixed-point Output Type  
+##### Arithmetic type:  
+###### Signed (2’s comp)  
 The output is a Signed (2’s complement) number.
 
-##### Unsigned  
+###### Unsigned  
 The output is an Unsigned number.
 
 #### Fixed-point Precision  
@@ -51,3 +52,7 @@ Options in Block Parameter Dialog Boxes](../../GEN/common-options/README.md).
 
 Floating-Point Operator LogiCORE IP Product Guide
 ([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

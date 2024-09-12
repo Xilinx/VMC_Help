@@ -1,4 +1,5 @@
 # Gateway Out AXI Stream
+
   
 ![](./Images/block.png)  
 
@@ -8,13 +9,23 @@ HDL/Interfaces
 
 ## Description
 
-This block serves as a utility block to simplify the connection between an HDL block with an output AXI Stream port, which comprises three signal lines: the _tdata_ and _tvalid_ signals going in one direction, and the _tready_ signal going in the opposite direction. Note that in the generated HDL code, the block name will be used as the name for the AXIS port.
+This is a utility block that makes connecting between HDL and AI Engine
+domains easier by combining three HDL gateway blocks into one block. It
+is primarily used with the HDL to AIE block. Note that the block name
+will be used as the AXIS name. The following figure shows an example of
+how the block gets connected.
 
-The following figure shows an example of how the block is used to connect HDL blocks to AI Engine blocks.
+Figure: Gateway out AXI Usage
+
   
 ![](./Images/bdd1648735937836.png)  
 
 ## Parameters
 
-#### Sample Time  
-The sample time of the _tready_ signal leaving the block. In general, the value of this parameter should match the sample time of your HDL design.
+Sample Time  
+The sample time of the tready signal on the input side. In general, this
+parameter should match the sample time of your HDL design.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

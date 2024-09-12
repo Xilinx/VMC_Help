@@ -18,7 +18,7 @@ parameterizable.
 
 ## Parameters
 
-### Page 1  
+### Basic tab  
 Parameters specific to the Basic tab are:
 #### Channel A Options  
 ##### Has TLAST  
@@ -105,7 +105,7 @@ Adds a ctrl_tlast input port to the block.
 ##### Has TUSER  
 Adds a ctrl_user input port to the block.
 
-#### TUSER Width  
+##### TUSER Width  
 Specifies the bit width of the ctrl_tuser input port.
 
 #### Output TLAST Behavior  
@@ -130,8 +130,9 @@ Pass the logical OR of all the present TLAST input ports.
 ##### AND_all_TLASTS  
 Pass the logical AND of all the present TLAST input ports.
 
+#### Core Latency  
 
-#### Latency Configuration  
+##### Latency Configuration  
 
 ###### Automatic 
 Block latency is automatically determined by Model Composer by
@@ -140,7 +141,7 @@ pipelining the underlying LogiCORE™ for maximum performance.
 ###### Manual  
 You can adjust the block latency specifying the minimum block latency.
 
-#### Minimum Latency  
+##### Minimum Latency  
 Entry field for manually specifying the minimum block latency.
 
 #### Control Signals  
@@ -167,3 +168,7 @@ m_axis_dout_tvalid.
 
 Complex Multiplier LogiCORE IP Product Guide
 ([PG104](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

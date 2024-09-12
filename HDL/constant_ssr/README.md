@@ -6,6 +6,11 @@ The Vector Constant Block generates vector constant values.
 
 ## Description
 
+Super Sample Rate (SSR): This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector data support for the primary block
+operation.
+
 The Vector Constant block generates a constant that can be a fixed-point
 value, a Boolean value, or a DSP48 instruction. This block is similar to
 the Simulink® Vector Constant block, but can be used to directly drive
@@ -56,25 +61,23 @@ Specifies double precision (64 bits).
 Activates the field below so you can specify the Exponent width and the
 Fraction width.
 
-#### Exponent width  
+##### Exponent width  
 Specifies the exponent width.
 
-#### Fraction width  
+##### Fraction width  
 Specifies the fraction width.
 
 #### Sample Period  
 ##### Sampled Constant  
-Allows a sample period to be associated with the constant output and
+  Allows a sample period to be associated with the constant output and
 inherited by blocks that the Constant block drives. This is useful
 mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector data support for the primary block
-operation.
-
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
