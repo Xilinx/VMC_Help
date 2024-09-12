@@ -83,3 +83,7 @@ frame of input window data samples.
   creates 8 stream inputs and there will be 8 subframe FFTs each of
   point size 2048. The specified FFT size and SSR values should be such
   that FFT size / SSR should not exceed 2048.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

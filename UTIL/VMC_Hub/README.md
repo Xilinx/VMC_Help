@@ -405,3 +405,7 @@ Blocks](model-composer-blocks-gmf1515450958696.html)
 **Parent topic:** [AI Engine Blocks](zwj1602766781134.html)
 
 **Parent topic:** [Utility Blocks](yjr1649167359223.html)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

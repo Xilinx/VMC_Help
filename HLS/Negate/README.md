@@ -30,3 +30,7 @@ The block supports scalar, vector, and two-dimensional matrix data.
 ## Parameters
 
 The Negate block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

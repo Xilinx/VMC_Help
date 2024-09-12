@@ -68,3 +68,7 @@ input.
 
 Note: For more information on setting this block and examples, refer to
 [GitHub](https://github.com/Xilinx/Vitis_Model_Composer).
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

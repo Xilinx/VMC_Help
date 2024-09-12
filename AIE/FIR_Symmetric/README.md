@@ -86,3 +86,7 @@ configuration that best achieves the specified input sampling rate. When
 the option is enabled and the 'Number of cascade stages' is specified,
 the tool will guarantee the same. In such cases, however, the specified
 input sampling rate constraint may not be achieved.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

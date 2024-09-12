@@ -89,3 +89,7 @@ only allow 2^n inputs/output ports.
   that FFT size / SSR should not exceed 2048
 > The Windowing utility accepts only powers of 2 as the number of
   inputs/outputs.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

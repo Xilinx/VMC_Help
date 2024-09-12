@@ -25,3 +25,7 @@ Figure: Gateway out AXI Usage
 Sample Time  
 The sample time of the tready signal on the input side. In general, this
 parameter should match the sample time of your HDL design.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -55,3 +55,7 @@ Multiply input over row dimension. Output is a row matrix.
 Multiply input over column dimension. Output is a column matrix.
 
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -346,3 +346,7 @@ Boxes](../../GEN/common-options/README.md).
 
 Viterbi Decoder LogiCORE IP Product Guide
 ([PG027](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg027_viterbi_decoder&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -150,3 +150,7 @@ Distributed Memory Generator LogiCORE IP Product Guide
 UltraScale Architecture Memory Resources User Guide
 ([UG573](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf)) -
 XPM_MEMORY_SPRAM Macro (UltraRAM)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

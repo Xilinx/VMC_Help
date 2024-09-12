@@ -291,3 +291,7 @@ Boxes](../../GEN/common-options/README.md).
 
 FIR Compiler LogiCORE IP Product Guide
 ([PG149](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=latest;d=pg149-fir-compiler.pdf))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

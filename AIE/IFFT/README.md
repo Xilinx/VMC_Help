@@ -51,3 +51,7 @@ sample rate constraint may not be achieved.
 #### Number of cascade stages  
 * This determines the number of kernels the FFT will be divided over in
 series to improve throughput.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

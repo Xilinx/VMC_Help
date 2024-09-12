@@ -42,3 +42,7 @@ Note:
     int32, int64, x_sfix128, uint8, uint16, uint32, uint64, x_ufix128.
 2.  The input can be real or complex, but complex inputs are supported
     only for int16 and int32.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

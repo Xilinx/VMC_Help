@@ -55,3 +55,7 @@ Target Output Throughput (MSPS):
 - Specifies the output sampling rate of the DDS function in Mega Samples
   per Second (MSPS). The value must be in the range `1` to `1000` and
   the default value is `200`.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

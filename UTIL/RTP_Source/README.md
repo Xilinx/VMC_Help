@@ -43,3 +43,7 @@ When this option is selected, block holds the final value.
 
 Cyclic repetition  
 This option repeats the RTP block data from first value.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

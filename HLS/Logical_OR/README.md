@@ -32,3 +32,7 @@ a Boolean result on the output.
 ## Parameters
 
 The Logical OR block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

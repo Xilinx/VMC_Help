@@ -48,3 +48,7 @@ Boxes](../../GEN/common-options/README.md).
 An error is reported when the number of output bits cannot be divided
 evenly by the number of input bits. The minimum latency for this block
 is zero.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

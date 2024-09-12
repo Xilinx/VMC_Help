@@ -66,3 +66,7 @@ Samples per output frame
 This determines the number of samples to be queued in the buffer before
 the block updates the frame. The size of the output frame should
 generally match the input size of the consuming AI Engine block.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

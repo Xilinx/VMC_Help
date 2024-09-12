@@ -30,3 +30,7 @@ Variable Name
 Using this parameter, you can specify the name for workspace variable.
 
 **Parent topic:** [Utility Blocks](yjr1649167359223.html)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

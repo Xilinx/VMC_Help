@@ -220,3 +220,7 @@ set too low, then the simulation results are incorrect. The above model
 begins to fail when the Simulink system period setting is reduced below
 5e-7, which is the point at which Model Composer resorts to delta-delay
 stepping of the black boxes for data propagation.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

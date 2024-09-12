@@ -166,3 +166,7 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
   the operation over). This allows resources to be traded for higher
   performance, but the specified input sampling rate constraint may not
   be achieved. The value must be in the range of 1 to 9.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

@@ -90,3 +90,7 @@ be of the form 2^N, where N is a non-negative integer.
 
   - Specifies the number of cascade stages. The tool will guarantee the
   same.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

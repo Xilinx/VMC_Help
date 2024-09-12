@@ -45,3 +45,7 @@ When this option is selected, you can specify the value of the required
 output size.
 
 **Parent topic:** [Utility Blocks](yjr1649167359223.html)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

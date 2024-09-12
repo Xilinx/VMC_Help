@@ -183,3 +183,7 @@ are as follows.
 | RGB          | R, G, B                 |
 
 Table 3. Video Component Option
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

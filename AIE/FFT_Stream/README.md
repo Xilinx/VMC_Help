@@ -74,3 +74,7 @@ a positive integer.
   the operation over). This allows resources to be traded for higher
   performance, but the specified input sampling rate constraint may not
   be achieved. The value must be in the range of `1` to `9`.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

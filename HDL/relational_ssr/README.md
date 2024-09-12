@@ -27,3 +27,7 @@ Boxes](../../GEN/common-options/README.md).
 
 [LogiCORE IP Floating-Point Operator
 v7.1](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US)
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

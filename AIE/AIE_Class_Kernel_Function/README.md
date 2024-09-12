@@ -35,3 +35,7 @@ This parameter allows use of environment variables while specifying paths for th
 Optional preprocessor arguments for downstream compilation with specific preprocessor options.
 
 The following two preprocessor option formats are accepted and multiple can be selected: -D<name> and -D<name>=<definition> separated by a comma. That is, the optional argument must begin with -D and if the option <definition> value is not provided, it is assumed to be 1.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

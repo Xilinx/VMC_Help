@@ -94,3 +94,7 @@ Window size. The dimensions of the output are as follows:
 - Min+Mwin-1, Min+Nwin-1 if Full is selected for Output size.
 - Min, Nin if Same as Input is selected for Output size.
 - Min-Mwin+1, Min-Nwin+1 if Valid is selected for Output size.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

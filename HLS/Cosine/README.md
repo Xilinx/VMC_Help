@@ -30,3 +30,7 @@ output is fixed point type with integer width fixed as 2.
 ## Parameters
 
 The Cosine block has no parameters to set.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

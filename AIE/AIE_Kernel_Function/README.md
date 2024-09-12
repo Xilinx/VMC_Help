@@ -41,3 +41,7 @@ parameter T, and a non-type (integral) template parameter N.
 
 
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

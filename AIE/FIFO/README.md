@@ -21,3 +21,7 @@ combination of the two.
 
 #### FIFO Depth (32-bit words)  
 Should be a positive integer value and the default value is `0`.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

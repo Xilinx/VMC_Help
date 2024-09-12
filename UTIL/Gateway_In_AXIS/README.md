@@ -29,3 +29,7 @@ receiving HDL design input.
 Sample Time  
 The output sample time. Refer to the AIE to HDL block help to learn more
 how to set this parameter.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

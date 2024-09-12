@@ -99,3 +99,7 @@ The Accumulator block always has a latency of 1.
 
 Accumulator LogiCORE IP Product Guide
 ([PG119](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg119-c-accum&ft:locale=en-US))
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

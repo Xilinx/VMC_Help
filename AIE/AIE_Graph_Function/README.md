@@ -53,3 +53,7 @@ accepted and multiple can be selected: ‘-D\<name\>’ and
 ‘-D\<name\>=\<definition\>’. That is, the optional argument must begin
 with the '-D' string and if the option `<definition>` value is not
 provided, it is assumed to be 1.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

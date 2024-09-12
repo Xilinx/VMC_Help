@@ -75,3 +75,7 @@ The following two preprocessor option formats will be accepted and multiple can 
 
 
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

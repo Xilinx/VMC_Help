@@ -87,3 +87,7 @@ round for the value of 0.5.
 split. A higher number of cascade stages will result in higher
 throughput at the expense of resources. The value must be in the range 1
 to 9.
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT

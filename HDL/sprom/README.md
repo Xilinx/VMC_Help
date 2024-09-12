@@ -116,3 +116,7 @@ UltraScale Architecture Memory Resources User Guide
 XPM_MEMORY_SPROM Macro (UltraRAM)
 
 
+
+--------------
+Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+SPDX-License-Identifier: MIT
