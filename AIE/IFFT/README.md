@@ -41,8 +41,6 @@ Describes the power of 2 to scale the result by prior to output.
 Describes the selection of rounding to be applied during the shift down stage of processing.
 
 The following modes are available:
-* **Floor:** Truncate LSB, always round down (towards negative infinity).
-* **Ceiling:** Always round up (towards positive infinity).
 * **Round to positive infinity:** Round halfway towards positive infinity.
 * **Round to negative infinity:** Round halfway towards negative infinity.
 * **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
@@ -50,7 +48,7 @@ The following modes are available:
 * **Round convergent to even:** Round halfway towards nearest even number.
 * **Round convergent to odd:** Round halfway towards nearest odd number.
 
-No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+These modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Saturation mode
 
