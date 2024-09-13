@@ -139,10 +139,6 @@ the range 0 to 61.</p>
 down stage of processing.</p>
 <p>The following modes are available:</p>
 <ul>
-<li><strong>Floor:</strong> Truncate LSB, always round down (towards
-negative infinity).</li>
-<li><strong>Ceiling:</strong> Always round up (towards positive
-infinity).</li>
 <li><strong>Round to positive infinity:</strong> Round halfway towards
 positive infinity.</li>
 <li><strong>Round to negative infinity:</strong> Round halfway towards
@@ -156,10 +152,8 @@ nearest even number.</li>
 <li><strong>Round convergent to odd:</strong> Round halfway towards
 nearest odd number.</li>
 </ul>
-<p>No rounding is performed on the <strong>Floor</strong> or
-<strong>Ceiling</strong> modes. Other modes round to the nearest
-integer. They differ only in how they round for values that are exactly
-between two integers.</p>
+<p>These modes round to the nearest integer. They differ only in how
+they round for values that are exactly between two integers.</p>
 </section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>
@@ -247,7 +241,7 @@ buffer interface and is also SSR capable.</p>
 <p>This block uses the Vitis DSP library implementation of FFT. For more
 details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft.html">here</a>.</p>
 <hr />
-<p>Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved.
+<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights reserved.
 SPDX-License-Identifier: MIT</p>
 </section>
 </section>
