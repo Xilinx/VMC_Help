@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>DDS LUT Stream</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DDS LUT Stream</h1>
+</header>
+<section id="dds-lut-stream" class="level1">
+<h1>DDS LUT Stream</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/DSP/Buffer IO</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block implements the Direct Digital Synthesizer (DDS) targeted
+for AI Engines and uses buffer interface.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="output-data-type" class="level4">
+<h4>Output data type</h4>
+<p>Sets the output data type.</p>
+</section>
+<section id="sfdr" class="level4">
+<h4>SFDR</h4>
+<p>Specifies the Spurious Free Dynamic Range (in dB) of the output
+signal. The maximum theoretical SFDR is 96 dB for <code>cint16</code>,
+180 dB for <code>cint32</code>, and 138 dB for <code>cfloat</code>.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>This parameter specifies the number of output ports. The number of AI
+Engine kernels used is equal to the value of SSR parameter.</p>
+</section>
+<section id="samples-per-frame" class="level4">
+<h4>Samples per frame</h4>
+<p>Specifies the number of samples in the output frame. This must be a
+multiple of the number of samples output in each data loop, which varies
+based on the AIE architecture and data type:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>AIE</th>
+<th>AIE-ML</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cint16</code></td>
+<td>64</td>
+<td>256</td>
+</tr>
+<tr class="even">
+<td><code>cint32</code></td>
+<td>16</td>
+<td>64</td>
+</tr>
+<tr class="odd">
+<td><code>cfloat</code></td>
+<td>4</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reload-initial-phase-via-input-port" class="level4">
+<h4>Reload initial phase via input port</h4>
+<p>Allows the intial phase to be reloaded during simulation via an input
+port.</p>
+</section>
+<section id="phase-increment" class="level4">
+<h4>Phase increment</h4>
+<p>Specifies the phase increment between samples. The value must be in
+the range 0 to 2^31 and the default value is 0.</p>
+<p>Phase increment is calculated using the formula
+<code>(Fo\*(2^N)) / Fs</code>.</p>
+<p>Where:</p>
+<ul>
+<li>Fo = Output frequency</li>
+<li>N = 32, which represents the accumulator width, and it is fixed</li>
+<li>Fs = Sampling frequency</li>
+</ul>
+<p>For example, for a sampling frequency of 1 Gsps and output frequency
+of 100 MHz, the Phase Increment should be <code>2^32/10</code>.</p>
+</section>
+<section id="initial-phase-offset" class="level4">
+<h4>Initial phase offset</h4>
+<p>Specifies the initial value of the phase accumulator.</p>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
+</section>
+<section id="sample-time" class="level4">
+<h4>Sample time</h4>
+<p>Specifies the sample time for the output signal.</p>
+<div class="noteBox">
+The propagated block sample time in Simulink is equal to &quot;Sample time&quot; multipled by &quot;Samples per frame&quot;.
+</div>
+
+</section>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p><em><strong>Click on the images below to open each
+model.</strong></em></p>
+</section>
+<section id="related-blocks" class="level2">
+<h2>Related blocks</h2>
+<p><a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;DDS_Stream&#39;,&#39;category&#39;,&#39;AIE&#39;))">DDS
+Stream</a></p>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>This block uses the Vitis DSP library implementation of DDS. For more
+details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html">here</a>.</p>
+<hr />
+<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
+</body>
+</html>
