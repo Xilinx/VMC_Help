@@ -116,10 +116,11 @@ complex([1 6 0 0 ones(1,64) 1 5 0 0 ones(1,32) 1 7 0 0 ones(1,128)])
 ## Parameters
 
 ### Main  
-#### Input/Output Data Type
+#### Input data type  
+Set the data type of the block input. The data type of the input signal to the block must match this setting. Valid types are `cint16`, `cint32`, `cfloat`.
 
-Describes the type of individual data samples input/output of the
-  dynamic point FFT. It can be cint16, cint32, cfloat types.
+#### Output data type
+Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Twiddle factor data type
 Describes the data type of the twiddle factors of the transform. It must be `cint16` or `cfloat` and must also satisfy the following rules:
