@@ -14,8 +14,11 @@ Time-Division Multiplexing FIR Filter for AI Engines.
 ## Parameters
 
 ### Main  
-#### Input/Output data type  
-Set the data type of the block input and output. The data type of the input signal to the block must match this setting.
+#### Input data type  
+Set the data type of the block input. The data type of the input signal to the block must match this setting. Valid types are `cint16`, `cint32`, `cfloat`.
+
+#### Output data type
+Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Filter coefficients data type  
 Set the filter coefficients data type. This parameter's setting may be restricted based on the Input/Output data type. In particular, 

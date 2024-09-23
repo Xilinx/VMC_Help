@@ -14,8 +14,11 @@ This block implements FFT targeted for AI Engines.
 ## Parameters
 
 ### Main  
-#### Input/Output data type  
-Set the input/output data type.
+#### Input data type  
+Set the data type of the block input. The data type of the input signal to the block must match this setting. Valid types are `cint16`, `cint32`, `cfloat`.
+
+#### Output data type
+Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Twiddle factor data type
 Describes the data type of the twiddle factors of the transform. It must be `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
