@@ -15,9 +15,11 @@ the rounding method and saturates the output samples on overflow.
 ## Parameters
 
 ### Main  
-#### Input/Output data type  
-Describes the type of individual data samples input to and output from
-the filter function. Supported types are cint16, cint32 and cfloat.
+#### Input data type  
+Set the data type of the block input. The data type of the input signal to the block must match this setting. Valid types are `cint16`, `cint32`, `cfloat`.
+
+#### Output data type
+Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Twiddle factor data type
 Describes the data type of the twiddle factors of the transform. It must be `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
