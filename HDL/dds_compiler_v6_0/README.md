@@ -192,13 +192,13 @@ for a detailed explanation of these modes.
 
 #### SIN COS Output Type
 ##### Integer
-When Interger is selected for SIN COS Output type, then the fixed-point data type is displayed using format Fix_<Output_width> _ <Binary_Point_Width>. 
+When Integer is selected for SIN COS Output type, then the fixed-point data type is displayed using format Fix_<Output_width> _ <Binary_Point_Width>. 
 For example, if output width is 16 bits then Fix_16_15 is displayed as output data type.
 
 ##### Floating_Point  
 When floating-point is selected for SIN COS Output type, then XFloat_8_24 is displayed as output data type. 
 
-**Note**
+**Note:**
 A floating-point data type is displayed using the format: XFloat_<exponent_bit_width> _ <fraction_bit_width>. 
 Single precision data type is displayed using the string "XFloat_8_24"
 
