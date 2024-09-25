@@ -190,6 +190,18 @@ N/M, where 0 \< N \< M). Values of M from 9 to 16384 are supported.
 ([PG141](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US))
 for a detailed explanation of these modes.
 
+#### SIN COS Output Type
+##### Integer
+When Interger is selected for SIN COS Output type, then the fixed-point data type is displayed using format Fix_<Output_width> _ <Binary_Point_Width>. 
+For example, if output width is 16 bits then Fix_16_15 is displayed as output data type.
+
+##### Floating_Point  
+When floating-point is selected for SIN COS Output type, then XFloat_8_24 is displayed as output data type. 
+
+**Note**
+A floating-point data type is displayed using the format: XFloat_<exponent_bit_width> _ <fraction_bit_width>. 
+Single precision data type is displayed using the string "XFloat_8_24"
+
 #### Parameter Selection  
 Select System_Parameters or Hardware_Parameters
 
@@ -422,6 +434,19 @@ port is displayed on the block.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+
+## Examples
+
+DDS Compiler examples with integer and floating point output datatype are shown below:
+
+***Click on the images below to open each model.***
+
+[![](./Images/DDSInteger_Model.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/DDSCompiler_Ex1)
+
+[![](./Images/DDSFloatingPoint_Model.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/DDSCompiler_Ex2)
+
+--------------
 
 ## LogiCORE™ Documentation
 
