@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>JTAG Hardware Co-Simulation</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">JTAG Hardware Co-Simulation</h1>
+</header>
+<section id="jtag-hardware-co-simulation" class="level1">
+<h1>JTAG Hardware Co-Simulation</h1>
+<p>This block implements co-simulation of a design on hardware using a
+JTAG interface to an FPGA evaluation board.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>When you select <strong>Hardware Co-simulation</strong> as the
+<strong>Export Type</strong> in the Model Composer Hub block, Vitis
+Model Composer automatically creates a new hardware co-simulation block
+once it has finished compiling your design into an FPGA bitstream. It
+also creates a Simulink library to store the hardware co-simulation
+block. At this point, you can copy the block out of the library and use
+it in your Model Composer design like any other Simulink or HDL
+blocks.</p>
+<p>The hardware co-simulation block assumes the external interface of
+the model or Subsystem from which it is derived. The port names on the
+hardware co-simulation block match the ports names on the original
+Subsystem. The port types and rates also match the original design.</p>
+<p>Hardware co-simulation blocks are used in a Simulink design the same
+way other blocks are used. During simulation, a hardware co-simulation
+block interacts with the underlying FPGA board, automating tasks such as
+device configuration, data transfers, and clocking. A hardware
+co-simulation block consumes and produces the same types of signals that
+other Model Composer HDL blocks use. When a value is written to one of
+the block&#39;s input ports, the block sends the corresponding data to the
+appropriate location in hardware. Similarly, the block retrieves data
+from hardware when there is an event on an output port.</p>
+<p>Hardware co-simulation blocks can be driven by AMD fixed-point signal
+types, Simulink fixed-point signal types, or Simulink doubles. Output
+ports assume a signal type that is appropriate for the block they drive.
+If an output port connects to an HDL block, the output port produces an
+AMD fixed-point signal. Alternatively, the port produces a Simulink data
+type when the port drives a Simulink block directly.</p>
+<div class="noteBox">
+When Simulink data types are used as the block signal type, quantization of the input data is handled by rounding, and overflow is handled by saturation.
+</div>
+
+<p>Like other HDL blocks, hardware co-simulation blocks provide
+parameter dialog boxes that allow them to be configured with different
+settings. The parameters that a hardware co-simulation block provides
+depend on the FPGA board the block is implemented for (that is,
+different FPGA boards provide their own customized hardware
+co-simulation blocks).</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<section id="has-combinational-path" class="level4">
+<h4>Has combinational path</h4>
+<p>Select this if your circuit has any combinational paths. A
+combinational path is one in which a change propagates from input to
+output without any clock event. There is no latch, flip-flop, or
+register in the path. Enabling this option causes Vitis Model Composer
+to read the outputs immediately after writing inputs, before clocking
+the design. This ensures that value changes on combinational paths
+extending from the hardware co-simulation block into the Simulink Model
+get propagated correctly.</p>
+</section>
+<section id="bitstream-file" class="level4">
+<h4>Bitstream file</h4>
+<p>Specify the FPGA configuration bitstream. By default this field
+contains the path to the bitstream generated by Model Composer during
+the last Export triggered from the Vitis Model Composer Hub block.</p>
+</section>
+</section>
+<section id="advanced-tab" class="level3">
+<h3>Advanced tab</h3>
+<section id="skip-device-configuration" class="level4">
+<h4>Skip device configuration</h4>
+<p>When selected, the configuration bitstream will not be loaded into
+the FPGA or SoC. This option can be used if another program is
+configuring the device (for example, the Vivado Hardware Manager and the
+Vivado Logic Analyzer).</p>
+</section>
+<section id="display-part-information" class="level4">
+<h4>Display Part Information</h4>
+<p>This option toggles the display of the device part information string
+(for example, xc7k325tffg900-2 for a Kintex device) in the center of the
+hardware co-simulation block.</p>
+</section>
+</section>
+<section id="cable-tab" class="level3">
+<h3>Cable tab</h3>
+<section id="cable-type" class="level4">
+<h4>Cable type</h4>
+<p>Currently, Auto Detect is the only setting for this parameter. Vitis
+Model Composer will automatically detect the cable type.</p>
+<hr />
+<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
+</section>
+</section>
+</body>
+</html>
