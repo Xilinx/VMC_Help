@@ -69,7 +69,16 @@ Defines the period in nanoseconds of the system clock. The value need not be an 
 
 #### Simulink system period (sec)
 
-Defines the Simulink System Period, in units of seconds. The Simulink system period is the greatest common divisor of the sample periods that appear in the model. These sample periods are set explicitly in the block dialog boxes, inherited according to Simulink's propagation rules, or implied by a hardware oversampling rate in blocks with this option. In the final case, the implied sample time is in fact faster than the observable simulation sample time for the block in Simulink. In hardware, a block having an oversampling rate greater than one processes its inputs at a faster rate than the data. For example, a sequential multiplier block with an over-sampling rate of eight implies a (Simulink) sample period that is one eighth of the multiplier block’s actual sample time in Simulink. This parameter can be modified only in a master block.
+Defines the Simulink System Period, in units of seconds. 
+
+This parameter, in conjunction with the FPGA clock period, determines how the timing of the Simulink model maps to the timing of the design running in hardware.
+
+For example, consider a scenario where the FPGA clock period has been set to (1000/368) ns, or a clock rate of 368 MHz. The
+Simulink system period is set to 1 sec. This implies that 1 second of Simulink simulation corresponds
+to (1000/368) ns of FPGA clock, or 1 FPGA clock cycle. The clock signals of the generated HDL code will reflect this behavior.
+
+For designs with multiple clock domains, to ensure that the simulation models the hardware behavior relatively with respect to the clocks,
+the ratio of Simulink system period to FPGA clock period in each domain must be the same.
 
 #### Clock pin location
 
