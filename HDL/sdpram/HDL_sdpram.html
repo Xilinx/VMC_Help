@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Simple Dual Port RAM</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Simple Dual Port RAM</h1>
+</header>
+<section id="simple-dual-port-ram" class="level1">
+<h1>Simple Dual Port RAM</h1>
+<p><img src="data:image/png;base64,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" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The Simple Dual Port RAM block implements a random access memory
+(RAM). Dual ports enable simultaneous access to the memory space at
+different sample rates using multiple data widths.</p>
+<section id="block-interface" class="level3">
+<h3>Block Interface</h3>
+<p>The block has two independent sets of ports for simultaneous reading
+and writing. Independent address, data, and write enable ports allow
+shared access to a single memory space. By default, each port set has
+one output port and three input ports for address, input data, and write
+enable. Optionally, you can also add a port enable and synchronous reset
+signal to each input port set.</p>
+<p>A simple dual-port RAM can be implemented using either distributed
+memory, block RAM, or UltraRAM resources in the FPGA.</p>
+<section id="form-factors" class="level4">
+<h4>Form Factors</h4>
+<p>The Simple Dual Port RAM block also supports various Form Factors
+(FF). Form factor is defined as:</p>
+<ul>
+<li>FF = W_(B) / W_(A)</li>
+</ul>
+<p>where W_(B) is data width of Port B and W_(A) is Data Width of Port
+A.</p>
+<p>The Depth of port B (D_(B)) is inferred from the specified form
+factor as follows:</p>
+<ul>
+<li>D_(B) = D_(A) / FF</li>
+</ul>
+<p>The data input ports on Port A and B can have different arithmetic
+type and binary point position for a form factor of 1. For form factors
+greater than 1, the data input ports on Port A and Port B should have an
+unsigned arithmetic type with binary point at 0. The output ports,
+labeled A and B, have the same types as the corresponding input data
+ports.</p>
+<p>The location in the memory block can be accessed for reading or
+writing by providing the valid address on each individual address port.
+A valid address is an unsigned integer from 0 to d-1, where d denotes
+the RAM depth (number of words in the RAM) for the particular port. An
+attempt to read past the end of the memory is caught as an error in
+simulation. When the dual-port RAM is implemented in distributed memory
+or block RAM, the initial RAM contents can be specified through a block
+parameter. Each write enable port must be a boolean value. When the WE
+port is 1, the value on the data input is written to the location
+indicated by the address line.</p>
+</section>
+<section id="write-mode" class="level4">
+<h4>Write Mode</h4>
+<p>When the Simple Dual Port RAM block is implemented in block RAM, you
+can set the write mode for the block in the block parameters dialog
+box.</p>
+<p>The output during a write operation depends on the write mode. When
+the WE is 0, the output port has the value at the location specified by
+the address line. During a write operation (WE asserted), the data
+presented on the input data port is stored in memory at the location
+selected by the port&#39;s address input. During a write cycle, you can
+configure the behavior of each data out port A and B to one of the
+following choices:</p>
+<ul>
+<li>Read after write</li>
+<li>Read before write</li>
+<li>No read on write</li>
+</ul>
+<p>The write modes can be described with the help of the figure below.
+In the figure, the memory has been set to an initial value of 5 and the
+address bit is specified as 4. When using No read on write mode, the
+output is unaffected by the address line and the output is the same as
+the last output when the WE was 0. For the other two modes, the output
+is obtained from the location specified by the address line, and hence
+is the value of the location being written to. This means that the
+output can be the old value which corresponds to Read after write.</p>
+<p><img src="data:image/png;base64,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" /></p>
+<p>Collision Behavior: The result of simultaneous access to both ports
+is described below.</p>
+<p>Read-Read Collisions: If both ports read simultaneously from the same
+memory cell, the read operation is successful.</p>
+<p>Write-Write Collisions: If both ports try to write simultaneously to
+the same memory cell, both outputs are marked as invalid (nan).</p>
+<p>Write-Read Collisions: This collision occurs when one port writes and
+the other reads from the same memory cell. While the memory contents are
+not corrupted, the validity of the output data on the read port depends
+on the Write Mode of the write port.</p>
+<ul>
+<li>If the write port is in Read before write mode, the other port can
+reliably read the old memory contents.</li>
+<li>If the write port is in Read after write or No read on write, data
+on the output of the read port is invalid (nan).</li>
+</ul>
+<p>You can set the Write Mode of each port using the Advanced tab of the
+block parameters dialog box.</p>
+</section>
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="basic-tab" class="level3">
+<h3>Basic tab</h3>
+<p>Parameters specific to the Basic tab are as follows.</p>
+<section id="depth" class="level4">
+<h4>Depth</h4>
+<p>Specifies the number of words in the memory for Port A, which must be
+a positive integer. The Port B depth is inferred from the form factor
+specified by the input data widths.</p>
+</section>
+<section id="initial-value-vector" class="level4">
+<h4>Initial value vector</h4>
+<p>For distributed memory or block RAM, specifies the initial memory
+contents. The size and precision of the elements of the initial value
+vector are based on the data format specified for Port A. When the
+vector is longer than the RAM, the vector&#39;s trailing elements are
+discarded. When the RAM is longer than the vector, the RAM&#39;s trailing
+words are set to zero. The initial value vector is saturated and rounded
+according to the precision specified on the data port A of RAM.</p>
+<p><strong>Note</strong>: UltraRAM memory is initialized to all 0&#39;s
+during power up or device reset. If implemented in UltraRAM, the Single
+Port RAM block cannot be initialized to user defined values.</p>
+</section>
+<section id="memory-type" class="level4">
+<h4>Memory Type</h4>
+<p>Option to select whether the dual port RAM will be implemented in
+Distributed memory, Block RAM, or UltraRAM. The distributed dual port
+RAM is always set to use port A in Read Before Write mode and port B in
+read-only mode.</p>
+<p>Depending on your selection for Memory Type, the dual-port RAM will
+be inferred or implemented in this way when the design is compiled:</p>
+<ul>
+<li><p>If the block will be implemented in Distributed memory, the
+Distributed Memory Generator v8.0 LogiCORE IP will be inferred or
+implemented when the design is compiled. This LogiCORE IP is described
+in the Distributed Memory Generator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg063-dist-mem-gen&amp;ft:locale=en-US">PG063</a>).</p></li>
+<li><p>If the block will be implemented in block RAM or UltraRAM, the
+XPM_MEMORY_TDPRAM (True Dual Port RAM) macro will be inferred or
+implemented when the design is compiled. For information on the
+XPM_MEMORY_TDPRAM Xilinx Parameterized Macro (XPM), refer to UltraScale
+Architecture Libraries Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug974-vivado-ultrascale-libraries">UG974</a>).</p></li>
+</ul>
+</section>
+<section id="initial-value-for-port-b-output-register" class="level4">
+<h4>Initial value for port B output register</h4>
+<p>Specifies the initial value for port B output register. The initial
+value is saturated and rounded according to the precision specified on
+the data port B of RAM.</p>
+</section>
+<section id="provide-synchronous-reset-port-for-port-b-output-register" class="level4">
+<h4>Provide synchronous reset port for port B output register</h4>
+<p>When selected, allows access to the reset port available on the port
+B output register of the Block RAM or UltraRAM. The reset port is
+available only when the latency of the Block RAM or UltraRAM is greater
+than or equal to 1.</p>
+</section>
+<section id="provide-enable-port-for-port-a" class="level4">
+<h4>Provide enable port for port A</h4>
+<p>When selected, allows access to the enable port for port A. The
+enable port is available only when the latency of the block is greater
+than or equal to 1.</p>
+</section>
+<section id="provide-enable-port-for-port-b" class="level4">
+<h4>Provide enable port for port B</h4>
+<p>When selected, allows access to the enable port for port B. The
+enable port is available only when the latency of the block is greater
+than or equal to 1.</p>
+</section>
+</section>
+<section id="advanced-tab" class="level3">
+<h3>Advanced tab</h3>
+<p>Parameters specific to the Advanced tab are as follows.</p>
+<section id="write-mode-1" class="level4">
+<h4>Write Mode</h4>
+<p>When the Simple Dual Port RAM block is implemented in block RAM,
+specifies memory behavior for port A or port B when WE is asserted.
+Supported modes are: Read after write, Read before write, and No read on
+write. Read after write indicates the output value reflects the state of
+the memory after the write operation. Read before write indicates the
+output value reflects the state of the memory before the write
+operation. No read on write indicates that the output value remains
+unchanged irrespective of change of address or state of the memory.
+There are device specific restrictions on the applicability of these
+modes. Also refer to the Write Mode topic above for more
+information.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+</section>
+<section id="logicore-and-xpm-documentation" class="level2">
+<h2>LogiCORE™ and XPM Documentation</h2>
+<p>Distributed Memory Generator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg063-dist-mem-gen&amp;ft:locale=en-US">PG063</a>)
+(Distributed Memory)</p>
+<p>UltraScale Architecture Memory Resources User Guide (<a href="https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf">UG573</a>)
+- XPM_MEMORY_TDPRAM Macro (UltraRAM)</p>
+<hr />
+<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
+</body>
+</html>
