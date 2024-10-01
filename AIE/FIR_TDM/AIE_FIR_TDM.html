@@ -78,12 +78,12 @@ filter.</p>
 <section id="filter-coefficients" class="level4">
 <h4>Filter coefficients</h4>
 <p>This field specifies the filter coefficients.</p>
-<p>This field must be a one-dimensional vector with length equal to the
-<code>Filter length</code> multipled by
-<code>Number of TDM channels</code>. For example, <code>N</code>
-coefficients for <code>M</code> channels should be specified as
-follows:</p>
-<p><code>[coeffs0(1), coeffs0(2), ... coeffs0(N), coeffs1(1), coeffs1(2), ... coeffs(N), ... coeffsM(1), coeffsM(2), ... coeffsM(N)]</code></p>
+<p>Specify the coefficients as an NxM matrix, where <code>N</code> is
+the filter length and <code>M</code> is the number of TDM channels. Each
+column of the matrix contains one channel&#39;s coefficients. Coefficients
+are stored in reverse order, i.e. the first row of the matrix contains
+the last coefficient of each channel, and the last row of the matrix
+contains the first coefficient of each channel.</p>
 <div class="noteBox">
 You could also define the coefficients as an array variable in the MATLAB workspace and specify the variable name in this field.
 </div>
