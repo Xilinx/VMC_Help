@@ -38,9 +38,7 @@ This field describes the number of taps (coefficients) in the filter.
 #### Filter coefficients  
 This field specifies the filter coefficients. 
 
-This field must be a one-dimensional vector with length equal to the `Filter length` multipled by `Number of TDM channels`. For example, `N` coefficients for `M` channels should be specified as follows:
-
-`[coeffs0(1), coeffs0(2), ... coeffs0(N), coeffs1(1), coeffs1(2), ... coeffs(N), ... coeffsM(1), coeffsM(2), ... coeffsM(N)]`
+Specify the coefficients as an NxM matrix, where `N` is the filter length and `M` is the number of TDM channels. Each column of the matrix contains one channel's coefficients. Coefficients are stored in reverse order, i.e. the first row of the matrix contains the last coefficient of each channel, and the last row of the matrix contains the first coefficient of each channel. 
 
 <div class="noteBox">
 You could also define the coefficients as an array variable in the MATLAB workspace and specify the variable name in this field.
