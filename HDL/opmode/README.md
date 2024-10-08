@@ -15,9 +15,12 @@ control sequences. The figure below shows an example. The example
 implements a 35x35-bit multiplier using a sequence of four instructions
 in a DSP48E block. The Opmode blocks supply the desired instructions to
 a multiplexer that selects each instruction in the desired sequence.
-
   
 ![](./Images/bnc1538085569960.png)  
+
+<div class="noteBox">
+To view the output of the Opmode block, connect the output directly to a Simulink sink block (e.g. Display) without using a Gateway Out block.
+</div>
 
 ## Parameters
 
