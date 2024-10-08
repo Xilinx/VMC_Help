@@ -187,6 +187,14 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+## Examples
+
+***Click on the images below to open each model.***
+
+[![](./Images/Simple_DualPortRAM_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/Simple_DualPortRAM_Ex1)
+
+[![](./Images/Simple_DualPortRAM_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/Simple_DualPortRAM_Ex2)
+
 ## LogiCORE™ and XPM Documentation
 
 Distributed Memory Generator LogiCORE IP Product Guide
