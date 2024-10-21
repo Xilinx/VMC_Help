@@ -57,7 +57,7 @@ Allows the intial phase to be reloaded during simulation via an input port.
 This specifies the phase increment between the samples. The value should
 be in the range 0 to 2^31.
 
-Phase increment is calculated using the formula `(Fo\*(2^N ))/ Fs)`.
+Phase increment is calculated using the formula `(Fo*(2^N))/Fs`.
 
 Where:
   - Fo = Output frequency
@@ -102,6 +102,8 @@ The propagated block sample time in Simulink is equal to "Sample time" multipled
 ## Examples
 
 ***Click on the images below to open each model.***
+
+[![](./Images/Mixer_LUT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Stream_Ex1)
 
 
 ## Related blocks
