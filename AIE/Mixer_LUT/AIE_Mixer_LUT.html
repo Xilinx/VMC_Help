@@ -1,28 +1,19 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Mixer LUT</title>
   <style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-width: 0.8em;
-margin: 0 0.8em 0.2em -1.6em;
-vertical-align: middle;
-}
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
-</style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/proj/xhdhdstaff5/sdegala/Head1/HEAD/VMCHELP20242/xmc-matlab.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +21,7 @@ vertical-align: middle;
 </header>
 <section id="mixer-lut" class="level1">
 <h1>Mixer LUT</h1>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img src="./Images/block.png" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>AI Engine/DSP/Buffer IO</p>
@@ -43,34 +34,27 @@ vertical-align: middle;
 <h2>Parameters</h2>
 <section id="output-data-type" class="level4">
 <h4>Output data type</h4>
-<p>Describes the types of individual data samples input to and output
-from the Mixer function. The supported data types are cint16, cint32,
-and cfloat.</p>
+<p>Describes the types of individual data samples input to and output from the Mixer function. The supported data types are cint16, cint32, and cfloat.</p>
 </section>
 <section id="mixer-mode" class="level4">
 <h4>Mixer mode</h4>
-<p>This specifies the mixer operation modes. Two modes are supported by
-the Mixer function:</p>
+<p>This specifies the mixer operation modes. Two modes are supported by the Mixer function:</p>
 <ul>
-<li><p><strong>Single Input Mode</strong>: This is a DDS plus Mixer for
-a single data input port. Each data input sample is complex multiplied
-with the corresponding DDS sample to create a modulated signal that is
-written to the output window. This is the default Mixer mode.</p></li>
-<li><p><strong>Dual Input Mode</strong>: This is a special configuration
-for symmetrical carriers and two data input ports. Each data sample of
-the first input is complex multiplied with the corresponding DDS sample
-to create a modulated signal. Each data sample of the second data input
-is complex multiplied with the conjugate (which is equivalent to a
-signal rotating in the opposite direction) of the DDS sample to create a
-second modulated signal. These two modulated signals are added together
-and written to the output window.</p></li>
+<li><p><strong>Single Input Mode</strong>: This is a DDS plus Mixer for a single data input port. Each data input sample is complex multiplied with the corresponding DDS sample to create a modulated signal that is written to the output window. This is the default Mixer mode.</p></li>
+<li><p><strong>Dual Input Mode</strong>: This is a special configuration for symmetrical carriers and two data input ports. Each data sample of the first input is complex multiplied with the corresponding DDS sample to create a modulated signal. Each data sample of the second data input is complex multiplied with the conjugate (which is equivalent to a signal rotating in the opposite direction) of the DDS sample to create a second modulated signal. These two modulated signals are added together and written to the output window.</p></li>
 </ul>
+</section>
+<section id="sfdr" class="level4">
+<h4>SFDR</h4>
+<p>Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maximum theoretical SFDR is 96 dB for <code>cint16</code>, 180 dB for <code>cint32</code>, and 138 dB for <code>cfloat</code>.</p>
+</section>
+<section id="number-of-parallel-outputs-ssr" class="level4">
+<h4>Number of Parallel Outputs (SSR)</h4>
+<p>This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.</p>
 </section>
 <section id="input-frame-size-number-of-samples" class="level4">
 <h4>Input frame size (Number of samples)</h4>
-<p>Specifies the number of samples in the output frame. This must be a
-multiple of the number of samples output in each data loop, which varies
-based on the AIE architecture and data type:</p>
+<p>Specifies the number of samples in the output frame. This must be a multiple of the number of samples output in each data loop, which varies based on the AIE architecture and data type:</p>
 <table>
 <thead>
 <tr class="header">
@@ -100,15 +84,12 @@ based on the AIE architecture and data type:</p>
 </section>
 <section id="reload-initial-phase-via-input-port" class="level4">
 <h4>Reload initial phase via input port</h4>
-<p>Allows the intial phase to be reloaded during simulation via an input
-port.</p>
+<p>Allows the intial phase to be reloaded during simulation via an input port.</p>
 </section>
 <section id="phase-increment" class="level4">
 <h4>Phase increment</h4>
-<p>This specifies the phase increment between the samples. The value
-should be in the range 0 to 2^31.</p>
-<p>Phase increment is calculated using the formula
-<code>(Fo\*(2^N ))/ Fs)</code>.</p>
+<p>This specifies the phase increment between the samples. The value should be in the range 0 to 2^31.</p>
+<p>Phase increment is calculated using the formula <code>(Fo*(2^N ))/ Fs)</code>.</p>
 <p>Where:</p>
 <ul>
 <li>Fo = Output frequency</li>
@@ -122,51 +103,37 @@ should be in the range 0 to 2^31.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Describes the selection of rounding to be applied during the shift
-down stage of processing.</p>
+<p>Describes the selection of rounding to be applied during the shift down stage of processing.</p>
 <p>The following modes are available:</p>
 <ul>
-<li><strong>Floor:</strong> Truncate LSB, always round down (towards
-negative infinity).</li>
-<li><strong>Ceiling:</strong> Always round up (towards positive
-infinity).</li>
-<li><strong>Round to positive infinity:</strong> Round halfway towards
-positive infinity.</li>
-<li><strong>Round to negative infinity:</strong> Round halfway towards
-negative infinity.</li>
-<li><strong>Round symmetrical to infinity:</strong> Round halfway
-towards infinity (away from zero).</li>
-<li><strong>Round symmetrical to zero:</strong> Round halfway towards
-zero (away from infinity).</li>
-<li><strong>Round convergent to even:</strong> Round halfway towards
-nearest even number.</li>
-<li><strong>Round convergent to odd:</strong> Round halfway towards
-nearest odd number.</li>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards nearest odd number.</li>
 </ul>
-<p>No rounding is performed on the <strong>Floor</strong> or
-<strong>Ceiling</strong> modes. Other modes round to the nearest
-integer. They differ only in how they round for values that are exactly
-between two integers.</p>
+<p>No rounding is performed on the <strong>Floor</strong> or <strong>Ceiling</strong> modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.</p>
 </section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>
-<p>Describes the selection of saturation to be applied during the shift
-down stage of processing.</p>
+<p>Describes the selection of saturation to be applied during the shift down stage of processing.</p>
 <p>The following modes are available:</p>
 <ul>
-<li><strong>None:</strong> No saturation is performed and the value is
-truncated on the MSB side.</li>
-<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
-range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
-<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
-range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>None:</strong> No saturation is performed and the value is truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
 </section>
 <section id="examples" class="level2">
 <h2>Examples</h2>
-<p><em><strong>Click on the images below to open each
-model.</strong></em></p>
+<p><em><strong>Click on the images below to open each model.</strong></em></p>
+<p><a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex1"><img src="./Images/Mixer_LUT_Ex1.png" /></a></p>
+<p><a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex2"><img src="./Images/Mixer_LUT_Ex2.png" /></a></p>
+<p><a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex3"><img src="./Images/Mixer_LUT_Ex3.png" /></a></p>
 </section>
 <section id="related-blocks" class="level2">
 <h2>Related blocks</h2>
@@ -174,11 +141,9 @@ model.</strong></em></p>
 </section>
 <section id="references" class="level2">
 <h2>References</h2>
-<p>This block uses the Vitis DSP library implementation of Mixer. For
-more details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html">here</a>.</p>
+<p>This block uses the Vitis DSP library implementation of Mixer. For more details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html">here</a>.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
-reserved.</p>
+<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>
 </section>

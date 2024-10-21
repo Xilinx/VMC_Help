@@ -35,6 +35,13 @@ direction) of the DDS sample to create a second modulated signal. These
 two modulated signals are added together and written to the output
 window.
 
+#### SFDR
+Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maximum theoretical SFDR is 96 dB for `cint16`, 180 dB for `cint32`, and 138 dB for `cfloat`.
+
+#### Number of Parallel Outputs (SSR)
+
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+
 #### Input frame size (Number of samples)  
 Specifies the number of samples in the output frame. This must be a multiple of the number of samples output in each data loop, which varies based on the AIE architecture and data type:
 
@@ -51,7 +58,7 @@ Allows the intial phase to be reloaded during simulation via an input port.
 This specifies the phase increment between the samples. The value should
 be in the range 0 to 2^31.
 
-Phase increment is calculated using the formula `(Fo\*(2^N ))/ Fs)`.
+Phase increment is calculated using the formula `(Fo*(2^N ))/ Fs)`.
 
 Where:
   - Fo = Output frequency
@@ -84,12 +91,15 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-
-
 ## Examples
 
 ***Click on the images below to open each model.***
 
+[![](./Images/Mixer_LUT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex1)
+
+[![](./Images/Mixer_LUT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex2)
+
+[![](./Images/Mixer_LUT_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex3)
 
 ## Related blocks
 [Mixer](../Mixer/README.md)
