@@ -58,7 +58,7 @@ Allows the intial phase to be reloaded during simulation via an input port.
 This specifies the phase increment between the samples. The value should
 be in the range 0 to 2^31.
 
-Phase increment is calculated using the formula `(Fo*(2^N ))/ Fs)`.
+Phase increment is calculated using the formula `(Fo*(2^N))/Fs`.
 
 Where:
   - Fo = Output frequency
