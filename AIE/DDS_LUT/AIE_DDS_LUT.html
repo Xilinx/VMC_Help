@@ -1,28 +1,19 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>DDS LUT</title>
   <style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-width: 0.8em;
-margin: 0 0.8em 0.2em -1.6em;
-vertical-align: middle;
-}
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
-</style>
-  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/proj/xhdhdstaff5/sdegala/Head1/HEAD/VMCHELP20242/xmc-matlab.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -30,15 +21,14 @@ vertical-align: middle;
 </header>
 <section id="dds-lut" class="level1">
 <h1>DDS LUT</h1>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img src="./Images/block.png" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>AI Engine/DSP/Buffer IO</p>
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>This block implements the Direct Digital Synthesizer (DDS) targeted
-for AI Engines and uses buffer interface.</p>
+<p>This block implements the Direct Digital Synthesizer (DDS) targeted for AI Engines and uses buffer interface.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -50,15 +40,11 @@ for AI Engines and uses buffer interface.</p>
 </section>
 <section id="sfdr" class="level4">
 <h4>SFDR</h4>
-<p>Specifies the Spurious Free Dynamic Range (in dB) of the output
-signal. The maximum theoretical SFDR is 96 dB for <code>cint16</code>,
-180 dB for <code>cint32</code>, and 138 dB for <code>cfloat</code>.</p>
+<p>Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maximum theoretical SFDR is 96 dB for <code>cint16</code>, 180 dB for <code>cint32</code>, and 138 dB for <code>cfloat</code>.</p>
 </section>
 <section id="samples-per-frame" class="level4">
 <h4>Samples per frame</h4>
-<p>Specifies the number of samples in the output frame. This must be a
-multiple of the number of samples output in each data loop, which varies
-based on the AIE architecture and data type:</p>
+<p>Specifies the number of samples in the output frame. This must be a multiple of 'N' in each data loop. The value of 'N' varies based on the AIE architecture and data type are given in the below table:</p>
 <table>
 <thead>
 <tr class="header">
@@ -71,7 +57,7 @@ based on the AIE architecture and data type:</p>
 <tr class="odd">
 <td><code>cint16</code></td>
 <td>64</td>
-<td>256</td>
+<td>64</td>
 </tr>
 <tr class="even">
 <td><code>cint32</code></td>
@@ -88,23 +74,19 @@ based on the AIE architecture and data type:</p>
 </section>
 <section id="reload-initial-phase-via-input-port" class="level4">
 <h4>Reload initial phase via input port</h4>
-<p>Allows the intial phase to be reloaded during simulation via an input
-port.</p>
+<p>Allows the intial phase to be reloaded during simulation via an input port.</p>
 </section>
 <section id="phase-increment" class="level4">
 <h4>Phase increment</h4>
-<p>Specifies the phase increment between samples. The value must be in
-the range 0 to 2^31 and the default value is 0.</p>
-<p>Phase increment is calculated using the formula
-<code>(Fo\*(2^N)) / Fs</code>.</p>
+<p>Specifies the phase increment between samples. The value must be in the range 0 to 2^31 and the default value is 0.</p>
+<p>Phase increment is calculated using the formula <code>(Fo*(2^N))/Fs</code>.</p>
 <p>Where:</p>
 <ul>
 <li>Fo = Output frequency</li>
 <li>N = 32, which represents the accumulator width, and it is fixed</li>
 <li>Fs = Sampling frequency</li>
 </ul>
-<p>For example, for a sampling frequency of 1 Gsps and output frequency
-of 100 MHz, the Phase Increment should be <code>2^32/10</code>.</p>
+<p>For example, for a sampling frequency of 1 Gsps and output frequency of 100 MHz, the Phase Increment should be <code>2^32/10</code>.</p>
 </section>
 <section id="initial-phase-offset" class="level4">
 <h4>Initial phase offset</h4>
@@ -112,51 +94,35 @@ of 100 MHz, the Phase Increment should be <code>2^32/10</code>.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Describes the selection of rounding to be applied during the shift
-down stage of processing.</p>
+<p>Describes the selection of rounding to be applied during the shift down stage of processing.</p>
 <p>The following modes are available:</p>
 <ul>
-<li><strong>Floor:</strong> Truncate LSB, always round down (towards
-negative infinity).</li>
-<li><strong>Ceiling:</strong> Always round up (towards positive
-infinity).</li>
-<li><strong>Round to positive infinity:</strong> Round halfway towards
-positive infinity.</li>
-<li><strong>Round to negative infinity:</strong> Round halfway towards
-negative infinity.</li>
-<li><strong>Round symmetrical to infinity:</strong> Round halfway
-towards infinity (away from zero).</li>
-<li><strong>Round symmetrical to zero:</strong> Round halfway towards
-zero (away from infinity).</li>
-<li><strong>Round convergent to even:</strong> Round halfway towards
-nearest even number.</li>
-<li><strong>Round convergent to odd:</strong> Round halfway towards
-nearest odd number.</li>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards nearest odd number.</li>
 </ul>
-<p>No rounding is performed on the <strong>Floor</strong> or
-<strong>Ceiling</strong> modes. Other modes round to the nearest
-integer. They differ only in how they round for values that are exactly
-between two integers.</p>
+<p>No rounding is performed on the <strong>Floor</strong> or <strong>Ceiling</strong> modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.</p>
 </section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>
-<p>Describes the selection of saturation to be applied during the shift
-down stage of processing.</p>
+<p>Describes the selection of saturation to be applied during the shift down stage of processing.</p>
 <p>The following modes are available:</p>
 <ul>
-<li><strong>None:</strong> No saturation is performed and the value is
-truncated on the MSB side.</li>
-<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
-range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
-<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
-range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>None:</strong> No saturation is performed and the value is truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
 <section id="sample-time" class="level4">
 <h4>Sample time</h4>
 <p>Specifies the sample time for the output signal.</p>
 <div class="noteBox">
-The propagated block sample time in Simulink is equal to &quot;Sample time&quot; multipled by &quot;Samples per frame&quot;.
+The propagated block sample time in Simulink is equal to "Sample time" multipled by "Samples per frame".
 </div>
 
 </section>
@@ -164,8 +130,7 @@ The propagated block sample time in Simulink is equal to &quot;Sample time&quot;
 </section>
 <section id="examples" class="level2">
 <h2>Examples</h2>
-<p><em><strong>Click on the images below to open each
-model.</strong></em></p>
+<p><em><strong>Click on the images below to open each model.</strong></em></p>
 </section>
 <section id="related-blocks" class="level2">
 <h2>Related blocks</h2>
@@ -173,11 +138,9 @@ model.</strong></em></p>
 </section>
 <section id="references" class="level2">
 <h2>References</h2>
-<p>This block uses the Vitis DSP library implementation of DDS. For more
-details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html">here</a>.</p>
+<p>This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click <a href="https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html">here</a>.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
-reserved.</p>
+<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>
 </section>
