@@ -24,11 +24,12 @@ Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maxi
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
 #### Samples per frame  
-Specifies the number of samples in the output frame. This must be a multiple of the number of samples output in each data loop, which varies based on the AIE architecture and data type:
+Specifies the number of samples in the output frame. This must be a multiple of 'N' in each data loop.
+The value of 'N' varies based on the AIE architecture and data type are given in the below table:
 
 |        | AIE | AIE-ML |
 | ------ | --- | ------ |
-| `cint16` | 64  | 256    |
+| `cint16` | 64  | 64    |
 | `cint32` | 16  | 64     |
 | `cfloat` | 4   | N/A    |
 
@@ -39,7 +40,7 @@ Allows the intial phase to be reloaded during simulation via an input port.
 Specifies the phase increment between samples. The value must be in the
 range 0 to 2^31 and the default value is 0.
 
-  Phase increment is calculated using the formula `(Fo\*(2^N)) / Fs`.
+  Phase increment is calculated using the formula `(Fo*(2^N))/Fs`.
 
   Where:
   - Fo = Output frequency
