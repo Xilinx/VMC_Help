@@ -22,7 +22,7 @@ Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maxi
 
 #### Samples per frame  
 Specifies the number of samples in the output frame. This must be a multiple of 'N' in each data loop.
-The value of 'N' varies based on the AIE architecture and data type are given in the below table:
+The value of 'N' varies based on the AIE architecture and data type is given in the below table:
 
 |        | AIE | AIE-ML |
 | ------ | --- | ------ |
