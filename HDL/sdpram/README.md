@@ -4,53 +4,19 @@
 
 ## Description
 
-The Simple Dual Port RAM block implements a random access memory (RAM).
-Dual ports enable simultaneous access to the memory space at different
-sample rates using multiple data widths.
+The Simple Dual Port RAM block implements a random access memory (RAM), one port has read/write capability while the other port can only read. 
+Thus, data can be read simultaneously from both ports, writing can only occur at one port at a time. This is also known as a 1.5 port RAM.
+
+It is similar to the Dual Port RAM, but the Dual Port RAM has both write data output port and a read data output port.
 
 ### Block Interface
 
-The block has two independent sets of ports for simultaneous reading and
-writing. Independent address, data, and write enable ports allow shared
-access to a single memory space. By default, each port set has one
-output port and three input ports for address, input data, and write
-enable. Optionally, you can also add a port enable and synchronous reset
-signal to each input port set.
+This block has one output port and four input ports for address (addra and addrb), input data, and write enable (WE)
+Optionally, you can also add a port enable for port A and Port B and synchronous reset
+signal to port B.
 
 A simple dual-port RAM can be implemented using either distributed memory,
 block RAM, or UltraRAM resources in the FPGA.
-
-#### Form Factors
-
-The Simple Dual Port RAM block also supports various Form Factors (FF). Form
-factor is defined as:
-
-* FF = W_(B) / W_(A)
-
-where W_(B) is data width of Port B and W_(A) is Data Width of Port A.
-
-The Depth of port B (D_(B)) is inferred from the specified form factor
-as follows:
-
-* D_(B) = D_(A) / FF
-
-The data input ports on Port A and B can have different arithmetic type
-and binary point position for a form factor of 1. For form factors
-greater than 1, the data input ports on Port A and Port B should have an
-unsigned arithmetic type with binary point at 0. The output ports,
-labeled A and B, have the same types as the corresponding input data
-ports.
-
-The location in the memory block can be accessed for reading or writing
-by providing the valid address on each individual address port. A valid
-address is an unsigned integer from 0 to d-1, where d denotes the RAM
-depth (number of words in the RAM) for the particular port. An attempt
-to read past the end of the memory is caught as an error in simulation.
-When the dual-port RAM is implemented in distributed memory or block
-RAM, the initial RAM contents can be specified through a block
-parameter. Each write enable port must be a boolean value. When the WE
-port is 1, the value on the data input is written to the location
-indicated by the address line.
 
 #### Write Mode
 
@@ -62,7 +28,7 @@ WE is 0, the output port has the value at the location specified by the
 address line. During a write operation (WE asserted), the data presented
 on the input data port is stored in memory at the location selected by
 the port's address input. During a write cycle, you can configure the
-behavior of each data out port A and B to one of the following choices:
+behavior of data out port B to one of the following choices:
 
 - Read after write
 - Read before write
@@ -86,9 +52,6 @@ described below.
 Read-Read Collisions: If both ports read simultaneously from the same
 memory cell, the read operation is successful.
 
-Write-Write Collisions: If both ports try to write simultaneously to the
-same memory cell, both outputs are marked as invalid (nan).
-
 Write-Read Collisions: This collision occurs when one port writes and
 the other reads from the same memory cell. While the memory contents are
 not corrupted, the validity of the output data on the read port depends
@@ -99,7 +62,7 @@ on the Write Mode of the write port.
 - If the write port is in Read after write or No read on write, data on
   the output of the read port is invalid (nan).
 
-You can set the Write Mode of each port using the Advanced tab of the
+You can set the Write Mode of port B using the Advanced tab of the
 block parameters dialog box.
 
 ## Parameters
@@ -109,8 +72,7 @@ Parameters specific to the Basic tab are as follows.
 
 #### Depth  
 Specifies the number of words in the memory for Port A, which must be a
-positive integer. The Port B depth is inferred from the form factor
-specified by the input data widths.
+positive integer. 
 
 #### Initial value vector  
 For distributed memory or block RAM, specifies the initial memory
@@ -122,16 +84,14 @@ words are set to zero. The initial value vector is saturated and rounded
 according to the precision specified on the data port A of RAM.
 
 **Note**: UltraRAM memory is initialized to all 0's during power up or
-device reset. If implemented in UltraRAM, the Single Port RAM block
+device reset. If implemented in UltraRAM, the Simple Dual Port RAM block
 cannot be initialized to user defined values.
 
 #### Memory Type  
-Option to select whether the dual port RAM will be implemented in
-Distributed memory, Block RAM, or UltraRAM. The distributed dual port
-RAM is always set to use port A in Read Before Write mode and port B in
-read-only mode.
+Option to select whether the simple dual-port RAM will be implemented in
+Distributed memory, Block RAM, or UltraRAM. 
 
-Depending on your selection for Memory Type, the dual-port RAM will be
+Depending on your selection for Memory Type, the simple dual-port RAM will be
 inferred or implemented in this way when the design is compiled:
 
   - If the block will be implemented in Distributed memory, the
@@ -150,7 +110,7 @@ inferred or implemented in this way when the design is compiled:
 #### Initial value for port B output register  
 Specifies the initial value for port B output register. The initial
 value is saturated and rounded according to the precision specified on
-the data port B of RAM.
+port B of RAM.
 
 #### Provide synchronous reset port for port B output register  
 When selected, allows access to the reset port available on the port B
@@ -173,7 +133,7 @@ Parameters specific to the Advanced tab are as follows.
 
 #### Write Mode  
 When the Simple Dual Port RAM block is implemented in block RAM, specifies
-memory behavior for port A or port B when WE is asserted. Supported
+memory behavior for port B when WE is asserted. Supported
 modes are: Read after write, Read before write, and No read on write.
 Read after write indicates the output value reflects the state of the
 memory after the write operation. Read before write indicates the output
@@ -203,7 +163,7 @@ Distributed Memory Generator LogiCORE IP Product Guide
 
 UltraScale Architecture Memory Resources User Guide
 ([UG573](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf)) -
-XPM_MEMORY_TDPRAM Macro (UltraRAM)
+XPM_MEMORY_SDPRAM Macro (UltraRAM)
 
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
