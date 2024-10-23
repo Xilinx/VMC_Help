@@ -47,6 +47,10 @@ The following modes are available:
 
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
+#### Number of Parallel Outputs (SSR)
+
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+
 #### Saturation mode
 
 Describes the selection of saturation to be applied during the shift down stage of processing.
@@ -79,9 +83,15 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/DFT_Block_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/DFT_Ex1)
+[![](./Images/DFT_Block_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/DFT_Ex1)
 
-[![](./Images/DFT_Block_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.1/Examples/Block_Help/AIE/DFT_Ex2)
+[![](./Images/DFT_Block_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/DFT_Ex2)
+
+[![](./Images/DFT_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/DFT_Ex3)
+
+[![](./Images/DFT_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/DFT_Ex4)
+
+[![](./Images/DFT_Ex5.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/DFT_Ex5)
 
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
