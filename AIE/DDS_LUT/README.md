@@ -85,8 +85,6 @@ The propagated block sample time in Simulink is equal to "Sample time" multipled
 
 ***Click on the images below to open each model.***
 
-
-
 ## Related blocks
 [DDS](../DDS/README.md)
 
