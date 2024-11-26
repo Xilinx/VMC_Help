@@ -41,12 +41,14 @@ This field specifies the filter coefficients.
 Specify the coefficients as an NxM matrix, where `N` is the filter length and `M` is the number of TDM channels. 
 For example, if filter length is 4 and number of TDM channels is 8 then the coefficient matrix would look like below:
 
+$$
 \left(\begin{array}{cc}
   C11 & C12 & C13 & C14 & C15 & C16 & C17 & C18\\
   C21 & C22 & C23 & C24 & C25 & C26 & C27 & C28\\
   C31 & C32 & C33 & C34 & C35 & C36 & C37 & C38\\
   C41 & C42 & C43 & C44 & C45 & C46 & C47 & C48
 \end{array}\right)
+$$
 
 Where each element `Cnm` represents a 'n-th' coefficient for a 'm-th' TDM channel.               
 
