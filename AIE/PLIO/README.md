@@ -31,7 +31,7 @@ This block should be only placed at the boundaries of the AI Engine subsystem an
 Specifies PLIO width in bits. This can be only 32, 64, or 128 as these are the only acceptable bit-widths between PL and AI Engine array. 
 
 #### Specify PLIO frequency
-This is necessary to get accurate thorughput results from the Cycle Approximate AI Engine Simulator (SystemC) which you can trigger from the Vitis Model Composer Hub block, but it does not affect the design in hardware. The default frequency is a quarter of the AI Engine frequency and the maximum supported frequency is half of the AI Engine frequency.
+This is necessary to get accurate throughput results from the Cycle Approximate AI Engine Simulator (SystemC) which you can trigger from the Vitis Model Composer Hub block, but it does not affect the design in hardware. The default frequency is a quarter of the AI Engine frequency and the maximum supported frequency is half of the AI Engine frequency.
 
 Note that you can also use the "--pl-freq=_value_" AI Engine Compiler option in the Vitis Model Composer Hub block to specify the interface frequency (in MHz) for all PLIOs in the design. The individual PLIO frequency settings will take precedence over the pl-freq value.
 

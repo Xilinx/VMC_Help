@@ -41,11 +41,11 @@ This field specifies the filter coefficients.
 Specify the coefficients as an NxM matrix, where `N` is the filter length and `M` is the number of TDM channels. Each column of the matrix contains one channel's coefficients. Coefficients are stored in reverse order, i.e. the first row of the matrix contains the last coefficient of each channel, and the last row of the matrix contains the first coefficient of each channel. 
 
 <div class="noteBox">
-You could also define the coefficients as an array variable in the MATLAB workspace and specify the variable name in this field.
+You could also define the coefficients as a variable in the MATLAB workspace and specify the variable name in this field.
 </div>
 
 #### Scale output down by 2^  
-Sets the power of 2 shift down applied to the accumulator of FIR before output. It must be in the range 0 to 61 inclusive.
+Sets the power of 2 shift down applied to the accumulator of FIR before output. It must be in the range of 0 to 61 inclusive.
 
 #### Rounding mode
 Describes the selection of rounding to be applied during the shift down stage of processing.
