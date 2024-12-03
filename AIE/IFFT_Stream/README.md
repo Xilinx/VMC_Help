@@ -112,6 +112,9 @@ This determines the number of kernels the IFFT will be divided over in series to
 
 [![](./Images/IFFT_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/IFFT_Stream_Ex2)
 
+## References
+This block uses the Vitis DSP library implementation of IFFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft-ifft-aie-only.html).
+
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.

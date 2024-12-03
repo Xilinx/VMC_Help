@@ -121,7 +121,8 @@ This determines the number of kernels the FIR will be divided over to improve th
 
 [![](./Images/HBDecimator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/HalfBandDecimator_Ex2)
 
-
+### References
+This block uses the Vitis DSP library implementation of a FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filtersAIE.html).
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
 All rights reserved.
