@@ -94,7 +94,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/FIR_TDM_Stream_model.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/FIR_TDM_Stream_Ex1)
+[![](./Images/FIR_TDM_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/FIR_TDM_Stream_Ex1)
 
 
 ### References
