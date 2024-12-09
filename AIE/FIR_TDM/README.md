@@ -27,7 +27,7 @@ channel 4 data: z14,z24,....zn4
 
 where 'n' represents number of samples in each channel,
 
-Input data stream that looks like: X = k11, x12, y13, z14, k21, x22, y23, z24, ....., kn1, xn2 , yn3, zn4.
+Then the input data stream looks like: X = k11, x12, y13, z14, k21, x22, y23, z24, ....., kn1, xn2 , yn3, zn4.
 
 When SSR > 1, this input data stream further split over multiple ports where each successive input sample is sent to a different input port in a round-robin fashion:
 
@@ -35,7 +35,7 @@ For example SSR = 2 and 4-channel FIR TDM input array organization is explained 
 
 ![](./Images/Input_Format.png)  
 
-FIR TDM output data will be merged in a similar method
+FIR TDM output data will be merged in a similar method.
 
 ## Parameters
 
