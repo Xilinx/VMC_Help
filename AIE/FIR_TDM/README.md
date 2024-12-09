@@ -11,15 +11,18 @@ AI Engine/DSP/Buffer IO
 
 Time-Division Multiplexing FIR Filter for AI Engines
 
-### Input Data Samples - Array Organization
+#### Input Data Samples - Array Organization
 
 Input Data Samples must be in a form that lists set of input samples for each channel at a time, i.e. in the following form:
 
 For example, for a 4-channel FIR TDM, 
 
 channel 1 data: k11,k21,....kn1
+
 channel 2 data: x12,x22,....xn2
+
 channel 3 data: y13,y23,....yn3
+
 channel 4 data: z14,z24,....zn4
 
 where 'n' represents number of samples in each channel,
@@ -31,6 +34,8 @@ When SSR > 1, this input data stream further split over multiple ports where eac
 For example SSR = 2 and 4-channel FIR TDM input array organization is explained in the figure below:
 
 ![](./Images/Input_Format.png)  
+
+FIR TDM output data will be merged in a similar method
 
 ## Parameters
 
