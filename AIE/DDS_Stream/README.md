@@ -100,7 +100,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 [DDS](../DDS/README.md) is another DDS block that uses buffer interface instead of stream interface.
 
 ## References
-This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
+This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds_mixer_intrinsic.html).
 
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.

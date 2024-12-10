@@ -94,7 +94,7 @@ The propagated block sample time in Simulink is equal to "Sample time" multipled
 [DDS](../DDS/README.md)
 
 ## References
-This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds.html).
+This block uses the Vitis DSP library implementation of DDS LUT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds_mixer_lut.html).
 
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.

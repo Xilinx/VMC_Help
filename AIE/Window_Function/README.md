@@ -75,6 +75,8 @@ Describes the power of 2 shift down applied before output.
 
 [![](./Images/WindowFunctionModel1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/WindowFunction_Ex1)
   
+### References
+This block uses the Vitis DSP library implementation of a FFT window function. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft_window.html).
  
 
 --------------

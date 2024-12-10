@@ -195,10 +195,8 @@ This determines the number of kernels the FFT will be divided over in series to 
 
 [![](./Images/DynamicFFT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/DynamicFFT_Stream_Ex1)
 
-
-
-
-
+## References
+This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft-ifft-aie-only.html).
 
 --------------
 Copyright (C) 2024 Advanced Micro Devices, Inc.
