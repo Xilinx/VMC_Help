@@ -32,7 +32,7 @@ X = k<sub>1</sub>, x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub>, k<sub>2</sub>, x
 
 When SSR > 1, this input data stream further split over multiple ports where each successive input sample is sent to a different input port in a round-robin fashion:
 
-For example SSR = 2 and 4-channel FIR TDM input array organization is explained in the figure below:
+For example, SSR = 2 and 4-channel FIR TDM input array organization is explained in the figure below:
 
 ![](./Images/Input_Format.png)  
 
@@ -117,7 +117,7 @@ For example, a 32 tap FIR split over 4 cascaded kernels will result in each oper
 #### SSR 
 
 This parameter specifies the number of input (or output) paths and must
-be of the form 2^N, where N is a non-negative integer.
+be of the form 2<sup>N</sup>, where N is a non-negative integer.
 When a Super Sample Rate operation is used, then the input data channel must be split over multiple ports where each successive input sample is sent to a different input port in a round-robin fashion.
 
 For example, for a input data stream that looks like: X = 1, 2, 3, 4, 5, 6, 7, 8, 9, ..., with an SSR parameter set to 2, input samples should be split over two ports accordingly:
