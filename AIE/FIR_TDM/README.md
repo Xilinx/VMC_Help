@@ -11,9 +11,9 @@ AI Engine/DSP/Buffer IO
 
 Time-Division Multiplexing FIR Filter for AI Engines
 
-#### Input Data Samples - Array Organization
+## Input Data Samples - Organization
 
-Input Data Samples must be in a form that lists set of input samples for each channel at a time, i.e. in the following form:
+Input Data Samples to this filter must be in Time-Division Multiplexed (TDM) format.
 
 For example, for a 4-channel FIR TDM, 
 
@@ -25,10 +25,15 @@ channel 3 data: y<sub>1</sub>,y<sub>2</sub>,....,y<sub>n-1</sub>,y<sub>n</sub>
 
 channel 4 data: z<sub>1</sub>,z<sub>2</sub>,....,z<sub>n-1</sub>,z<sub>n</sub>
 
-where 'n' represents number of samples in each channel,
+where 'n' represents the input window size divided by the number of channels. 
 
-Then the input data stream looks like: 
-X = k<sub>1</sub>, x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub>, k<sub>2</sub>, x<sub>2</sub>, y<sub>2</sub>, z<sub>2</sub>, ......., k<sub>n-1</sub>, x<sub>n-1</sub>, y<sub>n-1</sub>, z<sub>n-1</sub>, k<sub>n</sub>, x<sub>n</sub>, y<sub>n</sub>, z<sub>n</sub>.
+Then the input data stream would be ordered as: 
+
+k<sub>1</sub>, x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub>, k<sub>2</sub>, x<sub>2</sub>, y<sub>2</sub>, z<sub>2</sub>, ......., k<sub>n-1</sub>, x<sub>n-1</sub>, y<sub>n-1</sub>, z<sub>n-1</sub>, k<sub>n</sub>, x<sub>n</sub>, y<sub>n</sub>, z<sub>n</sub>
+
+<div class="noteBox">
+In Simulink, you can also arrange the input as a matrix where the rows represent each channel's input. In this example, the matrix would have a size of 4xN.
+</div>
 
 When SSR > 1, this input data stream further split over multiple ports where each successive input sample is sent to a different input port in a round-robin fashion:
 
@@ -36,7 +41,9 @@ For example, SSR = 2 and 4-channel FIR TDM input array organization is explained
 
 ![](./Images/Input_Format.png)  
 
-FIR TDM output data will be merged in a similar method.
+FIR TDM output data will be formatted in the same way.
+
+
 
 ## Parameters
 
@@ -95,8 +102,9 @@ The following modes are available:
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Input window size (Number of samples)  
-Describes the number of samples used as an input to the filter function.
-Because this is a single rate filter, the number of samples in the output window will match the size of the input window. This must be in the range of 4 to 8192 inclusive. 
+Describes the total number of samples (across all channels) used as an input to the filter function.
+
+The number of input samples per channel is equal to this parameter, divided by the number of TDM channels.
 
 #### Number of TDM channels 
 Describes the number of Time-Division Multiplexed (TDM) channels processed by the FIR.
@@ -125,7 +133,7 @@ For example, for a input data stream that looks like: X = 1, 2, 3, 4, 5, 6, 7, 8
 In[1] = 1, 3, 5, 7, 9,...
 In[2] = 2, 4, 6, 8, 10,...
 
-The output data will be produced in a similar method.
+The output data will be produced in the same way.
 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
