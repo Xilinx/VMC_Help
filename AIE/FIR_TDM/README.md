@@ -17,17 +17,18 @@ Input Data Samples must be in a form that lists set of input samples for each ch
 
 For example, for a 4-channel FIR TDM, 
 
-channel 1 data: k11,k21,....kn1
+channel 1 data: k<sub></sub>1,k<sub></sub>2,....,k<sub></sub>n-1,k<sub></sub>n
 
-channel 2 data: x12,x22,....xn2
+channel 2 data: x<sub></sub>1,x<sub></sub>2,....,x<sub></sub>n-1,x<sub></sub>n
 
-channel 3 data: y13,y23,....yn3
+channel 3 data: y<sub></sub>1,y<sub></sub>2,....,y<sub></sub>n-1,y<sub></sub>n
 
-channel 4 data: z14,z24,....zn4
+channel 4 data: z<sub></sub>1,z<sub></sub>2,....,z<sub></sub>n-1,z<sub></sub>n
 
 where 'n' represents number of samples in each channel,
 
-Then the input data stream looks like: X = k11, x12, y13, z14, k21, x22, y23, z24, ....., kn1, xn2 , yn3, zn4.
+Then the input data stream looks like: 
+X = k<sub></sub>1, x<sub></sub>1, y<sub></sub>1, z<sub></sub>1, k<sub></sub>2, x<sub></sub>2, y<sub></sub>2, z<sub></sub>2, ......., k<sub></sub>n-1, x<sub></sub>n-1, y<sub></sub>n-1, z<sub></sub>n-1, k<sub></sub>n, x<sub></sub>n, y<sub></sub>n, z<sub></sub>n.
 
 When SSR > 1, this input data stream further split over multiple ports where each successive input sample is sent to a different input port in a round-robin fashion:
 
