@@ -17,18 +17,18 @@ Input Data Samples must be in a form that lists set of input samples for each ch
 
 For example, for a 4-channel FIR TDM, 
 
-channel 1 data: k <sub>1</sub>,k <sub>2</sub>,....,k <sub>n-1</sub>,k <sub>n</sub>
+channel 1 data: k<sub>1</sub>,k<sub>2</sub>,....,k<sub>n-1</sub>,k<sub>n</sub>
 
-channel 2 data: x< sub>1</sub>,x <sub>2</sub>,....,x <sub>n-1</sub>,x <sub>n</sub>
+channel 2 data: x<sub>1</sub>,x<sub>2</sub>,....,x<sub>n-1</sub>,x<sub>n</sub>
 
-channel 3 data: y <sub>1</sub>,y <sub>2</sub>,....,y <sub>n-1</sub>,y <sub>n</sub>
+channel 3 data: y<sub>1</sub>,y<sub>2</sub>,....,y<sub>n-1</sub>,y<sub>n</sub>
 
-channel 4 data: z< sub>1</sub>,z< sub>2</sub>,....,z <sub>n-1</sub>,z <sub>n</sub>
+channel 4 data: z<sub>1</sub>,z<sub>2</sub>,....,z<sub>n-1</sub>,z<sub>n</sub>
 
 where 'n' represents number of samples in each channel,
 
 Then the input data stream looks like: 
-X = k <sub>1</sub>, x <sub>1</sub>, y <sub>1</sub>, z <sub>1</sub>, k <sub>2</sub>, x <sub>2</sub>, y <sub>2</sub>, z <sub>2</sub>, ......., k <sub>n-1</sub>, x <sub>n-1</sub>, y <sub>n-1</sub>, z <sub>n-1</sub>, k <sub>n</sub>, x <sub>n</sub>, y <sub>n</sub>, z <sub>n</sub>.
+X = k<sub>1</sub>, x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub>, k<sub>2</sub>, x<sub>2</sub>, y<sub>2</sub>, z<sub>2</sub>, ......., k<sub>n-1</sub>, x<sub>n-1</sub>, y<sub>n-1</sub>, z<sub>n-1</sub>, k<sub>n</sub>, x<sub>n</sub>, y<sub>n</sub>, z<sub>n</sub>.
 
 When SSR > 1, this input data stream further split over multiple ports where each successive input sample is sent to a different input port in a round-robin fashion:
 
