@@ -70,6 +70,12 @@ width.
 Specifies the bit location of the binary point, where bit zero is the
 least significant bit.
 
+<div class="noteBox">
+Vitis Model Composer does not support fixed-point signals with binary point greater than the number of bits. However, you can model such signals by scaling the data before and after the Gateway blocks. Refer to the example linked below.
+</div>
+
+[Fixed-Point Scaling with Fractional Length greater than Word Length](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/FixedPointScaling_Ex1)
+
 #### Floating-point Precision  
 ##### Single  
 Specifies single precision (32 bits).
@@ -180,7 +186,7 @@ I/O standards can be specified as a cell array of strings in this edit
 box. The locations are package-specific.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
