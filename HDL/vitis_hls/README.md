@@ -1,42 +1,41 @@
 # Vitis HLS
 
 The Vitis™ HLS block allows the functionality of a Vitis HLS
-design to be included in a Model Composer design. The Vitis HLS design
+component to be included in a Vitis Model Composer design. The Vitis HLS component
 can include C, C++ and System C design sources.
 
 ![](./Images/block.png)
 
 ## Description
 
-There are two steps to the method of including a Vitis HLS design into
-Model Composer. The first step is to use the Vitis HLS RTL Packaging
-feature to package the design files into a Solution directory. (Refer to
+There are two steps to include a Vitis HLS component into
+Vitis Model Composer. The first step is to use the Vitis HLS RTL Packaging
+feature to package the design files into a Component directory. (Refer to
 Vitis HLS documentation for more information regarding RTL Packaging.)
 The second step is to place the Vitis HLS block in your Model Composer
-design and specify the Vitis HDL Solution directory as the target.
+design and specify the Vitis HLS Component directory as the target.
 
 ## Parameters
 
 ![](./Images/vtg1602064866443.png)
 
-#### Solution  
-The path to the Solution space directory containing RTL packaged for
-Model Composer. This path is usually the path to a directory contained
-in a Vivado® HLS project. The path must be included in single quotes and
+#### Component
+The path to the Component directory containing RTL packaged for
+Vitis Model Composer. This path is usually the path to a directory contained
+in a Vitis® HLS project. The path must be included in single quotes and
 must evaluate to a string.
 
 #### Browse  
 A standard directory browse button.
 
 #### Refresh  
-Updates the block ports to the latest package contained in the solution
-space.
+Updates the block ports to the latest package contained in the Component directory.
 
 #### Edit  
-Opens the Vitis HLS project associated with solution space.
+Opens the Vitis HLS project associated with the component.
 
 #### Use C simulation model if available  
-Use the C simulation model if it is available in the Vitis HLS package.
+Use the C simulation model if it is available in the Vitis HLS component.
 As shown below, the simulation model being used is shown on the Vitis
 HLS block. In this case, an RTL-model is used because a C simulation
 model is not available.
@@ -93,7 +92,7 @@ period.
   arbitrary bitwidth integers in C designs on win-64 systems.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
