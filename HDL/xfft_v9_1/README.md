@@ -244,7 +244,7 @@ consult the core data sheet.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/FastFourierTransform_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/FastFourierTransform9.1_Ex1)
+[![](./Images/FastFourierTransform_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/FastFourierTransform_Ex1)
 
 
 
