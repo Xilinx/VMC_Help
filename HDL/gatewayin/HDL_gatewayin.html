@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="gateway-in" class="level1">
 <h1>Gateway In</h1>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAzCAYAAACdfIbRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADNklEQVR4nO2bv2sTYRiAn+8uVimlgyWXURGXlkN0cSji0PwJOpRM7eJSXDMKzhGcOhcRtIMI7qYOxVYU1MJh6aKIk5dqSyktFu4+h2tN0ubyw941eZPvgSPDHS/v5eH9fp/SWmsMorC6nYChczLNbiqlzioPQwPiGsGm0gB2fj1LPBlDa0bHCrH3TPMokJaV1lsMEdguSu8nGtUKvwN7icZME1HSNMOE6jKk0NVa4XryQVNCVPOo2MYOPqMIup1KVxElDcDSX1HhDxhgceKkAdjhJ5TeZlDFiZQGmkywitIHwOAt6FgAm5ublEolKpVKt/PpgAPscLmv+7c4HxbAwsICxWKRqakpfN8/08ROg9K7WMFH7HADO1xvekkkzocFMDMzg+u6eJ5HPp8XIy5UWQL7JpphrHC96SVRXJwPCyCbzVIul9sWt/z2C6NjBV68XE036yZEwiYBUOx2LY80ifPxbyDiOM4Jcb1KVZjd7VRSJa6Q6kaPx8W1w+q7DUbHCjx6/IqJa/e5dPUeT56+Sf4NDhkUYdC4kHzfPznkdxyHxcXFtgNnMtGft7b2jfcrJW5cv8KDh8+Ty7yGQRJ2RK0Pz/OYm5s7Kc33faanpzsOfvfOJCMjF7h9a4KtrV329/+cPuMatLo4cMKg3ofruszPz9dL832ffD6P53m4rttR8PND5wDIZKKQYZjspFerHIMorNZHuVzGcZzqKn+jB3K5XDdzbpvAGm96XzOCErT1ckQjYXC4NVOpVGIfkEIrcXb4gWitUk61xvlQWmtdKpUoFosnHlBK9cxxg9AabymmMQF2sIKlK7EDGftwAt5LjI4VYgsoAzA7OwtEKyPZbPbsM0yNqjAg+g1WxAxolpaWGvpQzc49yq60emF1sY5VXK9WWpwaoVszrYgXBlHF2cEKUvfj+lBac2FHVMVFo0tJiDnYE52Yao3SP1H6d3sxdQUVvE78dFfaiJEGe6n0O0rvJB4zbfqweex/jDSBGGkCaTlPM3SP//pqxnxv2JuY5lEgRppAjDSBGGkCMdIEYqQJxEgTiJEmECNNIEaaQIw0gRhpAjHSBGKkCcRIE4iRJhAjTSB/Ab4WhBTEPxfSAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAzCAYAAACdfIbRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADNklEQVR4nO2bv2sTYRiAn+8uVimlgyWXURGXlkN0cSji0PwJOpRM7eJSXDMKzhGcOhcRtIMI7qYOxVYU1MJh6aKIk5dqSyktFu4+h2tN0ubyw941eZPvgSPDHS/v5eH9fp/SWmsMorC6nYChczLNbiqlzioPQwPiGsGm0gB2fj1LPBlDa0bHCrH3TPMokJaV1lsMEdguSu8nGtUKvwN7icZME1HSNMOE6jKk0NVa4XryQVNCVPOo2MYOPqMIup1KVxElDcDSX1HhDxhgceKkAdjhJ5TeZlDFiZQGmkywitIHwOAt6FgAm5ublEolKpVKt/PpgAPscLmv+7c4HxbAwsICxWKRqakpfN8/08ROg9K7WMFH7HADO1xvekkkzocFMDMzg+u6eJ5HPp8XIy5UWQL7JpphrHC96SVRXJwPCyCbzVIul9sWt/z2C6NjBV68XE036yZEwiYBUOx2LY80ifPxbyDiOM4Jcb1KVZjd7VRSJa6Q6kaPx8W1w+q7DUbHCjx6/IqJa/e5dPUeT56+Sf4NDhkUYdC4kHzfPznkdxyHxcXFtgNnMtGft7b2jfcrJW5cv8KDh8+Ty7yGQRJ2RK0Pz/OYm5s7Kc33faanpzsOfvfOJCMjF7h9a4KtrV329/+cPuMatLo4cMKg3ofruszPz9dL832ffD6P53m4rttR8PND5wDIZKKQYZjspFerHIMorNZHuVzGcZzqKn+jB3K5XDdzbpvAGm96XzOCErT1ckQjYXC4NVOpVGIfkEIrcXb4gWitUk61xvlQWmtdKpUoFosnHlBK9cxxg9AabymmMQF2sIKlK7EDGftwAt5LjI4VYgsoAzA7OwtEKyPZbPbsM0yNqjAg+g1WxAxolpaWGvpQzc49yq60emF1sY5VXK9WWpwaoVszrYgXBlHF2cEKUvfj+lBac2FHVMVFo0tJiDnYE52Yao3SP1H6d3sxdQUVvE78dFfaiJEGe6n0O0rvJB4zbfqweex/jDSBGGkCaTlPM3SP//pqxnxv2JuY5lEgRppAjDSBGGkCMdIEYqQJxEgTiJEmECNNIEaaQIw0gRhpAjHSBGKkCcRIE4iRJhAjTSB/Ab4WhBTEPxfSAAAAAElFTkSuQmCC" /></p>
 <section id="descripion" class="level2">
 <h2>Descripion</h2>
 <p>The Gateway In blocks are the inputs into the HDL portion of your
@@ -107,6 +106,12 @@ width.</p>
 <h5>Binary point</h5>
 <p>Specifies the bit location of the binary point, where bit zero is the
 least significant bit.</p>
+<div class="noteBox">
+Vitis Model Composer does not support fixed-point signals with binary point greater than the number of bits. However, you can model such signals by scaling the data before and after the Gateway blocks. Refer to the example linked below.
+</div>
+
+<p><a href="matlab:openVMCExample(&#39;FixedPointScaling_Ex1&#39;)">Fixed-Point
+Scaling with Fractional Length greater than Word Length</a></p>
 </section>
 </section>
 <section id="floating-point-precision" class="level4">
@@ -244,7 +249,7 @@ edit box. The locations are package-specific.</p>
 <p>I/O standards can be specified as a cell array of strings in this
 edit box. The locations are package-specific.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>
