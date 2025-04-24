@@ -108,7 +108,7 @@ Product Guide (PG323) for details on all the parameters on this tab.
 DSP Macro LogiCORE IP Product Guide ([PG323](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=pg323-dsp-macro))
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

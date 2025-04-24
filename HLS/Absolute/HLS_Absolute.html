@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="abs" class="level1">
 <h1>Abs</h1>
 <p>Compute element-wise absolute value of input signal</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD90lEQVRoge2az2/TVhzAPzbZ0lFBFJSkHPZDwKkQcUVsArHmsAntD+gOoBROVbUDh+aOhDhxQFQ9bBJLoAd62IlpkyaRQpGmTTutkncbFG1CKnZIaUQyZ67tXZY2TePEv5I0rj83y+/73vej9/zes/0E0zRN9gnioBPoJ5FONwVB6FcevmI1WDvKAjx79pXvyfSSEyfmLO/tq2EcygaVUDaodJ2NWxHFKPH4RTSt3It8bFGtrqDrbxzHOZY9cCDGwYOnHTfkN5XKsuMYx8NY02QU5T6mqTlubNC4emZVdZVS6cHQCbueoIZR2NNsPGzCnpeeYRL2ZZ0dFmHfNhXDIOzrDmqvCzveVHRDVVdRlAWi0eOOY2OxC36ns4MIQKlUIp/Pk81mSSaTnis1jDpv3/6KYdQdx/ohrChKWw8RIJ/Pk8vlmJiYQJZlTw2NjBzj6NFp4vGLnurxgpWHCJDNZkmn00iSRCaTcS08MnKMROJLgK0XhTNn7lKpdO5hO2WcYOUhAiSTSYrFoifhhqggvONb0m6x8tiajVOp1C5hu9gRLRRWuHr1+63rK1cecu/eilMPW1h13I6lp1XYDnZ79PLl05TL//DkyQseP37B+rrKpUu9eVVs13GyLO9eelKpFIuLi6TT6a6VOhm6oihw8+YE1679hGnC7dufIYq9+y7d7CFJEjMzM7tlZVlmcnKya2VuntHx8QTx+Htoms74eMJZ9g5p9kin08zPz+8cxrIsk8lkkCSpY8+6nYyePv2LzU0DgEePnjvN3zatHsVikVQqtd2z7QqMjY3tqiga/cCVqKpucv36MnNzn2OaMD39A2fPvs/o6Lve7VpoJwr/T1CKolgWaCUaPe5qeblz5zfOnfuQkyeTnDqV5Pz5j7h16xcPStZYeUQACoWCLVEv5HIf77i+ceNT39toYOURAZiamgLwbW88aJaWltp6RAASiQSzs7O+NtjY0AvCAocOfcLhw6OWZQVhgSNHvkAQDF/atuow31/xmonFLvDy5Z9dyzXKvH79HYbxL6Lo/6QFe+T3h2lqKMp9arU/kOVvMYwa4P/ph4HLmqZGqfQAVV0FQNNesbb2Dbq+gWlu+trWQGVbRRvo+gZra1+jaYqvn3gGJmsl2sAwVGT5LvX6qm/CA5HtJrpdTkdRFqlWf/dFuO+ydkWbIlhf/5FKZdmzcF9lnYtuU6n8TLn8EIBIJOaq/Z6us814EW1Qq0lomoKub7iKdyxbrbr7lFKvP6de/9tVbDOa9sp1rGNZXX/j6q/3XmDgm4p+EsoGlVA2qAidTpLvq/PGQTtRv6+GcSgbVELZoBLKBpVQNqiEskEllA0qoWxQCWWDyn+8Uga47RzHUAAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD90lEQVRoge2az2/TVhzAPzbZ0lFBFJSkHPZDwKkQcUVsArHmsAntD+gOoBROVbUDh+aOhDhxQFQ9bBJLoAd62IlpkyaRQpGmTTutkncbFG1CKnZIaUQyZ67tXZY2TePEv5I0rj83y+/73vej9/zes/0E0zRN9gnioBPoJ5FONwVB6FcevmI1WDvKAjx79pXvyfSSEyfmLO/tq2EcygaVUDaodJ2NWxHFKPH4RTSt3It8bFGtrqDrbxzHOZY9cCDGwYOnHTfkN5XKsuMYx8NY02QU5T6mqTlubNC4emZVdZVS6cHQCbueoIZR2NNsPGzCnpeeYRL2ZZ0dFmHfNhXDIOzrDmqvCzveVHRDVVdRlAWi0eOOY2OxC36ns4MIQKlUIp/Pk81mSSaTnis1jDpv3/6KYdQdx/ohrChKWw8RIJ/Pk8vlmJiYQJZlTw2NjBzj6NFp4vGLnurxgpWHCJDNZkmn00iSRCaTcS08MnKMROJLgK0XhTNn7lKpdO5hO2WcYOUhAiSTSYrFoifhhqggvONb0m6x8tiajVOp1C5hu9gRLRRWuHr1+63rK1cecu/eilMPW1h13I6lp1XYDnZ79PLl05TL//DkyQseP37B+rrKpUu9eVVs13GyLO9eelKpFIuLi6TT6a6VOhm6oihw8+YE1679hGnC7dufIYq9+y7d7CFJEjMzM7tlZVlmcnKya2VuntHx8QTx+Htoms74eMJZ9g5p9kin08zPz+8cxrIsk8lkkCSpY8+6nYyePv2LzU0DgEePnjvN3zatHsVikVQqtd2z7QqMjY3tqiga/cCVqKpucv36MnNzn2OaMD39A2fPvs/o6Lve7VpoJwr/T1CKolgWaCUaPe5qeblz5zfOnfuQkyeTnDqV5Pz5j7h16xcPStZYeUQACoWCLVEv5HIf77i+ceNT39toYOURAZiamgLwbW88aJaWltp6RAASiQSzs7O+NtjY0AvCAocOfcLhw6OWZQVhgSNHvkAQDF/atuow31/xmonFLvDy5Z9dyzXKvH79HYbxL6Lo/6QFe+T3h2lqKMp9arU/kOVvMYwa4P/ph4HLmqZGqfQAVV0FQNNesbb2Dbq+gWlu+trWQGVbRRvo+gZra1+jaYqvn3gGJmsl2sAwVGT5LvX6qm/CA5HtJrpdTkdRFqlWf/dFuO+ydkWbIlhf/5FKZdmzcF9lnYtuU6n8TLn8EIBIJOaq/Z6us814EW1Qq0lomoKub7iKdyxbrbr7lFKvP6de/9tVbDOa9sp1rGNZXX/j6q/3XmDgm4p+EsoGlVA2qAidTpLvq/PGQTtRv6+GcSgbVELZoBLKBpVQNqiEskEllA0qoWxQCWWDyn+8Uga47RzHUAAAAABJRU5ErkJggg==" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions/Math Operations</p>
@@ -58,7 +57,7 @@ the Abs block is always real.</p>
 <h2>Parameters</h2>
 <p>The Abs block has no parameters to set.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

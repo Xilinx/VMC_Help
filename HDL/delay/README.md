@@ -172,7 +172,7 @@ mode or by putting a Register or Delay block after the addressable shift
 register.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

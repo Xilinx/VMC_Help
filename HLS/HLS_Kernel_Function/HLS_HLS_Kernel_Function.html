@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>HLS Kernel</h1>
 <p>This block lets you import an HLS kernel IP and simulate it in Vitis
 Model Composer.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>HLS/User-Defined Functions</p>
@@ -106,49 +105,49 @@ definition value is not provided, it is assumed to be 1.</p>
 types for inputs and outputs.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Type</th>
 <th>Detail</th>
 <th>Examples</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>Scalar Types</strong></td>
 <td>Scalar of C/C++ Primitive (except double, bool)</td>
 <td><code>short</code>, <code>int8</code>, <code>int32</code>,
 <code>int64</code>, <code>int&amp;</code>, <code>float&amp;</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td>AP Integer: ap_int/ap_uint<X>, 1 &lt;= X &lt;= 128</td>
 <td><code>ap_int&lt;32&gt;</code>, <code>ap_uint&lt;96&gt;</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td>ap_fixed/ap_ufixed, with 1 &lt;= W &lt;=128</td>
 <td><code>ap_fixed&lt;32,32&gt;</code>,
 <code>ap_ufixed&lt;96,64&gt;</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td>std::complex with C/C++ primitive (except double, bool)</td>
 <td><code>std::complex&lt;int32&gt;</code>,
 <code>std::complex&lt;float&gt;</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td>std::complex with ap_int/ap_uint<X>, 1 &lt;= X &lt;= 64</td>
 <td><code>std::complex&lt;ap_int&lt;32&gt;&gt;</code>,
 <code>std::complex&lt;ap_uint&lt;64&gt;&gt;</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td>std::complex with ap_fixed/ap_ufixed<X>, 1 &lt;= X &lt;= 64</td>
 <td><code>std::complex&lt;ap_fixed&lt;64,32&gt;&gt;</code>,
 <code>std::complex&lt;ap_ufixed&lt;37,10&gt;&gt;</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>Vector Types</strong></td>
 <td>Constant size array of any of the above Scalar Types. Must be passed
 by reference.</td>
@@ -156,14 +155,14 @@ by reference.</td>
 <code>std::complex&lt;ap_uint&lt;32&gt;&gt; (&amp;arg)[20]</code>,
 <code>hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0&gt; (&amp;arg)[30]</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Pointer Types</strong></td>
 <td>Pointer type of any of the above Scalar Types</td>
 <td><code>const int32_t *arg</code>,
 <code>std::complex&lt;ap_int&lt;32&gt;&gt; const* arg</code>,
 <code>ap_fixed&lt;57, 0, 0, 0&gt; *arg</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>hls::stream</strong></td>
 <td>hls::stream with any of above Scalar Types. Must be passed by
 reference.</td>
@@ -174,20 +173,20 @@ reference.</td>
 <code>hls::stream&lt;std::complex&lt;ap_int&lt;16&gt;&gt; &amp;arg</code>,
 <code>hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0&gt;&gt; &amp;arg</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td>hls::stream with ap_axis/ap_axiu, data width is 32/64/128</td>
 <td><code>hls::stream&lt;ap_axis&lt;32, 0, 0, 0&gt;&gt; &amp;arg</code>,
 <code>hls::stream&lt;ap_axiu&lt;64, 0, 0, 0&gt;&gt; &amp;arg</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td>hls::stream with hls::axis&lt;ap_int/ap_uint&gt;, data width is
 32/64/128</td>
 <td><code>hls::stream&lt;hls::axis&lt;ap_int&lt;32&gt;, 0, 0, 0&gt; &gt; &amp;arg</code>,
 <code>hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0&gt; &gt; &amp;arg</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Template</strong></td>
 <td>Any template that is deducted into above supported
 scalar/vector/stream types</td>
@@ -208,7 +207,7 @@ scalar/vector/stream types</td>
 <p><a href="matlab:XmcExampleApi.getExample(&#39;FFT2D&#39;)">2d FFT
 with both AI Engines and HLS Kernel blocks</a></p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

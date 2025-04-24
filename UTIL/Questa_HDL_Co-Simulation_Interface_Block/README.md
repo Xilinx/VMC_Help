@@ -211,7 +211,7 @@ begins to fail when the Simulink system period setting is reduced below
 stepping of the black boxes for data propagation.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

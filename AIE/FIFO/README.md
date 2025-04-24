@@ -33,7 +33,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 To learn more about FIFO and different types of FIFOs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/FIFO-Depth).
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

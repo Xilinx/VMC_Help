@@ -33,7 +33,7 @@ produces a Boolean result on the output.
 The Logical AND block has no parameters to set.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

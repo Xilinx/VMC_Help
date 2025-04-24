@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="absolute" class="level1">
 <h1>Absolute</h1>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Absolute block outputs the absolute value of the input.</p>
@@ -96,7 +95,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <h2>LogiCORE™ Documentation</h2>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

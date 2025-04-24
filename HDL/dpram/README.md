@@ -209,7 +209,7 @@ UltraScale Architecture Memory Resources User Guide
 XPM_MEMORY_TDPRAM Macro (UltraRAM)
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

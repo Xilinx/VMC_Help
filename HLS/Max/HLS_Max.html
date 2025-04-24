@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Max</h1>
 <p>Outputs the maximum value of an input or element-wise maximum value
 of multiple inputs.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions/Math Operations</p>
@@ -100,7 +99,7 @@ among the bit widths of the inputs.</li>
 <p>The block icon is redrawn with the specified number of input
 ports.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

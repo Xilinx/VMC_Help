@@ -442,9 +442,9 @@ DDS Compiler examples with integer and floating point output datatype are shown 
 
 ***Click on the images below to open each model.***
 
-[![](./Images/DDSInteger_Model.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/DDSCompiler_Ex1)
+[![](./Images/DDSInteger_Model.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/DDSCompiler_Ex1)
 
-[![](./Images/DDSFloatingPoint_Model.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/DDSCompiler_Ex2)
+[![](./Images/DDSFloatingPoint_Model.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/DDSCompiler_Ex2)
 
 --------------
 
@@ -454,7 +454,7 @@ DDS Compiler LogiCORE IP Product Guide
 ([PG141](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US))
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

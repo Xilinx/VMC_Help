@@ -53,7 +53,7 @@ The settings for Output dimensions are as follows:
 The value of the Output dimensions parameter must be a two-element vector.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

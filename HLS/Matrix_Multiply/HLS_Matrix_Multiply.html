@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Matrix Multiply</h1>
 <p>Compute matrix product of two input signals. The first operand is the
 top input on the block.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Matrices and Linear Algebra</p>
@@ -53,7 +52,7 @@ table below shows valid combinations. Combinations that do not match any
 row in the table result in an error.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Dimensions of First Operand</th>
 <th>Dimensions of Second Operand</th>
 <th>Dimensions of Matrix Product</th>
@@ -61,31 +60,31 @@ row in the table result in an error.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>K x L</td>
 <td>L x M</td>
 <td>K x M</td>
 <td>K &gt;= 1, L &gt;= 1, M &gt;= 1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>K x L</td>
 <td>L</td>
 <td>K</td>
 <td>K &gt;= 1, L &gt; 1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>K x 1</td>
 <td>1</td>
 <td>K x 1</td>
 <td>K &gt;= 1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>K</td>
 <td>1</td>
 <td>K</td>
 <td>K &gt;= 1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>K</td>
 <td>1 x M</td>
 <td>K x M</td>
@@ -101,56 +100,56 @@ not correspond to the output data type computed via the internal rule of
 the Simulink® Matrix Product block.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Data Type of First Operand</th>
 <th>Data Type of Second Operand</th>
 <th>Data Type of Matrix Product</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>T1: floating-point</td>
 <td>T2</td>
 <td>The widest floating-point type between T1 and T2 if T2 is a
 floating-point type; otherwise T1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>T1</td>
 <td>T2: floating-point</td>
 <td>The widest floating-point type between T1 and T2 if T1 is a
 floating-point type; otherwise T2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>fixed-point</td>
 <td>fixed-point</td>
 <td>The smallest fixed-point type capable of representing the product
 without loss of precision</td>
 </tr>
-<tr class="even">
+<tr>
 <td>fixed-point</td>
 <td>integer</td>
 <td>The smallest fixed-point type capable of representing the product
 without loss of precision</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>integer</td>
 <td>fixed-point</td>
 <td>The smallest fixed-point type capable of representing the product
 without loss of precision</td>
 </tr>
-<tr class="even">
+<tr>
 <td>T1: integer</td>
 <td>T2: integer</td>
 <td>Let W1 be the bit width of T1 and W2 be the bit width of T2. The
 product is the integer type with bit width max (W1,W2) and it is signed
 if either T1 or T2 are signed.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>boolean</td>
 <td>T2</td>
 <td>T2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>T1</td>
 <td>boolean</td>
 <td>T1</td>
@@ -162,7 +161,7 @@ if either T1 or T2 are signed.</td>
 <h2>Parameters</h2>
 <p>The Matrix Multiply block has no parameters to set.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="real-imag-to-complex" class="level1">
 <h1>Real-Imag to Complex</h1>
 <p>Computes the complex output from real and imaginary input.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -119,7 +118,7 @@ Real.</p>
 <p>The value of the Imag part parameter must be a numeric, real-valued
 scalar, vector, or matrix.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

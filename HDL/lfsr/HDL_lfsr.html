@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="lfsr" class="level1">
 <h1>LFSR</h1>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The LFSR block implements a Linear Feedback Shift Register (LFSR).
@@ -43,34 +42,34 @@ ports.</p>
 <h3>Block Interface</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Port Name</th>
 <th>Port Description</th>
 <th>Port Type</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>din</td>
 <td>Data input for re-loadable seed</td>
 <td>Optional serial or parallel input</td>
 </tr>
-<tr class="even">
+<tr>
 <td>load</td>
 <td>Load signal for din</td>
 <td>Optional boolean input</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>rst</td>
 <td>Reset signal</td>
 <td>Optional boolean input</td>
 </tr>
-<tr class="even">
+<tr>
 <td>en</td>
 <td>Enable signal</td>
 <td>Optional boolean input</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>dout</td>
 <td>Data output of LFSR</td>
 <td>Required serial or parallel output</td>
@@ -158,7 +157,7 @@ or parallel).</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

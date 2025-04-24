@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="sum" class="level1">
 <h1>Sum</h1>
 <p>Perform element-wise addition of two input signals</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADcElEQVRoge2aMU/bQBiGXxtHRCyIktzWgWZhsKr8hJJs3bLRpYIZdYTfgMSIUMUUFAnBlqULg0Ed+gNoPXShGcqA7ATRSIkcmeg6RA7BySU53xknxs+ECL77Hvly9vtxCqWU4pWgRl3AS6KN+1BRlJeqQyqsxTpWFgBubr5ILyZMcrlD5mevahknsnFFBYB6vY6DgwPYth11PaGiAkC5XMbe3h4KhQIsy4q6ptBQKKXUtm0UCgWYpgld12EYBgghUBRl5G6sqotYWfkI172PoOQerdY1ut2Hod/ncofjHz3ZbBaGYaBYLMI0TRSLRRiGwZxoYWEZS0vvJZUdnGbzO9ff9zcoQggMw4Cu631hFq5rwbYroNQNXmkEPNuN/cLjcJwa6vWzuRIeevQQQnB+fj7VxfMmPCRrWRY2NzenHmCehJ/JWpbV36R0XZ96kHkR7sv6RcftxqOYB2EVAGzbHhIlhHAPNuvCKgCcnJwIi3rMsrAGANvb2wCAra0tZLNZ4UEdp4b7+29IpbKg9JHr2uXlD8Lzs9AAIJPJYHd3V9qg6fQaVldLaLd/otGocl8flrD0iJdOryGT+QQAkb47j0KqrCeqKCmZw3LDiqrSZHlELy5uZE07ElZUlSLLe0f393/ImJaJF2T8wsKys7J0BxlMboPCQrI8otXqb+Tzx8jnj3F72+z/fHr6S6SEkfijqic8sW/MgveOlkrrKJXWAQAbGxVcXX0OOvVEvKjqb0YEurOLi29nbun6GYyqpmliZ2cnqOy7mRYFnkdVXddxdHQUTd84zCUMjE5whJB4NslZCU4Dek3ycrksLQh48L7jplJv8PjYFJ6XleA04KlJXqlUhCOeH17hRqMKSl2hPYEVVVWgF+1YD+KXglIXtl1Bu/1TOA9fXl6OvGEq8NQkj0qYUhf1+hkcpwZAvAHA+ioGapLLxC/qEUbHI3CTXAYsUQ/ZwkJNchEmiXrIFBZukgdhWlEPWcJSmuQ88Ip6yBCW1iSfhqCiHp4w0HsB4UUD+JvkrdZ1oGI7nT/odP4GutbDcWq4u/uKbvcf97UawN8k73YfuP8RLBPXDfYOEEqTfFZRxh3UZJ2pmGXGnamIZcRjkcjGlYnf2Xkk0BHcuB0yf1XLOJGNK4lsXElk40oiG1cS2biSyMaVRDauJLJx5T8LDzdG2llhzAAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADcElEQVRoge2aMU/bQBiGXxtHRCyIktzWgWZhsKr8hJJs3bLRpYIZdYTfgMSIUMUUFAnBlqULg0Ed+gNoPXShGcqA7ATRSIkcmeg6RA7BySU53xknxs+ECL77Hvly9vtxCqWU4pWgRl3AS6KN+1BRlJeqQyqsxTpWFgBubr5ILyZMcrlD5mevahknsnFFBYB6vY6DgwPYth11PaGiAkC5XMbe3h4KhQIsy4q6ptBQKKXUtm0UCgWYpgld12EYBgghUBRl5G6sqotYWfkI172PoOQerdY1ut2Hod/ncofjHz3ZbBaGYaBYLMI0TRSLRRiGwZxoYWEZS0vvJZUdnGbzO9ff9zcoQggMw4Cu631hFq5rwbYroNQNXmkEPNuN/cLjcJwa6vWzuRIeevQQQnB+fj7VxfMmPCRrWRY2NzenHmCehJ/JWpbV36R0XZ96kHkR7sv6RcftxqOYB2EVAGzbHhIlhHAPNuvCKgCcnJwIi3rMsrAGANvb2wCAra0tZLNZ4UEdp4b7+29IpbKg9JHr2uXlD8Lzs9AAIJPJYHd3V9qg6fQaVldLaLd/otGocl8flrD0iJdOryGT+QQAkb47j0KqrCeqKCmZw3LDiqrSZHlELy5uZE07ElZUlSLLe0f393/ImJaJF2T8wsKys7J0BxlMboPCQrI8otXqb+Tzx8jnj3F72+z/fHr6S6SEkfijqic8sW/MgveOlkrrKJXWAQAbGxVcXX0OOvVEvKjqb0YEurOLi29nbun6GYyqpmliZ2cnqOy7mRYFnkdVXddxdHQUTd84zCUMjE5whJB4NslZCU4Dek3ycrksLQh48L7jplJv8PjYFJ6XleA04KlJXqlUhCOeH17hRqMKSl2hPYEVVVWgF+1YD+KXglIXtl1Bu/1TOA9fXl6OvGEq8NQkj0qYUhf1+hkcpwZAvAHA+ioGapLLxC/qEUbHI3CTXAYsUQ/ZwkJNchEmiXrIFBZukgdhWlEPWcJSmuQ88Ip6yBCW1iSfhqCiHp4w0HsB4UUD+JvkrdZ1oGI7nT/odP4GutbDcWq4u/uKbvcf97UawN8k73YfuP8RLBPXDfYOEEqTfFZRxh3UZJ2pmGXGnamIZcRjkcjGlYnf2Xkk0BHcuB0yf1XLOJGNK4lsXElk40oiG1cS2biSyMaVRDauJLJx5T8LDzdG2llhzAAAAABJRU5ErkJggg==" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -93,7 +92,7 @@ Parameters → Diagnostics → Data Validity for your model in the Simul
 Editor, then set the Wrap on overflow or Saturate on overflow
 parameter.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

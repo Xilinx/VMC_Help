@@ -77,13 +77,13 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Mixed_Radix_IFFT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixed_Radix_IFFT_Stream_Ex1)
+[![](./Images/Mixed_Radix_IFFT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/Mixed_Radix_IFFT_Stream_Ex1)
 
 ## References
 This block uses the Vitis DSP library implementation of Mixed-Radix IFFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-mixed_radix_fft.html).
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

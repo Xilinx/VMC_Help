@@ -124,7 +124,7 @@ Binary Counter LogiCORE IP Product Guide
 ([PG121](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg121-c-counter-binary&ft:locale=en-US))
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

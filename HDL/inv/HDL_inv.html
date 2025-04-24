@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="inverter" class="level1">
 <h1>Inverter</h1>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Inverter block calculates the bitwise logical complement of a
@@ -42,7 +41,7 @@ module.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

@@ -53,7 +53,7 @@ Specify the output size for the second mode. For the first mode, the output size
 
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="product" class="level1">
 <h1>Product</h1>
 <p>Compute element-wise product of the input signals</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD50lEQVRoge2asWsbVxyAvzufkEgHk0a6DKW0qZdSrqW0kCFDcKVMXZISAi4ZYnsQAadb7D8gkEljMIEsElrikCGlGDKdoZC1g8ORJaQesoQ72bgmFuee1Osgzollnax392RZ5/s26fTe+33SvXfv99NTfN/3OSWoow7gONH6XVQU5bjikErYzdpXFuDNm9+kBzNMpqYehF47VbdxKptUVIBGo0GlUsFxnFHHM1RUgGq1ytLSEsViEdu2Rx3T0FB83/cdx6FYLGJZFoZhYJomuq6jKErP1VhVs5w9+zOetzWCkDvs7q7Tbm8fen9q6kH/R0+hUMA0TUqlEpZlUSqVME0zdKCJiUnOnPlOUtjR2dn5U+jz+wuUruuYpolhGPvCYXiejePU8X0veqQj4MBq3C3cD9fdoNF4PFbChx49uq6zsrIyUONxEz4ka9s2MzMzA3cwTsIHZG3b3l+kDMMYuJNxEd6X7Rbttxr3YhyEVQDHcQ6J6rou3NlJF1YBarVabNGAkyysAczNzQEwOztLoVCI3anrbrC1tUomU8D3W0JtJyenY48fhgaQz+dZXFyU1mkud4Fz536h2XzJ5uYz4fbDEpae4uVyF8jnfwUY6d65F1JlA1FFycjsVpiwVFWa7CCizabX97UswlJVKbKDiLZa/3H9+lNevep8669fb3H16hNcV2wBG4QgkekWji076K2raSqVyhXu3HnOixdvKZdXuX//J3K5IwucwnycuX0sHEtWdI4ahs7du5e4det3bt/+kYsXP4szfCjdqWogHFk2ymL0/v2/PHr0Fzdvfkutts72tht1+L70ys1t244mm81+LizqeW3K5VWuXfuae/emmZ//nvn5P4YyZ+FgqmpZFgsLC0f/I9CLbPYr4cdLJjNBufwD09NfAnDjxjecP/8J2az8OQsHU1XDMFheXo4mG5VANODy5S+GMk6vDE7X9WQWycMyOA06RfJqtSotEQgQ3eNmMp/Sau3EHjcsg9PgQ5G8Xq/HTvG6ERXe3HyG73uxtpxhqaoKndQu7EF8XPi+h+PUaTZfxs6H19bWev5gKnwoko9K2Pc9Go3HuO4GEL8AEDYVIxXJZdItGjCMikfkIrkMwkQDZAvHKpLH4SjRAJnCsYvkURhUNECWsJQiuQiiogEyhKUVyQchqmhAIAydDYgoGogXyXd31yMFu7f3N3t7byO1DXDdDd69e0i7/Y9wWw3Ei+Tt9rbwH8Ey8bxoe4ChFMlPKkq/g5phZypOMv3OVCQyxQsjlU0qR87ZcSTSEdykHTI/VbdxKptUUtmkksomlVQ2qaSySSWVTSqpbFJJZZPK/4bHXNaubSTqAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD50lEQVRoge2asWsbVxyAvzufkEgHk0a6DKW0qZdSrqW0kCFDcKVMXZISAi4ZYnsQAadb7D8gkEljMIEsElrikCGlGDKdoZC1g8ORJaQesoQ72bgmFuee1Osgzollnax392RZ5/s26fTe+33SvXfv99NTfN/3OSWoow7gONH6XVQU5bjikErYzdpXFuDNm9+kBzNMpqYehF47VbdxKptUVIBGo0GlUsFxnFHHM1RUgGq1ytLSEsViEdu2Rx3T0FB83/cdx6FYLGJZFoZhYJomuq6jKErP1VhVs5w9+zOetzWCkDvs7q7Tbm8fen9q6kH/R0+hUMA0TUqlEpZlUSqVME0zdKCJiUnOnPlOUtjR2dn5U+jz+wuUruuYpolhGPvCYXiejePU8X0veqQj4MBq3C3cD9fdoNF4PFbChx49uq6zsrIyUONxEz4ka9s2MzMzA3cwTsIHZG3b3l+kDMMYuJNxEd6X7Rbttxr3YhyEVQDHcQ6J6rou3NlJF1YBarVabNGAkyysAczNzQEwOztLoVCI3anrbrC1tUomU8D3W0JtJyenY48fhgaQz+dZXFyU1mkud4Fz536h2XzJ5uYz4fbDEpae4uVyF8jnfwUY6d65F1JlA1FFycjsVpiwVFWa7CCizabX97UswlJVKbKDiLZa/3H9+lNevep8669fb3H16hNcV2wBG4QgkekWji076K2raSqVyhXu3HnOixdvKZdXuX//J3K5IwucwnycuX0sHEtWdI4ahs7du5e4det3bt/+kYsXP4szfCjdqWogHFk2ymL0/v2/PHr0Fzdvfkutts72tht1+L70ys1t244mm81+LizqeW3K5VWuXfuae/emmZ//nvn5P4YyZ+FgqmpZFgsLC0f/I9CLbPYr4cdLJjNBufwD09NfAnDjxjecP/8J2az8OQsHU1XDMFheXo4mG5VANODy5S+GMk6vDE7X9WQWycMyOA06RfJqtSotEQgQ3eNmMp/Sau3EHjcsg9PgQ5G8Xq/HTvG6ERXe3HyG73uxtpxhqaoKndQu7EF8XPi+h+PUaTZfxs6H19bWev5gKnwoko9K2Pc9Go3HuO4GEL8AEDYVIxXJZdItGjCMikfkIrkMwkQDZAvHKpLH4SjRAJnCsYvkURhUNECWsJQiuQiiogEyhKUVyQchqmhAIAydDYgoGogXyXd31yMFu7f3N3t7byO1DXDdDd69e0i7/Y9wWw3Ei+Tt9rbwH8Ey8bxoe4ChFMlPKkq/g5phZypOMv3OVCQyxQsjlU0qR87ZcSTSEdykHTI/VbdxKptUUtmkksomlVQ2qaSySSWVTSqpbFJJZZPK/4bHXNaubSTqAAAAAElFTkSuQmCC" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -68,69 +67,69 @@ both inputs are of the same type. Otherwise, the output type is defined
 as follows.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Input Type</th>
 <th>Output Type</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>(double, single)</td>
 <td>double</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(double, int)</td>
 <td>double</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(double, half)</td>
 <td>double</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(double, fixed)</td>
 <td>double</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(double, Boolean)</td>
 <td>double</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(single, int)</td>
 <td>single</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(single, half)</td>
 <td>single</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(single, fixed)</td>
 <td>single</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(single, Boolean)</td>
 <td>single</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(half, int)</td>
 <td>half</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(half, fixed)</td>
 <td>half</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(half, Boolean)</td>
 <td>half</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(fixed, int)</td>
 <td>fixed</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(fixed, Boolean)</td>
 <td>fixed</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(int, Boolean)</td>
 <td>int</td>
 </tr>
@@ -159,7 +158,7 @@ Parameters → Diagnostics → Data Validity for your model in the Simul
 Editor, then set the Wrap on overflow or Saturate on overflow
 parameter.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

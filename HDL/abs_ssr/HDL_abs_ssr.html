@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Vector Absolute</h1>
 <p>The Vector Absolute block outputs the absolute value of the input of
 vector type.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAB1CAYAAABEfW+gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAF+ElEQVR4nO3db2gbdRzH8U/S1LW1MilN1lk2hj40OLHoA+380wxqXQUzpSuTlVSnFbtZmbRQQUFB96C4ObDDwaRFEboi6B5M3IMUZRsyxD8bKTocZbPMJZe0Vhfapvnng3pzaXO5u+Z3v/v9ku/72Xbhfrd7cb9e7s/qyGazWVBS5bR7AyjzuQotdDgcvLaDypPWJFgQDQDOXggz3xhKv+atDZrLdNH0VkCxzchBYgjN6Mqo4jJ6cNCJiIQRmoQRmoQRmoQRmoQRmoQRmoQRmoQRmoQZviJiNKfTgYa6GiRTadarlrK5+BKSqQzTdTJHq3Q5sb62EkAl61VLW3Ruken6mE+PiaU0robjyNCtVcuy5Gfa/GIK0xGCsyrLTkQIzrosPXskOGuy/JSf4NjH5XsawbGN25drgmMX1ysiBMcm7pexCK74bLn2SHDFZdsFY4Jbe7Ze5Se4tWX7rRmCM5/taADBmU0INIDgzCQMGkBwRhMKDSA4IzG/c82i+cUU/gjfQG01/7vf9XdWcR/TbEKiAcBCIo2FhD3PmYgOJ9z0SOknLNq62yrgdNLrw/kSEq2myoW777oDDXU1dm+KkAmHVlPlwqYNtQBAz05qJBSaCkazYuGEQSMw4wmBRmDmsh2NwMznBIBYLIahoSFEo1GugxNY4bQ8nAAwMjKCgYEBtLS0QFEULhtEYPppeTgBIBAIwOv1IhQKwefzWQ7HE+z7M0G80tWOiz+ft34wjQIdvjUt1/JwAoDb7UYwGOQCx/sI27zlHjQ/3spnMMZpedw8EfF4PKvgtLo2fQX7XngGr/d0YN+LfszEIoY2wo4psXHTFn6D6WR2v2kdSDlnjyvhtIpGruPl/YP48Ng4HvPtwKmvxnQ3mCfY6VNf4NDBQfx+SfvfYEdm91u+A0lRlNW3ZjweD8bGxuD1ejVXtmFjIz764B18PjKMmVgE9zc9XHBwK8G+HB9F8PRJAMD0lSnsDryKXXt60LrjOQDAp8eP4Py5CVy+NIm//5rFtpY29hthMLP7Dcj1CIVC6O3tXY2mKAo6OzsLrujo4XfR2v4sHm15Cl+fPIGpy79pftbqI8zfEYC/I4DI9Wt480A3nt75fM7yrr196NrbZ83gJjOz39Ru9fB6vRgeHs6dHhVFgc/nQygUKnikzcSi2Ni4GZlMGt8FTyGVXMr7OV5TYiaTwftv9+HA4EHU3F5r7WBFZHS/qa30CAaD8Hg8/6Pl+4BWO3cF8N5bfRjYvwft/t048+03+HXyl5zP8PwZ9tnxI3jgwUdw731N1g9WREb2263lAwP+e9wgGo1qfiBf29v82N7mv/nnbU88mbOcJ9jkxR/x0w/ncPjYCesHKzK9/bYyLQ8XAIyOjhoG04v3af0nR4cwOxPFay8tn3g0PdSM7p43+AxucVoeLgDo7u4GsHxlxO12r3mQ6nUV3L+HHfpY/+uG3Y2Oa/+oKbR8YmIir4cLAOrr69Hf31/0xtVWV9K1RIZpHUC235qhzEdoEkZoEkZoEkZoEibss/wAv2fqK10VCM/OIyPJqzpCowH84Gb+cSKxlEZ8IYm69VVCf3Up++kxkwWuhuNILC0/zbyQSAv/flxZo2WywHQkjvnFVM7fi/5iY9miaYGpiQxXlmh6YGqiwpUdmlEwNRHhygrNLJiaaHBlg7ZWMDWR4MoCrVgwNVHgSh6NFZiaCHAljcYaTM1uuJJFswpMzU64kkSzGkzNLriSQ+MFpmYHXEmh8QZT4w1XMmh2ganxhCsJNLvB1HjBSY8mCpgaDzip0UQDU1PhgOVHGVjH9HGDuXjhV3dYF19I2vZ/Quo1v5jC1J83mP8+UIAxWjKVYf77L2VOfYSBdVJPj+UaoUkYoUkYoUkYoUkYoUkYoUkYoUkYoUkYoUmY4ctYzVsbrNwOykSG0M5eCFu9HZSJaHqUMEc2m9W8XedwCPw6ZBmkRVNweizgSdkYTY8SRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgS9i8OpVVhD42JygAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>This block enables 1-D vector support for the primary block
@@ -100,7 +99,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <p><a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">LogiCORE
 IP Floating-Point Operator v7.1</a></p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

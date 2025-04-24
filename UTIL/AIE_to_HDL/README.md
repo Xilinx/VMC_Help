@@ -54,7 +54,7 @@ The following table shows the input data types that are needed to produce each o
 By default this parameter inherits the sample time from the tready input; in other words, the HDL subsystem will determine its own sample time. You may optionally specify your own sample time for the block.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

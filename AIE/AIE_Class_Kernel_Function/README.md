@@ -60,7 +60,7 @@ Use [AIE Graph](../AIE_Graph_Function/README.md) block to import an AI Engine gr
   
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

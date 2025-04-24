@@ -249,7 +249,7 @@ When selected, an enable port ce_d for the port d register is made available.
 When a checkbox is selected on this tab, the specified signal is inverted.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

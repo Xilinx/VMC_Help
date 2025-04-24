@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="requantize" class="level1">
 <h1>Requantize</h1>
 <p>The Requantize block requantizes and scales its input signals.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABDCAYAAACWXosQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEVUlEQVR4nO2cXWhbZRyHn5wl2K9hGU2sgjdeanTO4W6sOJvBRG8jgjJoYFLwYuJkRXehQ6EKGYgoKmPawm4UZMwLwYHpleKFVLQkghdutbMmTbIttFmWNMl5vaida3tOvkxyzj++z+15z8mPPLzv+b8fHI9SSqERheF0AE3zeGtd9Hg83cqhscBuEKwpDeC7X1JtD6Opz9jeUdtrengUiJYmEC1NIHXfaU5gGB5G9wxQrlQdy5DLr1OumI79fi1cKc3nNbhzyAf4HM2RyRUd/X07XDk8ltar/JHKY+ppvyWulAZQKFa4sqLFWeFaaaDF2eFqaaDFWeF6aaDFbUeENNDibkeMNNDiNhElDbQ4cOnkuh6FYoWl1BpD/c1PvkeG+zqQqLuIlAZgKri6WsJsoctJF2cAZLNZotEomUzG6TwNMdDn5b57djO6Z8DpKB3FzocBMDMzw9TUFOPj46TT6a4Ga5aBPi/33jUE4OiCcjew82EATExMEAwGicfjhEIh14rbFGY0cQriw9OneO/dk7w5NcnS4u+dC9cB7HwYAH6/n1gs5mpxrQgzTZMnDj3NK69N8/iTT/Hz/A+dC9gB7HzcKvkDgcAOcW6hFWEAhmHw4MMH+Ozj05z/Ypaxg4c7E7BD2HUkz/Zzj+l0mlAoRDweB5w/2FNLWDZXtNzzuvj1lyQW5jn8TBiPYXB/cB+//brAt99c4NRb0w1Vj3bP7hZje0dRSm3xEQwGicViO6UBJBIJgsEg4Ky0ej0smyty5swnxC5+BcCVxUs8P/ESzx2ZBDaGx+jbJxgc3E0q+SfPvnCUQ+MHRUmDrT7C4bB7e1ojQ+Ltf+xKcpmTxyN8cPY8A4NDtvf4h/tESbPqaVuWsbY3cIr+O3Y19Q4zTZPpN17m+Ovv1BQmDSthgUDgX2lWDZxiqN/XVNFx7uz7PPLoYzzw0P7OhXIAK2HwT/WYyWRsG7idxMI8P/34PUeOHnM6Stux8+EFmJ2dFSkM4NOPoly7muHYi2EA9h8YIzL5qsOp2oOdDy9AJBIBNlZG/H5/99O1yMhwH+c+v9Bwe5/PoOLSs4xWzM3NWfqwLPlvXfR4HKkeG63wWmE5c4O7RwbrvjPdUj1aIXZrphmUAtNULKXyFMtVKtV8SyssbkHcznXzKKpVk8vJNYrljV0B6bvfPS1NKSitKy4n13acy5csrmelmUpRKFVYTK5RqVqbkSquJ6WZSpEvbAqpbUSiuJ6TppQit1piOXODRr/bIE1cT0lTJqSvF1m53nypLklcz0gzFSxnC1xbLbX8jE1xAD7vrnZFazuunKfl8utN35O/WeZm6b8f9CkUK1z6a2e16SZcKa1cMR1djSitu/uUV88Mj/8ntDSBaGkC0dIEoqUJpO5+msY5WtpP09/vdCd6eBSIliYQLU0gWppAtDSBaGkC0dIEoqUJREsTiJYmEC1NIFqaQLQ0gWhpAtHSBKKlCURLE8jf+zZZXT9pWGEAAAAASUVORK5CYII=" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABDCAYAAACWXosQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEVUlEQVR4nO2cXWhbZRyHn5wl2K9hGU2sgjdeanTO4W6sOJvBRG8jgjJoYFLwYuJkRXehQ6EKGYgoKmPawm4UZMwLwYHpleKFVLQkghdutbMmTbIttFmWNMl5vaida3tOvkxyzj++z+15z8mPPLzv+b8fHI9SSqERheF0AE3zeGtd9Hg83cqhscBuEKwpDeC7X1JtD6Opz9jeUdtrengUiJYmEC1NIHXfaU5gGB5G9wxQrlQdy5DLr1OumI79fi1cKc3nNbhzyAf4HM2RyRUd/X07XDk8ltar/JHKY+ppvyWulAZQKFa4sqLFWeFaaaDF2eFqaaDFWeF6aaDFbUeENNDibkeMNNDiNhElDbQ4cOnkuh6FYoWl1BpD/c1PvkeG+zqQqLuIlAZgKri6WsJsoctJF2cAZLNZotEomUzG6TwNMdDn5b57djO6Z8DpKB3FzocBMDMzw9TUFOPj46TT6a4Ga5aBPi/33jUE4OiCcjew82EATExMEAwGicfjhEIh14rbFGY0cQriw9OneO/dk7w5NcnS4u+dC9cB7HwYAH6/n1gs5mpxrQgzTZMnDj3NK69N8/iTT/Hz/A+dC9gB7HzcKvkDgcAOcW6hFWEAhmHw4MMH+Ozj05z/Ypaxg4c7E7BD2HUkz/Zzj+l0mlAoRDweB5w/2FNLWDZXtNzzuvj1lyQW5jn8TBiPYXB/cB+//brAt99c4NRb0w1Vj3bP7hZje0dRSm3xEQwGicViO6UBJBIJgsEg4Ky0ej0smyty5swnxC5+BcCVxUs8P/ESzx2ZBDaGx+jbJxgc3E0q+SfPvnCUQ+MHRUmDrT7C4bB7e1ojQ+Ltf+xKcpmTxyN8cPY8A4NDtvf4h/tESbPqaVuWsbY3cIr+O3Y19Q4zTZPpN17m+Ovv1BQmDSthgUDgX2lWDZxiqN/XVNFx7uz7PPLoYzzw0P7OhXIAK2HwT/WYyWRsG7idxMI8P/34PUeOHnM6Stux8+EFmJ2dFSkM4NOPoly7muHYi2EA9h8YIzL5qsOp2oOdDy9AJBIBNlZG/H5/99O1yMhwH+c+v9Bwe5/PoOLSs4xWzM3NWfqwLPlvXfR4HKkeG63wWmE5c4O7RwbrvjPdUj1aIXZrphmUAtNULKXyFMtVKtV8SyssbkHcznXzKKpVk8vJNYrljV0B6bvfPS1NKSitKy4n13acy5csrmelmUpRKFVYTK5RqVqbkSquJ6WZSpEvbAqpbUSiuJ6TppQit1piOXODRr/bIE1cT0lTJqSvF1m53nypLklcz0gzFSxnC1xbLbX8jE1xAD7vrnZFazuunKfl8utN35O/WeZm6b8f9CkUK1z6a2e16SZcKa1cMR1djSitu/uUV88Mj/8ntDSBaGkC0dIEoqUJpO5+msY5WtpP09/vdCd6eBSIliYQLU0gWppAtDSBaGkC0dIEoqUJREsTiJYmEC1NIFqaQLQ0gWhpAtHSBKKlCURLE8jf+zZZXT9pWGEAAAAASUVORK5CYII=" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Requantize block requantizes each input sample to a number of a
@@ -95,7 +94,7 @@ width.</p>
 <p>Specifies the bit location of the binary point. Bit zero is the Least
 Significant Bit.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

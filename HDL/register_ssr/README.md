@@ -50,7 +50,7 @@ The Vector Register block is implemented as a synthesizable VHDL module.
 It does not use a LogiCORE™.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

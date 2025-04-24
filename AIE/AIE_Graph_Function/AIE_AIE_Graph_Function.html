@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="aie-graph" class="level1">
 <h1>AIE Graph</h1>
 <p>This block allows you to import an AI Engine graph.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>AI Engine/User-Defined Functions</p>
@@ -91,7 +90,7 @@ Engine Graph</a></p>
 <p><a href="matlab:XmcExampleApi.getExample(&#39;matrix_multiply&#39;)">Importing
 DSP Library Function (Matrix Multiply) as a Graph</a></p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

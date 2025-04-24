@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="exponential" class="level1">
 <h1>Exponential</h1>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAABRCAYAAABbhBG7AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAGgElEQVR4nO2caWwUVRzAf7u0WrBYKO1SxAs8UFwpChqjVWMbo8aYqDGxXkkrJojFCywRD6LRSBSCJ+oHYhuNpqLBEKNRdGtiRPECkcWIFzdtp9t22273mN2Z8UNZuu12abednTfbvt/Hzrx5//nt63/+8+bNOAzDMJBYjlN0AOOVnONtdDgcVsUxZkmVUI4rHuC7nc2mBzNeKCstSblNphpBSPGCkOIFIcULQooXxJBVjRk4nQ5KCicSjelWdDcq/AHVkjgtEX/CBCcF+SdY0ZUptPrDGe/DklQTjmocUoLIyYk+LMvx3UGVlvYgupQPWHxx7ehWaeuMoEv71lc1Pn+Irp7ouB/5QsrJprYgPSEVfRwnfWF1/OHWEOGIlnL2bqwjTLxhGBxs6UGNGuOy2hF656obBvubA8Q0fdzJFz5loOk6+5oCaOPMvHDxADFNZ39TYFyVmbYQD6BGNfY394yozPxqyxdcf+3VbPvhe/MDyxCWzNUMl7Aa40BzN/kTc9NqN236GVx1zfV0BlR8CfMsRVPyzA7RNGwlHkA3oK0rvbvbiQUz6AnH8AciSRNcdpVvm1QDMCkvh9mnTKakcNKQ+3752cesW72Sv/d4LYjMfGwz4ifl5XDa9HwAojGt37ZPNtbj+XIzAAf3/cedVQ9w+z2Lue7G2wB4d8Or/Li1kX/27Kazo50ry2+wNvgR4DAMw/D5fNTV1VFVVUVxcXHfRofDkuUdcenOo8t4fP7woHPiLU2HeWJZNa9v2MSkk/KHPG7xlLy0U02qvkdCWWkJiqL0cxrHCVBXV8eKFSsoLy9HURRTOh0uA6WnQtd1Xlj1MMtWrh6WdLuQyqkToKqqCrfbjdfrpaKiwjL5w5UO8N6GV7n4kiu4YN6CzAdmIqmcOgGKi4vxeDyWyk9H+u7ff2X7z1u5576HMhpTJkjl1JG4WlhRFCoqKvB6vccaxHO8Gonw3JM1dHX6CQV7WPLo01y08PIRBTOU9IF5dtn9lbQqTRRMLQRgwaVlVC9ePmQ/ZuX4jnYfq1c9gqZpxGJRap9+iZMLCll67824SxfS6e9g8skFPP7Mun7tykpLaGlp6efU4/Hgcrn6i4f+8qFv7WRz0yF2bt/GdTfexr9//cEb657l5bc/TOukYHgj3awLnFniX1uzillnzeGmW+9i23eNfL65gRWr1nDTNW42bdnB1MIili+5g0UP1DL3wouPtSsrLcEwjKQB7fF4kut4l8tFQ0NDUkDTprnYteNnHqu5kzdfeZ6uzo60TgjSSy92Ys8fO5m/4DIA3PMX8tefvYNy5mlnMrWwCIDZ55zPgX3/DNo+0anX66WmpiZZvKIoVFZWJjX+dNP75Obmsnb9Bzz21ItpB5+t0qG3rI7fSRu6gfPoScQS7jcMXU+5rD3RqdvtZv369f3FD/yXSKStTWHGzNMB+GbLp8Si0WEHns3SAc6bO58dv2wFYNdvP3Hu+fMAaD5yEF9rbyrevWs7Z86ek9R2sDTjcrn6xA+2QyLX3nALn21uYNn9lUyfMROAzR+/O2TQE0+ckNXSAe5e9CDff/s1y5fcwUcfbGDxgysBOPX0Wbzz1lqWLrqFWWfPYc7ceUltB5MOR6ua1tZWysvLk6+8Jty5irx7zGTfge5Oli66lfqNnpT7xF9MGCgdjtbx9fX1g/4qktGTymkOQHV1NUDSXI0kNfmTC4472uM0NjYO6jQHoKioiNraWvOjk6QcyLaZFk5ktA8vcnMm0NweNCmazGBL8TB6+W1dTgKhKIUFebasqGz1BMoMdAP2NweIqBqhiGbb1QtjSrxuwMGWAMFw7NjfwmqMvU0BYrq9VqyNGfGDSY+jRjX2Humy1Yq1MSH+eNLjxGIGe48EUKO6LRbKZr344UiP07tcsJtQRBO+RDyrxacjva+NwYGWHnpCYl+OyFrxI5EexzAMDilBugKqsIonK8WPRnoiTW1B2rpUISM/68SbJT2Ozx9Cabf+VdCsEm+29Dgd3SqHW3unGHJzrFFi2ymDgWRKepzuoMrewxqqZs1r/xkX7w+ophwnEIoSimhD7zgKwtHMHj+RjIuPxnRLvg2QbWRVjh9LSPGCkOIFIcULQooXhBQvCCleEEnLtPttlN8WHjUj+rawHZ7UjFVkqhGEFC8IKV4QUrwgpHhBSPGCkOIFIcULQooXhBQvCCleEFK8IKR4QUjxgpDiBSHFC0KKF8T/qrswkT9eC7wAAAAASUVORK5CYII=" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Exponential block preforms the exponential operation on the
@@ -139,7 +138,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <h2>LogiCORE™ Documentation</h2>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

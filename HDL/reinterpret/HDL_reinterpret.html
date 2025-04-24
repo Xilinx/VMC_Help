@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Reinterpret</h1>
 <p>The Reinterpret block forces its output to a new type without any
 regard for retaining the numerical value represented by the input.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The binary representation is passed through unchanged, so in hardware
@@ -101,7 +100,7 @@ the input (inclusive).</p>
 <h2>LogiCORE™ Documentation</h2>
 <p>LogiCORE IP Floating-Point Operator v7.1 <a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">(PG060)</a></p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

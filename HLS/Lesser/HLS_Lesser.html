@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Lesser</h1>
 <p>Performs element-wise less than relational operation on the inputs.
 The top input corresponds to the first operand.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD2ElEQVRoge2aP0gbURzHv3cmjShiW5MrCAWti8NZobh1sUkH6dahkG6K4CIFF8VdJx1FCiJEAkVB0aEdLHhCu7nUPxx1sP6BUpC7KFZQIuf1dZCLmuSSvHcvJjnvMxrvvd+HvHt331+eQAghuCeIpS7gLvHl+lAQhLuqgyt2izWnLADs7n7gXkwxaWmZsP3sXi1jT9atiACQSCQwPj4OXddLXU9REQEgFothaGgI4XAYmqaVuqaiIRBCiK7rCIfDUFUVsixDURRIkgRBELLuxqIYwKNHb2AYxyUo+Yqzs02Y5knG31taJnI/ekKhEBRFQSQSgaqqiEQiUBTFdqKqqnrU1DznVDY7p6ffqP4/tUFJkgRFUSDLckrYDsPQoOtxEGKwV1oCbu3G6cK5SCb3kUjMVpRwxqNHkiTMzc0VdHGlCWfIapqGaDRa8ACVJHxLVtO01CYly3LBg1SKcEo2XTTXbpyNShAWAUDX9QxRSZKoByt3YREAZmZmHItalLOwDwB6enoAAN3d3QiFQo4HTSb3cXz8BX5/CIRcUl1bX9/peH47fAAQDAYxODjIbdDq6mY0NLzF+fkWjo6WqK8vljD3iFdd3Yxg8D0AlPTdORtcZS1RQfDzHJYau6jKTZZFdGfnGBsbh7xKSGEXVbnI0oqurf1Bb+9nDAx85TF9BlaQSRfO213MR6GipkmwvPwLU1M/UFvrR1/fC3R2NjmdPis3k9vNR6kjWZpvdHFxG9PT6xgbe4329idOps1LtmwuSRL7MqZdum1tEurqHmBk5DtWVvZQzB9dsmVzTdPYZAOBp9SbUWtrEAsL7zA8/BLz89vo6vqE+fmfMAyTpYS83Iyqqqqiv7+fbRkHAs+YHy8dHY3o6GjEwcEJpqfXYZr/EI0WnrAK5WZUlWUZk5OTzjcoVpqaHmJ09FVRxs6W4Bzds+WMXYLzAVdN8lgsxi0IWNC+4/r9j3F5eep4XrsE5wOum+TxeNxxxEuHVvjoaAmEGI5eOe2iqghcRbv0bfquIcSArsdxfr7lOA+vrq5m/cJE4LpJXiphQgwkErNIJvcBOG8A2N2KTE1ynqSLWhSj48HcJOeBnagFb2FHTXIn5BO14CnsuEnOQqGiFryEuTTJaaAVteAhzK1JXgisohaWMHD1AkKLD6Bvkp+dbTIVe3Gxh4uL30zXWiST+zg8/AjT/Et9rQ+gb5Kb5gn1D8E8MQy2d4CiNMnLFSHXQU27MxXlTK4zFa6MeHZ4sm4l7z1biTAdwXXbIfN7tYw9WbfiyboVT9ateLJuxZN1K56sW/Fk3Yon61b+A7rNWRFafNOqAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABECAYAAAA/UU2nAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD2ElEQVRoge2aP0gbURzHv3cmjShiW5MrCAWti8NZobh1sUkH6dahkG6K4CIFF8VdJx1FCiJEAkVB0aEdLHhCu7nUPxx1sP6BUpC7KFZQIuf1dZCLmuSSvHcvJjnvMxrvvd+HvHt331+eQAghuCeIpS7gLvHl+lAQhLuqgyt2izWnLADs7n7gXkwxaWmZsP3sXi1jT9atiACQSCQwPj4OXddLXU9REQEgFothaGgI4XAYmqaVuqaiIRBCiK7rCIfDUFUVsixDURRIkgRBELLuxqIYwKNHb2AYxyUo+Yqzs02Y5knG31taJnI/ekKhEBRFQSQSgaqqiEQiUBTFdqKqqnrU1DznVDY7p6ffqP4/tUFJkgRFUSDLckrYDsPQoOtxEGKwV1oCbu3G6cK5SCb3kUjMVpRwxqNHkiTMzc0VdHGlCWfIapqGaDRa8ACVJHxLVtO01CYly3LBg1SKcEo2XTTXbpyNShAWAUDX9QxRSZKoByt3YREAZmZmHItalLOwDwB6enoAAN3d3QiFQo4HTSb3cXz8BX5/CIRcUl1bX9/peH47fAAQDAYxODjIbdDq6mY0NLzF+fkWjo6WqK8vljD3iFdd3Yxg8D0AlPTdORtcZS1RQfDzHJYau6jKTZZFdGfnGBsbh7xKSGEXVbnI0oqurf1Bb+9nDAx85TF9BlaQSRfO213MR6GipkmwvPwLU1M/UFvrR1/fC3R2NjmdPis3k9vNR6kjWZpvdHFxG9PT6xgbe4329idOps1LtmwuSRL7MqZdum1tEurqHmBk5DtWVvZQzB9dsmVzTdPYZAOBp9SbUWtrEAsL7zA8/BLz89vo6vqE+fmfMAyTpYS83Iyqqqqiv7+fbRkHAs+YHy8dHY3o6GjEwcEJpqfXYZr/EI0WnrAK5WZUlWUZk5OTzjcoVpqaHmJ09FVRxs6W4Bzds+WMXYLzAVdN8lgsxi0IWNC+4/r9j3F5eep4XrsE5wOum+TxeNxxxEuHVvjoaAmEGI5eOe2iqghcRbv0bfquIcSArsdxfr7lOA+vrq5m/cJE4LpJXiphQgwkErNIJvcBOG8A2N2KTE1ynqSLWhSj48HcJOeBnagFb2FHTXIn5BO14CnsuEnOQqGiFryEuTTJaaAVteAhzK1JXgisohaWMHD1AkKLD6Bvkp+dbTIVe3Gxh4uL30zXWiST+zg8/AjT/Et9rQ+gb5Kb5gn1D8E8MQy2d4CiNMnLFSHXQU27MxXlTK4zFa6MeHZ4sm4l7z1biTAdwXXbIfN7tYw9WbfiyboVT9ateLJuxZN1K56sW/Fk3Yon61b+A7rNWRFafNOqAAAAAElFTkSuQmCC" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Relational Operations</p>
@@ -67,7 +66,7 @@ input.</li>
 <h2>Parameters</h2>
 <p>The Lesser block has no parameters to set.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

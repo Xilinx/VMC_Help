@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="data-type-conversion" class="level1">
 <h1>Data Type Conversion</h1>
 <p>Convert the input to the data type of the output.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEs0lEQVRoge2aT2zTVhyAv6TpElqJ0JF4ZVAkQAOJmSlIcJk6rWovFQcOcGiRkBYuSBMaF0QPQUKc2EA7MUAaYmvXHdqKaUJDnXYg/aNtaByoykgvY1BBkVbsAG1oq6SO7V3oPxonseM2rZvvlvj93vt99vN7z8926bqus0ZwFzuB5cST7aDL5VquPGzFqLNmlQV49OgL25NZSnbs+Mbw2JrqxiVZp1KSdSo5R+NMuN1eqqoOoCgv7c4nbyYn76OqY6ZiLMmWlfmpqPjISqitJBL9pspb6saKIiHL7ei6YiW8aFi+Z5PJYeLxjlUlXNAAtdqECx6NV5OwLVPPahG2bZ5dDcK2LipWurDtK6iVLGxpUZGLZHIYWf4Rr3e76Vi/v87+hN7gAYjH47S2thIOhwkGg7ZUrGkpJib+QtNSpmMLFZZlOaOHG6C1tZWWlhbq6+uRJKmghgB8vm1UV39OVdWBguuygpGHGyAcDiOKIrFYjIaGhoKEfb5tBAJHAIr2oGDk4QEIBoNEo1EaGhpmC0ajUdONPHtWSWNjhJqaqwBUV6/j1KndiKLAyZO/8eCBxMTENOm0xoYNPgShkq6uwySTac6f/4Pbtx/j9XaxZ0+Iy5e/ZvPm9y3Jzr9w0WgUQRDmZAEEQVgkbAafbxtVVfvZu7eXvr5uAKLRaxw//hUdHYe5dKkRgK6uIZ48Gael5ePZ2AsX7qBpOv39n7FxYz23bj3n0KGj3L3bY0k204UTBGHh1DMjPHNmzIgGAkdwuRYO7vv27SQcDnH9+oBh7PS0Snf3P5w58wnl5WUAHD3axM2bHWb8FvC2x0yXXjTPCoJAZ2dn3hXPiZZnPC6KQR4+NL53R0YSbN3qZ926hSdq06b38s4hE/M9YrEYJ06cWCwrSRLNzc15VZhLFCCd1igry77Zrmn2v4GZ7yGKIleuXFkoK0nSbF8XRTFrZfmIAty79x+7dxvP3Vu2rOfp0wSvX08v+L+393fDnf1cvO2x6J7NVMAIr7cmL9GBgX/p7BwiHA5lqauMgwd3cvZsL6mUCkB7ewfnzn1p1nGWTKLwZjSWZdmwQOYEtxuKDg7+TShUSzqdxu93c/XqAYLBiqzJRSK1XLx4h7q6H6is/JlQaD83brRbftdk5OEBaGtry1s0G7t2fcDY2Mjs7/HxvkWbYk1NHy6K83jcRCK1RCK1rF//acHLRSMPD8CxY8cAbF0bF5Oenp6MHh6AQCDA6dOnbW/U7BUqL3+XdDpRcLtGF2xJHvHmY1b4xYuf0LRp3O53bM9lxbz+0HUFWW5namoISfoeTZsC7J1/V4SsrivE4x0kk8MAKMpzRkevoarj6HratnaKLvu26AyqOs7o6LcoimzbFk9RZY1EZ9C0JJL0HanUsC3CRZPNJTpXTkWWO5mcHCxYuCiy+YrOi+DVq19JJPoLEl52WfOicyQSf/Ly5S8AeDx+0/FLPs/OpxDRGaamYiiKjKqOm461JDs5ed9KGKnUY1KpkdwFc6Aozy3FWZJV1THTb71XAkWfZ5eTkqxTKck6FVe2L8nX1PfGTvuifk1145KsUynJOpWSrFMpyTqVkqxTKck6lZKsUynJOpX/AX4WSSIVCuOmAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEs0lEQVRoge2aT2zTVhyAv6TpElqJ0JF4ZVAkQAOJmSlIcJk6rWovFQcOcGiRkBYuSBMaF0QPQUKc2EA7MUAaYmvXHdqKaUJDnXYg/aNtaByoykgvY1BBkVbsAG1oq6SO7V3oPxonseM2rZvvlvj93vt99vN7z8926bqus0ZwFzuB5cST7aDL5VquPGzFqLNmlQV49OgL25NZSnbs+Mbw2JrqxiVZp1KSdSo5R+NMuN1eqqoOoCgv7c4nbyYn76OqY6ZiLMmWlfmpqPjISqitJBL9pspb6saKIiHL7ei6YiW8aFi+Z5PJYeLxjlUlXNAAtdqECx6NV5OwLVPPahG2bZ5dDcK2LipWurDtK6iVLGxpUZGLZHIYWf4Rr3e76Vi/v87+hN7gAYjH47S2thIOhwkGg7ZUrGkpJib+QtNSpmMLFZZlOaOHG6C1tZWWlhbq6+uRJKmghgB8vm1UV39OVdWBguuygpGHGyAcDiOKIrFYjIaGhoKEfb5tBAJHAIr2oGDk4QEIBoNEo1EaGhpmC0ajUdONPHtWSWNjhJqaqwBUV6/j1KndiKLAyZO/8eCBxMTENOm0xoYNPgShkq6uwySTac6f/4Pbtx/j9XaxZ0+Iy5e/ZvPm9y3Jzr9w0WgUQRDmZAEEQVgkbAafbxtVVfvZu7eXvr5uAKLRaxw//hUdHYe5dKkRgK6uIZ48Gael5ePZ2AsX7qBpOv39n7FxYz23bj3n0KGj3L3bY0k204UTBGHh1DMjPHNmzIgGAkdwuRYO7vv27SQcDnH9+oBh7PS0Snf3P5w58wnl5WUAHD3axM2bHWb8FvC2x0yXXjTPCoJAZ2dn3hXPiZZnPC6KQR4+NL53R0YSbN3qZ926hSdq06b38s4hE/M9YrEYJ06cWCwrSRLNzc15VZhLFCCd1igry77Zrmn2v4GZ7yGKIleuXFkoK0nSbF8XRTFrZfmIAty79x+7dxvP3Vu2rOfp0wSvX08v+L+393fDnf1cvO2x6J7NVMAIr7cmL9GBgX/p7BwiHA5lqauMgwd3cvZsL6mUCkB7ewfnzn1p1nGWTKLwZjSWZdmwQOYEtxuKDg7+TShUSzqdxu93c/XqAYLBiqzJRSK1XLx4h7q6H6is/JlQaD83brRbftdk5OEBaGtry1s0G7t2fcDY2Mjs7/HxvkWbYk1NHy6K83jcRCK1RCK1rF//acHLRSMPD8CxY8cAbF0bF5Oenp6MHh6AQCDA6dOnbW/U7BUqL3+XdDpRcLtGF2xJHvHmY1b4xYuf0LRp3O53bM9lxbz+0HUFWW5namoISfoeTZsC7J1/V4SsrivE4x0kk8MAKMpzRkevoarj6HratnaKLvu26AyqOs7o6LcoimzbFk9RZY1EZ9C0JJL0HanUsC3CRZPNJTpXTkWWO5mcHCxYuCiy+YrOi+DVq19JJPoLEl52WfOicyQSf/Ly5S8AeDx+0/FLPs/OpxDRGaamYiiKjKqOm461JDs5ed9KGKnUY1KpkdwFc6Aozy3FWZJV1THTb71XAkWfZ5eTkqxTKck6FVe2L8nX1PfGTvuifk1145KsUynJOpWSrFMpyTqVkqxTKck6lZKsUynJOpX/AX4WSSIVCuOmAAAAAElFTkSuQmCC" /></p>
 <p>The block warns or errors out when an integer or fixed-point output
 overflows during simulation. To configure, select Configuration
 Parameters → Diagnostics → Data Validity. In the Data Validity pane, set
@@ -296,7 +295,7 @@ Simulation → Model Configuration Parameters → Diagnostics → Da
 Validity for your model in the Simulink Editor, then set the Wrap on
 overflow or Saturate on overflow parameter.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

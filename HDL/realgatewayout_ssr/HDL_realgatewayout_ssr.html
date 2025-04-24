@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -35,7 +34,7 @@ floating-point type vector inputs into vector outputs of type Simulink®
 integer, single, double, or fixed-point.</p>
 <p>Hardware notes: In hardware these blocks become top level output
 ports or are discarded depending on how they are configured.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEiElEQVR4nO2bX2hbVRyAv3NvOtyUrtgmWR8cFedgLIgI3YbWbTaP/isiWy0iraJ7qKh1NpPJwMdJfBBqFWVSGdq1nW6gUxCWCuuoL1rZyKw+TFsng910o3S2Vce9x4f0X9beJM2S3JP2fHBfcu8953d+X27yu+fcK6SUEo2yGF4HoEmPL91OIUSx4lj1uP2QpRUEMHG1O+/BaFIpr2xy3ZdRUKYGNLmTzZc/K0HZNlYYyrCN+xH8nddWDWcUmMprm8sh2y991oK8Qoq1OMZdBWnbcIYL0m4+Ub6KE3IC0x4AbK9D8QTlBQEYMoFpD7IaJZWEIFi9kkpGEKxOSQbA2NgY0WiURCLhdTwZWamS3HJvAHR1dRGJRKivr8eyrKIGlguGTGA6Q5jOb5jOsOtWSrjl3gBobm4mFAoRj8cJh8PKS3KEH9uoRbIOwxl23UpJklvuDQC/308sFisJSY7wY5sPAuT95tWN8fFJXn39CHdv3kdV9XNsfyjCp0f7szr33Pk/OPXtjxmPc8v9XJEQCAQWSVKNeTlm0fqUUtLw9GG+OPED+197kk8+fpl7N1XzStsRjvUOZDz/w4++49Q3mQW5XSApMwmzksLhMPF4PMchFQYv5ACcjp1j6OeLfNCxj2ebdgHwxGO17Kg7wOHoCZ7Z+zA7698iGKzg+LF2Jif/oXrj87x9qJE/LyXo7jkDwOXL1/jq5EHXfm7OfTgcJhaLLS6zA4EAPT09BRpubnglB+DCL5cA2L1z69xnQgh27woxMmIxNfWv67nvvtNMTU2AvXvq+LLvQMa+FuY+Ho/T2tq6WJBlWTQ2Ni57IIVCijs9kwNgGMk1MdtOXa9xHImUkhs33Mt9n89ECIFpGJSVZY5/Ye5DoRCdnZ2pgizLmrvEQqHQsgdTCKQI4pUcgNDWjQDEvj8/95mUkjMDF9h0TzXr169DCIHjJAVOT/+XUz835z4WixEIBOb/g5Y6IBgM3srYCo5tbHHdJ7kDkYflhPpH7mP7ts0cPPQZ169PU1MToLfvLMO//sXnR9sA2LChgqGh37lijdPTezblfJ9pMDJqMT4+SUXF7a79LCUHZqq4RCLheoDq2MaWJbfkEsUE+ZhxOHn8TRr31PFex9e88NL7jIxa9HW38/ijtQC80dbAbWvLeGDbfnw+gzVrfEiSV9RTDTv4aegiLS92pO3DLfdCSimj0SiRSGTRAUIIJq52U17Z5NmCnTOT8OVhY9qDGDLhWmCYMzezXrEwp+WVTa4Xhg+gpaUFSM4o+P3+Ioeab+blQHJaCHvQ00IjG/r7+5fMvQ+gqqqK9vb2ogeVf1LlzFIKktwujJJabkjP0nJmKdVZ8BUiKL2cWeYlJau8UkD5h0aST9+kR8grCHktu/ZkAmGfRsjpWw2tKCgvCKbyXm0JOZHX9gpJ1oL0w4vekJUg/fivd6yQImHlItK9H6TfbigeOb3doN/t8h79E6c4WpDiaEGKowUpjhakOFqQ4mhBiqMFKY4WpDhakOJoQYqjBSmOFqQ4WpDiaEGKowUpjhakOP8DXQv8xvRVzSYAAAAASUVORK5CYII=" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEiElEQVR4nO2bX2hbVRyAv3NvOtyUrtgmWR8cFedgLIgI3YbWbTaP/isiWy0iraJ7qKh1NpPJwMdJfBBqFWVSGdq1nW6gUxCWCuuoL1rZyKw+TFsng910o3S2Vce9x4f0X9beJM2S3JP2fHBfcu8953d+X27yu+fcK6SUEo2yGF4HoEmPL91OIUSx4lj1uP2QpRUEMHG1O+/BaFIpr2xy3ZdRUKYGNLmTzZc/K0HZNlYYyrCN+xH8nddWDWcUmMprm8sh2y991oK8Qoq1OMZdBWnbcIYL0m4+Ub6KE3IC0x4AbK9D8QTlBQEYMoFpD7IaJZWEIFi9kkpGEKxOSQbA2NgY0WiURCLhdTwZWamS3HJvAHR1dRGJRKivr8eyrKIGlguGTGA6Q5jOb5jOsOtWSrjl3gBobm4mFAoRj8cJh8PKS3KEH9uoRbIOwxl23UpJklvuDQC/308sFisJSY7wY5sPAuT95tWN8fFJXn39CHdv3kdV9XNsfyjCp0f7szr33Pk/OPXtjxmPc8v9XJEQCAQWSVKNeTlm0fqUUtLw9GG+OPED+197kk8+fpl7N1XzStsRjvUOZDz/w4++49Q3mQW5XSApMwmzksLhMPF4PMchFQYv5ACcjp1j6OeLfNCxj2ebdgHwxGO17Kg7wOHoCZ7Z+zA7698iGKzg+LF2Jif/oXrj87x9qJE/LyXo7jkDwOXL1/jq5EHXfm7OfTgcJhaLLS6zA4EAPT09BRpubnglB+DCL5cA2L1z69xnQgh27woxMmIxNfWv67nvvtNMTU2AvXvq+LLvQMa+FuY+Ho/T2tq6WJBlWTQ2Ni57IIVCijs9kwNgGMk1MdtOXa9xHImUkhs33Mt9n89ECIFpGJSVZY5/Ye5DoRCdnZ2pgizLmrvEQqHQsgdTCKQI4pUcgNDWjQDEvj8/95mUkjMDF9h0TzXr169DCIHjJAVOT/+XUz835z4WixEIBOb/g5Y6IBgM3srYCo5tbHHdJ7kDkYflhPpH7mP7ts0cPPQZ169PU1MToLfvLMO//sXnR9sA2LChgqGh37lijdPTezblfJ9pMDJqMT4+SUXF7a79LCUHZqq4RCLheoDq2MaWJbfkEsUE+ZhxOHn8TRr31PFex9e88NL7jIxa9HW38/ijtQC80dbAbWvLeGDbfnw+gzVrfEiSV9RTDTv4aegiLS92pO3DLfdCSimj0SiRSGTRAUIIJq52U17Z5NmCnTOT8OVhY9qDGDLhWmCYMzezXrEwp+WVTa4Xhg+gpaUFSM4o+P3+Ioeab+blQHJaCHvQ00IjG/r7+5fMvQ+gqqqK9vb2ogeVf1LlzFIKktwujJJabkjP0nJmKdVZ8BUiKL2cWeYlJau8UkD5h0aST9+kR8grCHktu/ZkAmGfRsjpWw2tKCgvCKbyXm0JOZHX9gpJ1oL0w4vekJUg/fivd6yQImHlItK9H6TfbigeOb3doN/t8h79E6c4WpDiaEGKowUpjhakOFqQ4mhBiqMFKY4WpDhakOJoQYqjBSmOFqQ4WpDiaEGKowUpjhakOP8DXQv8xvRVzSYAAAAASUVORK5CYII=" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>Vector Real Gateway Out blocks are the outputs from the HDL portion
@@ -81,51 +80,51 @@ propagated to an appropriate Simulink data type according to the
 following table:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Model Composer Data Type</th>
 <th>Simulink Data Type</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>XFloat_8_24</td>
 <td>single</td>
 </tr>
-<tr class="even">
+<tr>
 <td>XFloat_11_53</td>
 <td>double</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Custom floating-point precision data type exponent width and
 fraction width less than those for single precision</td>
 <td>single</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Custom floating-point precision data type with exponent width or
 fraction width greater than that for single precision</td>
 <td>double</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XFix_&lt;width&gt;_&lt;binpt&gt;</td>
 <td>sfix&lt;width&gt;_EN&lt;binpt&gt;</td>
 </tr>
-<tr class="even">
+<tr>
 <td>UFix_&lt;width&gt;_&lt;binpt&gt;</td>
 <td>ufix&lt;width&gt;_EN&lt;binpt&gt;</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XFix_&lt;width&gt;_0 where width is 8, 16 or 32</td>
 <td>int&lt;width&gt; where width is 8, 16 or 32</td>
 </tr>
-<tr class="even">
+<tr>
 <td>UFix_&lt;width&gt;_0 where width is 8, 16 or 32</td>
 <td>uint&lt;width&gt; where width is 8, 16 or 32</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XFix_&lt;width&gt;_0 where width is other than 8, 16 or 32</td>
 <td>sfix&lt;width&gt;</td>
 </tr>
-<tr class="even">
+<tr>
 <td>UFix_&lt;width&gt;_0 where width is other than 8, 16 or 32</td>
 <td>ufix&lt;width&gt;</td>
 </tr>
@@ -257,7 +256,7 @@ NET &quot;Dout(2)&quot; FAST; </code></pre>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>
