@@ -1,6 +1,6 @@
-# Vector FFT Float
+# Vector IFFT Float
 
-The Vector FFT Float block supports the FFT operation for vector 
+The Vector IFFT Float block supports the inverse FFT operation for vector 
 single-precision floating-point inputs. This block only supports Versal devices.
 
 ![](./Images/block.png)
@@ -14,8 +14,8 @@ When the in_valid is high, it indicates that the input data is valid.
 When out_valid is high, it indicates that the output data is valid. 
 The valid indicator accompanies every set of input and output samples 
 (for example, R number of samples). There is no back pressure flow control 
-and once an FFT transform starts, R data samples must be input into the 
-core every clock for N/R consecutive clocks, where N is the FFT length. 
+and once an IFFT transform starts, R data samples must be input into the 
+core every clock for N/R consecutive clocks, where N is the IFFT length. 
 However, for back-to-back transforms, the valid control input can stay 
 high with no gaps.
 
@@ -32,7 +32,7 @@ of 2 in the range of 2^3 to 2^16.
 #### SSR (R)
 R is the super sample rate, the
 number of samples processed in parallel every clock. Using a typical
-example with N=1024 and SSR=4, the core would compute one 1K FFT every
+example with N=1024 and SSR=4, the core would compute one 1K IFFT every
 256 clock cycles, processing 4 input samples/clock. 
 
 The SSR is limited to 2 and 4.
@@ -48,9 +48,8 @@ BRAM. Typical values to try are 258, 514, and 1026.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Vector_FFT_Float_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Vector_FFT_Float_Ex1)
+[![](./Images/Vector_IFFT_Float_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Vector_IFFT_Float_Ex1)
 
-[![](./Images/Vector_FFT_Float_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Vector_FFT_Float_Ex2)
 
 --------------
 Copyright (C) 2025 Advanced Micro Devices, Inc.
