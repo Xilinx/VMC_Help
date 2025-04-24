@@ -1,0 +1,8 @@
+model_composer_work/
+slprj/
+*.slxc
+*.log
+.Xil/
+*.slx.autosave
+*.slx.r*
+Thumbs.db
