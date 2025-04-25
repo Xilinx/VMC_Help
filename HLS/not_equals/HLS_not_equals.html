@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Not Equals</h1>
 <p>Perform element-wise not equal to relational operation on the inputs.
 The top input corresponds to the first operand.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABICAYAAABIk43cAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADzUlEQVR4nO2bv08bSRSAv93YBxcJoRB7pUO6Ike7SpEiuiqK7CZKdVeFSwU1giIK/ifoQCilkZtQREmKKyJdFilKlyY/ZClVgnQnRc6uQTk4W+YWa1JYa8D2Gs/u2Mbr/Uqbmfc+7TA77zFoQgjBmKAPO4FBkuj2paZpg8pDKX6LtasswKdPy8qT6Sdzcxu+343VMo5lo0osG1V0gHK5zNraGo7jDDufvqID5PN5crkcmUwG27aHnVPf0IQQwnEcMpkMxWIR0zSxLAvDMNA0reN7VtcnuHLlLq67P4SUG1Qq76nXv7V9Pje30f1QkU6nsSyLbDZLsVgkm81iWZZvoEuXprl8+bqitINzcPBK6uebG5RhGFiWhWmaTWE/XNfGcQoI4QbPdAic2Y1bhbtRq+1SLj8eKeG2V49hGGxvb/c0eNSE22Rt22Z+fr7nCUZJ+IysbdvNTco0zZ4nGRXhpmyraLfduBOjIKwDOI7TJmoYhvRkF11YB9ja2got6nGRhRMAi4uLACwsLJBOp0NPWqvtsr//J8lkGiGOpcZOT98OHd+PBEAqlWJ1dVXZpJOT17h69Xeq1Q/s7T2THt8vYeUl3uTkNVKpPwCGenbuhFJZT1TTkiqnlcavVFUmKyv65MlHvnw5VBX+DH6lqhJZWdGvXys8ffqR2dkpFeHb8AqZVuFz+8bn0avoysoL3r0rAVCpNF5Lt25t8fz5PWZmfgybxhlOV26nX6WhZGWe6Pr6HQBKpf/I5V5SKPwWJnRXOtXmhmEEX8ZBN6ONjTcsL98MGrYnOtXmtm0He7ITEz9Li66svODt2xKOU+X167+bn/djGcNJqeoJLy0tBZX9RfqJrq/f4eHDv7h/3+TGjZ+ChJXidKlqmiabm5uD6xsfHv7P7OzUwEQ7FTYDk52a+oEHD34dSCy/Ci4BjSZ5Pp9XVgh4yJ5xk8kZjo8PQsf1q+AScNIkLxQKoUu8VmSF9/aeIYQb6sjpV6rq0CjtWrfpQSOEi+MUqFY/hK6Hd3Z2Oj4wHU6a5MMSFsKlXH5MrbYLhG8A+P0qBmqSq6RV1KMfHY/ATXIV+Il6qBYO1SQPw3miHiqFQzfJg9CrqIcqYSVNchlkRT1UCCtrkvdCUFEPTxgaBxBZEiDfJK9U3gdK9ujoM0dH/wQa61Gr7VIqPaJe/1d6bALkm+T1+jfpPwSrxHWDnQH60iS/qGjdruD63am4yHS7UzF+96DGhVg2qoyV7Lm78SgS6Np81P4xZKyWcSwbVWLZqBLLRpVYNqrEslEllo0qsWxUiWWjyndByFVeD8ol1wAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABICAYAAABIk43cAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADzUlEQVR4nO2bv08bSRSAv93YBxcJoRB7pUO6Ike7SpEiuiqK7CZKdVeFSwU1giIK/ifoQCilkZtQREmKKyJdFilKlyY/ZClVgnQnRc6uQTk4W+YWa1JYa8D2Gs/u2Mbr/Uqbmfc+7TA77zFoQgjBmKAPO4FBkuj2paZpg8pDKX6LtasswKdPy8qT6Sdzcxu+343VMo5lo0osG1V0gHK5zNraGo7jDDufvqID5PN5crkcmUwG27aHnVPf0IQQwnEcMpkMxWIR0zSxLAvDMNA0reN7VtcnuHLlLq67P4SUG1Qq76nXv7V9Pje30f1QkU6nsSyLbDZLsVgkm81iWZZvoEuXprl8+bqitINzcPBK6uebG5RhGFiWhWmaTWE/XNfGcQoI4QbPdAic2Y1bhbtRq+1SLj8eKeG2V49hGGxvb/c0eNSE22Rt22Z+fr7nCUZJ+IysbdvNTco0zZ4nGRXhpmyraLfduBOjIKwDOI7TJmoYhvRkF11YB9ja2got6nGRhRMAi4uLACwsLJBOp0NPWqvtsr//J8lkGiGOpcZOT98OHd+PBEAqlWJ1dVXZpJOT17h69Xeq1Q/s7T2THt8vYeUl3uTkNVKpPwCGenbuhFJZT1TTkiqnlcavVFUmKyv65MlHvnw5VBX+DH6lqhJZWdGvXys8ffqR2dkpFeHb8AqZVuFz+8bn0avoysoL3r0rAVCpNF5Lt25t8fz5PWZmfgybxhlOV26nX6WhZGWe6Pr6HQBKpf/I5V5SKPwWJnRXOtXmhmEEX8ZBN6ONjTcsL98MGrYnOtXmtm0He7ITEz9Li66svODt2xKOU+X167+bn/djGcNJqeoJLy0tBZX9RfqJrq/f4eHDv7h/3+TGjZ+ChJXidKlqmiabm5uD6xsfHv7P7OzUwEQ7FTYDk52a+oEHD34dSCy/Ci4BjSZ5Pp9XVgh4yJ5xk8kZjo8PQsf1q+AScNIkLxQKoUu8VmSF9/aeIYQb6sjpV6rq0CjtWrfpQSOEi+MUqFY/hK6Hd3Z2Oj4wHU6a5MMSFsKlXH5MrbYLhG8A+P0qBmqSq6RV1KMfHY/ATXIV+Il6qBYO1SQPw3miHiqFQzfJg9CrqIcqYSVNchlkRT1UCCtrkvdCUFEPTxgaBxBZEiDfJK9U3gdK9ujoM0dH/wQa61Gr7VIqPaJe/1d6bALkm+T1+jfpPwSrxHWDnQH60iS/qGjdruD63am4yHS7UzF+96DGhVg2qoyV7Lm78SgS6Np81P4xZKyWcSwbVWLZqBLLRpVYNqrEslEllo0qsWxUiWWjyndByFVeD8ol1wAAAABJRU5ErkJggg==" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Relational Operations</p>
@@ -67,7 +66,7 @@ input.</li>
 <h2>Parameters</h2>
 <p>The Not Equals block has no parameters to set.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

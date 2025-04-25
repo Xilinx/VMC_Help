@@ -37,7 +37,7 @@ The Initial Condition can be scalar, vector, or matrix, of real or
 complex type.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

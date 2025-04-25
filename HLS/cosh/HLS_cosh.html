@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>cosh</h1>
 <p>Element-wise computation of the hyperbolic cosine for a given
 argument</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAExklEQVRoge2aX2hTVxyAv5ukTSna2toEp9uDlo49xMFAbUsFpXEO/02hKh3MUp9kSMdE2idB6pPggw9FRGGrVLDd2rGio2Ax6ewolOFwzuxhD64d20O8N60mNGni7b13L4v9k6T25t429jbfW8j53XM+zrnn/O45R9A0TWONYMt1A1YSx2J/CoKwUu0wlUyDdVFZgGfPWkxvzHJSWdmR8b81NYzzslYlL2tV3jgbL8Rmc1JWdhBZnlyO9iyJaPQJivJSd5xuWbu9lOLiD3VXZDaRyEPdMbqHsSyLSFIXmibrrizXZPXOxuNjhELdq0446wlqNQobmo1Xm7DhpWc1CZuyzq4WYdOSitUgbGoG9bYL604q3kQ8PoYk3cbp3KY7trR0r9nNmYcDIBQK0dnZSXNzMy6Xy/BDVTXB1NQoqprQHWuGsCRJaT1sAJ2dnbS1tVFfX48oioYqKirayqZNX1BWdtDQc4yQycMG0NzcjMfjIRAI4PV6sxYuKtpKRcVnADn9UMjkYQNwuVz4fD5DwklRQSjIqoFHj36LKOr/kklHJo/Xs7Hb7U4RXipGRc0mU8fNW3oWCi+FpKim2Tlz5ivq6vZTX3+Y8fEgqqpx4cIQTU39nDzZx9DQOAA3bvxKY+P3nDjRR0fHL6+fdevWIPv2fcru3Z8wMZH9a5Cu40RRTF1n3W43PT09ukQFoYD+/h/RNI2RkUHOn/+Se/dG8fvHiMVkurqOcfPmYS5dGkZVNe7cCdDd3UBv73E2biwmuc1bVbWFBw/uUlOzk/v3fVnLLvQIBAKcPXs2VVYURRobG3WJAjx+/Du1tTsBOHRoPy0tx3j6VGTXrs0AbNhQxLp1hUhSjNradzl16ge6uwMcOfI+yb346uoPANi8+R3C4Ygh2bkeHo+Ha9euzZcVRRGv10sgEMDj8SxZFMBut6Oq83fiBUFAVWd/q6qGzSZw+bKXixf3EAxO0dDwHa9eKQA4HPbXZY0cQS308Pl8uN3uWdl0BdLhdL6XdjLaseMj/P5hAIaGfqa9/Tbbt7sZHf0XgMnJaaanZZxOB9evP6Kqqpxz52pYv95JOKw/+ViMdKLwfwYlSVLGAqmy29LOugcOfMzAwCB1dfspLCzk6tXPKS//k+Hhv2lq6ieRUGhv30tJSSGiGOX48V4KCuxUV2/B5So2VTaTh6BpmnblyhXa2tpSCgiCkHLWU1KyZ0kpXTj8k+5NMTOeXVnZkbHDHACnT58GMC03zjV+vz+thwOgoqKC1tZWUyvUm9AXFJQzM2NsBk6SqcNM/8Sbi17hiYk+VPUVNlvhsrTnrTj+0DQZSeoiFvsDUfwGVY0B5t9+yLmspsmEQt3E42MAyPJzgsGbKEoYTZsxta6cyi4UTaIoYYLBG8iyZOoWT85kM4kmUdU4ovg1icSYacI5kX2T6Gw5BUnqIRr9zRThFZddquicCF68GCASeWhYeEVl9YvOEomMMDl5FwCHozSr+pd1nZ2LEdEksVgAWZZQlHBW8bplo9EnWVWUSPxFIvFPVrFzkeXnWcfqllWUl1mder8N5DypWEnyslYlL2tVhMVukq+p+8ZWu1G/poZxXtaq5GWtSl7WquRlrUpe1qrkZa1KXtaq5GWtyn+Oj2q7hTqrDgAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAExklEQVRoge2aX2hTVxyAv5ukTSna2toEp9uDlo49xMFAbUsFpXEO/02hKh3MUp9kSMdE2idB6pPggw9FRGGrVLDd2rGio2Ax6ewolOFwzuxhD64d20O8N60mNGni7b13L4v9k6T25t429jbfW8j53XM+zrnn/O45R9A0TWONYMt1A1YSx2J/CoKwUu0wlUyDdVFZgGfPWkxvzHJSWdmR8b81NYzzslYlL2tV3jgbL8Rmc1JWdhBZnlyO9iyJaPQJivJSd5xuWbu9lOLiD3VXZDaRyEPdMbqHsSyLSFIXmibrrizXZPXOxuNjhELdq0446wlqNQobmo1Xm7DhpWc1CZuyzq4WYdOSitUgbGoG9bYL604q3kQ8PoYk3cbp3KY7trR0r9nNmYcDIBQK0dnZSXNzMy6Xy/BDVTXB1NQoqprQHWuGsCRJaT1sAJ2dnbS1tVFfX48oioYqKirayqZNX1BWdtDQc4yQycMG0NzcjMfjIRAI4PV6sxYuKtpKRcVnADn9UMjkYQNwuVz4fD5DwklRQSjIqoFHj36LKOr/kklHJo/Xs7Hb7U4RXipGRc0mU8fNW3oWCi+FpKim2Tlz5ivq6vZTX3+Y8fEgqqpx4cIQTU39nDzZx9DQOAA3bvxKY+P3nDjRR0fHL6+fdevWIPv2fcru3Z8wMZH9a5Cu40RRTF1n3W43PT09ukQFoYD+/h/RNI2RkUHOn/+Se/dG8fvHiMVkurqOcfPmYS5dGkZVNe7cCdDd3UBv73E2biwmuc1bVbWFBw/uUlOzk/v3fVnLLvQIBAKcPXs2VVYURRobG3WJAjx+/Du1tTsBOHRoPy0tx3j6VGTXrs0AbNhQxLp1hUhSjNradzl16ge6uwMcOfI+yb346uoPANi8+R3C4Ygh2bkeHo+Ha9euzZcVRRGv10sgEMDj8SxZFMBut6Oq83fiBUFAVWd/q6qGzSZw+bKXixf3EAxO0dDwHa9eKQA4HPbXZY0cQS308Pl8uN3uWdl0BdLhdL6XdjLaseMj/P5hAIaGfqa9/Tbbt7sZHf0XgMnJaaanZZxOB9evP6Kqqpxz52pYv95JOKw/+ViMdKLwfwYlSVLGAqmy29LOugcOfMzAwCB1dfspLCzk6tXPKS//k+Hhv2lq6ieRUGhv30tJSSGiGOX48V4KCuxUV2/B5So2VTaTh6BpmnblyhXa2tpSCgiCkHLWU1KyZ0kpXTj8k+5NMTOeXVnZkbHDHACnT58GMC03zjV+vz+thwOgoqKC1tZWUyvUm9AXFJQzM2NsBk6SqcNM/8Sbi17hiYk+VPUVNlvhsrTnrTj+0DQZSeoiFvsDUfwGVY0B5t9+yLmspsmEQt3E42MAyPJzgsGbKEoYTZsxta6cyi4UTaIoYYLBG8iyZOoWT85kM4kmUdU4ovg1icSYacI5kX2T6Gw5BUnqIRr9zRThFZddquicCF68GCASeWhYeEVl9YvOEomMMDl5FwCHozSr+pd1nZ2LEdEksVgAWZZQlHBW8bplo9EnWVWUSPxFIvFPVrFzkeXnWcfqllWUl1mder8N5DypWEnyslYlL2tVhMVukq+p+8ZWu1G/poZxXtaq5GWtSl7WquRlrUpe1qrkZa1KXtaq5GWtyn+Oj2q7hTqrDgAAAABJRU5ErkJggg==" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -42,7 +41,7 @@ argument</p>
 <p>The cosh block returns the output of the function cosh(x), which is
 the hyperbolic cosine, for each element in array x.</p>
 <p>The hyperbolic cosine of <code>x</code> is:</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAAfCAYAAAAlfqlKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOLSURBVGhD7dixrw1BFMfxxx9AglrhH6BApRQSEp2Q+AN0ShIqBQmNTq2R6HRCQ6OjVxCFHvEXcD733iPzNuvdu/v2Pnv3zTf5ZWd2dnZnz5lzZna3KpVKpVKp4FzoRehS6Hboaeh/czRkLMZ1cnE0zspAPAj9Do3JqJxuTK9ntYKDi2OlP98Wx/eL417DqakTTgTfQz9Db2e1ymCIJIbOCE+D/wvXygjr5mboSyjT+l9qhK+OdZquz2rzdfJ56E7oY+hZaN2YUMbAoW2TyzmT6njoVuha6GKo0gER8iHE0YwtmrdFTQd2E+H66S+rGI/oHSUGuCzVjRXj/hFi7DQ0o/elr8P1MQ7jMfGUTb7RYXAiYtlLMqYUuWxiiKw+BuuLz6wcv3Km81XhYP130rL3YRPXmWz56TfqAFr2UrnxWfUl8tt3LzD23UR0kz4RzsnGMchn3xg2bTY+L0NfZ7Xl+PyR0mxc1o1PGxMy8cy9/t7+tTgeWhwFxqBZTtqUNswsW3vHxLohutrapDt110g/ubHJKHFPfSjbHLVndDMuozqXf4hc39yVeganr5tcL43BeLqm9CZ9IjwzYNpk0JTu5l4wHZLGV2d8bfkwR/V8AeU0iGNuKnKg2Y/xMk2aICZHGUXwUvq5j3IT12tvizb31LaTBo2QDvRx+KAcWBwTTrofOjOrzWFUaZThnS/bOPJC6EjIy5wNXQl9Ch0OSdMM/DB0LwTXcZj7lOUS5z7Pi1unQ23p3n19Az+e1YbFBD81L04CfwPfKTQdLjquhpoOQJtzXP8odGxWm6/HPvTfhG6E/OLr43CIhLuhy6FXTjRo3ndIzoc8dypw+JN5cTuZwjkhkYrN+EyzJWVKzvSa657ohz5lGuNkfeCeWS7xvLzOEtCG+3p+kzGn9NHBuQzCWZyozvCOHKrNpEg4JI3OyYlz+qFp4NLh7lX2S7TnvqHNQTnOtjW80hERKqoYlHNKo1rjtXEAcWxmA+dFrGu06afsPtpy0nAwcai+2pWhnlGvTMquyQ0hchz57E3D+PO9qC1TTRYvm+l/VUxERttETPzMYDnBOX1T36cXmRlWwTJQLiubhrFnRgOnc3hz2Zo8It3s3wlLQpnapwKHb/IkrnRAtNvTLJvslYlgPzLFrFVpgaP31Q59P8PZNqub+mlZ6UCbs9XL3XtlIvj8zB8upbr+i6hUKpVtbG39AWD59uZXlTySAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAAfCAYAAAAlfqlKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOLSURBVGhD7dixrw1BFMfxxx9AglrhH6BApRQSEp2Q+AN0ShIqBQmNTq2R6HRCQ6OjVxCFHvEXcD733iPzNuvdu/v2Pnv3zTf5ZWd2dnZnz5lzZna3KpVKpVKp4FzoRehS6Hboaeh/czRkLMZ1cnE0zspAPAj9Do3JqJxuTK9ntYKDi2OlP98Wx/eL417DqakTTgTfQz9Db2e1ymCIJIbOCE+D/wvXygjr5mboSyjT+l9qhK+OdZquz2rzdfJ56E7oY+hZaN2YUMbAoW2TyzmT6njoVuha6GKo0gER8iHE0YwtmrdFTQd2E+H66S+rGI/oHSUGuCzVjRXj/hFi7DQ0o/elr8P1MQ7jMfGUTb7RYXAiYtlLMqYUuWxiiKw+BuuLz6wcv3Km81XhYP130rL3YRPXmWz56TfqAFr2UrnxWfUl8tt3LzD23UR0kz4RzsnGMchn3xg2bTY+L0NfZ7Xl+PyR0mxc1o1PGxMy8cy9/t7+tTgeWhwFxqBZTtqUNswsW3vHxLohutrapDt110g/ubHJKHFPfSjbHLVndDMuozqXf4hc39yVeganr5tcL43BeLqm9CZ9IjwzYNpk0JTu5l4wHZLGV2d8bfkwR/V8AeU0iGNuKnKg2Y/xMk2aICZHGUXwUvq5j3IT12tvizb31LaTBo2QDvRx+KAcWBwTTrofOjOrzWFUaZThnS/bOPJC6EjIy5wNXQl9Ch0OSdMM/DB0LwTXcZj7lOUS5z7Pi1unQ23p3n19Az+e1YbFBD81L04CfwPfKTQdLjquhpoOQJtzXP8odGxWm6/HPvTfhG6E/OLr43CIhLuhy6FXTjRo3ndIzoc8dypw+JN5cTuZwjkhkYrN+EyzJWVKzvSa657ohz5lGuNkfeCeWS7xvLzOEtCG+3p+kzGn9NHBuQzCWZyozvCOHKrNpEg4JI3OyYlz+qFp4NLh7lX2S7TnvqHNQTnOtjW80hERKqoYlHNKo1rjtXEAcWxmA+dFrGu06afsPtpy0nAwcai+2pWhnlGvTMquyQ0hchz57E3D+PO9qC1TTRYvm+l/VUxERttETPzMYDnBOX1T36cXmRlWwTJQLiubhrFnRgOnc3hz2Zo8It3s3wlLQpnapwKHb/IkrnRAtNvTLJvslYlgPzLFrFVpgaP31Q59P8PZNqub+mlZ6UCbs9XL3XtlIvj8zB8upbr+i6hUKpVtbG39AWD59uZXlTySAAAAAElFTkSuQmCC" /></p>
 </section>
 <section id="data-type-support" class="level2">
 <h2>Data Type Support</h2>
@@ -59,7 +58,7 @@ data types (double, single, and half) and fixed point type.</li>
 <h2>Parameters</h2>
 <p>The cosh block has no parameters to set.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

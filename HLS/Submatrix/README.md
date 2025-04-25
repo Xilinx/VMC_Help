@@ -130,7 +130,7 @@ output. Ending column offset is enabled when you select Offset from
 middle or Offset from last for Ending column.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

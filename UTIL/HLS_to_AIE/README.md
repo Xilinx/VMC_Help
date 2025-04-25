@@ -39,7 +39,7 @@ each input sample, there will be 8 output samples. As such the Output
 Size should be set to 8x24=192 or larger.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

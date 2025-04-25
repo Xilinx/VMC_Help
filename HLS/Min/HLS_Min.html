@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Min</h1>
 <p>Outputs the minimum value of an input or element-wise minimum value
 of multiple inputs.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABXCAYAAACjmNM0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFcElEQVR4nO2cX0hbVxzHvzdGmyKoHSbtNtbOunUU8jBoXzqKGwntQLD0YTD3pk8yZC8FfWyhr75VfNjGkHaMuVHoSq1lRcWuzo7RwoT4sLVuUFeX3JsYYxJN7r+zBzWxmpuc3Hvu7Y2cz5Mk9/zOzw/nnvs799xcgRBCwKmI51UnUCt4y30pCIJTebgGoxOsrCgAWFz8gnkybqW9fdjwO37qUcJFUcJFUcJFUcJFUcJFUcJFUcJFUcJFUVKxMq+Ex+NDS8vHUNVVFvnYSjY7D00zl6dlUXV1zWhsfN9qGMdYW3tgqp3lU09RYojHb4IQ1WooV8NkjtrYWMDq6s8gRGERzpUwm8wzmcdIp+f2rSymV71U6gGy2fl9KYtxeUCQTE4gl1uEru8vWTbUUQSJxE0oyvK+muBtKTgJ0SBJ30FVEyBEs6MLx7GtMidEgSheh66nAdT+Ro+tSxhd30AsNgpdX0ety7J9radpa1uyZLu7shVHFsWqmoAk3ajpssHyWo8WWV6GKF6Hz/cOk3jNzR8xiUOLY6KAzQk+k/kNup5nEs9JWY7dj/L52nDkyOc4dKjTqS6Z4gGAeDyOoaEhSJJkSyc+XxtaWz8DACjKii19sMLIgQcARkdHMTg4iFAoBFEUmXa8LUkQ6pnGtQsjBx4A6OnpQTAYRCQSQTgcZiarlCS//xNcunR/z7FXrsygvX0Y+byG0dE/MDAwySSHajFy4AEAv9+PqakpprKMRlJDQz2ePPkP6+vFUkHTCB4+fI6DBzevLd3dQVy+3GGpf7MYOShM5oFAYI8ss5Q73TRNw6lTr2Ny8p/CZ3NzSzh5shWyrAMAxsYiuHr1FwBAf/8Erl37HX1947h48Qf09Y1DVXXTuVXCaMC8dNXbLcsMleYkTdPR1XUCt2//Wfjszp2/0Nn5Lkotc+rqPHj06F+MjHTi1q1Psbycwezsc1O50VBqwIiiuLc8CAQCGBsbM9UJ7cTd0XEUCwsiVlY2IMsaZmeXEAq1GR4fCr0Nr9cDQQCOHWtGNJo1lR8tOx1EIhH09/fvLThFUUR3d3fVwau5utXVeXDu3HHcvfsUhw834syZNwvzUykaGxsKf3s8AnTd3gX2TgfBYBAjIyMvjyhRFBEOhxGJRBAMBqkDmykBLlx4D/fuPcP4+FN0dZ2gbmc3ux1MTU0hEAgURZU6gAazddLp028gFssiEhFx9uzR6v4bGyklCdha60mSZHhAOQ4ceMt0MSkIwPnzx5FOy/B63bOzb+RAIISQoaEhDA4O7jlAEISyD7s2NX1Y9cI0lZoxvVtrd9/t7cOGA8ULAL29vQA2K3S/319lyvuL6enpkg68ANDa2oqBgQHHk3IjRgPFPZODy3H0xh1g/WZbff1rSCYn2CRTBY6LAqzLWlv7FbncMzQ1fQBBaKjcgAE1deoRokCSbkBRRMjyi619wzyc2AqrGVGEKIjHv0cuV7zrIMvLiMW+dmTfsCZElZK0jaomEI1+CU1L2bp973pR5SRto2lpRKNfQVXjtj0Y4mpRNJK22dy+/way/MKWjVbXiqpG0s42kvQtcrlF5rJcKcqMpGJbDfH4j8yf/HOdKCuSdkRBMjnB9JlSV4liI6kQDanUDFZX7zOZ4F0jiq2kIpnMYyQSPwEAvN4W03FeyRJmN3ZJ2mZjYwHRaNz0zzsAi6Ky2XkrzQvk838jn19iEssIRYlZam9JlKatMrlbWQu4Zo5yO1wUJVwUJVwUJVwUJVwUJVwUJVwUJVwUJUK5d9zxN5IVKbuE4e8JLMJPPUq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEr+BxLRnRgF0Du2AAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABXCAYAAACjmNM0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFcElEQVR4nO2cX0hbVxzHvzdGmyKoHSbtNtbOunUU8jBoXzqKGwntQLD0YTD3pk8yZC8FfWyhr75VfNjGkHaMuVHoSq1lRcWuzo7RwoT4sLVuUFeX3JsYYxJN7r+zBzWxmpuc3Hvu7Y2cz5Mk9/zOzw/nnvs799xcgRBCwKmI51UnUCt4y30pCIJTebgGoxOsrCgAWFz8gnkybqW9fdjwO37qUcJFUcJFUcJFUcJFUcJFUcJFUcJFUcJFUVKxMq+Ex+NDS8vHUNVVFvnYSjY7D00zl6dlUXV1zWhsfN9qGMdYW3tgqp3lU09RYojHb4IQ1WooV8NkjtrYWMDq6s8gRGERzpUwm8wzmcdIp+f2rSymV71U6gGy2fl9KYtxeUCQTE4gl1uEru8vWTbUUQSJxE0oyvK+muBtKTgJ0SBJ30FVEyBEs6MLx7GtMidEgSheh66nAdT+Ro+tSxhd30AsNgpdX0ety7J9radpa1uyZLu7shVHFsWqmoAk3ajpssHyWo8WWV6GKF6Hz/cOk3jNzR8xiUOLY6KAzQk+k/kNup5nEs9JWY7dj/L52nDkyOc4dKjTqS6Z4gGAeDyOoaEhSJJkSyc+XxtaWz8DACjKii19sMLIgQcARkdHMTg4iFAoBFEUmXa8LUkQ6pnGtQsjBx4A6OnpQTAYRCQSQTgcZiarlCS//xNcunR/z7FXrsygvX0Y+byG0dE/MDAwySSHajFy4AEAv9+PqakpprKMRlJDQz2ePPkP6+vFUkHTCB4+fI6DBzevLd3dQVy+3GGpf7MYOShM5oFAYI8ss5Q73TRNw6lTr2Ny8p/CZ3NzSzh5shWyrAMAxsYiuHr1FwBAf/8Erl37HX1947h48Qf09Y1DVXXTuVXCaMC8dNXbLcsMleYkTdPR1XUCt2//Wfjszp2/0Nn5Lkotc+rqPHj06F+MjHTi1q1Psbycwezsc1O50VBqwIiiuLc8CAQCGBsbM9UJ7cTd0XEUCwsiVlY2IMsaZmeXEAq1GR4fCr0Nr9cDQQCOHWtGNJo1lR8tOx1EIhH09/fvLThFUUR3d3fVwau5utXVeXDu3HHcvfsUhw834syZNwvzUykaGxsKf3s8AnTd3gX2TgfBYBAjIyMvjyhRFBEOhxGJRBAMBqkDmykBLlx4D/fuPcP4+FN0dZ2gbmc3ux1MTU0hEAgURZU6gAazddLp028gFssiEhFx9uzR6v4bGyklCdha60mSZHhAOQ4ceMt0MSkIwPnzx5FOy/B63bOzb+RAIISQoaEhDA4O7jlAEISyD7s2NX1Y9cI0lZoxvVtrd9/t7cOGA8ULAL29vQA2K3S/319lyvuL6enpkg68ANDa2oqBgQHHk3IjRgPFPZODy3H0xh1g/WZbff1rSCYn2CRTBY6LAqzLWlv7FbncMzQ1fQBBaKjcgAE1deoRokCSbkBRRMjyi619wzyc2AqrGVGEKIjHv0cuV7zrIMvLiMW+dmTfsCZElZK0jaomEI1+CU1L2bp973pR5SRto2lpRKNfQVXjtj0Y4mpRNJK22dy+/way/MKWjVbXiqpG0s42kvQtcrlF5rJcKcqMpGJbDfH4j8yf/HOdKCuSdkRBMjnB9JlSV4liI6kQDanUDFZX7zOZ4F0jiq2kIpnMYyQSPwEAvN4W03FeyRJmN3ZJ2mZjYwHRaNz0zzsAi6Ky2XkrzQvk838jn19iEssIRYlZam9JlKatMrlbWQu4Zo5yO1wUJVwUJVwUJVwUJVwUJVwUJVwUJVwUJUK5d9zxN5IVKbuE4e8JLMJPPUq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEq4KEr+BxLRnRgF0Du2AAAAAElFTkSuQmCC" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions/Math Operation</p>
@@ -100,7 +99,7 @@ is the largest among the bit widths of the inputs.</li>
 <p>The block icon is redrawn with the specified number of input
 ports.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

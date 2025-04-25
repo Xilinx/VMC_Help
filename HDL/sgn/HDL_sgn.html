@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="threshold" class="level1">
 <h1>Threshold</h1>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Threshold block tests the sign of the input number. If the input
@@ -49,7 +48,7 @@ output is always a signed fixed-point integer that is 2 bits long.</p>
 <h2>LogiCORE</h2>
 <p>The Threshold block does not use a LogiCORE™.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

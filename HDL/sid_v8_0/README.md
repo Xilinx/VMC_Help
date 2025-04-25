@@ -552,7 +552,7 @@ Boxes](../../GEN/common-options/README.md).
 v8.0](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg049-sid&ft:locale=en-US)
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

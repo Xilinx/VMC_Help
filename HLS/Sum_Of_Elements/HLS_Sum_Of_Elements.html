@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Sum of Elements</h1>
 <p>Perform element-wise addition on the input, column-wise, row-wise, or
 in all dimensions</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD5UlEQVRoge2az2sTWRzAP4lTU4tQIskoCx60UlgY1pN78bI0N+2yB/fQvaUglKX02CJ49T9wC664m9YFLboHWdi9yHQRrKy3CvGwB1NYWagzsT+CCclOZ2YPGk3aTDLzZtok0/lALnnv+9778F7e983kxWzbtjkkxLs9gINEalcYi8UOahyB4rRY28oCvHo1E/hg9pORkZuOZYdqGUeyYSWSDSsdd+NWxOMJkslLGMZG0ONxTbn8AtPc8hQjJHvkyDBDQ1+IhAZKqfTEU32hZWwYGrp+F9s2RMK7hvBvtlpdo1i831fCvjaofhP2vRv3k3AgqadfhAPLs/0gHOihoteFAz9B9bKw0KGiE9XqGrr+C4nEWc+xw8NfBT+gD0gAxWKRXC5HNpslnU4H0rBl1Xj37i8sq+Y51q+wrustPeIAuVyOubk5xsbG0DTNV0cAg4NnOHXqe5LJS77bEsHJIw6QzWZRFIV8Pk8mk/ElPDh4hlTqO4CmB4Xnz/9lZOQmo6M/NH2uX/9TuC8nnDwkgHQ6jaqqZDKZjxVVVfXcSV00FhvYU3b+/EkuXPiMixdPMzPzpaCGOxonTlVVZFkGGnZjWZZRVbWpohfaib4vl7hz52sePy6wuPjCh0pndnvUZ7gp9ewWdksn0TrHjx9lcfEb7t3L8+jR3wIa7mg1cZqm7c2zsiyztLTkumG3onWSyWNcufI5Kyuv3Y9egEaPfD7P9PT03jyraRoTExOuGvQqCvDs2WsePHjJw4ffuo4RodFDURTm5+ebZ1bTtI+blKIobRsTES0UNrl2TeXWrcskk8cEFNyx26O+ScXbVXAikTjtWXRrq8rU1O/cuDHGuXMn/Nl0oJUofEg9uq47VmhFInHWkyjA06f/UChscvXqb03fDw0NsLo65dWnLU4eEsDCwoJrUVHGx0cZHx8NvN1WOHlIAJOTkwCBno27yfLycksPCSCVSjE7Oxt4p14P9AMDJ9jZKfnu12nC9uURrxGvwm/f/opl/Uc8fjTwsfTM3x+2baDrd6lUXqJpP2NZFSDYGxA9IWvbBsXifarVNQAM4w3r67cxzW1seyewfrouu1u0jmlus77+I4ahB/aKp6uyTqJ1LKuKpv1ErbYWiHDXZDuJfqpnoutLlMurvoW7IutWtCGCzc0/KJWe+BI+cFnvop8olVbY2Hh/3JSkYc/x+55nG/EjWqdSyWMYOqa57TlWSLZcFnutUqsVqNX8P7QbxhuhOCFZ09zy/K93L9D1PHuQRLJhJZINK7F2N8kP1X3jsN2oP1TLOJINK5FsWIlkw0okG1Yi2bASyYaVSDasRLJh5X/56fa0dQGEpQAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD5UlEQVRoge2az2sTWRzAP4lTU4tQIskoCx60UlgY1pN78bI0N+2yB/fQvaUglKX02CJ49T9wC664m9YFLboHWdi9yHQRrKy3CvGwB1NYWagzsT+CCclOZ2YPGk3aTDLzZtok0/lALnnv+9778F7e983kxWzbtjkkxLs9gINEalcYi8UOahyB4rRY28oCvHo1E/hg9pORkZuOZYdqGUeyYSWSDSsdd+NWxOMJkslLGMZG0ONxTbn8AtPc8hQjJHvkyDBDQ1+IhAZKqfTEU32hZWwYGrp+F9s2RMK7hvBvtlpdo1i831fCvjaofhP2vRv3k3AgqadfhAPLs/0gHOihoteFAz9B9bKw0KGiE9XqGrr+C4nEWc+xw8NfBT+gD0gAxWKRXC5HNpslnU4H0rBl1Xj37i8sq+Y51q+wrustPeIAuVyOubk5xsbG0DTNV0cAg4NnOHXqe5LJS77bEsHJIw6QzWZRFIV8Pk8mk/ElPDh4hlTqO4CmB4Xnz/9lZOQmo6M/NH2uX/9TuC8nnDwkgHQ6jaqqZDKZjxVVVfXcSV00FhvYU3b+/EkuXPiMixdPMzPzpaCGOxonTlVVZFkGGnZjWZZRVbWpohfaib4vl7hz52sePy6wuPjCh0pndnvUZ7gp9ewWdksn0TrHjx9lcfEb7t3L8+jR3wIa7mg1cZqm7c2zsiyztLTkumG3onWSyWNcufI5Kyuv3Y9egEaPfD7P9PT03jyraRoTExOuGvQqCvDs2WsePHjJw4ffuo4RodFDURTm5+ebZ1bTtI+blKIobRsTES0UNrl2TeXWrcskk8cEFNyx26O+ScXbVXAikTjtWXRrq8rU1O/cuDHGuXMn/Nl0oJUofEg9uq47VmhFInHWkyjA06f/UChscvXqb03fDw0NsLo65dWnLU4eEsDCwoJrUVHGx0cZHx8NvN1WOHlIAJOTkwCBno27yfLycksPCSCVSjE7Oxt4p14P9AMDJ9jZKfnu12nC9uURrxGvwm/f/opl/Uc8fjTwsfTM3x+2baDrd6lUXqJpP2NZFSDYGxA9IWvbBsXifarVNQAM4w3r67cxzW1seyewfrouu1u0jmlus77+I4ahB/aKp6uyTqJ1LKuKpv1ErbYWiHDXZDuJfqpnoutLlMurvoW7IutWtCGCzc0/KJWe+BI+cFnvop8olVbY2Hh/3JSkYc/x+55nG/EjWqdSyWMYOqa57TlWSLZcFnutUqsVqNX8P7QbxhuhOCFZ09zy/K93L9D1PHuQRLJhJZINK7F2N8kP1X3jsN2oP1TLOJINK5FsWIlkw0okG1Yi2bASyYaVSDasRLJh5X/56fa0dQGEpQAAAABJRU5ErkJggg==" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -81,7 +80,7 @@ dimension value can be entered.</p>
 <h5>2</h5>
 <p>Add input over column dimension. Output is a column matrix.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

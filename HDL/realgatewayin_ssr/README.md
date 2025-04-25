@@ -205,7 +205,7 @@ I/O standards can be specified as a cell array of strings in this edit
 box. The locations are package-specific.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

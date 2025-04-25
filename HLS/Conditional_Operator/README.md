@@ -82,7 +82,7 @@ Setting Criteria for passing first input to C ~= 0 disables this
 parameter.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

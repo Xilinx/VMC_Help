@@ -207,7 +207,7 @@ if `e` were 110110110 then `a1` would be 1000110110110.
   must include at least one input port.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

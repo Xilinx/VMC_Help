@@ -124,13 +124,13 @@ outputTilingParams = struct( ...
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Shared_Buffer_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Shared_Buffer_Ex1)
+[![](./Images/Shared_Buffer_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/Shared_Buffer_Ex1)
 
 ## References
 To learn more about Shared Buffers, refer to [AI Engine-ML Kernel and Graph Programming Guide (UG1603)](https://docs.xilinx.com/r/en-US/ug1603-ai-engine-ml-kernel-graph/AI-Engine-ML-Memory-Tile-Access).
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

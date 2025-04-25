@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="register" class="level1">
 <h1>Register</h1>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABpCAYAAADWQGYEAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAHV0lEQVR4nO2dbWxbVxmAn3tt58NxPxM7SbNl0bqOwdxNrAwQBGk0gg2xCQ1No4CoUlQ0WCQqOlo0hMq/7Uc30JDKNGkoBaRRENI0pCFVkxFoq6Zq2iYmb9rW0WT9inPtfNuOP67v4UfmtEltJ7bvvT5JzvMvuifnvHkf3XPPPefcE00IIVBIi97oABSV8Va6qGmaW3FseMp1ZBUFAbz235jtwSiW0n9nV9lrqouTHCVIcpQgyVGCJEcJkhwlSHKUIMlRgiRHCZKcFWcSakHXNbq2+8mbBSeql5LpZI68adleryOCfF6dLQEf4HOiemmJT2dsr9ORLi6bK/BxLImlFjLqxrFnUDpjcnFcSaoXRwcJSlL9OD6KU5Lqw5VhtpJUO669BylJteHqi6qSVD2uzyQoSdXRkKkeJWn1NGwuTklaHQ2dLFWSVqbhs9lKUmUaLgiUpEpIIQiUpHJIIwiUpFI4sh5UD+mMyYXYHIFWd9aSOra2uNJOrUgnCGA+W2A+695qrMySpOriijT5POjqywpAQkEtzV529myiq93f6FCkQCpBzU0ebuoMAGyoDSeVkEaQz6tzU2cAXZqI5ECKQYLXo9O3YxMe9dy5joYL8no0+roDeHUlpxQ6QCKR4Pjx48TjcVcb9+gavd0BfF4lp1zudYDh4WGOHj3K3r17MQzDlYB0TaO3K0CTxwMoQeVyrwMMDg4SDoeJRqMMDAysStJD932u5mB0TePGrgDNPg9OPXZefzXCj/ffzztvn3WmAZspl3sdIBgMEolEqpZUC5oGNwT9tDbpjskB6O3bSf899zrXgM2Uy/3iICEUChGJRBgYGFgseC25bJZf/fwgllVg16fCNQfS09GGv9Xr+BkMPTf2OVp/NTz3uyd4640zhLp2MBE3OHrsKfpu3rWkzPLcRyIRQqHQ0vegoqSizWv5T+Rl2jtCPHXiBb7wpa+Sy+eqDrS73U9bq88xOadf/ju/efJxzn0QXbmwSxjjY7z279M8+8d/8ItfP83/Pnyv5N+/PPfFO+m6YXYoFOLUqVOEw0vvktHzH/KZ3XcBsPuzd6NV+WAPbWthS8BnW7f24t9OEjn9EgAXR8/zvcFH+c4PHuHebz4EwJ+ef4azZ/7FRx+8y8zUJF/Z+w17Gq6SCyPnuPW23ei6h0BgMzfv+nTZstfmPhqNMjQ0dL0gwzDYt2/fdb8shFg0L4RAsPpFm/YtLWzf3GzrnfPgw4M8+PAg42OX+eXhAzzw7e8vub7/4CH2HzxkW3u1sjxXhYJZtuy1uQ+Hw5w4cWJpF2cYxmI/uPwO6u3byXvRtwF48+yrqw5w26YmOrbaK6eIZVk8cewQhx9/En9bwPb67aC37xbOvR/FsgrMTE9y/qP3S5ZbnvviM8hbqUBnZ+diBfd87QFe+eeLDB34FrffsQe/v23F4Da3NdG5ze/YaO3Pzz/DXXd/mdvv2ONMAzbQ2d3DF/sH+OG+r9Pd08utt+0uWa6UHPhkFBePx8sWKNLS0srTz/5l8edHf3asYmABv48d7X40hyY/333nTd564wy/fe6vzjRgI0OHr+bqsZ98t2SZcrn3Apw8ebKinGppbfZwQ7DN0fecP/z+OJMTcX76o4VBwZ7P93Pgkceca9BhyuVeE0KIRCLB8PAwg4ODBIPBqxc1rabjyIJbW+peRk5MZxz55nM5dsQK9cXbf2cXhmEsyX0RL0BHRwdHjhypL0JFXZSSAxIt2ClKowRJjhIkOUqQ5DR8ybscTm4m9Hk9xCbSWGvgyHBpBYGzkhIzOrl8gbl5k+2bkXY3kaRhOYdlwchYklx+Yd9dJmvy8XgSy/5zkGxh4wgSUCgIRmNzZLJLZ5QzWZPR2ByFgqCKSXpX2DCCTEswOjZHNld6x2o2V2B0bA5Tsm9fNoAgQd60GBmbJbfCeW4502Lkytwn577JIWpdCxICcnlr4c4wV5dws7BQPmtayDDIW7eChFjotkbGkpiF6jJtFgSjV5Jkc4WGS1qXgoQQzGdNRmNJrBqfKZYlGI0lmc+ZZf8ziRusO0GWgFTG5MJ4qu7ECiG4GEuRypgNe6ldV4IsAcl0nktG/XKu1im4ZKRIps2GfNy8bgRZQjCbzHE5nrL9uSEEXI6nmE3mXO/u1oUgIQRTs1nGJtKOtjM2kWZyNuuqJKnn4laDJQSJ6SwTM84vjwMYUxkKFnRsbXblQ+c1fQcJC4ypedfkFJmYyWBMziNcmL9bs4KEgCsTaaZmq98jbgdTczmuTKQdf09ak4IsAZfiKWZTjZFTZDaV41I8BSx8BO0EjjyDppPOJi45n3f1JJJKJNN5zi/O39mPI4LypuXKnjZZKDdDbgdrsovbSChBkqMESY4SJDlKkOQoQZKjBEmOEiQ5SpDkKEGSowRJjiYqLA86fZ6O4irlNFScLG3kdiPFAqqLkxwlSHKUIMlRgiRHCZIcJUhylCDJUYIkRwmSHCVIcpQgyVGCJEcJkhwlSHKUIMlRgiRHCZKc/wOFrzgxt9TGqgAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Register block models a D flip-flop-based register, having
@@ -67,7 +66,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <p>The Register block is implemented as a synthesizable VHDL module. It
 does not use a LogiCORE™.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

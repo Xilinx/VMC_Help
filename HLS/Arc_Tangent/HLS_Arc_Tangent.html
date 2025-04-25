@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="atan" class="level1">
 <h1>atan</h1>
 <p>Compute element-wise arctangent function of an argument.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE80lEQVRoge2aX2hTVxyAv9wmbdBJbZekbrjhH8amBBE6EXza2ocxFR8qQwci6cNgpexpKvg2FMGhqDAUHNja+pBYNjt9EBQic6JbGQWFbBNKV5gM23vTpElNTXL/7aFNTdvctTf3trFpvqfCub/z+32cc885PTcOXdd1VghOowZFiTE+3reUtdjCmjU7cTrrC7YZyo6P91Ffv3vRilpMjCaroWyOwcGvbC9mMdm8+TvDNmEJ6yg5FdlyZUXJzrtAzUYQaqir240sxxajngWRSj1BVcdMx5mWraqqZdWqbaYT2U0yed90jOlpLMsiktSNrsumk5Waot7ZdHqIaDS47ISLXqCWo7Cl1Xi5CVveepaTsC377HIRtu1QsRyEbT1Bve7Cpg8V85FODyFJ16ip2WQ6trb2I7vLmYHtsgCaluHFi9/QtIzp2MUUFgCi0ShnzpxBkiTLHbrdG1m3ro26utLdchh5CACdnZ0cO3aMpqYmRFEsOonbvRGP53OAkv6jYOQhAAQCAfx+P5FIhObm5qKEc6IOh8t6tRYx8hAAvF4v4XB4hnAqlVpw5/OJ9vc/Jx5/aaF8cxgN3PTW4/P5Zgh3d3cvqOOFjOiNG0+JxdIWyjfH7IHLCc9YjXPCC53Ks0XT6QyBQBvxeJxE4jlHjmzD6RS4e3eQoaE4Fy58Qk/Pnzx48A+KorF373u0tm7n1KkHKIqOrv/FwMC3nD79Dbt27SxaNt8jJxwOh+ceKnw+H6FQyLQogCiK7Nv3KXfu9HL+fBuXLv1OY+Nb+P1eTp78GI9nFS6XQCi0n56e/XR0PEbTdATBQXW1wLlzX3L8+Nd0dQWLFi3kEYlEaG9vn7vPiqLIwYMHaW5ebUoUoKGhgUeP+giFfiSbHWVsbOY+KwgO3G4ngcBPuN0uxsbSpNMKAFu3eqeK9JBIJK2Z5nnA5Dt88eLFmSMriuL00Pt8voKd1NS8Y/iOdnRco7q6mlu3Qpw9+8Wc9oGBGL29T7lyZR+XL++hrs493VZV5Zj+2+rnp3wPv99POBzG5/O9kp39wOHDhw1kNxkuRiMjIhs2vAvAzZu/IssqAA6Hg2xWRZJSNDS8gdMp0Nf3L6OjL8lmVUtihSgkClOrsSRJcx5Yvdp4Ghtx4EALXV1B9uz5jPXrPQAEgxF27Hib9vbbrF3rJpnMcOhQLw8fPqOl5QNOnPjFRs1JConC1Gp89erVOQ/E4+aTbNnyPv39k7d+icTPNDUp021tbR8CEAy2/G8fjY3buX6903zyPAqJwpRsa2srMHmS8nq9lhLlMHugd7nqURTrCxPAvXv3Cno4ATweD0ePHrUlUT5mhUdHf0DTsghCtaW8RgP2Wnz+0HUZSepmYuIPRLEDTZsA7P9BQMlldV0mGg2STg8BIMsjDA9/j6om0HVlnmhzlFR2tmgOVU0wPHwZWZZsveIpmayRaA5NSyOKV8hkhmwTLonsfKKvnlORpBCp1GNbhJdcdqGieRHE47dJJu9bFl5SWfOir0gmHxKL3QLA6awtKv+i3C4WwopojomJCLIsoaqJouJNy6ZST4pKlMn8TSbzrKjYfGR5pOhY07KqOlbUV+/XgZIfKpaSimy5UpEtV1aUrMPol+SKEsPlenOp67EFo9tJQ9lyZEVN44psuVKRLVcqsuVKRbZcqciWKxXZcqUiW65UZMuV/wC1XXSE9PEzZwAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE80lEQVRoge2aX2hTVxyAv9wmbdBJbZekbrjhH8amBBE6EXza2ocxFR8qQwci6cNgpexpKvg2FMGhqDAUHNja+pBYNjt9EBQic6JbGQWFbBNKV5gM23vTpElNTXL/7aFNTdvctTf3trFpvqfCub/z+32cc885PTcOXdd1VghOowZFiTE+3reUtdjCmjU7cTrrC7YZyo6P91Ffv3vRilpMjCaroWyOwcGvbC9mMdm8+TvDNmEJ6yg5FdlyZUXJzrtAzUYQaqir240sxxajngWRSj1BVcdMx5mWraqqZdWqbaYT2U0yed90jOlpLMsiktSNrsumk5Waot7ZdHqIaDS47ISLXqCWo7Cl1Xi5CVveepaTsC377HIRtu1QsRyEbT1Bve7Cpg8V85FODyFJ16ip2WQ6trb2I7vLmYHtsgCaluHFi9/QtIzp2MUUFgCi0ShnzpxBkiTLHbrdG1m3ro26utLdchh5CACdnZ0cO3aMpqYmRFEsOonbvRGP53OAkv6jYOQhAAQCAfx+P5FIhObm5qKEc6IOh8t6tRYx8hAAvF4v4XB4hnAqlVpw5/OJ9vc/Jx5/aaF8cxgN3PTW4/P5Zgh3d3cvqOOFjOiNG0+JxdIWyjfH7IHLCc9YjXPCC53Ks0XT6QyBQBvxeJxE4jlHjmzD6RS4e3eQoaE4Fy58Qk/Pnzx48A+KorF373u0tm7n1KkHKIqOrv/FwMC3nD79Dbt27SxaNt8jJxwOh+ceKnw+H6FQyLQogCiK7Nv3KXfu9HL+fBuXLv1OY+Nb+P1eTp78GI9nFS6XQCi0n56e/XR0PEbTdATBQXW1wLlzX3L8+Nd0dQWLFi3kEYlEaG9vn7vPiqLIwYMHaW5ebUoUoKGhgUeP+giFfiSbHWVsbOY+KwgO3G4ngcBPuN0uxsbSpNMKAFu3eqeK9JBIJK2Z5nnA5Dt88eLFmSMriuL00Pt8voKd1NS8Y/iOdnRco7q6mlu3Qpw9+8Wc9oGBGL29T7lyZR+XL++hrs493VZV5Zj+2+rnp3wPv99POBzG5/O9kp39wOHDhw1kNxkuRiMjIhs2vAvAzZu/IssqAA6Hg2xWRZJSNDS8gdMp0Nf3L6OjL8lmVUtihSgkClOrsSRJcx5Yvdp4Ghtx4EALXV1B9uz5jPXrPQAEgxF27Hib9vbbrF3rJpnMcOhQLw8fPqOl5QNOnPjFRs1JConC1Gp89erVOQ/E4+aTbNnyPv39k7d+icTPNDUp021tbR8CEAy2/G8fjY3buX6903zyPAqJwpRsa2srMHmS8nq9lhLlMHugd7nqURTrCxPAvXv3Cno4ATweD0ePHrUlUT5mhUdHf0DTsghCtaW8RgP2Wnz+0HUZSepmYuIPRLEDTZsA7P9BQMlldV0mGg2STg8BIMsjDA9/j6om0HVlnmhzlFR2tmgOVU0wPHwZWZZsveIpmayRaA5NSyOKV8hkhmwTLonsfKKvnlORpBCp1GNbhJdcdqGieRHE47dJJu9bFl5SWfOir0gmHxKL3QLA6awtKv+i3C4WwopojomJCLIsoaqJouJNy6ZST4pKlMn8TSbzrKjYfGR5pOhY07KqOlbUV+/XgZIfKpaSimy5UpEtV1aUrMPol+SKEsPlenOp67EFo9tJQ9lyZEVN44psuVKRLVcqsuVKRbZcqciWKxXZcqUiW65UZMuV/wC1XXSE9PEzZwAAAABJRU5ErkJggg==" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -61,7 +60,7 @@ between -π and π.</p>
 <h2>Parameters</h2>
 <p>The Atan block has no parameters to set.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

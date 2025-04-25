@@ -47,21 +47,14 @@ This block supports the xlGetReOrderedCoeff function; see Appendix A of the Viti
 
  
 #### Filter Type  
-###### Single_Rate  
-The data rate of the input and the output are the same.
 
-##### Interpolation  
-The data rate of the output is faster than the input by a factor
-specified by the Interpolation Rate Value.
+> **NOTE:** See [Implement Filters using FIR Compiler Block](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Tutorials/HDL_Library/Lab7) to see how to configure the FIR Compiler block as a multi-rate filter.
 
-##### Decimation  
-The data rate of the output is slower than the input by a factor
-specified in the Decimation Rate Value.
-
-##### Hilbert  
-Filter uses the Hilbert Transform.
-
-###### Interpolated  
+* **Single_Rate:** The data rate of the input and the output are the same.
+* **Interpolation:** The data rate of the output is faster than the input by a factor specified by the Interpolation Rate Value.
+* **Decimation:** The data rate of the output is slower than the input by a factor specified in the Decimation Rate Value.
+* **Hilbert:** Filter uses the Hilbert Transform.
+* **Interpolated:**
 An interpolated FIR filter has a similar architecture to a conventional
 FIR filter, but with the unit delay operator replaced by k-1 units of
 delay. k is referred to as the zero-packing factor. The interpolated FIR
@@ -115,21 +108,16 @@ port is divided into sub-ports that represent each parallel path.
 
 
 #### Select format  
-##### Maximum_Possible  
-Specifies that oversampling be automatically determined based on the din
-sample rate.
 
-##### Input_Sample_Period/Output_Sample_Period  
+> **NOTE:** See [Implement Filters using FIR Compiler Block](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Tutorials/HDL_Library/Lab7) to see how to configure the FIR Compiler block as a multi-rate filter.
+
+* **Maximum_Possible:** Specifies that oversampling be automatically determined based on the `din` sample rate.
+* **Input_Sample_Period/Output_Sample_Period:**
 Activates the Sample period. Enter the Sample Period specification.
-Selecting this option exposes the s_axis_data_tvalid port (called ND
+Selecting this option exposes the `s_axis_data_tvalid` port (called ND
 port on earlier versions of the core). With this port exposed, no input
 handshake abstraction and no rate-propagation takes place.
-
-##### Hardware Oversampling Rate  
-Activates the Hardware Oversampling Rate. Enter the Hardware
-Oversampling Rate specification below.
-
-#### Hardware Oversampling Rate  
+* **Hardware Oversampling Rate:** Activates the Hardware Oversampling Rate. 
 The hardware oversampling rate determines the degree of parallelism. A
 rate of one produces a fully parallel filter. A rate of n (resp., n+1)
 for an n-bit input signal produces a fully serial implementation for a
@@ -421,11 +409,11 @@ Boxes](../../GEN/common-options/README.md).
 
 **Decimation Filter:**
 
-[![](./Images/FIR_Compiler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/FIR_Compiler_Ex1)
+[![](./Images/FIR_Compiler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/FIR_Compiler_Ex1)
 
 **Interpolation Filter:**
 
-[![](./Images/FIR_Compiler_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/HDL/FIR_Compiler_Ex2)
+[![](./Images/FIR_Compiler_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/FIR_Compiler_Ex2)
 
 ## LogiCORE™ Documentation
 
@@ -433,7 +421,7 @@ FIR Compiler LogiCORE IP Product Guide
 ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

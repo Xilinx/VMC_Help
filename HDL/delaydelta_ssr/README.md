@@ -40,7 +40,7 @@ See the [Vector Delay](../../HDL/delay_ssr/README.md) block for further
 information on using this block.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

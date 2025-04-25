@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="complex-to-real-imag" class="level1">
 <h1>Complex to Real-Imag</h1>
 <p>Computes the real and imaginary components of the input</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -74,7 +73,7 @@ block.</p>
 <p>Outputs imaginary part of the input signal as Im output of the block.
 If the input is real, the Im output is zero valued.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

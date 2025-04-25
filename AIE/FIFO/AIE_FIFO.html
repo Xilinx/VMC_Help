@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>FIFO</h1>
 <p>This block allows specification of the FIFO depth on a particular
 path.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>AI Engine/Interfaces</p>
@@ -69,7 +68,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 <h2>References</h2>
 <p>To learn more about FIFO and different types of FIFOs click <a href="https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/FIFO-Depth">here</a>.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

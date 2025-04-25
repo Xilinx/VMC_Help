@@ -109,9 +109,9 @@ The number of AI Engine tiles used is determined by `(SSR)^2 * (Number of cascad
 
 ***Click on the images below to open each model.***
 
-[![](./Images/FIR_Symmetric_Decimation_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/FIR_SymmetricDecimatorStream_Ex1)
+[![](./Images/FIR_Symmetric_Decimation_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_SymmetricDecimatorStream_Ex1)
 
-[![](./Images/FIR_Symmetric_Decimation_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/FIR_SymmetricDecimatorStream_Ex2)
+[![](./Images/FIR_Symmetric_Decimation_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_SymmetricDecimatorStream_Ex2)
 
 [![](./Images/FIR_Symmetric_Decimation_Stream_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_SymmetricDecimatorStream_Ex3)
 

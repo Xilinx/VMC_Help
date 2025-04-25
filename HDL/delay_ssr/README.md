@@ -101,7 +101,7 @@ example, the following is the synthesis result for a 1-bit wide Vector
 Delay block with a latency of L=64.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

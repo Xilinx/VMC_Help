@@ -41,7 +41,7 @@ This option toggles the display of the device part information string (for examp
 Currently, Auto Detect is the only setting for this parameter. Vitis Model Composer will automatically detect the cable type.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

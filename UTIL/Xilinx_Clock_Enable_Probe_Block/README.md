@@ -45,7 +45,7 @@ signal generated is used as separate timing signal that is not
 clock-enable related.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

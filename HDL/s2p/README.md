@@ -50,7 +50,7 @@ evenly by the number of input bits. The minimum latency for this block
 is zero.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

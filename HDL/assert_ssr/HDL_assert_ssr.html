@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Vector Assert</h1>
 <p>The Vector Assert block asserts a user-defined sample rate and/or
 type on Vector inputs.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <p>Hardware notes: In hardware this blocks costs nothing.</p>
 <section id="description" class="level2">
 <h2>Description</h2>
@@ -134,7 +133,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <p>The Vector Assert block does not use a LogiCORE™™ and does not use
 resources when implemented in hardware.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

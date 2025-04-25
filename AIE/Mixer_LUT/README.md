@@ -98,11 +98,11 @@ The following modes are available:
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Mixer_LUT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex1)
+[![](./Images/Mixer_LUT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/Mixer_LUT_Ex1)
 
-[![](./Images/Mixer_LUT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex2)
+[![](./Images/Mixer_LUT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/Mixer_LUT_Ex2)
 
-[![](./Images/Mixer_LUT_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/Mixer_LUT_Ex3)
+[![](./Images/Mixer_LUT_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/Mixer_LUT_Ex3)
 
 ## Related blocks
 [Mixer](../Mixer/README.md)
@@ -111,7 +111,7 @@ The following modes are available:
 This block uses the Vitis DSP library implementation of Mixer LUT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds_mixer_lut.html).
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

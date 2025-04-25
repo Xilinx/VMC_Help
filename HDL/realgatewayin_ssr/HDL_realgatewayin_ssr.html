@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -35,7 +34,7 @@ Simulink® integer, single, double, and fixed-point to Xilinx®
 fixed-point or floating-point data type.</p>
 <p>Hardware notes: In hardware, these blocks become top level input
 ports.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADPElEQVR4nO2bPWgTURzAf+/u6helg20ukwjiYjmkDi71Y2jWbjqUTu3i0tqtHQXnCE6dWxG0gwjupg7FVBSEwmHpJI7eVQultDrcPYdYm9hccmkvuXfJ+8FB4B1//vn/7l1e3oeQUko0ymKknYCmMVajRiFEp/LoeaJeZA0FAez+eJF4MppaBgYnI9uaCmoWQHNy4jz8sQTFDdYe+giMEQR7iUY1wm/AfqIxWyHuQx9bUFpIcZ7QuNSW2Ea42Za4SaL8KE7IXcxgDQjSTiUVlBcEYEgfMyjTi5IyIQh6V1JmBEFvSjIAtre3KRaL+L6fdj5N6VZJUbU3AJaWllhYWGBsbAzP8zqa2EkwpI8ZfsYMtzDDzcgrS0TV3gCYmprCcRxc16VQKCgvKRQ5AuMmkgsY4WbklSVJUbU3AHK5HKVSKbaktfdfGBic5NXr9fZmXYdQ5AjMUYDE/7ymSVTt/w0SbNs+Jkk1juSYaaeSOFEdpGYU97+kOKx/2GJgcJInT98wfP0hl68+4Nnzd4l/gW6WA/U7iOd5x4fZtm2zsrISO7BlVQq2sfGVj+UiN0au8Ojxy+Qyp/vlHFJde9d1mZmZOS7I8zwmJiZaDn7/3ij9/ee4e3uYnZ09Dg5+nz5jQIqLPSEHamvvOA6Li4u1gjzPo1Ao4LoujuO0FPzsmT4ALKsSMgyTWUmXIk+vyKmufalUwrbto9nsejfk8/k0c25KYFyLbJP0I1JcTmiVenLg73KD7/uRN6hOI0lm+InKjIP6PTCq9hbA8vJyS3Lu3BquWcCr/jw3O87c7HjS+bdIgBmUMaQP8lcmfsOiam8BTE9PA5UZhVwu1/nsEqVKDpVpIYKy8pJWV1fr1t4CGBoaYn5+vuNJJU+tnEOyICmqY2RquaEx9eUcktVZ8C4R1FjOIUeSKqO8LKD8ppHK7pvGCPkdIX/Giyd9RPAWIQ9Om1pHUF4Q7Ce++0bI3UTjtZPYgvTmxXSIJUhv/02PLhkkdC+i0fkgfbqhc5zodIM+25U++hWnOFqQ4mhBiqMFKY4WpDhakOJoQYqjBSmOFqQ4WpDiaEGKowUpjhakOFqQ4mhBiqMFKY4WpDh/APJHesw30xrpAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADPElEQVR4nO2bPWgTURzAf+/u6helg20ukwjiYjmkDi71Y2jWbjqUTu3i0tqtHQXnCE6dWxG0gwjupg7FVBSEwmHpJI7eVQultDrcPYdYm9hccmkvuXfJ+8FB4B1//vn/7l1e3oeQUko0ymKknYCmMVajRiFEp/LoeaJeZA0FAez+eJF4MppaBgYnI9uaCmoWQHNy4jz8sQTFDdYe+giMEQR7iUY1wm/AfqIxWyHuQx9bUFpIcZ7QuNSW2Ea42Za4SaL8KE7IXcxgDQjSTiUVlBcEYEgfMyjTi5IyIQh6V1JmBEFvSjIAtre3KRaL+L6fdj5N6VZJUbU3AJaWllhYWGBsbAzP8zqa2EkwpI8ZfsYMtzDDzcgrS0TV3gCYmprCcRxc16VQKCgvKRQ5AuMmkgsY4WbklSVJUbU3AHK5HKVSKbaktfdfGBic5NXr9fZmXYdQ5AjMUYDE/7ymSVTt/w0SbNs+Jkk1juSYaaeSOFEdpGYU97+kOKx/2GJgcJInT98wfP0hl68+4Nnzd4l/gW6WA/U7iOd5x4fZtm2zsrISO7BlVQq2sfGVj+UiN0au8Ojxy+Qyp/vlHFJde9d1mZmZOS7I8zwmJiZaDn7/3ij9/ee4e3uYnZ09Dg5+nz5jQIqLPSEHamvvOA6Li4u1gjzPo1Ao4LoujuO0FPzsmT4ALKsSMgyTWUmXIk+vyKmufalUwrbto9nsejfk8/k0c25KYFyLbJP0I1JcTmiVenLg73KD7/uRN6hOI0lm+InKjIP6PTCq9hbA8vJyS3Lu3BquWcCr/jw3O87c7HjS+bdIgBmUMaQP8lcmfsOiam8BTE9PA5UZhVwu1/nsEqVKDpVpIYKy8pJWV1fr1t4CGBoaYn5+vuNJJU+tnEOyICmqY2RquaEx9eUcktVZ8C4R1FjOIUeSKqO8LKD8ppHK7pvGCPkdIX/Giyd9RPAWIQ9Om1pHUF4Q7Ce++0bI3UTjtZPYgvTmxXSIJUhv/02PLhkkdC+i0fkgfbqhc5zodIM+25U++hWnOFqQ4mhBiqMFKY4WpDhakOJoQYqjBSmOFqQ4WpDiaEGKowUpjhakOFqQ4mhBiqMFKY4WpDh/APJHesw30xrpAAAAAElFTkSuQmCC" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Vector Real Gateway In blocks are the inputs into the HDL portion
@@ -262,7 +261,7 @@ edit box. The locations are package-specific.IO Standards, e.g. {&#39;MSB&#39;,
 <p>I/O standards can be specified as a cell array of strings in this
 edit box. The locations are package-specific.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

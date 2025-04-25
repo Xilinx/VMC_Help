@@ -91,11 +91,11 @@ These examples compare the AI Engine FFT block in Vitis Model Composer with the 
 
 **1024 point FFT:**
 
-[![](./Images/FFT_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/FFT_Ex1)
+[![](./Images/FFT_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FFT_Ex1)
 
 **512 point FFT:**
 
-[![](./Images/FFT_Example2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/FFT_Ex2) 
+[![](./Images/FFT_Example2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FFT_Ex2) 
 
 ## References
 This block uses the Vitis DSP library implementation of FFT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft-ifft-aie-only.html).
@@ -103,7 +103,7 @@ This block uses the Vitis DSP library implementation of FFT. For more details on
 
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

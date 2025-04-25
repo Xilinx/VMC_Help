@@ -103,7 +103,7 @@ offset basis). Positive offsets specify bit positions to the left of the
 anchor.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

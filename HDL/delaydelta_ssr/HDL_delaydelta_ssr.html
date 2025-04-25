@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -34,7 +33,7 @@ vertical-align: middle;
 based on the given latency and delay latency values.</p>
 <p>Hardware notes: A delay line is a chain, each link of which is an
 SRL16 followed by a flip-flop.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAB1CAYAAABEfW+gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAGTklEQVR4nO3df2jUdRzH8de+u+W2rqyxu80N13RmRmeCUggtiB0kUf1hiK1FcgtDc9Fg4sT+0AjSP5aGwTJB2SrIJUEZ9cegG4EbYaainKVOZ26V291cM4/9vB/9Mb/r1r7fu+93+3w/38/n7v38a+y+fD8feOz7477f792y4vF4HJRUOfReyMrK4jkPSiO97UnhPA+KQbpbmlrn+X4e86ASqlxVnPT1lGhGVkKxy8hGYgjN6Mqo+WV046BjmoQRmoQRmoQRmoQRmoQRmoQRmoQRmoQRmoQZviJiNEXJQnFBPiYjUdarlrLh8AQmIzGm62SOluNQsNCZAyCH9aqlLTQ8xnR9zHeP4xNR3OgPI0a3Vi3LkmPayFgEfQMEZ1WWnYgQnHVZevZIcNZk+Sk/wbGPy/s0gmMbtzfXBMcurldECI5N3C9jEdz8s+XaI8HNL9suGBPc3LP1Kj/BzS3bb80QnPlsRwMIzmxCoAEEZyZh0ACCM5pQaADBGYn5nWsWjYxF0Nt/B848/ne/Cx/I5T6m2YREA4DR8ShGx+15zkR0OOF2j1TqhEVbcE82FIU+962VkGj5uQ4sLbkPxQX5dk9FyIRDy891YHGREwDo2UmdhEJTwWivmDxh0AjMeEKgEZi5bEcjMPMpADA4OIimpiaEQiGugxNY8vQ8FABoaWlBY2MjqqqqEAwGuUyIwFKn56EAgM/ng8fjQSAQgNfrNQV38cIZ7GncYmoyPMF+OunH1k0v4MK5U9YPxjg9DwUAXC4X/H7/DDir4r2FlZVXoPKZdXwGY5zehjR9wdjtdsPv98Pr9SIQCCRd2R+91/Herm1wFZWgoNBleBJ27BJLF5fzG8xEhz/ai7Onu+AuLsGtUBCNuz+YtUyih9frhd/vh9vtnnn2qMJ5PJ6kA37R2owNNZvx/oGjeLCg0NAkeYK1f/8VDuzbhe7Lyf/47Co4cBOdP7bj0KffYuee/bh25VfN79dM9Ejc4mbdmnG73Whra0sKd/3aFdT46gAAq1avxY2e7qSTtBLs6+Ot8LefAAD0/d6DGt82vPzaFqx7fgMA4LMjB3GqqwNXL1/E7b+H8HTVc+wnYbLe691YvmIlFCUbTuf9WPrwo7rLJnoEAgHU1dXNRgsGg6iurk4xbHz6LyMWTX590OotbP1GH9Zv9GHg5p94p6EWL7706ozXN22ux6bN9dYMPsfi8Tji+O/WfDQa0V020cPj8aC5uXnm7jEYDBo6ppWVV+C3wDkAwC8/n9RdjtcuMRaLYe/uejTs2of8e53WDsagsvJl6L4UQCwWxe3hIfRcvaS5XKKHx+OZPqY59BZIBlfjewvv7tyK7745hiUVj2h+1y7PY9jnRw5i9RNP4bHH11g/GIOKFpVibaUXr1c/i0WlZVi+YqXmclpgwN2zx1AoNGuBoqIi3UEfWrIMLcd/0H2dJ9jFC2dw9nQXPjz8pfWDMayuYff0z9vffEVzGS0w4C5aa2ur7gJm431af/TjJgzdCuHtN6ZOPNY8WYnaLdv5DG5xeh4OAKitrQUwdWXE5TL+vuv/5S3I5v4+7MAnbfwGs6j9h45p/r6jo0PTwwEAhYWF2LFjx7wHd+bl0LVEhultQLbfmqHMR2gSRmgSRmgSRmgSJuyz/AC/Z+pzHNnoHxpBTJKP6giNBvCDu/WPgvGJKMKjkyhYmCv0W5eM3z3G4sCN/jDGJ6buVoyOR4X/fFxGo8XiQN9AGCNjM2+NiP7BxoxF0wNTExkuI9FSgamJCpdxaEbB1ESEyyg0s2BqosFlDNpcwdREgssItPmCqYkCl/ZorMDURIBLazTWYGp2w6UtmlVganbCpSWa1WBqdsGlHRovMDU74NIKjTeYGm+4tEGzC0yNJ1xaoNkNpsYLTno0UcDUeMBJjSYamJoKB0w9ysA6po8bDIcnWK4uZeHRSdu+EzJVI2MR9Px1h/n/AwUYo01GYsz//6XMqY8wsE7q3WOmRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSZvgyVuWqYivnQZnIEFrn+X6r50GZKCuu9cVWgOb3D1J806GhY5qM6e4e9ZQp+6MtTcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcL+BXowMy4OU9hBAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAB1CAYAAABEfW+gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAGTklEQVR4nO3df2jUdRzH8de+u+W2rqyxu80N13RmRmeCUggtiB0kUf1hiK1FcgtDc9Fg4sT+0AjSP5aGwTJB2SrIJUEZ9cegG4EbYaainKVOZ26V291cM4/9vB/9Mb/r1r7fu+93+3w/38/n7v38a+y+fD8feOz7477f792y4vF4HJRUOfReyMrK4jkPSiO97UnhPA+KQbpbmlrn+X4e86ASqlxVnPT1lGhGVkKxy8hGYgjN6Mqo+WV046BjmoQRmoQRmoQRmoQRmoQRmoQRmoQRmoQRmoQZviJiNEXJQnFBPiYjUdarlrLh8AQmIzGm62SOluNQsNCZAyCH9aqlLTQ8xnR9zHeP4xNR3OgPI0a3Vi3LkmPayFgEfQMEZ1WWnYgQnHVZevZIcNZk+Sk/wbGPy/s0gmMbtzfXBMcurldECI5N3C9jEdz8s+XaI8HNL9suGBPc3LP1Kj/BzS3bb80QnPlsRwMIzmxCoAEEZyZh0ACCM5pQaADBGYn5nWsWjYxF0Nt/B848/ne/Cx/I5T6m2YREA4DR8ShGx+15zkR0OOF2j1TqhEVbcE82FIU+962VkGj5uQ4sLbkPxQX5dk9FyIRDy891YHGREwDo2UmdhEJTwWivmDxh0AjMeEKgEZi5bEcjMPMpADA4OIimpiaEQiGugxNY8vQ8FABoaWlBY2MjqqqqEAwGuUyIwFKn56EAgM/ng8fjQSAQgNfrNQV38cIZ7GncYmoyPMF+OunH1k0v4MK5U9YPxjg9DwUAXC4X/H7/DDir4r2FlZVXoPKZdXwGY5zehjR9wdjtdsPv98Pr9SIQCCRd2R+91/Herm1wFZWgoNBleBJ27BJLF5fzG8xEhz/ai7Onu+AuLsGtUBCNuz+YtUyih9frhd/vh9vtnnn2qMJ5PJ6kA37R2owNNZvx/oGjeLCg0NAkeYK1f/8VDuzbhe7Lyf/47Co4cBOdP7bj0KffYuee/bh25VfN79dM9Ejc4mbdmnG73Whra0sKd/3aFdT46gAAq1avxY2e7qSTtBLs6+Ot8LefAAD0/d6DGt82vPzaFqx7fgMA4LMjB3GqqwNXL1/E7b+H8HTVc+wnYbLe691YvmIlFCUbTuf9WPrwo7rLJnoEAgHU1dXNRgsGg6iurk4xbHz6LyMWTX590OotbP1GH9Zv9GHg5p94p6EWL7706ozXN22ux6bN9dYMPsfi8Tji+O/WfDQa0V020cPj8aC5uXnm7jEYDBo6ppWVV+C3wDkAwC8/n9RdjtcuMRaLYe/uejTs2of8e53WDsagsvJl6L4UQCwWxe3hIfRcvaS5XKKHx+OZPqY59BZIBlfjewvv7tyK7745hiUVj2h+1y7PY9jnRw5i9RNP4bHH11g/GIOKFpVibaUXr1c/i0WlZVi+YqXmclpgwN2zx1AoNGuBoqIi3UEfWrIMLcd/0H2dJ9jFC2dw9nQXPjz8pfWDMayuYff0z9vffEVzGS0w4C5aa2ur7gJm431af/TjJgzdCuHtN6ZOPNY8WYnaLdv5DG5xeh4OAKitrQUwdWXE5TL+vuv/5S3I5v4+7MAnbfwGs6j9h45p/r6jo0PTwwEAhYWF2LFjx7wHd+bl0LVEhultQLbfmqHMR2gSRmgSRmgSRmgSJuyz/AC/Z+pzHNnoHxpBTJKP6giNBvCDu/WPgvGJKMKjkyhYmCv0W5eM3z3G4sCN/jDGJ6buVoyOR4X/fFxGo8XiQN9AGCNjM2+NiP7BxoxF0wNTExkuI9FSgamJCpdxaEbB1ESEyyg0s2BqosFlDNpcwdREgssItPmCqYkCl/ZorMDURIBLazTWYGp2w6UtmlVganbCpSWa1WBqdsGlHRovMDU74NIKjTeYGm+4tEGzC0yNJ1xaoNkNpsYLTno0UcDUeMBJjSYamJoKB0w9ysA6po8bDIcnWK4uZeHRSdu+EzJVI2MR9Px1h/n/AwUYo01GYsz//6XMqY8wsE7q3WOmRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSRmgSZvgyVuWqYivnQZnIEFrn+X6r50GZKCuu9cVWgOb3D1J806GhY5qM6e4e9ZQp+6MtTcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcIITcL+BXowMy4OU9hBAAAAAElFTkSuQmCC" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The delta latency parameter is used to generate each parallel path
@@ -63,7 +62,7 @@ operation.</p>
 <p>See the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;delay_ssr&#39;,&#39;category&#39;,&#39;HDL&#39;))">Vector
 Delay</a> block for further information on using this block.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

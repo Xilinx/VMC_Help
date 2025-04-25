@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="reshape-row-major" class="level1">
 <h1>Reshape Row-Major</h1>
 <p>Changes the input dimensions in row-major order.</p>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions/Math Operations</p>
@@ -102,7 +101,7 @@ Custom. The settings for Output dimensions are as follows:</p>
 <p>The value of the Output dimensions parameter must be a two-element
 vector.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

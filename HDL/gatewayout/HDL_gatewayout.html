@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,7 +31,7 @@ vertical-align: middle;
 <h1>Gateway Out</h1>
 <p>Gateway Out blocks are the outputs from the HDL portion of your
 Simulink® design.</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEbElEQVR4nO2bXWgcRRzAf7N7KbZKGoy31zxYItZC6SIi9AMNacw9ihhU2iOIJIr2IaLG2qtUCj6qJyjEKEo1pWibpGpBqyD2UjAlvtRgy9Xog5pYX7oXJaQmaQ2748Plo5fc3sX0PuaS+cG+7O7M/G9+zOx/Z/aElFKiURaj1AFoshPIdlEIUaw4Vj1+E1lWQQDjfx3LezCadCqrm32v6SlOcXKOoNJTgWvcg+CfvNZqeCPAZF7rLATKC5JiLZ5xe0HqNryhgtSbT5Sf4oQcx3T7AbfUoZQE5QUBGDKJ6Q6wGiWVhSBYvZLKRhCsTkkGwOjoKLFYjGQyWep4crJSJfn1vQHQ1dVFNBqlsbERx3GKGthyMGQS0xvE9H7B9IZ8j3LCr+8NgJaWFmzbJpFIEA6HlZfkiSCusQ3JOgxvyPcoJ0l+fW8ABINB4vF4WUjyRBDXvA8g7y+vfoyNTfD8i4e5Y/Nebqt5gh33RzlytG9JZc9f+J1TX5/LeZ9f388lCZZlLZKkGvNyzKK1KaWk6bHX+PTz79n3wsN8+MGz3LWphufaD3O8pz9n+ffe/4ZTX+UW5DdAxML9IMdxCIfDJBIJQJ3F0kxyzJmpzLeMsQXX2JLxWq6ys3x7+kce3fMG73bs5fHmXUBK2s66A1y9Ns35c29R3/gKoVAVJ47vZ2LiKjUbn+TVQxH+uJTkoyNxABrqbb44eTBjG5XVzUgp0/retm3i8fjiNNuyLLq7u3MGXkxKMXJmufjTJQAa6rfOnRNC0LDLZnjYYXLymm/ZN19vobbWYs/uOj7rPZCzrev7PpFI0NbWtliQ4zhEIpH//UMKhRS3lkwOgGGk9sRcN32/xvMkUkqmp/3T/UDARAiBaRhUVOSO//q+t22bzs7OdEELh5gKSBGiVHIA7K0bAYifuTB3TkrJd/0X2XRnDevXr0MIgeelBE5N/busdjJNb5Zlza9mZ7ohFArdyG8rOH7PFwDJLYg8bCc0PnA3O7Zv5uChj7lyZYraWoue3rMM/fwnnxxtB2DDhioGB3/jsjNGd8/ZtPIB02B4xGFsbIKqqpt928kkB2ayuGQy6XuD6rgzicDCI7VFMU4+VhxOnniZyO463u74kqeeeYfhEYfeY/t56MFtALzU3sRNayu4d/s+AgGDNWsCSFIj6pGmnfww+CutT3dkbcOv74WUUsZiMaLR6KIbhBAlz+KyZWL+uJjuAIZM+iYYS83iikFldbPvwAgAtLa2AqkVhWAwWPwI88q8HEgtC+EOlDTRWAp9fX0Z+37Re1DaxbIbQely0upZMJJUG0F+GspquyE7/nKgfFfBV4ig7HJmmZeUyvLKAeU/Gkl9fZMdIS8j5N9Lq08mEe5phJy60dCKgvKCYDLvzwohx/NaXyFZIVPcykULUhwtSHFyvgdpisOy/t2g/9tVevQUpzhakOJoQYqjBSmOFqQ4WpDiaEGKowUpjhakOFqQ4mhBiqMFKY4WpDhakOJoQYqjBSmOFqQ4/wFUQw5ncWsBRwAAAABJRU5ErkJggg==" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAzCAYAAAB7VU2VAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEbElEQVR4nO2bXWgcRRzAf7N7KbZKGoy31zxYItZC6SIi9AMNacw9ihhU2iOIJIr2IaLG2qtUCj6qJyjEKEo1pWibpGpBqyD2UjAlvtRgy9Xog5pYX7oXJaQmaQ2748Plo5fc3sX0PuaS+cG+7O7M/G9+zOx/Z/aElFKiURaj1AFoshPIdlEIUaw4Vj1+E1lWQQDjfx3LezCadCqrm32v6SlOcXKOoNJTgWvcg+CfvNZqeCPAZF7rLATKC5JiLZ5xe0HqNryhgtSbT5Sf4oQcx3T7AbfUoZQE5QUBGDKJ6Q6wGiWVhSBYvZLKRhCsTkkGwOjoKLFYjGQyWep4crJSJfn1vQHQ1dVFNBqlsbERx3GKGthyMGQS0xvE9H7B9IZ8j3LCr+8NgJaWFmzbJpFIEA6HlZfkiSCusQ3JOgxvyPcoJ0l+fW8ABINB4vF4WUjyRBDXvA8g7y+vfoyNTfD8i4e5Y/Nebqt5gh33RzlytG9JZc9f+J1TX5/LeZ9f388lCZZlLZKkGvNyzKK1KaWk6bHX+PTz79n3wsN8+MGz3LWphufaD3O8pz9n+ffe/4ZTX+UW5DdAxML9IMdxCIfDJBIJQJ3F0kxyzJmpzLeMsQXX2JLxWq6ys3x7+kce3fMG73bs5fHmXUBK2s66A1y9Ns35c29R3/gKoVAVJ47vZ2LiKjUbn+TVQxH+uJTkoyNxABrqbb44eTBjG5XVzUgp0/retm3i8fjiNNuyLLq7u3MGXkxKMXJmufjTJQAa6rfOnRNC0LDLZnjYYXLymm/ZN19vobbWYs/uOj7rPZCzrev7PpFI0NbWtliQ4zhEIpH//UMKhRS3lkwOgGGk9sRcN32/xvMkUkqmp/3T/UDARAiBaRhUVOSO//q+t22bzs7OdEELh5gKSBGiVHIA7K0bAYifuTB3TkrJd/0X2XRnDevXr0MIgeelBE5N/busdjJNb5Zlza9mZ7ohFArdyG8rOH7PFwDJLYg8bCc0PnA3O7Zv5uChj7lyZYraWoue3rMM/fwnnxxtB2DDhioGB3/jsjNGd8/ZtPIB02B4xGFsbIKqqpt928kkB2ayuGQy6XuD6rgzicDCI7VFMU4+VhxOnniZyO463u74kqeeeYfhEYfeY/t56MFtALzU3sRNayu4d/s+AgGDNWsCSFIj6pGmnfww+CutT3dkbcOv74WUUsZiMaLR6KIbhBAlz+KyZWL+uJjuAIZM+iYYS83iikFldbPvwAgAtLa2AqkVhWAwWPwI88q8HEgtC+EOlDTRWAp9fX0Z+37Re1DaxbIbQely0upZMJJUG0F+GspquyE7/nKgfFfBV4ig7HJmmZeUyvLKAeU/Gkl9fZMdIS8j5N9Lq08mEe5phJy60dCKgvKCYDLvzwohx/NaXyFZIVPcykULUhwtSHFyvgdpisOy/t2g/9tVevQUpzhakOJoQYqjBSmOFqQ4WpDiaEGKowUpjhakOFqQ4mhBiqMFKY4WpDhakOJoQYqjBSmOFqQ4/wFUQw5ncWsBRwAAAABJRU5ErkJggg==" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>This block converts the Model Composer fixed-point or floating-point
@@ -76,51 +75,51 @@ propagated to an appropriate Simulink data type according to the
 following table:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Model Composer Data Type</th>
 <th>Simulink Data Type</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>XFloat_8_24</td>
 <td>single</td>
 </tr>
-<tr class="even">
+<tr>
 <td>XFloat_11_53</td>
 <td>double</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Custom floating-point precision data type exponent width and
 fraction width less than those for single precision</td>
 <td>single</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Custom floating-point precision data type with exponent width or
 fraction width greater than that for single precision</td>
 <td>double</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XFix_&lt;width&gt;_&lt;binpt&gt;</td>
 <td>sfix&lt;width&gt;_EN&lt;binpt&gt;</td>
 </tr>
-<tr class="even">
+<tr>
 <td>UFix_&lt;width&gt;_&lt;binpt&gt;</td>
 <td>ufix&lt;width&gt;_EN&lt;binpt&gt;</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XFix_&lt;width&gt;_0 where width is 8, 16 or 32</td>
 <td>int&lt;width&gt; where width is 8, 16 or 32</td>
 </tr>
-<tr class="even">
+<tr>
 <td>UFix_&lt;width&gt;_0 where width is 8, 16 or 32</td>
 <td>uint&lt;width&gt; where width is 8, 16 or 32</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XFix_&lt;width&gt;_0 where width is other than 8, 16 or 32</td>
 <td>sfix&lt;width&gt;</td>
 </tr>
-<tr class="even">
+<tr>
 <td>UFix_&lt;width&gt;_0 where width is other than 8, 16 or 32</td>
 <td>ufix&lt;width&gt;</td>
 </tr>
@@ -237,7 +236,7 @@ edit box. The locations are package-specific.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

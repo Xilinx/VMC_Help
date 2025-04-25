@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -31,7 +30,7 @@ vertical-align: middle;
 <section id="log" class="level1">
 <h1>Log</h1>
 <p>Compute element-wise natural logarithm of input</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEuUlEQVRoge2aX0hbVxyAvxujCToUh7mV2sFsX8M6+lC60mLRNwd9mzhGqW1BGLI+lUBR6DqRgWV9GWlxpUodoz5YGENGsSjWzbZgt9aR9aFQhU5sem/6J8FI0tvk7iG1Ws1Ncv9ommu+x5zzO+d8/M4959x7IqiqqrJFcOR7AJuJM1OhIAibNQ5L0ZqsGWUBHj36xvLBbCS7dv2oWbalpnFR1q4UZe1K1tV4LQ6Hi+rqZhTl+UaMJyei0RkSiZe643TLlpRUUV7+ie6OrCYSuak7Rvc0VhQJWR5EVRXdneUbQ89sLDZHKHS14IQNL1CFKGxqNS40YdNbTyEJW7LPFoqwZYeKQhC29AT1vgvrPlRkIxabQ5Z/xuXaqTu2quqQ1cN5BydAKBRiYGCAtrY2PB6P6UaTyTiLi3dIJuO6Y60QlmU5rYcDYGBgAJ/PR2NjI5IkmerI7a6ntvZrqqubTbVjBi0PB0BbWxter5dAIEBTU5NhYbe7npqaLwHy+qKg5eEA8Hg8jI2NmRJ2u+u5dauaU6e+zVjvwQOZkyevpy07ffoyo6PjuvpNh5bH29VYFMV1wrmynFFBKMla9+zZSbq6DqYt6+r6is7O71AUc6u5VuLe2XrWCufCimjp299GRq5z4sQPdHaOc+TIrwwOzgBw716QbdsqEMUKLly4S1/fXwBcvHgXv3+aigo3DQ0HGBlJn/lcSZc4SZLW77OiKDI0NGRYFEAQHDx+LNHT00hf3+dcufIPALdvz7N3bx0A7e17GB2d5eHDZ9y4MUt7+x4ADh06wOTkLVOyaz0CgQAdHR3rZSVJorW1NWtjWqLLeL0fA1BeXoqiJN60HaW29gMAnE4HPt9+WlqG8fn2U1qaegTq6rYzP7+g3y6Dh9frxe/3vysrSRJNTU0EAgG8Xq9mQ9lEAUpK0h/OVl8yhEJLVFW5efJkUY9HVtZ6jI2NIYriimy6CulwuT7KKqqFKFYQDKbEFhdfcenS31y79gX9/fcJh1MHkIWFJ+zYsd2I41vSicKbBUqWZc0Ka3G5dhoSBdi3r47p6dQUPX/+DkeP7qamppzjxz+ltzf1nE5M/MnBg58Zan8ZLQ9BVVX13Llz+Hy+dRUEQVh311NZ2ZDTkS4cnkj7UaylZRi/vxmPp3xdmdO5j8OHv2dqapSysjLdbUPqrkcrYQ6AY8eO0dvby/j4uGZGreLMmQZ6ev5IW9bd/Qvd3V0ZRXNBy0PIdBltJrOQykCulJZ+yOvXESorD+TUbqbMGr6yNIPeN5hnz4ZJJl/hcJjLrBbvxfWHqirI8iBLS/8iSf0kk0uA9f9+yLusqiqEQleJxeYAUJSnBIM/kUiEUdXXlvaVV9m1osskEmGCwT4URbb0E0/eZLVEl0kmY0jSZeLxOcuE8yKbTXSlXgJZHiIavW+J8KbL5iq6KoIXL34nErlpWnhTZfWLrhCJTPH8+W8AOJ1Vhvrf0H12NWZEl1laCqAoMolE2FC8btlodMZQR/H4LPH4f4ZiV6MoTw3H6pZNJF4auvV+H8j7oWIzKcralaKsXcn68l6IGHp5t9s/6rfUNC7K2pWirF0pytqVoqxdKcralaKsXSnK2pWirF35H7W8YmHP1QROAAAAAElFTkSuQmCC" /></p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABFCAYAAAD0DZ4CAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEuUlEQVRoge2aX0hbVxyAvxujCToUh7mV2sFsX8M6+lC60mLRNwd9mzhGqW1BGLI+lUBR6DqRgWV9GWlxpUodoz5YGENGsSjWzbZgt9aR9aFQhU5sem/6J8FI0tvk7iG1Ws1Ncv9ommu+x5zzO+d8/M4959x7IqiqqrJFcOR7AJuJM1OhIAibNQ5L0ZqsGWUBHj36xvLBbCS7dv2oWbalpnFR1q4UZe1K1tV4LQ6Hi+rqZhTl+UaMJyei0RkSiZe643TLlpRUUV7+ie6OrCYSuak7Rvc0VhQJWR5EVRXdneUbQ89sLDZHKHS14IQNL1CFKGxqNS40YdNbTyEJW7LPFoqwZYeKQhC29AT1vgvrPlRkIxabQ5Z/xuXaqTu2quqQ1cN5BydAKBRiYGCAtrY2PB6P6UaTyTiLi3dIJuO6Y60QlmU5rYcDYGBgAJ/PR2NjI5IkmerI7a6ntvZrqqubTbVjBi0PB0BbWxter5dAIEBTU5NhYbe7npqaLwHy+qKg5eEA8Hg8jI2NmRJ2u+u5dauaU6e+zVjvwQOZkyevpy07ffoyo6PjuvpNh5bH29VYFMV1wrmynFFBKMla9+zZSbq6DqYt6+r6is7O71AUc6u5VuLe2XrWCufCimjp299GRq5z4sQPdHaOc+TIrwwOzgBw716QbdsqEMUKLly4S1/fXwBcvHgXv3+aigo3DQ0HGBlJn/lcSZc4SZLW77OiKDI0NGRYFEAQHDx+LNHT00hf3+dcufIPALdvz7N3bx0A7e17GB2d5eHDZ9y4MUt7+x4ADh06wOTkLVOyaz0CgQAdHR3rZSVJorW1NWtjWqLLeL0fA1BeXoqiJN60HaW29gMAnE4HPt9+WlqG8fn2U1qaegTq6rYzP7+g3y6Dh9frxe/3vysrSRJNTU0EAgG8Xq9mQ9lEAUpK0h/OVl8yhEJLVFW5efJkUY9HVtZ6jI2NIYriimy6CulwuT7KKqqFKFYQDKbEFhdfcenS31y79gX9/fcJh1MHkIWFJ+zYsd2I41vSicKbBUqWZc0Ka3G5dhoSBdi3r47p6dQUPX/+DkeP7qamppzjxz+ltzf1nE5M/MnBg58Zan8ZLQ9BVVX13Llz+Hy+dRUEQVh311NZ2ZDTkS4cnkj7UaylZRi/vxmPp3xdmdO5j8OHv2dqapSysjLdbUPqrkcrYQ6AY8eO0dvby/j4uGZGreLMmQZ6ev5IW9bd/Qvd3V0ZRXNBy0PIdBltJrOQykCulJZ+yOvXESorD+TUbqbMGr6yNIPeN5hnz4ZJJl/hcJjLrBbvxfWHqirI8iBLS/8iSf0kk0uA9f9+yLusqiqEQleJxeYAUJSnBIM/kUiEUdXXlvaVV9m1osskEmGCwT4URbb0E0/eZLVEl0kmY0jSZeLxOcuE8yKbTXSlXgJZHiIavW+J8KbL5iq6KoIXL34nErlpWnhTZfWLrhCJTPH8+W8AOJ1Vhvrf0H12NWZEl1laCqAoMolE2FC8btlodMZQR/H4LPH4f4ZiV6MoTw3H6pZNJF4auvV+H8j7oWIzKcralaKsXcn68l6IGHp5t9s/6rfUNC7K2pWirF0pytqVoqxdKcralaKsXSnK2pWirF35H7W8YmHP1QROAAAAAElFTkSuQmCC" /></p>
 <section id="library" class="level2">
 <h2>Library</h2>
 <p>Math Functions / Math Operations</p>
@@ -57,7 +56,7 @@ inputs.</p></li>
 <h2>Parameters</h2>
 <p>The Log block has no parameters to set.</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

@@ -120,7 +120,7 @@ Model Composer HDL components, even if they are resolvable. These blocks
 might include Black Box components and certain IP blocks.
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

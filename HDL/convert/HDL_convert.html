@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -20,9 +22,6 @@ vertical-align: middle;
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
   <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -30,7 +29,7 @@ vertical-align: middle;
 </header>
 <section id="convert" class="level1">
 <h1>Convert</h1>
-<p><img src="data:image/png;base64,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" /></p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
 <section id="description" class="level2">
 <h2>Description</h2>
 <p>The Convert block converts each input sample to a number of a desired
@@ -173,7 +172,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <h2>LogiCORE™ Documentation</h2>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 <hr />
-<p>Copyright (C) 2024 Advanced Micro Devices, Inc. All rights
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
 </section>

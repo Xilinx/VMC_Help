@@ -57,7 +57,7 @@ The following two preprocessor option formats are accepted and multiple can be s
 
 This example shows import of kernel functions with int16 real and complex inputs and outputs.
 
-[![](./Images/AIE_Kernel_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2024.2/Examples/Block_Help/AIE/AIE_Kernel_Ex1)
+[![](./Images/AIE_Kernel_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/AIE_Kernel_Ex1)
 
 ## Related blocks
 Use [AIE Class](../AIE_Class_Kernel_Function/README.md) block to import a class based kernel.
@@ -68,7 +68,7 @@ Use [AIE Graph](../AIE_Graph_Function/README.md) block to import an AI Engine gr
 
 
 --------------
-Copyright (C) 2024 Advanced Micro Devices, Inc.
+Copyright (C) 2025 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
