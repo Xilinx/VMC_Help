@@ -90,10 +90,21 @@ AIE architecture and data type is given in the below table:</p>
 </tbody>
 </table>
 </section>
+<section id="initial-phase-offset" class="level4">
+<h4>Initial phase offset</h4>
+<p>Specifies the initial value of the phase accumulator.</p>
+</section>
 <section id="reload-initial-phase-via-input-port" class="level4">
 <h4>Reload initial phase via input port</h4>
-<p>Allows the intial phase to be reloaded during simulation via an input
-port.</p>
+<p>Allows the initial phase to be reloaded during simulation via an
+input port. By default the reload port is a Real-Time Parameter (RTP)
+port that is non-blocking (async).</p>
+</section>
+<section id="use-iobuffer-port-for-phase-offset-reload" class="level4">
+<h4>Use iobuffer port for phase offset reload</h4>
+<p>Reload the phase offset using an iobuffer port, instead of a
+Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync)
+port, whereas the RTP port is a non-blocking (async) port.</p>
 </section>
 <section id="phase-increment" class="level4">
 <h4>Phase increment</h4>
@@ -110,9 +121,10 @@ the range 0 to 2^31 and the default value is 0.</p>
 <p>For example, for a sampling frequency of 1 Gsps and output frequency
 of 100 MHz, the Phase Increment should be <code>2^32/10</code>.</p>
 </section>
-<section id="initial-phase-offset" class="level4">
-<h4>Initial phase offset</h4>
-<p>Specifies the initial value of the phase accumulator.</p>
+<section id="reload-phase-increment-via-input-port" class="level4">
+<h4>Reload phase increment via input port</h4>
+<p>Allows the phase increment to be reloaded during simulation via an
+input port.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>

@@ -30,8 +30,14 @@ Increasing the number of samples per frame increases the output throughput.
 
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
+#### Initial Phase Offset
+Specifies the initial phase offset. The default value is 0.
+
 #### Reload initial phase via input port
-Allows the intial phase to be reloaded during simulation via an input port.
+Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
+
+#### Use iobuffer port for phase offset reload
+Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
 
 #### Phase Increment
 
@@ -44,9 +50,8 @@ Specifies the phase increment between samples. The value must be in
 
 For example, for a sampling frequency of 1 Gsps, output frequency of 100 MHz, and SSR of 4, the _Phase Increment_ should be `2^30/10`.  
 
-#### Initial Phase Offset
-
-Specifies the initial phase offset. The default value is 0.
+#### Reload phase increment via input port
+Allows the phase increment to be reloaded during simulation via an input port.
 
 #### Rounding mode
 

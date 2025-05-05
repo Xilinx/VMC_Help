@@ -75,6 +75,36 @@ second modulated signal. These two modulated signals are added together
 and written to the output window.</p></li>
 </ul>
 </section>
+<section id="reload-initial-phase-via-input-port" class="level4">
+<h4>Reload initial phase via input port</h4>
+<p>Allows the initial phase to be reloaded during simulation via an
+input port. By default the reload port is a Real-Time Parameter (RTP)
+port that is non-blocking (async).</p>
+</section>
+<section id="use-iobuffer-port-for-phase-offset-reload" class="level4">
+<h4>Use iobuffer port for phase offset reload</h4>
+<p>Reload the phase offset using an iobuffer port, instead of a
+Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync)
+port, whereas the RTP port is a non-blocking (async) port.</p>
+</section>
+<section id="phase-increment" class="level4">
+<h4>Phase increment</h4>
+<p>This specifies the phase increment between the samples. The value
+should be in the range 0 to 2^31.</p>
+<p>Phase increment is calculated using the formula
+<code>(Fo\*(2^N ))/ Fs)</code>.</p>
+<p>Where:</p>
+<ul>
+<li>Fo = Output frequency</li>
+<li>N = 32, which represents the accumulator width, and it is fixed</li>
+<li>Fs = Sampling frequency</li>
+</ul>
+</section>
+<section id="reload-phase-increment-via-input-port" class="level4">
+<h4>Reload phase increment via input port</h4>
+<p>Allows the phase increment to be reloaded during simulation via an
+input port.</p>
+</section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
 <p>Describes the selection of rounding to be applied during the shift
@@ -115,24 +145,6 @@ truncated on the MSB side.</li>
 range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
-</ul>
-</section>
-<section id="reload-initial-phase-via-input-port" class="level4">
-<h4>Reload initial phase via input port</h4>
-<p>Allows the intial phase to be reloaded during simulation via an input
-port.</p>
-</section>
-<section id="phase-increment" class="level4">
-<h4>Phase increment</h4>
-<p>This specifies the phase increment between the samples. The value
-should be in the range 0 to 2^31.</p>
-<p>Phase increment is calculated using the formula
-<code>(Fo\*(2^N ))/ Fs)</code>.</p>
-<p>Where:</p>
-<ul>
-<li>Fo = Output frequency</li>
-<li>N = 32, which represents the accumulator width, and it is fixed</li>
-<li>Fs = Sampling frequency</li>
 </ul>
 </section>
 </section>

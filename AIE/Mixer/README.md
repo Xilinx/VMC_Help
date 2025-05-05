@@ -43,6 +43,26 @@ direction) of the DDS sample to create a second modulated signal. These
 two modulated signals are added together and written to the output
 window.
 
+#### Reload initial phase via input port
+Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
+
+#### Use iobuffer port for phase offset reload
+Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
+
+#### Phase increment  
+This specifies the phase increment between the samples. The value should
+be in the range 0 to 2^31.
+
+Phase increment is calculated using the formula `(Fo\*(2^N ))/ Fs)`.
+
+Where:
+  - Fo = Output frequency
+  - N = 32, which represents the accumulator width, and it is fixed
+  - Fs = Sampling frequency
+
+#### Reload phase increment via input port
+Allows the phase increment to be reloaded during simulation via an input port.
+
 #### Rounding mode
 
 Describes the selection of rounding to be applied during the shift down stage of processing.
@@ -67,20 +87,6 @@ The following modes are available:
 * **None:** No saturation is performed and the value is truncated on the MSB side.
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
-
-#### Reload initial phase via input port
-Allows the intial phase to be reloaded during simulation via an input port.
-
-#### Phase increment  
-This specifies the phase increment between the samples. The value should
-be in the range 0 to 2^31.
-
-Phase increment is calculated using the formula `(Fo\*(2^N ))/ Fs)`.
-
-Where:
-  - Fo = Output frequency
-  - N = 32, which represents the accumulator width, and it is fixed
-  - Fs = Sampling frequency
 
 ## Examples
 

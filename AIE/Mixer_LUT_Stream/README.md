@@ -50,8 +50,14 @@ Specifies the number of samples in the output frame. This must be a multiple of 
 | `cint32` | 16  | 64     |
 | `cfloat` | 4   | N/A    |
 
+#### Initial phase offset
+Specifies the initial value of the phase accumulator.
+
 #### Reload initial phase via input port
-Allows the intial phase to be reloaded during simulation via an input port.
+Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
+
+#### Use iobuffer port for phase offset reload
+Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
 
 #### Phase increment  
 This specifies the phase increment between the samples. The value should
@@ -64,8 +70,8 @@ Where:
   - N = 32, which represents the accumulator width, and it is fixed
   - Fs = Sampling frequency
 
-#### Initial phase offset
-Specifies the initial value of the phase accumulator.
+#### Reload phase increment via input port
+Allows the phase increment to be reloaded during simulation via an input port.
 
 #### Rounding mode
 
