@@ -19,6 +19,10 @@ core every clock for N/R consecutive clocks, where N is the IFFT length.
 However, for back-to-back transforms, the valid control input can stay 
 high with no gaps.
 
+<div class="noteBox">
+The use of the Vector IFFT Float implementation is recommended in only Verilog design flows for the 2025.1 release.
+</div>
+
 ### Data Type Support
 
 - in_valid and out_valid are of Boolean data type.
