@@ -16,12 +16,9 @@ operation.
 
 ## Data Type Support
 
-- Supports fixed and floating-point data type inputs on both port A and
-  B.
-- The number of bits on Input port A should be greater than or equal to
-  26.
-- The number of bits on Input port B should be greater than or equal to
-  18.
+- Supports fixed and floating-point data type inputs on both port A and B.
+- The number of bits on Input port A should be greater than or equal to 26.
+- The number of bits on Input port B should be greater than or equal to 18.
 
 ## Output Data Type Interpretation
 
