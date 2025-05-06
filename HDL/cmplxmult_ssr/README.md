@@ -35,7 +35,7 @@ operation.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Mixer_ComplexMult_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Vector_ComplexMult_Ex1)
+[![](./Images/Vector_ComplexMult_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Vector_ComplexMult_Ex1)
 
 
 --------------
