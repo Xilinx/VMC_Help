@@ -22,8 +22,8 @@ operation.
 
 ## Output Data Type Interpretation
 
-- The output data type is always set to signed fixed-point with a word length of 44 bits and a fractional length of 41 bits.
-- The user is responsible for correctly reinterpreting the output data type based on the input binary points
+- The output data type is always set to signed fixed-point with a word length of 44 bits and and no fractional component (i.e., a fractional length of 0 bits).
+- The user is responsible for correctly reinterpreting the output data type based on the input binary points.
 - For example, if the input data types for Port A and Port B are Fix_26_23 (word length = 26, fractional length = 23) and Fix_18_16 respectively, then the expected fractional length of the output will be 39 (23 + 16).
   
 **Note**: Use the Reinterpret block to convert the output data type as needed.
