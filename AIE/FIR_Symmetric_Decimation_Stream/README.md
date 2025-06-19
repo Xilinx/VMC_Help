@@ -43,7 +43,10 @@ When this option is enabled, a second stream input can be connected to the FIR, 
 #### Provide second set of output ports
 When this option is enabled, a second stream output is added to the block. The two output data streams are interleaved in a 128-bit pattern. For example, for cint16 output data, samples 0-3 will be sent on the first output stream and samples 4-7 will be sent on the second output stream.
 
-#### Filter coefficients  
+#### Filter coefficients
+
+<font color=red><b>WARNING:</b></font> Before using this block with coefficients that are odd symmetric, refer to this [Answer Record](https://adaptivesupport.amd.com/s/article/000038190).
+  
 This field should only be supplied for the first half of the filter
 length plus the center tap for odd lengths i.e., taps\[\] = {c0, c1, c2,
 ..., cN \[, cCT\]} where N = (FILTER_LENGTH)/2 and cCT is the center tap

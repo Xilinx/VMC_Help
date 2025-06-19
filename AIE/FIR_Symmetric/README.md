@@ -41,7 +41,8 @@ This setting is an implementation trade-off between performance and data bank re
 When this option is enabled, a second output port is added to the block producing the same data as the first output port.
 
 #### Filter coefficients
-This field specifies the asymmetric filter coefficients. It could also be a MATLAB array variable defined in the workspace.
+
+<font color=red><b>WARNING:</b></font> Before using this block with coefficients that are odd symmetric, refer to this [Answer Record](https://adaptivesupport.amd.com/s/article/000038190).
 
 This field should only be supplied for the first half of the filter
 length plus the center tap for odd lengths i.e., taps\[\] = {c0, c1, c2,
