@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via the input port.
+filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 **AIE1 Devices:** Specify the filter coefficients as a vector of (N+1)/4+1 elements,
 where 'N' is the filter length.

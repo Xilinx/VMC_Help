@@ -30,7 +30,7 @@ Set the filter coefficients data type. This parameter's setting may be restricte
   data type is a float type.
 
 #### Specify filter coefficients via input port  
-When this option is enabled, the tool allows you to specify reloadable filter coefficients via an input port.
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of input ports
 When this option is enabled, a second input port can be connected to the FIR, increasing available throughput. In Simulink, both input ports should be connected to the same signal.
