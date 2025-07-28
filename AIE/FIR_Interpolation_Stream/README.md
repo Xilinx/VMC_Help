@@ -106,6 +106,13 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 [![](./Images/FIR_Interpolator_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex1)
 
+[![](./Images/FIR_InterpolationStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex2)
+
+[![](./Images/FIR_InterpolationStream_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex3)
+
+[![](./Images/FIR_InterpolationStream_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex4)
+
+
 ### References
 [The Polyphase Implementation of Interpolation Filters in Digital Signal Processing](https://www.allaboutcircuits.com/technical-articles/digital-signal-processing-polyphase-implementation-interpolation-filter-dsp/)
 
