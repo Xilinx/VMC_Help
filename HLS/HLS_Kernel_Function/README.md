@@ -18,7 +18,7 @@ This block is treated as an HLS subsystem for the purpose of code generation.
 Use this block to connect with AI Engine blocks using the [AIE to HLS](../../UTIL/AIE_to_HLS/README.md) or [HLS to AIE](../../UTIL/HLS_to_AIE/README.md) blocks and co-simulate a design with both AI
 Engines and PL components.
 
-Function arguments can be either of hls::stream type or of scalar or vector types. At least one input hls::stream type and one output hls::stream are needed. 
+Function arguments can be either of hls::stream type or of scalar or vector types.  
 For example the following is a valid HLS function signature:
 
 ``` pre
@@ -46,9 +46,9 @@ If the kernel header file or the kernel source file is not found using the value
 This parameter allows use of environment variables while specifying paths for the kernel header file and the kernel source file. The environment variable can be used in either ${ENV} or $ENV format.
 
 #### Preprocessor Options
-Optional preprocessor arguments for downstream compilation with specific preprocessor options.
+Optional preprocessor arguments for downstream compilation with specific preprocessor options. Express multiple preprocessor options as a cell array, e.g. `{'-DDEBUG', '-DARRAY_SIZE=16'}`.
 
-The following two preprocessor option formats will be accepted and multiple can be selected. -Dname and -Dname=definition. That is, the optional argument must begin with the -D string and if the option definition value is not provided, it is assumed to be 1.
+The following two preprocessor option formats will be accepted: `-Dname` and `-Dname=definition`. That is, the optional argument must begin with the -D string and if the option definition value is not provided, it is assumed to be 1.
 
 ## Supported function arguments
 Please see the following table for a detailed list of supported data types for inputs and outputs.
