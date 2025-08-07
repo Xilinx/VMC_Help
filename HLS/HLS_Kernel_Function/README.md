@@ -26,10 +26,6 @@ void func(hls::stream<unsigned int> &in, const ap_uint<8> (&param_in)[32], hls::
 ```
 For a complete list of supported function arguments, see the table below.
 
-<div class="noteBox">
-For stream inputs and outputs, this block accepts variable size signals and produces variable size outputs. 
-</div>
-
 ## Parameters
 #### Kernel header file
 The name of the HLS kernel header file that contains the function declaration. The string could be just the file name, a relative path to the file, or an absolute path of the file. Use the browse button to select the file.
