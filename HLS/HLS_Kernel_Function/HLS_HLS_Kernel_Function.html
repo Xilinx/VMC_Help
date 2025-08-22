@@ -48,16 +48,11 @@ to HLS</a> or <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;HLS_to_AIE&#3
 to AIE</a> blocks and co-simulate a design with both AI Engines and PL
 components.</p>
 <p>Function arguments can be either of hls::stream type or of scalar or
-vector types. At least one input hls::stream type and one output
-hls::stream are needed. For example the following is a valid HLS
-function signature:</p>
+vector types.<br />
+For example the following is a valid HLS function signature:</p>
 <pre class="pre"><code>void func(hls::stream&lt;unsigned int&gt; &amp;in, const ap_uint&lt;8&gt; (&amp;param_in)[32], hls::stream&lt;unsigned int&gt; &amp;out, ap_uint&lt;8&gt; param_out);</code></pre>
 <p>For a complete list of supported function arguments, see the table
 below.</p>
-<div class="noteBox">
-For stream inputs and outputs, this block accepts variable size signals and produces variable size outputs. 
-</div>
-
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -92,9 +87,10 @@ environment variable can be used in either ${ENV} or $ENV format.</p>
 <section id="preprocessor-options" class="level4">
 <h4>Preprocessor Options</h4>
 <p>Optional preprocessor arguments for downstream compilation with
-specific preprocessor options.</p>
-<p>The following two preprocessor option formats will be accepted and
-multiple can be selected. -Dname and -Dname=definition. That is, the
+specific preprocessor options. Express multiple preprocessor options as
+a cell array, e.g. <code>{&#39;-DDEBUG&#39;, &#39;-DARRAY_SIZE=16&#39;}</code>.</p>
+<p>The following two preprocessor option formats will be accepted:
+<code>-Dname</code> and <code>-Dname=definition</code>. That is, the
 optional argument must begin with the -D string and if the option
 definition value is not provided, it is assumed to be 1.</p>
 </section>
