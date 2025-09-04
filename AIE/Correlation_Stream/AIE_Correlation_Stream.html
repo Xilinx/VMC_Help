@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Correlation Stream</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Correlation Stream</h1>
+</header>
+<section id="correlation-stream" class="level1">
+<h1>Correlation Stream</h1>
+<p><img role="img" src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/DSP/Stream IO</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block implements the Correlation algorithm targeted for AI
+Engines.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section class="level4">
+<h4></h4>
+</section>
+</section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. If you set the &quot;Number of
+cascade stages&quot; parameter to a value greater than one, multiple kernels
+will be used to process the input. You can use the constraint manager to
+optimize the performance of your design by setting specific constraints
+for each kernel (in this case, you need to first run your design).
+Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p><em><strong>Click on the images below to open each
+model.</strong></em></p>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>This block uses the Vitis DSP library implementation of Correlation.
+For more details on this implementation please click <a href="https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-conv-corr.html">here</a>.</p>
+<hr />
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
+reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
+</body>
+</html>

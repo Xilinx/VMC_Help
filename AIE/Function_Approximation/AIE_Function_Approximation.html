@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Function Approximation</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Function Approximation</h1>
+</header>
+<section id="function-approximation" class="level1">
+<h1>Function Approximation</h1>
+<p><img role="img" src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/DSP/Buffer IO</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block implements the Function Approximation algorithm targeted
+for AI Engines.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section class="level4">
+<h4></h4>
+</section>
+</section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. If you set the &quot;Number of
+cascade stages&quot; parameter to a value greater than one, multiple kernels
+will be used to process the input. You can use the constraint manager to
+optimize the performance of your design by setting specific constraints
+for each kernel (in this case, you need to first run your design).
+Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p><em><strong>Click on the images below to open each
+model.</strong></em></p>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>This block uses the Vitis DSP library implementation of Function
+Approximation. For more details on this implementation please click <a href="https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-func-approx.html">here</a>.</p>
+<hr />
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
+reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
+</body>
+</html>

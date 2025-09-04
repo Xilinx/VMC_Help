@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Cumulative Sum</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Cumulative Sum</h1>
+</header>
+<section id="cumulative-sum" class="level1">
+<h1>Cumulative Sum</h1>
+<p><img role="img" src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/DSP/Buffer IO</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block implements the Cumulative Sum algorithm targeted for AI
+Engines.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section class="level4">
+<h4></h4>
+</section>
+</section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. If you set the &quot;Number of
+cascade stages&quot; parameter to a value greater than one, multiple kernels
+will be used to process the input. You can use the constraint manager to
+optimize the performance of your design by setting specific constraints
+for each kernel (in this case, you need to first run your design).
+Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p><em><strong>Click on the images below to open each
+model.</strong></em></p>
+</section>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>This block uses the Vitis DSP library implementation of Cumulative
+Sum. For more details on this implementation please click <a href="https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-cumsum.html">here</a>.</p>
+<hr />
+<p>Copyright (C) 2025 Advanced Micro Devices, Inc. All rights
+reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
+</body>
+</html>
