@@ -31,6 +31,8 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 [![](./Images/Convolution_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Convolution_Ex1)
 
+[![](./Images/Convolution_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Convolution_Ex2)
+
 ## References
 This block uses the Vitis DSP library implementation of Convolution. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-conv-corr.html).
 
