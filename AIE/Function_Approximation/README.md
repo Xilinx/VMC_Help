@@ -29,7 +29,11 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
+[![](./Images/Function_Approximation_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex1)
 
+[![](./Images/Function_Approximation_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex2)
+
+[![](./Images/Function_Approximation_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex3)
 
 ## References
 This block uses the Vitis DSP library implementation of Function Approximation. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-func-approx.html).
