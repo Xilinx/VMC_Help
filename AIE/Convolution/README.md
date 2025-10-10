@@ -15,8 +15,38 @@ AI Engines.
 ## Parameters
 
 ### Main  
+#### F input data type
+Describes the type of individual data samples of signal F to input to the function.
 
-#### 
+#### G input data type
+Describes the type of individual data samples of signal G to input to the function.
+
+#### Output data type
+Describes the type of individual data samples output from the function.
+
+#### Computation mode
+Specifies the computation mode for the convolution operation.
+
+#### F input length
+Specifies the length of the F input signal.
+
+#### G input length
+Specifies the length of the G input signal.
+
+#### Specify G input length via input port
+When enabled, allows the G input length to be specified via an input port.
+
+#### Number of frames
+Specifies the number of frames to be processed.
+
+#### Scale output down by 2^
+Specifies the power of 2 shift down applied to the output.
+
+#### Rounding mode
+Describes the selection of rounding to be applied during processing.
+
+#### Saturation mode
+Describes the selection of saturation to be applied during processing.
 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
