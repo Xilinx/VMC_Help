@@ -43,6 +43,9 @@ You can use the FDATool block to design the filter and use the coefficients dire
 See the example below for more information.
 </div>
 
+#### Filter length
+Specify FIR length for coefficient reloading.
+
 #### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
 Because this is a single rate filter, the number of samples in the output window will match the size of the input window. This must be in the range of 4 to 8192 inclusive. 
@@ -75,11 +78,8 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Rounding mode  
-Set the selection of rounding to be applied during the shift down stage of processing.
-
-#### Number of cascade stages  
-Determines the number of AI Engine processors to split the operation over. This allows AI Engine tiles to be traded for higher throughput. See the example below on how the number of cascade stages affect the throughput. This determines the number of kernels the FIR will be divided over in series to improve throughput. This value must be in the range 1 to 40, inclusive. 
+#### Number of cascade stages
+Specify the number of kernels to cascade in series to increase throughput.
 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.

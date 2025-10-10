@@ -31,7 +31,7 @@ This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 4 to 12
 inclusive.
 
-#### Input Window Size(Number of Samples)  
+#### Input window size (Number of samples)  
 Describes the number of samples used as an input to the FFT. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^12, inclusive.
 
 #### Scale output down by 2^  
@@ -59,6 +59,9 @@ The following modes are available:
 * **None:** No saturation is performed and the value is truncated on the MSB side.
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
+
+#### SSR
+Specify the number of parallel input/output data paths. The specified value should be in the form of 2^N.
 
 #### Twiddle Mode
 This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.

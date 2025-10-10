@@ -29,13 +29,13 @@ Describes the data type of the twiddle factors of the transform. It must be `cin
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
-#### Point Size (FFT Size)
+#### FFT size
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 4 to 16 inclusive.
 
-#### Input Window Size (Number of Samples)
+#### Input frame size (Number of Samples)
 Describes the total number of samples used as an input to the FFT block on all the ports. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^16, inclusive. 
 
-#### Scale Output Down by 2^
+#### Scale output down by 2^
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
 #### Rounding mode
@@ -61,6 +61,16 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
+#### SSR
+
+This parameter is intended to improve performance and support FFT
+  sizes beyond the limitations of a single tile. For an SSR value of 'n'
+  (which must be of the form 2^N, where N is a positive integer), the
+  FFT operation is performed in parallel and the actual FFT size is
+  divided by 'n'. For example, a 16384 point FFT with SSR value of 8
+  creates 8 stream inputs and there will be 8 subframe FFTs each of
+  point size 2048.
+
 #### Twiddle Mode
 This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
 
@@ -75,17 +85,7 @@ When this parameter is disabled, stream to window conversion will occur within t
 
 When this parameter is enabled, stream to window conversion will occur on its own AI Engine tiles. This will improve performance at the expense of additional tiles being used.
 
-#### SSR
-
-This parameter is intended to improve performance and support FFT
-  sizes beyond the limitations of a single tile. For an SSR value of 'n'
-  (which must be of the form 2^N, where N is a positive integer), the
-  FFT operation is performed in parallel and the actual FFT size is
-  divided by 'n'. For example, a 16384 point FFT with SSR value of 8
-  creates 8 stream inputs and there will be 8 subframe FFTs each of
-  point size 2048.
-
-####  Number of Cascade Stages
+####  Number of cascade stages
 This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
 ### Constraints

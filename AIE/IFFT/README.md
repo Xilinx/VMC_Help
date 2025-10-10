@@ -32,7 +32,7 @@ This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 4 to 16
 inclusive. 
 
-#### Input Window Size (Number of Samples)  
+#### Input window size (Number of Samples)  
 Describes the number of samples used as an input to the IFFT.
 
 #### Scale output down by 2^  

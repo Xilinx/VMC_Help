@@ -20,6 +20,9 @@ Sets the output data type.
 #### SFDR
 Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maximum theoretical SFDR is 96 dB for `cint16`, 180 dB for `cint32`, and 138 dB for `cfloat`.
 
+#### Support output columns based on SSR number
+When enabled, the block will output a matrix with the number of columns equal to the SSR number.
+
 #### SSR
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 

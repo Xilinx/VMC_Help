@@ -47,7 +47,7 @@ The following modes are available:
 
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
-#### Number of Parallel Outputs (SSR)
+#### SSR
 
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 

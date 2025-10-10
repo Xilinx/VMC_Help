@@ -14,7 +14,7 @@ This block implements the stream-based Mixer targeted for AI Engines.
 ## Parameters
 
 ### Main  
-#### Input/Output Data Type
+#### Input/Output data type
 Describes the type of individual data samples output of the DDS
   function. It should be cint16, cint32, or cfloat.
 

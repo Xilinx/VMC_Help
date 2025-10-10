@@ -15,7 +15,7 @@ for AI Engines.
 ## Parameters
 
 ### Main  
-#### Input data type/Output data type  
+#### Input/Output data type  
 Describes the type of individual data samples input to and output from
 the filter function. int16, cint16, int32, cint32, float, cfloat.
 

@@ -14,7 +14,7 @@ Mixed Radix FFT implementation targeted for AI Engines.
 ## Parameters
 
 ### Main  
-#### Input/Output Data Type
+#### Input/Output data type
 Set the input/output data type.
 
 #### Twiddle factor data type

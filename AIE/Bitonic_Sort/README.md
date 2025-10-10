@@ -20,7 +20,7 @@ Bitonic Sort is a parallel sorting algorithm with an asymptotic complexity of `l
 #### Input/Output data type  
 Sets the output data type.
 
-#### Input frame size  
+#### Input frame size (samples)  
 Specifies the number of samples in the input list.
 
 #### Number of frames

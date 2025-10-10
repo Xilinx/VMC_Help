@@ -25,6 +25,9 @@ Specifies the number of samples in the output frame. The value must be in the ra
 Increasing the number of samples per frame increases the output throughput.
 </div>
 
+#### Support output columns based on SSR number
+When enabled, the block will output a matrix with the number of columns equal to the SSR number.
+
 #### SSR
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
@@ -34,7 +37,7 @@ Allows the initial phase to be reloaded during simulation via an input port. By 
 #### Use iobuffer port for phase offset reload
 Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
 
-#### Phase increment  
+#### Initial phase increment  
 Specifies the phase increment between samples. The value must be in the
 range 0 to 2^31 and the default value is 0.
 

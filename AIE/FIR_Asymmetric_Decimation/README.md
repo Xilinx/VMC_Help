@@ -15,7 +15,7 @@ AI Engines.
 ## Parameters
 
 ### Main  
-#### Input data type/Output data type  
+#### Input/Output data type  
 Describes the type of individual data samples input to and output from
 the filter function. int16, cint16, int32, cint32, float, cfloat.
 
@@ -45,11 +45,14 @@ Specifies the asymmetric filter coefficients. The filter length must be
 in the range 4 to 240 and must be an integer multiple of the decimation
 factor.
 
+#### Filter length
+Specify FIR length for coefficient reloading.
+
 #### Decimation factor  
 An unsigned integer which describes the decimation factor of the filter.
 It must be in the range 2 to 7.
 
-### Input window size (Number of samples)  
+#### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
 The number of values in the output window will be (Input window
 size/decimation factor). The input window size must be an integer

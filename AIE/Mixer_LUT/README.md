@@ -41,10 +41,6 @@ Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maxi
 #### SSR
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
-#### Number of Parallel Outputs (SSR)
-
-This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
-
 #### Input frame size (Number of samples)  
 Specifies the number of samples in the output frame. This must be a multiple of the number of samples output in each data loop, which varies based on the AIE architecture and data type:
 

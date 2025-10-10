@@ -14,7 +14,7 @@ targeted for AI Engines and uses stream interface.
 ## Parameters
 
 ### Main  
-#### Output Data Type
+#### Output data type
 
 Sets the output data type.
 
@@ -26,7 +26,10 @@ Specifies the number of samples in the output frame. The value must be in the ra
 Increasing the number of samples per frame increases the output throughput.
 </div>
 
-#### Number of Parallel Outputs (SSR)
+#### Support output columns based on SSR number
+When enabled, the block will output a matrix with the number of columns equal to the SSR number.
+
+#### SSR
 
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
