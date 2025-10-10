@@ -6,3 +6,6 @@ slprj/
 *.slx.autosave
 *.slx.r*
 Thumbs.db
+*.json
+*.h
+*.asv
