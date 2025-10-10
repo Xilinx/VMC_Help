@@ -15,7 +15,7 @@ Single Rate Symmetric FIR Filter for AI Engines.
 
 ### Main  
 #### Input/Output data type  
-Set the data type of the block input and output. The data type of the input signal to the block must match this setting.
+The data type of individual samples input to and output from the filter function.
 
 #### Filter coefficients data type  
 Set the filter coefficients data type. This parameter's setting may be restricted based on the Input/Output data type:
