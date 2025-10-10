@@ -74,8 +74,8 @@ input/output data type is a float type.</li>
 transformation. This must be 2^N, where N is in the range 4 to 12
 inclusive.</p>
 </section>
-<section id="input-window-sizenumber-of-samples" class="level4">
-<h4>Input Window Size(Number of Samples)</h4>
+<section id="input-window-size-number-of-samples" class="level4">
+<h4>Input window size (Number of samples)</h4>
 <p>Describes the number of samples used as an input to the FFT. This
 parameter should be an integer multiple of the <em>Point Size</em>, in
 which case multiple FFT iterations will be performed on a given input
@@ -123,6 +123,11 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Specify the number of parallel input/output data paths. The specified
+value should be in the form of 2^N.</p>
 </section>
 <section id="twiddle-mode" class="level4">
 <h4>Twiddle Mode</h4>

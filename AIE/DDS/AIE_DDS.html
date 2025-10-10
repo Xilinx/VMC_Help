@@ -56,6 +56,11 @@ Increasing the number of samples per frame increases the output throughput.
 </div>
 
 </section>
+<section id="support-output-columns-based-on-ssr-number" class="level4">
+<h4>Support output columns based on SSR number</h4>
+<p>When enabled, the block will output a matrix with the number of
+columns equal to the SSR number.</p>
+</section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
 <p>This parameter specifies the number of output ports. The number of AI
@@ -73,8 +78,8 @@ port that is non-blocking (async).</p>
 Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync)
 port, whereas the RTP port is a non-blocking (async) port.</p>
 </section>
-<section id="phase-increment" class="level4">
-<h4>Phase increment</h4>
+<section id="initial-phase-increment" class="level4">
+<h4>Initial phase increment</h4>
 <p>Specifies the phase increment between samples. The value must be in
 the range 0 to 2^31 and the default value is 0.</p>
 <p>Phase increment is calculated using the formula
