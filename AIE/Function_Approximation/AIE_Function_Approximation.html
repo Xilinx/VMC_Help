@@ -36,8 +36,10 @@ vertical-align: middle;
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>This block implements the Function Approximation algorithm targeted
-for AI Engines.</p>
+<p>The Function Approximation library element provides a vectorized
+linear approximation of a function, f(x), for a given input data, x,
+using a configured lookup table of slope and offset values that describe
+the function.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -45,26 +47,221 @@ for AI Engines.</p>
 <h3>Main</h3>
 <section id="function" class="level4">
 <h4>Function</h4>
-<p>Choose lut values for available functions or specify own lut
-values.</p>
+<p>Select preconfigured LUT values for the common functions
+<code>sqrt</code>, <code>invSqrt</code>, <code>log</code>,
+<code>exp</code>, <code>inv</code>, or select
+<code>&lt;Specify LUT values&gt;</code> to provide your own LUT values
+in the <strong>Specify LookUp Values</strong> field.</p>
+<p>To achieve the expected results for a given function, data type, and
+input domain, it may be necessary to provide gain and bias to the
+Function Approximation block&#39;s input and output data. Refer to the table
+below. COARSE and FINE refer to the number of coarse and fine bits. Also
+refer to the <a href="#examples">Examples</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Function(s)</th>
+<th>Data Type</th>
+<th>Input Domain</th>
+<th>Input Gain</th>
+<th>Input Bias</th>
+<th>Scale output by 2^</th>
+<th>Output Gain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SQRT</strong></td>
+<td>Int16, Int32</td>
+<td>0 &lt;= x &lt; 1</td>
+<td>2^(COARSE + FINE)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>SQRT, LOG, INV, INVSQRT</strong></td>
+<td>Int16, Int32</td>
+<td>1 &lt;= x &lt; 2</td>
+<td>2^(COARSE + FINE - 1)</td>
+<td>-2^(COARSE + FINE - 1)</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>SQRT, LOG, INV, INVSQRT</strong></td>
+<td>Int16, Int32</td>
+<td>1 &lt;= x &lt; 4</td>
+<td>2^(COARSE + FINE - 2)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>EXP</strong></td>
+<td>Int16</td>
+<td>1 &lt;= x &lt; 2</td>
+<td>2^(COARSE + FINE)</td>
+<td>–</td>
+<td>2</td>
+<td>2^(COARSE + FINE - 2)</td>
+</tr>
+<tr>
+<td></td>
+<td>Int32</td>
+<td>1 &lt;= x &lt; 2</td>
+<td>2^(COARSE + FINE)</td>
+<td>–</td>
+<td>–</td>
+<td>2^(COARSE + FINE)</td>
+</tr>
+<tr>
+<td><strong>EXP</strong></td>
+<td>Int16</td>
+<td>1 &lt;= x &lt; 2</td>
+<td>2^(COARSE + FINE - 1)</td>
+<td>-2^(COARSE + FINE - 1)</td>
+<td>2</td>
+<td>2^(COARSE + FINE - 3)</td>
+</tr>
+<tr>
+<td></td>
+<td>Int32</td>
+<td>1 &lt;= x &lt; 2</td>
+<td>2^(COARSE + FINE - 1)</td>
+<td>-2^(COARSE + FINE - 1)</td>
+<td>–</td>
+<td>2^(COARSE + FINE - 1)</td>
+</tr>
+<tr>
+<td><strong>EXP</strong></td>
+<td>Int16</td>
+<td>1 &lt;= x &lt; 4</td>
+<td>2^(COARSE + FINE - 2)</td>
+<td>–</td>
+<td>4</td>
+<td>2^(COARSE + FINE - 6)</td>
+</tr>
+<tr>
+<td></td>
+<td>Int32</td>
+<td>1 &lt;= x &lt; 4</td>
+<td>2^(COARSE + FINE - 2)</td>
+<td>–</td>
+<td>–</td>
+<td>2^(COARSE + FINE - 2)</td>
+</tr>
+<tr>
+<td><strong>LOG, INV, INVSQRT</strong></td>
+<td>Int16, Int32</td>
+<td>Invalid - function is asymptotic at x=0</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>SQRT, EXP</strong></td>
+<td>Float</td>
+<td>0 &lt;= x &lt; 1</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>All 5</strong></td>
+<td>Float</td>
+<td>1 &lt;= x &lt; 2</td>
+<td>–</td>
+<td>-1</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>All 5</strong></td>
+<td>Float</td>
+<td>1 &lt;= x &lt; 4</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="specify-lookup-values" class="level4">
 <h4>Specify LookUp Values</h4>
-<p>Describes the LUT values.</p>
+<p>Provide LUT values as a MATLAB vector or workspace variable name.</p>
+<p>There will be <code>2^(Coarse bits)</code> in the lookup table. Each
+location will contain a slope value and an offset value which represent
+the linear approximation of the function at the corresponding location
+of the domain. Lookup tables for integer data types require the
+slope/offset values to be obtained using the point-slope form, whereas
+lookup tables for floating-point types require the slope-intercept
+form.</p>
+<p>For example, slope-offset values for integer types (point-slope):</p>
+<pre><code>slope[i] = y[i+1] - y[i]
+offset[i] = y[i]</code></pre>
+<p>Slope-offset values for floating-point types (slope-intercept):</p>
+<pre><code>slope[i] = (y[i + 1] - y[i]) / (x[i + 1] - x[i])
+offset[i] = y[i] - slope[i] * x[i]</code></pre>
+<p>The provided lookup table should be populated as below:</p>
+<pre><code>slope[0], offset[0], slope[1], offset[1], ... slope[2^(Coarse bits) - 1], offset[2^(Coarse bits) - 1]</code></pre>
+<p>A single lookup will require
+<code>sizeof(Data type) * 2 * 2^(Coarse bits)</code> bytes of memory.
+For performance reasons, a duplicate of the lookup is created by the
+func_approx graph. Configurations for <strong>AIE-ML</strong> or
+<strong>AIE-MLv2</strong> devices with a data type of <code>int16</code>
+or <code>bfloat16</code> will use the AI Engine API for improved
+parallel lookups. However, this requires an additional duplication
+within each lookup table. This duplication will be done within the graph
+but must be accounted for when calculating the memory required for the
+provided lookup tables. Users must provide the lookup table, without any
+duplication, in the <strong>Specify LookUp Values</strong> field.</p>
 </section>
 <section id="specify-lut-values-via-input-port" class="level4">
 <h4>Specify LUT Values via input port</h4>
-<p>Flag to indicate if LUT reloading is used.</p>
+<p>When this option is enabled, the tool allows you to specify LUT
+values via an <a href="matlab:XmcExampleApi.getExample(&#39;rtp_vector_async&#39;)">asynchronous
+Run Time Parameter (RTP)</a> input port. When multiple LUT ports are
+exposed, they should receive the same RTP values.</p>
+<p>For AIE-ML and AIE-MLv2 devices with a data type of
+<code>int16</code> or <code>bfloat16</code>, the LUT values must be
+repeated. For AIE-ML every 128 bits must be repeated; for AIE-MLv2 every
+256 bits must be repeated.</p>
+<p>For example, suppose the LUT values are
+<code>[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,...,256]</code>. The total
+number of LUT values is 256.</p>
+<p>For AIE1, both RTP port 1 and RTP port 2 should receive these
+values.</p>
+<p>In the case of AIE-ML for <code>int16</code> and
+<code>bfloat16</code> data types, both RTP port 1 and RTP port 2 should
+receive:
+<code>[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,..,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256]</code>.
+In this case, the total number of values is <code>256*2=512</code>.</p>
+<p>In the case of AIE-ML for <code>int16</code> and
+<code>bfloat16</code> data types, both RTP port 1 and RTP port 2 should
+receive:
+<code>[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,..,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256]</code>.
+In this case, the total number of values is <code>256*2=512</code>.</p>
 </section>
 <section id="inputoutput-data-type" class="level4">
 <h4>Input/Output data type</h4>
-<p>Describes the type of individual input output data samples of the
-function.</p>
+<p>Describes the type of individual data samples input to the function.
+This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, and <code>float</code> for
+AIE</li>
+<li><code>int16</code>, <code>int32</code>, <code>float</code>, and
+<code>bfloat16</code> for AIE-ML</li>
+</ul>
 </section>
 <section id="coarse-bits" class="level4">
 <h4>Coarse bits</h4>
 <p>Describes the number of bits in a sample of input data that will be
-used to address the provided lookup table.</p>
+used to address the provided lookup table. It determines the total
+number of locations in the lookup table.</p>
 </section>
 <section id="fine-bits" class="level4">
 <h4>Fine bits</h4>
@@ -75,25 +272,67 @@ interpolation.</p>
 <h4>Input domain</h4>
 <p>Specifies a mode for the input domain of the chosen function for
 approximation.</p>
+<p>There are three modes available:</p>
+<ul>
+<li><strong>0 to 1:</strong> Domain of input, x, is from 0 to 1</li>
+<li><strong>1 to 2:</strong> Domain of input, x, is from 1 to 2. (The
+most significant <code>(Coarse bits)</code> bit must be set to zero and
+will be ignored when addressing the lookup table. Refer to the Function
+Approximation User Guide for more information)</li>
+<li><strong>1 to 4:</strong> Domain of input, x, is from 1 to 4</li>
+</ul>
 </section>
 <section id="input-window-size" class="level4">
 <h4>Input window size</h4>
-<p>Describes number of samples to be processed in each call to this
+<p>Describes the number of samples to be processed in each call to this
 function.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
-<p>Describes the number of bits to downshift.</p>
+<p>Describes the number of bits to downshift the final output
+approximation.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
 <p>Describes the selection of rounding to be applied during the shift
 down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
 </section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>
 <p>Describes the selection of saturation to be applied during the shift
 down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 </section>
 <section id="constraints" class="level3">
