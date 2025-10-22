@@ -36,8 +36,8 @@ vertical-align: middle;
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>This block implements the Convolution algorithm targeted for AI
-Engines.</p>
+<p>This block implements the stream-based Convolution algorithm targeted
+for AI Engines.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -47,20 +47,51 @@ Engines.</p>
 <h4>F input data type</h4>
 <p>Describes the type of individual data samples of signal F to input to
 the function.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, <code>cfloat</code>, and <code>float</code> for
+AIE</li>
+<li><code>int8</code>, <code>int16</code>, <code>int32</code>,
+<code>cint16</code>, <code>cint32</code>, <code>float</code>, and
+<code>bfloat16</code> for AIE-ML and AIE-MLv2</li>
+</ul>
 </section>
 <section id="g-input-data-type" class="level4">
 <h4>G input data type</h4>
 <p>Describes the type of individual data samples of signal G to input to
 the function.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, <code>cfloat</code>, and <code>float</code> for
+AIE</li>
+<li><code>int8</code>, <code>int16</code>, <code>int32</code>,
+<code>cint16</code>, <code>cint32</code>, <code>float</code>, and
+<code>bfloat16</code> for AIE-ML and AIE-MLv2</li>
+</ul>
 </section>
 <section id="output-data-type" class="level4">
 <h4>Output data type</h4>
 <p>Describes the type of individual data samples output from the
 function.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, <code>cfloat</code>, and <code>float</code> for
+AIE</li>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, and <code>float</code> for AIE-ML and AIE-MLv2</li>
+</ul>
 </section>
 <section id="computation-mode" class="level4">
 <h4>Computation mode</h4>
-<p>Specifies the computation mode for the convolution operation.</p>
+<p>Specifies the convolution computation type. Currently, only the
+<code>valid</code> mode is supported.</p>
+<ul>
+<li><em><strong>Valid</strong></em>: Produces the correlation result of
+length <code>F_length - G_length + 1</code>.</li>
+</ul>
 </section>
 <section id="f-input-length" class="level4">
 <h4>F input length</h4>
@@ -70,32 +101,60 @@ function.</p>
 <h4>G input length</h4>
 <p>Specifies the length of the G input signal.</p>
 </section>
-<section id="specify-g-input-length-via-input-port" class="level4">
-<h4>Specify G input length via input port</h4>
-<p>When enabled, allows the G input length to be specified via an input
-port.</p>
-</section>
 <section id="number-of-frames" class="level4">
 <h4>Number of frames</h4>
 <p>Specifies the number of frames to be processed.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
-<p>Specifies the power of 2 shift down applied to the output.</p>
+<p>Describes the number of bits to downshift the output values.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Describes the selection of rounding to be applied during
-processing.</p>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
 </section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>
-<p>Describes the selection of saturation to be applied during
-processing.</p>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
-<p>Specifies the number of parallel input/output data paths.</p>
+<p>Specifies the number of parallel input/output paths where samples are
+interleaved between paths, giving an overall higher throughput.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of cascade stages</h4>
