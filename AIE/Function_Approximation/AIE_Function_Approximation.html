@@ -152,7 +152,7 @@ refer to the <a href="#examples">Examples</a>.</p>
 <td>2^(COARSE + FINE - 2)</td>
 </tr>
 <tr>
-<td><strong>All</strong></td>
+<td><strong>SQRT, EXP</strong></td>
 <td>Float</td>
 <td>0 &lt;= x &lt; 1</td>
 <td>–</td>
@@ -183,7 +183,8 @@ refer to the <a href="#examples">Examples</a>.</p>
 </section>
 <section id="specify-lookup-values" class="level4">
 <h4>Specify LookUp Values</h4>
-<p>Provide LUT values as a MATLAB vector or workspace variable name.</p>
+<p>Provide LUT values as a MATLAB vector or workspace variable name. The
+default values in this field will produce a sinusoidal function.</p>
 <p>There will be <code>2^(Coarse bits)</code> locations in the lookup
 table. Each location will contain a slope value and an offset value
 which represent the linear approximation of the function at the

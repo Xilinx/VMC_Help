@@ -31,13 +31,13 @@ To achieve the expected results for a given function, data type, and input domai
 |                          | Int32         | 1 <= x < 2       | 2^(COARSE + FINE - 1)            | -2^(COARSE + FINE - 1)                 | –                  | 2^(COARSE + FINE - 1)                  |
 | **EXP**                  | Int16         | 1 <= x < 4       | 2^(COARSE + FINE - 2)            | –                                      | 4                  | 2^(COARSE + FINE - 6)                  |
 |                          | Int32         | 1 <= x < 4       | 2^(COARSE + FINE - 2)            | –                                      | –                  | 2^(COARSE + FINE - 2)                  |
-| **All**            | Float         | 0 <= x < 1       | –                                 | –                                      | –                  | -                       |
+| **SQRT, EXP**            | Float         | 0 <= x < 1       | –                                 | –                                      | –                  | -                       |
 | **All**                | Float         | 1 <= x < 2       | –                                 | -1                              | –                  | –                                      |
 | **All**                | Float         | 1 <= x < 4       | –                                 | –                                      | –                  | -                       |
 
 
 #### Specify LookUp Values
-Provide LUT values as a MATLAB vector or workspace variable name.
+Provide LUT values as a MATLAB vector or workspace variable name. The default values in this field will produce a sinusoidal function.
 
 There will be `2^(Coarse bits)` locations in the lookup table. Each location will contain a slope value and an offset value which represent the linear approximation of the function at the corresponding location of the domain. Lookup tables for integer data types require the slope/offset values to be obtained using the point-slope form, whereas lookup tables for floating-point types require the slope-intercept form.
 
