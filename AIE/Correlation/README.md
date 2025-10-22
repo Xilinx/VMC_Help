@@ -9,8 +9,8 @@ AI Engine/DSP/Buffer IO
 
 ## Description
 
-This block implements the Correlation algorithm targeted for
-AI Engines.
+This Correlation block computes the correlation between two input signals F and G using AI Engine resources.
+It supports both integer and floating-point data types and provides various configuration options for scaling, rounding and computation mode.
 
 ## Parameters
 
@@ -25,7 +25,15 @@ Describes the type of individual data samples of signal G to input to the functi
 Describes the type of individual data samples output from the function.
 
 #### Computation mode
-Specifies the computation mode for the correlation operation.
+
+Specifies the correlation computation type.
+Options include:
+
+***Full (0)***: Produces the full correlation result of length `F_length + G_length - 1`.
+
+***Same (1)***: Produces the correlation result of length `max(F_length, G_length)`.
+
+***Valid (2)***: Produces the correlation result of length `F_length - G_length + 1`.
 
 #### F input length
 Specifies the length of the F input signal.

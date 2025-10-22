@@ -23,16 +23,20 @@ Describes the type of individual data samples of signal input to the function.
 Describes the type of individual data samples at the function output.
 
 #### Input dimensions A
-Dim A.
+Defines the number of rows (A) in each input frame or matrix.
 
 #### Input dimensions B
-Dim B.
+Defines the number of columns (B) in each input frame or matrix.
 
 #### Number of frames
 Describes the number of frames of input data samples that occur within each input window of data.
 
 #### Sum input along
 Describes the sum along.
+
+***Dimension A***: Sum along rows (vertical direction)
+
+***Dimension B***: Sum along columns (horizontal direction)
 
 #### Scale output down by 2^
 Describes the number of bits to downshift.
@@ -55,6 +59,8 @@ If you are using non-default constraints for any of the kernels for the block, a
 ***Click on the images below to open each model.***
 
 [![](./Images/Cumulative_Sum_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Cumulative_Sum_Ex1)
+
+[![](./Images/Cumulative_Sum_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Cumulative_Sum_Ex2)
 
 ## References
 This block uses the Vitis DSP library implementation of Cumulative Sum. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-cumsum.html).

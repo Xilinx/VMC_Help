@@ -9,8 +9,8 @@ AI Engine/DSP/Stream IO
 
 ## Description
 
-This block implements the Correlation algorithm targeted for
-AI Engines.
+This block implements the stream-based Correlation algorithm targeted for
+AI Engines. 
 
 ## Parameters
 
@@ -25,7 +25,9 @@ Describes the type of individual data samples of signal G to input to the functi
 Describes the type of individual data samples output from the function.
 
 #### Computation mode
-Specifies the computation mode for the correlation operation.
+Specifies the correlation computation type. Currently, only the `valid` mode is supported.
+
+***Valid***: Produces the correlation result of length `F_length - G_length + 1`.
 
 #### F input length
 Specifies the length of the F input signal.
