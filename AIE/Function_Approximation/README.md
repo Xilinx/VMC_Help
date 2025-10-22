@@ -25,22 +25,21 @@ To achieve the expected results for a given function, data type, and input domai
 | **SQRT**                 | Int16, Int32  | 0 <= x < 1       | 2^(COARSE + FINE)                | –                                      | –                  | –                                      |
 | **SQRT, LOG, INV, INVSQRT** | Int16, Int32  | 1 <= x < 2       | 2^(COARSE + FINE - 1)            | -2^(COARSE + FINE - 1)                 | –                  | –                                      |
 | **SQRT, LOG, INV, INVSQRT** | Int16, Int32  | 1 <= x < 4       | 2^(COARSE + FINE - 2)            | –                                      | –                  | –                                      |
-| **EXP**                  | Int16         | 1 <= x < 2       | 2^(COARSE + FINE)                | –                                      | 2                  | 2^(COARSE + FINE - 2)                  |
-|                          | Int32         | 1 <= x < 2       | 2^(COARSE + FINE)                | –                                      | –                  | 2^(COARSE + FINE)                      |
+| **EXP**                  | Int16         | 0 <= x < 1       | 2^(COARSE + FINE)                | –                                      | 2                  | 2^(COARSE + FINE - 2)                  |
+|                          | Int32         | 0 <= x < 1       | 2^(COARSE + FINE)                | –                                      | –                  | 2^(COARSE + FINE)                      |
 | **EXP**                  | Int16         | 1 <= x < 2       | 2^(COARSE + FINE - 1)            | -2^(COARSE + FINE - 1)                 | 2                  | 2^(COARSE + FINE - 3)                  |
 |                          | Int32         | 1 <= x < 2       | 2^(COARSE + FINE - 1)            | -2^(COARSE + FINE - 1)                 | –                  | 2^(COARSE + FINE - 1)                  |
 | **EXP**                  | Int16         | 1 <= x < 4       | 2^(COARSE + FINE - 2)            | –                                      | 4                  | 2^(COARSE + FINE - 6)                  |
 |                          | Int32         | 1 <= x < 4       | 2^(COARSE + FINE - 2)            | –                                      | –                  | 2^(COARSE + FINE - 2)                  |
-| **LOG, INV, INVSQRT**    | Int16, Int32  | Invalid - function is asymptotic at x=0      | –                                 | –                                      | –                  | –                                      |
-| **SQRT, EXP**            | Float         | 0 <= x < 1       | –                                 | –                                      | –                  | -                       |
-| **All 5**                | Float         | 1 <= x < 2       | –                                 | -1                              | –                  | –                                      |
-| **All 5**                | Float         | 1 <= x < 4       | –                                 | –                                      | –                  | -                       |
+| **All**            | Float         | 0 <= x < 1       | –                                 | –                                      | –                  | -                       |
+| **All**                | Float         | 1 <= x < 2       | –                                 | -1                              | –                  | –                                      |
+| **All**                | Float         | 1 <= x < 4       | –                                 | –                                      | –                  | -                       |
 
 
 #### Specify LookUp Values
 Provide LUT values as a MATLAB vector or workspace variable name.
 
-There will be `2^(Coarse bits)` in the lookup table. Each location will contain a slope value and an offset value which represent the linear approximation of the function at the corresponding location of the domain. Lookup tables for integer data types require the slope/offset values to be obtained using the point-slope form, whereas lookup tables for floating-point types require the slope-intercept form.
+There will be `2^(Coarse bits)` locations in the lookup table. Each location will contain a slope value and an offset value which represent the linear approximation of the function at the corresponding location of the domain. Lookup tables for integer data types require the slope/offset values to be obtained using the point-slope form, whereas lookup tables for floating-point types require the slope-intercept form.
 
 For example, slope-offset values for integer types (point-slope):
 ```
@@ -68,14 +67,14 @@ For example, suppose the LUT values are `[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
 
 For AIE1, both RTP port 1 and RTP port 2 should receive these values.
 
-In the case of AIE-ML for `int16` and `bfloat16` data types, both RTP port 1 and RTP port 2 should receive: `[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,..,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256]`. In this case, the total number of values is `256*2=512`.
+In the case of AIE-ML for `int16` and `bfloat16` data types, both RTP port 1 and RTP port 2 should receive: `[1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,9,10,11,12,13,14,15,16,..,241,242,243,244,245,246,247,248,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,249,250,251,252,253,254,255,256]`.
 
-In the case of AIE-ML for `int16` and `bfloat16` data types, both RTP port 1 and RTP port 2 should receive: `[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,..,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256]`. In this case, the total number of values is `256*2=512`.
+In the case of AIE-MLv2 for `int16` and `bfloat16` data types, both RTP port 1 and RTP port 2 should receive: `[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,..,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256]`.
 
 #### Input/Output data type
 Describes the type of individual data samples input to the function. This must be one of the following:
 * `int16`, `int32`, and `float` for AIE
-* `int16`, `int32`, `float`, and `bfloat16` for AIE-ML
+* `int16`, `int32`, `float`, and `bfloat16` for AIE-ML and AIE-MLv2
 
 #### Coarse bits
 Describes the number of bits in a sample of input data that will be used to address the provided lookup table. It determines the total number of locations in the lookup table.
