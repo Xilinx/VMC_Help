@@ -117,11 +117,11 @@ This vector contains values for the F length and G length. Currently the
 first element of the vector (<code>rtpVecLen[0]</code>) is ignored. The
 second element of the vector (<code>rtpVecLen[1]</code>) is used to
 specify the G length.</p>
-<p>The input length specified at runtime can not specify the input
-length specified in the block parameters. For example, if <strong>G
-input length</strong> is set to 32, you can set
-<code>rtpVecLen[1]</code> to 16 but not 64. This will not produce an
-error at runtime, but the block results will be incorrect.</p>
+<p>The input length specified at runtime cannot exceed the input length
+specified in the block parameters. For example, if <strong>G input
+length</strong> is set to 32, you can set <code>rtpVecLen[1]</code> to
+16 but not 64. This will not produce an error at runtime, but the block
+results will be incorrect.</p>
 </section>
 <section id="number-of-frames" class="level4">
 <h4>Number of frames</h4>
