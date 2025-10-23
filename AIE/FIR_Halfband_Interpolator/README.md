@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via the an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+filter coefficients via the an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 **AIE1 Devices:** Specify the filter coefficients as a vector of (N+1)/4+1 elements,
 where 'N' is the filter length.
@@ -151,9 +151,9 @@ This determines the number of kernels the FIR will be divided over in series to 
 
 ***Click on the images below to open each model.***
 
-[![](./Images/HalfBand_Interpolator_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/HalfBandInterpolator_Ex1)
+[![](./Images/HalfBand_Interpolator_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/HalfBandInterpolator_Ex1)
 
-[![](./Images/HalfBand_Interpolator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/HalfBandInterpolator_Ex2)
+[![](./Images/HalfBand_Interpolator_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/HalfBandInterpolator_Ex2)
 
 ### References
 This block uses the Vitis DSP library implementation of a FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filtersAIE.html).

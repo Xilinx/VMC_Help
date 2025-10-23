@@ -52,7 +52,7 @@ BRAM. Typical values to try are 258, 514, and 1026.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Vector_IFFT_Float_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Vector_IFFT_Float_Ex1)
+[![](./Images/Vector_IFFT_Float_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/Vector_IFFT_Float_Ex1)
 
 
 --------------

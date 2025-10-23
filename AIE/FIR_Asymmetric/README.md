@@ -30,7 +30,7 @@ Set the filter coefficients data type. This parameter's setting may be restricte
   data type is a float type.
 
 #### Specify filter coefficients via input port  
-When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of output ports
 When this option is enabled, a second output port is added to the block producing the same data as the first output port.
@@ -92,9 +92,9 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/FIR_Asymmetric_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_Asymmetric_Ex1)
+[![](./Images/FIR_Asymmetric_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/FIR_Asymmetric_Ex1)
 
-[![](./Images/FIR_Asymmetric_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_Asymmetric_Ex2)
+[![](./Images/FIR_Asymmetric_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/FIR_Asymmetric_Ex2)
 
 [AI Engine FIR Assymetric](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/fir)
 

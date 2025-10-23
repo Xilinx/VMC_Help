@@ -46,7 +46,7 @@ Composer:
 
 - Vitis Model Composer User Guide
   ([UG1483](https://docs.amd.com/r/en-US/ug1483-model-composer-sys-gen-user-guide))
-- [Vitis Model Composer Tutorial](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.1/Tutorials/README.md)
+- [Vitis Model Composer Tutorial](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Tutorials/README.md)
 - [Vitis Model Composer Product
   Page](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vitis/vitis-model-composer.html)
 

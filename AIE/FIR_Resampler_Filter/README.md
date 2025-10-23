@@ -38,7 +38,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of output ports
 When this option is enabled, a second output port is added to the block producing the same data as the first output port.
@@ -120,7 +120,7 @@ This determines the number of kernels the FIR will be divided over in series to 
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Resampler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/FIR_Resampler_Ex1)
+[![](./Images/Resampler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/FIR_Resampler_Ex1)
 
 ### References
 This block uses the Vitis DSP library implementation of a FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filtersAIE.html).

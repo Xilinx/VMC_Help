@@ -25,9 +25,9 @@ Specify the data type of the output signal. This can be `double` or `single`.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/ConvertFrom_Bfloat16_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/ConvertFrom_Bfloat16_Ex1)
+[![](./Images/ConvertFrom_Bfloat16_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/ConvertFrom_Bfloat16_Ex1)
 
-[![](./Images/ConvertFrom_Bfloat16_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/ConvertFrom_Bfloat16_Ex2)
+[![](./Images/ConvertFrom_Bfloat16_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/ConvertFrom_Bfloat16_Ex2)
 
 ## Related blocks
 [Convert_To_Bfloat16](../Convert_To_Bfloat16/README.md)

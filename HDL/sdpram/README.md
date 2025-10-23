@@ -151,9 +151,9 @@ Boxes](../../GEN/common-options/README.md).
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Simple_DualPortRAM_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Simple_DualPortRAM_Ex1)
+[![](./Images/Simple_DualPortRAM_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/Simple_DualPortRAM_Ex1)
 
-[![](./Images/Simple_DualPortRAM_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/HDL/Simple_DualPortRAM_Ex2)
+[![](./Images/Simple_DualPortRAM_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/Simple_DualPortRAM_Ex2)
 
 ## LogiCORE™ and XPM Documentation
 

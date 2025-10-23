@@ -93,9 +93,9 @@ The Windowing utility accepts only powers of 2 as the number of
 
 ***Click on the images below to open each model.***
 
-[![](./Images/WindowStream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/WindowFunctionStream_Ex1)
+[![](./Images/WindowStream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/WindowFunctionStream_Ex1)
 
-[![](./Images/WindowStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.1/Examples/Block_Help/AIE/WindowFunctionStream_Ex2)
+[![](./Images/WindowStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/WindowFunctionStream_Ex2)
 
 ### References
 This block uses the Vitis DSP library implementation of a FFT window function. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fft_window.html).
