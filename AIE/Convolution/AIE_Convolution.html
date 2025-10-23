@@ -36,8 +36,10 @@ vertical-align: middle;
 </section>
 <section id="description" class="level2">
 <h2>Description</h2>
-<p>This block implements the Convolution algorithm targeted for AI
-Engines.</p>
+<p>This Convolution block computes the convolution between two input
+signals F and G using AI Engine resources. It supports both integer and
+floating-point data types and provides various configuration options for
+scaling, rounding and computation mode.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
@@ -47,20 +49,56 @@ Engines.</p>
 <h4>F input data type</h4>
 <p>Describes the type of individual data samples of signal F to input to
 the function.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, <code>cfloat</code>, and <code>float</code> for
+AIE</li>
+<li><code>int8</code>, <code>int16</code>, <code>int32</code>,
+<code>cint16</code>, <code>cint32</code>, <code>float</code>, and
+<code>bfloat16</code> for AIE-ML and AIE-MLv2</li>
+</ul>
 </section>
 <section id="g-input-data-type" class="level4">
 <h4>G input data type</h4>
 <p>Describes the type of individual data samples of signal G to input to
 the function.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, <code>cfloat</code>, and <code>float</code> for
+AIE</li>
+<li><code>int8</code>, <code>int16</code>, <code>int32</code>,
+<code>cint16</code>, <code>cint32</code>, <code>float</code>, and
+<code>bfloat16</code> for AIE-ML and AIE-MLv2</li>
+</ul>
 </section>
 <section id="output-data-type" class="level4">
 <h4>Output data type</h4>
 <p>Describes the type of individual data samples output from the
 function.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, <code>cfloat</code>, and <code>float</code> for
+AIE</li>
+<li><code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, and <code>float</code> for AIE-ML and AIE-MLv2</li>
+</ul>
 </section>
 <section id="computation-mode" class="level4">
 <h4>Computation mode</h4>
-<p>Specifies the computation mode for the convolution operation.</p>
+<p>Specifies the convolution computation type. Options include:</p>
+<ul>
+<li><p><em><strong>Full (0)</strong></em>: Produces the full convolution
+result of length <code>F_length + G_length - 1</code>.</p></li>
+<li><p><em><strong>Same (1)</strong></em>: Produces the convolution
+result of length <code>max(F_length, G_length)</code>.</p></li>
+<li><p><em><strong>Valid (2)</strong></em>: Produces the convolution
+result of length <code>F_length - G_length + 1</code>, zero-padded up to
+the nearest multiple of 256 bits (the number of samples will vary with
+data type).</p></li>
+</ul>
 </section>
 <section id="f-input-length" class="level4">
 <h4>F input length</h4>
@@ -72,26 +110,69 @@ function.</p>
 </section>
 <section id="specify-g-input-length-via-input-port" class="level4">
 <h4>Specify G input length via input port</h4>
-<p>When enabled, allows the G input length to be specified via an input
-port.</p>
+<p>When enabled, allows the G input length to be specified via an <a href="matlab:XmcExampleApi.getExample(&#39;rtp_vector_async&#39;)">asynchronous
+Run Time Parameter (RTP)</a> input port.</p>
+<p>The exposed RTP expects an <code>int32</code> vector of length 2.
+This vector contains values for the F length and G length. Currently the
+first element of the vector (<code>rtpVecLen[0]</code>) is ignored. The
+second element of the vector (<code>rtpVecLen[1]</code>) is used to
+specify the G length.</p>
+<p>The input length specified at runtime cannot exceed the input length
+specified in the block parameters. For example, if <strong>G input
+length</strong> is set to 32, you can set <code>rtpVecLen[1]</code> to
+16 but not 64. This will not produce an error at runtime, but the block
+results will be incorrect.</p>
 </section>
 <section id="number-of-frames" class="level4">
 <h4>Number of frames</h4>
-<p>Specifies the number of frames to be processed.</p>
+<p>Specifies the number of frames to be processed on each invocation of
+the block.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
-<p>Specifies the power of 2 shift down applied to the output.</p>
+<p>Describes the number of bits to downshift the output values.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
-<p>Describes the selection of rounding to be applied during
-processing.</p>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
 </section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>
-<p>Describes the selection of saturation to be applied during
-processing.</p>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
 </section>
 </section>
 <section id="constraints" class="level3">
