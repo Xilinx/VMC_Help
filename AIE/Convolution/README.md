@@ -26,8 +26,8 @@ This must be one of the following:
 Describes the type of individual data samples of signal G to input to the function.
 
 This must be one of the following:
-* `int16`, `int32`, `cint16`, `cint32`, `cfloat`, and `float` for AIE
-* `int8`, `int16`, `int32`, `cint16`, `cint32`, `float`, and `bfloat16`  for AIE-ML and AIE-MLv2
+* `int8`, `int16`, `int32`, `cint16`, `cfloat`, and `float` for AIE
+* `int8`, `int16`, `int32`, `cint16`, `float`, and `bfloat16`  for AIE-ML and AIE-MLv2
 
 #### Output data type
 Describes the type of individual data samples output from the function.
@@ -35,6 +35,8 @@ Describes the type of individual data samples output from the function.
 This must be one of the following:
 * `int16`, `int32`, `cint16`, `cint32`, `cfloat`, and `float` for AIE
 * `int16`, `int32`, `cint16`, `cint32`, and `float` for AIE-ML and AIE-MLv2
+
+> For a list of valid combinations of **F input data type**, **G input data type**, and **Output data type**, refer to the [Vitis Libraries documentation](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-conv-corr.html_2).
 
 #### Computation mode
 

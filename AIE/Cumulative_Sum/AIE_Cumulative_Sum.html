@@ -47,18 +47,32 @@ Engines.</p>
 <h4>Input data type</h4>
 <p>Describes the type of individual data samples of input to the
 function.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>cint16</code>, <code>int32</code>,
+<code>cint32</code>, <code>float</code>, <code>cfloat</code>,
+<code>bfloat16</code>, <code>cbfloat16</code></li>
+</ul>
+<p>Type choice is restricted by AIE variant.</p>
 </section>
 <section id="output-data-type" class="level4">
 <h4>Output data type</h4>
 <p>Describes the type of individual data samples at the function
 output.</p>
+<p>This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>cint16</code>, <code>int32</code>,
+<code>cint32</code>, <code>float</code>, <code>cfloat</code>,
+<code>bfloat16</code>, <code>cbfloat16</code></li>
+</ul>
+<p>Type choice is restricted by AIE variant.</p>
 </section>
-<section id="input-dimensions-a" class="level4">
-<h4>Input dimensions A</h4>
+<section id="input-dimensions-a-rows" class="level4">
+<h4>Input dimensions A (rows)</h4>
 <p>Defines the number of rows (A) in each input frame or matrix.</p>
 </section>
-<section id="input-dimensions-b" class="level4">
-<h4>Input dimensions B</h4>
+<section id="input-dimensions-b-columns" class="level4">
+<h4>Input dimensions B (columns)</h4>
 <p>Defines the number of columns (B) in each input frame or matrix.</p>
 </section>
 <section id="number-of-frames" class="level4">

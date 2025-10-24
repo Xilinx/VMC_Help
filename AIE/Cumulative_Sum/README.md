@@ -19,13 +19,23 @@ AI Engines.
 #### Input data type
 Describes the type of individual data samples of input to the function.
 
+This must be one of the following:
+* `int16`, `cint16`, `int32`, `cint32`, `float`, `cfloat`, `bfloat16`, `cbfloat16`
+
+Type choice is restricted by AIE variant.
+
 #### Output data type
 Describes the type of individual data samples at the function output.
 
-#### Input dimensions A
+This must be one of the following:
+* `int16`, `cint16`, `int32`, `cint32`, `float`, `cfloat`, `bfloat16`, `cbfloat16`
+
+Type choice is restricted by AIE variant.
+
+#### Input dimensions A (rows)
 Defines the number of rows (A) in each input frame or matrix.
 
-#### Input dimensions B
+#### Input dimensions B (columns)
 Defines the number of columns (B) in each input frame or matrix.
 
 #### Number of frames
