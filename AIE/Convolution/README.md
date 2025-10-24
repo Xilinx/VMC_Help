@@ -26,7 +26,7 @@ This must be one of the following:
 Describes the type of individual data samples of signal G to input to the function.
 
 This must be one of the following:
-* `int8`, `int16`, `int32`, `cint16`, `cfloat`, and `float` for AIE
+* `int16`, `int32`, `cint16`, `cfloat`, and `float` for AIE
 * `int8`, `int16`, `int32`, `cint16`, `float`, and `bfloat16`  for AIE-ML and AIE-MLv2
 
 #### Output data type
