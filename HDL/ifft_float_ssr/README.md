@@ -20,7 +20,7 @@ However, for back-to-back transforms, the valid control input can stay
 high with no gaps.
 
 <div class="noteBox">
-The use of the Vector IFFT Float implementation is recommended in only Verilog design flows for the 2025.1 release.
+The use of the Vector IFFT Float implementation is recommended in only Verilog design flows for the 2025.2 release.
 </div>
 
 ### Data Type Support
