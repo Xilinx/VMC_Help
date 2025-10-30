@@ -43,6 +43,9 @@ direction) of the DDS sample to create a second modulated signal. These
 two modulated signals are added together and written to the output
 window.
 
+#### Initial Phase Offset
+Specifies the initial value of the phase accumulator.
+
 #### Reload initial phase via input port
 Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
 

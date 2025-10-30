@@ -31,6 +31,9 @@ When enabled, the block will output a matrix with the number of columns equal to
 #### SSR
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
+#### Initial Phase Offset
+Specifies the initial value of the phase accumulator.
+
 #### Reload initial phase via input port
 Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
 
