@@ -55,12 +55,14 @@ Specifies the length of the F input signal.
 #### G input length
 Specifies the length of the G input signal.
 
+<!--
 #### Specify G input length via input port
 When enabled, allows the G input length to be specified via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 The exposed RTP expects an `int32` vector of length 2. This vector contains values for the F length and G length. Currently the first element of the vector (`rtpVecLen[0]`) is ignored. The second element of the vector (`rtpVecLen[1]`) is used to specify the G length.
 
 The input length specified at runtime cannot exceed the input length specified in the block parameters. For example, if **G input length** is set to 32, you can set `rtpVecLen[1]` to 16 but not 64. This will not produce an error at runtime, but the block results will be incorrect.
+-->
 
 #### Number of frames
 Specifies the number of frames to be processed.

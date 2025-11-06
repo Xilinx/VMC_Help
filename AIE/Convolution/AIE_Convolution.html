@@ -112,21 +112,15 @@ data type).</p></li>
 <section id="g-input-length" class="level4">
 <h4>G input length</h4>
 <p>Specifies the length of the G input signal.</p>
-</section>
-<section id="specify-g-input-length-via-input-port" class="level4">
-<h4>Specify G input length via input port</h4>
-<p>When enabled, allows the G input length to be specified via an <a href="matlab:XmcExampleApi.getExample(&#39;rtp_vector_async&#39;)">asynchronous
-Run Time Parameter (RTP)</a> input port.</p>
-<p>The exposed RTP expects an <code>int32</code> vector of length 2.
-This vector contains values for the F length and G length. Currently the
-first element of the vector (<code>rtpVecLen[0]</code>) is ignored. The
-second element of the vector (<code>rtpVecLen[1]</code>) is used to
-specify the G length.</p>
-<p>The input length specified at runtime cannot exceed the input length
-specified in the block parameters. For example, if <strong>G input
-length</strong> is set to 32, you can set <code>rtpVecLen[1]</code> to
-16 but not 64. This will not produce an error at runtime, but the block
-results will be incorrect.</p>
+<!--
+#### Specify G input length via input port
+When enabled, allows the G input length to be specified via an [asynchronous Run Time Parameter (RTP)](matlab:XmcExampleApi.getExample('rtp_vector_async')) input port.
+
+The exposed RTP expects an `int32` vector of length 2. This vector contains values for the F length and G length. Currently the first element of the vector (`rtpVecLen[0]`) is ignored. The second element of the vector (`rtpVecLen[1]`) is used to specify the G length.
+
+The input length specified at runtime cannot exceed the input length specified in the block parameters. For example, if **G input length** is set to 32, you can set `rtpVecLen[1]` to 16 but not 64. This will not produce an error at runtime, but the block results will be incorrect.
+-->
+
 </section>
 <section id="number-of-frames" class="level4">
 <h4>Number of frames</h4>
