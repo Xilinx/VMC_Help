@@ -37,7 +37,7 @@ Specifies the number of tiles to cascade computation across to increase throughp
 Describes whether to sort the list in descending or ascending order.
 
 #### SSR
-Specifies the number of input ports.
+Specifies the number of input ports. The maximum SSR value is 8.
 
 <div class="noteBox">
 When SSR > 1, the input frame should be split across the multiple SSR paths.
