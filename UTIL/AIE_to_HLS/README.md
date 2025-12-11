@@ -40,8 +40,12 @@ The size of the output port. The output port is a variable-sized signal whose
 maximum size is specified by the Output Size parameter. The Output Size parameter has a
 lower bound, calculated based on the input data type, input size, and output data type. For
 example, if the input data type is `cint16`, the input size is 8, and the output data type is
-int32, the Output Size parameter must be at least 4. To use a smaller Output Size, enable
+int32, the Output Size parameter must be at least 8. To use a smaller Output Size, enable
 the Allow Multiple-Rate Processing parameter.
+
+<div class="noteBox">
+If not enough bits are present at the input to fill the output with the specified size and data type, the variable-sized output will have empty samples.
+</div>
 
 #### Allow Multiple-Rate Processing 
 When this property is enabled, the Output Size parameter
