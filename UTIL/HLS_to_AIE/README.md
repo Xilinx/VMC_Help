@@ -42,6 +42,10 @@ example, if the input data type is `cint16`, the input size is 8, and if the out
 `int32`, the Output Size parameter must be at least 4. To use a smaller Output Size, enable the
 Allow Multiple-Rate Processing parameter.
 
+<div class="noteBox">
+If not enough bits are present at the input to fill the output with the specified size and data type, the variable-sized output will have empty samples.
+</div>
+
 #### Allow Multiple-Rate Processing 
 When this property is enabled, the Output Size parameter
 has no lower bound. If the Output Size parameter is set to a value less than the original lower
