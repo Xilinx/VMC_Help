@@ -73,6 +73,25 @@ For example, for a cascade length of 2:
 
 The maximum cascade length is 11. 
 
+### Zero Padding Data for Alignment
+
+It is important to note that the DFT requires that each frame of input data to be aligned and sized according to the following rules for maximal performance.
+
+* **AIE:** The input frame must be a multiple of 256 bits.
+* **AIE-ML and AIE-MLv2:** The input frame must be a multiple of 256 bits for `cint16` data and 512 bits for `cint32` or `cfloat` data.
+
+This is also a requirement when using the cascading feature of the DFT. Each cascaded kernel should receive a split of the frame that has a size corresponding to the above rules.
+
+For more information, see the [Vitis DSP library documentation](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dft.html_6_5).
+
+When computing a DFT size that does not follow these rules, it is necessary to do one of the following:
+
+1. Zero-pad each input frame so that its size is one of the bit multiples described above. When zero-padding, there will be no impact on the final numerical result of the transform.
+2. Buffer each input frame so that its size is one of the bit multiples described above. When not zero-padding, it is necessary to remove invalid samples from the output.
+
+[This example]((https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/DFT_Ex5)) illustrates the second approach.
+
+
 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
