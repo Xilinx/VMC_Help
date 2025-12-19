@@ -146,6 +146,36 @@ the input ports in a round-robin fashion.</p>
 <p>The maximum cascade length is 11.</p>
 </section>
 </section>
+<section id="zero-padding-data-for-alignment" class="level3">
+<h3>Zero Padding Data for Alignment</h3>
+<p>It is important to note that the DFT requires that each frame of
+input data to be aligned and sized according to the following rules for
+maximal performance.</p>
+<ul>
+<li><strong>AIE:</strong> The input frame must be a multiple of 256
+bits.</li>
+<li><strong>AIE-ML and AIE-MLv2:</strong> The input frame must be a
+multiple of 256 bits for <code>cint16</code> data and 512 bits for
+<code>cint32</code> or <code>cfloat</code> data.</li>
+</ul>
+<p>This is also a requirement when using the cascading feature of the
+DFT. Each cascaded kernel should receive a split of the frame that has a
+size corresponding to the above rules.</p>
+<p>For more information, see the <a href="https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dft.html_6_5">Vitis
+DSP library documentation</a>.</p>
+<p>When computing a DFT size that does not follow these rules, it is
+necessary to do one of the following:</p>
+<ol type="1">
+<li>Zero-pad each input frame so that its size is one of the bit
+multiples described above. When zero-padding, there will be no impact on
+the final numerical result of the transform.</li>
+<li>Buffer each input frame so that its size is one of the bit multiples
+described above. When not zero-padding, it is necessary to remove
+invalid samples from the output.</li>
+</ol>
+<p><a href="(matlab:openVMCExample(&#39;DFT_Ex5&#39;))">This example</a>
+illustrates the second approach.</p>
+</section>
 <section id="constraints" class="level3">
 <h3>Constraints</h3>
 <p>Click on the button given here to access the constraint manager and
