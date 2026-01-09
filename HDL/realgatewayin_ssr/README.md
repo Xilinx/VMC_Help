@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Real Gateway In
 
 The Vector Real Gateway In block converts vector inputs of type

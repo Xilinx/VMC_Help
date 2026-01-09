@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Hermitian
 
 Perform element-wise conjugate transpose operation on the input signal.

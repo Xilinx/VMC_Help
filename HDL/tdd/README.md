@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Time Division Demultiplexer
 
 The Time Division Demultiplexer block accepts input serially and

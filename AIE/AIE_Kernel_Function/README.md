@@ -1,3 +1,5 @@
+<!-- Library: aieBasic -->
+
 # AIE Kernel
 
 This block allows you to import an AI Engine kernel.  

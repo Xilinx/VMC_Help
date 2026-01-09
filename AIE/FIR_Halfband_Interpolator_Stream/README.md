@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Halfband Interpolator Stream
 This block implements the stream-based FIR Halfband Interpolator filter targeted for AI Engines.
   

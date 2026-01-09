@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Divider Generator 5.1
 
 ![](./Images/block.png)

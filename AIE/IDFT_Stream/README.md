@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # IDFT Stream
 Stream-based IDFT implementation targeted for AI Engines.
   

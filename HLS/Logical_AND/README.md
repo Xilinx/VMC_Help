@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Logical AND
 
 Performs element-wise logical AND operation on inputs

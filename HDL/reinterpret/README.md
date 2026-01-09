@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Reinterpret
 
 The Reinterpret block forces its output to a new type without any

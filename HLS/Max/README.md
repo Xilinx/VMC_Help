@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Max
 
 Outputs the maximum value of an input or element-wise maximum value of

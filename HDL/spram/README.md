@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Single Port RAM
 
 The Single Port RAM block implements a random access memory (RAM)

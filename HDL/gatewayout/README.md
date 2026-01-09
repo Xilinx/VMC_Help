@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Gateway Out
 
 Gateway Out blocks are the outputs from the HDL portion of your

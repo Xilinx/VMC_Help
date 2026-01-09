@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Demux
 
 Separates a vector input into a number of scalar and vector outputs.

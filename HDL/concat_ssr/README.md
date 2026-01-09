@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Concat
 
 The Vector Concat block concatenates two or more inputs of type vector.

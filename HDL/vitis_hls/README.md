@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Vitis HLS
 
 The Vitis™ HLS block allows the functionality of a Vitis HLS

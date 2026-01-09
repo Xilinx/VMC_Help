@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Signum
 
 Performs signum function (sign extraction) on the input.

@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Mux
 
 Combines scalar and vector inputs into a larger vector output.

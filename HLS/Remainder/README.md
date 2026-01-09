@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Remainder
 
 Perform element-wise division on the input signal. The output is the

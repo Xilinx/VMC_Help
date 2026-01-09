@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Slice
 
 The Slice block allows you to slice off a sequence of bits from

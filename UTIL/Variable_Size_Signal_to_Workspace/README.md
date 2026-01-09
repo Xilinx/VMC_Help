@@ -1,3 +1,5 @@
+<!-- Library: aieUtilities -->
+
 # Variable Size Signal to Workspace
 
 This block is used to save variable size signal data to the MATLAB® workspace.

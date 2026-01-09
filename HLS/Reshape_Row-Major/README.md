@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Reshape Row-Major
 
 Changes the input dimensions in row-major order.

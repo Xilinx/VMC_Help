@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # ROM
 
 The ROM block is a single port read-only memory (ROM).

@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector IFFT Float
 
 The Vector IFFT Float block supports the inverse FFT operation for vector 

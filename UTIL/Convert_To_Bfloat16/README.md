@@ -1,3 +1,5 @@
+<!-- Library: aieUtilities -->
+
 # Convert To Bfloat16
 This block converts a Simulink floating point input to `bfloat16` data type for use with AI Engine blocks.
   

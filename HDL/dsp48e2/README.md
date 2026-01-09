@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # DSP48E2
 
 The DSP48E2 block is an efficient building block for DSP

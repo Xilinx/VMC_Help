@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # AddSub
 
 ![](./Images/block.png)

@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Modulus
 
 Performs element-wise modulus operation on the input signals

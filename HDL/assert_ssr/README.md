@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Assert
 
 The Vector Assert block asserts a user-defined sample rate and/or type

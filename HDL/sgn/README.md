@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Threshold
 
 ![](./Images/block.png)

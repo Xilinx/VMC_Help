@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Sine
 
 Element-wise computation of the sine function for the given input

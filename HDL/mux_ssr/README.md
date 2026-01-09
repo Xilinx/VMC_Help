@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Mux
 
 The Vector Multiplexer block supports the Multiplexing feature for input

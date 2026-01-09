@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Exp
 
 Perform an element-wise exponential value of the input

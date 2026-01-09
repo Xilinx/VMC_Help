@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Dual Port RAM
 
 ![](./Images/block.png)

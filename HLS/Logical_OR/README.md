@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Logical OR
 
 Performs element-wise logical OR operation on inputs

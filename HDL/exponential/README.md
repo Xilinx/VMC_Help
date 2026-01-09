@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Exponential
 
 ![](./Images/block.png)

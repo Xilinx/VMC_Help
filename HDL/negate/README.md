@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Negate
 
 ![](./Images/block.png)

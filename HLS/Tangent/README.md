@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Tangent
 
 Perform an element-wise computation of the tangent function for the

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # MCode
 
 The MCode block is a container for executing a user-supplied

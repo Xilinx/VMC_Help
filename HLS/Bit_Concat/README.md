@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Bit Concat
 
 Perform bitwise concatenation of input values into a single output value

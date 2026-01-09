@@ -1,3 +1,5 @@
+<!-- Library: aieBasic -->
+
 # Shared Buffer
 This block allows access to a shared buffer within the AIE-ML memory tile.
   

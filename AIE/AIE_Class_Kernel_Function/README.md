@@ -1,3 +1,5 @@
+<!-- Library: aieBasic -->
+
 # AIE Class Kernel
 
 This block allows you to import class-based kernels.  

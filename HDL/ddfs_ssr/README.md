@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector DDFS
 
 The Vector DDFS block generates Real and Imaginary vector output signals

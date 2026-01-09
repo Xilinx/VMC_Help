@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Reset Generator
 
 The Reset Generator block captures the user's reset signal that is

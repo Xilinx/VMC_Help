@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Greater
 
 Performs element-wise greater than relational operation on the inputs.

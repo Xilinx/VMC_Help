@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Interpolation Stream
 
 ![](./Images/block.png)  

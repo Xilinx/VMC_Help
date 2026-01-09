@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Product
 
 Compute element-wise product of the input signals

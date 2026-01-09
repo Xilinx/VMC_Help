@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Product of Elements
 
 Multiply the elements of the input signal

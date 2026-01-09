@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Not Equals
 
 Perform element-wise not equal to relational operation on the inputs.

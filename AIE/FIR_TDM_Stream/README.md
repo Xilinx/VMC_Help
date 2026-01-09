@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR TDM Stream
 Time-Division Multiplexing FIR Filter for AI Engines.
   

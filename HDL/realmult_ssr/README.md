@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Real Mult
 
 The Vector Real Multiplier block supports the multiplication feature for

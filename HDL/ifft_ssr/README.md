@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector IFFT
 
 The Vector IFFT block supports the Inverse FFT operation for vector type inputs.

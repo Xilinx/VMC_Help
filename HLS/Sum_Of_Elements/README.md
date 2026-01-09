@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Sum of Elements
 
 Perform element-wise addition on the input, column-wise, row-wise, or in

@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Logical
 The Vector Logical block supports logical operation for vector type
 inputs.

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # DSP58
 
 ![](./Images/block.png)

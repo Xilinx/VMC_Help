@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # CIC Compiler 4.0
 
 The CIC Compiler provides the ability to design and implement

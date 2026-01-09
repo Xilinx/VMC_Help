@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Parallel to Serial
 
 ![](./Images/block.png)

@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # sinh
 
 Element-wise computation of the hyperbolic sine for a given argument

@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # DSP Macro 1.0
 
 ![](./Images/block.png)

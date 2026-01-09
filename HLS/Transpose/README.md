@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Transpose
 
 Perform an element-wise transpose operation on the input signal

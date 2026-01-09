@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # QR Inverse
 
 Compute the inverse of a matrix using QR factorization

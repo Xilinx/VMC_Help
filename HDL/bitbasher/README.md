@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # BitBasher
 
 The BitBasher block performs slicing, concatenation and

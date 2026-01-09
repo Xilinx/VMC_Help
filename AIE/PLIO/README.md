@@ -1,3 +1,5 @@
+<!-- Library: aieBasic -->
+
 # PLIO
 This block allows you to specify the Platform IO (PLIO) width.
 

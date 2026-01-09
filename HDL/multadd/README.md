@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # MultAdd
 
 The MultAdd block performs both fixed-point and floating-point

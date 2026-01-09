@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Log
 
 Compute element-wise natural logarithm of input

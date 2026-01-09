@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Shift Left
 
 Perform logical shift left of input over a constant number of bit

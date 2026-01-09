@@ -1,3 +1,5 @@
+<!-- Library: hlsUtilities -->
+
 # Interface Spec
 
 Specify the RTL interfaces for a subsystem

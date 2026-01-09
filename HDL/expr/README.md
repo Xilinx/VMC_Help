@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Expression
 
 The Expression block performs a bitwise logical expression.

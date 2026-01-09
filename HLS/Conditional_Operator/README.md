@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Conditional
 
 Pass through input T when control input C satisfies a selected criteria;

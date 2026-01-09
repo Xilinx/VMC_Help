@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Constant
 
 Provides constant value as a source.

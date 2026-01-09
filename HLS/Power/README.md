@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Pow
 
 Compute the element-wise power function

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Accumulator
 
 ![](./Images/block.png)

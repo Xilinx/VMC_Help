@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # SquareRoot
 
 The SquareRoot block performs the square root on the input.

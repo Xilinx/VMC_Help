@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # DSPFP32
 
 The DSPFP32 block is an efficient building block for Floating Point DSP applications for Versal™ devices.

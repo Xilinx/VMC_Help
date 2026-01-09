@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # DDS LUT
 
 ![](./Images/block.png)  

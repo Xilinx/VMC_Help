@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Shift
 
 ![](./Images/block.png)

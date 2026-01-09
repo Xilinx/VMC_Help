@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Lesser
 
 Performs element-wise less than relational operation on the inputs. The

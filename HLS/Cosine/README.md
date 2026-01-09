@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Cosine
 
 Computes cosine value for the input.

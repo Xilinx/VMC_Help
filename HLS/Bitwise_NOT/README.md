@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Bitwise NOT
 
 Perform element and bit-wise Boolean NOT operation on the input

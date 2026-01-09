@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Black Box
 
 The Vitis Model Composer Black Box block provides a way to incorporate

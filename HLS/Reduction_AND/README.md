@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Reduction AND
 
 Compute bitwise AND of the elements of the input over all dimensions or

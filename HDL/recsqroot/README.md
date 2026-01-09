@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Reciprocal SquareRoot
 
 ![](./Images/block.png)

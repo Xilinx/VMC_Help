@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Opmode
 
 The Opmode block generates a constant that is a DSP48E, DSP48E1,

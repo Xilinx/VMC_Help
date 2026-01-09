@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector FFT Float
 
 The Vector FFT Float block supports the FFT operation for vector 

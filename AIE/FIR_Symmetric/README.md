@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Symmetric
 Single Rate Symmetric FIR Filter for AI Engines.
   

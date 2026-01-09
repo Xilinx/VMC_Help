@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # DSPCPLX
 
 The DSPCPLX block is one of the advanced features provided by

@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Convolution Encoder 9.0
 
 The Convolution Encoder block implements an encoder for

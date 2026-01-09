@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Reduction OR
 
 Compute bitwise OR of the elements of the input over all dimensions or

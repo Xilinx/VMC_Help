@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Register
 
 ![](./Images/block.png)

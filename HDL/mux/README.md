@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Mux
 
 ![](./Images/block.png)

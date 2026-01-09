@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Lookup Table
 
 Perform one-dimensional lookup operation with an input index.

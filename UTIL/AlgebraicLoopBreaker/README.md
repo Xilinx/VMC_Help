@@ -1,3 +1,5 @@
+<!-- Library: aieUtilities -->
+
 # Algebraic Loop Breaker
 This block breaks an algebraic loop inside an AI Engine subsystem.
   

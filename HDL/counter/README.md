@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Counter
 
 The Counter block implements a free-running or count-limited type

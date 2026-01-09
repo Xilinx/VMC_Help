@@ -1,3 +1,5 @@
+<!-- Library: hdlUtilities -->
+
 # Clock Probe
 
 The Clock Probe generates a double-precision representation of a

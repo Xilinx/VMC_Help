@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # FIFO
 
 The FIFO block implements an FIFO memory queue.

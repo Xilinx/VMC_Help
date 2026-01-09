@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # LFSR
 
 ![](./Images/block.png)

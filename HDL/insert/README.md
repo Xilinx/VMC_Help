@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Depuncture
 
 The Depuncture block allows you to insert an arbitrary symbol

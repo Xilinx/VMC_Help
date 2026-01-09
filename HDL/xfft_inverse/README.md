@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Inverse FFT
 
 The Inverse FFT block performs a fast inverse (or backward)

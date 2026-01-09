@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector2Scalar
 
 The Vector2Scalar block converts vector type input to scalar type

@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Versal RF Channelizer
 
 The Versal RF Channelizer block simulates the hardened Channelizer IP block from Versal RF devices.

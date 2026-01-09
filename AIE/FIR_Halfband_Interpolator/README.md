@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Halfband Interpolator
 This block implements the FIR Halfband Interpolator targeted for AI Engines.
   

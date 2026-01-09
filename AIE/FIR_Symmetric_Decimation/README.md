@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Symmetric Decimation
 
   

@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Reciprocal Sqrt
 
 Element-wise computation of the reciprocal square root for a given

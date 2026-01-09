@@ -1,3 +1,5 @@
+<!-- Library: aieUtilities -->
+
 # To Fixed Size
 
 This block takes a variable size vector as an input and produces a fixed

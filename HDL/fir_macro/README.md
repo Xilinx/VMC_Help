@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Digital FIR Filter
 
 The Digital FIR Filter block allows you to generate highly

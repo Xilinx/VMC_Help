@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Convert
 
 The Vector Convert block supports Data Type Conversion feature for

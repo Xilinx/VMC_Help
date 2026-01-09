@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Product
 
 ![](./Images/block.png)

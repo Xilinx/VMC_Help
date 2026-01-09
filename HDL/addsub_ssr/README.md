@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector AddSub Fabric
 
 

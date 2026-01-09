@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Halfband Decimator
 This block implements the FIR Halfband Decimator targeted for AI Engines.
   

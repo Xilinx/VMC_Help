@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Window Processing
 
 Assemble an output matrix by applying the kernel subsystem to

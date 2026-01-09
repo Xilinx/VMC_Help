@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Versal LDPC Decoder
 
 The Versal LDPC decoder block simulates the hardened LDPC IP block from Versal RF devices.

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Time Division Multiplexer
 
 The Time Division Multiplexer block multiplexes values presented

@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Gain
 
 Element-wise multiplication of the input by a constant gain factor

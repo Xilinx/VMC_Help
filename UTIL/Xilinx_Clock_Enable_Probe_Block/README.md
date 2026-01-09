@@ -1,3 +1,5 @@
+<!-- Library: hdlUtilities -->
+
 # Clock Enable Probe
 
 The Clock Enable (CE) Probe provides a mechanism for extracting

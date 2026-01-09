@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Fast Fourier Transform 9.1
 
 The Xilinx Fast Fourier Transform block implements the Cooley-Tukey FFT

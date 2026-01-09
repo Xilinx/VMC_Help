@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # DDS Compiler 6.0
 
 The DDS (Direct Digital Synthesizer) Compiler block implements

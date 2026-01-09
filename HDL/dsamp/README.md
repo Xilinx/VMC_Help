@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Down Sample
 
 The Down Sample block reduces the sample rate at the point where

@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # atan
 
 Compute element-wise arctangent function of an argument.

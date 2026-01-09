@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector FFT
 
 The Vector FFT block supports the FFT operation for vector type inputs.

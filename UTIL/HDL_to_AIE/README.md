@@ -1,3 +1,5 @@
+<!-- Library: aieUtilities -->
+
 # HDL to AIE
 
 This block is used to connect the HDL domain to the AI Engine domain

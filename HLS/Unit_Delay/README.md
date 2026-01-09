@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Unit Delay
 
 Provides a delay of one sample period

@@ -1,3 +1,5 @@
+<!-- Library: aieUtilities -->
+
 # AIE to HLS
 
 This block is used to connect the AI Engine domain to the HLS kernel

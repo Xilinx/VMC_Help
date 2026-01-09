@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Reduction XOR
 
 Compute bitwise XOR of the elements of the input over all dimensions or

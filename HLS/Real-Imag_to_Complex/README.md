@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Real-Imag to Complex
 
 Computes the complex output from real and imaginary input.

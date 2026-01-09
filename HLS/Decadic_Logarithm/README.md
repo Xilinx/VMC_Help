@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Log10
 
 Compute element-wise base 10 logarithm of input

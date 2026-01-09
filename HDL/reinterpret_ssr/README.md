@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Reinterpret
 
 The Vector Reinterpret block changes the vector input signal type

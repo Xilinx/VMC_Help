@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Absolute
 
 The Vector Absolute block outputs the absolute value of the input of

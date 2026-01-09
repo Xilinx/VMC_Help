@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector FIR
 
 The Vector FIR block supports FIR filtering for vector type inputs.

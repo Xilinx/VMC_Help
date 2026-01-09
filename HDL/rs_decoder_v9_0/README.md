@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Reed-Solomon Decoder 9.0
 
 ![](./Images/block.png)

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Delay
 
 The Delay block implements a fixed delay of L cycles.

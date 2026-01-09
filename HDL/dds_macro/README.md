@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Sine Wave
 
 The Sine Wave block generates a sine wave, using simulation time

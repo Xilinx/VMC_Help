@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Versal RF FFT
 
 The Versal RF FFT block simulates the hardened FFT IP block from Versal RF devices.

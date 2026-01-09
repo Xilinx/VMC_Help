@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Constant
 
 The Vector Constant Block generates vector constant values.

@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Register
 
 The Vector Register block supports vector type inputs.

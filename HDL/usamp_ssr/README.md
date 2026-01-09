@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Up Sample
 
 The Vector Up Sample block up samples input vector data. Inserted values

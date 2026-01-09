@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # Window Function Stream
 
 Window function implementation targeted for AI Engines.

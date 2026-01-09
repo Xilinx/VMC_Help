@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # HLS Kernel
 
 This block lets you import an HLS kernel IP and simulate it in Vitis Model Composer. 

@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Bit Slice
 
 Extract a range of bits from a value

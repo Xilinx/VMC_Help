@@ -1,3 +1,5 @@
+<!-- Library: hdlUtilities -->
+
 # Indeterminate Probe
 
 The output of the Indeterminate Probe indicates whether the input

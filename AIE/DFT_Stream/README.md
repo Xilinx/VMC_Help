@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # DFT Stream
 Stream-based DFT implementation targeted for AI Engines.
   

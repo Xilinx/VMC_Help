@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Scale
 
 ![](./Images/block.png)

@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Sum
 
 Perform element-wise addition of two input signals

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Constant
 
 ![](./Images/block.png)

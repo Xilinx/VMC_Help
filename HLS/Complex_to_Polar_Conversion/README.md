@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Complex to Polar
 
 Perform an element-wise conversion of complex input signals into

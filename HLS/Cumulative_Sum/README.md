@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Cumulative Sum
 
 Compute the cumulative sum along the specified dimension of the input

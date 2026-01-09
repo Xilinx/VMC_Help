@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Submatrix
 
 Select a subset of elements (submatrix) from matrix input

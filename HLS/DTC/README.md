@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Data Type Conversion
 
 Convert the input to the data type of the output.

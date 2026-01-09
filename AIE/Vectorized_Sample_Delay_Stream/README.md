@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # Vectorized Sample Delay Stream
   
 ![](./Images/block.png)  

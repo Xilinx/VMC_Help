@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Logical NOT
 
 Performs element-wise logical NOT operation on the input

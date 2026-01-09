@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Greater Equals
 
 Perform element-wise greater than or equal relational operation on the

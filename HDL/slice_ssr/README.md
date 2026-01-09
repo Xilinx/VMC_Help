@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Slice
 
 The Vector Slice block supports vector type inputs.

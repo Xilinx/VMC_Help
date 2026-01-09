@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Negate
 
 Perform element-wise unary minus operation on the input data

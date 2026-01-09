@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # FFT
 
 The Fast Fourier Transform (FFT) block takes a block of time

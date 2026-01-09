@@ -1,3 +1,5 @@
+<!-- Library: vmcUtilities -->
+
 # Vitis Model Composer Hub
 
 Control implementation of the model.

@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Bitwise XOR
 
 Perform element and bit-wise Boolean XOR operation on the inputs

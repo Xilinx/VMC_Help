@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Sqrt
 
 Element-wise computation of the square root for a given argument

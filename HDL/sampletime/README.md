@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Sample Time
 
 ![](./Images/block.png)

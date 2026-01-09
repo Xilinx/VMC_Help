@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Reinterpret
 
 Element-wise reinterpretation of the input type into a compatible output

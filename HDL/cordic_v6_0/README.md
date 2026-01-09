@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # CORDIC 6.0
 
 The CORDIC block implements a generalized coordinate rotational

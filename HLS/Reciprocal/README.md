@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Reciprocal
 
 Element-wise computation of the reciprocal for a given argument

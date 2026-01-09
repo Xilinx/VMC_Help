@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Down Sample
 
 The Vector Down Sample block down samples input vector data.

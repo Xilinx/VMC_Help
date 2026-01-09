@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Viterbi Decoder 9.1
 
 Note: This block goes into the FPGA fabric and is a Licensed Core.

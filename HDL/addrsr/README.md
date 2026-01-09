@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Addressable Shift Register
 
 The Addressable Shift Register block is a variable-length shift

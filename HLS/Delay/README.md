@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Delay
 
 Delay input signal by specified number of samples

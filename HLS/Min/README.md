@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Min
 
 Outputs the minimum value of an input or element-wise minimum value of

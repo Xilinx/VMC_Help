@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Asymmetric Stream
 This block implements the stream-based FIR Asymmetric filter targeted for AI Engines.
   

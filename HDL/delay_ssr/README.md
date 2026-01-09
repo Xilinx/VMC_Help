@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Delay
 
 The Vector Delay block supports delay operation on vector type inputs.

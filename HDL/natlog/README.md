@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Natural Logarithm
 
 ![](./Images/block.png)

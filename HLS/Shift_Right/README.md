@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Shift Right
 
 Performs arithmetic shift right of input over a constant number of bit

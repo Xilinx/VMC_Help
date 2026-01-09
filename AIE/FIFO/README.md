@@ -1,3 +1,5 @@
+<!-- Library: aieBasic -->
+
 # FIFO
 This block allows specification of the FIFO depth on a particular path.
   

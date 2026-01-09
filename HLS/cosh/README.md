@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # cosh
 
 Element-wise computation of the hyperbolic cosine for a given argument

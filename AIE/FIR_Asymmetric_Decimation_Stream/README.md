@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Asymmetric Decimation Stream
 This block implements the stream-based FIR Asymmetric Decimation filter targeted for AI Engines.
   

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Up Sample
 
 The Up Sample block increases the sample rate at the point where

@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Abs
 
 Compute element-wise absolute value of input signal

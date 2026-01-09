@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # atan2
 
 Compute element-wise four-quadrant inverse tangent of input signal.

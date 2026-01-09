@@ -1,3 +1,5 @@
+<!-- Library: aieDSP -->
+
 # FIR Halfband Decimator Stream
 This block implements the stream-based FIR Halfband Decimator filter targeted for AI Engines.
   

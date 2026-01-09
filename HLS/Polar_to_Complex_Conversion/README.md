@@ -1,3 +1,5 @@
+<!-- Library: hlsMath -->
+
 # Polar to Complex
 
 Element-wise conversion of real magnitude and angle representation

@@ -1,3 +1,5 @@
+<!-- Library: hdlUtilities -->
+
 # FDATool
 
 The FDATool block provides an interface to the FDATool software

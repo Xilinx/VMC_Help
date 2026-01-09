@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Bitwise OR
 
 Perform element and bitwise Boolean OR operation on the inputs

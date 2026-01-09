@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Subtract
 
 Perform element-wise subtraction

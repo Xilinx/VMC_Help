@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Delay Delta
 
 The Vector Delay Delta Block delays each vector element differently

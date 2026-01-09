@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Conjugate
 
 Apply element-wise complex conjugate operation to the input signal

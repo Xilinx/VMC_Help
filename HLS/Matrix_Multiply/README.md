@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Matrix Multiply
 
 Compute matrix product of two input signals. The first operand is the

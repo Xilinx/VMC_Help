@@ -1,3 +1,5 @@
+<!-- Library: hdlDSPIP -->
+
 # Complex Multiplier 6.0
 
 The Complex Multiplier block implements AXI4-Stream compliant,

@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Convert
 
 ![](./Images/block.png)

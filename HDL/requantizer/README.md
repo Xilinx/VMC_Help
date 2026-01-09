@@ -1,3 +1,5 @@
+<!-- Library: hdlBasic -->
+
 # Requantize
 
 The Requantize block requantizes and scales its input signals.

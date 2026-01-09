@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Real Gateway Out
 
 The Vector Real Gateway Out block converts Xilinx® fixed-point or

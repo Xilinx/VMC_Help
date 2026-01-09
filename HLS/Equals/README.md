@@ -1,3 +1,5 @@
+<!-- Library: hlsBasic -->
+
 # Equals
 
 Perform element-wise equal to relational operation on the inputs. The

@@ -1,3 +1,5 @@
+<!-- Library: hdlSSR -->
+
 # Vector Complex Mult
 
 ![](./Images/block.png)
