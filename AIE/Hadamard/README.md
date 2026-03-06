@@ -73,9 +73,9 @@ Any distribution scheme is valid, provided that both inputs follow the same mapp
 
 For example:
 
-- first half rows on port 0, second half on port 1
-- even rows on port 0, odd rows on port 1
-- block partitioning schemes
+- First half rows on port 0, second half on port 1
+- Even rows on port 0, odd rows on port 1
+- Block partitioning schemes
 
 The output ports will reflect the same distribution pattern used at the inputs.
 
