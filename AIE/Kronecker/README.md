@@ -12,8 +12,6 @@ AI Engine/DSP/Buffer IO
 
 This block implements the Kronecker product, which multiplies two input matrices to produce a larger matrix where each element of the first matrix is multiplied by the entire second matrix. The input can be matrices or vectors, and the output is always column-major order, matching Simulink conventions.
 
-When Super Sample Rate (SSR) is enabled, inputs and outputs are split and combined in a round-robin fashion across the parallel data paths.
-
 ## Parameters
 
 ### Main
