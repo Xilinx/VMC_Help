@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outer Tensor Stream Block Help</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2, h3, h4 { color: #2c3e50; }
+        pre, code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        .noteBox { background: #e7f3fe; border-left: 4px solid #2196F3; padding: 1em; margin: 1em 0; }
+        ul, ol { margin-left: 2em; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Outer Tensor Stream</h1>
+<p>Stream-based Outer Tensor Implementation targeted for AI Engines.</p>
+<img src="./Images/block.png" alt="Outer Tensor Stream Block Diagram">
+
+<h2>Library</h2>
+<p>AI Engine/DSP/Stream IO</p>
+
+<h2>Description</h2>
+<p>
+This block accepts vector inputs and computes the outer tensor product. The output is arranged in row-major format, unlike Simulink, which uses column-major format.
+</p>
+
+<h2>Parameters</h2>
+<h3>Main</h3>
+<ul>
+<li><b>A input data type</b><br>
+Specifies the data type for the A input port. Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.
+</li>
+<li><b>B input data type</b><br>
+Specifies the data type for the B input port. Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.
+</li>
+<li><b>A input length</b><br>
+Specifies the length of input vector A.
+</li>
+<li><b>B input length</b><br>
+Specifies the length of input vector B.
+</li>
+<li><b>Number of frames</b><br>
+Specifies the number of frames (sets of input matrices) processed per window.
+</li>
+<li><b>Scale output down by 2^</b><br>
+Describes the power of 2 by which the output is scaled down (right-shifted) before output. For <code>float</code> and <code>cfloat</code> data types, this parameter must be zero.
+</li>
+<li><b>SSR (Super Sample Rate)</b><br>
+Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
+</li>
+</ul>
+
+<h4>Splitting for SSR &gt; 1:</h4>
+<p>For SSR &gt; 1, input A is split into equal-length segments across the SSR input ports. Input B is duplicated to all SSR lanes (no splitting required for B). The output is arranged in row-major format.</p>
+<h4>Example (SSR = 2):</h4>
+<pre>A = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32]
+
+After splitting (SSR=2):
+ - inA[0] → [1 2 3 ... 16]
+ - inA[1] → [17 18 19 ... 32]
+Input B is not split; both SSR lanes receive the full B vector.
+</pre>
+<h4>Note:</h4>
+<p>This block accepts vector inputs. The output is always arranged in row-major format, unlike Simulink, which uses column-major format.</p>
+
+<ul>
+<li><b>Rounding mode</b><br>
+Describes the selection of rounding to be applied during the shift down stage of processing.
+<ul>
+<li><b>Floor:</b> Truncate LSB, always round down (towards negative infinity).</li>
+<li><b>Ceiling:</b> Always round up (towards positive infinity).</li>
+<li><b>Round to positive infinity:</b> Round halfway towards positive infinity.</li>
+<li><b>Round to negative infinity:</b> Round halfway towards negative infinity.</li>
+<li><b>Round symmetrical to infinity:</b> Round halfway towards infinity (away from zero).</li>
+<li><b>Round symmetrical to zero:</b> Round halfway towards zero (away from infinity).</li>
+<li><b>Round convergent to even:</b> Round halfway towards nearest even number.</li>
+<li><b>Round convergent to odd:</b> Round halfway towards nearest odd number.</li>
+</ul>
+No rounding is performed on the <b>Floor</b> or <b>Ceiling</b> modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+</li>
+<li><b>Saturation mode</b><br>
+Describes the selection of saturation to be applied during the shift down stage of processing.
+<ul>
+<li><b>None:</b> No saturation is performed and the value is truncated on the MSB side.</li>
+<li><b>Asymmetric:</b> Rounds an n-bit signed value in the range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><b>Symmetric:</b> Rounds an n-bit signed value in the range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
+</li>
+</ul>
+
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and add or update constraints for each kernel. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+<h2>Examples</h2>
+<p><b>Click on the images below to open each model.</b></p>
+<a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Outer_Tensor_Stream_Ex1"><img src="./Images/Outer_Tensor_Stream_Ex1.png" alt="Example 1"></a>
+
+<hr>
+<p style="font-size:small;">Copyright (C) 2026 Advanced Micro Devices, Inc.<br>All rights reserved.<br>SPDX-License-Identifier: MIT</p>
+</body>
+</html>
