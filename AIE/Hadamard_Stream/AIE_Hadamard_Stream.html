@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hadamard Stream Block Help</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2, h3, h4 { color: #2c3e50; }
+        pre, code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        .noteBox { background: #e7f3fe; border-left: 4px solid #2196F3; padding: 1em; margin: 1em 0; }
+        ul, ol { margin-left: 2em; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Hadamard Stream</h1>
+<p>Stream-based Hadamard implementation targeted for AI Engines.</p>
+<img src="./Images/block.png" alt="Hadamard Stream Block Diagram">
+
+<h2>Library</h2>
+<p>AI Engine/DSP/Stream IO</p>
+
+<h2>Description</h2>
+<p>
+This block implements the Hadamard (element-wise) product, which multiplies corresponding elements of two input matrices or vectors. The input can be matrices or vectors, and the output is always column-major order, matching Simulink conventions.
+</p>
+<p>
+When Super Sample Rate (SSR) is enabled, inputs and outputs are split and combined in a round-robin fashion across the parallel data paths.
+</p>
+
+<h2>Parameters</h2>
+<h3>Main</h3>
+<ul>
+<li><b>A input data type</b><br>
+Specifies the data type for the A input port. Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.
+</li>
+<li><b>B input data type</b><br>
+Specifies the data type for the B input port. Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.
+</li>
+<li><b>Input length</b><br>
+Specifies the length of the input vector for the Hadamard product.
+</li>
+<li><b>Number of frames</b><br>
+Specifies the number of frames (sets of input vectors) processed per window.
+</li>
+<li><b>Scale output down by 2^</b><br>
+Describes the power of 2 by which the output is scaled down (right-shifted) before output. For <code>float</code> and <code>cfloat</code> data types, this parameter must be zero.
+</li>
+<li><b>SSR (Super Sample Rate)</b><br>
+Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
+</li>
+</ul>
+
+<h4>Row Distribution When SSR = 2:</h4>
+<p>When the Hadamard block is configured with SSR = 2, the input matrices are divided across two parallel data paths to improve throughput.</p>
+<h4>Input Port Mapping</h4>
+<p>Each matrix is distributed across:</p>
+<ul>
+<li>Matrix A → inA[0], inA[1]</li>
+<li>Matrix B → inB[0], inB[1]</li>
+</ul>
+<p>The same distribution pattern must be applied consistently to both matrices to maintain correct element alignment.</p>
+<h4>Example Distribution (Alternating Rows)</h4>
+<p>One common approach is to distribute rows in an alternating pattern.</p>
+<ul>
+<li>Matrix A (8×8):<br>
+ inA[0] receives rows: 1, 3, 5, 7<br>
+ inA[1] receives rows: 2, 4, 6, 8
+</li>
+<li>Matrix B (8×8):<br>
+ inB[0] receives rows: 1, 3, 5, 7<br>
+ inB[1] receives rows: 2, 4, 6, 8
+</li>
+</ul>
+<p>Each port therefore receives a 4 × 8 sub-matrix, enabling parallel Hadamard processing.</p>
+<h4>Important Note</h4>
+<p>Alternating rows are not mandatory.<br>
+Any distribution scheme is valid, provided that both inputs follow the same mapping.</p>
+<ul>
+<li>First half rows on port 0, second half on port 1</li>
+<li>Even rows on port 0, odd rows on port 1</li>
+<li>Block partitioning schemes</li>
+</ul>
+<p>The output ports will reflect the same distribution pattern used at the inputs.</p>
+
+<ul>
+<li><b>Rounding mode</b><br>
+Describes the selection of rounding to be applied during the shift down stage of processing.
+<ul>
+<li><b>Floor:</b> Truncate LSB, always round down (towards negative infinity).</li>
+<li><b>Ceiling:</b> Always round up (towards positive infinity).</li>
+<li><b>Round to positive infinity:</b> Round halfway towards positive infinity.</li>
+<li><b>Round to negative infinity:</b> Round halfway towards negative infinity.</li>
+<li><b>Round symmetrical to infinity:</b> Round halfway towards infinity (away from zero).</li>
+<li><b>Round symmetrical to zero:</b> Round halfway towards zero (away from infinity).</li>
+<li><b>Round convergent to even:</b> Round halfway towards nearest even number.</li>
+<li><b>Round convergent to odd:</b> Round halfway towards nearest odd number.</li>
+</ul>
+No rounding is performed on the <b>Floor</b> or <b>Ceiling</b> modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+</li>
+<li><b>Saturation mode</b><br>
+Describes the selection of saturation to be applied during the shift down stage of processing.
+<ul>
+<li><b>None:</b> No saturation is performed and the value is truncated on the MSB side.</li>
+<li><b>Asymmetric:</b> Rounds an n-bit signed value in the range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><b>Symmetric:</b> Rounds an n-bit signed value in the range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
+</li>
+</ul>
+
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and add or update constraints for each kernel. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
+<h2>Examples</h2>
+<p><b>Click on the images below to open each model.</b></p>
+<a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Hadamard_Stream_Ex1"><img src="./Images/Hadamard_Stream_Ex1.png" alt="Example 1"></a>
+
+<hr>
+<p style="font-size:small;">Copyright (C) 2026 Advanced Micro Devices, Inc.<br>All rights reserved.<br>SPDX-License-Identifier: MIT</p>
+</body>
+</html>
