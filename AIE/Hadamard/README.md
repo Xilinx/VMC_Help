@@ -1,5 +1,4 @@
-
-# Hadamard (Element-wise Product)
+# Hadamard
 
 Implements the Hadamard (element-wise) product targeted for AI Engines.
 

@@ -1,4 +1,3 @@
-
 # Outer Tensor
 
 Implements the Outer Tensor product targeted for AI Engines.

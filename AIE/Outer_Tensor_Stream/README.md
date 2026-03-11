@@ -1,4 +1,3 @@
-
 # Outer Tensor Stream
 
 Stream-based Outer Tensor Implementation targeted for AI Engines.

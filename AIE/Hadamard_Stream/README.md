@@ -1,4 +1,3 @@
-
 # Hadamard Stream
 
 Stream-based Hadamard implementation targeted for AI Engines. 
