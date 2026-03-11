@@ -118,7 +118,7 @@ The propagated block sample time in Simulink is equal to "Sample time" multipled
 This block uses the Vitis DSP library implementation of Mixer LUT. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds_mixer_lut.html).
 
 --------------
-Copyright (C) 2025 Advanced Micro Devices, Inc.
+Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

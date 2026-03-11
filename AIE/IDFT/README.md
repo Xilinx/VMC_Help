@@ -95,7 +95,7 @@ This block uses the Vitis DSP library implementation of IDFT. For more details o
 
 
 --------------
-Copyright (C) 2025 Advanced Micro Devices, Inc.
+Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

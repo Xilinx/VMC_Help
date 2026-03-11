@@ -38,7 +38,7 @@ Specify the data type of the output signal. This can be `double` or `single`.
 
 
 --------------
-Copyright (C) 2025 Advanced Micro Devices, Inc.
+Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

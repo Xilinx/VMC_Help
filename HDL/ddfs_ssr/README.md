@@ -51,7 +51,7 @@ Defines the width of the Sin/Cos Table and should be an integer value.
 [![](./Images/Vector_DDFS_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Vector_DDFS_Ex1)
 
 --------------
-Copyright (C) 2025 Advanced Micro Devices, Inc.
+Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

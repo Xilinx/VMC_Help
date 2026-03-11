@@ -110,7 +110,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 This block uses the Vitis DSP library implementation of DDS. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-dds_mixer_intrinsic.html).
 
 --------------
-Copyright (C) 2025 Advanced Micro Devices, Inc.
+Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT

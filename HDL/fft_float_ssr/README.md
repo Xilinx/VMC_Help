@@ -53,7 +53,7 @@ BRAM. Typical values to try are 258, 514, and 1026.
 [![](./Images/Vector_FFT_Float_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/Vector_FFT_Float_Ex2)
 
 --------------
-Copyright (C) 2025 Advanced Micro Devices, Inc.
+Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
