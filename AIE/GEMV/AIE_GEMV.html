@@ -1,251 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GEMV (General Matrix-Vector Multiplication) - AI Engine Block</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #1a5490;
-            border-bottom: 3px solid #1a5490;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #2e7db5;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-            border-left: 5px solid #2e7db5;
-            padding-left: 15px;
-        }
-        h3 {
-            color: #4a9fd8;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-        h4 {
-            color: #555;
-            margin-top: 15px;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 15px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        a {
-            color: #1a5490;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #0d3a5c;
-        }
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        code {
-            background-color: #f0f0f0;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            color: #c7254e;
-        }
-        .noteBox {
-            background-color: #e7f4f8;
-            border-left: 5px solid #4a9fd8;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 3px;
-        }
-        .hr-line {
-            border: none;
-            border-top: 2px solid #ccc;
-            margin: 30px 0;
-        }
-        .copyright {
-            text-align: center;
-            color: #777;
-            font-size: 0.9em;
-            margin-top: 30px;
-        }
-        .examples-container {
-            display: flex;
-            gap: 20px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        .example-link {
-            flex: 1;
-            min-width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .example-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .example-link img {
-            margin: 0;
-            width: 100%;
-            display: block;
-        }
-        .example-link a {
-            display: block;
-            padding: 10px;
-            text-align: center;
-            background-color: #f9f9f9;
-            border-top: 1px solid #ddd;
-        }
-        .library-badge {
-            display: inline-block;
-            background-color: #e8f4f8;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-weight: 600;
-            color: #1a5490;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>GEMV (General Matrix-Vector Multiplication)</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
 </head>
 <body>
-    <div class="container">
-        <h1>GEMV (General Matrix-Vector Multiplication)</h1>
-        <p><strong>Implements General Matrix-Vector Multiplication targeted for AI Engines.</strong></p>
-        
-        <img src="./Images/block.png" alt="GEMV Block">
+<header id="title-block-header">
+<h1 class="title">GEMV (General Matrix-Vector Multiplication)</h1>
+</header>
+<section id="gemv-general-matrix-vector-multiplication" class="level1">
+<h1>GEMV (General Matrix-Vector Multiplication)</h1>
+<p>Implements General Matrix-Vector Multiplication targeted for AI
+Engines.</p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
+<section id="library" class="level2">
+<h2>Library</h2>
+<p>AI Engine/DSP/Buffer IO</p>
+</section>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>This block implements General Matrix-Vector Multiplication (GEMV),
+which performs the operation: output = A*B, where matrix A is (m x k)
+and vector B is (k x 1), producing an output vector of (m x 1). The
+block supports configurable matrix and vector dimensions, multiple data
+types (int16, int32, cint16, cint32, float, cfloat), and flexible memory
+layouts (row-major or column-major). The matrix A can be provided either
+via input port or through Run-Time Parameterization (RTP). Super Sample
+Rate (SSR) enables parallel processing across multiple data paths for
+improved throughput, while cascading support allows distribution of
+computation across multiple kernels.</p>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="main" class="level3">
+<h3>Main</h3>
+<section id="a-input-data-type" class="level4">
+<h4>A input data type</h4>
+<p>Specifies the data type for the A input port. Supported types include
+<code>int16</code>, <code>int32</code>, <code>cint16</code>,
+<code>cint32</code>, <code>float</code>, and <code>cfloat</code>.</p>
+</section>
+<section id="b-input-data-type" class="level4">
+<h4>B input data type</h4>
+<p>Specifies the data type for the B input port (vector). Supported
+types include <code>int16</code>, <code>int32</code>,
+<code>cint16</code>, <code>cint32</code>, <code>float</code>, and
+<code>cfloat</code>.</p>
+</section>
+<section id="provide-matrix-a-via-rtp" class="level4">
+<h4>Provide matrix A via RTP</h4>
+<p>When checked, matrix A is provided via Run-Time Parameterization
+(RTP) instead of through an input port. This allows the matrix to be
+updated dynamically at runtime without restarting the kernel.</p>
+</section>
+<section id="rows-in-input-a" class="level4">
+<h4>Rows in input A</h4>
+<p>Specifies the number of rows (M dimension) in matrix A and the output
+vector.</p>
+</section>
+<section id="columns-in-input-a-length-of-vector-b" class="level4">
+<h4>Columns in input A, Length of vector B</h4>
+<p>Specifies the number of columns in matrix A and the length of vector
+B (K dimension). This is the reduction dimension in the GEMV
+operation.</p>
+</section>
+<section id="ssr-super-sample-rate" class="level4">
+<h4>SSR (Super Sample Rate)</h4>
+<p>Specifies the number of parallel data paths processed by the block.
+Increasing SSR allows for higher throughput by processing multiple
+samples in parallel.</p>
+<p><strong>When SSR &gt; 1:</strong></p>
+<ul>
+<li>Input matrix A is split across SSR ports along the first
+dimension.</li>
+<li>Input vector B is duplicated across SSR ports.</li>
+<li>Outputs from SSR ports are concatenated to form output vector.</li>
+</ul>
+</section>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages</h4>
+<p>Specifies the number of cascaded kernel instances to be used.
+Cascading improves performance by distributing the computation across
+multiple kernels.</p>
+</section>
+<section id="a-input-leading-dimension" class="level4">
+<h4>A input leading dimension</h4>
+<p>Specifies the memory layout for matrix A. Options include:</p>
+<ul>
+<li><strong>Row-major(0):</strong> Elements are arranged in row-major
+order (rows are contiguous in memory).</li>
+<li><strong>Column-major(1):</strong> Elements are arranged in
+column-major order (columns are contiguous in memory).</li>
+</ul>
+</section>
+<section id="scale-output-down-by-2" class="level4">
+<h4>Scale output down by 2^</h4>
+<p>Describes the power of 2 by which the output is scaled down
+(right-shifted) before output. For <code>float</code> and
+<code>cfloat</code> data types, this parameter must be zero.</p>
+</section>
+<section id="rounding-mode" class="level4">
+<h4>Rounding mode</h4>
+<p>Describes the selection of rounding to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>Floor:</strong> Truncate LSB, always round down (towards
+negative infinity).</li>
+<li><strong>Ceiling:</strong> Always round up (towards positive
+infinity).</li>
+<li><strong>Round to positive infinity:</strong> Round halfway towards
+positive infinity.</li>
+<li><strong>Round to negative infinity:</strong> Round halfway towards
+negative infinity.</li>
+<li><strong>Round symmetrical to infinity:</strong> Round halfway
+towards infinity (away from zero).</li>
+<li><strong>Round symmetrical to zero:</strong> Round halfway towards
+zero (away from infinity).</li>
+<li><strong>Round convergent to even:</strong> Round halfway towards
+nearest even number.</li>
+<li><strong>Round convergent to odd:</strong> Round halfway towards
+nearest odd number.</li>
+</ul>
+<p>No rounding is performed on the <strong>Floor</strong> or
+<strong>Ceiling</strong> modes. Other modes round to the nearest
+integer. They differ only in how they round for values that are exactly
+between two integers.</p>
+</section>
+<section id="saturation-mode" class="level4">
+<h4>Saturation mode</h4>
+<p>Describes the selection of saturation to be applied during the shift
+down stage of processing.</p>
+<p>The following modes are available:</p>
+<ul>
+<li><strong>None:</strong> No saturation is performed and the value is
+truncated on the MSB side.</li>
+<li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+<li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
+range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+</ul>
+</section>
+</section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. You can use the constraint
+manager to optimize the performance of your design by setting specific
+constraints for each kernel (in this case, you need to first run your
+design). Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
 
-        <h2>Library</h2>
-        <p><span class="library-badge">AI Engine/DSP/Buffer IO</span></p>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p><strong>Note:</strong> Examples for this block are currently under
+development and will be available in a future release.</p>
+<!-- Examples under development
+***Click on the images below to open each model.***
 
-        <h2>Description</h2>
-        <p>This block implements General Matrix-Vector Multiplication (GEMV), which performs the operation: output = A*B, where matrix A is (m x k) and vector B is (k x 1), producing an output vector of (m x 1). The block supports configurable matrix and vector dimensions, multiple data types (int16, int32, cint16, cint32, float, cfloat), and flexible memory layouts (row-major or column-major). The matrix A can be provided either via input port or through Run-Time Parameterization (RTP). Super Sample Rate (SSR) enables parallel processing across multiple data paths for improved throughput, while cascading support allows distribution of computation across multiple kernels.</p>
+[![](./Images/GEMV_Ex1.png)](matlab:openVMCExample('GEMV_Ex1'))
 
-        <h2>Parameters</h2>
+[![](./Images/GEMV_Ex2.png)](matlab:openVMCExample('GEMV_Ex2'))
+-->
 
-        <h3>Main</h3>
-
-        <h4>A input data type</h4>
-        <p>Specifies the data type for the A input port. Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.</p>
-
-        <h4>B input data type</h4>
-        <p>Specifies the data type for the B input port (vector). Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.</p>
-
-        <h4>Provide matrix A via RTP</h4>
-        <p>When checked, matrix A is provided via Run-Time Parameterization (RTP) instead of through an input port. This allows the matrix to be updated dynamically at runtime without restarting the kernel.</p>
-
-        <h4>Rows in input A</h4>
-        <p>Specifies the number of rows (M dimension) in matrix A and the output vector.</p>
-
-        <h4>Columns in input A, Length of vector B</h4>
-        <p>Specifies the number of columns in matrix A and the length of vector B (K dimension). This is the reduction dimension in the GEMV operation.</p>
-
-        <h4>SSR (Super Sample Rate)</h4>
-        <p>Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.</p>
-        <p><strong>When SSR > 1:</strong></p>
-        <ul>
-            <li>Input matrix A is split across SSR ports along the first dimension.</li>
-            <li>Input vector B is duplicated across SSR ports.</li>
-            <li>Outputs from SSR ports are concatenated along the first dimension to form the final output vector.</li>
-        </ul>
-
-        <h4>Number of cascade stages</h4>
-        <p>Specifies the number of cascaded kernel instances to be used. Cascading improves performance by distributing the computation across multiple kernels.</p>
-
-        <h4>A input leading dimension</h4>
-        <p>Specifies the memory layout for matrix A. Options include:</p>
-        <ul>
-            <li><strong>Row-major(0):</strong> Elements are arranged in row-major order (rows are contiguous in memory).</li>
-            <li><strong>Column-major(1):</strong> Elements are arranged in column-major order (columns are contiguous in memory).</li>
-        </ul>
-
-        <h4>Scale output down by 2^</h4>
-        <p>Describes the power of 2 by which the output is scaled down (right-shifted) before output. For <code>float</code> and <code>cfloat</code> data types, this parameter must be zero.</p>
-
-        <h4>Rounding mode</h4>
-        <p>Describes the selection of rounding to be applied during the shift down stage of processing.</p>
-        <p><strong>The following modes are available:</strong></p>
-        <ul>
-            <li><strong>Floor:</strong> Truncate LSB, always round down (towards negative infinity).</li>
-            <li><strong>Ceiling:</strong> Always round up (towards positive infinity).</li>
-            <li><strong>Round to positive infinity:</strong> Round halfway towards positive infinity.</li>
-            <li><strong>Round to negative infinity:</strong> Round halfway towards negative infinity.</li>
-            <li><strong>Round symmetrical to infinity:</strong> Round halfway towards infinity (away from zero).</li>
-            <li><strong>Round symmetrical to zero:</strong> Round halfway towards zero (away from infinity).</li>
-            <li><strong>Round convergent to even:</strong> Round halfway towards nearest even number.</li>
-            <li><strong>Round convergent to odd:</strong> Round halfway towards nearest odd number.</li>
-        </ul>
-        <p>No rounding is performed on the <strong>Floor</strong> or <strong>Ceiling</strong> modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.</p>
-
-        <h4>Saturation mode</h4>
-        <p>Describes the selection of saturation to be applied during the shift down stage of processing.</p>
-        <p><strong>The following modes are available:</strong></p>
-        <ul>
-            <li><strong>None:</strong> No saturation is performed and the value is truncated on the MSB side.</li>
-            <li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
-            <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
-        </ul>
-
-        <h3>Constraints</h3>
-        <p>Click on the button given here to access the constraint manager and add or update constraints for each kernel. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.</p>
-        <div class="noteBox">
-            If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
-        </div>
-
-        <h2>Examples</h2>
-        <p><em>Click on the images below to open each model.</em></p>
-        <div class="examples-container">
-            <div class="example-link">
-                <img src="./Images/GEMV_Ex1.png" alt="GEMV Example 1">
-                <a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex1" target="_blank">GEMV Example 1</a>
-            </div>
-            <div class="example-link">
-                <img src="./Images/GEMV_Ex2.png" alt="GEMV Example 2">
-                <a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex2" target="_blank">GEMV Example 2</a>
-            </div>
-        </div>
-
-        <hr class="hr-line">
-
-        <div class="copyright">
-            <p>Copyright (C) 2026 Advanced Micro Devices, Inc.<br>
-            All rights reserved.<br>
-            SPDX-License-Identifier: MIT</p>
-        </div>
-    </div>
+<hr />
+<p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
+reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
 </body>
 </html>
