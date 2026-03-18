@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEMV (General Matrix-Vector Multiplication) - AI Engine Block</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #1a5490;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #2e7db5;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-left: 5px solid #2e7db5;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #4a9fd8;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        h4 {
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a {
+            color: #1a5490;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0d3a5c;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        .noteBox {
+            background-color: #e7f4f8;
+            border-left: 5px solid #4a9fd8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        .hr-line {
+            border: none;
+            border-top: 2px solid #ccc;
+            margin: 30px 0;
+        }
+        .copyright {
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+        .examples-container {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .example-link {
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .example-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .example-link img {
+            margin: 0;
+            width: 100%;
+            display: block;
+        }
+        .example-link a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+        .library-badge {
+            display: inline-block;
+            background-color: #e8f4f8;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #1a5490;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GEMV (General Matrix-Vector Multiplication)</h1>
+        <p><strong>Implements General Matrix-Vector Multiplication targeted for AI Engines.</strong></p>
+        
+        <img src="./Images/block.png" alt="GEMV Block">
+
+        <h2>Library</h2>
+        <p><span class="library-badge">AI Engine/DSP/Buffer IO</span></p>
+
+        <h2>Description</h2>
+        <p>This block implements General Matrix-Vector Multiplication (GEMV), which performs the operation: output = A*B, where matrix A is (m x k) and vector B is (k x 1), producing an output vector of (m x 1). The block supports configurable matrix and vector dimensions, multiple data types (int16, int32, cint16, cint32, float, cfloat), and flexible memory layouts (row-major or column-major). The matrix A can be provided either via input port or through Run-Time Parameterization (RTP). Super Sample Rate (SSR) enables parallel processing across multiple data paths for improved throughput, while cascading support allows distribution of computation across multiple kernels.</p>
+
+        <h2>Parameters</h2>
+
+        <h3>Main</h3>
+
+        <h4>A input data type</h4>
+        <p>Specifies the data type for the A input port. Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.</p>
+
+        <h4>B input data type</h4>
+        <p>Specifies the data type for the B input port (vector). Supported types include <code>int16</code>, <code>int32</code>, <code>cint16</code>, <code>cint32</code>, <code>float</code>, and <code>cfloat</code>.</p>
+
+        <h4>Provide matrix A via RTP</h4>
+        <p>When checked, matrix A is provided via Run-Time Parameterization (RTP) instead of through an input port. This allows the matrix to be updated dynamically at runtime without restarting the kernel.</p>
+
+        <h4>Rows in input A</h4>
+        <p>Specifies the number of rows (M dimension) in matrix A and the output vector.</p>
+
+        <h4>Columns in input A, Length of vector B</h4>
+        <p>Specifies the number of columns in matrix A and the length of vector B (K dimension). This is the reduction dimension in the GEMV operation.</p>
+
+        <h4>SSR (Super Sample Rate)</h4>
+        <p>Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.</p>
+        <p><strong>When SSR > 1:</strong></p>
+        <ul>
+            <li>Input matrix A is split across SSR ports along the first dimension.</li>
+            <li>Input vector B is duplicated across SSR ports.</li>
+            <li>Outputs from SSR ports are concatenated along the first dimension to form the final output vector.</li>
+        </ul>
+
+        <h4>Number of cascade stages</h4>
+        <p>Specifies the number of cascaded kernel instances to be used. Cascading improves performance by distributing the computation across multiple kernels.</p>
+
+        <h4>A input leading dimension</h4>
+        <p>Specifies the memory layout for matrix A. Options include:</p>
+        <ul>
+            <li><strong>Row-major(0):</strong> Elements are arranged in row-major order (rows are contiguous in memory).</li>
+            <li><strong>Column-major(1):</strong> Elements are arranged in column-major order (columns are contiguous in memory).</li>
+        </ul>
+
+        <h4>Scale output down by 2^</h4>
+        <p>Describes the power of 2 by which the output is scaled down (right-shifted) before output. For <code>float</code> and <code>cfloat</code> data types, this parameter must be zero.</p>
+
+        <h4>Rounding mode</h4>
+        <p>Describes the selection of rounding to be applied during the shift down stage of processing.</p>
+        <p><strong>The following modes are available:</strong></p>
+        <ul>
+            <li><strong>Floor:</strong> Truncate LSB, always round down (towards negative infinity).</li>
+            <li><strong>Ceiling:</strong> Always round up (towards positive infinity).</li>
+            <li><strong>Round to positive infinity:</strong> Round halfway towards positive infinity.</li>
+            <li><strong>Round to negative infinity:</strong> Round halfway towards negative infinity.</li>
+            <li><strong>Round symmetrical to infinity:</strong> Round halfway towards infinity (away from zero).</li>
+            <li><strong>Round symmetrical to zero:</strong> Round halfway towards zero (away from infinity).</li>
+            <li><strong>Round convergent to even:</strong> Round halfway towards nearest even number.</li>
+            <li><strong>Round convergent to odd:</strong> Round halfway towards nearest odd number.</li>
+        </ul>
+        <p>No rounding is performed on the <strong>Floor</strong> or <strong>Ceiling</strong> modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.</p>
+
+        <h4>Saturation mode</h4>
+        <p>Describes the selection of saturation to be applied during the shift down stage of processing.</p>
+        <p><strong>The following modes are available:</strong></p>
+        <ul>
+            <li><strong>None:</strong> No saturation is performed and the value is truncated on the MSB side.</li>
+            <li><strong>Asymmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
+            <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
+        </ul>
+
+        <h3>Constraints</h3>
+        <p>Click on the button given here to access the constraint manager and add or update constraints for each kernel. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.</p>
+        <div class="noteBox">
+            If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+        </div>
+
+        <h2>Examples</h2>
+        <p><em>Click on the images below to open each model.</em></p>
+        <div class="examples-container">
+            <div class="example-link">
+                <img src="./Images/GEMV_Ex1.png" alt="GEMV Example 1">
+                <a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex1" target="_blank">GEMV Example 1</a>
+            </div>
+            <div class="example-link">
+                <img src="./Images/GEMV_Ex2.png" alt="GEMV Example 2">
+                <a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex2" target="_blank">GEMV Example 2</a>
+            </div>
+        </div>
+
+        <hr class="hr-line">
+
+        <div class="copyright">
+            <p>Copyright (C) 2026 Advanced Micro Devices, Inc.<br>
+            All rights reserved.<br>
+            SPDX-License-Identifier: MIT</p>
+        </div>
+    </div>
+</body>
+</html>
