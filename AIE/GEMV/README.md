@@ -17,10 +17,10 @@ This block implements General Matrix-Vector Multiplication (GEMV), which perform
 ### Main
 
 #### A input data type
-Specifies the data type for the A input port. Supported types include `int16`, `int32`, `cint16` , `cint32` , `float` , and `cfloat`.
+Specifies the data type for the A input port. Supported types include `int16`, `int32`, `cint16`, `cint32`, `float`, and `cfloat`.
 
 #### B input data type
-Specifies the data type for the B input port (vector). Supported types include `int16`, `int32`, `cint16` , `cint32` , `float` , and `cfloat`.
+Specifies the data type for the B input port (vector). Supported types include `int16`, `int32`, `cint16`, `cint32`, `float`, and `cfloat`.
 
 #### Provide matrix A via RTP
 When checked, matrix A is provided via Run-Time Parameterization (RTP) instead of through an input port. This allows the matrix to be updated dynamically at runtime without restarting the kernel.
@@ -82,11 +82,15 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ## Examples
 
+**Note:** Examples for this block are currently under development and will be available in a future release.
+
+<!-- Examples under development
 ***Click on the images below to open each model.***
 
 [![](./Images/GEMV_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex1)
 
 [![](./Images/GEMV_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex2)
+-->
 
 
 --------------
