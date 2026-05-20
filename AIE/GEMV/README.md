@@ -84,13 +84,17 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-**GEMV with 16x16 matrix (column-major):**
+**GEMV with 16×16 matrix (column-major, int16):**
 
 [![](./Images/GEMV_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex1)
 
-**GEMV with 32x32 matrix (column-major):**
+**GEMV with 64×16 matrix (row-major, cint16):**
 
 [![](./Images/GEMV_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex2)
+
+**GEMV with 32×16 matrix (column-major, int16):**
+
+[![](./Images/GEMV_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex3)
 
 
 --------------
