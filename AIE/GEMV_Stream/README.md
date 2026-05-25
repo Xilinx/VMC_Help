@@ -80,14 +80,6 @@ Click on the button given here to access the constraint manager and add or updat
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-## Examples
-
-***Click on the images below to open each model.***
-
-[![](./Images/GEMV_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Stream_Ex1)
-
-[![](./Images/GEMV_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Stream_Ex2)
-
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
