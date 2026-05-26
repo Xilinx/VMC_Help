@@ -262,6 +262,7 @@ consult the core data sheet.
 ***Click on the images below to open each model.***
 
 [![](./Images/Vector_xFFT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/Vector_xFFT_Ex1)
+[![](./Images/Vector_xFFT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/Vector_xFFT_Ex2)
 
 
 
