@@ -84,17 +84,29 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-**GEMV with 16×16 matrix (column-major, int16):**
+**GEMV with 16×16 matrix, column-major int16, SSR = 1:**
 
 [![](./Images/GEMV_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex1)
 
-**GEMV with 64×16 matrix (row-major, cint16):**
+**GEMV with 64×16 matrix, row-major cint16, SSR = 1:**
 
 [![](./Images/GEMV_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex2)
 
-**GEMV with 32×16 matrix (column-major, int16):**
+**GEMV with 32×16 matrix, column-major int16, SSR = 1:**
 
 [![](./Images/GEMV_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex3)
+
+**GEMV with 32×16 matrix, column-major int16, SSR = 2 (parallel lanes):**
+
+[![](./Images/GEMV_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex4)
+
+**GEMV with 64×32 matrix, column-major int16, SSR = 2 and Number of Cascade Stages = 2:**
+
+[![](./Images/GEMV_Ex5.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex5)
+
+**GEMV with 64×32 matrix, column-major int16, Number of Cascade Stages = 2 and Number of Frames = 2:**
+
+[![](./Images/GEMV_Ex6.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMV_Ex6)
 
 
 --------------
