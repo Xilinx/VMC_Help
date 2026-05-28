@@ -244,7 +244,13 @@ consult the core data sheet.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/FastFourierTransform_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/FastFourierTransform_Ex1)
+**1024-point FFT of a complex constant signal, SSR = 2, pipelined streaming I/O architecture:**
+
+[![](./Images/FastFourierTransform_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/FastFourierTransform_Ex1)
+
+**1024-point FFT of a 12 kHz complex sine wave sampled at 20 kHz, SSR = 1, automatically-selected architecture:**
+
+[![](./Images/FastFourierTransform_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/FastFourierTransform_Ex2)
 
 
 
