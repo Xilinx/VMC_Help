@@ -318,7 +318,12 @@ consult the core data sheet.
 
 ***Click on the images below to open each model.***
 
+**1024-point FFT of a single sine wave, SSR = 4, pipelined streaming I/O architecture:**
+
 [![](./Images/Vector_xFFT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/Vector_xFFT_Ex1)
+
+**1024-point FFT of two summed sine waves plus random noise, SSR = 4, automatically-selected architecture:**
+
 [![](./Images/Vector_xFFT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/Vector_xFFT_Ex2)
 
 
