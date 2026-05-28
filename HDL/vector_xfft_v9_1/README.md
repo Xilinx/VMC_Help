@@ -9,31 +9,39 @@ retaining an AXI4-Stream-compliant interface.
 
 ![](./Images/block.png)
 
+## Library
+
+HDL/SSR/DSP/AXI-S
+
 ## Description
 
-The real part of the input data should be connected to the re_in port,
-and the imaginary part should be connected to the im_in port.
-
-When in_valid is high it indicates that the input vector data is valid.
-When out_valid is high, it indicates that the output vector data is
-valid. There is no back-pressure flow control and once an FFT transform
-starts, R samples must be supplied every clock for N/R consecutive
-clocks, where N is the FFT length and R is the SSR value.
+The block has an AXI4-Stream–compliant interface. Real and imaginary
+samples are presented on the DATA input channel; for `SSR = N`, the
+channel is split into `N` parallel real/imaginary lane pairs (see
+[AXI Ports](#axi-ports-that-are-unique-to-this-block) below). The
+`data_tvalid_in` signal indicates that the lanes hold a valid input
+sample on the current clock; `data_tvalid_out` indicates a valid output
+sample. There is no back-pressure flow control on the data path: once
+an FFT transform starts, `N` complex samples must be supplied on each
+of the `SSR` lane pairs every clock for `N/SSR` consecutive clocks,
+where `N` is the FFT length.
 
 For back-to-back transforms, the valid control input can remain high
-without gaps. The in_scale input port is used when scaling is required
-and out_scale reports internal overflow information.
+without gaps. Per-rank scaling is controlled by `config_tdata_scale_sch`
+on the CONFIG input channel; overflow is reported (when **Scaling
+Options** is set to *Scaled*) on the `event_*` output channel and the
+`OVFLO` field.
 
-The FFT computes an N-point forward DFT or inverse DFT (IDFT) where, N =
-2^(m), m = 3 - 16. For fixed-point inputs, the input data is a vector of
-N complex values represented as dual b_(x)-bit two’s complement numbers,
-that is, b^(x) bits for each of the real and imaginary components of the
-data sample, where b_(x) is in the range 8 to 34 bit, inclusive.
-Similarly, the phase factors b_(w) can be 8 to 34 bits wide.
+The FFT computes an `N`-point forward DFT or inverse DFT (IDFT) where
+`N = 2^m`, `m = 3..16`. For fixed-point inputs, each input sample is a
+pair of `bₓ`-bit two's-complement values (one for the real and one for
+the imaginary component), where `bₓ` is in the range 8 to 34 bits,
+inclusive. The phase factors `bw` can likewise be 8 to 34 bits wide.
 
-For single-precision floating-point inputs, the input data is a vector
-of N complex values represented as dual 32-bit floating-point numbers
-with the phase factors represented as 24- or 25-bit fixed-point numbers.
+For single-precision floating-point inputs (enable via **Native
+Floating Point Data Format**), each input sample is a pair of 32-bit
+IEEE-754 floats and the phase factors are 24- or 25-bit fixed-point
+numbers.
 
 ## Theory of Operation
 
@@ -66,22 +74,62 @@ Configuration Channel Input Signals:
 
 |                        |                                                                                                                                                                                                                                                                                                                          |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| config_tdata_scale_sch | A sub-field port that represents the Scaling Schedule field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)) for an explanation of the bits in this field.              |
-| config_tdata_fwd_inv   | A sub-field port that represents the Forward Inverse field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)) for an explanation of the bits in this field.               |
-| config_tdata_nfft      | A sub-field port that represents the Transform Size (NFFT) field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)) for an explanation of the bits in this field.         |
-| config_tdata_cp_len    | A sub-field port that represents the Cyclic Prefix Length (CP_LEN) field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)) for an explanation of the bits in this field. |
+| config_tdata_scale_sch | A sub-field port that represents the Scaling Schedule field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.amd.com/r/en-US/pg109-xfft)) for an explanation of the bits in this field.              |
+| config_tdata_fwd_inv   | A sub-field port that represents the Forward Inverse field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.amd.com/r/en-US/pg109-xfft)) for an explanation of the bits in this field.               |
+| config_tdata_nfft      | A sub-field port that represents the Transform Size (NFFT) field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.amd.com/r/en-US/pg109-xfft)) for an explanation of the bits in this field.         |
+| config_tdata_cp_len    | A sub-field port that represents the Cyclic Prefix Length (CP_LEN) field in the Configuration Channel vector. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://docs.amd.com/r/en-US/pg109-xfft)) for an explanation of the bits in this field. |
+
+Notes on the table above:
+- `config_tdata_nfft` appears only when **Run Time Configurable Transform Length** is enabled.
+- `config_tdata_cp_len` appears only when **Cyclic Prefix Insertion** is enabled.
 
 This HDL block exposes the AXI DATA channel as separate ports based on
-the real and imaginary sub-field names. The sub-field ports are
-described as follows:
+the real and imaginary sub-field names. With **Display shortened port
+names** (`trim_axipin_name`) checked, port labels are abbreviated as
+shown below; with it unchecked, the full AXI-stream names
+(`s_axis_data_…`, `m_axis_data_…`) are displayed.
+
+For `SSR = 1`, the data channel exposes a single re/im pair. For
+`SSR = N > 1`, the channel is vectorized into `N` parallel lane pairs
+named `data_tdata_vect<i>_xn_re_in` / `data_tdata_vect<i>_xn_im_in` (and
+`..._out`) for `i = 0 … N−1`, plus a common `data_tvalid` / `data_tready`
+/ `data_tlast` handshake.
 
 DATA Channel Input Signals:
 
+|                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| data_tdata_re_in | Real component of an input data sample. The driving signal must be a signed type of width `S` with the binary point at `S-1`, where `S` is between 8 and 34, inclusive (e.g., `Fix_8_7`, `Fix_34_33`). `re_in` and `im_in` must share the same type. For `SSR > 1`, this becomes `data_tdata_vect<i>_xn_re_in` for each lane `i`. Refer to [PG109](https://docs.amd.com/r/en-US/pg109-xfft) for an explanation of the bits in this field. |
+| data_tdata_im_in | Imaginary component of an input data sample. Same type rules as `data_tdata_re_in`. For `SSR > 1`, this becomes `data_tdata_vect<i>_xn_im_in` for each lane `i`.                                                                                                                                                                                                                                                                                                                       |
+| data_tvalid_in   | Asserted by the source to indicate that the current re/im lane samples are valid. There is no flow control on the data path — once a transform begins, valid must remain asserted for `N/SSR` consecutive cycles.                                                                                                                                                                                                                                                                       |
+| data_tlast_in    | Marks the last sample of a frame on the input channel.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| data_tready_in   | Allows the downstream block to back-pressure the output data channel.                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| aclken_in        | Optional clock-enable input. Present only when **ACLKEN** is checked.                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| aresetn_in       | Optional active-low synchronous reset input. Present only when **ARESETn** is checked. Must be asserted for at least two cycles.                                                                                                                                                                                                                                                                                                                                                         |
 
-|                        |                                                                                                                                                                                                                                                                                                                          |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| data_tdata_xn_im | Represents the imaginary component of the Data Channel. The signal driving xn_im can be a signed data type of width S with binary point at S-1, where S is a value between 8 and 34, inclusive. eg: Fix_8_7, Fix_34_33. Both xn_re and xn_im signals must have the same data type. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)) for an explanation of the bits in this field.|
-|  data_tdata_xn_re  |Represents the real component of the Data Channel. The signal driving xn_re can be a signed data type of width S with binary point at S-1, where S is a value between 8 and 34, inclusive. eg: Fix_8_7, Fix_34_33. Both xn_re and xn_im signals must have the same data type. Refer to the document Fast Fourier Transform LogiCORE IP Product Guide ([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)) for an explanation of the bits in this field.  |
+DATA Channel Output Signals:
+
+|                                |                                                                                                                                                                                                                |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| data_tdata_re_out              | Real component of an output transform sample. For `SSR > 1`, becomes `data_tdata_vect<i>_xn_re_out` per lane.                                                                                                  |
+| data_tdata_im_out              | Imaginary component of an output transform sample. For `SSR > 1`, becomes `data_tdata_vect<i>_xn_im_out` per lane.                                                                                             |
+| data_tdata_xk_index_out        | Sample-index output. Present only when **XK_INDEX** is checked. See the parameter description for ordering semantics.                                                                                          |
+| data_tdata_ovflo_out           | Per-frame overflow flag. Present only when **OVFLO** is checked (and **Scaling Options** is *Scaled*).                                                                                                         |
+| data_tvalid_out                | Asserted while transform output samples are present on the re/im lanes.                                                                                                                                        |
+| data_tlast_out                 | Marks the last sample of an output frame.                                                                                                                                                                      |
+| data_tready_out                | Indicates the core is ready to accept input samples.                                                                                                                                                           |
+| config_tready_out              | Indicates the core has consumed the CONFIG channel word.                                                                                                                                                       |
+
+Event Output Signals (always present):
+
+|                                       |                                                                                                                                            |
+|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| event_frame_started_out               | Pulses high at the start of an output frame.                                                                                               |
+| event_tlast_unexpected_out            | Asserted if an unexpected `tlast` was seen on the input channel.                                                                            |
+| event_tlast_missing_out               | Asserted if `tlast` was not asserted on the expected final sample.                                                                          |
+| event_data_in_channel_halt_out        | Asserted when the input data channel is halted (handshake stall).                                                                          |
+| event_status_channel_halt_out         | Asserted when the status channel is halted.                                                                                                |
+| event_data_out_channel_halt_out       | Asserted when the output data channel is halted by downstream back-pressure.                                                               |
 
 
 ## Parameters
@@ -115,51 +163,63 @@ The transform length can be set through the nfft port if this option is
 selected. Valid settings and the corresponding transform sizes are
 provided in the section titled Transform Size in the associated document
 Fast Fourier Transform LogiCORE IP Product Guide
-([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)).
+([PG109](https://docs.amd.com/r/en-US/pg109-xfft)).
 
 
 ### Advanced tab  
 Parameters specific to the Advanced tab are as follows.
 
-#### Super Sample Rate(SSR) 
-This parameter specifies the number of parallel input and output ports. For an SSR value of 'n' (which must be of the form 2^N, where N is a positive integer).
+#### Super Sample Rate (SSR)
+The number of parallel re/im lane pairs on the data channel. SSR must
+be a power of two (1, 2, 4, 8, 16, 32, or 64). With `SSR = N > 1`,
+the input and output data sub-fields are vectorized into `N` lanes
+(see [AXI Ports](#axi-ports-that-are-unique-to-this-block)).
 
-#### Precision Options  
-##### Phase Factor Width  
+#### Native Floating Point Data Format
+Checkbox (`enable_ssr` in the mask). When enabled, input samples are
+interpreted as pairs of 32-bit IEEE-754 floats and phase factors as
+24- or 25-bit fixed-point numbers. When disabled, samples are
+fixed-point with the precision controlled by the input signal types
+and **Phase Factor Width**.
+
+#### Precision Options
+##### Phase Factor Width
 Choose a value between 8 and 34, inclusive to be used as bit widths for
 phase factors.
 
-#### Scaling Options  
+#### Scaling Options
 Select between Unscaled, Scaled, and Block Floating Point output data
 types.
 
-##### Rounding Modes  
-###### Truncation  
-To be applied at the output of each rank.
+#### Rounding Modes
+Applied at the output of each rank when **Scaling Options** is *Scaled*.
 
-##### Convergent Rounding  
-To be applied at the output of each rank.
+- *Truncation* — drop fractional bits.
+- *Convergent Rounding* — round half to even.
 
-#### Control Signals  
-##### ACLKEN  
-Enables the clock enable (aclken) pin on the core. All registers in the
-core are enabled by this control signal.
+#### Control Signals
+##### ACLKEN
+Enables the clock enable (`aclken_in`) pin on the core. All registers in
+the core are enabled by this control signal.
 
-##### ARESETn  
-Active-low synchronous clear input that always takes priority over
-ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
-the signal is internally registered for performance. A pulse of one
-cycle resets the core, but the response to the pulse is not in the cycle
-immediately following.
+##### ARESETn
+Active-low synchronous clear input (`aresetn_in`) that always takes
+priority over ACLKEN. A minimum ARESETn active pulse of two cycles is
+required, since the signal is internally registered for performance. A
+pulse of one cycle resets the core, but the response to the pulse is
+not in the cycle immediately following.
 
-#### Output Ordering  
-##### Cyclic Prefix Insertion  
+#### Output Ordering
+Choose between Bit/Digit Reversed Order or Natural Order output.
+(Bit-reversed for radix-2 architectures, digit-reversed for radix-4.)
+
+#### Cyclic Prefix Insertion
 Cyclic prefix insertion takes a section of the output of the FFT and
 prefixes it to the beginning of the transform. The resultant output data
 consists of the cyclic prefix (a copy of the end of the output data)
 followed by the complete output data, all in natural order. Cyclic
-prefix insertion is only available when output ordering is Natural
-Order.
+prefix insertion is only available when **Output Ordering** is set to
+*Natural Order*.
 
 When cyclic prefix insertion is used, the length of the cyclic prefix
 can be set frame-by-frame without interrupting frame processing. The
@@ -169,9 +229,6 @@ in the Configuration channel. For example, when N = 1024, the cyclic
 prefix length can be from 0 to 1023 samples, and a CP_LEN value of
 0010010110 produces a cyclic prefix consisting of the last 150 samples
 of the output data.
-
-##### Output ordering  
-Choose between Bit/Digit Reversed Order or Natural Order output.
 
 #### Throttle Schemes  
 Select the tradeoff between performance and data timing requirements.
@@ -269,10 +326,10 @@ consult the core data sheet.
 ## LogiCORE Documentation
 
 Fast Fourier Transform LogiCORE IP Product Guide
-([PG109](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft))
+([PG109](https://docs.amd.com/r/en-US/pg109-xfft))
 
 Floating-Point Operator LogiCORE IP Product Guide
-([PG060](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg060-floating-point&ft:locale=en-US))
+([PG060](https://docs.amd.com/v/u/en-US/pg060-floating-point))
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
