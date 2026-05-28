@@ -130,9 +130,9 @@ The terms "ones(1,X)" in the expression above are just replacements for the data
 
 ***Click on the images below to open each model.***
 
-[![](./Images/DynamicFFT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/DynamicFFT_Ex1)
+[![](./Images/DynamicFFT_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/DynamicFFT_Ex1)
 
-[![](./Images/DynamicFFT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/DynamicFFT_Ex2)
+[![](./Images/DynamicFFT_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/DynamicFFT_Ex2)
 
 ## Related blocks
 [FFT](../FFT/README.md) is another FFT block that uses buffer interface.

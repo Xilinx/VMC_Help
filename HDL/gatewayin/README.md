@@ -74,7 +74,7 @@ least significant bit.
 Vitis Model Composer does not support fixed-point signals with binary point greater than the number of bits. However, you can model such signals by scaling the data before and after the Gateway blocks. Refer to the example linked below.
 </div>
 
-[Fixed-Point Scaling with Fractional Length greater than Word Length](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/FixedPointScaling_Ex1)
+[Fixed-Point Scaling with Fractional Length greater than Word Length](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/FixedPointScaling_Ex1)
 
 #### Floating-point Precision  
 ##### Single  

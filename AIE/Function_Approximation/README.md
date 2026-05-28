@@ -59,7 +59,7 @@ slope[0], offset[0], slope[1], offset[1], ... slope[2^(Coarse bits) - 1], offset
 A single lookup will require `sizeof(Data type) * 2 * 2^(Coarse bits)` bytes of memory. For performance reasons, a duplicate of the lookup is created by the func_approx graph. Configurations for **AIE-ML** or **AIE-MLv2** devices with a data type of `int16` or `bfloat16` will use the AI Engine API for improved parallel lookups. However, this requires an additional duplication within each lookup table. This duplication will be done within the graph but must be accounted for when calculating the memory required for the provided lookup tables. Users must provide the lookup table, without any duplication, in the **Specify LookUp Values** field.
 
 #### Specify LUT Values via input port
-When this option is enabled, the tool allows you to specify LUT values via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port. When multiple LUT ports are exposed, they should receive the same RTP values.
+When this option is enabled, the tool allows you to specify LUT values via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port. When multiple LUT ports are exposed, they should receive the same RTP values.
 
 For AIE-ML and AIE-MLv2 devices with a data type of `int16` or `bfloat16`, the LUT values must be repeated. For AIE-ML every 128 bits must be repeated; for AIE-MLv2 every 256 bits must be repeated.
 
@@ -131,15 +131,15 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Function_Approximation_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex1)
+[![](./Images/Function_Approximation_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Function_Approximation_Ex1)
 
-[![](./Images/Function_Approximation_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex2)
+[![](./Images/Function_Approximation_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Function_Approximation_Ex2)
 
-[![](./Images/Function_Approximation_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex3)
+[![](./Images/Function_Approximation_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Function_Approximation_Ex3)
 
-[![](./Images/Function_Approximation_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex4)
+[![](./Images/Function_Approximation_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Function_Approximation_Ex4)
 
-[![](./Images/Function_Approximation_Ex5.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Function_Approximation_Ex5)
+[![](./Images/Function_Approximation_Ex5.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Function_Approximation_Ex5)
 
 ## References
 This block uses the Vitis DSP library implementation of Function Approximation. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-func-approx.html).

@@ -57,9 +57,9 @@ Possible values are: `cint16`, `int32`, `uint32`, `cint32`, `int64`, `uint64`, `
 `ufix128`, `float`, `cfloat`
 
 ### Examples
-[Tutorial: Connecting AI Engine and HLS Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Tutorials/AIE-PL/AIE_HLS_tutorial/README.md)
+[Tutorial: Connecting AI Engine and HLS Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Tutorials/AIE-PL/AIE_HLS_tutorial/README.md)
 
-You can find more examples [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/AIENGINE_plus_PL/AIE_HLS).
+You can find more examples [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/AIENGINE_plus_PL/AIE_HLS).
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

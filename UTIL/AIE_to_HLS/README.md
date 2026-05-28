@@ -58,13 +58,13 @@ Possible values are: `int8`, `int16`, `int32`, `int64`, `uint8`, `uint16`, `uint
 `cint16`, `cint32`, `float`, `cfloat`, `bfloat16`, `cbfloat16`
 
 ### Examples
-[Tutorial: Connecting AI Engine and HLS Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Tutorials/AIE-PL/AIE_HLS_tutorial/README.md)
+[Tutorial: Connecting AI Engine and HLS Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Tutorials/AIE-PL/AIE_HLS_tutorial/README.md)
 
 [AIE to HLS Kernel with an interface block](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/AIE_HLS_with_interface/README.md)
 
 [AIE to HLS Kernel without an interface block](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/AIE_HLS_without_interface/README.md)
 
-You can find more examples [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/AIENGINE_plus_PL/AIE_HLS).
+You can find more examples [here](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/AIENGINE_plus_PL/AIE_HLS).
 
 
 

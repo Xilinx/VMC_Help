@@ -109,7 +109,7 @@ The propagated block sample time in Simulink is equal to "Sample time" multipled
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Mixer_LUT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Mixer_LUT_Stream_Ex1)
+[![](./Images/Mixer_LUT_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Mixer_LUT_Stream_Ex1)
 
 ## Related blocks
 [Mixer](../Mixer/README.md)

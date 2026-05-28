@@ -27,9 +27,9 @@ Describes the maximum number of sample delay can be applied to the input signal.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Vectorized_Sample_Delay_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Vectorized_Sample_Delay_Ex1)
+[![](./Images/Vectorized_Sample_Delay_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Vectorized_Sample_Delay_Ex1)
 
-[![](./Images/Vectorized_Sample_Delay_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/Vectorized_Sample_Delay_Ex2)
+[![](./Images/Vectorized_Sample_Delay_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Vectorized_Sample_Delay_Ex2)
 
 ## References
 This block uses the Vitis DSP library implementation of Vectorized Sample Delay. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-sample_delay.html).

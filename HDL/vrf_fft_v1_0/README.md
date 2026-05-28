@@ -4,7 +4,7 @@ The Versal RF FFT block simulates the hardened FFT IP block from Versal RF devic
 
 ![](./Images/block.png)
 
-**This block is provided as Early Access functionality in 2025.2 for the purpose of gathering customer feedback. For more information, refer to the [Versal RF Series Tools Early Access Secure Site](https://account.amd.com/en/member/versal-rf-tools-ea.html).**
+**This block is provided as Early Access functionality in 2026.1 for the purpose of gathering customer feedback. For more information, refer to the [Versal RF Series Tools Early Access Secure Site](https://account.amd.com/en/member/versal-rf-tools-ea.html).**
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

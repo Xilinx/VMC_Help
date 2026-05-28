@@ -26,7 +26,7 @@ Set the filter coefficients data type. This parameter's setting may be restricte
 * Filter coefficients data type must be a float type if the Input/Output data type is a float type.
 
 #### Specify filter coefficients via input port
-When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2025.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of input ports
 When this option is enabled, a second stream input can be connected to the FIR, increasing available throughput. When using a second stream input, the data should be organized in a 128-bit interleaved pattern. For example, for a cint16 input samples 0-3 should be sent over the first stream and samples 4-7 should be sent over the second stream.
@@ -104,13 +104,13 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/FIR_Interpolator_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex1)
+[![](./Images/FIR_Interpolator_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex1)
 
-[![](./Images/FIR_InterpolationStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex2)
+[![](./Images/FIR_InterpolationStream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex2)
 
-[![](./Images/FIR_InterpolationStream_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex3)
+[![](./Images/FIR_InterpolationStream_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex3)
 
-[![](./Images/FIR_InterpolationStream_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex4)
+[![](./Images/FIR_InterpolationStream_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/FIR_InterpolationStream_Ex4)
 
 
 ### References

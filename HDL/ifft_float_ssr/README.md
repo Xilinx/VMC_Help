@@ -20,7 +20,7 @@ However, for back-to-back transforms, the valid control input can stay
 high with no gaps.
 
 <div class="noteBox">
-The use of the Vector IFFT Float implementation is recommended in only Verilog design flows for the 2025.2 release.
+The use of the Vector IFFT Float implementation is recommended in only Verilog design flows for the 2026.1 release.
 </div>
 
 ### Data Type Support
@@ -52,7 +52,7 @@ BRAM. Typical values to try are 258, 514, and 1026.
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Vector_IFFT_Float_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/Vector_IFFT_Float_Ex1)
+[![](./Images/Vector_IFFT_Float_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/Vector_IFFT_Float_Ex1)
 
 
 --------------
