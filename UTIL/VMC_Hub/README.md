@@ -160,11 +160,17 @@ Specifies the work directory for performing the actions on this tab.
 
 Provides the ability to pass additional command line options to the AIE Simulator.
 
+#### Specify Simulation timeout (cycles) 
+
+When enabled, it specifies the number of cycles for which AIE simulation runs. This option is useful as a safety mechanism when the amount of input data is finite. If simulation timeout is not enabled, AI Engine simulation can continue indefinitely. The default value is 50000.
+
+#### Specify number of Graph Iterations 
+
+When enabled, it specifies the number of complete executions of the AI Engine graph to simulate. This option is useful when verifying functional correctness in cases where the number of cycles required to complete graph execution is not known in advance.
+
 #### Simulation timeout (cycles)
 
 Specifies the number of cycles for which AIE simulation is run. The default value is 50000.
-
-There is no relation between the Simulink stop time/sample time and the AIE simulation timeout in cycles. If the AIE simulation appears to produce no output, it may be necessary to increase the simulation timeout parameter.
 
 #### Collect profiling statistics and enable 'printf' for debugging
 
@@ -187,6 +193,10 @@ Click to invoke the Vitis Analyzer tool. This option is only enabled after AI En
 #### Target Directory
 
 Specifies the work directory for performing the actions on this tab.
+
+#### Open Vitis IDE
+
+Click to invoke the Vitis IDE tool to view additional information about the generated HLS component. This option is only available after running Analyze on the HLS Kernel.
 
 ### Validate on Hardware
 
