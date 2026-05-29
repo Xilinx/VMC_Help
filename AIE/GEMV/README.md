@@ -31,6 +31,9 @@ Specifies the number of rows (M dimension) in matrix A and the output vector.
 #### Columns in input A, Length of vector B
 Specifies the number of columns in matrix A and the length of vector B (K dimension). This is the reduction dimension in the GEMV operation.
 
+#### Number of frames
+Specifies the number of batches of input data that will be processed per iteration.
+
 #### SSR (Super Sample Rate)
 Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
 

@@ -41,15 +41,6 @@ Specifies the number of parallel data paths processed by the block. Increasing S
 
 When SSR > 1, the input matrices and output are split across multiple ports. The specific data distribution depends on the memory layout (row-major or column-major).
 
-#### Number of cascade stages
-Determines the number of AI Engine kernels the GEMM operation will be divided over in series to improve throughput. Cascading allows for pipelining of the matrix multiplication across multiple tiles.
-
-#### Number of samples in input A
-Specifies the total number of samples in the input window for matrix A. This should equal (Rows in A) × (Columns in A) × (Number of frames).
-
-#### Number of samples in input B
-Specifies the total number of samples in the input window for matrix B. This should equal (Rows in B) × (Columns in B) × (Number of frames).
-
 #### A input leading dimension
 Specifies the memory layout for input matrix A:
 * **Row-major(0):** Matrix elements are stored row by row in memory

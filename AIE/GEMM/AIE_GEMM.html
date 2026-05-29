@@ -93,24 +93,6 @@ computation across multiple AI Engine tiles.</p>
 multiple ports. The specific data distribution depends on the memory
 layout (row-major or column-major).</p>
 </section>
-<section id="number-of-cascade-stages" class="level4">
-<h4>Number of cascade stages</h4>
-<p>Determines the number of AI Engine kernels the GEMM operation will be
-divided over in series to improve throughput. Cascading allows for
-pipelining of the matrix multiplication across multiple tiles.</p>
-</section>
-<section id="number-of-samples-in-input-a" class="level4">
-<h4>Number of samples in input A</h4>
-<p>Specifies the total number of samples in the input window for matrix
-A. This should equal (Rows in A) × (Columns in A) × (Number of
-frames).</p>
-</section>
-<section id="number-of-samples-in-input-b" class="level4">
-<h4>Number of samples in input B</h4>
-<p>Specifies the total number of samples in the input window for matrix
-B. This should equal (Rows in B) × (Columns in B) × (Number of
-frames).</p>
-</section>
 <section id="a-input-leading-dimension" class="level4">
 <h4>A input leading dimension</h4>
 <p>Specifies the memory layout for input matrix A:</p>
