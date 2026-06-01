@@ -27,7 +27,7 @@ Configuration Channel Input Signals:
 Parameters specific to the Filter Specification tab are as follows.
 
 #### Select Data Type
-Specifies the filter coefficient type. Choose between Real and Complex. Complex coefficients are supported only on Versal devices.
+Specifies the filter data and coefficient type. Choose between **Real**, **Complex**, or **Real_Float**. Complex coefficients are supported only on Versal devices.
 
 #### Coefficient Vector  
 Specifies the coefficient vector as a single MATLAB® row vector. The
@@ -50,7 +50,7 @@ This block supports the xlGetReOrderedCoeff function; see Appendix A of the Viti
  
 #### Filter Type  
 
-> **NOTE:** See [Implement Filters using FIR Compiler Block](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Tutorials/HDL_Library/Lab7) to see how to configure the FIR Compiler block as a multi-rate filter.
+> **NOTE:** See [Implement Filters using FIR Compiler Block](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Tutorials/HDL_Library/Lab7) to see how to configure the FIR Compiler block as a multi-rate filter.
 
 * **Single_Rate:** The data rate of the input and the output are the same.
 * **Interpolation:** The data rate of the output is faster than the input by a factor specified by the Interpolation Rate Value.
@@ -111,7 +111,7 @@ port is divided into sub-ports that represent each parallel path.
 
 #### Select format  
 
-> **NOTE:** See [Implement Filters using FIR Compiler Block](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Tutorials/HDL_Library/Lab7) to see how to configure the FIR Compiler block as a multi-rate filter.
+> **NOTE:** See [Implement Filters using FIR Compiler Block](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Tutorials/HDL_Library/Lab7) to see how to configure the FIR Compiler block as a multi-rate filter.
 
 * **Maximum_Possible:** Specifies that oversampling be automatically determined based on the `din` sample rate.
 * **Input_Sample_Period/Output_Sample_Period:**
@@ -419,11 +419,11 @@ Boxes](../../GEN/common-options/README.md).
 
 **Decimation Filter:**
 
-[![](./Images/FIR_Compiler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/FIR_Compiler_Ex1)
+[![](./Images/FIR_Compiler_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/FIR_Compiler_Ex1)
 
 **Interpolation Filter:**
 
-[![](./Images/FIR_Compiler_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2025.2/Examples/Block_Help/HDL/FIR_Compiler_Ex2)
+[![](./Images/FIR_Compiler_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/FIR_Compiler_Ex2)
 
 ## LogiCORE™ Documentation
 

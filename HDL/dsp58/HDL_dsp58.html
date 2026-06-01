@@ -80,46 +80,59 @@ subtracter in the adder/subtracted/logic unit can also be split into two
 </section>
 <section id="mode-of-multiplier" class="level5">
 <h5>Mode of Multiplier</h5>
-<p>This option is disabled in the current release</p>
+<p>The Mode of Multiplier parameter configures how the DSP58 slice uses
+its internal multiplier hardware. It determines type of multiplication
+operation.</p>
+<section id="2724-fixed-point" class="level6">
+<h6>27×24 Fixed-Point</h6>
+<p>Performs a single fixed-point multiplication. Multiplies 27-bit input
+× 24-bit input.</p>
 </section>
-<section id="do-not-use-multiplier" class="level5">
-<h5>Do not use multiplier</h5>
+<section id="98-3-element-dot-product" class="level6">
+<h6>9×8, 3-Element Dot Product</h6>
+<p>Splits the multiplier into three smaller parallel multipliers and
+performs (A1 × B1) + (A2 × B2) + (A3 × B3). Each multiply is 9-bit ×
+8-bit. Computes a 3-element dot product in one cycle.</p>
+</section>
+<section id="do-not-use-multiplier" class="level6">
+<h6>Do not use multiplier</h6>
 <p>When this is selected, the DSP58 block is optimized in hardware for
 maximum performance without using the multiplier. If an instruction
 using the multiplier is encountered in simulation, an error is
 reported.</p>
 </section>
-<section id="use-dynamic-multiplier-mode" class="level5">
-<h5>Use dynamic multiplier mode</h5>
+<section id="use-dynamic-multiplier-mode" class="level6">
+<h6>Use dynamic multiplier mode</h6>
 <p>When this is selected, it instructs the DSP58 block to use the
 dynamic multiplier mode. This indicates that the block is switching
 between A*B and A:B operations on the fly, and therefore needs to get
 the worst-case timing of the two paths.</p>
 </section>
 </section>
-<section id="preadder-configuration" class="level4">
-<h4>Preadder Configuration</h4>
+<section id="preadder-configuration" class="level5">
+<h5>Preadder Configuration</h5>
 <p>Use the 27-bit D data input to the pre-adder or alternative input to
 the multiplier. The pre-adder implements D + A as determined by the
 INMODE3 signal.</p>
-<section id="preaddinsel-select-preadder-input" class="level5">
-<h5>PREADDINSEL Select preadder input</h5>
+<section id="preaddinsel-select-preadder-input" class="level6">
+<h6>PREADDINSEL Select preadder input</h6>
 <p>Selects the input to be added with D in the pre-adder.</p>
 </section>
-<section id="amultsel-select-a-multiplexer-output" class="level5">
-<h5>AMULTSEL Select A multiplexer output</h5>
+<section id="amultsel-select-a-multiplexer-output" class="level6">
+<h6>AMULTSEL Select A multiplexer output</h6>
 <p>Selects the input to the 27-bit A input of the multiplier. In the 7
 series primitive, DSP48E1 the attribute is called USE_DPORT, but has
 been renamed due to new pre-adder flexibility enhancements (default
 AMULTSEL = A is equivalent to USE_DPORT=FALSE).</p>
 </section>
-<section id="bmultsel-select-b-multiplexer-output" class="level5">
-<h5>BMULTSEL Select B multiplexer output</h5>
+<section id="bmultsel-select-b-multiplexer-output" class="level6">
+<h6>BMULTSEL Select B multiplexer output</h6>
 <p>Selects the input to the 18-bit B input of the multiplier.</p>
 </section>
-<section id="enable-d-port" class="level5">
-<h5>Enable D Port</h5>
+<section id="enable-d-port" class="level6">
+<h6>Enable D Port</h6>
 <p>Automatically enabled when AD is selected.</p>
+</section>
 </section>
 </section>
 <section id="pattern-detection" class="level4">
