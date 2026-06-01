@@ -106,6 +106,14 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 [![](./Images/GEMM_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMM_Ex2)
 
+**16×16 · 16×16 int16 GEMM with manually-tiled input (block tiling disabled, column-major):**
+
+[![](./Images/GEMM_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMM_Ex3)
+
+**32×16 · 16×8 cint16 GEMM with block-managed tiling (A/B Tiling and Output Detiling enabled, column-major):**
+
+[![](./Images/GEMM_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/GEMM_Ex4)
+
 ## References
 This block uses the Vitis DSP library implementation of GEMM. For more details on this implementation please click [here](https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-gemm.html).
 
