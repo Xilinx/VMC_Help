@@ -48,37 +48,43 @@ subtracter in the adder/subtracted/logic unit can also be split into two
 24-bit units or four 12-bit units.
 
 ##### Mode of Multiplier  
-This option is disabled in the current release
+The Mode of Multiplier parameter configures how the DSP58 slice uses its internal multiplier hardware. It determines type of multiplication operation.
 
-##### Do not use multiplier  
+###### 27×24 Fixed-Point
+Performs a single fixed-point multiplication. Multiplies 27-bit input × 24-bit input.
+
+###### 9×8, 3-Element Dot Product
+Splits the multiplier into three smaller parallel multipliers and performs (A1 × B1) + (A2 × B2) + (A3 × B3). Each multiply is 9-bit × 8-bit. Computes a 3-element dot product in one cycle.
+
+###### Do not use multiplier  
 When this is selected, the DSP58 block is optimized in hardware for
 maximum performance without using the multiplier. If an instruction
 using the multiplier is encountered in simulation, an error is reported.
 
-##### Use dynamic multiplier mode  
+###### Use dynamic multiplier mode  
 When this is selected, it instructs the DSP58 block to use the dynamic
 multiplier mode. This indicates that the block is switching between A\*B
 and A:B operations on the fly, and therefore needs to get the worst-case
 timing of the two paths.
 
-#### Preadder Configuration  
+##### Preadder Configuration  
 Use the 27-bit D data input to the pre-adder or alternative input to the
 multiplier. The pre-adder implements D + A as determined by the INMODE3
 signal.
 
-##### PREADDINSEL Select preadder input  
+###### PREADDINSEL Select preadder input  
 Selects the input to be added with D in the pre-adder.
 
-##### AMULTSEL Select A multiplexer output  
+###### AMULTSEL Select A multiplexer output  
 Selects the input to the 27-bit A input of the multiplier. In the 7
 series primitive, DSP48E1 the attribute is called USE_DPORT, but has
 been renamed due to new pre-adder flexibility enhancements (default
 AMULTSEL = A is equivalent to USE_DPORT=FALSE).
 
-##### BMULTSEL Select B multiplexer output  
+###### BMULTSEL Select B multiplexer output  
 Selects the input to the 18-bit B input of the multiplier.
 
-##### Enable D Port  
+###### Enable D Port  
 Automatically enabled when AD is selected.
 
 #### Pattern Detection  

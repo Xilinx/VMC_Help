@@ -67,6 +67,13 @@ for an explanation of the bits in this field.</td>
 <h3>Filter Specification tab</h3>
 <p>Parameters specific to the Filter Specification tab are as
 follows.</p>
+<section id="select-data-type" class="level4">
+<h4>Select Data Type</h4>
+<p>Specifies the filter data and coefficient type. Choose between
+<strong>Real</strong>, <strong>Complex</strong>, or
+<strong>Real_Float</strong>. Complex coefficients are supported only on
+Versal devices.</p>
+</section>
 <section id="coefficient-vector" class="level4">
 <h4>Coefficient Vector</h4>
 <p>Specifies the coefficient vector as a single MATLAB® row vector. The
@@ -516,6 +523,18 @@ ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
 the pulse is not in the cycle immediately following.</p>
+</section>
+<section id="blank-output" class="level4">
+<h4>Blank Output</h4>
+<p>When enabled, forces the FIR output to blank during coefficient
+reload events to avoid transient artifacts.</p>
+<p><strong>Note</strong>: Blank Output can only be enabled when Reset
+Data Vector is disabled</p>
+</section>
+<section id="reset-coefficient-vector" class="level4">
+<h4>Reset Coefficient Vector</h4>
+<p>When enabled, the internal coefficient vector is reset during
+coefficient reload operations.</p>
 </section>
 </section>
 <section id="advanced-tab" class="level3">

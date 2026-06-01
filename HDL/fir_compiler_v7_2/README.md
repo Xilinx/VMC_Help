@@ -23,9 +23,11 @@ Configuration Channel Input Signals:
 
 ## Parameters
 
-
 ### Filter Specification tab  
 Parameters specific to the Filter Specification tab are as follows.
+
+#### Select Data Type
+Specifies the filter data and coefficient type. Choose between **Real**, **Complex**, or **Real_Float**. Complex coefficients are supported only on Versal devices.
 
 #### Coefficient Vector  
 Specifies the coefficient vector as a single MATLAB® row vector. The
@@ -392,6 +394,14 @@ ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
 the pulse is not in the cycle immediately following.
+
+#### Blank Output
+When enabled, forces the FIR output to blank during coefficient reload events to avoid transient artifacts.
+
+**Note**: Blank Output can only be enabled when Reset Data Vector is disabled
+
+#### Reset Coefficient Vector
+When enabled, the internal coefficient vector is reset during coefficient reload operations.
 
 ### Advanced tab  
 #### Block Icon Display  
