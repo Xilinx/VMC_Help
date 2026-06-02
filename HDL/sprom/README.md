@@ -43,13 +43,13 @@ implemented as follows when the design is compiled:
   Distributed Memory Generator v8.0 LogiCORE IP will be inferred or
   implemented when the design is compiled. This is described in
   Distributed Memory Generator LogiCORE IP Product Guide
-  ([PG063](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=dist_mem_gen;v=latest;d=pg063-dist-mem-gen.pdf)).
+  ([PG063](https://docs.amd.com/v/u/en-US/pg063-dist-mem-gen)).
 - If the block will be implemented in block RAM, the XPM_MEMORY_SPROM
   (Single Port ROM) macro will be inferred or implemented when the
   design is compiled. For information on the XPM_MEMORY_SPROM Xilinx
   Parameterized Macro (XPM), refer to UltraScale Architecture Libraries
   Guide
-  ([UG974](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug974-vivado-ultrascale-libraries)).
+  ([UG974](https://docs.amd.com/r/en-US/ug974-vivado-ultrascale-libraries)).
 
 #### Optional Ports  
 ##### Provide reset port for output register  
@@ -112,7 +112,7 @@ Distributed Memory Generator LogiCORE IP Product Guide
 ([PG063](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg063-dist-mem-gen&ft:locale=en-US))
 
 UltraScale Architecture Memory Resources User Guide
-([UG573](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf)) -
+([UG573](https://docs.amd.com/r/en-US/ug573-ultrascale-memory-resources)) -
 XPM_MEMORY_SPROM Macro (UltraRAM)
 
 

@@ -96,7 +96,7 @@ file.
 
 For details, please consult the Configuration Swapping section of the
 Interleaver/De-Interleaver LogiCORE IP Product Guide
-([PG049](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=sid;v=latest;d=pg049-sid.pdf)).
+([PG049](https://docs.amd.com/v/u/en-US/pg049-sid)).
 
 ### Rectangular Block Operation
 

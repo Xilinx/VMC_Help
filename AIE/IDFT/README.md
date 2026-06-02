@@ -90,7 +90,7 @@ When computing a IDFT size that does not follow these rules, it is necessary to 
 1. Zero-pad each input frame so that its size is one of the bit multiples described above. When zero-padding, there will be no impact on the final numerical result of the transform.
 2. Buffer each input frame so that its size is one of the bit multiples described above. When not zero-padding, it is necessary to remove invalid samples from the output.
 
-[This example]((https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/DFT_Ex5)) illustrates the second approach.
+[This example](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/DFT_Ex5) illustrates the second approach.
 
 
 

@@ -15,7 +15,7 @@ AI Engine/Tools
 
 The To Fixed Size block takes a variable size vector as an input and
 produces a fixed size vector as an output. The block copies samples from
-the input to the output. To learn more about variable size signals click [here](../../GEN/variable_size_signal/README.md).
+the input to the output. To learn more about variable size signals click [here](../../GEN/variable-size-signal/README.md).
 
 This block is needed since some Simulink blocks do not accept Variable Size Signals. Use this block when you need to connect a variable size signal (for example the output of AI Engine blocks or the output of HLS Kernel block) to a
 block that does not accept a variable size signal.

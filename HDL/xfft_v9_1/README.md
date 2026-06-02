@@ -98,7 +98,7 @@ The transform length can be set through the nfft port if this option is
 selected. Valid settings and the corresponding transform sizes are
 provided in the section titled Transform Size in the associated document
 Fast Fourier Transform LogiCORE IP Product Guide
-([PG109](https://www.xilinx.com/cgi-bin/docs/ipdoc?c=xfft;v=latest;d=pg109-xfft.pdf)).
+([PG109](https://docs.amd.com/r/en-US/pg109-xfft)).
 
 
 ### Advanced tab  

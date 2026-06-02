@@ -162,7 +162,7 @@ Distributed Memory Generator LogiCORE IP Product Guide
 (Distributed Memory)
 
 UltraScale Architecture Memory Resources User Guide
-([UG573](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug573-ultrascale-memory-resources.pdf)) -
+([UG573](https://docs.amd.com/r/en-US/ug573-ultrascale-memory-resources)) -
 XPM_MEMORY_SDPRAM Macro (UltraRAM)
 
 --------------

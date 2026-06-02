@@ -102,7 +102,7 @@ Signed fixed point and floating point data types are supported.
 
 For floating point input, either scaled or unscaled data can be selected
 in the Inverse FFT block parameters. In the [Fast Fourier Transform
-9.1](fastfouriertransform91.html) block, the floating point data type is
+9.1](../xfft_v9_1/README.md) block, the floating point data type is
 accepted only when the scaled configuration is selected by the user.
 
 ## Handling Overflow for Scaled Configuration

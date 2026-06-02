@@ -54,13 +54,13 @@ Position of the binary point in the fixed-point output.
 #### Quantization  
 Refer to the Overflow and Quantization section in the [Common Options in
 Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html)
+Boxes](../../GEN/common-options/README.md)
 topic.
 
 #### Overflow  
 Refer to the Overflow and Quantization section inthe [Common Options in
 Block Parameter Dialog
-Boxes](common-options-in-block-parameter-dialog-boxes-aa1032308.html)
+Boxes](../../GEN/common-options/README.md)
 topic.
 
 #### Super Sample Rate (SSR)
