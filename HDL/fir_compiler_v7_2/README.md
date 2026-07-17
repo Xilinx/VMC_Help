@@ -105,7 +105,7 @@ Specifies the number of parallel data paths the filter is to process. As
 shown below, when more than one path is specified, the data_tdata input
 port is divided into sub-ports that represent each parallel path.  
 
-![](./Images/qfl1538085406107.png)
+![](./Images/Multi-path.png)
 
 
 
