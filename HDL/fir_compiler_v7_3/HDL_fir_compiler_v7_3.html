@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="manual-from-readme" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FIR Compiler 7.3</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body {font-family: arial, helvetica, sans-serif;font-size: 10pt;font-weight: normal;}#title-block-header {display:none;}.level1{margin-left: 0px;}.level2{margin-left: 0px;}.level3{margin-left: 15px;}.level4{margin-left: 15px;}h4 {color:#c06838;}.level5{margin-left: 15px;}.level6{margin-left: 15px;}table {border-spacing: 2px;display: block;font-size: 14px;overflow: auto;width: 100%;margin-bottom: 16px;border-spacing: 0;border-collapse: collapse;}td {padding: 6px 13px;border: 1px solid #dfe2e5;}th {font-weight: 600;padding: 6px 13px;border: 1px solid #dfe2e5;}tr {background-color: #fff;border-top: 1px solid #c6cbd1;}table tr:nth-child(2n) {background-color: #f6f8fa;}.noteBox::before{content: "NOTE:";font-weight: bold;font-size: 11pt;color: #0096C7;}.noteBox{border: 2px solid;border-radius: 5px;padding: 10px;margin: 10px 0;width: 80%;border-color: #0096C7;background-color: rgba(0, 150, 199, 0.1);}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">FIR Compiler 7.3</h1>
+</header>
+<section id="fir-compiler-7-3" class="level1">
+<h1>FIR Compiler 7.3</h1>
+<p><img role="img" src="./Images/block.png" alt="block" /></p>
+<section id="description" class="level2">
+<h2>Description</h2>
+<p>The FIR Compiler block provides users with a way to generate highly parameterizable, area-efficient, high-performance FIR filters with an AXI4-Stream-compliant interface.</p>
+<section id="axi-ports-that-are-unique-to-this-block" class="level3">
+<h3>AXI Ports that are Unique to this Block</h3>
+<p>This block exposes the AXI CONFIG channel as a group of separate ports based on sub-field names. The sub-field ports are described as follows:</p>
+<p>Configuration Channel Input Signals:</p>
+<table>
+<thead>
+<tr>
+<th>Input Signal</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config_tdata_fsel</td>
+<td>A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>) for an explanation of the bits in this field.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="parameters" class="level2">
+<h2>Parameters</h2>
+<section id="filter-specification-tab" class="level3">
+<h3>Filter Specification tab</h3>
+<p>Parameters specific to the Filter Specification tab are as follows.</p>
+<section id="select-data-type" class="level4">
+<h4>Select Data Type</h4>
+<p>Specifies the filter data and coefficient type. Choose between <strong>Real</strong>, <strong>Complex</strong>, or <strong>Real_Float</strong>. Complex coefficients are supported only on Versal devices.</p>
+</section>
+<section id="coefficient-vector" class="level4">
+<h4>Coefficient Vector</h4>
+<p>Specifies the coefficient vector as a single MATLAB row vector. The number of taps is inferred from the length of the MATLAB row vector. If multiple coefficient sets are specified, then each set is appended to the previous set in the vector. It is possible to enter these coefficients using the <a href="../../UTIL/Xilinx_FDATool_Interface_Block/README.md">FDATool</a> block as well.</p>
+</section>
+<section id="number-of-coefficients-sets" class="level4">
+<h4>Number of Coefficients Sets</h4>
+<p>The number of sets of filter coefficients to be implemented. The value specified must divide without remainder into the number of coefficients.</p>
+</section>
+<section id="use-reloadable-coefficients" class="level4">
+<h4>Use Reloadable Coefficients</h4>
+<p>Check to add the coefficient reload ports to the block. The set of data loaded into the reload channel will not take action until triggered by a re-configuration synchronization event. Refer to the FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>) for a more detailed explanation of the RELOAD Channel interface timing. This block supports the xlGetReOrderedCoeff function; see Appendix A of the Vitis Model Composer User Guide (UG1483) for examples of how to use this function.</p>
+</section>
+<section id="filter-type" class="level4">
+<h4>Filter Type</h4>
+<div class="noteBox">See <a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Tutorials/HDL_Library/Lab7">Implement Filters using FIR Compiler Block</a> to see how to configure the FIR Compiler block as a multi-rate filter.</div>
+<ul>
+<li><strong>Single_Rate:</strong> The data rate of the input and the output are the same.</li>
+<li><strong>Interpolation:</strong> The data rate of the output is faster than the input by a factor specified by the Interpolation Rate Value.</li>
+<li><strong>Decimation:</strong> The data rate of the output is slower than the input by a factor specified in the Decimation Rate Value.</li>
+<li><strong>Hilbert:</strong> Filter uses the Hilbert Transform.</li>
+<li><strong>Interpolated:</strong> An interpolated FIR filter has a similar architecture to a conventional FIR filter, but with the unit delay operator replaced by k-1 units of delay. k is referred to as the zero-packing factor. The interpolated FIR should not be confused with an interpolation filter. Interpolated filters are single-rate systems employed to produce efficient realizations of narrow-band filters and, with some minor enhancements, wide-band filters can be accommodated. The data rate of the input and the output are the same.</li>
+</ul>
+</section>
+<section id="rate-change-type" class="level4">
+<h4>Rate Change Type</h4>
+<p>This field is applicable to Interpolation and Decimation filter types. Used to specify an Integer or Fixed_Fractional rate change.</p>
+</section>
+<section id="interpolation-rate-value" class="level4">
+<h4>Interpolation Rate Value</h4>
+<p>This field is applicable to all Interpolation filter types and Decimation filter types for Fractional Rate Change implementations. The value provided in this field defines the up-sampling factor, or P for Fixed Fractional Rate (P/Q) resampling filter implementations.</p>
+</section>
+<section id="decimation-rate-value" class="level4">
+<h4>Decimation Rate Value</h4>
+<p>This field is applicable to all Decimation and Interpolation filter types for Fractional Rate Change implementations. The value provided in this field defines the down-sampling factor, or Q for Fixed Fractional Rate (P/Q) resampling filter implementations.</p>
+</section>
+</section>
+<section id="channel-specification-tab" class="level3">
+<h3>Channel Specification tab</h3>
+<p>Parameters specific to the Channel Specification tab are as follows.</p>
+<section id="channel-sequence" class="level4">
+<h4>Channel Sequence</h4>
+<p>Select Basic or Advanced. See the FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>) for an explanation of the advanced channel specification feature.</p>
+</section>
+<section id="number-of-channels" class="level4">
+<h4>Number of Channels</h4>
+<p>The number of data channels to be processed by the FIR Compiler block. The multiple channel data is passed to the core in a time-multiplexed manner. A maximum of 64 channels is supported.</p>
+</section>
+<section id="sequence-id-list" class="level4">
+<h4>Sequence ID List</h4>
+<p>A comma delimited list that specifies which channel sequences are implemented.</p>
+</section>
+<section id="number-of-paths" class="level4">
+<h4>Number of Paths</h4>
+<p>Specifies the number of parallel data paths the filter is to process. As shown below, when more than one path is specified, the data_tdata input port is divided into sub-ports that represent each parallel path.</p>
+<p><img role="img" src="./Images/Multi-path.png" alt="Multi-path" /></p>
+</section>
+<section id="select-format" class="level4">
+<h4>Select format</h4>
+<div class="noteBox">See <a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Tutorials/HDL_Library/Lab7">Implement Filters using FIR Compiler Block</a> to see how to configure the FIR Compiler block as a multi-rate filter.</div>
+<ul>
+<li><strong>Maximum_Possible:</strong> Specifies that oversampling be automatically determined based on the <code>din</code> sample rate.</li>
+<li><strong>Input_Sample_Period/Output_Sample_Period:</strong> Activates the Sample period. Enter the Sample Period specification. Selecting this option exposes the <code>s_axis_data_tvalid</code> port (called ND port on earlier versions of the core). With this port exposed, no input handshake abstraction and no rate-propagation takes place.</li>
+<li><strong>Hardware Oversampling Rate:</strong> Activates the Hardware Oversampling Rate. The hardware oversampling rate determines the degree of parallelism. A rate of one produces a fully parallel filter. A rate of n (respectively, n+1) for an n-bit input signal produces a fully serial implementation for a non-symmetric (respectively, symmetric) impulse response. Intermediate values produce implementations with intermediate levels of parallelism.</li>
+</ul>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows.</p>
+<section id="coefficient-type" class="level4">
+<h4>Coefficient Type</h4>
+<p>Specify Signed or Unsigned.</p>
+</section>
+<section id="quantization" class="level4">
+<h4>Quantization</h4>
+<p>Specifies the quantization method to be used for quantizing the coefficients. This can be set to one of the following:</p>
+<ul>
+<li>Integer_Coefficients</li>
+<li>Quantize_Only</li>
+<li>Maximize_Dynamic_Range</li>
+<li>Normalize_to_Centre_Coefficient</li>
+</ul>
+</section>
+<section id="coefficient-width" class="level4">
+<h4>Coefficient Width</h4>
+<p>Specifies the number of bits used to represent the coefficients.</p>
+</section>
+<section id="best-precision-fractional-bits" class="level4">
+<h4>Best Precision Fractional Bits</h4>
+<p>When selected, the coefficient fractional width is automatically set to maximize the precision of the specified filter coefficients.</p>
+</section>
+<section id="coefficient-fractional-bits" class="level4">
+<h4>Coefficient Fractional Bits</h4>
+<p>Specifies the binary point location in the coefficients datapath options.</p>
+</section>
+<section id="coefficients-structure" class="level4">
+<h4>Coefficients Structure</h4>
+<p>Specifies the coefficient structure. Depending on the coefficient structure, optimizations are made in the core to reduce the amount of hardware required to implement a particular filter configuration. The selected structure can be any of the following:</p>
+<ul>
+<li>Inferred</li>
+<li>Non-Symmetric</li>
+<li>Symmetric</li>
+<li>Negative_Symmetric</li>
+<li>Half_Band</li>
+<li>Hilbert</li>
+</ul>
+<p>The vector of coefficients specified must match the structure specified unless Inferred from coefficients is selected, in which case the structure is determined automatically from these coefficients.</p>
+</section>
+<section id="output-rounding-mode" class="level4">
+<h4>Output Rounding Mode</h4>
+<p>Choose one of the following:</p>
+<ul>
+<li>Full_Precision</li>
+<li>Truncate_LSBs</li>
+<li>Non_Symmetric_Rounding_Down</li>
+<li>Non_Symmetric_Rounding_Up</li>
+<li>Symmetric_Rounding_to_Zero</li>
+<li>Symmetric_Rounding_to_Infinity</li>
+<li>Convergent_Rounding_to_Even</li>
+<li>Convergent_Rounding_to_Odd</li>
+</ul>
+</section>
+<section id="output-width" class="level4">
+<h4>Output Width</h4>
+<p>Specify the output width. Edit box activated only if the Rounding mode is set to a value other than Full_Precision.</p>
+</section>
+</section>
+<section id="detailed-implementation-tab" class="level3">
+<h3>Detailed Implementation tab</h3>
+<p>Parameters specific to the Detailed Implementation tab are as follows.</p>
+<section id="filter-architecture" class="level4">
+<h4>Filter Architecture</h4>
+<p>The following two filter architectures are supported:</p>
+<ul>
+<li>Systolic_Multiply_Accumulate</li>
+<li>Transpose_Multiply_Accumulate</li>
+</ul>
+<p><strong>Note</strong>: When selecting the Transpose Multiply-Accumulate architecture, these limitations apply:</p>
+<ul>
+<li>Symmetry is not exploited. If the Coefficient Vector specified on the Filter Specification tab is detected as symmetric, the FIR Compiler 7.3 block parameters dialog box will not allow you to select Transpose Multiply Accumulate.</li>
+<li>Multiple interleaved channels are not supported.</li>
+</ul>
+</section>
+<section id="optimization-options" class="level4">
+<h4>Optimization Options</h4>
+<p>Specifies if the core is required to operate at maximum possible speed ("Speed" option) or minimum area ("Area" option). The "Area" option is the recommended default and will normally achieve the best speed and area for the design, however in certain configurations, the "Speed" setting might be required to improve performance at the expense of overall resource usage (this setting normally adds pipeline registers in critical paths).</p>
+</section>
+<section id="goal" class="level4">
+<h4>Goal</h4>
+<ul>
+<li>Area</li>
+<li>Speed</li>
+<li>Custom</li>
+</ul>
+</section>
+<section id="list" class="level4">
+<h4>List</h4>
+<p>A comma delimited list that specifies which optimizations are implemented by the block. The optimizations are as follows.</p>
+<section id="data-path-fanout" class="level5">
+<h5>Data_Path_Fanout</h5>
+<p>Adds additional pipeline registers on the data memory outputs to minimize fan-out. Useful when implementing large data width filters requiring multiple DSP slices per multiply-add unit.</p>
+</section>
+<section id="pre-adder-pipeline" class="level5">
+<h5>Pre-Adder_Pipeline</h5>
+<p>Pipelines the pre-adder when implemented using fabric resources. This may occur when a large coefficient width is specified.</p>
+</section>
+<section id="coefficient-fanout" class="level5">
+<h5>Coefficient_Fanout</h5>
+<p>Adds additional pipeline registers on the coefficient memory outputs to minimize fan-out. Useful for parallel channels or large coefficient width filters requiring multiple DSP slices per multiply-add unit.</p>
+</section>
+<section id="control-path-fanout" class="level5">
+<h5>Control_Path_Fanout</h5>
+<p>Adds additional pipeline registers to control logic when parallel channels have been specified.</p>
+</section>
+<section id="control-column-fanout" class="level5">
+<h5>Control_Column_Fanout</h5>
+<p>Adds additional pipeline registers to control logic when multiple DSP columns are required to implement the filter.</p>
+</section>
+<section id="control-broadcast-fanout" class="level5">
+<h5>Control_Broadcast_Fanout</h5>
+<p>Adds additional pipeline registers to control logic for fully parallel (one clock cycle per channel per input sample) symmetric filter implementations.</p>
+</section>
+<section id="control-lut-pipeline" class="level5">
+<h5>Control_LUT_Pipeline</h5>
+<p>Pipelines the Look-up tables required to implement the control logic for advanced channel sequences.</p>
+</section>
+<section id="no-bram-read-first-mode" class="level5">
+<h5>No_BRAM_Read_First_Mode</h5>
+<p>Specifies that Block RAM READ-FIRST mode should not be used.</p>
+</section>
+<section id="increased-speed" class="level5">
+<h5>Increased speed</h5>
+<p>Multiple DSP slice columns are required for non-symmetric filter implementations.</p>
+</section>
+<section id="other" class="level5">
+<h5>Other</h5>
+<p>Miscellaneous optimizations.</p>
+<p><strong>Note</strong>: All optimizations may be specified but are only implemented when relevant to the core configuration.</p>
+</section>
+</section>
+<section id="memory-options" class="level4">
+<h4>Memory Options</h4>
+<p>The memory type for MAC implementations can either be user-selected or chosen automatically to suit the best implementation options. Note that a choice of "Distributed" might result in a shift register implementation where appropriate to the filter structure. Forcing the RAM selection to be either Block or Distributed should be used with caution, as inappropriate use can lead to inefficient resource usage. The default Automatic mode is recommended for most applications.</p>
+</section>
+<section id="data-buffer-type" class="level4">
+<h4>Data Buffer Type</h4>
+<p>Specifies the type of memory used to store data samples.</p>
+</section>
+<section id="coefficient-buffer-type" class="level4">
+<h4>Coefficient Buffer Type</h4>
+<p>Specifies the type of memory used to store the coefficients.</p>
+</section>
+<section id="input-buffer-type" class="level4">
+<h4>Input Buffer Type</h4>
+<p>Specifies the type of memory to be used to implement the data input buffer, where present.</p>
+</section>
+<section id="output-buffer-type" class="level4">
+<h4>Output Buffer type</h4>
+<p>Specifies the type of memory to be used to implement the data output buffer, where present.</p>
+</section>
+<section id="preference-for-other-storage" class="level4">
+<h4>Preference for other storage</h4>
+<p>Specifies the type of memory to be used to implement general storage in the datapath.</p>
+</section>
+<section id="multi-column-support" class="level4">
+<h4>Multi-Column Support</h4>
+<p>For device families with DSP slices, implementations of large high speed filters might require chaining of DSP slice elements across multiple columns. Where applicable (the feature is only enabled for multi-column devices), you can select the method of folding the filter structure across the multiple-columns, which can be Automatic (based on the selected device for the project) or Custom (you select the length of the first and subsequent columns).</p>
+</section>
+<section id="column-configuration" class="level4">
+<h4>Column Configuration</h4>
+<p>Specifies the individual column lengths in a comma delimited list. See the data sheet for a more detailed explanation.</p>
+</section>
+<section id="inter-column-pipe-length" class="level4">
+<h4>Inter-Column Pipe Length</h4>
+<p>Pipeline stages are required to connect between the columns, with the level of pipelining required depending on the required system clock rate, the chosen device and other system-level parameters. The choice of this parameter is always left for you to specify.</p>
+</section>
+</section>
+<section id="interface-tab" class="level3">
+<h3>Interface tab</h3>
+<section id="tlast" class="level4">
+<h4>TLAST</h4>
+<p>TLAST can either be Not_Required, in which case the block will not have the port, or Vector_Framing, where TLAST is expected to denote the last sample of an interleaved cycle of data channels, or Packet_Framing, where the block does not interpret TLAST, but passes the signal to the output DATA channel TLAST with the same latency as the datapath.</p>
+</section>
+<section id="output-tready" class="level4">
+<h4>Output TREADY</h4>
+<p>This field enables the data_tready port. With this port enabled, the block will support back-pressure. Without the port, back-pressure is not supported, but resources are saved and performance is likely to be higher.</p>
+</section>
+<section id="input-fifo" class="level4">
+<h4>Input FIFO</h4>
+<p>Selects a FIFO interface for the S_AXIS_DATA channel. When the FIFO has been selected, data can be transferred in a continuous burst up to the size of the FIFO (default 16) or, if greater, the number of interleaved data channels. The FIFO requires additional FPGA logic resources.</p>
+</section>
+<section id="input-output" class="level4">
+<h4>Input/Output</h4>
+<p>Select one of the following options for the Input and the Output.</p>
+<section id="not-required" class="level5">
+<h5>Not_Required</h5>
+<p>Neither of the uses is required; the channel in question will not have a TUSER field.</p>
+</section>
+<section id="user-field" class="level5">
+<h5>User_Field</h5>
+<p>In this mode, the block ignores the content of the TUSER field, but passes the content untouched from the input channel to the output channels.</p>
+</section>
+<section id="chan-id-field" class="level5">
+<h5>Chan_ID_Field</h5>
+<p>In this mode, the TUSER field identifies the time-division-multiplexed channel for the transfer.</p>
+</section>
+<section id="user-and-chan-id-field" class="level5">
+<h5>User and Chan_ID_Field</h5>
+<p>In this mode, the TUSER field will have both a user field and a chan_id field, with the chan_id field in the least significant bits. The minimal number of bits required to describe the channel will determine the width of the chan_id field, for example 7 channels will require 3 bits.</p>
+</section>
+</section>
+<section id="synchronization-mode" class="level4">
+<h4>Synchronization Mode</h4>
+<section id="on-vector" class="level5">
+<h5>On_Vector</h5>
+<p>Configuration packets, when available, are consumed and their contents applied when the first sample of an interleaved data channel sequence is processed by the block. When the block is configured to process a single data channel, configuration packets are consumed every processing cycle of the block.</p>
+</section>
+<section id="on-packet" class="level5">
+<h5>On_Packet</h5>
+<p>Further qualifies the consumption of configuration packets. Packets will only be consumed once the block has received a transaction on the s_axis_data channel where s_axis_data_tlast has been asserted.</p>
+</section>
+</section>
+<section id="configuration-method" class="level4">
+<h4>Configuration Method</h4>
+<section id="single" class="level5">
+<h5>Single</h5>
+<p>A single coefficient set is used to process all interleaved data channels.</p>
+</section>
+<section id="by-channel" class="level5">
+<h5>By_Channel</h5>
+<p>A unique coefficient set is specified for each interleaved data channel.</p>
+</section>
+</section>
+<section id="reload-slots" class="level4">
+<h4>Reload Slots</h4>
+<p>Specifies the number of coefficient sets that can be loaded in advance. Reloaded coefficients are only applied to the block once the configuration packet has been consumed (Range 1 to 256).</p>
+</section>
+<section id="aclken" class="level4">
+<h4>ACLKEN</h4>
+<p>Active-high clock enable. Available for MAC-based FIR implementations.</p>
+</section>
+<section id="aresetn-active-low" class="level4">
+<h4>ARESETn (active low)</h4>
+<p>Active-low synchronous clear input that always takes priority over ACLKEN. A minimum ARESETn active pulse of two cycles is required, since the signal is internally registered for performance. A pulse of one cycle resets the control and datapath of the core, but the response to the pulse is not in the cycle immediately following.</p>
+</section>
+<section id="blank-output" class="level4">
+<h4>Blank Output</h4>
+<p>When enabled, forces the FIR output to blank during coefficient reload events to avoid transient artifacts.</p>
+<p><strong>Note</strong>: Blank Output can only be enabled when Reset Data Vector is disabled.</p>
+</section>
+<section id="reset-coefficient-vector" class="level4">
+<h4>Reset Coefficient Vector</h4>
+<p>When enabled, the internal coefficient vector is reset during coefficient reload operations.</p>
+</section>
+</section>
+<section id="advanced-tab" class="level3">
+<h3>Advanced tab</h3>
+<section id="block-icon-display" class="level4">
+<h4>Block Icon Display</h4>
+<section id="display-shortened-port-names" class="level5">
+<h5>Display shortened port names</h5>
+<p>On by default. When unchecked, data_tvalid, for example, becomes m_axis_data_tvalid.</p>
+</section>
+</section>
+<p>Other parameters used by this block are explained in the topic <a href="../../GEN/common-options/README.md">Common Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<p><em><strong>Click on the images below to open each model.</strong></em></p>
+<p><strong>Decimation Filter:</strong></p>
+<p><a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/FIR_Compiler_Ex1"><img role="img" src="./Images/FIR_Compiler_Ex1.png" alt="FIR Compiler Ex1" /></a></p>
+<p><strong>Interpolation Filter:</strong></p>
+<p><a href="https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/FIR_Compiler_Ex2"><img role="img" src="./Images/FIR_Compiler_Ex2.png" alt="FIR Compiler Ex2" /></a></p>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE&#8482; Documentation</h2>
+<p>FIR Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&amp;ft:locale=en-US&amp;url=pg149-fir-compiler">PG149</a>)</p>
+</section>
+<hr />
+<p>Copyright (C) 2026 Advanced Micro Devices, Inc.<br />
+All rights reserved.</p>
+<p>SPDX-License-Identifier: MIT</p>
+</section>
+</body>
+</html>
