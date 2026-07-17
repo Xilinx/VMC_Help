@@ -1,4 +1,4 @@
-# FIR Compiler 7.2
+# FIR Compiler 7.3
 
 ![](./Images/block.png)
 
