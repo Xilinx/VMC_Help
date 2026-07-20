@@ -150,7 +150,7 @@ The following two filter architectures are supported.
   these limitations apply:
 - Symmetry is not exploited. If the Coefficient Vector specified on
     the Filter Specification tab is detected as symmetric, the FIR
-    Compiler 7.2 block parameters dialog box will not allow you to
+    Compiler 7.3 block parameters dialog box will not allow you to
     select Transpose Multiply Accumulate.
 - Multiple interleaved channels are not supported.
 
