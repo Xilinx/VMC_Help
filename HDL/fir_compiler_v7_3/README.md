@@ -1,4 +1,4 @@
-# FIR Compiler 7.2
+# FIR Compiler 7.3
 
 ![](./Images/block.png)
 
@@ -105,7 +105,7 @@ Specifies the number of parallel data paths the filter is to process. As
 shown below, when more than one path is specified, the data_tdata input
 port is divided into sub-ports that represent each parallel path.  
 
-![](./Images/qfl1538085406107.png)
+![](./Images/Multi-path.png)
 
 
 
@@ -200,7 +200,7 @@ The following two filter architectures are supported:
 
     - Symmetry is not exploited. If the Coefficient Vector specified on
     the Filter Specification tab is detected as symmetric, the FIR
-    Compiler 7.2 block parameters dialog box will not allow you to
+    Compiler 7.3 block parameters dialog box will not allow you to
     select Transpose Multiply Accumulate.
     - Multiple interleaved channels are not supported.
 

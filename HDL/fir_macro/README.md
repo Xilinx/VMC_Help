@@ -24,11 +24,11 @@ complicated filter features such as multiple channels or multiple path
 core configuration, an AXI4-Stream-compliant interface, or functions
 such as reloading co-efficient, channel pattern support, or other
 HDL-based GUI parameters, use the [FIR Compiler
-7.2](../../HDL/fir_compiler_v7_2/README.md) block in your design instead of the Digital FIR
+7.3](../../HDL/fir_compiler_v7_3/README.md) block in your design instead of the Digital FIR
 Filter block.
 
 In the Vivado® design flow, the Digital FIR filter block is inferred as
-"LogiCORE™ IP FIR Compiler v7.2" for code generation. Refer to the
+"LogiCORE™ IP FIR Compiler v7.3" for code generation. Refer to the
 document FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
 for details on this LogicCore IP.
 
