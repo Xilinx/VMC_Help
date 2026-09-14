@@ -104,7 +104,7 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Kronecker_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Kronecker_Stream_Ex1)
+[![](./Images/Kronecker_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/Kronecker_Stream_Ex1)
 
 
 

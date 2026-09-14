@@ -48,7 +48,10 @@ This parameter allows use of environment variables while specifying paths for th
 Optional preprocessor arguments for downstream compilation with specific preprocessor options.
 
 The following two preprocessor option formats are accepted and multiple can be selected: -D<name> and -D<name>=<definition> separated by a comma. That is, the optional argument must begin with -D and if the option <definition> value is not provided, it is assumed to be 1.
-  
+
+#### SSR (Super Sample Rate)
+Specifies the number of replicated class-kernel instances inside the mask subsystem. Behavior matches the [AIE Kernel](../AIE_Kernel_Function/README.md) block SSR parameter: default **1** preserves legacy behavior; values greater than 1 use M×SSR column matrices, internal Splitter and Merger blocks, and per-kernel constraints. See UG1483 *SSR Support for AIE Kernel and Graph Blocks* for design rules and DSPLib interoperability.
+
 ## Related blocks
 Use [AIE Kernel](../AIE_Kernel_Function/README.md) block to import a non class based kernel.
 

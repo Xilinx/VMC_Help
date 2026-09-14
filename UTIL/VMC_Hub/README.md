@@ -212,17 +212,17 @@ Choose between Baremetal or Linux hardware validation flow.
 
 Specify the target for hardware validation flow.
 
-#### Common SW Dir
+#### Yocto Base Directory
 
-Provide the path to the folder containing the PetaLinux common images. This option is only enabled when a Linux HW System Type is selected.
+Provide the path to the Yocto base directory for the selected platform. This field is required for both Baremetal and Linux hardware validation flows. Baremetal hardware emulation also uses the Yocto `runqemu` utility. If the path is missing or does not exist, the tool raises a design rule check when you start the validation run.
 
-#### Target SDK Dir
+#### XRT Directory
 
-Provide the path to the folder containing the target SDK. This option is only enabled when a Linux HW System Type is selected.
+Provide the path to the XRT installation directory. This field is required when **HW System Type** is set to Linux. If the path is missing or does not exist, the tool raises a design rule check when you start the validation run.
 
 #### Generate (BOOT.BIN/SD card image) after code generation
 
-When enabled, a BOOT.BIN (for baremetal HW system) or SD card image (for Linux HW system) will be generated after code generation.
+When enabled, the tool generates a hardware validation image after code generation. For a baremetal HW system, the flow packages a `.pdi` and related baremetal artifacts. For a Linux HW system, the flow stages a WIC disk image for deployment. The exact artifact names depend on the selected platform and HW System Type.
 
 ### Export
 

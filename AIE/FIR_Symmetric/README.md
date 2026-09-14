@@ -101,9 +101,9 @@ Click on the button given here to access the constraint manager and add or updat
 
 ***Click on the images below to open each model.***
 
-[![](./Images/FIR_Symmetric_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/FIR_Symmetric_Ex1)
+[![](./Images/FIR_Symmetric_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/FIR_Symmetric_Ex1)
 
-[![](./Images/FIR_Symmetric_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/FIR_Symmetric_Ex2)
+[![](./Images/FIR_Symmetric_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/FIR_Symmetric_Ex2)
 
 ---
 **_NOTE:_**  For more details on this function and other AI Engine filter functions available, please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filters.html).

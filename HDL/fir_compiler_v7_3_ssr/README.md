@@ -46,6 +46,15 @@ for a more detailed explanation of the RELOAD Channel interface timing.
 This block supports the xlGetReloadOrder function. See the Model
 Composer Utility function xlGetReloadOrder for details.
 
+#### Select Data Type
+Specifies the filter data and coefficient type. Choose between **Real**, **Complex**, or **Real_Float**. Complex coefficients are supported only on Versal devices.
+
+When **Complex** is selected, the following constraints apply:
+- Filter type must be **Single_Rate** or **Interpolation** with integer rate change only.
+- Filter architecture must be **Systolic_Multiply_Accumulate**.
+- Single channel and single path only.
+- Decimation, coefficient reload, and SSR are not supported with complex data.
+
 #### Filter Specification  
 ##### Filter Type  
 ###### Single_Rate  
@@ -61,7 +70,7 @@ specified in the Decimation Rate Value.
 
 ##### Rate Change Type  
 This field is applicable to Interpolation and Decimation filter types.
-For Vector FIRs, only an Integer rate change is supported.
+Used to specify an **Integer** or **Fixed_Fractional** rate change. Fractional rate with SSR is supported for interpolation and decimation filter types subject to the constraints documented in the Vitis Model Composer User Guide (UG1483).
 
 ##### Interpolation Rate Value  
 This field is applicable to all Interpolation filter types. The
@@ -75,8 +84,8 @@ types. The value provided in this field defines the down-sampling factor.
 ##### Super Sample Rate (SSR)
 This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.
+period. This block enables 1-D vector support for the primary block
+operation. Supported values for hybrid simulation are 2, 4, 8, 16, 32, and 64.
 - If the filter type is Interpolation, the output vector size (SSR value
   on the output side) is equal to the SSR value on the input side
   multiplied by Interpolation Rate Value.
@@ -277,6 +286,14 @@ the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
 the pulse is not in the cycle immediately following.
 
+#### Blank Output
+When enabled, forces the FIR output to blank during coefficient reload events to avoid transient artifacts.
+
+**Note**: Blank Output can only be enabled when Reset Data Vector is disabled
+
+#### Reset Coefficient Vector
+When enabled, the internal coefficient vector is reset during coefficient reload operations.
+
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
@@ -287,11 +304,11 @@ Boxes](../../GEN/common-options/README.md).
 
 **Decimation Filter:**
 
-[![](./Images/Vector_FIR_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/Vector_FIR_Ex1)
+[![](./Images/Vector_FIR_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/HDL/Vector_FIR_Ex1)
 
 **Interpolation Filter:**
 
-[![](./Images/Vector_FIR_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/HDL/Vector_FIR_Ex2)
+[![](./Images/Vector_FIR_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/HDL/Vector_FIR_Ex2)
 
 ## LogiCORE™ Documentation
 

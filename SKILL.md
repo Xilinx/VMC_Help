@@ -15,7 +15,7 @@ A complete documentation package requires:
 2. **Supporting files** - Auto-generated: `code/`, `model_composer_work/`, `xmc_aie_lib/`
 
 ### Repository Coordination
-- Both repos use same branch (e.g., `2026.1`)
+- Both repos use same branch (e.g., `2026.2`)
 - Examples must exist before README can reference them
 - Screenshots from actual example models
 
@@ -91,7 +91,7 @@ Required sections:
 
 ***Click on the images below to open each model.***
 
-[![](./Images/BlockName_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/BlockName_Ex1)
+[![](./Images/BlockName_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/BlockName_Ex1)
 ```
 
 ---
@@ -250,7 +250,7 @@ Use exact text from block's Prompt field. Common patterns:
 
 **Images wrong size**: Use `block_screen_shot()` for icons, `print('-sModel', '-dpng', '-r150', 'file.png')` for models
 
-**Example links broken**: Verify examples exist, check branch name matches (2026.1, 2025.2), verify exact path
+**Example links broken**: Verify examples exist, check branch name matches (2026.2, 2025.2), verify exact path
 
 **Dimension errors**: Check multiples of 16, verify input constants match block requirements
 

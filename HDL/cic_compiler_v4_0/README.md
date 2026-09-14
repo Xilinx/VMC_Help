@@ -82,6 +82,8 @@ parameter is 1 to 16.
 ##### Sample Rate Changes  
 Option to select between Fixed or Programmable.
 
+When **Programmable** is selected, the `s_axis_data_tvalid` control port is available regardless of the **Select format** setting under Hardware Oversampling Specification.
+
 ##### Fixed or Initial Rate(ir)  
 Specifies initial or fixed sample rate change value for the CIC. The
 valid range for this parameter is 4 to 8192.

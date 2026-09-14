@@ -51,13 +51,26 @@ Optional preprocessor arguments for downstream compilation with specific preproc
 
 The following two preprocessor option formats are accepted and multiple can be selected: -Dname and -Dname=definition separated by a comma. That is, the optional argument must begin with -D and if the option definition value is not provided, it is assumed to be 1.
 
+#### SSR (Super Sample Rate)
+Specifies the number of replicated AI Engine kernel instances inside the mask subsystem. The default value is **1**, which preserves legacy single-kernel behavior.
+
+When SSR is greater than 1:
+- The block accepts an **M×SSR** column matrix on each input port and produces an **M×SSR** matrix on each output port.
+- Internal Splitter and Merger blocks (Simulink Selector and Matrix Concatenation) distribute and collect samples across the replicated kernels.
+- Each kernel parameter can be specified as a scalar (same value for all kernels), a vector of length SSR, or a workspace variable holding either form.
+- Set constraints for each replicated kernel independently in the Constraint Editor.
+
+Changing SSR requires clicking **Apply** or **OK** on the mask dialog to rebuild the subsystem. Use **Import** or **Update** to refresh kernel source after changes to the kernel header, source, or function.
+
+For design rule checks, interoperability with DSPLib SSR blocks, and subsystem boundary placement rules, see [SSR Support for AIE Kernel and Graph Blocks](https://docs.amd.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/SSR-Support-for-AIE-Kernel-and-Graph-Blocks) in the Vitis Model Composer User Guide (UG1483).
+
 ## Examples
 
 ***Click on the images below to open each model.***
 
 This example shows import of kernel functions with int16 real and complex inputs and outputs.
 
-[![](./Images/AIE_Kernel_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/AIE_Kernel_Ex1)
+[![](./Images/AIE_Kernel_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/AIE_Kernel_Ex1)
 
 ## Related blocks
 Use [AIE Class](../AIE_Class_Kernel_Function/README.md) block to import a class based kernel.

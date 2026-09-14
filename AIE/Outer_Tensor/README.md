@@ -91,9 +91,9 @@ If you are using non-default constraints for any of the kernels for the block, a
 
 ***Click on the images below to open each model.***
 
-[![](./Images/Outer_Tensor_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Outer_Tensor_Ex1)
+[![](./Images/Outer_Tensor_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/Outer_Tensor_Ex1)
 
-[![](./Images/Outer_Tensor_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.1/Examples/Block_Help/AIE/Outer_Tensor_Ex2)
+[![](./Images/Outer_Tensor_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/Outer_Tensor_Ex2)
 
 
 
