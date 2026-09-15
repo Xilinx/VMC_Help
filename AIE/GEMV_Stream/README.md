@@ -41,6 +41,22 @@ Row-major (0) or column-major (1) layout for matrix A.
 ### Constraints
 Use the constraint manager for per-kernel constraints.
 
+## Examples
+
+***Click on the images below to open each model.***
+
+**GEMV Stream with a 32×16 int16 matrix, SSR = 1:**
+
+[![](./Images/GEMV_Stream_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/GEMV_Stream_Ex1)
+
+**GEMV Stream with a 32×16 int16 matrix, SSR = 2:**
+
+[![](./Images/GEMV_Stream_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/GEMV_Stream_Ex2)
+
+**GEMV Stream with a 64×32 int16 matrix, SSR = 2 and Number of Cascade Stages = 2:**
+
+[![](./Images/GEMV_Stream_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/GEMV_Stream_Ex3)
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
