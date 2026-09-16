@@ -57,6 +57,18 @@ Use the constraint manager for per-kernel constraints.
 
 [![](./Images/GEMV_Stream_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/GEMV_Stream_Ex3)
 
+**GEMV Stream with a 32×16 int32 matrix, SSR = 1:**
+
+[![](./Images/GEMV_Stream_Ex4.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/GEMV_Stream_Ex4)
+
+**GEMV Stream with a 64×16 cint16 matrix, column-major, SSR = 1:**
+
+[![](./Images/GEMV_Stream_Ex5.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/GEMV_Stream_Ex5)
+
+**GEMV Stream with a 64×32 int16 matrix, Number of Frames = 2 and Number of Cascade Stages = 2:**
+
+[![](./Images/GEMV_Stream_Ex6.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/GEMV_Stream_Ex6)
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
