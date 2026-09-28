@@ -127,7 +127,7 @@ fraction width greater than that for single precision</td>
 </table>
 </section>
 <section id="translate-into-output-port" class="level4">
-<h4>Translate into Output Port</h4>
+<h4>Translate into output port</h4>
 <p>Having this box unchecked prevents the gateway from becoming an
 actual output port when translated into hardware. This checkbox is on by
 default, enabling the output port. When this option is not selected, the
@@ -141,43 +141,41 @@ port.</p>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <p>Parameters specific to the Implementation tab are as follows.</p>
-<section id="interface-options" class="level4">
-<h4>Interface Options</h4>
-<section id="interface" class="level5">
-<h5>Interface</h5>
-<section id="none" class="level6">
-<h6>None</h6>
-<p>During HDL Netlist generation, this Gateway Out will be translated as
-an Output Port at the top level.</p>
+<section id="number-of-rows" class="level4">
+<h4>Number of rows</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="axi4-lite" class="level6">
-<h6>AXI4-Lite</h6>
-<p>During HDL Netlist Generation, an AXI4-Lite interface will be created
-and the Gateway Out will be mapped to one of the registers within the
-AXI4-Lite interface.</p>
+<section id="number-of-columns" class="level4">
+<h4>Number of columns</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="interrupt" class="level6">
-<h6>Interrupt</h6>
-<p>During an IP Catalog Generation, this Gateway Out will be tagged as
-an Interrupt output port when the Model Composer design is packaged into
-an IP module that can be included in the Vivado® IP catalog.</p>
+<section id="drive-dac-input" class="level4">
+<h4>Drive DAC Input</h4>
+<p>Dialog parameter.</p>
 </section>
+<section id="dac-channel-id" class="level4">
+<h4>DAC Channel ID</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="auto-assign-address-offset" class="level5">
-<h5>Auto assign address offset</h5>
+<section id="interface" class="level4">
+<h4>Interface</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="auto-assign-address-offset" class="level4">
+<h4>Auto assign address offset</h4>
 <p>If a Gateway Out is configured to be an AXI4-Lite interface, this
 option allows an address offset to be automatically assigned to the
 register within the AXI4-Lite interface that the Gateway Out is mapped
 to.</p>
 </section>
-<section id="address-offset" class="level5">
-<h5>Address offset</h5>
+<section id="address-offset" class="level4">
+<h4>Address offset</h4>
 <p>If Auto assign address offset is not checked, then this entry box
 allows you to explicitly specify a address offset to use. Must be a
 multiple of 4.</p>
 </section>
-<section id="interface-name" class="level5">
-<h5>Interface Name</h5>
+<section id="interface-name" class="level4">
+<h4>Interface Name</h4>
 <p>If the Gateway Out is configured to be an AXI4-Lite interface,
 assigns a unique name to this interface. This name can be used to
 differentiate between multiple AXI4-Lite interfaces in the design. When
@@ -189,16 +187,13 @@ alphanumeric characters (lowercase alphabetic) or an underscore (_)
 only, and must begin with a lowercase alphabetic character. axi4_lite1
 is acceptable, 1Axi4-Lite is not.</p>
 </section>
-<section id="description-1" class="level5">
-<h5>Description</h5>
+<section id="description-1" class="level4">
+<h4>Description</h4>
 <p>Additional designer comments about this Gateway Out that is captured
 in the interface documentation.</p>
 </section>
-</section>
-<section id="constraints" class="level4">
-<h4>Constraints</h4>
-<section id="iob-timing-constraint" class="level5">
-<h5>IOB Timing Constraint</h5>
+<section id="iob-timing-constraint" class="level4">
+<h4>IOB timing constraint</h4>
 <p>In hardware, a Gateway Out is realized as a set of input/output
 buffers (IOBs). There are three ways to constrain the timing on IOBs.
 They are None, Data Rate, and Data Rate, Set &#39;FAST&#39; Attribute.</p>
@@ -224,22 +219,36 @@ additional attributes are added to the constraints file.</p>
 NET &quot;Dout(1)&quot; FAST; 
 NET &quot;Dout(2)&quot; FAST; </code></pre>
 </section>
-<section id="specify-iob-location-constraints" class="level5">
-<h5>Specify IOB Location Constraints</h5>
+<section id="specify-iob-location-constraints" class="level4">
+<h4>Specify IOB location constraints</h4>
 <p>Checking this option allows IOB location constraints to be
 specified.</p>
 </section>
-<section id="iob-pad-locations-eg-msb--lsb" class="level5">
-<h5>IOB Pad Locations, e.g. {&#39;MSB&#39;, ..., &#39;LSB&#39;}</h5>
+<section id="iob-pad-locations-cell-array-msb--lsb" class="level4">
+<h4>IOB pad locations (cell array {&#39;MSB&#39;, ..., &#39;LSB&#39;})</h4>
 <p>IOB pin locations can be specified as a cell array of strings in this
 edit box. The locations are package-specific.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+<section id="io-standards-specify-as-cell-array-msb--lsb" class="level4">
+<h4>IO Standards (specify as cell array {&#39;MSB&#39;, ..., &#39;LSB&#39;})</h4>
+<p>Dialog parameter.</p>
+<p>Additional dialog notes:</p>
+<p>Interface Options. None. During HDL Netlist generation, this Gateway
+Out will be translated as an Output Port at the top level.</p>
+<p>AXI4-Lite. During HDL Netlist Generation, an AXI4-Lite interface will
+be created and the Gateway Out will be mapped to one of the registers
+within the AXI4-Lite interface.</p>
+<p>Interrupt. During an IP Catalog Generation, this Gateway Out will be
+tagged as an Interrupt output port when the Model Composer design is
+packaged into an IP module that can be included in the Vivado® IP
+catalog.</p>
+<p>Constraints.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>

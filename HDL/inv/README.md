@@ -13,6 +13,14 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

@@ -192,101 +192,77 @@ selected on Page 5 tab.
 
 ### Page1 tab  
 Parameters specific to the Page1 tab are as follows.
-#### Viterbi Type  
-##### Number of Channels  
+
+#### Number of Channels
+
 Used with the Muli-Channel selection, the number of channels to be
 decoded can be any value between 2 and 32.
 
-##### Standard  
-This type is the basic Viterbi Decoder.
+#### Use Reduced Latency
 
-##### Multi-Channel  
-This type allows many interlaced channels of data to be decoded using a
-single Viterbi Decoder.
-
-##### Trellis Mode  
-This type is a trellis mode decoder using the TCM and SECTOR_IN inputs.
-
-##### Dual Decoder  
-When selected, the block behaves as a dual decoder with two sets of
-convolutional codes. This makes the sel input port available.
-
-#### Decoder Options  
-##### Use Reduced Latency  
 The latency of the block depends on the traceback length and the
 constraint length. If this reduced latency option is selected, then the
 latency of the block is approximately halved and the latency is only 2
 times the traceback length.
 
-##### Constraint length  
+#### Constraint Length
+
 Equals n+1, where n is the length of the constraint register in the
 encoder.
 
-##### Traceback length  
+#### Traceback Length
+
 Length of the traceback through the Viterbi trellis. Optimal length is 5
 to 7 times the constraint length.
 
-### Page2 tab  
-#### Architecture  
-##### Parallel  
-Large but fast Viterbi Decoder.
+### Page2 tab
 
-##### Serial  
-Small but processes the input data in a serial fashion. The number of
-clock cycles needed to process each set of input symbols depends on the
-output rate and the soft width of the data.
+#### Architecture
 
-#### Best State  
-##### Use Best State  
+Dialog parameter.
+
+#### Use Best State
+
 Gives improved BER performance for highly punctured data.
 
-##### Best State Width  
+#### Best State Width
+
 Indicates how many of the least significant bits to ignore when saving
 the cost used to determine the best state.
 
-#### Puncturing  
-##### None  
-Input data has not been punctured.
+#### Puncturing
 
-##### External (Erased Symbols)  
-When selected an erase port is added to the block. The presence of
-null-symbols (that is, symbols which have been deleted prior to
-transmission across the channel) is indicated using the erasure input
-erase.
+Dialog parameter.
 
-#### Coding  
-##### Soft Width  
+#### Soft Width
+
 The input width of soft-coded data can be anything in the range 3 to 5.
 Larger widths require more logic. If the block is implemented in serial
 mode, larger soft widths also increase the serial processing time.
 
-##### Soft Coding  
-Uses the Euclidean metric to cost the incoming data against the branches
-of the Viterbi trellis.
+#### Data Format
 
-##### Hard Coding  
-Uses the Hamming difference between the input data bits and the branches
-of the Viterbi trellis. Hard coding is only available for the standard
-parallel block.
+Dialog parameter.
 
-#### Data Format  
-##### Signed Magnitude  
+#### Output Rate 0
 
-##### Offset Binary (available for soft coding only)  
-
-See Table 1 in the associated LogiCORE™ Product Specification for the
-Signed Magnitude and Offset-Binary data format for Soft Width 3.
-
-### Page3 tab  
-#### Convolution 0  
-##### Output Rate 0  
 Output Rate 0 can be any value from 2 to 7.
 
-##### Convolution Code 0 Radix  
+#### Convolution Code 0 Radix
+
 The convolutional codes can be input and viewed in binary, octal, or
 decimal.
 
-##### Convolution Code Array (0-6)  
+#### Convolution 0 Code 0
+
+Dialog parameter.
+
+#### Convolution 0 Code 1
+
+Dialog parameter.
+
+#### Convolution 0 Code 2
+
 First array of convolution codes. Output rate is derived from the array
 length. Between 2 and 7 (inclusive) codes can be entered. When dual
 decoding is used, a value of 0 (low) on the sel port corresponds to this
@@ -296,42 +272,92 @@ array.
 The options on this tab are activated when you select Dual Decoder as
 the Viterbi Type on the Page1 tab.
 
-#### Convolution 1  
-##### Output Rate 1  
+#### Convolution 0 Code 3
+
+Dialog parameter.
+
+#### Convolution 0 Code 4
+
+Dialog parameter.
+
+#### Convolution 0 Code 5
+
+Dialog parameter.
+
+#### Convolution 0 Code 6
+
+Dialog parameter.
+
+#### Output Rate 1
+
 Output Rate 1 can be any value from 2 to 7. This is the second output
 rate used if the decoder is dual. The incoming data is decoded at this
 rate when the SEL input is high. Output Rate 1 is not used for the
 non-dual decoder.
 
-##### Convolution Code 1 Radix  
+#### Convolution Code 1 Radix
+
 The convolutional codes can be input and viewed in binary, octal, or
 decimal.
 
-### Page5 tab  
-#### BER Options  
-##### Use BER Symbol Count  
+### Page5 tab
+
+#### Convolution 1 Code 0
+
+Dialog parameter.
+
+#### Convolution 1 Code 1
+
+Dialog parameter.
+
+#### Convolution 1 Code 2
+
+Dialog parameter.
+
+#### Convolution 1 Code 3
+
+Dialog parameter.
+
+#### Convolution 1 Code 4
+
+Dialog parameter.
+
+#### Convolution 1 Code 5
+
+Dialog parameter.
+
+#### Convolution 1 Code 6
+
+Dialog parameter.
+
+#### Use BER Symbol Count
+
 This bit-error-rate (BER) option monitors the error rate on the
 transmission channel.
 
-#### Optional Pins  
-##### NORM  
+#### NORM
+
 Indicates when normalization has taken place internal to the Add Compare
 Select module.
 
-##### Block Valid  
+#### Block Valid
+
 Check this box if BLOCK_IN and BLOCK_OUT signals are required. These
 signals track the movement of a block of data through the decoder.
 BLOCK_OUT corresponds to BLOCK_IN delayed by the decoder latency.
 
-##### TREADY  
+#### TREADY
+
 Selecting this option makes m_axis_data_tready and m_axis_dstat_tready
 pins available on the block.
 
-##### ACLKEN  
+#### ACLKEN
+
 Carries the clock enable signal for the block The signal driving aclken
 must be Bool.
 
-##### ARESETN  
+#### ARESETN
+
 Adds a aresetn pin to the block. This signal resets the block and must
 be of type Bool. aresetn must be asserted low for at least 2 clock
 periods and at least 1 sample period before the decoder can start
@@ -342,7 +368,48 @@ names, are explained in the topic [Common Options in Block Parameter
 Dialog
 Boxes](../../GEN/common-options/README.md).
 
-## LogiCORE™ Documentation
+#### Display shortened port names
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Viterbi Type. Standard. This type is the basic Viterbi Decoder.
+
+Multi-Channel. This type allows many interlaced channels of data to be decoded using a
+single Viterbi Decoder.
+
+Trellis Mode. This type is a trellis mode decoder using the TCM and SECTOR_IN inputs.
+
+Dual Decoder. When selected, the block behaves as a dual decoder with two sets of
+convolutional codes. This makes the sel input port available.
+
+Decoder Options. Parallel. Large but fast Viterbi Decoder.
+
+Serial. Small but processes the input data in a serial fashion. The number of
+clock cycles needed to process each set of input symbols depends on the
+output rate and the soft width of the data.
+
+Best State. None. Input data has not been punctured.
+
+External (Erased Symbols). When selected an erase port is added to the block. The presence of
+null-symbols (that is, symbols which have been deleted prior to
+transmission across the channel) is indicated using the erasure input
+erase.
+
+Coding. Soft Coding. Uses the Euclidean metric to cost the incoming data against the branches
+of the Viterbi trellis.
+
+Hard Coding. Uses the Hamming difference between the input data bits and the branches
+of the Viterbi trellis. Hard coding is only available for the standard
+parallel block.
+
+Signed Magnitude. Offset Binary (available for soft coding only). See Table 1 in the associated LogiCORE™ Product Specification for the
+Signed Magnitude and Offset-Binary data format for Soft Width 3.
+
+### Page3 tab
+
+BER Options. Optional Pins. ## LogiCORE™ Documentation
 
 Viterbi Decoder LogiCORE IP Product Guide
 ([PG027](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg027_viterbi_decoder&ft:locale=en-US))

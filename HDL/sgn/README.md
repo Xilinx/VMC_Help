@@ -19,6 +19,14 @@ Boxes](../../GEN/common-options/README.md).
 The block parameters do not control the output data type because the
 output is always a signed fixed-point integer that is 2 bits long.
 
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
 ##  LogiCORE
 
 The Threshold block does not use a LogiCORE™.

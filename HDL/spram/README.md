@@ -40,10 +40,12 @@ specified by the address line.
 
 Parameters specific to the Basic tab are as follows.
 
-#### Depth  
+#### Depth
+
 The number of words in the memory; must be a positive integer.
 
-#### Initial value vector  
+#### Initial value vector
+
 The Initial value vector stores the initial contents of the memory. When
 the vector length exceeds the memory depth, values with index higher
 than depth are ignored. When the depth exceeds the vector length, memory
@@ -55,7 +57,8 @@ UltraRAM memory is initialized to all 0's during power up or device
 reset. If implemented in UltraRAM, the Single Port RAM block cannot be
 initialized to user defined values.
 
-#### Memory Type  
+#### Memory Type
+
 Option to select whether the single-port RAM will be implemented using
 Distributed memory, Block RAM, or UltraRAM.
 
@@ -74,7 +77,8 @@ inferred or implemented as follows when the design is compiled:
   Architecture Libraries Guide
   ([UG974](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug974-vivado-ultrascale-libraries)).
 
-#### Write Mode  
+#### Write Mode
+
 Specifies memory behavior when WE is asserted. Supported modes are: Read
 after write, Read before write, and No read On write. Read after write
 indicates the output value reflects the state of the memory after the
@@ -85,7 +89,8 @@ of address or state of the memory. There are device specific
 restrictions on the applicability of these modes. Also refer to the
 Write Modes and Hardware Notes topics below for more information.
 
-#### Provide reset port for output register  
+#### Provide reset port for output register
+
 For block RAM or UltraRAM, exposes a reset port controlling the output
 register of the RAM. This port does not reset the memory contents to the
 initialization value.
@@ -93,7 +98,8 @@ initialization value.
 **Note**: For Block RAM or UltraRAM, the reset port is available only when
 the latency of the Block RAM is greater than or equal to 1.
 
-#### Initial value for output register  
+#### Initial value for output register
+
 For Block RAM, the initial value for the output register. The initial
 value is saturated and rounded as necessary according to the precision
 specified on the data port of the Block RAM.
@@ -104,6 +110,22 @@ UltraRAM output register cannot be initialized to user defined values.
 Other parameters used by this block are explained in the [Common Options
 in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Optimize latency
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
+#### Optimize for
+
+Dialog parameter.
 
 ## Write Modes
 

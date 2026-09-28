@@ -333,7 +333,7 @@ the GUI.</p>
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic Parameters tab are as follows.</p>
 <section id="memory-style" class="level4">
-<h4>Memory Style</h4>
+<h4>Memory style</h4>
 <p>Select Distributed if all the Block Memories are required elsewhere
 in the design; select Block to use Block Memory where ever possible;
 select Automatic and let Model Composer use the most appropriate style
@@ -351,8 +351,8 @@ of memory for each case, based on the required memory depth.</p>
 <h4>Mode</h4>
 <p>Select Interleaver or Deinterleaver</p>
 </section>
-<section id="symbol-memory" class="level4">
-<h4>Symbol memory</h4>
+<section id="external-symbol-memory-latency" class="level4">
+<h4>External Symbol Memory Latency</h4>
 <p>Specifies whether or not the data symbols are stored in Internal FPGA
 RAM or in External RAM.</p>
 </section>
@@ -360,83 +360,46 @@ RAM or in External RAM.</p>
 <section id="forney-tab" class="level3">
 <h3>Forney tab</h3>
 <p>Parameters specific to the Forney Parameters tab are as follows.</p>
-<section id="dimensions" class="level4">
-<h4>Dimensions</h4>
-<section id="number-of-branches" class="level5">
-<h5>Number of branches</h5>
+<section id="number-of-branches" class="level4">
+<h4>Number of branches</h4>
 <p>1 to 256 (inclusive)</p>
-</section>
 </section>
 <section id="architecture" class="level4">
 <h4>Architecture</h4>
-<section id="rom-based" class="level5">
-<h5>ROM-based</h5>
-<p>Look-up table ROMs are used to compute some of the internal results
-in the block.</p>
+<p>Dialog parameter.</p>
 </section>
-<section id="logic-based" class="level5">
-<h5>Logic-based</h5>
-<p>Logic circuits are used to compute some of the internal results in
-the block.</p>
-<p>Which option is best depends on the other core parameters. You should
-try both options to determine the best results. This parameter has no
-effect on the block behavior.</p>
-</section>
-</section>
-<section id="configurations" class="level4">
-<h4>Configurations</h4>
-<section id="number-of-configurations" class="level5">
-<h5>Number of configurations</h5>
+<section id="number-of-configurations" class="level4">
+<h4>Number of configurations</h4>
 <p>If greater than 1, the block is generated with CONFIG_SEL and
 NEW_CONFIG inputs. The parameters for each configuration are defined in
 a COE file. The number of parameters defined must exactly match the
 number of configurations specified.</p>
 </section>
+<section id="branch-length-descriptions-for-forney-sid" class="level4">
+<h4>Branch length descriptions for Forney SID</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="length-of-branches" class="level4">
-<h4>Length of Branches</h4>
-<p>Branch length descriptions for Forney SID.</p>
-<section id="constant_difference_between_consecutive_branches" class="level5">
-<h5>constant_difference_between_consecutive_branches</h5>
-<p>Specified by the Value parameter.</p>
-</section>
-<section id="use_coe_file_to_define_branch_lengths" class="level5">
-<h5>use_coe_file_to_define_branch_lengths</h5>
-<p>Location of file is specified by the COE File parameter.</p>
-</section>
-<section id="coe_file_defines_individual_branch_lengths_for_every_branch_in_each_configuration" class="level5">
-<h5>coe_file_defines_individual_branch_lengths_for_every_branch_in_each_configuration</h5>
-<p>Location of file is specified by the COE File parameter.</p>
-</section>
-<section id="coe_file_defines_branch_length_constant_for_each_configuration" class="level5">
-<h5>coe_file_defines_branch_length_constant_for_each_configuration</h5>
-<p>Location of file is specified by the COE File parameter.</p>
-</section>
-<section id="value" class="level5">
-<h5>Value</h5>
+<section id="value" class="level4">
+<h4>Value</h4>
 <p>1 to MAX (inclusive). MAX depends on the number of branches and size
 of block input. Branch length must be an array of either length one or
 number of branches. If the array size is one, the value is used as a
 constant difference between consecutive branches. Otherwise, each branch
 has a unique length.</p>
 </section>
-<section id="coe-file" class="level5">
-<h5>COE File</h5>
+<section id="coe-file" class="level4">
+<h4>COE File</h4>
 <p>The branch lengths are specified from a file</p>
-</section>
 </section>
 </section>
 <section id="rectangular-parameters-1-tab" class="level3">
 <h3>Rectangular Parameters #1 Tab</h3>
 <p>Parameters specific to the Rectangular Parameters #1 tab are as
 follows.</p>
-<section id="number-of-rows" class="level4">
-<h4>Number of Rows</h4>
-<section id="value-1" class="level5">
-<h5>Value</h5>
+<section id="value-1" class="level4">
+<h4>Value</h4>
 <p>This parameter is relevant only when the Constant row type is
 selected. The number of rows is fixed at this value.</p>
-</section>
 </section>
 <section id="row-port-width" class="level4">
 <h4>Row Port Width</h4>
@@ -444,8 +407,9 @@ selected. The number of rows is fixed at this value.</p>
 selected. It sets the width of the ROW input bus. The smallest possible
 value should be used to keep the underlying LogiCORE as small as
 possible.</p>
-<section id="minimum-number-of-rows" class="level5">
-<h5>Minimum Number of Rows</h5>
+</section>
+<section id="minimum-number-of-rows" class="level4">
+<h4>Minimum Number of Rows</h4>
 <p>This parameter is relevant only when the Variable row type is
 selected. In this case, the core has to potentially cope with a wide
 range of possible values for the number of rows. If the smallest value
@@ -453,50 +417,27 @@ that will actually occur is known, then the amount of logic in the
 LogiCORE can sometimes be reduced. The largest possible value should be
 used for this parameter to keep the core as small as possible.</p>
 </section>
-<section id="number-of-values" class="level5">
-<h5>Number of Values</h5>
+<section id="number-of-values" class="level4">
+<h4>Number of Values</h4>
 <p>This parameter is relevant only when you select the Selectable row
 type. This parameter defines how many valid selection values have been
 defined in the COE file. You should only add the number of select values
 you need.</p>
 </section>
-<section id="row-type" class="level5">
-<h5>Row Type</h5>
-<section id="constant" class="level6">
-<h6>Constant</h6>
-<p>The number of rows is always equal to the Row Constant Value
-parameter.</p>
-</section>
-<section id="variable" class="level6">
-<h6>Variable</h6>
-<p>The number of rows is sampled from the ROW input at the start of each
-new block. Row permutations are not supported for the variable row
-type.</p>
-</section>
-<section id="selectable" class="level6">
-<h6>Selectable</h6>
-<p>ROW_SEL is sampled at the start of each new block. This value is then
-used to select from one of the possible values for the number of rows
-provided in the COE file.</p>
-</section>
-</section>
-</section>
-<section id="number-of-columns" class="level4">
-<h4>Number of Columns</h4>
-<section id="value-2" class="level5">
-<h5>Value</h5>
+<section id="value-2" class="level4">
+<h4>Value</h4>
 <p>This parameter is relevant only when you select the Constant column
 type is selected. The number of columns is fixed at this value.</p>
 </section>
-<section id="col-port-width" class="level5">
-<h5>COL Port Width</h5>
+<section id="col-port-width" class="level4">
+<h4>COL Port Width</h4>
 <p>This parameter is relevant only when you select the Variable column
 type. It sets the width of the COL input bus. The smallest possible
 value should be used to keep the underlying LogiCORE™ as small as
 possible.</p>
 </section>
-<section id="minimum-number-of-columns" class="level5">
-<h5>Minimum Number of Columns</h5>
+<section id="minimum-number-of-columns" class="level4">
+<h4>Minimum Number of Columns</h4>
 <p>This parameter is relevant only when you select the Variable column
 type is selected. In this case, the core has to potentially cope with a
 wide range of possible values for the number of columns. If the smallest
@@ -504,148 +445,55 @@ value that will actually occur is known, then the amount of logic in the
 LogiCORE can sometimes be reduced. The largest possible value should be
 used for this parameter to keep the core as small as possible.</p>
 </section>
-<section id="number-of-values-1" class="level5">
-<h5>Number of Values</h5>
+<section id="number-of-values-1" class="level4">
+<h4>Number of Values</h4>
 <p>This parameter is relevant only when you select the Selectable column
 type. This parameter defines how many valid selection values have been
 defined in the COE file. You should only add the number of select values
 you need.</p>
 </section>
-<section id="column-type" class="level5">
-<h5>Column Type</h5>
-<section id="constant-1" class="level6">
-<h6>Constant</h6>
-<p>The number of columns is always equal to the Column Constant Value
-parameter.</p>
+<section id="row-permutations" class="level4">
+<h4>Row Permutations</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="variable-1" class="level6">
-<h6>Variable</h6>
-<p>The number of columns is sampled from the <code>COL</code> input at
-the start of each new block. Column permutations are not supported for
-the variable column type.</p>
+<section id="column-permutations" class="level4">
+<h4>Column Permutations</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="selectable-1" class="level6">
-<h6>Selectable</h6>
-<p>COL_SEL is sampled at the start of each new block. This value is then
-used to select from one of the possible values for the number of columns
-provided in the COE file.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="rectangular-parameters-2-tab" class="level3">
-<h3>Rectangular Parameters #2 Tab</h3>
-<p>Parameters specific to the Rectangular Parameters #2 tab are as
-follows.</p>
-<section id="permutations-configuration" class="level4">
-<h4>Permutations Configuration</h4>
-<section id="row-permutations" class="level5">
-<h5>Row permutations</h5>
-<section id="none" class="level6">
-<h6>None</h6>
-<p>This tells Model Composer that row permutations are not to be
-performed.</p>
-</section>
-<section id="use-coe-file" class="level6">
-<h6>Use COE file</h6>
-<p>This tells Model Composer that a row permute vector exists in the COE
-file, and that row permutations are to be performed. Remember this is
-possible only for un-pruned interleaver/deinterleavers.</p>
-</section>
-</section>
-<section id="column-permutations" class="level5">
-<h5>Column permutations</h5>
-<section id="none-1" class="level6">
-<h6>None</h6>
-<p>This tells Model Composer that column permutations are not to be
-performed</p>
-</section>
-<section id="use-coe-file-1" class="level6">
-<h6>Use COE file</h6>
-<p>This tells Model Composer that a column permute vector exists in the
-<code>COE</code> file, and that column permutations are to be performed.
-Remember this is possible only for un-pruned
-interleaver/deinterleavers.</p>
-</section>
-</section>
-<section id="coe-file-1" class="level5">
-<h5>COE File</h5>
+<section id="coe-file-1" class="level4">
+<h4>COE File</h4>
 <p>Specify the pathname to the <code>COE</code> file.</p>
 </section>
-</section>
-<section id="block-size" class="level4">
-<h4>Block Size</h4>
-<section id="value-3" class="level5">
-<h5>Value</h5>
+<section id="value-3" class="level4">
+<h4>Value</h4>
 <p>This parameter is relevant only when you select the Constant block
 size type. The block size is fixed at this value.</p>
 </section>
-<section id="block_size-port-width" class="level5">
-<h5>BLOCK_SIZE Port Width</h5>
+<section id="block_size-port-width" class="level4">
+<h4>BLOCK_SIZE Port Width</h4>
 <p>This parameter is relevant only if the Variable block size type is
 selected. It sets the width of the BLOCK_SIZE input bus. The smallest
 possible value should be used to keep the core as small as possible.</p>
 </section>
-<section id="block-size-type" class="level5">
-<h5>Block Size Type</h5>
-<section id="constant-2" class="level6">
-<h6>Constant</h6>
-<p>The block size never changes. The block can be pruned (block size
-&lt; row * col). The block size must be chosen so that the last symbol
-is on the last row. An un-pruned interleaver will use a smaller quantity
-of FPGA resources than a pruned one, so pruning should be used only if
-necessary.</p>
-</section>
-<section id="rowscolumns" class="level6">
-<h6>Rows*Columns</h6>
-<p>If the number of rows and columns is constant, selecting this option
-has the same effect as setting the block size type to constant and
-entering a value of rows * columns for the block size.</p>
-<p>If the number of rows or columns is not constant, selecting this
-option means the core will calculate the block size automatically
-whenever a new row or column value is sampled. Pruning is impossible
-with this block size type.</p>
-</section>
-<section id="variable-2" class="level6">
-<h6>Variable</h6>
-<p>Block size is sampled from the BLOCK_SIZE input at the beginning of
-every block. The value sampled on BLOCK_SIZE must be such that the last
-symbol falls on the last row, as previously described.</p>
-<p>If the block size is already available external to the core,
-selecting this option is usually more efficient than selecting “rows *
-columns” for the block size type. Row and column permutations are not
-supported for the Variable block size type.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="port-parameters-1-tab" class="level3">
-<h3>Port Parameters #1 tab</h3>
-<p>Parameters specific to the Port Parameters tab are as follows.</p>
-<section id="control-signals" class="level4">
-<h4>Control Signals</h4>
-<section id="aclken" class="level5">
-<h5>ACLKEN</h5>
+<section id="aclken" class="level4">
+<h4>ACLKEN</h4>
 <p>When ACLKEN is de-asserted (Low), all the synchronous inputs are
 ignored and the block remains in its current state.</p>
 </section>
-<section id="aresetn-active-low" class="level5">
-<h5>ARESETn (Active-Low)</h5>
+<section id="aresetn-active-low" class="level4">
+<h4>ARESETn (Active Low).</h4>
 <p>The Active-Low synchronous clear input always takes priority over
 ACLKEN.</p>
 </section>
-</section>
-<section id="status-signals" class="level4">
-<h4>Status Signals</h4>
-<section id="col_valid" class="level5">
-<h5>COL_VALID</h5>
+<section id="col_valid" class="level4">
+<h4>COL_VALID</h4>
 <p>This optional output is available when a variable number of columns
 is selected. If an illegal value is sampled on the
 <code>s_axis_ctrl_tdata_col</code> input, <code>event_col_valid</code>
 will go Low a predefined number of clock cycles later.</p>
 </section>
-<section id="col_sel_valid" class="level5">
-<h5>COL_SEL_VALID</h5>
+<section id="col_sel_valid" class="level4">
+<h4>COL_SEL_VALID</h4>
 <p>This optional output (<code>event_col_sel_valid</code>) is available
 when a selectable number of columns is chosen. The event pins are
 <code>event_col_valid</code>, <code>event_col_sel_valid</code>,
@@ -653,62 +501,136 @@ when a selectable number of columns is chosen. The event pins are
 <code>event_block_size_valid</code> (in the same order as in the options
 on the GUI).</p>
 </section>
-<section id="row_valid" class="level5">
-<h5>ROW_VALID</h5>
+<section id="row_valid" class="level4">
+<h4>ROW_VALID</h4>
 <p>This optional output is available when a selectable number of rows is
 chosen.</p>
 </section>
-<section id="row_sel_valid" class="level5">
-<h5>ROW_SEL_VALID</h5>
+<section id="row_sel_valid" class="level4">
+<h4>ROW_SEL_VALID</h4>
 <p>This optional output is available when a selectable number of rows is
 chosen.</p>
 </section>
-<section id="block_size_valid" class="level5">
-<h5>BLOCK_SIZE_VALID</h5>
+<section id="block_size_valid" class="level4">
+<h4>BLOCK_SIZE_VALID</h4>
 <p>This optional output is available when the block size is not
 constant, that is, if the block size type is either Variable or equal to
 Rows * Columns.</p>
 </section>
 </section>
-</section>
 <section id="port-parameters-2-tab" class="level3">
 <h3>Port Parameters #2 tab</h3>
 <p>Parameters specific to the Port Parameters #2 tab are as follows.</p>
-<section id="data-output-channel-options" class="level4">
-<h4>Data Output Channel Options</h4>
-<section id="tready" class="level5">
-<h5>TREADY</h5>
+<section id="tready" class="level4">
+<h4>TREADY</h4>
 <p>TREADY for the Data Input Channel. Used by the Symbol
 Interleaver/De-interleaver to signal that it is ready to accept
 data.</p>
 </section>
-<section id="fdo" class="level5">
-<h5>FDO</h5>
+<section id="fdo" class="level4">
+<h4>FDO</h4>
 <p>Adds a data_tuser_fdo (First Data Out) output port.</p>
 </section>
-<section id="rdy" class="level5">
-<h5>RDY</h5>
+<section id="rdy" class="level4">
+<h4>RDY</h4>
 <p>Adds a data_tuser_rdy output port.</p>
 </section>
-<section id="block_start" class="level5">
-<h5>BLOCK_START</h5>
+<section id="block_start" class="level4">
+<h4>BLOCK_START</h4>
 <p>Adds a data_tuser_block_start output port.</p>
 </section>
-<section id="block_end" class="level5">
-<h5>BLOCK_END</h5>
+<section id="block_end" class="level4">
+<h4>BLOCK_END</h4>
 <p>Adds a data_tuser_block_end output port.</p>
-</section>
 </section>
 <section id="pipelining" class="level4">
 <h4>Pipelining</h4>
-<section id="pipelining-1" class="level5">
-<h5>Pipelining</h5>
-<p>Pipelines the underlying LogiCORE for Minimum, Medium, or Maximum
-performance.</p>
+<p>Dialog parameter.</p>
+</section>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>Dialog parameter.</p>
+<p>Additional dialog notes:</p>
+<p>Dimensions. ROM-based. Look-up table ROMs are used to compute some of
+the internal results in the block.</p>
+<p>Logic-based. Logic circuits are used to compute some of the internal
+results in the block.</p>
+<p>Which option is best depends on the other core parameters. You should
+try both options to determine the best results. This parameter has no
+effect on the block behavior.</p>
+<p>Configurations. Length of Branches. Branch length descriptions for
+Forney SID.</p>
+<p>constant_difference_between_consecutive_branches. Specified by the
+Value parameter.</p>
+<p>use_coe_file_to_define_branch_lengths. Location of file is specified
+by the COE File parameter.</p>
+<p>coe_file_defines_individual_branch_lengths_for_every_branch_in_each_configuration.
+Location of file is specified by the COE File parameter.</p>
+<p>coe_file_defines_branch_length_constant_for_each_configuration.
+Location of file is specified by the COE File parameter.</p>
+<p>Number of Rows. Row Type. Constant. The number of rows is always
+equal to the Row Constant Value parameter.</p>
+<p>Variable. The number of rows is sampled from the ROW input at the
+start of each new block. Row permutations are not supported for the
+variable row type.</p>
+<p>Selectable. ROW_SEL is sampled at the start of each new block. This
+value is then used to select from one of the possible values for the
+number of rows provided in the COE file.</p>
+<p>Number of Columns. Column Type. Constant. The number of columns is
+always equal to the Column Constant Value parameter.</p>
+<p>Variable. The number of columns is sampled from the <code>COL</code>
+input at the start of each new block. Column permutations are not
+supported for the variable column type.</p>
+<p>Selectable. COL_SEL is sampled at the start of each new block. This
+value is then used to select from one of the possible values for the
+number of columns provided in the COE file.</p>
+</section>
+</section>
+<section id="rectangular-parameters-2-tab" class="level3">
+<h3>Rectangular Parameters #2 Tab</h3>
+<p>Parameters specific to the Rectangular Parameters #2 tab are as
+follows.</p>
+<p>Permutations Configuration. None. This tells Model Composer that row
+permutations are not to be performed.</p>
+<p>Use COE file. This tells Model Composer that a row permute vector
+exists in the COE file, and that row permutations are to be performed.
+Remember this is possible only for un-pruned
+interleaver/deinterleavers.</p>
+<p>None. This tells Model Composer that column permutations are not to
+be performed</p>
+<p>Use COE file. This tells Model Composer that a column permute vector
+exists in the <code>COE</code> file, and that column permutations are to
+be performed. Remember this is possible only for un-pruned
+interleaver/deinterleavers.</p>
+<p>Block Size. Block Size Type. Constant. The block size never changes.
+The block can be pruned (block size &lt; row * col). The block size must
+be chosen so that the last symbol is on the last row. An un-pruned
+interleaver will use a smaller quantity of FPGA resources than a pruned
+one, so pruning should be used only if necessary.</p>
+<p>Rows*Columns. If the number of rows and columns is constant,
+selecting this option has the same effect as setting the block size type
+to constant and entering a value of rows * columns for the block
+size.</p>
+<p>If the number of rows or columns is not constant, selecting this
+option means the core will calculate the block size automatically
+whenever a new row or column value is sampled. Pruning is impossible
+with this block size type.</p>
+<p>Variable. Block size is sampled from the BLOCK_SIZE input at the
+beginning of every block. The value sampled on BLOCK_SIZE must be such
+that the last symbol falls on the last row, as previously described.</p>
+<p>If the block size is already available external to the core,
+selecting this option is usually more efficient than selecting “rows *
+columns” for the block size type. Row and column permutations are not
+supported for the Variable block size type.</p>
+</section>
+<section id="port-parameters-1-tab" class="level3">
+<h3>Port Parameters #1 tab</h3>
+<p>Parameters specific to the Port Parameters tab are as follows.</p>
+<p>Control Signals. Status Signals. Data Output Channel Options.
+Pipelining. Pipelines the underlying LogiCORE for Minimum, Medium, or
+Maximum performance.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-</section>
-</section>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">

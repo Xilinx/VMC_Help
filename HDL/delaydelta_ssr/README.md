@@ -30,8 +30,33 @@ The Vector Delay Delta block implements a fixed delay of L cycles.
 
 ## Parameters
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+#### Provide synchronous reset port
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
+#### Delta Latency
+
+Dialog parameter.
+
+#### SSR
+
+Dialog parameter.
+
+#### Implement using behavioral HDL.
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector and/or complex data support for
 the primary block operation.
@@ -44,3 +69,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

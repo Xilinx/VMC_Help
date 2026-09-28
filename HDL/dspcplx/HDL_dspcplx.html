@@ -48,114 +48,84 @@ primitive which is used to develop this feature.</p>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows:</p>
-<section id="input-configuration" class="level4">
-<h4>Input Configuration</h4>
-<section id="a-or-acin-input" class="level5">
-<h5>A or ACIN input</h5>
+<section id="a-or-acin-input" class="level4">
+<h4>A or ACIN input</h4>
 <p>Specifies if the A input should be taken directly from the a_re, a_im
 ports or from the cascaded acin_re, acin_im ports. The acin_re and
 acin_im ports can only be connected to another DSPCPLX block.</p>
 </section>
-<section id="b-or-bcin-input" class="level5">
-<h5>B or BCIN input</h5>
+<section id="b-or-bcin-input" class="level4">
+<h4>B or BCIN input</h4>
 <p>Specifies if the B input should be taken directly from the b_re, b_im
 ports or from the cascaded bcin_re, bcin_im ports. The bcin_re and
 bcin_im ports can only be connected to another DSPCPLX block.</p>
 </section>
-</section>
-<section id="pattern-detection-on-real-output" class="level4">
-<h4>Pattern Detection on Real Output</h4>
-<section id="reset-p_re-register-on-pattern-detection" class="level5">
-<h5>Reset p_re register on pattern detection</h5>
+<section id="reset-p_re-register-on-pattern-detection" class="level4">
+<h4>Reset p_re register on pattern detection</h4>
 <p>If selected and the pattern_re is detected, reset the p_re register
 on the next cycle</p>
 </section>
-<section id="auto-reset-priority-re" class="level5">
-<h5>AUTO RESET PRIORITY RE</h5>
+<section id="auto-reset-priority-re" class="level4">
+<h4>AUTO RESET PRIORITY RE</h4>
 <p>When enabled by selecting the option above, select RESET (the
 default) or CEP (clock enabled for the P_RE (output) resister).</p>
 </section>
-</section>
 <section id="pattern-input-re" class="level4">
 <h4>Pattern Input RE</h4>
-<section id="pattern-input-from-c_re-port" class="level5">
-<h5>Pattern Input from c_re port</h5>
-<p>When selected, the pattern_re used in pattern detection on Real
-Output is read from the c_re port.</p>
+<p>Dialog parameter.</p>
 </section>
-<section id="using-pattern-attribute-re-58-bit-hex-value" class="level5">
-<h5>Using Pattern Attribute RE (58-bit hex value)</h5>
+<section id="pattern-attribute-re" class="level4">
+<h4>Pattern attribute RE</h4>
 <p>Value is used in pattern detection logic which is best described as
 an equality check on the output of the adder/subtractor/logic unit.</p>
 </section>
-<section id="using-pattern-attribute-re-58-bit-hex-value-1" class="level5">
-<h5>Using Pattern Attribute RE (58-bit hex value)</h5>
-<p>Enter a 58-bit value that is used in the pattern detector.</p>
-</section>
-</section>
 <section id="mask-input-re" class="level4">
 <h4>Mask Input RE</h4>
-<section id="mask-input-from-c_re-port" class="level5">
-<h5>Mask input from c_re port</h5>
-<p>When selected, the mask_re used in pattern detection is read from the
-c_re port.</p>
+<p>Dialog parameter.</p>
 </section>
-<section id="using-mask-attribute-re-58-bit-hex-value" class="level5">
-<h5>Using Mask Attribute RE (58-bit hex value)</h5>
+<section id="mask-attribute-re" class="level4">
+<h4>Mask attribute RE</h4>
 <p>Enter a 58-bit value used to mask out certain bits during pattern
 detection on Real Output.</p>
 </section>
-<section id="mode1" class="level5">
-<h5>MODE1</h5>
-<p>Selects rounding_mode 1 (C_RE-bar left shifted by 1).</p>
+<section id="rnd_re" class="level4">
+<h4>RND_RE</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="mode2" class="level5">
-<h5>MODE2</h5>
-<p>Selects rounding_mode 2 (C_RE-bar left shifted by 2).</p>
-</section>
-</section>
-<section id="pattern-detection-on-imaginary-output" class="level4">
-<h4>Pattern Detection on Imaginary Output</h4>
-<section id="reset-p_im-register-on-pattern-detection" class="level5">
-<h5>Reset p_im register on pattern detection</h5>
+<section id="reset-p_im-register-on-pattern-detection" class="level4">
+<h4>Reset p_im register on pattern detection</h4>
 <p>If selected and the pattern_im is detected, reset the p_im register
 on the next cycle.</p>
 </section>
-<section id="auto-reset-priority-im" class="level5">
-<h5>AUTO RESET PRIORITY IM</h5>
+<section id="auto-reset-priority-im" class="level4">
+<h4>AUTO RESET PRIORITY IM</h4>
 <p>When enabled by selecting the option above, select RESET (the
 default) or CEP (clock enabled for the P_IM (output) resister).</p>
 </section>
+<section id="pattern-input-im" class="level4">
+<h4>Pattern Input IM</h4>
+<p>When selected, the pattern_re used in pattern detection on Real
+Output is read from the c_re port.</p>
+</section>
+<section id="pattern-attribute-im" class="level4">
+<h4>Pattern attribute IM</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="mask-input-im" class="level4">
 <h4>Mask Input IM</h4>
-<section id="mask-input-from-c_im-port" class="level5">
-<h5>Mask input from c_im port</h5>
-<p>When selected, the mask_im used in pattern detection on Imaginary
-Output is read from the c_im port.</p>
+<p>Dialog parameter.</p>
 </section>
-<section id="using-mask-attribute-re-58-bit-hex-value-1" class="level5">
-<h5>Using Mask Attribute RE (58-bit hex value)</h5>
-<p>Enter a 58-bit value used to mask out certain bits during pattern
-detection on Imaginary Output.</p>
+<section id="mask-attribute-im" class="level4">
+<h4>Mask attribute IM</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="mode1-1" class="level5">
-<h5>MODE1</h5>
-<p>Selects rounding_mode 1 (C_IM-bar left shifted by 1).</p>
+<section id="rnd_im" class="level4">
+<h4>RND_IM</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="mode2-1" class="level5">
-<h5>MODE2</h5>
-<p>Selects rounding_mode 2 (C_IM-bar left shifted by 2).</p>
-</section>
-</section>
-</section>
-<section id="optional-ports-tab" class="level3">
-<h3>Optional Ports tab</h3>
-<p>Parameters specific to the Optional Ports tab are as follows:</p>
-<section id="input-ports" class="level4">
-<h4>Input Ports</h4>
-<section id="consolidate-control-port" class="level5">
-<h5>Consolidate control port</h5>
+<section id="consolidate-control-port-opmode-alumode-carry_in-carry_in_sel-conjugate" class="level4">
+<h4>Consolidate control port (opmode, alumode, carry_in, carry_in_sel,
+conjugate)</h4>
 <p>When selected, combines the opmode, alumode, carry_in, carry_in_sel,
 inmode and conjugate ports into one 18-bit port. Bits 0 to 8 are the
 opmode, bits 9 to 12 are the alumode port, bit 13 is the carry_in port,
@@ -165,117 +135,107 @@ the Opmode block is used to generate a DSPCPLX instruction.</p>
 <p><strong>Note</strong>: Enabling this option will drive both the left
 and right DSP58 tiles with the same configuration.</p>
 </section>
-<section id="provide-c-port" class="level5">
-<h5>Provide c port</h5>
+<section id="provide-c-port" class="level4">
+<h4>Provide c port</h4>
 <p>When selected, the c_re and c_im ports are made available. Otherwise,
 the c_re and c_im ports are tied to &#39;0&#39;.</p>
 </section>
-<section id="provide-global-reset-port" class="level5">
-<h5>Provide global reset port</h5>
+<section id="provide-global-reset-port" class="level4">
+<h4>Provide global reset port</h4>
 <p>When selected, the port rst_all is made available. This port is
 connected to all available reset ports based on the pipeline
 selections.</p>
 </section>
-<section id="provide-global-enable-port" class="level5">
-<h5>Provide global enable port</h5>
+<section id="provide-global-enable-port" class="level4">
+<h4>Provide global enable port</h4>
 <p>When selected, the optional en_all port is made available. This port
 is connected to all available enable ports based on the pipeline
 selections.</p>
 </section>
-</section>
-<section id="cascadable-ports" class="level4">
-<h4>Cascadable Ports</h4>
-<section id="provide-pcin-port" class="level5">
-<h5>Provide pcin port</h5>
+<section id="provide-pcin-port" class="level4">
+<h4>Provide pcin port</h4>
 <p>When selected, the pcin_re and pcin_im ports are exposed. The pcin_re
 and pcin_im ports must be connected to the pcout_re and pcout_im ports
 of another DSPCPLX block respectively.</p>
 </section>
-<section id="provide-carry-cascade-in-port" class="level5">
-<h5>Provide carry cascade in port</h5>
+<section id="provide-carry-cascade-in-port" class="level4">
+<h4>Provide carry cascade in port</h4>
 <p>When selected, the carrycascin_re and carrycascin_im ports are
 exposed. These ports can only be connected to a carry cascade out ports
 of another DSPCPLX block.</p>
 </section>
-<section id="provide-multiplier-sign-cascade-in-port" class="level5">
-<h5>Provide multiplier sign cascade in port</h5>
+<section id="provide-multiplier-sign-cascade-in-port" class="level4">
+<h4>Provide multiplier sign cascade in port</h4>
 <p>When selected, the multsignin_re and multsignin_im ports are exposed.
 These ports can only be connected to a multiplier sign cascade out ports
 of another DSPCPLX block.</p>
 </section>
-</section>
-<section id="output-ports" class="level4">
-<h4>Output Ports</h4>
-<section id="provide-carryout-port" class="level5">
-<h5>Provide carryout port</h5>
+<section id="provide-carry-out-port" class="level4">
+<h4>Provide carry out port</h4>
 <p>When selected, the carryout_re and carryout_im output ports are made
 available.</p>
 </section>
-<section id="provide-pattern-detect-port" class="level5">
-<h5>Provide pattern detect port</h5>
+<section id="provide-pattern-detect-port" class="level4">
+<h4>Provide pattern detect port</h4>
 <p>When selected, the patterndetect_re and patterndetect_out ports are
 provided. When the pattern_re/pattern_im, either from the
 mask_re/mask_im or the c_re/c_im register is matched, the respective
 patterndetect_re/patterndetect_im port is set to &#39;1&#39;.</p>
 </section>
-<section id="provide-pattern-bar-detect-port" class="level5">
-<h5>Provide pattern bar detect port</h5>
+<section id="provide-pattern-bar-detect-port" class="level4">
+<h4>Provide pattern bar detect port</h4>
 <p>When selected, the patternbdetect_re and patternbdetect_im ports are
 provided. When the inverse of the pattern_re/pattern_im, either from the
 mask_re/mask_im or the c_re/c_im register is matched, the
 patternbdetect_re/patternbdetect_im port is set to &#39;1&#39;.</p>
 </section>
-<section id="provide-overflow-port" class="level5">
-<h5>Provide overflow port</h5>
+<section id="provide-overflow-port" class="level4">
+<h4>Provide overflow port</h4>
 <p>When selected, the overflow_re and overflow_im ports are provided.
 These ports indicate when the operation in the DSPCPLX has overflowed
 beyond the bit P_RE[N]/P_IM[N] where N is between 0 and 56. N is
 determined by the number of 1s in the mask_re/mask_im whether set by the
 GUI mask field or the c_re/c_im port input.</p>
 </section>
-<section id="provide-underflow-port" class="level5">
-<h5>Provide underflow port</h5>
+<section id="provide-underflow-port" class="level4">
+<h4>Provide underflow port</h4>
 <p>When selected, the underflow_re and underflow_im ports are provided.
 These ports indicate when the operation in the DSPCPLX has underflowed.
 Underflow occurs when the number goes below -P_RE[N]/P_IM[N], where N is
 determined by the number of 1s in the mask_re/mask_im whether set by the
 GUI mask field or the c_re/c_im port input.</p>
 </section>
-</section>
-<section id="cascadable-ports-1" class="level4">
-<h4>Cascadable Ports</h4>
-<section id="provide-acout-port" class="level5">
-<h5>Provide acout port</h5>
+<section id="provide-acout-port" class="level4">
+<h4>Provide acout port</h4>
 <p>When selected, the acout_re and acout_im output ports are made
 available. The acout_re/acout_im port must be connected to the
 acin_re/acin_im port of another DSPCPLX block.</p>
 </section>
-<section id="provide-bcout-port" class="level5">
-<h5>Provide bcout port</h5>
+<section id="provide-bcout-port" class="level4">
+<h4>Provide bcout port</h4>
 <p>When selected, the bcout_re and bcout_im output ports are made
 available. The bcout_re/bcout_im port must be connected to the
 bcin_re/bcin_im port of another DSPCPLX block.</p>
 </section>
-<section id="provide-pcout-port" class="level5">
-<h5>Provide pcout port</h5>
+<section id="provide-pcout-port" class="level4">
+<h4>Provide pcout port</h4>
 <p>When selected, the pcout_re and pcout_im output ports are made
 available. The pcout_re/pcout_im port must be connected to the
 pcin_re/pcin_im port of another DSPCPLX block.</p>
 </section>
-<section id="provide-multiplier-sign-cascade-out-port" class="level5">
-<h5>Provide multiplier sign cascade out port</h5>
+<section id="provide-multiplier-sign-cascade-out-port" class="level4">
+<h4>Provide multiplier sign cascade out port</h4>
 <p>When selected, the multsignout_re and multsignout_im ports are made
 available. These ports can only be connected to the multsignin_re and
 multsignin_im ports of another DSPCPLX block respectively and is used to
 support 116-bit accumulators/adders and subtracters which are built from
 two DSPCPLXs.</p>
 </section>
-<section id="provide-carry-cascade-out-port" class="level5">
-<h5>Provide carry cascade out port</h5>
+<section id="provide-carry-cascade-out-port" class="level4">
+<h4>Provide carry cascade out port</h4>
 <p>When selected, the carrycascout_re and carrycascout_im ports are made
 available. These ports can only be connected to the carrycascin_re and
 carrycascin_im ports of another DSPCPLX block respectively.</p>
-</section>
 </section>
 </section>
 <section id="pipelining-tab" class="level3">
@@ -407,137 +367,131 @@ output.</p>
 <section id="resetenable-ports-tab" class="level3">
 <h3>Reset/Enable Ports tab</h3>
 <p>Parameters specific to the Reset/Enable tab are as follows:</p>
-<section id="provide-reset-ports" class="level4">
-<h4>Provide Reset Ports</h4>
-<section id="reset-port-for-aacin" class="level5">
-<h5>Reset port for a/acin</h5>
+<section id="reset-port-for-aacin" class="level4">
+<h4>Reset port for a/acin</h4>
 <p>When selected, rsta_re and rsta_im ports are made available. This
 resets the pipeline registers for port a_re, a_im when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-bbcin" class="level5">
-<h5>Reset port for b/bcin</h5>
+<section id="reset-port-for-bbcin" class="level4">
+<h4>Reset port for b/bcin</h4>
 <p>When selected, rstb_re and rstb_im are made available. This resets
 the pipeline registers for port b_re, b_im when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-c" class="level5">
-<h5>Reset port for c</h5>
+<section id="reset-port-for-c" class="level4">
+<h4>Reset port for c</h4>
 <p>When selected, rstc_re and rstc_im are made available. This resets
 the pipeline registers for port c_re, c_im when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-multiplier" class="level5">
-<h5>Reset port for multiplier</h5>
+<section id="reset-port-for-multiplier" class="level4">
+<h4>Reset port for multiplier</h4>
 <p>When selected, rstm_re and rstm_im are made available. This resets
 the pipeline registers for internal multiplier respectively when set to
 &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-p" class="level5">
-<h5>Reset port for P</h5>
+<section id="reset-port-for-p" class="level4">
+<h4>Reset port for p</h4>
 <p>When selected, rstp_re and rstp_im are made available. This resets
 the output p_re and p_im registers when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-carry-in" class="level5">
-<h5>Reset port for carry in</h5>
+<section id="reset-port-for-carry-in" class="level4">
+<h4>Reset port for carry in</h4>
 <p>When selected, rstallcarryin_re and rstallcarryin_im are made
 available. This resets the pipeline registers for carryin_re and
 carryin_im port when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-alumode" class="level5">
-<h5>Reset port for alumode</h5>
+<section id="reset-port-for-alumode" class="level4">
+<h4>Reset port for alumode</h4>
 <p>When selected, rstalumode_re and rstalumode_im are made available.
 This resets the pipeline register for the alumode_re and alumode_im port
 when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-controls-opmode-and-carry_in_sel" class="level5">
-<h5>Reset port for controls (opmode and carry_in_sel)</h5>
+<section id="reset-port-for-controls-opmode-and-carry_in_sel" class="level4">
+<h4>Reset port for controls (opmode and carry_in_sel)</h4>
 <p>When selected, a port rstctrl_re and rstctrl_im are made available.
 This resets the pipeline register for the opmode_re/opmode_im register
 (if available) and the carryinsel_re/carryinsel_im register (if
 available) when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-ad" class="level5">
-<h5>Reset port for ad</h5>
+<section id="reset-port-for-ad" class="level4">
+<h4>Reset port for ad</h4>
 <p>When selected, port rstad is made available. This resets the pipeline
 ad register for ports when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-conjugate_a" class="level5">
-<h5>Reset port for Conjugate_a</h5>
+<section id="reset-port-for-conjugate_a" class="level4">
+<h4>Reset port for Conjugate_a</h4>
 <p>When selected, port rstconjugate_a is made available. This resets the
 pipeline register for the Conjugate_a port when set to &#39;1&#39;.</p>
 </section>
-<section id="reset-port-for-conjugate_b" class="level5">
-<h5>Reset port for Conjugate_b</h5>
+<section id="reset-port-for-conjugate_b" class="level4">
+<h4>Reset port for Conjugate_b</h4>
 <p>When selected, port rstconjugate_b is made available. This resets the
 pipeline register for the Conjugate_b port when set to &#39;1&#39;.</p>
 </section>
-</section>
-<section id="provide-enable-ports" class="level4">
-<h4>Provide Enable Ports</h4>
-<section id="enable-port-for-first-aacin-register" class="level5">
-<h5>Enable port for first a/acin register</h5>
+<section id="enable-port-for-first-aacin-register" class="level4">
+<h4>Enable port for first a/acin register</h4>
 <p>When selected, enable ports cea1_re and cea1_im for the first a_re
 and a_im pipeline register are made available.</p>
 </section>
-<section id="enable-port-for-second-aacin-register" class="level5">
-<h5>Enable port for second a/acin register</h5>
+<section id="enable-port-for-second-aacin-register" class="level4">
+<h4>Enable port for second a/acin register</h4>
 <p>When selected, enable ports cea2_re and cea2_im for the second a_re
 and a_im pipeline registers are made available.</p>
 </section>
-<section id="enable-port-for-first-bbcin-register" class="level5">
-<h5>Enable port for first b/bcin register</h5>
+<section id="enable-port-for-first-bbcin-register" class="level4">
+<h4>Enable port for first b/bcin register</h4>
 <p>When selected, enable ports ceb1_re and ceb1_im for the first b_re
 and b_im pipeline registers are made available.</p>
 </section>
-<section id="enable-port-for-second-bbcin-register" class="level5">
-<h5>Enable port for second b/bcin register</h5>
+<section id="enable-port-for-second-bbcin-register" class="level4">
+<h4>Enable port for second b/bcin register</h4>
 <p>When selected, enable ports ceb2_re and ceb2_im for the second b_re
 and b_im pipeline registers are made available.</p>
 </section>
-<section id="enable-port-for-c" class="level5">
-<h5>Enable port for c</h5>
+<section id="enable-port-for-c" class="level4">
+<h4>Enable port for c</h4>
 <p>When selected, enable ports cec_re and cec_im for the port C_re and
 C_im registers are made available.</p>
 </section>
-<section id="enable-port-for-multiplier" class="level5">
-<h5>Enable port for multiplier</h5>
+<section id="enable-port-for-multiplier" class="level4">
+<h4>Enable port for multiplier</h4>
 <p>When selected, enable ports cem_re and cem_im for the Real and
 Imaginary multiplier registers are made available.</p>
 </section>
-<section id="enable-port-for-p" class="level5">
-<h5>Enable port for p</h5>
+<section id="enable-port-for-p" class="level4">
+<h4>Enable port for p</h4>
 <p>When selected, enable ports cep_re and cep_im for the port P_re and
 P_im output registers are made available.</p>
 </section>
-<section id="enable-port-for-carry-in" class="level5">
-<h5>Enable port for carry in</h5>
+<section id="enable-port-for-carry-in" class="level4">
+<h4>Enable port for carry in</h4>
 <p>When selected, enable ports cecarryin_re and cecarryin_im for the
 Real and Imaginary carry in registers are made available.</p>
 </section>
-<section id="enable-port-for-alumode" class="level5">
-<h5>Enable port for alumode</h5>
+<section id="enable-port-for-alumode" class="level4">
+<h4>Enable port for alumode</h4>
 <p>When selected, enable ports cealumode_re and cealumode_im for the
 Real and Imaginary alumode registers are made available.</p>
 </section>
-<section id="enable-port-for-controls-opmode-and-carry_in_sel" class="level5">
-<h5>Enable port for controls (opmode and carry_in_sel)</h5>
+<section id="enable-port-for-controls-opmode-and-carry_in_sel" class="level4">
+<h4>Enable port for controls (opmode and carry_in_sel)</h4>
 <p>When selected, enable ports cectrl_re and cectrl_im are made
 available. The ports cectrl_re and cectrl_im controls the Real and
 Imaginary opmode and carry in select registers.</p>
 </section>
-<section id="enable-port-for-ad" class="level5">
-<h5>Enable port for ad</h5>
+<section id="enable-port-for-ad" class="level4">
+<h4>Enable port for ad</h4>
 <p>When selected, an enable port is created for the preadder output
 register ad.</p>
 </section>
-<section id="enable-port-for-conjugate_a" class="level5">
-<h5>Enable port for Conjugate_a</h5>
+<section id="enable-port-for-conjugate_a" class="level4">
+<h4>Enable port for Conjugate_a</h4>
 <p>When selected, an enable port conjugate_a is added for the
 Conjugate_A register.</p>
 </section>
-<section id="enable-port-for-conjugate_b" class="level5">
-<h5>Enable port for Conjugate_b</h5>
+<section id="enable-port-for-conjugate_b" class="level4">
+<h4>Enable port for Conjugate_b</h4>
 <p>When selected, an enable port conjugate_b is added for the
 Conjugate_B register.</p>
-</section>
 </section>
 </section>
 <section id="inversion-options-tab" class="level3">
@@ -548,6 +502,130 @@ inverted.</p>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <p>Parameters specific to the Implementation tab are as follows.</p>
+<section id="invert-alumode-re" class="level4">
+<h4>Invert alumode Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="real-bits-to-be-invert" class="level4">
+<h4>Real bits to be invert</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-alumode-im" class="level4">
+<h4>Invert alumode Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="imaginary-bits-to-be-invert" class="level4">
+<h4>Imaginary bits to be invert</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-carryin-re" class="level4">
+<h4>Invert carryin Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-carryin-im" class="level4">
+<h4>Invert carryin Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-conjugate-a" class="level4">
+<h4>Invert conjugate A</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-conjugate-b" class="level4">
+<h4>Invert conjugate B</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-opmode-re" class="level4">
+<h4>Invert opmode Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="real-bits-to-be-invert-1" class="level4">
+<h4>Real bits to be invert</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-opmode-im" class="level4">
+<h4>Invert opmode Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="imaginary-bits-to-be-invert-1" class="level4">
+<h4>Imaginary bits to be invert</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-carryin-re" class="level4">
+<h4>Invert rst for carryin Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-carryin-im" class="level4">
+<h4>Invert rst for carryin Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-alumode-re" class="level4">
+<h4>Invert rst for alumode Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-alumode-im" class="level4">
+<h4>Invert rst for alumode Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-a-re" class="level4">
+<h4>Invert rst for a Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-a-im" class="level4">
+<h4>Invert rst for a Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-b-re" class="level4">
+<h4>Invert rst for b Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-b-im" class="level4">
+<h4>Invert rst for b Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-c-re" class="level4">
+<h4>Invert rst for c Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-c-im" class="level4">
+<h4>Invert rst for c Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-ad" class="level4">
+<h4>Invert rst for ad</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-contorls-re" class="level4">
+<h4>Invert rst for contorls Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-contorls-im" class="level4">
+<h4>Invert rst for contorls Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-conjugate-a" class="level4">
+<h4>Invert rst for conjugate A</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-conjugate-b" class="level4">
+<h4>Invert rst for conjugate B</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-multiplier-re" class="level4">
+<h4>Invert rst for multiplier Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-multiplier-im" class="level4">
+<h4>Invert rst for multiplier Im</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-p-re" class="level4">
+<h4>Invert rst for p Re</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-p-im" class="level4">
+<h4>Invert rst for p Im</h4>
+<p>Dialog parameter.</p>
+</section>
 <section id="use-synthesizable-model" class="level4">
 <h4>Use synthesizable model</h4>
 <p>When selected, the DSPCPLX is implemented from an RTL description
@@ -556,11 +634,33 @@ design using the DSPCPLX block is targeted at device families that do
 not contain DSP58 hardware primitives.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Additional dialog notes:</p>
+<p>Input Configuration. Pattern Detection on Real Output. Using Pattern
+Attribute RE (58-bit hex value). Enter a 58-bit value that is used in
+the pattern detector.</p>
+<p>Mask input from c_re port. When selected, the mask_re used in pattern
+detection is read from the c_re port.</p>
+<p>MODE1. Selects rounding_mode 1 (C_RE-bar left shifted by 1).</p>
+<p>MODE2. Selects rounding_mode 2 (C_RE-bar left shifted by 2).</p>
+<p>Pattern Detection on Imaginary Output. Mask input from c_im port.
+When selected, the mask_im used in pattern detection on Imaginary Output
+is read from the c_im port.</p>
+<p>Using Mask Attribute RE (58-bit hex value). Enter a 58-bit value used
+to mask out certain bits during pattern detection on Imaginary
+Output.</p>
+<p>MODE1. Selects rounding_mode 1 (C_IM-bar left shifted by 1).</p>
+<p>MODE2. Selects rounding_mode 2 (C_IM-bar left shifted by 2).</p>
+</section>
+</section>
+<section id="optional-ports-tab" class="level3">
+<h3>Optional Ports tab</h3>
+<p>Parameters specific to the Optional Ports tab are as follows:</p>
+<p>Input Ports. Cascadable Ports. Output Ports. Cascadable Ports.
+Provide Reset Ports. Provide Enable Ports.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>

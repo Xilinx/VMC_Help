@@ -58,16 +58,19 @@ icon in your Simulink® model.
 ### Basic tab  
 Parameters specific to this block are as follows:
 
-#### Infer maximum latency (depth) using address port width  
+#### Infer maximum latency (depth) using address port width
+
 You can choose to allow the block to automatically determine the depth
 or maximum latency of the shift-register-based on the bit-width of the
 address port.
 
-#### Maximum latency (depth)  
+#### Maximum latency (depth)
+
 In the case that the maximum latency is not inferred (previous option),
 the maximum latency can be set explicitly.
 
-#### Initial value vector  
+#### Initial value vector
+
 Specifies the initial register values. When the vector is longer than
 the shift register depth, the vector's trailing elements are discarded.
 When the shift register is deeper than the vector length, the shift
@@ -80,7 +83,16 @@ Boxes](../../GEN/common-options/README.md).
 ### Implementation tab  
 Parameters specific to this block are as follows:
 
-#### Optimization  
+#### Provide enable port
+
+Dialog parameter.
+
+#### Use behavioral HDL (otherwise use core)
+
+Dialog parameter.
+
+#### Optimization
+
 You can choose to optimize for Resource (minimum area) or for Speed
 (maximum performance).
 

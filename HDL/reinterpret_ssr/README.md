@@ -60,27 +60,35 @@ cost in hardware.
 
 Parameters specific to the block are as follows.
 
-#### Force Arithmetic Type  
+#### Force Arithmetic Type
+
 When checked, the Output Arithmetic Type parameter can be set and the
 output type is forced to the arithmetic type chosen according to the
 setting of the Output Arithmetic Type parameter. When unchecked, the
 arithmetic type of the output is unchanged from the arithmetic type of
 the input.
 
-#### Output Arithmetic Type  
+#### Output Arithmetic Type
+
 The arithmetic type (unsigned or signed, 2's complement, Floating-point)
 to which the output is to be forced.
 
-#### Force Binary Point  
+#### Force Binary Point
+
 When checked, the Output Binary Point parameter can be set and the
 binary point position of the output is forced to the position supplied
 in the Output Binary Point parameter. When unchecked, the arithmetic
 type of the output is unchanged from the arithmetic type of the input.
 
-#### Output Binary Point  
+#### Output Binary Point
+
 The position to which the output's binary point is to be forced. The
 supplied value must be an integer between zero and the number of bits in
 the input (inclusive).
+
+#### SSR
+
+Dialog parameter.
 
 ## LogiCORE™ Documentation
 

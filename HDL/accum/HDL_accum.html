@@ -55,28 +55,23 @@ b(n) with subtraction.</p>
 <h4>Operation</h4>
 <p>This determines whether the block is adder- or subtractor-based.</p>
 </section>
-<section id="fixed-point-output-precision" class="level4">
-<h4>Fixed-Point Output Precision</h4>
-<section id="number-of-bits" class="level5">
-<h5>Number of bits</h5>
+<section id="number-of-bits" class="level4">
+<h4>Number of bits</h4>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
 </section>
-<section id="overflow" class="level5">
-<h5>Overflow</h5>
+<section id="overflow" class="level4">
+<h4>Overflow</h4>
 <p>Refer to the section <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;))">Overflow
 and Quantization</a>.</p>
-</section>
 </section>
 <section id="feedback-scaling" class="level4">
 <h4>Feedback scaling</h4>
 <p>Specifies the feedback scale factor to be one of the following:</p>
 <p>1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, or 1/256.</p>
 </section>
-<section id="optional-ports" class="level4">
-<h4>Optional Ports</h4>
-<section id="provide-synchronous-reset-port" class="level5">
-<h5>Provide synchronous reset port</h5>
+<section id="provide-synchronous-reset-port" class="level4">
+<h4>Provide synchronous reset port</h4>
 <p>Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted, the block goes back to its initial state. However,
 when a floating point accumulator is used, the output will be NAN during
@@ -85,11 +80,8 @@ available on the block. The reset signal must run at a multiple of the
 block&#39;s sample rate. The signal driving the reset port must be
 Boolean.</p>
 </section>
-</section>
-<section id="bypass-option-on-reset" class="level4">
-<h4>Bypass Option on Reset</h4>
-<section id="reinitialize-with-input-b" class="level5">
-<h5>Reinitialize with input &#39;b&#39;</h5>
+<section id="reinitialize-with-input-b" class="level4">
+<h4>Reinitialize with input &#39;b&#39;</h4>
 <p>When selected, the output of the accumulator is reset to the data on
 input port b. When not selected, the output of the accumulator is reset
 to zero. This option is available only when the block has a reset port.
@@ -100,27 +92,31 @@ runs at the system rate, and the reset to input operation is a function
 of the CE signal.</p>
 </section>
 </section>
-</section>
 <section id="internal-precision-tab" class="level3">
 <h3>Internal Precision tab</h3>
 <p>Parameters specific to the Internal Precision tab are as follows:</p>
-<section id="floating-point-precision" class="level4">
-<h4>Floating Point Precision</h4>
-<section id="input-msb-max" class="level5">
-<h5>Input MSB Max</h5>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="input-msb-max" class="level4">
+<h4>Input MSB Max</h4>
 <p>The Most Significant Bit of the largest number that can be
 accepted.</p>
 </section>
-<section id="output-msb-max" class="level5">
-<h5>Output MSB Max</h5>
+<section id="output-msb-max" class="level4">
+<h4>Output MSB Max</h4>
 <p>The MSB of the largest result. It can be up to 54 bits greater than
 the Input MSB.</p>
 </section>
-<section id="output-lsb-min" class="level5">
-<h5>Output LSB Min</h5>
+<section id="output-lsb-min" class="level4">
+<h4>Output LSB Min</h4>
 <p>The Least Significant Bit of the smallest number that can be
 accepted. It is also the LSB of the accumulated result.</p>
-</section>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
@@ -139,16 +135,16 @@ available in the target device. The default is Fabric.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <p>The Accumulator block always has a latency of 1.</p>
-</section>
-</section>
-</section>
-<section id="logicore-documentation" class="level2">
-<h2>LogiCORE™ Documentation</h2>
+<p>Additional dialog notes:</p>
+<p>Fixed-Point Output Precision. Optional Ports. Bypass Option on Reset.
+Floating Point Precision. ## LogiCORE™ Documentation</p>
 <p>Accumulator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg119-c-accum&amp;ft:locale=en-US">PG119</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
+</section>
 </section>
 </section>
 </body>

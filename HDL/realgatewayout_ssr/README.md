@@ -44,7 +44,9 @@ the following functions:
 
 ### Basic Tab  
 Parameters specific to the Basic tab are as follows.
-#### Propagate data type to output  
+
+#### Propagate data type to output
+
 This option is useful when you instantiate a Model Composer design as a
 sub-system into a Simulink design. Instead of using a Simulink double as
 the output data type by default, the Model Composer data type is
@@ -66,7 +68,8 @@ following table:
 
 
 
-#### Translate into Output Port  
+#### Translate into output port
+
 Having this box unchecked prevents the gateway from becoming an actual
 output port when translated into hardware. This checkbox is on by
 default, enabling the output port. When this option is not selected, the
@@ -76,42 +79,29 @@ of the design. In this case, the Vector Real Gateway Out block turns
 gray in color, indicating that the gateway will not be translated into
 an output port.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.
+#### SSR
 
-### Implementation Tab  
-Parameters specific to the Implementation tab are as follows.
+Dialog parameter.
 
-#### Interface Options  
-##### None  
-During HDL Netlist generation, this Vector Real Gateway Out will be
-translated as an Output Port at the top level.
+#### Interface
 
-##### AXI4-Lite  
-During HDL Netlist Generation, an AXI4-Lite interface will be created,
-and the Vector Real Gateway Out will be mapped to one of the registers
-within the AXI4-Lite interface.
+Dialog parameter.
 
-##### Interrupt  
-During an IP catalog Generation, this Vector Real Gateway Out is tagged
-as an Interrupt output port when the Model Composer design is packaged
-into an IP module that can be included in the Vivado® IP catalog.
+#### Auto assign address offset
 
-#### Auto assign address offset  
 If a Vector Real Gateway Out is configured to be an AXI4-Lite interface,
 this option allows an address offset to be automatically assigned to the
 register within the AXI4-Lite interface that the Vector Real Gateway Out
 is mapped to.
 
-#### Address offset  
+#### Address offset
+
 If Auto assign address offset is not checked, then this entry box allows
 you to explicitly specify a address offset to use. Must be a multiple of
 4.
 
-#### Interface Name  
+#### Interface Name
+
 If the Vector Real Gateway Out is configured to be an AX4-Lite
 interface, assigns a unique name to this interface. This name can be
 used to differentiate between multiple AXI4-Lite interfaces in the
@@ -124,7 +114,8 @@ characters (lowercase alphabetic) or an underscore (\_) only, and must
 begin with a lowercase alphabetic character. axi4_lite1 is acceptable,
 1AXI4-Lite is not.
 
-#### Description  
+#### Description
+
 Additional designer comments about this Vector Real Gateway Out that is
 captured in the interface documentation.
 
@@ -135,13 +126,49 @@ input/output buffers (IOBs). There are three ways to constrain the
 timing on IOBs. They are None, Data Rate, and Data Rate, Set 'FAST'
 Attribute.
 
-#### None  
-No timing constraints for the IOBs are put in the user constraint file
+#### IOB timing constraint
+
+Dialog parameter.
+
+#### Specify IOB location constraints
+
+Checking this option allows IOB location constraints to be specified.
+
+#### IOB pad locations (cell array {'MSB', ..., 'LSB'})
+
+IOB pin locations can be specified as a cell array of strings in this
+edit box. The locations are package-specific.
+
+#### IO Standards (specify as cell array {'MSB', ..., 'LSB'})
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This blocks enable 1-D vector support for the primary block
+operation.
+
+### Implementation Tab  
+Parameters specific to the Implementation tab are as follows.
+
+None. During HDL Netlist generation, this Vector Real Gateway Out will be
+translated as an Output Port at the top level.
+
+AXI4-Lite. During HDL Netlist Generation, an AXI4-Lite interface will be created,
+and the Vector Real Gateway Out will be mapped to one of the registers
+within the AXI4-Lite interface.
+
+Interrupt. During an IP catalog Generation, this Vector Real Gateway Out is tagged
+as an Interrupt output port when the Model Composer design is packaged
+into an IP module that can be included in the Vivado® IP catalog.
+
+None. No timing constraints for the IOBs are put in the user constraint file
 produced by Model Composer. This means the paths from the IOBs to
 synchronous elements are not constrained.
 
-#### Data Rate  
-The IOBs are constrained at the data rate that the IOBs operate. The
+Data Rate. The IOBs are constrained at the data rate that the IOBs operate. The
 rate is determined by System Clock Period provided on the System
 Generator token and the sample rate of the Gateway relative to the other
 sample periods in the design. For example, the following OFFSET = OUT
@@ -155,15 +182,7 @@ NET "Dout(1)" OFFSET = OUT : 10.0 : AFTER "clk";
 NET "Dout(2)" OFFSET = OUT : 10.0 : AFTER "clk";
 ```
 
-##### Specify IOB Location Constraints  
-Checking this option allows IOB location constraints to be specified.
-
-##### IOB Pad Locations, e.g. {'MSB', ..., 'LSB'}  
-IOB pin locations can be specified as a cell array of strings in this
-edit box. The locations are package-specific.
-
-#### Data Rate, Set 'FAST' Attribute  
-The OFFSET = OUT constraints described above are produced. In addition,
+Data Rate, Set 'FAST' Attribute. The OFFSET = OUT constraints described above are produced. In addition,
 a FAST slew rate attribute is generated for each IOB. This reduces delay
 but increases noise and power consumption. For the previous example, the
 following additional attributes are added to the constraints file.
@@ -183,3 +202,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

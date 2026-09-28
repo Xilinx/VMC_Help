@@ -90,58 +90,28 @@ expected results.</li>
 <section id="basic-tab" class="level3">
 <h3>Basic Tab</h3>
 <p>Parameters specific to the Basic tab are as follows:</p>
-<section id="output-type" class="level4">
-<h4>Output Type</h4>
-<p>Specifies the output data type. Can be Boolean, Fixed-point, or
-Floating-point.</p>
-<section id="super-sample-rate-ssr" class="level5">
-<h5>Super Sample Rate (SSR)</h5>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation.</p>
-</section>
-</section>
 <section id="arithmetic-type" class="level4">
-<h4>Arithmetic Type</h4>
+<h4>Arithmetic type</h4>
 <p>If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.</p>
 </section>
-<section id="fixed-point-precision" class="level4">
-<h4>Fixed-point Precision</h4>
-<section id="number-of-bits" class="level5">
-<h5>Number of bits</h5>
+<section id="number-of-bits" class="level4">
+<h4>Number of bits</h4>
 <p>Specifies the bit location of the binary point, where bit zero is the
 least significant bit.</p>
 </section>
-<section id="binary-point" class="level5">
-<h5>Binary point</h5>
+<section id="binary-point" class="level4">
+<h4>Binary point</h4>
 <p>Specifies the bit location of the binary point, where bit zero is the
 least significant bit.</p>
 </section>
-</section>
-<section id="floating-point-precision" class="level4">
-<h4>Floating-point Precision</h4>
-<section id="single" class="level5">
-<h5>Single</h5>
-<p>Specifies single precision (32 bits).</p>
-</section>
-<section id="double" class="level5">
-<h5>Double</h5>
-<p>Specifies double precision (64 bits).</p>
-</section>
-<section id="custom" class="level5">
-<h5>Custom</h5>
-<p>Activates the field below so you can specify the Exponent width and
-the Fraction width.</p>
-</section>
-<section id="exponent-width" class="level5">
-<h5>Exponent width</h5>
+<section id="exponent-width" class="level4">
+<h4>Exponent width</h4>
 <p>Specify the exponent width.</p>
 </section>
-<section id="fraction-width" class="level5">
-<h5>Fraction width</h5>
+<section id="fraction-width" class="level4">
+<h4>Fraction width</h4>
 <p>Specify the fraction width.</p>
-</section>
 </section>
 <section id="quantization" class="level4">
 <h4>Quantization</h4>
@@ -173,37 +143,33 @@ Wrap is selected.</p>
 <section id="implementation-tab" class="level3">
 <h3>Implementation Tab</h3>
 <p>Parameters specific to the Implementation tab are as follows:</p>
-<section id="interface-options" class="level4">
-<h4>Interface Options</h4>
-<section id="interface" class="level5">
-<h5>Interface</h5>
-<section id="none" class="level6">
-<h6>None</h6>
-<p>Implies that during HDL Netlist generation, this Vector Real Gateway
-In is translated as an Input Port at the top level.</p>
+<section id="sample-period" class="level4">
+<h4>Sample period</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="axi4-lite" class="level6">
-<h6>AXI4-Lite</h6>
-<p>Implies that during HDL Netlist generation, an AXI4-Lite interface
-will be created, and this Vector Real Gateway In is mapped to one of the
-registers within the AXI4-Lite interface.</p>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
 </section>
+<section id="interface" class="level4">
+<h4>Interface</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="auto-assign-address-offset" class="level5">
-<h5>Auto assign address offset</h5>
+<section id="auto-assign-address-offset" class="level4">
+<h4>Auto assign address offset</h4>
 <p>If the Vector Real Gateway In is configured to be an AXI4-Lite
 interface, this option allows an address offset to be automatically
 assigned to the register within the AXI4-Lite interface that the Vector
 Real Gateway In is mapped to.</p>
 </section>
-<section id="address-offset" class="level5">
-<h5>Address offset</h5>
+<section id="address-offset" class="level4">
+<h4>Address offset</h4>
 <p>If Auto assign address offset is not checked, then this entry box
 allows you to explicitly specify an address offset to use. Must be a
 multiple of 4.</p>
 </section>
-<section id="interface-name" class="level5">
-<h5>Interface Name</h5>
+<section id="interface-name" class="level4">
+<h4>Interface Name</h4>
 <p>If the Vector Real Gateway In is configured to be an AX4-Lite
 interface, assigns a unique name to this interface. This name can be
 used to differentiate between multiple AXI4-Lite interfaces in the
@@ -215,18 +181,21 @@ alphanumeric characters (lowercase alphabetic) or an underscore (_)
 only, and must begin with a lowercase alphabetic character. axi4_lite1
 is acceptable, 1AXI4-Lite is not.</p>
 </section>
-<section id="description-1" class="level5">
-<h5>Description</h5>
+<section id="description-1" class="level4">
+<h4>Description</h4>
 <p>Additional designer comments about this Vector Real Gateway In that
 is captured in the interface documentation.</p>
 <p>Default value</p>
 </section>
 </section>
-</section>
 <section id="constraints" class="level3">
 <h3>Constraints</h3>
+<section id="default-value" class="level4">
+<h4>Default Value</h4>
+<p>Dialog parameter.</p>
+</section>
 <section id="iob-timing-constraint" class="level4">
-<h4>IOB Timing Constraint</h4>
+<h4>IOB timing constraint</h4>
 <p>In hardware, a Vector Real Gateway In is realized as a set of
 input/output buffers (IOBs). There are three ways to constrain the
 timing on IOBs. They are: None, Data Rate, and Data Rate, Set &#39;FAST&#39;
@@ -250,16 +219,34 @@ consumption.</li>
 <p>Checking this option allows IOB location constraints and I/O
 standards to be specified.</p>
 </section>
-<section id="iob-pad-locations-eg-msb--lsb" class="level4">
-<h4>IOB pad locations, e.g. {&#39;MSB&#39;, ..., &#39;LSB&#39;}</h4>
+<section id="iob-pad-locations-specify-as-cell-array-msb--lsb" class="level4">
+<h4>IOB pad locations (specify as cell array {&#39;MSB&#39;, ..., &#39;LSB&#39;})</h4>
 <p>IOB pin locations can be specified as a cell array of strings in this
 edit box. The locations are package-specific.IO Standards, e.g. {&#39;MSB&#39;,
 ..., &#39;LSB&#39;}</p>
 </section>
-<section id="io-standards-eg-msb--lsb" class="level4">
-<h4>IO Standards, e.g., {&#39;MSB&#39;, ..., &#39;LSB&#39;}</h4>
+<section id="io-standards-specify-as-cell-array-msb--lsb" class="level4">
+<h4>IO Standards (specify as cell array {&#39;MSB&#39;, ..., &#39;LSB&#39;})</h4>
 <p>I/O standards can be specified as a cell array of strings in this
 edit box. The locations are package-specific.</p>
+<p>Additional dialog notes:</p>
+<p>Output Type. Specifies the output data type. Can be Boolean,
+Fixed-point, or Floating-point.</p>
+<p>Super Sample Rate (SSR). This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.</p>
+<p>Fixed-point Precision. Floating-point Precision. Single. Specifies
+single precision (32 bits).</p>
+<p>Double. Specifies double precision (64 bits).</p>
+<p>Custom. Activates the field below so you can specify the Exponent
+width and the Fraction width.</p>
+<p>Interface Options. None. Implies that during HDL Netlist generation,
+this Vector Real Gateway In is translated as an Input Port at the top
+level.</p>
+<p>AXI4-Lite. Implies that during HDL Netlist generation, an AXI4-Lite
+interface will be created, and this Vector Real Gateway In is mapped to
+one of the registers within the AXI4-Lite interface.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>

@@ -26,19 +26,20 @@ Block Parameters dialog box.
 
 ## Block Parameters
 
-#### Basic tab  
-Parameters specific to the Basic tab are as follows.
+#### Input order
 
-#### Input order  
 Least or most significant word first.
 
-#### Arithmetic type  
+#### Arithmetic type
+
 Signed or unsigned output.
 
-#### Number of bits  
+#### Number of bits
+
 Output width which must be a multiple of the number of input bits.
 
-#### Binary point  
+#### Binary point
+
 Output binary point location
 
 Other parameters used by this block are explained in the topic [Common
@@ -48,6 +49,22 @@ Boxes](../../GEN/common-options/README.md).
 An error is reported when the number of output bits cannot be divided
 evenly by the number of input bits. The minimum latency for this block
 is zero.
+
+#### Provide reset port
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Basic tab. Parameters specific to the Basic tab are as follows.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

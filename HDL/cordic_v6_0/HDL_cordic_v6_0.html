@@ -116,114 +116,23 @@ AXI port names on the block icon.</p>
 <h3>Page 1 tab</h3>
 <section id="function" class="level4">
 <h4>Function</h4>
-<section id="rotate" class="level5">
-<h5>Rotate</h5>
-<p>When selected, the input vector, (real, imag), is rotated by the
-input angle using the CORDIC algorithm. This generates the scaled output
-vector, Zi * (real’, imag’).</p>
-</section>
-<section id="translate" class="level5">
-<h5>Translate</h5>
-<p>When selected, the input vector (real, imag) is rotated using the
-CORDIC algorithm until the imag component is zero. This generates the
-scaled output magnitude, Zi * Mag(real, imag), and the output phase,
-Atan(imag/real).</p>
-</section>
-<section id="sin_and_cos" class="level5">
-<h5>Sin_and_Cos</h5>
-<p>When selected, the unit vector is rotated, using the CORDIC
-algorithm, by input angle. This generates the output vector (Cos( ),
-Sin( )).</p>
-</section>
-<section id="sinh_and_cosh" class="level5">
-<h5>Sinh_and_Cosh</h5>
-<p>When selected, the CORDIC algorithm is used to move the vector (1,0)
-through hyperbolic angle p along the hyperbolic curve. The hyperbolic
-angle represents the log of the area under the vector (real, imag) and
-is unrelated to a trigonometric angle. This generates the output vector
-(Cosh(p), Sinh(p)).</p>
-</section>
-<section id="arc_tan" class="level5">
-<h5>Arc_Tan</h5>
-<p>When selected, the input vector (real, imag) is rotated (using the
-CORDIC algorithm) until the imag component is zero. This generates the
-output angle, Atan(imag/real).</p>
-</section>
-<section id="arc_tanh" class="level5">
-<h5>Arc_Tanh</h5>
-<p>When selected, the CORDIC algorithm is used to move the input vector
-(real, imag) along the hyperbolic curve until the imag component reaches
-zero. This generates the hyperbolic “angle,” Atanh(imag/real). The
-hyperbolic angle represents the log of the area under the vector (real,
-imag) and is unrelated to a trigonometric angle.</p>
-</section>
-<section id="square_root" class="level5">
-<h5>Square_Root</h5>
-<p>When selected a simplified CORDIC algorithm is used to calculate the
-positive square root of the input.</p>
-</section>
+<p>Dialog parameter.</p>
 </section>
 <section id="configuration" class="level4">
 <h4>Configuration</h4>
-<section id="word_serial" class="level5">
-<h5>Word_Serial</h5>
-<p>Select for a hardware result with a small area.</p>
-</section>
-<section id="parallel" class="level5">
-<h5>Parallel</h5>
-<p>Select for a hardware result with high throughput.</p>
-</section>
+<p>Dialog parameter.</p>
 </section>
 <section id="pipeline" class="level4">
 <h4>Pipeline</h4>
-<section id="no_pipelining" class="level5">
-<h5>No_Pipelining</h5>
-<p>The CORDIC core is implemented without pipelining.</p>
-</section>
-<section id="optimal" class="level5">
-<h5>Optimal</h5>
-<p>The CORDIC core is implemented with as many stages of pipelining as
-possible without using any additional LUTs.</p>
-</section>
-<section id="maximum" class="level5">
-<h5>Maximum</h5>
-<p>The CORDIC core is implemented with a pipeline after every shift-add
-sub stage.</p>
-</section>
+<p>Dialog parameter.</p>
 </section>
 <section id="data-format" class="level4">
 <h4>Data format</h4>
-<section id="signedfraction" class="level5">
-<h5>SignedFraction</h5>
-<p>Default setting. The real and imag inputs and outputs are expressed
-as fixed-point 2’s complement numbers with an integer width of
-2-bits.</p>
-</section>
-<section id="unsignedfraction" class="level5">
-<h5>UnsignedFraction</h5>
-<p>Available only for Square Root functional configuration. The real and
-imag inputs and outputs are expressed as unsigned fixed-point numbers
-with an integer width of 1-bit.</p>
-</section>
-<section id="unsignedinteger" class="level5">
-<h5>UnsignedInteger</h5>
-<p>Available only for Square Root functional configuration. The real and
-imag inputs and outputs are expressed as unsigned integers.</p>
-</section>
+<p>Dialog parameter.</p>
 </section>
 <section id="phase-format" class="level4">
 <h4>Phase format</h4>
-<section id="radians" class="level5">
-<h5>Radians</h5>
-<p>The phase is expressed as a fixed-point 2’s complement number with an
-integer width of 3-bits, in radian units.</p>
-</section>
-<section id="scaled_radians" class="level5">
-<h5>Scaled_Radians</h5>
-<p>The phase is expressed as fixed-point 2’s complement number with an
-integer width of 3-bits, with pi-radian units. One scaled-radian equals
-Pi * 1 radians.</p>
-</section>
+<p>Dialog parameter.</p>
 </section>
 <section id="input-width" class="level4">
 <h4>Input width</h4>
@@ -237,30 +146,10 @@ cartesian_tdata_imag, and phase_tdata_phase. The Input width range 8 to
 dout_tdata_imag, and dout_tdata_phase. The Output width range 8 to 48
 bits.</p>
 </section>
-<section id="round-mode" class="level4">
-<h4>Round mode</h4>
-<section id="truncate" class="level5">
-<h5>Truncate</h5>
-<p>The real, imag, and phase outputs are truncated.</p>
+<section id="round" class="level4">
+<h4>Round</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="round_pos_inf" class="level5">
-<h5>Round_Pos_Inf</h5>
-<p>The real, imag, and phase outputs are rounded (1/2 rounded up).</p>
-</section>
-<section id="round_pos_neg_inf" class="level5">
-<h5>Round_Pos_Neg_Inf</h5>
-<p>The real, imag, and phase outputs are rounded (1/2 rounded up, -1/2
-rounded down).</p>
-</section>
-<section id="nearest_even" class="level5">
-<h5>Nearest_Even</h5>
-<p>The real, imag, and phase outputs are rounded toward the nearest even
-number (1/2 rounded down and 3/2 is rounded up).</p>
-</section>
-</section>
-</section>
-<section id="page-2-tab" class="level3">
-<h3>Page 2 tab</h3>
 <section id="iterations" class="level4">
 <h4>Iterations</h4>
 <p>Controls the number of internal add-sub iterations to perform. When
@@ -298,132 +187,151 @@ to the full circle by rotating the input sample into the first quadrant
 and inverse rotating the output sample back into the appropriate
 quadrant.</p>
 </section>
-<section id="optional-ports" class="level4">
-<h4>Optional ports</h4>
-<section id="standard" class="level5">
-<h5>Standard</h5>
-<section id="aclken" class="level6">
-<h6>aclken</h6>
+<section id="aclken" class="level4">
+<h4>aclken</h4>
 <p>When this signal is not asserted, the block holds its current state
 until the signal is asserted again or the aresetn signal is asserted.
 The aresetn signal has precedence over this clock enable signal. This
 signal has to run at a multiple of the blocks sample rate. The signal
 driving this port must be Boolean.</p>
 </section>
-<section id="aresetn" class="level6">
-<h6>aresetn</h6>
+<section id="aresetn" class="level4">
+<h4>aresetn</h4>
 <p>When this signal is asserted, the block goes back to its initial
 state. This reset signal has precedence over the optional aclken signal
 available on the block. The reset signal has to run at a multiple of the
 block&#39;s sample rate. The signal driving this port must be Boolean.</p>
 </section>
-<section id="tready" class="level6">
-<h6>tready</h6>
+<section id="tready" class="level4">
+<h4>tready</h4>
 <p>Adds dout_tready port if Blocking mode is activated.</p>
 </section>
-</section>
-<section id="cartesian" class="level5">
-<h5>Cartesian</h5>
-<section id="tlast" class="level6">
-<h6>tlast</h6>
-<p>Adds a tlast input port to the Cartesian input channel.</p>
-</section>
-<section id="tuser" class="level6">
-<h6>tuser</h6>
+<section id="tuser" class="level4">
+<h4>tuser</h4>
 <p>Adds a tuser input port to the Cartesian input channel.</p>
 </section>
-<section id="tuser-width" class="level6">
-<h6>tuser width</h6>
+<section id="tlast" class="level4">
+<h4>tlast</h4>
+<p>Adds a tlast input port to the Cartesian input channel.</p>
+</section>
+<section id="tuser-width" class="level4">
+<h4>tuser width</h4>
 <p>Specifies the bit width of the Cartesian tuser input port.</p>
 </section>
-</section>
-<section id="phase" class="level5">
-<h5>Phase</h5>
-<section id="tlast-1" class="level6">
-<h6>tlast</h6>
-<p>Adds a tlast input port to the Phase input channel.</p>
-</section>
-<section id="tuser-1" class="level6">
-<h6>tuser</h6>
+<section id="tuser-1" class="level4">
+<h4>tuser</h4>
 <p>Adds a tuser input port to the Phase input channel.</p>
 </section>
-<section id="tuser-width-1" class="level6">
-<h6>tuser width</h6>
+<section id="tlast-1" class="level4">
+<h4>tlast</h4>
+<p>Adds a tlast input port to the Phase input channel.</p>
+</section>
+<section id="tuser-width-1" class="level4">
+<h4>tuser width</h4>
 <p>Specifies the bit width of the Phase tuser input port.</p>
 </section>
+<section id="tlast-behaviour" class="level4">
+<h4>Tlast behaviour</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="tlast-behavior" class="level5">
-<h5>Tlast behavior</h5>
-<section id="null" class="level6">
-<h6>Null</h6>
-<p>Data output port.</p>
-</section>
-<section id="pass_cartesian_tlast" class="level6">
-<h6>Pass_Cartesian_TLAST</h6>
-<p>Data output port.</p>
-</section>
-<section id="pass_phase_tlast" class="level6">
-<h6>Pass_Phase_TLAST</h6>
-<p>Data output port.</p>
-</section>
-<section id="or_all_tlasts" class="level6">
-<h6>OR_all_TLASTS</h6>
-<p>Pass the logical OR of all the present TLAST input ports.</p>
-</section>
-<section id="and_all_tlasts" class="level6">
-<h6>AND_all_TLASTS</h6>
-<p>Pass the logical AND of all the present TLAST input ports</p>
-</section>
-</section>
-</section>
-<section id="axi-behavior" class="level4">
-<h4>AXI behavior</h4>
-<section id="nonblocking" class="level5">
-<h5>NonBlocking</h5>
-<p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
-input channel does not block the execution of an operation if data is
-received on another input channel.</p>
-</section>
-<section id="blocking" class="level5">
-<h5>Blocking</h5>
-<p>Selects “Blocking” mode. In this mode, the lack of data on one input
-channel does block the execution of an operation if data is received on
-another input channel.</p>
-</section>
+<section id="axi-behaviour" class="level4">
+<h4>AXI behaviour</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="optimization-1" class="level4">
 <h4>Optimization</h4>
 <p>When NonBlocking mode is selected, the following optimization options
 are activated:</p>
-<section id="resources" class="level5">
-<h5>Resources</h5>
-<p>Core is configured for minimum resources.</p>
 </section>
-<section id="performance" class="level5">
-<h5>Performance</h5>
-<p>Core is configured for maximum performance.</p>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>This option is ON by default. When unselected, the full AXI name of
+each port is displayed on the block icon.</p>
+<p>Additional dialog notes:</p>
+<p>Rotate. When selected, the input vector, (real, imag), is rotated by
+the input angle using the CORDIC algorithm. This generates the scaled
+output vector, Zi * (real’, imag’).</p>
+<p>Translate. When selected, the input vector (real, imag) is rotated
+using the CORDIC algorithm until the imag component is zero. This
+generates the scaled output magnitude, Zi * Mag(real, imag), and the
+output phase, Atan(imag/real).</p>
+<p>Sin_and_Cos. When selected, the unit vector is rotated, using the
+CORDIC algorithm, by input angle. This generates the output vector (Cos(
+), Sin( )).</p>
+<p>Sinh_and_Cosh. When selected, the CORDIC algorithm is used to move
+the vector (1,0) through hyperbolic angle p along the hyperbolic curve.
+The hyperbolic angle represents the log of the area under the vector
+(real, imag) and is unrelated to a trigonometric angle. This generates
+the output vector (Cosh(p), Sinh(p)).</p>
+<p>Arc_Tan. When selected, the input vector (real, imag) is rotated
+(using the CORDIC algorithm) until the imag component is zero. This
+generates the output angle, Atan(imag/real).</p>
+<p>Arc_Tanh. When selected, the CORDIC algorithm is used to move the
+input vector (real, imag) along the hyperbolic curve until the imag
+component reaches zero. This generates the hyperbolic “angle,”
+Atanh(imag/real). The hyperbolic angle represents the log of the area
+under the vector (real, imag) and is unrelated to a trigonometric
+angle.</p>
+<p>Square_Root. When selected a simplified CORDIC algorithm is used to
+calculate the positive square root of the input.</p>
+<p>Word_Serial. Select for a hardware result with a small area.</p>
+<p>Parallel. Select for a hardware result with high throughput.</p>
+<p>No_Pipelining. The CORDIC core is implemented without pipelining.</p>
+<p>Optimal. The CORDIC core is implemented with as many stages of
+pipelining as possible without using any additional LUTs.</p>
+<p>Maximum. The CORDIC core is implemented with a pipeline after every
+shift-add sub stage.</p>
+<p>SignedFraction. Default setting. The real and imag inputs and outputs
+are expressed as fixed-point 2’s complement numbers with an integer
+width of 2-bits.</p>
+<p>UnsignedFraction. Available only for Square Root functional
+configuration. The real and imag inputs and outputs are expressed as
+unsigned fixed-point numbers with an integer width of 1-bit.</p>
+<p>UnsignedInteger. Available only for Square Root functional
+configuration. The real and imag inputs and outputs are expressed as
+unsigned integers.</p>
+<p>Radians. The phase is expressed as a fixed-point 2’s complement
+number with an integer width of 3-bits, in radian units.</p>
+<p>Scaled_Radians. The phase is expressed as fixed-point 2’s complement
+number with an integer width of 3-bits, with pi-radian units. One
+scaled-radian equals Pi * 1 radians.</p>
+<p>Truncate. The real, imag, and phase outputs are truncated.</p>
+<p>Round_Pos_Inf. The real, imag, and phase outputs are rounded (1/2
+rounded up).</p>
+<p>Round_Pos_Neg_Inf. The real, imag, and phase outputs are rounded (1/2
+rounded up, -1/2 rounded down).</p>
+<p>Nearest_Even. The real, imag, and phase outputs are rounded toward
+the nearest even number (1/2 rounded down and 3/2 is rounded up).</p>
 </section>
 </section>
+<section id="page-2-tab" class="level3">
+<h3>Page 2 tab</h3>
+<p>Optional ports. Standard. Cartesian. Phase. Null. Data output
+port.</p>
+<p>Pass_Cartesian_TLAST. Data output port.</p>
+<p>Pass_Phase_TLAST. Data output port.</p>
+<p>OR_all_TLASTS. Pass the logical OR of all the present TLAST input
+ports.</p>
+<p>AND_all_TLASTS. Pass the logical AND of all the present TLAST input
+ports</p>
+<p>NonBlocking. Selects “Non-Blocking” mode. In this mode, the lack of
+data on one input channel does not block the execution of an operation
+if data is received on another input channel.</p>
+<p>Blocking. Selects “Blocking” mode. In this mode, the lack of data on
+one input channel does block the execution of an operation if data is
+received on another input channel.</p>
+<p>Resources. Core is configured for minimum resources.</p>
+<p>Performance. Core is configured for maximum performance.</p>
 </section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
-<section id="block-icon-display" class="level4">
-<h4>Block Icon Display</h4>
-<section id="display-shortened-port-names" class="level5">
-<h5>Display shortened port names</h5>
-<p>This option is ON by default. When unselected, the full AXI name of
-each port is displayed on the block icon.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="logicore-documentation" class="level2">
-<h2>LogiCORE™ Documentation</h2>
+<p>Block Icon Display. ## LogiCORE™ Documentation</p>
 <p>CORDIC LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg105-cordic&amp;ft:locale=en-US">PG105</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
 </section>
 </section>
 </body>

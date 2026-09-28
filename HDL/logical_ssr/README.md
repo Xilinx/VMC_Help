@@ -20,15 +20,56 @@ as it facilitates logic collapsing in synthesis and mapping.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-#### Logical function  
+#### Logical function
+
 Specifies one of the following bitwise logical operators: AND, NAND, OR,
 NOR, XOR, XNOR.
 
-#### Number of inputs  
+#### Number of inputs
+
 Specifies the number of inputs (1 - 1024).
 
-#### Logical Reduction Operation  
-When the number of inputs is specified as 1, a unary logical reduction
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
+#### SSR
+
+Dialog parameter.
+
+#### Precision
+
+Dialog parameter.
+
+#### Output Type
+
+Dialog parameter.
+
+#### Number of bits
+
+Dialog parameter.
+
+#### Binary point
+
+Dialog parameter.
+
+#### Align binary point
+
+Specifies that the block must align binary points
+  automatically. If not selected, all inputs must have the same binary
+  point position.
+
+Other parameters used by this block are explained in the topic [Common
+Options in Block Parameter Dialog
+Boxes](../../GEN/common-options/README.md).
+
+Additional dialog notes:
+
+Logical Reduction Operation. When the number of inputs is specified as 1, a unary logical reduction
 operation performs a bit-wise operation on the single operand to produce
 a single bit result. The first step of the operation applies the logical
 operator between the least significant bit of the operand and the next
@@ -39,23 +80,13 @@ implements the same functionality as that of the logical reduction
 operation in HDLs. The output of the logical reduction operation is
 always Boolean.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control the processing of multiple data samples on every sample
 period. This blocks enable 1-D vector data support for the primary block
 operation.
 
 ### Output Type tab  
 Parameters specific to the Output Type tab are as follows:
-
-#### Align binary point
-Specifies that the block must align binary points
-  automatically. If not selected, all inputs must have the same binary
-  point position.
-
-Other parameters used by this block are explained in the topic [Common
-Options in Block Parameter Dialog
-Boxes](../../GEN/common-options/README.md).
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

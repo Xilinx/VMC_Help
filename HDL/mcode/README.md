@@ -1181,6 +1181,30 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+#### MATLAB function
+
+Dialog parameter.
+
+#### Specify explicit sample period
+
+Dialog parameter.
+
+#### Input
+
+Dialog parameter.
+
+#### Output
+
+Dialog parameter.
+
+#### Enable printing with disp
+
+Dialog parameter.
+
+#### Enable MATLAB debugging (slows simulation)
+
+Dialog parameter.
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

@@ -262,73 +262,18 @@ Clock Enable.</p>
 <section id="attributes-1-tab" class="level3">
 <h3>Attributes 1 tab</h3>
 <p>Parameters specific to the Attributes 1 tab are as follows.</p>
-<section id="code-block-specification" class="level4">
-<h4>Code Block Specification</h4>
-<section id="code-specification" class="level5">
-<h5>Code specification</h5>
+<section id="code-specification" class="level4">
+<h4>Code Specification</h4>
 <p>Specifies the type of RS Decoder desired. The choices are as
 follows.</p>
-<section id="custom" class="level6">
-<h6>Custom</h6>
-<p>Allows you to set all the block parameters.</p>
 </section>
-<section id="dvb" class="level6">
-<h6>DVB</h6>
-<p>Implements DVB (Digital Video Broadcasting) standard (204, 188)
-shortened RS code.</p>
-</section>
-<section id="atsc" class="level6">
-<h6>ATSC</h6>
-<p>Implements ATSC (Advanced Television Systems Committee) standard
-(207, 187) shortened RS code.</p>
-</section>
-<section id="g709" class="level6">
-<h6>G.709</h6>
-<p>Implements G.709 Optical Transport Network standard.</p>
-</section>
-<section id="ccsds" class="level6">
-<h6>CCSDS</h6>
-<p>Implements CCSDS (Consultative Committee for Space Data Systems)
-standard (255, 223) full length RS code.</p>
-</section>
-<section id="iess-308-all" class="level6">
-<h6>IESS-308 (All)</h6>
-<p>Implements IESS-308 (INTELSAT Earth Station Standard) specification
-(all) shortened RS code.</p>
-</section>
-<section id="iess-308-126" class="level6">
-<h6>IESS-308 (126)</h6>
-<p>Implements IESS-308 (INTELSAT Earth Station Standard) specification
-(126, 112) shortened RS code.</p>
-</section>
-<section id="iess-308-194" class="level6">
-<h6>IESS-308 (194)</h6>
-<p>Implements IESS-308 specification (194, 178) shortened RS code.</p>
-</section>
-<section id="iess-308-208" class="level6">
-<h6>IESS-308 (208)</h6>
-<p>Implements IESS-308 specification (208, 192) shortened RS code.</p>
-</section>
-<section id="iess-308-219" class="level6">
-<h6>IESS-308 (219)</h6>
-<p>Implements IESS-308 specification (219, 201) shortened RS code.</p>
-</section>
-<section id="iess-308-225" class="level6">
-<h6>IESS-308 (225)</h6>
-<p>Implements IESS-308 specification (225, 205) shortened RS code.</p>
-</section>
-<section id="ieee-80216" class="level6">
-<h6>IEEE-802.16</h6>
-<p>Implements IEEE-802.16 specification (255, 239) full length RS
-code.</p>
-</section>
-<section id="symbol-width" class="level6">
-<h6>Symbol width</h6>
+<section id="symbol-width" class="level4">
+<h4>Symbol Width</h4>
 <p>Tells the width in bits for symbols in the code. The encoder support
 widths from 3 to 12 (default 8).</p>
 </section>
-<section id="field-polynomial" class="level6">
-<h6>Field polynomial</h6>
+<section id="field-polynomial" class="level4">
+<h4>Field Polynomial</h4>
 <p>Specifies the polynomial from which the symbol field is derived. It
 must be specified as a decimal number. This polynomial must be
 primitive. A value of zero indicates the default polynomial should be
@@ -395,42 +340,42 @@ used. Default polynomials are listed in the table below.</p>
 </tbody>
 </table>
 </section>
-<section id="scaling-factor-h" class="level6">
-<h6>Scaling Factor (h)</h6>
+<section id="scaling-factor-h" class="level4">
+<h4>Scaling Factor (h)</h4>
 <p>(represented in the previous formula as h) specifies the scaling
 factor for the code. Ordinarily, h is 1, but can be as large as 2^(S) -
 1 where s is the symbol width. The value must be chosen so that α^(h) is
 primitive. That is, h must be relatively prime to 2^(S) - 1.</p>
 </section>
-<section id="generator-start" class="level6">
-<h6>Generator Start</h6>
+<section id="generator-start" class="level4">
+<h4>Generator Start</h4>
 <p>specifies the first root r of the generator polynomial. The generator
 polynomial g(x), is given by:</p>
 <p><img role="img" src="data:image/png;base64,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" /></p>
 <p>where α is a primitive element of the symbol field, and the scaling
 factor is described below.</p>
 </section>
-<section id="variable-block-length" class="level6">
-<h6>Variable Block Length</h6>
+<section id="variable-block-length" class="level4">
+<h4>Variable Block Length</h4>
 <p>When checked, the block is given a ctrl input channel.</p>
 </section>
-<section id="symbols-per-blockn" class="level6">
-<h6>Symbols Per Block(n)</h6>
+<section id="symbols-per-block-n" class="level4">
+<h4>Symbols Per Block (n)</h4>
 <p>Tells the number of symbols in the blocks the encoder produces.
 Acceptable numbers range from 3 to 2^(S) -1, where s denotes the symbol
 width.</p>
 </section>
-<section id="data-symbolsk" class="level6">
-<h6>Data Symbols(k)</h6>
+<section id="data-symbols-k" class="level4">
+<h4>Data Symbols (k)</h4>
 <p>Tells the number of information symbols each block contains.
 Acceptable values range from max(n - 256, 1) to n - 2.</p>
 </section>
-</section>
-<section id="variable-check-symbol-options" class="level5">
-<h5>Variable Check Symbol Options</h5>
+<section id="variable-number-of-check-symbols-r" class="level4">
+<h4>Variable Number Of Check Symbols (r)</h4>
 <p>Variable Number of Check Symbols (r)</p>
-<section id="define-supported-r_in-values" class="level6">
-<h6>Define Supported R_IN Values</h6>
+</section>
+<section id="define-supported-r_in-values" class="level4">
+<h4>Define Supported R_IN Values</h4>
 <p>If only a subset of the possible values that could be sampled on R_IN
 is actually required, then it is possible to reduce the size of the core
 slightly. For example, for the Intelsat standard, the R_IN input is 5
@@ -439,64 +384,54 @@ size can be slightly reduced by defining only these four values to be
 supported. If any other value is sampled on R_IN, the core will not
 decode the data correctly.</p>
 </section>
-<section id="number-of-supported-r_in-values" class="level6">
-<h6>Number of Supported R_IN Values</h6>
+<section id="number-of-supported-r_in-values" class="level4">
+<h4>Number of Supported R_IN Values</h4>
 <p>Specify the number of supported R_IN values.</p>
 </section>
-<section id="supported-r_in-definition-file" class="level6">
-<h6>Supported R_IN Definition File</h6>
+<section id="supported-r_in-definition-file" class="level4">
+<h4>Supported R_IN Definition File</h4>
 <p>This is a COE file that defines the R values to be supported. It has
 the following format: radix=10; legal_r_vector=14,16,18,20; The number
 of elements in the legal_r_vector must equal the specified Number of
 Supported R_IN Values.</p>
 </section>
 </section>
-</section>
-</section>
 <section id="attributes-2-tab" class="level3">
 <h3>Attributes 2 tab</h3>
-<section id="implementation" class="level4">
-<h4>Implementation</h4>
-<section id="state-machine" class="level5">
-<h5>State Machine</h5>
-<section id="self-recovering" class="level6">
-<h6>Self Recovering</h6>
+<section id="self-recovering" class="level4">
+<h4>Self Recovering</h4>
 <p>When checked, the block synchronously resets itself if it enters an
 illegal state.</p>
 </section>
-</section>
-<section id="memory-style" class="level5">
-<h5>Memory Style</h5>
+<section id="memory-style" class="level4">
+<h4>Memory Style</h4>
 <p>Select between Distributed, Block and Automatic memory choices.</p>
 </section>
-<section id="number-of-channels" class="level5">
-<h5>Number Of Channels</h5>
+<section id="number-of-channels" class="level4">
+<h4>Number Of Channels</h4>
 <p>Specifies the number of separate time division multiplexed channels
 to be processed by the encoder. The encoder supports up to 128
 channels.</p>
 </section>
-<section id="output-check-symbols" class="level5">
-<h5>Output check symbols</h5>
+<section id="output-check-symbols-output-all-n-symbols-in-block-including-check-symbols-or-only-k-information-symbols" class="level4">
+<h4>Output check symbols (Output all N symbols in block, including check
+symbols, or only K information symbols)</h4>
 <p>If selected, then the entire n symbols of each block are output on
 the output channel. If not selected, then only the k information symbols
 are output.</p>
 </section>
-<section id="puncture-options" class="level5">
-<h5>Puncture Options</h5>
-<section id="number-of-puncture-patterns" class="level6">
-<h6>Number of Puncture Patterns</h6>
+<section id="number-of-puncture-patterns" class="level4">
+<h4>Number of Puncture Patterns</h4>
 <p>Specifies how many puncture patterns the LogiCORE needs to handle. It
 is set to 0 if puncturing is not required.</p>
 </section>
-<section id="puncture-definition-file" class="level6">
-<h6>Puncture Definition File</h6>
+<section id="puncture-definition-file" class="level4">
+<h4>Puncture Definition File</h4>
 <p>Specifies the pathname of the puncture definition file that is used
 to define the puncture patterns.</p>
 <p>A relative pathname can be specified for a COE file in the current
 working directory. For example, the syntax is [cwd
 ‘/ieee802_16d_puncturing.coe’].</p>
-</section>
-</section>
 </section>
 </section>
 <section id="optional-pins-tab" class="level3">
@@ -530,32 +465,51 @@ that a DAT_DEL field is in the output_tdata output.</p>
 <section id="error-statistics" class="level4">
 <h4>Error Statistics</h4>
 <p>adds the following error statistics outputs:</p>
-<section id="bit_err_0_to_1" class="level5">
-<h5>bit_err_0_to_1</h5>
-<p>Number of bits received as 1 but corrected to 0.</p>
-</section>
-<section id="bit_err_1_to_0" class="level5">
-<h5>bit_err_1_to_0</h5>
-<p>Number of bits received as 0 but corrected to 1.</p>
-</section>
 </section>
 <section id="marker-bits" class="level4">
 <h4>Marker Bits</h4>
 <p>Adds the following pins to the block:</p>
-<section id="input_tuser_mark_in-1" class="level5">
-<h5>input_tuser_mark_in</h5>
-<p>Carries marker bits for tagging data on input_tdata_ data_in.</p>
-</section>
-<section id="output_tuser_mark_out-1" class="level5">
-<h5>output_tuser_mark_out</h5>
-<p>Mark_in tagging bits delayed by the latency of the LogiCORE.</p>
-</section>
 </section>
 <section id="number-of-marker-bits" class="level4">
-<h4>Number of Marker Bits</h4>
+<h4>Number Of Marker Bits</h4>
 <p>Specifies the number of marker bits.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>Dialog parameter.</p>
+<p>Additional dialog notes:</p>
+<p>Code Block Specification. Custom. Allows you to set all the block
+parameters.</p>
+<p>DVB. Implements DVB (Digital Video Broadcasting) standard (204, 188)
+shortened RS code.</p>
+<p>ATSC. Implements ATSC (Advanced Television Systems Committee)
+standard (207, 187) shortened RS code.</p>
+<p>G.709. Implements G.709 Optical Transport Network standard.</p>
+<p>CCSDS. Implements CCSDS (Consultative Committee for Space Data
+Systems) standard (255, 223) full length RS code.</p>
+<p>IESS-308 (All). Implements IESS-308 (INTELSAT Earth Station Standard)
+specification (all) shortened RS code.</p>
+<p>IESS-308 (126). Implements IESS-308 (INTELSAT Earth Station Standard)
+specification (126, 112) shortened RS code.</p>
+<p>IESS-308 (194). Implements IESS-308 specification (194, 178)
+shortened RS code.</p>
+<p>IESS-308 (208). Implements IESS-308 specification (208, 192)
+shortened RS code.</p>
+<p>IESS-308 (219). Implements IESS-308 specification (219, 201)
+shortened RS code.</p>
+<p>IESS-308 (225). Implements IESS-308 specification (225, 205)
+shortened RS code.</p>
+<p>IEEE-802.16. Implements IEEE-802.16 specification (255, 239) full
+length RS code.</p>
+<p>Implementation. State Machine. Puncture Options. bit_err_0_to_1.
+Number of bits received as 1 but corrected to 0.</p>
+<p>bit_err_1_to_0. Number of bits received as 0 but corrected to 1.</p>
+<p>input_tuser_mark_in. Carries marker bits for tagging data on
+input_tdata_ data_in.</p>
+<p>output_tuser_mark_out. Mark_in tagging bits delayed by the latency of
+the LogiCORE.</p>
 </section>
 </section>
 </section>

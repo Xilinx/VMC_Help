@@ -28,30 +28,35 @@ out_scale is used in if there is an internal overflow.
 
 ## Parameters
 
-#### IFFT length (N) 
+#### FFT Length
+
 Is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. SSR is the super sample rate, the
 number of samples processed in parallel every clock. Using a typical
 example with N=1024 and SSR=4, the core would compute one 1K IFFT for every
 256 clock cycles, processing 4 input samples/clock.
 
-#### Fixed-point precision 
-Must be 27 bits or less, this is
-limited by the DSP48 multiplier A port size.
+#### Number of bits
+
+Dialog parameter.
+
+#### Binary point
+
+Dialog parameter.
 
 #### Enable Rounding
 
 If it is selected, then the Vector IFFT output rounds to the nearest integer.
 
-#### Bypass Reordering 
+#### Input Reorder
 
-If Input Reorder bypassing is enabled, then IFFT accepts natural input order.
+Dialog parameter.
 
-If Output Reorder bypassing is enabled, 
-then the module takes N samples in natural transposed input order and 
-outputs them in natural order.
+#### Output Reorder
 
-#### Block RAM_THRESHOLD 
+Dialog parameter.
+
+#### Block RAM Threshold
 
 Is an implementation parameter with no functional
 implications, it controls the use of distributed RAM vs BRAM when
@@ -60,16 +65,28 @@ between these two types of resources. The higher the value, the more
 distributed RAM will be used instead of BRAM. Typical values to try are
 258, 514, and 1026.
 
-#### Number of DSPs per Complex Multiplication
+#### Number of DSPs per Complex Multipication
 
 User can select number of DSP slices (3 or 4)  per complex multiplication.
 
-#### Use Corner Bender Or Matrix Transposer
+#### Use Corner Bender / Matrix Transposer
 
 If it is enabled, it does matrix transpose on the output of IFFT.
 
 #### SSR
+
 Super Sample Rate.It should be a power of 2.
+
+Additional dialog notes:
+
+Fixed-point precision. Must be 27 bits or less, this is
+limited by the DSP48 multiplier A port size.
+
+Bypass Reordering. If Input Reorder bypassing is enabled, then IFFT accepts natural input order.
+
+If Output Reorder bypassing is enabled, 
+then the module takes N samples in natural transposed input order and 
+outputs them in natural order.
 
 ## Scaling Ports  
 The scaling ports are called SI and SO. Their width matches the IFFT size

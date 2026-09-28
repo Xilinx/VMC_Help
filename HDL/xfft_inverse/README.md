@@ -39,20 +39,24 @@ for details on this LogicCore IP.
 
 Parameters specific to the Inverse FFT block are:
 
-#### Transform Length  
+#### Transform Length (2^N, N= 3-16)
+
 Select the desired point size ranging from 8 to 65536.
 
-#### Scale Result by FFT length  
+#### Scale result by FFT length
+
 If selected, data is scaled between IFFT stages using a scaling schedule
 determined by the Transform Length setting. If not selected, data is
 unscaled, and all integer bit growth is carried to the output.
 
-#### Natural Order  
+#### Natural Order
+
 If selected, the output of the Inverse FFT block will be ordered in
 natural order. If not selected, the output of the Inverse FFT block will
 be ordered in bit/digit reversed order.
 
-#### Optimize for  
+#### Optimize for
+
 Directs the block to be optimized for either speed (Performance) or area
 (Resources) in the generated hardware.
 
@@ -61,15 +65,17 @@ slower than the system sample period, the block implements Radix-2 Burst
 I/O architecture. Otherwise, Pipeline Streaming I/O architecture is
 used.
 
-#### Optional Port  
-##### Provide start frame port  
+#### Provide start frame port
+
 Adds start_frame_in and start_frame_out ports to the block. The
 signals on these ports can be used to synchronize frames at the input
 and output of the Inverse FFT block. See [Adding Start Frame Ports to
 Synchronize Frames](#adding-start-frame-ports-to-synchronize-frames) for a
 description of the operation of these two ports.
 
-## Context Based Pipeline vs. Radix Implementation
+Additional dialog notes:
+
+Optional Port. ## Context Based Pipeline vs. Radix Implementation
 
 Pipelined Streaming I/O and Radix-2 Burst I/O architectures are
 supported by the Inverse FFT block. Radix-4 Burst I/O architecture is

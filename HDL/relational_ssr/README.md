@@ -11,10 +11,28 @@ The Vector Relational block implements comparator for vector inputs.
 Parameters specific to the Vector Relational block are:
 
 #### Comparison
+
 Specifies the comparison operation computed by the block.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+#### Output Type
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
+#### SSR
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector data support for the primary block
 operation.

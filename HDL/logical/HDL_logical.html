@@ -54,34 +54,56 @@ OR, NOR, XOR, XNOR.</p>
 <h4>Number of inputs</h4>
 <p>Specifies the number of inputs (1 - 1024).</p>
 </section>
-<section id="logical-reduction-operation" class="level4">
-<h4>Logical Reduction Operation</h4>
-<p>When the number of inputs is specified as 1, a unary logical
-reduction operation performs a bit-wise operation on the single operand
-to produce a single bit result. The first step of the operation applies
-the logical operator between the least significant bit of the operand
-and the next most significant bit. The second and subsequent steps apply
-the operator between the one-bit result of the prior step and the next
-bit of the operand using the same logical operator. The logical
-reduction operator implements the same functionality as that of the
-logical reduction operation in HDLs. The output of the logical reduction
-operation is always Boolean.</p>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Dialog parameter.</p>
 </section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="output-type-tab" class="level3">
-<h3>Output Type tab</h3>
-<p>Parameters specific to the Output Type tab are as follows.</p>
+<section id="precision" class="level4">
+<h4>Precision</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="output-type" class="level4">
+<h4>Output Type</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="number-of-bits" class="level4">
+<h4>Number of bits</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="binary-point" class="level4">
+<h4>Binary point</h4>
+<p>Dialog parameter.</p>
+</section>
 <section id="align-binary-point" class="level4">
 <h4>Align binary point</h4>
 <p>Specifies that the block must align binary points automatically. If
 not selected, all inputs must have the same binary point position.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Additional dialog notes:</p>
+<p>Logical Reduction Operation. When the number of inputs is specified
+as 1, a unary logical reduction operation performs a bit-wise operation
+on the single operand to produce a single bit result. The first step of
+the operation applies the logical operator between the least significant
+bit of the operand and the next most significant bit. The second and
+subsequent steps apply the operator between the one-bit result of the
+prior step and the next bit of the operand using the same logical
+operator. The logical reduction operator implements the same
+functionality as that of the logical reduction operation in HDLs. The
+output of the logical reduction operation is always Boolean.</p>
+</section>
+</section>
+<section id="output-type-tab" class="level3">
+<h3>Output Type tab</h3>
+<p>Parameters specific to the Output Type tab are as follows.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>

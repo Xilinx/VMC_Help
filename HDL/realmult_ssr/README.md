@@ -24,60 +24,97 @@ output port.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Precision  
+#### Precision
+
 This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating-point output always has Full precision.
 
-##### Full  
-The block uses sufficient precision to represent the result without
-error.
+#### Arithmetic type
 
-##### User Defined  
-If you do not need full precision, this option allows you to specify a
-reduced number of total bits and/or fractional bits.
+Dialog parameter.
 
-#### User-Defined Precision  
-##### Fixed-point Precision  
-###### Signed (2’s comp)  
-The output is a Signed (2’s complement) number.
+#### Number of bits
 
-###### Unsigned  
-The output is an Unsigned number.
-
-###### Number of bits  
 Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-###### Binary point  
+#### Binary point
+
 Position of the binary point in the fixed-point output.
 
-#### Quantization  
+#### Quantization
+
 Refer to the Overflow and Quantization section in the [Common Options in
 Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md)
 topic.
 
-#### Overflow  
+#### Overflow
+
 Refer to the Overflow and Quantization section inthe [Common Options in
 Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md)
 topic.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+#### Provide enable port
+
+Provide enable port.
+
+#### Latency
+
+This defines the number of sample periods by which the block's output is
+delayed.
+
+#### SSR
+
+Dialog parameter.
+
+#### Use behavioral HDL (otherwise use core)
+
+The block is implemented using behavioral HDL. This gives the downstream
+logic synthesis tool maximum freedom to optimize for performance or
+area.
+
+**Note**: For Floating-point operations, the block always uses the
+Floating-point Operator core.
+
+#### Optimize for
+
+Dialog parameter.
+
+#### Use embedded multipliers
+
+This field specifies that if possible, use the XtremeDSP slice (DSP48
+type embedded multiplier) in the target device.
+
+#### Test for optimum pipelining
+
+Checks if the Latency provided is at least equal to the optimum pipeline
+length. Latency values that pass this test imply that the core produced
+is optimized for speed.
+
+Other parameters used by this block are explained in the topic [Common
+Options in Block Parameter Dialog
+Boxes](../../GEN/common-options/README.md).
+
+Additional dialog notes:
+
+Full. The block uses sufficient precision to represent the result without
+error.
+
+User Defined. If you do not need full precision, this option allows you to specify a
+reduced number of total bits and/or fractional bits.
+
+User-Defined Precision. Fixed-point Precision. Signed (2’s comp). The output is a Signed (2’s complement) number.
+
+Unsigned. The output is an Unsigned number.
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector support for the primary block
 operation.
 
-#### Optional Port  
-Provide enable port.
-
-#### Latency  
-This defines the number of sample periods by which the block's output is
-delayed.
-
-#### Saturation and Rounding of User Data Types in a Multiplier  
-When saturation or rounding is selected on the user data type of a
+Saturation and Rounding of User Data Types in a Multiplier. When saturation or rounding is selected on the user data type of a
 multiplier, latency is also distributed so as to pipeline the
 saturation/rounding logic first, and then additional registers are added
 to the core. For example, if a latency of three is selected, and
@@ -92,30 +129,8 @@ used to pipeline the core.
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
 
-#### Use behavioral HDL (otherwise use core)  
-The block is implemented using behavioral HDL. This gives the downstream
-logic synthesis tool maximum freedom to optimize for performance or
-area.
-
-**Note**: For Floating-point operations, the block always uses the
-Floating-point Operator core.
-
-#### Core Parameters  
-Optimize for Speed\|Area  
+Core Parameters. Optimize for Speed\|Area  
 Directs the block to be optimized for either Speed or Area.
-
-##### Use embedded multipliers  
-This field specifies that if possible, use the XtremeDSP slice (DSP48
-type embedded multiplier) in the target device.
-
-##### Test for optimum pipelining  
-Checks if the Latency provided is at least equal to the optimum pipeline
-length. Latency values that pass this test imply that the core produced
-is optimized for speed.
-
-Other parameters used by this block are explained in the topic [Common
-Options in Block Parameter Dialog
-Boxes](../../GEN/common-options/README.md).
 
 ## LogiCORE™ Documentation
 

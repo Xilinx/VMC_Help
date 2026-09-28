@@ -137,18 +137,20 @@ Event Output Signals (always present):
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Transform Length  
-##### Transform_length  
-One of N = 2^((3..16)) = 8 - 65536.
+#### Transform Length
 
-#### Architecture Configuration  
-##### Target Clock Frequency(MHz)  
+Dialog parameter.
+
+#### Target Clock Frequency (MHz)
+
 Enter the target clock frequency.
 
-##### Target Data Throughput(MSPS)  
+#### Target Data Throughput (MSPS)
+
 Enter the target throughput.
 
-##### Architecture Choice  
+#### Architecture Choice
+
 Choose one of the following.
 
 - automatically_select
@@ -157,63 +159,57 @@ Choose one of the following.
 - radix_2_burst_io
 - radix_2_lite_burst_io
 
-#### Transform Length Options  
-Run Time Configurable Transform Length  
-The transform length can be set through the nfft port if this option is
-selected. Valid settings and the corresponding transform sizes are
-provided in the section titled Transform Size in the associated document
-Fast Fourier Transform LogiCORE IP Product Guide
-([PG109](https://docs.amd.com/r/en-US/pg109-xfft)).
+#### Run Time Configurable Transform Length
 
-
-### Advanced tab  
-Parameters specific to the Advanced tab are as follows.
-
-#### Super Sample Rate (SSR)
-The number of parallel re/im lane pairs on the data channel. SSR must
-be a power of two (1, 2, 4, 8, 16, 32, or 64). With `SSR = N > 1`,
-the input and output data sub-fields are vectorized into `N` lanes
-(see [AXI Ports](#axi-ports-that-are-unique-to-this-block)).
+Dialog parameter.
 
 #### Native Floating Point Data Format
+
 Checkbox (`enable_ssr` in the mask). When enabled, input samples are
 interpreted as pairs of 32-bit IEEE-754 floats and phase factors as
 24- or 25-bit fixed-point numbers. When disabled, samples are
 fixed-point with the precision controlled by the input signal types
 and **Phase Factor Width**.
 
-#### Precision Options
-##### Phase Factor Width
+#### SSR (Super Sample Rate)
+
+The number of parallel re/im lane pairs on the data channel. SSR must
+be a power of two (1, 2, 4, 8, 16, 32, or 64). With `SSR = N > 1`,
+the input and output data sub-fields are vectorized into `N` lanes
+(see [AXI Ports](#axi-ports-that-are-unique-to-this-block)).
+
+#### Phase Factor Width
+
 Choose a value between 8 and 34, inclusive to be used as bit widths for
 phase factors.
 
 #### Scaling Options
+
 Select between Unscaled, Scaled, and Block Floating Point output data
 types.
 
 #### Rounding Modes
+
 Applied at the output of each rank when **Scaling Options** is *Scaled*.
 
 - *Truncation* — drop fractional bits.
 - *Convergent Rounding* — round half to even.
 
-#### Control Signals
-##### ACLKEN
+#### ACLKEN
+
 Enables the clock enable (`aclken_in`) pin on the core. All registers in
 the core are enabled by this control signal.
 
-##### ARESETn
+#### ARESETn
+
 Active-low synchronous clear input (`aresetn_in`) that always takes
 priority over ACLKEN. A minimum ARESETn active pulse of two cycles is
 required, since the signal is internally registered for performance. A
 pulse of one cycle resets the core, but the response to the pulse is
 not in the cycle immediately following.
 
-#### Output Ordering
-Choose between Bit/Digit Reversed Order or Natural Order output.
-(Bit-reversed for radix-2 architectures, digit-reversed for radix-4.)
-
 #### Cyclic Prefix Insertion
+
 Cyclic prefix insertion takes a section of the output of the FFT and
 prefixes it to the beginning of the transform. The resultant output data
 consists of the cyclic prefix (a copy of the end of the output data)
@@ -230,26 +226,20 @@ prefix length can be from 0 to 1023 samples, and a CP_LEN value of
 0010010110 produces a cyclic prefix consisting of the last 150 samples
 of the output data.
 
-#### Throttle Schemes  
+#### Throttle Scheme
+
 Select the tradeoff between performance and data timing requirements.
 
-##### Real Time  
-This mode typically gives a smaller and faster design, but has strict
-constraints on when data must be provided and consumed.
+#### XK_INDEX
 
-##### Non Real Time  
-This mode has no such constraints, but the design might be larger and
-slower.
-
-#### Optional Output Fields  
-##### XK_INDEX  
 The XK_INDEX field (if present in the Data Output channel) gives the
 sample number of the XK_RE/XK_IM data being presented at the same time.
 In the case of natural order outputs, XK_INDEX increments from 0 to
 (point size) -1. When bit reversed outputs are used, XK_INDEX covers the
 same range of numbers, but in a bit (or digit) reversed manner.
 
-##### OVFLO  
+#### OVFLO
+
 The Overflow (OVFLO) field in the Data Output and Status channels is
 only available when the Scaled arithmetic is used. OVFLO is driven High
 during unloading if any point in the data frame overflowed.
@@ -259,8 +249,8 @@ channel. When an overflow occurs in the core, the data is wrapped rather
 than saturated, resulting in the transformed data becoming unusable for
 most applications
 
-#### Block Icon Display  
-##### Display shortened port names  
+#### Display shortened port names
+
 On by default. When unchecked, data_tvalid, for example, becomes
 m_axis_data_tvalid.
 
@@ -268,38 +258,43 @@ m_axis_data_tvalid.
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 
-#### Memory Options  
-##### Data  
+#### Data
+
 Option to choose between Block RAM and Distributed RAM. This option is
 available only for sample points 8 through 1024. This option is not
 available for Pipelined Streaming I/O implementation.
 
-##### Phase Factors  
+#### Phase Factors
+
 Choose between Block RAM and Distributed RAM. This option is available
 only for sample points 8 till 1024. This option is not available for
 Pipelined Streaming I/O implementation.
 
-##### Number Of Stages Using Block RAM  
+#### Number of Stages Using Block RAM
+
 Store data and phase factor in Block RAM and partially in Distributed
 RAM. This option is available only for the Pipelined Streaming I/O
 implementation.
 
-##### Reorder Buffer  
+#### Reorder Buffer
+
 Choose between Block RAM and Distributed RAM up to 1024 points transform
 size.
 
-##### Hybrid Memories  
+#### Optimize Block RAM Count Using Hybrid Memories
+
 Click check box to Optimize Block RAM Count Using Hybrid Memories.
 
-#### Optimize Options  
-##### Complex Multipliers  
+#### Complex Multipliers
+
 Choose one of the following.
 
 - Use CLB logic
 - Use 3-multiplier structure (resource optimization)
 - Use 4-multiplier structure (performance optimization)
 
-##### Butterfly Arithmetic  
+#### Butterfly Arithmetic
+
 Choose one of the following:
 
 - Use CLB logic
@@ -309,7 +304,31 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
-## Block Timing
+Additional dialog notes:
+
+Transform_length. One of N = 2^((3..16)) = 8 - 65536.
+
+Architecture Configuration. Transform Length Options. Run Time Configurable Transform Length  
+The transform length can be set through the nfft port if this option is
+selected. Valid settings and the corresponding transform sizes are
+provided in the section titled Transform Size in the associated document
+Fast Fourier Transform LogiCORE IP Product Guide
+([PG109](https://docs.amd.com/r/en-US/pg109-xfft)).
+
+
+### Advanced tab  
+Parameters specific to the Advanced tab are as follows.
+
+Precision Options. Control Signals. Output Ordering. Choose between Bit/Digit Reversed Order or Natural Order output.
+(Bit-reversed for radix-2 architectures, digit-reversed for radix-4.)
+
+Real Time. This mode typically gives a smaller and faster design, but has strict
+constraints on when data must be provided and consumed.
+
+Non Real Time. This mode has no such constraints, but the design might be larger and
+slower.
+
+Optional Output Fields. Block Icon Display. Memory Options. Optimize Options. ## Block Timing
 
 To better understand the FFT blocks control behavior and timing, please
 consult the core data sheet.

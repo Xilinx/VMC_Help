@@ -200,83 +200,27 @@ ACLKEN.</p>
 <section id="attributes" class="level3">
 <h3>Attributes</h3>
 <p>Parameters specific to the Attributes tab are as follows.</p>
-<section id="code-block-specification" class="level4">
-<h4>Code Block Specification</h4>
-<section id="code-specification" class="level5">
-<h5>Code specification</h5>
+<section id="code-specification" class="level4">
+<h4>Code Specification</h4>
 <p>specifies the encoder type desired. The choices are:</p>
-<section id="custom" class="level6">
-<h6>Custom</h6>
-<p>Allows you to set all the block parameters.</p>
 </section>
-<section id="dvb" class="level6">
-<h6>DVB</h6>
-<p>Implements DVB (Digital Video Broadcasting) standard (204, 188)
-shortened RS code.</p>
-</section>
-<section id="atsc" class="level6">
-<h6>ATSC</h6>
-<p>Implements ATSC (Advanced Television Systems Committee) standard
-(207, 187) shortened RS code</p>
-</section>
-<section id="g_709" class="level6">
-<h6>G_709</h6>
-<p>Implements G.709 Optical Transport Network standard.</p>
-</section>
-<section id="etsi_bran" class="level6">
-<h6>ETSI_BRAN</h6>
-<p>Implements the ETSI Project standard for Broadband Radio Access
-Networks (BRAN).</p>
-</section>
-<section id="ccsds" class="level6">
-<h6>CCSDS</h6>
-<p>Implements CCSDS (Consultative Committee for Space Data Systems)
-standard (255, 223) full length RS code.</p>
-</section>
-<section id="itu_j_83_annex_b" class="level6">
-<h6>ITU_J_83_Annex_B</h6>
-<p>Implements International Telecommunication Union (ITU)-J.83 Annex B
-specification (128, 122) extended RS code.</p>
-</section>
-<section id="iess-308-126" class="level6">
-<h6>IESS-308 (126)</h6>
-<p>Implements IESS-308 (INTELSAT Earth Station Standard) specification
-(126, 112) shortened RS code.</p>
-</section>
-<section id="iess-308-194" class="level6">
-<h6>IESS-308 (194)</h6>
-<p>Implements IESS-308 specification (194, 178) shortened RS code.</p>
-</section>
-<section id="iess-308-208" class="level6">
-<h6>IESS-308 (208)</h6>
-<p>Implements IESS-308 specification (208, 192) shortened RS code.</p>
-</section>
-<section id="iess-308-219" class="level6">
-<h6>IESS-308 (219)</h6>
-<p>Implements IESS-308 specification (219, 201) shortened RS code.</p>
-</section>
-<section id="iess-308-225" class="level6">
-<h6>IESS-308 (225)</h6>
-<p>Implements IESS-308 specification (225, 205) shortened RS code.</p>
-</section>
-</section>
-<section id="variable-number-of-check-symbols-r" class="level5">
-<h5>Variable Number of Check Symbols (r)</h5>
+<section id="variable-number-of-check-symbols-r" class="level4">
+<h4>Variable Number Of Check Symbols (r)</h4>
 <p>False, true. When checked, the ctrl_tdata_r_in and ctrl_tdata_n_in
 pins become available on the block.</p>
 </section>
-<section id="variable-block-length" class="level5">
-<h5>Variable Block Length</h5>
+<section id="variable-block-length" class="level4">
+<h4>Variable Block Length</h4>
 <p>False, true. When checked, the ctrl_tdata_n_in pin becomes available
 on the block.</p>
 </section>
-<section id="symbol-width" class="level5">
-<h5>Symbol width</h5>
+<section id="symbol-width" class="level4">
+<h4>Symbol Width</h4>
 <p>Tells the width in bits for symbols in the code. The encoder support
 widths from 3 to 12 and the default value is 8.</p>
 </section>
-<section id="field-polynomial" class="level5">
-<h5>Field polynomial</h5>
+<section id="field-polynomial" class="level4">
+<h4>Field Polynomial</h4>
 <p>specifies the polynomial from which the symbol field is derived. It
 must be specified as a decimal number. This polynomial must be
 primitive. A value of zero indicates the default polynomial should be
@@ -343,112 +287,121 @@ used. Default polynomials are listed in the table below.</p>
 </tbody>
 </table>
 </section>
-<section id="scaling-factor-h" class="level5">
-<h5>Scaling Factor (h)</h5>
+<section id="scaling-factor-h" class="level4">
+<h4>Scaling Factor (h)</h4>
 <p>(represented in the previous formula as h) specifies the scaling
 factor for the code. Ordinarily, h is 1, but can be as large as 2^(S) -
 1 where s is the symbol width. The value must be chosen so that α^(h) is
 primitive. That is, h must be relatively prime to 2^(S) - 1.</p>
 </section>
-<section id="generator-start" class="level5">
-<h5>Generator Start</h5>
+<section id="generator-start" class="level4">
+<h4>Generator Start</h4>
 <p>Specifies the first root r of the generator polynomial. The generator
 polynomial g(x), is given by:</p>
 <p><img role="img" src="data:image/png;base64,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" /></p>
 <p>where α is a primitive element of the symbol field, and the scaling
 factor is described below.</p>
 </section>
-<section id="symbols-per-blockn" class="level5">
-<h5>Symbols Per Block(n)</h5>
+<section id="symbols-per-block-n" class="level4">
+<h4>Symbols Per Block (n)</h4>
 <p>Tells the number of symbols in the blocks the encoder produces.
 Acceptable numbers range from 3 to 2^(S) -1, where s denotes the symbol
 width.</p>
 </section>
-<section id="data-symbolsk" class="level5">
-<h5>Data Symbols(k)</h5>
+<section id="data-symbols-k" class="level4">
+<h4>Data Symbols (k)</h4>
 <p>Tells the number of information symbols each block contains.
 Acceptable values range from max(n - 256, 1) to n - 2.</p>
 </section>
 </section>
-</section>
 <section id="detailed-implementation-tab" class="level3">
 <h3>Detailed Implementation tab</h3>
-<section id="implementation" class="level4">
-<h4>Implementation</h4>
-<section id="check-symbol-generator-optimization" class="level5">
-<h5>Check Symbol Generator Optimization</h5>
+<section id="check-symbol-generator-optimization" class="level4">
+<h4>Check Symbol Generator Optimization</h4>
 <p>This option is available when &quot;Variable Number of Check Symbols&quot;
 option is selected on the GUI.</p>
-<section id="fixed-architecture" class="level6">
-<h6>Fixed Architecture</h6>
-<p>The check symbol generator is implemented using a highly efficient
-fixed architecture.</p>
 </section>
-<section id="area" class="level6">
-<h6>Area</h6>
-<p>The check symbol generator implementation is optimized for area and
-speed efficiency. The range of input, ctrl_tdata_n_in, is reduced.</p>
-</section>
-<section id="flexibility" class="level6">
-<h6>Flexibility</h6>
-<p>The check symbol generator implementation is optimized to maximize
-the range of input of ctrl_tdata_n_in.</p>
-</section>
-</section>
-<section id="memory-style" class="level5">
-<h5>Memory Style</h5>
+<section id="memory-style" class="level4">
+<h4>Memory Style</h4>
 <p>Select between Distributed, Block and Automatic memory choices. This
 option is available only for CCSDS codes.</p>
 </section>
-<section id="number-of-channels" class="level5">
-<h5>Number Of Channels</h5>
+<section id="number-of-channels" class="level4">
+<h4>Number Of Channels</h4>
 <p>Specifies the number of separate time division multiplexed channels
 to be processed by the encoder. The encoder supports up to 128
 channels.</p>
 </section>
-</section>
-<section id="optional-pins" class="level4">
-<h4>Optional Pins</h4>
-<section id="aclken-1" class="level5">
-<h5>ACLKEN</h5>
+<section id="aclken-1" class="level4">
+<h4>ACLKEN</h4>
 <p>Adds a aclken pin to the block. This signal carries the clock enable
 and must be of type Bool.</p>
 </section>
-<section id="output-tready" class="level5">
-<h5>Output TREADY</h5>
+<section id="output-tready" class="level4">
+<h4>Output TREADY</h4>
 <p>When selected, the output channels will have a TREADY and hence
 support the AXI4 handshake protocol with inherent back-pressure.</p>
 </section>
-<section id="aresetn-1" class="level5">
-<h5>ARESETn</h5>
+<section id="aresetn-1" class="level4">
+<h4>ARESETn</h4>
 <p>Adds a aresetn pin to the block. This signal resets the block and
 must be of type Bool. aresetn must be asserted low for at least 2 clock
 periods and at least 1 sample period before the decoder can start
 decoding code symbols.</p>
 </section>
-<section id="info-bit" class="level5">
-<h5>Info bit</h5>
+<section id="info-bit" class="level4">
+<h4>Info bit</h4>
 <p>Adds the output_tdata_info pin. Marks the last information symbol of
 a block on tdata_data_out.</p>
 </section>
-<section id="marker-bits" class="level5">
-<h5>Marker Bits</h5>
+<section id="marker-bits" class="level4">
+<h4>Marker Bits</h4>
 <p>Adds the following pins to the block:</p>
-<section id="input_tuser_user" class="level6">
-<h6>input_tuser_user</h6>
-<p>Carries marker bits for tagging data on input_tdata_ data_in.</p>
 </section>
-<section id="output_tuser_user" class="level6">
-<h6>output_tuser_user</h6>
-<p>mark_in tagging bits delayed by the latency of the LogiCORE.</p>
-</section>
-</section>
-<section id="number-of-marker-bits" class="level5">
-<h5>Number of Marker Bits</h5>
+<section id="number-of-marker-bits" class="level4">
+<h4>Number Of Marker Bits</h4>
 <p>Specifies the number of marker bits.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>Dialog parameter.</p>
+<p>Additional dialog notes:</p>
+<p>Code Block Specification. Custom. Allows you to set all the block
+parameters.</p>
+<p>DVB. Implements DVB (Digital Video Broadcasting) standard (204, 188)
+shortened RS code.</p>
+<p>ATSC. Implements ATSC (Advanced Television Systems Committee)
+standard (207, 187) shortened RS code</p>
+<p>G_709. Implements G.709 Optical Transport Network standard.</p>
+<p>ETSI_BRAN. Implements the ETSI Project standard for Broadband Radio
+Access Networks (BRAN).</p>
+<p>CCSDS. Implements CCSDS (Consultative Committee for Space Data
+Systems) standard (255, 223) full length RS code.</p>
+<p>ITU_J_83_Annex_B. Implements International Telecommunication Union
+(ITU)-J.83 Annex B specification (128, 122) extended RS code.</p>
+<p>IESS-308 (126). Implements IESS-308 (INTELSAT Earth Station Standard)
+specification (126, 112) shortened RS code.</p>
+<p>IESS-308 (194). Implements IESS-308 specification (194, 178)
+shortened RS code.</p>
+<p>IESS-308 (208). Implements IESS-308 specification (208, 192)
+shortened RS code.</p>
+<p>IESS-308 (219). Implements IESS-308 specification (219, 201)
+shortened RS code.</p>
+<p>IESS-308 (225). Implements IESS-308 specification (225, 205)
+shortened RS code.</p>
+<p>Implementation. Fixed Architecture. The check symbol generator is
+implemented using a highly efficient fixed architecture.</p>
+<p>Area. The check symbol generator implementation is optimized for area
+and speed efficiency. The range of input, ctrl_tdata_n_in, is
+reduced.</p>
+<p>Flexibility. The check symbol generator implementation is optimized
+to maximize the range of input of ctrl_tdata_n_in.</p>
+<p>Optional Pins. input_tuser_user. Carries marker bits for tagging data
+on input_tdata_ data_in.</p>
+<p>output_tuser_user. mark_in tagging bits delayed by the latency of the
+LogiCORE.</p>
 </section>
 </section>
 </section>

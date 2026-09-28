@@ -51,8 +51,8 @@ and Adder:</p>
 <section id="basic" class="level3">
 <h3>Basic</h3>
 <p>Parameters specific to the Basic tab are as follows.</p>
-<section id="-a-or-acin-input" class="level4">
-<h4> A or ACIN input</h4>
+<section id="a-or-acin-input" class="level4">
+<h4>A or ACIN input</h4>
 <p>Specifies if the A input should be taken directly from the a port or
 from the cascaded acin port. The acin port can only be connected to
 another DSPFP32 block.</p>
@@ -91,12 +91,12 @@ only the Adder/Logic Unit.</p>
 <h3>Optional Ports</h3>
 <p>Parameters specific to the Optional Ports tab are as follows.</p>
 <section id="provide-c-port" class="level4">
-<h4>Provide c port</h4>
+<h4>Provide C port</h4>
 <p>When selected, the c port is made available. Otherwise, the c port is
 tied to &#39;0&#39;.</p>
 </section>
 <section id="provide-d-port" class="level4">
-<h4>Provide d port</h4>
+<h4>Provide D Port</h4>
 <p>When selected, the d port is made available. Otherwise, the d port is
 tied to &#39;0&#39;.</p>
 </section>
@@ -117,14 +117,14 @@ selections.</p>
 connected to the pcout port of another DSPFP32 block.</p>
 </section>
 <section id="provide-fpa_invalid-port" class="level4">
-<h4>Provide FPA_INVALID port</h4>
+<h4>Provide FPA_INVALID Port</h4>
 <p>When selected, the fpa_invalid port is provided. This port indicates
 when the Addition operation is invalid i.e., If Any operation with one
 or more signaling NaN inputs or Addition of  infinities with opposite
 signs.</p>
 </section>
 <section id="provide-fpa_overflow-port" class="level4">
-<h4>Provide FPA_OVERFLOW port</h4>
+<h4>Provide FPA_OVERFLOW Port</h4>
 <p>When selected, the fpa_overflow output port is provided. This port
 indicates when the overflow condition is detected on Addition operation
 i.e., overflow can occur during the addition of two finite normal
@@ -132,21 +132,21 @@ numbers when results exceed the maximum normalized value (32’h7F7FFFFF
 or 32’hFF7FFFFF).</p>
 </section>
 <section id="provide-fpa_underflow-port" class="level4">
-<h4>Provide FPA_UNDERFLOW port</h4>
+<h4>Provide FPA_UNDERFLOW Port</h4>
 <p>When selected, the fpa_underflow output port is provided. This port
 indicates when the underflow condition is detected on Addition operation
 i.e., anything resulting in a non-zero number less than the minimum
 normalized value triggers an underflow.</p>
 </section>
 <section id="provide-fpm_invalid-port" class="level4">
-<h4>Provide FPM_INVALID port</h4>
+<h4>Provide FPM_INVALID Port</h4>
 <p>When selected, the fpm_invalid port is provided. This port indicates
 when the Multiplication operation is invalid i.e., If Any operation with
 one or more signaling NaN inputs or Multiplication of zero and
 infinity.</p>
 </section>
 <section id="provide-fpm_overflow-port" class="level4">
-<h4>Provide FPM_OVERFLOW port</h4>
+<h4>Provide FPM_OVERFLOW Port</h4>
 <p>When selected, the fpm_overflow output port is provided. This port
 indicates when the overflow condition is detected on Multiplication
 operation i.e., overflow can occur during the multiplication of two
@@ -278,7 +278,7 @@ pipeline register for port d when set to &#39;1&#39;.</p>
 pipeline register for the fpinmode port when set to &#39;1&#39;.</p>
 </section>
 <section id="reset-port-for-fpopmode" class="level4">
-<h4>Reset port for FPOPMODE</h4>
+<h4>Reset Port for FPOPMODE</h4>
 <p>When selected, a port rst_fpopmode is made available. This resets the
 pipeline register for the fpopmode port when set to &#39;1&#39;.</p>
 </section>
@@ -337,10 +337,58 @@ available.</p>
 <h3>Inversion Options</h3>
 <p>When a checkbox is selected on this tab, the specified signal is
 inverted.</p>
+<section id="invert-fpinmode" class="level4">
+<h4>Invert fpinmode</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-fpopmode" class="level4">
+<h4>Invert fpopmode</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="bits-to-be-invert" class="level4">
+<h4>bits to be invert</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-a" class="level4">
+<h4>Invert rst for a</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-b" class="level4">
+<h4>Invert rst for b</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-c" class="level4">
+<h4>Invert rst for c</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-d" class="level4">
+<h4>Invert rst for d</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-fpa" class="level4">
+<h4>Invert rst for fpa</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-fpinmode" class="level4">
+<h4>Invert rst for fpinmode</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-mpipe-register" class="level4">
+<h4>Invert rst for mpipe register</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-fpm" class="level4">
+<h4>Invert rst for fpm</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="invert-rst-for-fpopmode" class="level4">
+<h4>Invert rst for fpopmode</h4>
+<p>Dialog parameter.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
 </section>
 </section>
 </section>

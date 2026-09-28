@@ -28,16 +28,20 @@ Block Parameters dialog box.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Output order  
+#### Output order
+
 Most significant word first or least significant word first.
 
-#### Type  
+#### Type
+
 Signed or unsigned.
 
-#### Number of bits  
+#### Number of bits
+
 Output width. Must divide Number of Input Bits evenly.
 
-#### Binary Point  
+#### Binary point
+
 Binary point location.
 
 The minimum latency of this block is 0.
@@ -45,6 +49,18 @@ The minimum latency of this block is 0.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+#### Provide reset port
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

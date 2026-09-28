@@ -44,7 +44,8 @@ value with no change until the en port goes high again.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-#### Type  
+#### Type
+
 Fibonacci or Galois. This field specifies the structure of the feedback.
 Fibonacci has one XOR (or XNOR) gate at the beginning of the register
 chain that XORs (or XNORs) the taps together with the result going into
@@ -52,15 +53,22 @@ the first register. Galois has one XOR (or XNOR) gate for each tap and
 gates the last register in the chains output with the input to the
 register at that tap.
 
-#### Gate type  
+#### Gate type
+
 XOR or XNOR. This field specifies the gate used by the feedback signals.
 
-#### Number of bits in LFSR  
+#### Number of bits in LFSR
+
 This field specifies the number of registers in the LFSR chain. As a
 result, this number specifies the size of the input and output when
 selected to be parallel.
 
-#### Feedback polynomial  
+#### Use Maximum length LFSR counter polynomial
+
+Dialog parameter.
+
+#### Feedback polynomial (enter hex value enclosed with ticks)
+
 This field specifies the tap points of the feedback chain and the value
 must be entered in hex with single quotes. The lsb of this polynomial
 always must be set to 1 and the msb is an implied 1 and is not specified
@@ -71,7 +79,8 @@ Generators](https://www.xilinx.com/support/documentation/application_notes/xapp0
 for more information on how to specify this equation and for optimal
 settings for the maximum repeating sequence.
 
-#### Initial value  
+#### Initial value (enter hex value enclosed with ticks)
+
 This field specifies the initial seed value where the LFSR begins its
 repeating sequence. The initial value might not be all zeroes when
 choosing the XOR gate type and might not be all ones when choosing XNOR,
@@ -80,15 +89,26 @@ as those values will stall the LFSR.
 ### Advanced tab  
 Parameters specific to the Advanced tab are as follows:
 
-#### Use reloadable seed value  
+#### Provide synchronous reset port
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Use reloadable seed values
+
 This field specifies whether or not an input is needed to reload a
 dynamic LFSR seed value at run time.
 
-#### Parallel input  
+#### Parallel input
+
 This field specifies whether the reloadable input seed is shifted in one
 bit at a time or if it happens in parallel.
 
-#### Parallel output  
+#### Parallel output
+
 This field specifies whether all of the bits in the LFSR chain are
 connected to the output or just the last register in the chain (serial
 or parallel).
@@ -96,6 +116,18 @@ or parallel).
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+#### Output type
+
+Dialog parameter.
+
+#### Binary point
+
+Dialog parameter.
+
+#### Specify explicit sample period
+
+Dialog parameter.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

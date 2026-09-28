@@ -24,12 +24,18 @@ the least significant bits of the output.
 
 Parameters specific to this block are as follows:
 
-#### Number of Inputs
+#### Number of inputs
+
 Specifies number of inputs, between 2 and 1024,
   inclusively, to concatenate together.
-  
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+
+#### SSR
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector data support for the primary block
 operation.
@@ -45,3 +51,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

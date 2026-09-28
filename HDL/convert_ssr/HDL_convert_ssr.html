@@ -45,48 +45,20 @@ signed (two&#39;s complement) or unsigned value.</p>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows:</p>
-<section id="output-type" class="level4">
-<h4>Output Type</h4>
-<p>Specify the output data type.</p>
-<ul>
-<li>Boolean</li>
-<li>Fixed-point</li>
-<li>Floating-point</li>
-</ul>
-</section>
 <section id="arithmetic-type" class="level4">
-<h4>Arithmetic Type</h4>
+<h4>Arithmetic type</h4>
 <p>If the Output Type is specified as fixed-point, you can select Signed
 (two’s comp) or Unsigned.</p>
 </section>
-<section id="fixed-point-precision" class="level4">
-<h4>Fixed-point Precision</h4>
-<section id="number-of-bits" class="level5">
-<h5>Number of bits</h5>
+<section id="number-of-bits" class="level4">
+<h4>Number of bits</h4>
 <p>Specifies the bit location of the binary point, where bit zero is the
 least significant bit</p>
 </section>
-<section id="binary-point" class="level5">
-<h5>Binary point</h5>
+<section id="binary-point" class="level4">
+<h4>Binary point</h4>
 <p>Specifies the bit location of the binary point, where bit zero is the
 least significant bit.</p>
-</section>
-</section>
-<section id="floating-point-precision" class="level4">
-<h4>Floating-point Precision</h4>
-<section id="single" class="level5">
-<h5>Single</h5>
-<p>Specifies single precision (32 bits).</p>
-</section>
-<section id="double" class="level5">
-<h5>Double</h5>
-<p>Specifies double precision (64 bits).</p>
-</section>
-<section id="custom" class="level5">
-<h5>Custom</h5>
-<p>Activates the field below so you can specify the Exponent width and
-the Fraction width.</p>
-</section>
 </section>
 <section id="exponent-width" class="level4">
 <h4>Exponent width</h4>
@@ -133,14 +105,11 @@ error (an overflow as a Simulink error) during simulation. Flag as error
 is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.</p>
 </section>
-<section id="optional-ports" class="level4">
-<h4>Optional Ports</h4>
-<section id="provide-enable-port" class="level5">
-<h5>Provide enable port</h5>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
 <p>Activates an optional enable (en) pin on the block. When the enable
 signal is not asserted the block holds its current state until the
 enable signal is asserted again or the reset signal is asserted.</p>
-</section>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
@@ -153,20 +122,12 @@ select the Pipeline for maximum performance option (described below);
 additional latency is usually implemented as a shift register on the
 output of the block.</p>
 </section>
-<section id="super-sample-rate-ssr" class="level4">
-<h4>Super Sample Rate (SSR)</h4>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This blocks
-enable 1-D vector data support for the primary block operation.</p>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
 </section>
-</section>
-<section id="implementation-tab" class="level3">
-<h3>Implementation tab</h3>
-<p>Parameters specific to the Implementation tab are as follows:</p>
-<section id="performance-parameters" class="level4">
-<h4>Performance Parameters</h4>
-<section id="pipeline-for-maximum-performance" class="level5">
-<h5>Pipeline for maximum performance</h5>
+<section id="pipeline-for-maximum-performance" class="level4">
+<h4>Pipeline for maximum performance</h4>
 <p>The LogiCORE™ can be internally pipelined to optimize for speed
 instead of area. Selecting this option puts all user defined latency
 into the core until the maximum allowable latency is reached. If the
@@ -179,17 +140,34 @@ instead of adding it only at the end. This helps to meet tight timing
 constraints in the design.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Additional dialog notes:</p>
+<p>Output Type. Specify the output data type.</p>
+<ul>
+<li>Boolean</li>
+<li>Fixed-point</li>
+<li>Floating-point</li>
+</ul>
+<p>Fixed-point Precision. Floating-point Precision. Single. Specifies
+single precision (32 bits).</p>
+<p>Double. Specifies double precision (64 bits).</p>
+<p>Custom. Activates the field below so you can specify the Exponent
+width and the Fraction width.</p>
+<p>Optional Ports. Super Sample Rate (SSR). This configurable GUI
+parameter is primarily used to control processing of multiple data
+samples on every sample period. This blocks enable 1-D vector data
+support for the primary block operation.</p>
 </section>
 </section>
-</section>
-</section>
-<section id="logicore-documentation" class="level2">
-<h2>LogiCORE™ Documentation</h2>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows:</p>
+<p>Performance Parameters. ## LogiCORE™ Documentation</p>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
 </section>
 </section>
 </body>

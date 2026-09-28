@@ -71,15 +71,18 @@ frame.
 
 ## Block Parameters
 
-### Basic tab  
-#### Sampling Rate (number of input samples per output sample)  
+### Basic tab
+
+#### Sampling rate (number of input samples per output sample)
+
 Must be an integer greater or equal to 2. This is the ratio of the
 output sample period to the input, and is essentially a sample rate
 divider. For example, a ratio of 2 indicates a 2:1 division of the input
 sample rate. If a non-integer ratio is desired, the Up Sample block can
 be used in combination with the Down Sample block.
 
-#### Sample  
+#### Sample
+
 The Down Sample block can sample either the first or last value of a
 frame. This parameter will determine which of these two values is
 sampled.
@@ -87,6 +90,18 @@ sampled.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Provide synchronous reset port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
 
 ## LogiCORE
 

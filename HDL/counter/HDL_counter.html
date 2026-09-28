@@ -117,7 +117,7 @@ explicit load and din port. The load capability is available only for
 the free-running counter.</p>
 </section>
 <section id="provide-synchronous-reset-port" class="level4">
-<h4>Provide Synchronous reset port</h4>
+<h4>Provide synchronous reset port</h4>
 <p>Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
@@ -128,14 +128,26 @@ rate. The signal driving the reset port must be Boolean.</p>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <p>Parameters specific to the Implementation tab are as follows.</p>
-<section id="use-behavioral-hdl-otherwise-use-core" class="level5">
-<h5>Use behavioral HDL (otherwise use core)</h5>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="sample-period-source" class="level4">
+<h4>Sample period source</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="explicit-period" class="level4">
+<h4>Explicit period</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="use-behavioral-hdl-otherwise-use-core" class="level4">
+<h4>Use behavioral HDL (otherwise use core)</h4>
 <p>The block is implemented using behavioral HDL. This gives the
 downstream logic synthesis tool maximum freedom to optimize for
 performance or area.</p>
 </section>
-<section id="implement-using" class="level5">
-<h5>Implement using</h5>
+<section id="implement-using" class="level4">
+<h4>Implement using</h4>
 <p>Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
 available in the target device. The default is Fabric.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common

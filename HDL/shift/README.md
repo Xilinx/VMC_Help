@@ -25,6 +25,46 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+#### Shift direction
+
+Dialog parameter.
+
+#### Number of bits
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
+#### Precision
+
+Dialog parameter.
+
+#### Output type
+
+Dialog parameter.
+
+#### Number of bits
+
+Dialog parameter.
+
+#### Binary point
+
+Dialog parameter.
+
+#### Quantization
+
+Dialog parameter.
+
+#### Overflow
+
+Dialog parameter.
+
 ## LogiCORE
 
 The Shift block does not use a LogiCORE™.

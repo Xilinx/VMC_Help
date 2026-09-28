@@ -63,7 +63,7 @@ follows.</p>
 <section id="coefficient-vector" class="level3">
 <h3>Coefficient Vector</h3>
 <section id="use-fda-tool-as-coefficient-source" class="level4">
-<h4>Use FDA Tool as Coefficient Source</h4>
+<h4>Use FDA Tool as Coefficient source</h4>
 <p>If selected,the Coefficient Vector will be determined by the settings
 in the Filter Design and Analysis Tool (FDA Tool). To use the FDA Tool
 as your coefficient source, you must click the FDATool button and
@@ -80,31 +80,8 @@ or by adding, moving or deleting poles and zeroes. FDA Tool also
 provides tools for analyzing filters, such as magnitude and phase
 response and pole-zero plots (see <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;Xilinx_FDATool_Interface_Block&#39;,&#39;category&#39;,&#39;UTIL&#39;))">FDATool</a>).</p>
 </section>
-<section id="edit-box" class="level4">
-<h4>Edit Box</h4>
-<p>The edit box is enabled for you to specify the Coefficient Vector
-when the Use FDA Tool as Coefficient Source option is disabled. The edit
-box specifies the vector coefficients of the filter&#39;s transfer function.
-Filter coefficients must be specified as a single MATLAB row vector.
-Filter structure must be Direct Form, and the input must be a
-scalar.</p>
-<p>The number of taps is inferred from the length of the MATLAB row
-vector. If multiple coefficient sets are specified, then each set is
-appended to the previous set in the vector.</p>
-</section>
-<section id="fdatool" class="level4">
-<h4>FDATool</h4>
-<p>This button is enabled if the Use FDA Tool as Coefficient Source
-option is enabled. Click this button to open a Block Parameters dialog
-box for the FDA Tool, and enter your filter specifications in this
-dialog box. To understand how to use this dialog box to describe your
-FIR filter, see <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;Xilinx_FDATool_Interface_Block&#39;,&#39;category&#39;,&#39;UTIL&#39;))">FDATool</a>.</p>
-</section>
-</section>
-<section id="coefficient-precision" class="level3">
-<h3>Coefficient Precision</h3>
 <section id="optimal-values" class="level4">
-<h4>Optimal Values</h4>
+<h4>Optimal values</h4>
 <p>If selected, the Coefficient Width and Coefficient Fractional Bits
 will be set automatically to their optimum values. The values are
 calculated using the dynamic range of filter response between pass band
@@ -136,7 +113,25 @@ is applicable to the all Decimation and Interpolation filter types for
 Fractional Rate Change implementations. The value provided in this field
 defines the downsampling factor, or Q for Fixed Fractional Rate (P/Q)
 resampling filter implementations.</p>
+<p>Additional dialog notes:</p>
+<p>Edit Box. The edit box is enabled for you to specify the Coefficient
+Vector when the Use FDA Tool as Coefficient Source option is disabled.
+The edit box specifies the vector coefficients of the filter&#39;s transfer
+function. Filter coefficients must be specified as a single MATLAB row
+vector. Filter structure must be Direct Form, and the input must be a
+scalar.</p>
+<p>The number of taps is inferred from the length of the MATLAB row
+vector. If multiple coefficient sets are specified, then each set is
+appended to the previous set in the vector.</p>
+<p>FDATool. This button is enabled if the Use FDA Tool as Coefficient
+Source option is enabled. Click this button to open a Block Parameters
+dialog box for the FDA Tool, and enter your filter specifications in
+this dialog box. To understand how to use this dialog box to describe
+your FIR filter, see <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;Xilinx_FDATool_Interface_Block&#39;,&#39;category&#39;,&#39;UTIL&#39;))">FDATool</a>.</p>
 </section>
+</section>
+<section id="coefficient-precision" class="level3">
+<h3>Coefficient Precision</h3>
 </section>
 </section>
 <section id="example" class="level2">

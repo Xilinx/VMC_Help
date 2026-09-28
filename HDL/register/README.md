@@ -22,11 +22,22 @@ optional reset port and a user specifiable initial value.
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
-#### Initial value  
+
+#### Initial value
+
 specifies the initial value in the register.
 
-#### Optional Ports  
-Other parameters used by this block are explained in the topic [Common
+#### Provide synchronous reset port
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Optional Ports. Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 

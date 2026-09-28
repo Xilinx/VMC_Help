@@ -47,29 +47,11 @@ points.</p>
 <p>Parameters specific to the Basic tab are as follows.</p>
 <section id="operation" class="level4">
 <h4>Operation</h4>
-<section id="addition" class="level5">
-<h5>Addition</h5>
-<p>Specifies that an addition will be performed after
-multiplication.</p>
+<p>Dialog parameter.</p>
 </section>
-<section id="subtraction" class="level5">
-<h5>Subtraction</h5>
-<p>Specifies that a subtraction will be performed after
-multiplication.</p>
-</section>
-<section id="addition-or-subtraction" class="level5">
-<h5>Addition or subtraction</h5>
-<p>Adds a subtract port to the block, which controls whether the
-operation following multiplication is addition or subtraction (subtract
-High = subtraction, subtract Low = addition).</p>
-</section>
-</section>
-<section id="optional-ports" class="level4">
-<h4>Optional Ports</h4>
-<section id="provide-enable-port" class="level5">
-<h5>Provide enable port</h5>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
 <p>Adds an active-High enable port to the block interface.</p>
-</section>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
@@ -98,30 +80,37 @@ for details on latency in the block.</p>
 <p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
 Full precision.</p>
-<section id="full" class="level5">
-<h5>Full</h5>
-<p>The block uses sufficient precision to represent the result without
-error.</p>
 </section>
-<section id="user-defined" class="level5">
-<h5>User Defined</h5>
-<p>If you do not need full precision, this option allows you to specify
-a reduced number of total bits and/or fractional bits.</p>
+<section id="arithmetic-type" class="level4">
+<h4>Arithmetic type</h4>
+<p>Dialog parameter.</p>
 </section>
+<section id="number-of-bits" class="level4">
+<h4>Number of bits</h4>
+<p>Dialog parameter.</p>
 </section>
-<section id="fixed-point-output-type" class="level4">
-<h4>Fixed-point Output Type</h4>
-<p>Arithmetic type</p>
-<section id="signed-2s-comp" class="level5">
-<h5>Signed (2’s comp)</h5>
-<p>The output is a Signed (2’s complement) number.</p>
-</section>
-<section id="unsigned" class="level5">
-<h5>Unsigned</h5>
-<p>The output is an Unsigned number.</p>
+<section id="binary-point" class="level4">
+<h4>Binary point</h4>
+<p>Dialog parameter.</p>
+<p>Additional dialog notes:</p>
+<p>Addition. Specifies that an addition will be performed after
+multiplication.</p>
+<p>Subtraction. Specifies that a subtraction will be performed after
+multiplication.</p>
+<p>Addition or subtraction. Adds a subtract port to the block, which
+controls whether the operation following multiplication is addition or
+subtraction (subtract High = subtraction, subtract Low = addition).</p>
+<p>Optional Ports. Full. The block uses sufficient precision to
+represent the result without error.</p>
+<p>User Defined. If you do not need full precision, this option allows
+you to specify a reduced number of total bits and/or fractional
+bits.</p>
+<p>Fixed-point Output Type. Arithmetic type</p>
+<p>Signed (2’s comp). The output is a Signed (2’s complement)
+number.</p>
+<p>Unsigned. The output is an Unsigned number.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-</section>
 </section>
 </section>
 </section>

@@ -30,14 +30,16 @@ synchronous design (with a few rare exceptions).
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-#### Provide synchronous reset port  
+#### Provide synchronous reset port
+
 This option activates an optional reset (rst) pin on the block. When the
 reset signal is asserted the block goes back to its initial state. Reset
 signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block's sample
 rate. The signal driving the reset port must be Boolean.
 
-#### Provide enable port 
+#### Provide enable port
+
 This option activates an optional enable (en) pin on the block. When the
 enable signal is not asserted the block holds its current state until
 the enable signal is asserted again or the reset signal is asserted.
@@ -45,7 +47,8 @@ Reset signal has precedence over the enable signal. The enable signal
 has to run at a multiple of the block 's sample rate. The signal driving
 the enable port must be Boolean.
 
-#### Latency  
+#### Latency
+
 Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port checkbox is not checked. The
 latency must be a non-negative integer. If the latency is zero, the
@@ -57,7 +60,8 @@ is set to L=1, the block will generally be synthesized as a flip-flop
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
 
-#### Implement using behavioral HDL  
+#### Implement using behavioral HDL.
+
 Uses behavioral HDL as the implementation. This allows the downstream
 logic synthesis tool to choose the best implementation.
 

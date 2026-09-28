@@ -16,20 +16,25 @@ block does not cost anything in hardware.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### BitBasher Expression  
+#### BitBasher Expression
+
 Bitwise manipulation expression based on Verilog Syntax. Multiple
 expressions (limited to a maximum of 4) can be specified using new line
 as a separator between expressions.
 
-### Output Type tab  
-#### Output  
-This refers to the port on which the data type is specified.
+### Output Type tab
 
-#### Output type  
-Arithmetic type to be forced onto the corresponding output.
+#### Display expression on the block icon
 
-#### Binary Point  
-Binary point location to be forced onto the corresponding output.
+Dialog parameter.
+
+Additional dialog notes:
+
+Output. This refers to the port on which the data type is specified.
+
+Output type. Arithmetic type to be forced onto the corresponding output.
+
+Binary Point. Binary point location to be forced onto the corresponding output.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog

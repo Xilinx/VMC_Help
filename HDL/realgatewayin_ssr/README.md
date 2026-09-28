@@ -62,47 +62,31 @@ provide a number of functions:
 ### Basic Tab  
 Parameters specific to the Basic tab are as follows:
 
-#### Output Type  
-Specifies the output data type. Can be Boolean, Fixed-point, or
-Floating-point.
+#### Arithmetic type
 
-##### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
-
-#### Arithmetic Type  
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
 
-#### Fixed-point Precision  
-##### Number of bits  
+#### Number of bits
+
 Specifies the bit location of the binary point, where bit zero is the
 least significant bit.
 
-##### Binary point  
+#### Binary point
+
 Specifies the bit location of the binary point, where bit zero is the
 least significant bit.
 
-#### Floating-point Precision  
-##### Single  
-Specifies single precision (32 bits).
+#### Exponent width
 
-##### Double  
-Specifies double precision (64 bits).
-
-##### Custom  
-Activates the field below so you can specify the Exponent width and the
-Fraction width.
-
-##### Exponent width  
 Specify the exponent width.
 
-##### Fraction width  
+#### Fraction width
+
 Specify the fraction width.
 
-#### Quantization  
+#### Quantization
+
 Quantization errors occur when the number of fractional bits is
 insufficient to represent the fractional portion of a value. The options
 are to Truncate (for example, to discard bits to the right of the least
@@ -118,7 +102,8 @@ is selected. For example, to round 01.0110 to a Fix_4_2, this yields
 01.10, since 01.0110 is exactly between 01.01 and 01.10 and the latter
 is further from zero.
 
-#### Overflow  
+#### Overflow
+
 Overflow errors occur when a value lies outside the representable range.
 For overflow the options are to Saturate to the largest
 positive/smallest negative value, to Wrap (for example, to discard bits
@@ -130,29 +115,33 @@ Wrap is selected.
 ### Implementation Tab  
 Parameters specific to the Implementation tab are as follows:
 
-#### Interface Options  
-##### Interface  
-###### None  
-Implies that during HDL Netlist generation, this Vector Real Gateway In
-is translated as an Input Port at the top level.
+#### Sample period
 
-###### AXI4-Lite  
-Implies that during HDL Netlist generation, an AXI4-Lite interface will
-be created, and this Vector Real Gateway In is mapped to one of the
-registers within the AXI4-Lite interface.
+Dialog parameter.
 
-##### Auto assign address offset  
+#### SSR
+
+Dialog parameter.
+
+#### Interface
+
+Dialog parameter.
+
+#### Auto assign address offset
+
 If the Vector Real Gateway In is configured to be an AXI4-Lite
 interface, this option allows an address offset to be automatically
 assigned to the register within the AXI4-Lite interface that the Vector
 Real Gateway In is mapped to.
 
-##### Address offset  
+#### Address offset
+
 If Auto assign address offset is not checked, then this entry box allows
 you to explicitly specify an address offset to use. Must be a multiple
 of 4.
 
-##### Interface Name  
+#### Interface Name
+
 If the Vector Real Gateway In is configured to be an AX4-Lite interface,
 assigns a unique name to this interface. This name can be used to
 differentiate between multiple AXI4-Lite interfaces in the design. When
@@ -165,15 +154,22 @@ characters (lowercase alphabetic) or an underscore (\_) only, and must
 begin with a lowercase alphabetic character. axi4_lite1 is acceptable,
 1AXI4-Lite is not.
 
-##### Description  
+#### Description
+
 Additional designer comments about this Vector Real Gateway In that is
 captured in the interface documentation.
 
 Default value  
 
 
-### Constraints  
-#### IOB Timing Constraint  
+### Constraints
+
+#### Default Value
+
+Dialog parameter.
+
+#### IOB timing constraint
+
 In hardware, a Vector Real Gateway In is realized as a set of
 input/output buffers (IOBs). There are three ways to constrain the
 timing on IOBs. They are: None, Data Rate, and Data Rate, Set 'FAST'
@@ -191,18 +187,45 @@ Attribute.
   is generated for each IOB. This reduces delay but increases noise and
   power consumption.
 
-#### Specify IOB location constraints  
+#### Specify IOB location constraints
+
 Checking this option allows IOB location constraints and I/O standards
 to be specified.
 
-#### IOB pad locations, e.g. {'MSB', ..., 'LSB'}  
+#### IOB pad locations (specify as cell array {'MSB', ..., 'LSB'})
+
 IOB pin locations can be specified as a cell array of strings in this
 edit box. The locations are package-specific.IO Standards, e.g. {'MSB',
 ..., 'LSB'}
 
-#### IO Standards, e.g., {'MSB', ..., 'LSB'}  
+#### IO Standards (specify as cell array {'MSB', ..., 'LSB'})
+
 I/O standards can be specified as a cell array of strings in this edit
 box. The locations are package-specific.
+
+Additional dialog notes:
+
+Output Type. Specifies the output data type. Can be Boolean, Fixed-point, or
+Floating-point.
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
+used to control processing of multiple data samples on every sample
+period. This block enables 1-D vector support for the primary block
+operation.
+
+Fixed-point Precision. Floating-point Precision. Single. Specifies single precision (32 bits).
+
+Double. Specifies double precision (64 bits).
+
+Custom. Activates the field below so you can specify the Exponent width and the
+Fraction width.
+
+Interface Options. None. Implies that during HDL Netlist generation, this Vector Real Gateway In
+is translated as an Input Port at the top level.
+
+AXI4-Lite. Implies that during HDL Netlist generation, an AXI4-Lite interface will
+be created, and this Vector Real Gateway In is mapped to one of the
+registers within the AXI4-Lite interface.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

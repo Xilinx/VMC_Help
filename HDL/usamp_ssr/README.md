@@ -51,24 +51,28 @@ register whenever possible.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Sampling rate (number of output samples per input sample)  
+#### Sampling rate (number of output samples per input sample)
+
 Must be an integer with a value of 2 or greater. This is the ratio of
 the output sample period to the input, and is essentially a sample rate
 multiplier. For example, a ratio of 2 indicates a doubling of the input
 sample rate. If a non-integer ratio is desired, the Vector Up Sample
 block can be used in combination with the Vector Down Sample block.
 
-#### Copy samples (otherwise zeros are inserted)  
+#### Copy samples (otherwise zeros are inserted)
+
 Allows you to choose what to do with the additional samples produced by
 the increased clock rate. By selecting Copy Samples, the same sample is
 duplicated (copied) during the extra sample times. If this checkbox is
 not selected, the additional samples are zero.
 
-#### Provide enable port  
+#### Provide enable port
+
 When checked, this option adds an en (enable) input port, if the Latency
 is specified as a positive integer greater than zero.
 
-#### Latency  
+#### Latency
+
 This defines the number of sample periods by which the block's output is
 delayed. One sample period can correspond to multiple clock cycles in
 the corresponding FPGA implementation (for example, when the hardware is
@@ -79,8 +83,13 @@ of the block. The behavior of a Vector Up Sample block with non-zero
 latency is similar to putting a delay block, with equivalent latency, at
 the input of an Vector Up Sample block with zero latency.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+#### SSR
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector support for the primary block
 operation.
@@ -94,3 +103,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

@@ -117,8 +117,12 @@ signals.</p>
 result, this number specifies the size of the input and output when
 selected to be parallel.</p>
 </section>
-<section id="feedback-polynomial" class="level4">
-<h4>Feedback polynomial</h4>
+<section id="use-maximum-length-lfsr-counter-polynomial" class="level4">
+<h4>Use Maximum length LFSR counter polynomial</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="feedback-polynomial-enter-hex-value-enclosed-with-ticks" class="level4">
+<h4>Feedback polynomial (enter hex value enclosed with ticks)</h4>
 <p>This field specifies the tap points of the feedback chain and the
 value must be entered in hex with single quotes. The lsb of this
 polynomial always must be set to 1 and the msb is an implied 1 and is
@@ -128,8 +132,8 @@ Shift Registers, LFSR Counters, and Long Pseudo- Random Sequence
 Generators</a> for more information on how to specify this equation and
 for optimal settings for the maximum repeating sequence.</p>
 </section>
-<section id="initial-value" class="level4">
-<h4>Initial value</h4>
+<section id="initial-value-enter-hex-value-enclosed-with-ticks" class="level4">
+<h4>Initial value (enter hex value enclosed with ticks)</h4>
 <p>This field specifies the initial seed value where the LFSR begins its
 repeating sequence. The initial value might not be all zeroes when
 choosing the XOR gate type and might not be all ones when choosing XNOR,
@@ -139,8 +143,16 @@ as those values will stall the LFSR.</p>
 <section id="advanced-tab" class="level3">
 <h3>Advanced tab</h3>
 <p>Parameters specific to the Advanced tab are as follows:</p>
-<section id="use-reloadable-seed-value" class="level4">
-<h4>Use reloadable seed value</h4>
+<section id="provide-synchronous-reset-port" class="level4">
+<h4>Provide synchronous reset port</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="use-reloadable-seed-values" class="level4">
+<h4>Use reloadable seed values</h4>
 <p>This field specifies whether or not an input is needed to reload a
 dynamic LFSR seed value at run time.</p>
 </section>
@@ -156,6 +168,18 @@ connected to the output or just the last register in the chain (serial
 or parallel).</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+<section id="output-type" class="level4">
+<h4>Output type</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="binary-point" class="level4">
+<h4>Binary point</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="specify-explicit-sample-period" class="level4">
+<h4>Specify explicit sample period</h4>
+<p>Dialog parameter.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>

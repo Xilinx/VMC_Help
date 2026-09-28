@@ -167,7 +167,7 @@ Architecture Libraries Guide (<a href="https://docs.xilinx.com/access/sources/di
 </ul>
 </section>
 <section id="initial-value-for-port-a-output-register" class="level4">
-<h4>Initial value for port A output Register</h4>
+<h4>Initial value for port A output register</h4>
 <p>Specifies the initial value for port A output register. The initial
 value is saturated and rounded according to the precision specified on
 the data port A of RAM.</p>
@@ -208,8 +208,12 @@ than or equal to 1.</p>
 <section id="advanced-tab" class="level3">
 <h3>Advanced tab</h3>
 <p>Parameters specific to the Advanced tab are as follows.</p>
-<section id="port-a-or-port-b" class="level4">
-<h4>Port A or Port B</h4>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="port-a" class="level4">
+<h4>Port A</h4>
 <p>When the Dual Port RAM block is implemented in block RAM, specifies
 memory behavior for port A or port B when WE is asserted. Supported
 modes are: Read after write, Read before write, and No read on write.
@@ -222,6 +226,10 @@ device specific restrictions on the applicability of these modes. Also
 refer to the Write Mode topic above for more information.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+<section id="port-b" class="level4">
+<h4>Port B</h4>
+<p>Dialog parameter.</p>
 </section>
 </section>
 </section>

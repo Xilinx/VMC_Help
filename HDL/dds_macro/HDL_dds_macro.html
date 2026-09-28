@@ -97,18 +97,7 @@ Period/Simulink System Period)</p>
 </section>
 <section id="output-selection" class="level4">
 <h4>Output Selection</h4>
-<section id="sine_and_cosine" class="level5">
-<h5>Sine_and_Cosine</h5>
-<p>Places both a sine and cosine output port on the block.</p>
-</section>
-<section id="sine" class="level5">
-<h5>Sine</h5>
-<p>Places only a sine output port on the block.</p>
-</section>
-<section id="cosine" class="level5">
-<h5>Cosine</h5>
-<p>Places only a cosine output port on the block.</p>
-</section>
+<p>Dialog parameter.</p>
 </section>
 <section id="spurious-free-dynamic-range-sfdr" class="level4">
 <h4>Spurious Free Dynamic Range (SFDR)</h4>
@@ -122,7 +111,7 @@ controls various implementation decisions.</p>
 specified</p>
 </section>
 <section id="sample-period" class="level4">
-<h4>Sample Period</h4>
+<h4>Sample period</h4>
 <p>When &quot;Explicit sample period&quot; is disabled, the sample period of this
 block will be equal to the Simulink system period setting in the Vitis
 Model Composer Hub block.</p>
@@ -130,6 +119,11 @@ Model Composer Hub block.</p>
 Frequency in Hz or in Radians as follows:</p>
 <p><code>Frequency(in Hz) = (Desired Frequency) * (Block Sample Period/Simulink System Period)</code></p>
 <p><code>Frequency(in Radians) = 2π * Desired Frequency * (Block Sample Period/Simulink System Period)</code></p>
+<p>Additional dialog notes:</p>
+<p>Sine_and_Cosine. Places both a sine and cosine output port on the
+block.</p>
+<p>Sine. Places only a sine output port on the block.</p>
+<p>Cosine. Places only a cosine output port on the block.</p>
 </section>
 </section>
 </section>

@@ -57,47 +57,47 @@ downstream blocks at the new rate.
 ### Filter Specification tab  
 Parameters specific to the Filter Specification tab are as follows.
 
-#### Filter Specification  
-##### Filter Type  
+#### Filter Type
+
 The CIC core supports both interpolation and decimation architectures.
 When the filter type is selected as decimator the input sample stream is
 down-sampled by the factor R. When an interpolator is selected the input
 sample is up-sampled by R.
 
-##### Number of Stages  
+#### Number of Stages
+
 Number of integrator and comb stages. If N stages are specified, there
 are N integrators and N comb stages in the filter. The valid range for
 this parameter is 3 to 6.
 
-##### Differential Delay  
+#### Differential Delay
+
 Number of unit delays employed in each comb filter in the comb section
 of either a decimator or interpolator. The valid range of this parameter
 is 1 or 2.
 
-##### Number of Channels  
+#### Number of Channels
+
 Number of channels to support in implementation. The valid range of this
 parameter is 1 to 16.
 
-#### Sample Rate Change Specification  
-##### Sample Rate Changes  
-Option to select between Fixed or Programmable.
+#### Fixed or Initial Rate
 
-When **Programmable** is selected, the `s_axis_data_tvalid` control port is available regardless of the **Select format** setting under Hardware Oversampling Specification.
-
-##### Fixed or Initial Rate(ir)  
 Specifies initial or fixed sample rate change value for the CIC. The
 valid range for this parameter is 4 to 8192.
 
-##### Minimum Rate  
+#### Minimum Rate
+
 The minimum rate change value for programmable rate change. The valid
 range for this parameter is 4 to fixed rate (ir).
 
-##### Maximum Rate  
+#### Maximum Rate
+
 The maximum rate change value for programmable rate change. The valid
 range for this parameter is fixed rate (ir) to 8192.
 
-#### Hardware Oversampling Specification  
-##### Select format  
+#### Select format
+
 Choose Maximum_Possible, Sample_Period, or Hardware Oversampling Rate.
 Selects which method is used to specify the hardware oversampling rate.
 This value directly affects the level of parallelism of the block
@@ -112,46 +112,53 @@ Sample Period parameter also determines the hardware oversampling rate
 of the block. When “Sample Period” is selected, the block is forced to
 use the s_axis_data_tvalid control port.
 
-##### Sample period  
+#### Sample period
+
 Integer number of clock cycles between input samples. When the multiple
 channels have been specified, this value should be the integer number of
 clock cycles between the time division multiplexed input sample data
 stream.
 
-##### Hardware Oversampling Rate  
+#### Hardware Oversampling Rate
+
 Enter the hardware oversampling rate if you select
 Hardware_Oversampling_Rate as the format.
 
 
-### Implementation tab  
-#### Numerical Precision  
-##### Quantization  
+### Implementation tab
+
+#### Quantization
+
 Can be specified as Full_Precision or Truncation.
 
 **Note**: Truncation occurs at the output stage only.
 
-##### Output Data Width  
+#### Output Data Width
+
 Can be specified up to 48 bits for the Truncation option above.
 
-#### Optional  
-##### Use Xtreme DSP slice  
+#### Use Xtreme DSP Slice
+
 This field specifies that if possible, use the XtremeDSP slice (DSP48
 type element) in the target device.
 
-##### Use Streaming Interface  
+#### Use Streaming Interface
+
 Specifies whether or not to use a streaming interface for multiple
 channel implementations.
 
-#### Control Options  
-##### ACLKEN  
+#### ACLKEN
+
 Specifies if the block has a clock enable port (the equivalent of
 selecting the Has ACLKEN option in the CORE Generator GUI).
 
-##### ARESERTn  
+#### ARESETn
+
 Specifies that the block has a reset port. Active-Low synchronous clear.
 A minimum ARESETn pulse of two cycles is required.
 
-##### Has TREADY  
+#### Has TREADY
+
 Specifies if the block has a TREADY port for the Data Output Channel
 (the equivalent of selecting the Has_DOUT_TREADY option in the CORE
 Generator GUI).
@@ -160,7 +167,17 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
-## LogiCORE™ Documentation
+#### Display shortened port names
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Filter Specification. Sample Rate Change Specification. Sample Rate Changes. Option to select between Fixed or Programmable.
+
+When **Programmable** is selected, the `s_axis_data_tvalid` control port is available regardless of the **Select format** setting under Hardware Oversampling Specification.
+
+Hardware Oversampling Specification. Numerical Precision. Optional. Control Options. ## LogiCORE™ Documentation
 
 CIC Compiler LogiCORE IP Product Guide
 ([PG140](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg140-cic-compiler&ft:locale=en-US))

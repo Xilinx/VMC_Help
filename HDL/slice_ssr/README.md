@@ -35,32 +35,47 @@ bits. The following diagram illustrates how to extract all but the top
 
 Parameters specific to the block are as follows.
 
-#### Width of slice (Number of bits)  
+#### Width of slice (number of bits)
+
 Specifies the number of bits to extract.
 
-#### Boolean output  
+#### Boolean output
+
 Tells whether single bit slices should be type Boolean.
 
-#### Specify range as  
+#### Specify range as
+
 (Two bit locations \| Upper bit location + width \|Lower bit location +
 width). Allows you to specify either the bit locations of both
 end-points of the slice, or one end-point along with number of bits to
 be taken in the slice.
 
-#### Offset of top bit  
+#### Offset of top bit
+
 Specifies the offset for the ending bit position from the LSB, MSBm. or
 binary point.
 
-#### Offset of bottom bit  
-Specifies the offset for the ending bit position from the LSB, MSBm, or
-binary point.
+#### Relative to
 
-#### Relative to  
 Specifies the bit slice position relative to the MSB, LSB, or binary
 point of the top or the bottom of the slice.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+#### Offset of bottom bit
+
+Specifies the offset for the ending bit position from the LSB, MSBm, or
+binary point.
+
+#### Relative to
+
+Dialog parameter.
+
+#### SSR
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector support for the primary block
 operation.
@@ -75,3 +90,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

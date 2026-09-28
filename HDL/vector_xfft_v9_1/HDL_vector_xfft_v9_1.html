@@ -276,23 +276,18 @@ back-pressure.</td>
 <p>Parameters specific to the Basic tab are as follows.</p>
 <section id="transform-length" class="level4">
 <h4>Transform Length</h4>
-<section id="transform_length" class="level5">
-<h5>Transform_length</h5>
-<p>One of N = 2^((3..16)) = 8 - 65536.</p>
+<p>Dialog parameter.</p>
 </section>
-</section>
-<section id="architecture-configuration" class="level4">
-<h4>Architecture Configuration</h4>
-<section id="target-clock-frequencymhz" class="level5">
-<h5>Target Clock Frequency(MHz)</h5>
+<section id="target-clock-frequency-mhz" class="level4">
+<h4>Target Clock Frequency (MHz)</h4>
 <p>Enter the target clock frequency.</p>
 </section>
-<section id="target-data-throughputmsps" class="level5">
-<h5>Target Data Throughput(MSPS)</h5>
+<section id="target-data-throughput-msps" class="level4">
+<h4>Target Data Throughput (MSPS)</h4>
 <p>Enter the target throughput.</p>
 </section>
-<section id="architecture-choice" class="level5">
-<h5>Architecture Choice</h5>
+<section id="architecture-choice" class="level4">
+<h4>Architecture Choice</h4>
 <p>Choose one of the following.</p>
 <ul>
 <li>automatically_select</li>
@@ -302,25 +297,9 @@ back-pressure.</td>
 <li>radix_2_lite_burst_io</li>
 </ul>
 </section>
-</section>
-<section id="transform-length-options" class="level4">
-<h4>Transform Length Options</h4>
-<p>Run Time Configurable Transform Length<br />
-The transform length can be set through the nfft port if this option is
-selected. Valid settings and the corresponding transform sizes are
-provided in the section titled Transform Size in the associated document
-Fast Fourier Transform LogiCORE IP Product Guide (<a href="https://docs.amd.com/r/en-US/pg109-xfft">PG109</a>).</p>
-</section>
-</section>
-<section id="advanced-tab" class="level3">
-<h3>Advanced tab</h3>
-<p>Parameters specific to the Advanced tab are as follows.</p>
-<section id="super-sample-rate-ssr" class="level4">
-<h4>Super Sample Rate (SSR)</h4>
-<p>The number of parallel re/im lane pairs on the data channel. SSR must
-be a power of two (1, 2, 4, 8, 16, 32, or 64). With
-<code>SSR = N &gt; 1</code>, the input and output data sub-fields are
-vectorized into <code>N</code> lanes (see <a href="#axi-ports-that-are-unique-to-this-block">AXI Ports</a>).</p>
+<section id="run-time-configurable-transform-length" class="level4">
+<h4>Run Time Configurable Transform Length</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="native-floating-point-data-format" class="level4">
 <h4>Native Floating Point Data Format</h4>
@@ -330,13 +309,17 @@ factors as 24- or 25-bit fixed-point numbers. When disabled, samples are
 fixed-point with the precision controlled by the input signal types and
 <strong>Phase Factor Width</strong>.</p>
 </section>
-<section id="precision-options" class="level4">
-<h4>Precision Options</h4>
-<section id="phase-factor-width" class="level5">
-<h5>Phase Factor Width</h5>
+<section id="ssr-super-sample-rate" class="level4">
+<h4>SSR (Super Sample Rate)</h4>
+<p>The number of parallel re/im lane pairs on the data channel. SSR must
+be a power of two (1, 2, 4, 8, 16, 32, or 64). With
+<code>SSR = N &gt; 1</code>, the input and output data sub-fields are
+vectorized into <code>N</code> lanes (see <a href="#axi-ports-that-are-unique-to-this-block">AXI Ports</a>).</p>
+</section>
+<section id="phase-factor-width" class="level4">
+<h4>Phase Factor Width</h4>
 <p>Choose a value between 8 and 34, inclusive to be used as bit widths
 for phase factors.</p>
-</section>
 </section>
 <section id="scaling-options" class="level4">
 <h4>Scaling Options</h4>
@@ -352,27 +335,18 @@ Options</strong> is <em>Scaled</em>.</p>
 <li><em>Convergent Rounding</em> — round half to even.</li>
 </ul>
 </section>
-<section id="control-signals" class="level4">
-<h4>Control Signals</h4>
-<section id="aclken" class="level5">
-<h5>ACLKEN</h5>
+<section id="aclken" class="level4">
+<h4>ACLKEN</h4>
 <p>Enables the clock enable (<code>aclken_in</code>) pin on the core.
 All registers in the core are enabled by this control signal.</p>
 </section>
-<section id="aresetn" class="level5">
-<h5>ARESETn</h5>
+<section id="aresetn" class="level4">
+<h4>ARESETn</h4>
 <p>Active-low synchronous clear input (<code>aresetn_in</code>) that
 always takes priority over ACLKEN. A minimum ARESETn active pulse of two
 cycles is required, since the signal is internally registered for
 performance. A pulse of one cycle resets the core, but the response to
 the pulse is not in the cycle immediately following.</p>
-</section>
-</section>
-<section id="output-ordering" class="level4">
-<h4>Output Ordering</h4>
-<p>Choose between Bit/Digit Reversed Order or Natural Order output.
-(Bit-reversed for radix-2 architectures, digit-reversed for
-radix-4.)</p>
 </section>
 <section id="cyclic-prefix-insertion" class="level4">
 <h4>Cyclic Prefix Insertion</h4>
@@ -391,33 +365,21 @@ prefix length can be from 0 to 1023 samples, and a CP_LEN value of
 0010010110 produces a cyclic prefix consisting of the last 150 samples
 of the output data.</p>
 </section>
-<section id="throttle-schemes" class="level4">
-<h4>Throttle Schemes</h4>
+<section id="throttle-scheme" class="level4">
+<h4>Throttle Scheme</h4>
 <p>Select the tradeoff between performance and data timing
 requirements.</p>
-<section id="real-time" class="level5">
-<h5>Real Time</h5>
-<p>This mode typically gives a smaller and faster design, but has strict
-constraints on when data must be provided and consumed.</p>
 </section>
-<section id="non-real-time" class="level5">
-<h5>Non Real Time</h5>
-<p>This mode has no such constraints, but the design might be larger and
-slower.</p>
-</section>
-</section>
-<section id="optional-output-fields" class="level4">
-<h4>Optional Output Fields</h4>
-<section id="xk_index" class="level5">
-<h5>XK_INDEX</h5>
+<section id="xk_index" class="level4">
+<h4>XK_INDEX</h4>
 <p>The XK_INDEX field (if present in the Data Output channel) gives the
 sample number of the XK_RE/XK_IM data being presented at the same time.
 In the case of natural order outputs, XK_INDEX increments from 0 to
 (point size) -1. When bit reversed outputs are used, XK_INDEX covers the
 same range of numbers, but in a bit (or digit) reversed manner.</p>
 </section>
-<section id="ovflo" class="level5">
-<h5>OVFLO</h5>
+<section id="ovflo" class="level4">
+<h4>OVFLO</h4>
 <p>The Overflow (OVFLO) field in the Data Output and Status channels is
 only available when the Scaled arithmetic is used. OVFLO is driven High
 during unloading if any point in the data frame overflowed.</p>
@@ -426,54 +388,45 @@ channel. When an overflow occurs in the core, the data is wrapped rather
 than saturated, resulting in the transformed data becoming unusable for
 most applications</p>
 </section>
-</section>
-<section id="block-icon-display" class="level4">
-<h4>Block Icon Display</h4>
-<section id="display-shortened-port-names" class="level5">
-<h5>Display shortened port names</h5>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
 <p>On by default. When unchecked, data_tvalid, for example, becomes
 m_axis_data_tvalid.</p>
-</section>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <p>Parameters specific to the Implementation tab are as follows.</p>
-<section id="memory-options" class="level4">
-<h4>Memory Options</h4>
-<section id="data" class="level5">
-<h5>Data</h5>
+<section id="data" class="level4">
+<h4>Data</h4>
 <p>Option to choose between Block RAM and Distributed RAM. This option
 is available only for sample points 8 through 1024. This option is not
 available for Pipelined Streaming I/O implementation.</p>
 </section>
-<section id="phase-factors" class="level5">
-<h5>Phase Factors</h5>
+<section id="phase-factors" class="level4">
+<h4>Phase Factors</h4>
 <p>Choose between Block RAM and Distributed RAM. This option is
 available only for sample points 8 till 1024. This option is not
 available for Pipelined Streaming I/O implementation.</p>
 </section>
-<section id="number-of-stages-using-block-ram" class="level5">
-<h5>Number Of Stages Using Block RAM</h5>
+<section id="number-of-stages-using-block-ram" class="level4">
+<h4>Number of Stages Using Block RAM</h4>
 <p>Store data and phase factor in Block RAM and partially in Distributed
 RAM. This option is available only for the Pipelined Streaming I/O
 implementation.</p>
 </section>
-<section id="reorder-buffer" class="level5">
-<h5>Reorder Buffer</h5>
+<section id="reorder-buffer" class="level4">
+<h4>Reorder Buffer</h4>
 <p>Choose between Block RAM and Distributed RAM up to 1024 points
 transform size.</p>
 </section>
-<section id="hybrid-memories" class="level5">
-<h5>Hybrid Memories</h5>
+<section id="optimize-block-ram-count-using-hybrid-memories" class="level4">
+<h4>Optimize Block RAM Count Using Hybrid Memories</h4>
 <p>Click check box to Optimize Block RAM Count Using Hybrid
 Memories.</p>
 </section>
-</section>
-<section id="optimize-options" class="level4">
-<h4>Optimize Options</h4>
-<section id="complex-multipliers" class="level5">
-<h5>Complex Multipliers</h5>
+<section id="complex-multipliers" class="level4">
+<h4>Complex Multipliers</h4>
 <p>Choose one of the following.</p>
 <ul>
 <li>Use CLB logic</li>
@@ -481,8 +434,8 @@ Memories.</p>
 <li>Use 4-multiplier structure (performance optimization)</li>
 </ul>
 </section>
-<section id="butterfly-arithmetic" class="level5">
-<h5>Butterfly Arithmetic</h5>
+<section id="butterfly-arithmetic" class="level4">
+<h4>Butterfly Arithmetic</h4>
 <p>Choose one of the following:</p>
 <ul>
 <li>Use CLB logic</li>
@@ -490,14 +443,31 @@ Memories.</p>
 </ul>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Additional dialog notes:</p>
+<p>Transform_length. One of N = 2^((3..16)) = 8 - 65536.</p>
+<p>Architecture Configuration. Transform Length Options. Run Time
+Configurable Transform Length<br />
+The transform length can be set through the nfft port if this option is
+selected. Valid settings and the corresponding transform sizes are
+provided in the section titled Transform Size in the associated document
+Fast Fourier Transform LogiCORE IP Product Guide (<a href="https://docs.amd.com/r/en-US/pg109-xfft">PG109</a>).</p>
 </section>
 </section>
-</section>
-</section>
-<section id="block-timing" class="level2">
-<h2>Block Timing</h2>
+<section id="advanced-tab" class="level3">
+<h3>Advanced tab</h3>
+<p>Parameters specific to the Advanced tab are as follows.</p>
+<p>Precision Options. Control Signals. Output Ordering. Choose between
+Bit/Digit Reversed Order or Natural Order output. (Bit-reversed for
+radix-2 architectures, digit-reversed for radix-4.)</p>
+<p>Real Time. This mode typically gives a smaller and faster design, but
+has strict constraints on when data must be provided and consumed.</p>
+<p>Non Real Time. This mode has no such constraints, but the design
+might be larger and slower.</p>
+<p>Optional Output Fields. Block Icon Display. Memory Options. Optimize
+Options. ## Block Timing</p>
 <p>To better understand the FFT blocks control behavior and timing,
 please consult the core data sheet.</p>
+</section>
 </section>
 <section id="examples" class="level2">
 <h2>Examples</h2>

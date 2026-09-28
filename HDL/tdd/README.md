@@ -36,15 +36,18 @@ valid port.
 
 Parameters specific to this block are as follows.
 
-#### Frame sampling pattern  
+#### Frame sampling pattern (example: [1 0 1 0])
+
 Specifies the size of the serial input data frame. The frame sampling
 pattern must be a MATLAB® vector containing only 1's and 0's.
 
-#### Implementation  
+#### Implementation
+
 Specifies the demultiplexer behavior to be either in single or multiple
 channel mode. The behaviors of these modes are explained above.
 
-#### Provide Valid Port  
+#### Provide valid port
+
 When selected, the demultiplexer has optional input and output valid
 ports (vin / vout). The vin port allows to qualify every input data
 value as part of the serial input data frame. The vout port marks the
@@ -59,3 +62,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

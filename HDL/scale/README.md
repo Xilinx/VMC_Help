@@ -22,6 +22,10 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+#### Scale factor s (scale output by 2^s)
+
+Dialog parameter.
+
 ## LogiCORE
 
 The Scale block does not use a LogiCORE™.

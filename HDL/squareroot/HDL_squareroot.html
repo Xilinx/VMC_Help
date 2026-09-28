@@ -39,59 +39,60 @@ Currently, only the floating-point data type is supported.</p>
 <p>Parameters specific to the Basic tab are as follows.</p>
 <section id="flow-control" class="level4">
 <h4>Flow Control</h4>
-<section id="blocking" class="level5">
-<h5>Blocking</h5>
-<p>Selects “Blocking” mode. In this mode, the lack of data on one input
-channel does block the execution of an operation if data is received on
-another input channel.</p>
+<p>Dialog parameter.</p>
 </section>
-<section id="nonblocking" class="level5">
-<h5>NonBlocking</h5>
-<p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
-input channel does not block the execution of an operation if data is
+<section id="optimize-goal" class="level4">
+<h4>Optimize Goal</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="cyclesoperation" class="level4">
+<h4>Cycles/operation</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="has-tlast" class="level4">
+<h4>Has TLAST</h4>
+<p>Adds a TLAST port to the Input channel.</p>
+</section>
+<section id="has-tuser" class="level4">
+<h4>Has TUSER</h4>
+<p>Adds a TUSER port to the Input channel.</p>
+</section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Adds an enable port to the block interface.</p>
+</section>
+<section id="has-result-tready" class="level4">
+<h4>Has Result TREADY</h4>
+<p>Adds a TREADY port to the Result channel.</p>
+</section>
+<section id="invalid_op" class="level4">
+<h4>INVALID_OP</h4>
+<p>Adds an output port that serves as an invalid operation flag.</p>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
+<p>Additional dialog notes:</p>
+<p>Blocking. Selects “Blocking” mode. In this mode, the lack of data on
+one input channel does block the execution of an operation if data is
 received on another input channel.</p>
-</section>
+<p>NonBlocking. Selects “Non-Blocking” mode. In this mode, the lack of
+data on one input channel does not block the execution of an operation
+if data is received on another input channel.</p>
 </section>
 </section>
 <section id="optional-ports" class="level3">
 <h3>Optional ports</h3>
-<section id="input-channel-ports" class="level4">
-<h4>Input Channel Ports</h4>
-<section id="has-tlast" class="level5">
-<h5>Has TLAST</h5>
-<p>Adds a TLAST port to the Input channel.</p>
-</section>
-<section id="has-tuser" class="level5">
-<h5>Has TUSER</h5>
-<p>Adds a TUSER port to the Input channel.</p>
-</section>
-<section id="provide-enable-port" class="level5">
-<h5>Provide enable port</h5>
-<p>Adds an enable port to the block interface.</p>
-</section>
-<section id="has-result-tready" class="level5">
-<h5>Has Result TREADY</h5>
-<p>Adds a TREADY port to the Result channel.</p>
-</section>
-</section>
-<section id="exception-signals" class="level4">
-<h4>Exception Signals</h4>
-<section id="invalid_op" class="level5">
-<h5>INVALID_OP</h5>
-<p>Adds an output port that serves as an invalid operation flag.</p>
-<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
-Options in Block Parameter Dialog Boxes</a>.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="logicore-documentation" class="level2">
-<h2>LogiCORE™ Documentation</h2>
+<p>Input Channel Ports. Exception Signals. ## LogiCORE™
+Documentation</p>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
 </section>
 </section>
 </body>

@@ -78,128 +78,57 @@ You can select Display shortened port names to trim the length of the
 
 ## Parameters
 
-### Page 1 tab  
-#### Function 
+### Page 1 tab
 
-##### Rotate  
-When selected, the input vector, (real, imag), is rotated by the input
-angle using the CORDIC algorithm. This generates the scaled output
-vector, Zi \* (real’, imag’).
+#### Function
 
-##### Translate  
-When selected, the input vector (real, imag) is rotated using the CORDIC
-algorithm until the imag component is zero. This generates the scaled
-output magnitude, Zi \* Mag(real, imag), and the output phase,
-Atan(imag/real).
+Dialog parameter.
 
-##### Sin_and_Cos  
-When selected, the unit vector is rotated, using the CORDIC algorithm,
-by input angle. This generates the output vector (Cos( ), Sin( )).
+#### Configuration
 
-##### Sinh_and_Cosh  
-  When selected, the CORDIC algorithm is used to move the vector (1,0)
-through hyperbolic angle p along the hyperbolic curve. The hyperbolic
-angle represents the log of the area under the vector (real, imag) and
-is unrelated to a trigonometric angle. This generates the output vector
-(Cosh(p), Sinh(p)).
+Dialog parameter.
 
-##### Arc_Tan  
-When selected, the input vector (real, imag) is rotated (using the
-CORDIC algorithm) until the imag component is zero. This generates the
-output angle, Atan(imag/real).
+#### Pipeline
 
-##### Arc_Tanh  
-When selected, the CORDIC algorithm is used to move the input vector
-(real, imag) along the hyperbolic curve until the imag component reaches
-zero. This generates the hyperbolic “angle,” Atanh(imag/real). The
-hyperbolic angle represents the log of the area under the vector (real,
-imag) and is unrelated to a trigonometric angle.
+Dialog parameter.
 
-##### Square_Root  
-When selected a simplified CORDIC algorithm is used to calculate the
-positive square root of the input.
+#### Data format
 
-#### Configuration  
+Dialog parameter.
 
-##### Word_Serial  
-Select for a hardware result with a small area.
+#### Phase format
 
-##### Parallel  
-Select for a hardware result with high throughput.
+Dialog parameter.
 
-#### Pipeline 
-##### No_Pipelining  
-The CORDIC core is implemented without pipelining.
+#### Input width
 
-##### Optimal  
-The CORDIC core is implemented with as many stages of pipelining as
-possible without using any additional LUTs.
-
-##### Maximum  
-The CORDIC core is implemented with a pipeline after every shift-add sub
-stage.
-
-#### Data format  
-##### SignedFraction  
-Default setting. The real and imag inputs and outputs are expressed as
-fixed-point 2’s complement numbers with an integer width of 2-bits.
-
-##### UnsignedFraction  
-Available only for Square Root functional configuration. The real and
-imag inputs and outputs are expressed as unsigned fixed-point numbers
-with an integer width of 1-bit.
-
-##### UnsignedInteger  
-Available only for Square Root functional configuration. The real and
-imag inputs and outputs are expressed as unsigned integers.
-
-#### Phase format  
-##### Radians  
-The phase is expressed as a fixed-point 2’s complement number with an
-integer width of 3-bits, in radian units.
-
-##### Scaled_Radians  
-The phase is expressed as fixed-point 2’s complement number with an
-integer width of 3-bits, with pi-radian units. One scaled-radian equals
-Pi \* 1 radians.
-
-#### Input width  
 Controls the width of the input ports cartesian_tdata_real,
 cartesian_tdata_imag, and phase_tdata_phase. The Input width range 8 to
 48 bits.
 
-#### Output width  
+#### Output width
+
 Controls the width of the output ports dout_tdata_real, dout_tdata_imag,
 and dout_tdata_phase. The Output width range 8 to 48 bits.
 
-#### Round mode  
-##### Truncate  
-The real, imag, and phase outputs are truncated.
+#### Round
 
-##### Round_Pos_Inf  
-The real, imag, and phase outputs are rounded (1/2 rounded up).
+Dialog parameter.
 
-##### Round_Pos_Neg_Inf  
-The real, imag, and phase outputs are rounded (1/2 rounded up, -1/2
-rounded down).
+#### Iterations
 
-##### Nearest_Even  
-The real, imag, and phase outputs are rounded toward the nearest even
-number (1/2 rounded down and 3/2 is rounded up).
-
-### Page 2 tab  
-
-#### Iterations  
 Controls the number of internal add-sub iterations to perform. When set
 to zero, the number of iterations performed is determined automatically
 based on the required accuracy of the output.
 
-#### Precision  
+#### Precision
+
 Configures the internal precision of the add-sub iterations. When set to
 zero, internal precision is determined automatically based on the
 required accuracy of the output and the number of internal iterations.
 
-#### Compensation scaling  
+#### Compensation scaling
+
 Controls the compensation scaling module used to compensate for CORDIC
 magnitude scaling. CORDIC magnitude scaling affects the Vector Rotation
 and Vector Translation functional configurations, and does not affect
@@ -207,7 +136,8 @@ the SinCos, SinhCosh, ArcTan, ArcTanh and Square Root functional
 configurations. For the latter configurations, compensation scaling is
 set to No Scale Compensation.
 
-#### Coarse rotation  
+#### Coarse rotation
+
 Controls the instantiation of the coarse rotation module. Instantiation
 of the coarse rotation module is the default for the following
 functional configurations: Vector rotation, Vector translation, Sin and
@@ -222,87 +152,167 @@ to the full circle by rotating the input sample into the first quadrant
 and inverse rotating the output sample back into the appropriate
 quadrant.
 
-#### Optional ports  
-##### Standard  
-###### aclken  
+#### aclken
+
 When this signal is not asserted, the block holds its current state
 until the signal is asserted again or the aresetn signal is asserted.
 The aresetn signal has precedence over this clock enable signal. This
 signal has to run at a multiple of the blocks sample rate. The signal
 driving this port must be Boolean.
 
-###### aresetn  
+#### aresetn
+
 When this signal is asserted, the block goes back to its initial state.
 This reset signal has precedence over the optional aclken signal
 available on the block. The reset signal has to run at a multiple of the
 block's sample rate. The signal driving this port must be Boolean.
 
-###### tready  
+#### tready
+
 Adds dout_tready port if Blocking mode is activated.
 
-##### Cartesian  
-###### tlast  
-Adds a tlast input port to the Cartesian input channel.
+#### tuser
 
-###### tuser  
 Adds a tuser input port to the Cartesian input channel.
 
-###### tuser width  
+#### tlast
+
+Adds a tlast input port to the Cartesian input channel.
+
+#### tuser width
+
 Specifies the bit width of the Cartesian tuser input port.
 
-##### Phase  
-###### tlast  
+#### tuser
+
+Adds a tuser input port to the Phase input channel.
+
+#### tlast
+
 Adds a tlast input port to the Phase input channel.
 
-###### tuser  
-Adds a tuser input port to the Phase input channel.
-###### tuser width  
+#### tuser width
+
 Specifies the bit width of the Phase tuser input port.
 
-##### Tlast behavior  
-###### Null  
-Data output port.
+#### Tlast behaviour
 
-###### Pass_Cartesian_TLAST  
-Data output port.
+Dialog parameter.
 
-###### Pass_Phase_TLAST  
-Data output port.
+#### AXI behaviour
 
-###### OR_all_TLASTS  
-Pass the logical OR of all the present TLAST input ports.
+Dialog parameter.
 
-###### AND_all_TLASTS  
-Pass the logical AND of all the present TLAST input ports
+#### Optimization
 
-  
-#### AXI behavior  
-##### NonBlocking  
-Selects “Non-Blocking” mode. In this mode, the lack of data on one input
-channel does not block the execution of an operation if data is received
-on another input channel.
-
-##### Blocking  
-Selects “Blocking” mode. In this mode, the lack of data on one input
-channel does block the execution of an operation if data is received on
-another input channel.
-
-#### Optimization  
 When NonBlocking mode is selected, the following optimization options
 are activated:
-##### Resources  
-Core is configured for minimum resources.
-##### Performance  
-Core is configured for maximum performance.
 
+#### Display shortened port names
 
-### Implementation tab  
-#### Block Icon Display  
-##### Display shortened port names  
 This option is ON by default. When unselected, the full AXI name of each
 port is displayed on the block icon.
 
-## LogiCORE™ Documentation
+Additional dialog notes:
+
+Rotate. When selected, the input vector, (real, imag), is rotated by the input
+angle using the CORDIC algorithm. This generates the scaled output
+vector, Zi \* (real’, imag’).
+
+Translate. When selected, the input vector (real, imag) is rotated using the CORDIC
+algorithm until the imag component is zero. This generates the scaled
+output magnitude, Zi \* Mag(real, imag), and the output phase,
+Atan(imag/real).
+
+Sin_and_Cos. When selected, the unit vector is rotated, using the CORDIC algorithm,
+by input angle. This generates the output vector (Cos( ), Sin( )).
+
+Sinh_and_Cosh. When selected, the CORDIC algorithm is used to move the vector (1,0)
+through hyperbolic angle p along the hyperbolic curve. The hyperbolic
+angle represents the log of the area under the vector (real, imag) and
+is unrelated to a trigonometric angle. This generates the output vector
+(Cosh(p), Sinh(p)).
+
+Arc_Tan. When selected, the input vector (real, imag) is rotated (using the
+CORDIC algorithm) until the imag component is zero. This generates the
+output angle, Atan(imag/real).
+
+Arc_Tanh. When selected, the CORDIC algorithm is used to move the input vector
+(real, imag) along the hyperbolic curve until the imag component reaches
+zero. This generates the hyperbolic “angle,” Atanh(imag/real). The
+hyperbolic angle represents the log of the area under the vector (real,
+imag) and is unrelated to a trigonometric angle.
+
+Square_Root. When selected a simplified CORDIC algorithm is used to calculate the
+positive square root of the input.
+
+Word_Serial. Select for a hardware result with a small area.
+
+Parallel. Select for a hardware result with high throughput.
+
+No_Pipelining. The CORDIC core is implemented without pipelining.
+
+Optimal. The CORDIC core is implemented with as many stages of pipelining as
+possible without using any additional LUTs.
+
+Maximum. The CORDIC core is implemented with a pipeline after every shift-add sub
+stage.
+
+SignedFraction. Default setting. The real and imag inputs and outputs are expressed as
+fixed-point 2’s complement numbers with an integer width of 2-bits.
+
+UnsignedFraction. Available only for Square Root functional configuration. The real and
+imag inputs and outputs are expressed as unsigned fixed-point numbers
+with an integer width of 1-bit.
+
+UnsignedInteger. Available only for Square Root functional configuration. The real and
+imag inputs and outputs are expressed as unsigned integers.
+
+Radians. The phase is expressed as a fixed-point 2’s complement number with an
+integer width of 3-bits, in radian units.
+
+Scaled_Radians. The phase is expressed as fixed-point 2’s complement number with an
+integer width of 3-bits, with pi-radian units. One scaled-radian equals
+Pi \* 1 radians.
+
+Truncate. The real, imag, and phase outputs are truncated.
+
+Round_Pos_Inf. The real, imag, and phase outputs are rounded (1/2 rounded up).
+
+Round_Pos_Neg_Inf. The real, imag, and phase outputs are rounded (1/2 rounded up, -1/2
+rounded down).
+
+Nearest_Even. The real, imag, and phase outputs are rounded toward the nearest even
+number (1/2 rounded down and 3/2 is rounded up).
+
+### Page 2 tab
+
+Optional ports. Standard. Cartesian. Phase. Null. Data output port.
+
+Pass_Cartesian_TLAST. Data output port.
+
+Pass_Phase_TLAST. Data output port.
+
+OR_all_TLASTS. Pass the logical OR of all the present TLAST input ports.
+
+AND_all_TLASTS. Pass the logical AND of all the present TLAST input ports
+
+NonBlocking. Selects “Non-Blocking” mode. In this mode, the lack of data on one input
+channel does not block the execution of an operation if data is received
+on another input channel.
+
+Blocking. Selects “Blocking” mode. In this mode, the lack of data on one input
+channel does block the execution of an operation if data is received on
+another input channel.
+
+Resources. Core is configured for minimum resources.
+
+Performance. Core is configured for maximum performance.
+
+
+### Implementation tab
+
+Block Icon Display. ## LogiCORE™ Documentation
 
 CORDIC LogiCORE IP Product Guide
 ([PG105](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg105-cordic&ft:locale=en-US))

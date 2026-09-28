@@ -32,16 +32,42 @@ operators that can be used in the Expression block.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Expression  
+#### Expression
+
 Bitwise logical expression.
 
-#### Align Binary Point  
+#### Align binary point
+
 Specifies that the block must align binary points automatically. If not
 selected, all inputs must have the same binary point position.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### Latency
+
+Dialog parameter.
+
+#### Precision
+
+Dialog parameter.
+
+#### Arithmetic type
+
+Dialog parameter.
+
+#### Number of bits
+
+Dialog parameter.
+
+#### Binary point
+
+Dialog parameter.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

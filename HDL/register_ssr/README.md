@@ -26,15 +26,28 @@ providing an optional reset port and a user specifiable initial value.
 ### Basic Tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Initial value  
+#### Initial value (vector of SSR size)
+
 Specifies the initial value in the register.
 
-#### Optional Ports  
-- Provide synchronous reset port.
+#### Provide synchronous reset port
+
+Dialog parameter.
+
+#### Provide enable port
+
+Dialog parameter.
+
+#### SSR
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Optional Ports. - Provide synchronous reset port.
 - Provide enable port.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector support for the primary block
 operation.

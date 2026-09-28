@@ -8,8 +8,18 @@ The Vector Complex Multiplier block supports multiplication of two
 complex input vectors.
 
 ## Parameters
-#### Super Sample Rate (SSR) 
-This configurable GUI parameter is primarily
+
+#### SSR
+
+Dialog parameter.
+
+#### Use Synthesizable model
+
+Dialog parameter.
+
+Additional dialog notes:
+
+Super Sample Rate (SSR). This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector support for the primary block
 operation.
@@ -22,7 +32,7 @@ operation.
 
 ## Output Data Type Interpretation
 
-- The output data type is always set to signed fixed-point with a word length of 44 bits and and no fractional component (i.e., a fractional length of 0 bits).
+- The output data type is always set to signed fixed-point with a word length of 44 bits and no fractional component (i.e., a fractional length of 0 bits).
 - The user is responsible for correctly reinterpreting the output data type based on the input binary points.
 - For example, if the input data types for Port A and Port B are Fix_26_23 (word length = 26, fractional length = 23) and Fix_18_16 respectively, then the expected fractional length of the output will be 39 (23 + 16).
   
