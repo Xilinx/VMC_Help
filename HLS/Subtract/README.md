@@ -34,11 +34,11 @@ This parameter specifies whether integer overflow is handled by wrapping
 (default) or by saturating. This parameter is relevant only if the
 output is integral (int8, int16, int32, uint8, uint16, uint32).
 
-##### Not selected
-Integer overflow is handled by wrapping.
+Additional dialog notes:
 
-##### Selected
-Integer overflow is handled by saturation.
+Not selected. Integer overflow is handled by wrapping.
+
+Selected. Integer overflow is handled by saturation.
 
 
 
@@ -53,3 +53,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

@@ -52,14 +52,15 @@ of the inputs.
 
 ## Parameters
 
-#### Number of inputs  
+#### Number of inputs
+
 This parameter determines the number of inputs.
 
-##### 1
-Initially, the block icon has a single input.
+Additional dialog notes:
 
-##### N
-A positive integer value.
+1. Initially, the block icon has a single input.
+
+N. A positive integer value.
 
 The block icon is redrawn with the specified number of input ports.
 
@@ -68,3 +69,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

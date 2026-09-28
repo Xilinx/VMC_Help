@@ -54,55 +54,6 @@ parameters are available.
 
 Settings for the Gain data type parameter are:
 
-##### double
-double precision floating-point
-
-##### single
-single precision floating-point
-
-##### int8
-8-bit signed integer
-
-##### uint8
-8-bit unsigned integer
-
-##### int16
-16-bit signed integer
-
-##### uint16
-16-bit unsigned integer
-
-##### int32
-32-bit signed integer
-
-##### uint32
-32-bit unsigned integer
-
-##### fixed
-fixed-point
-
-##### half
-half precision floating-point
-
-##### data type expression
-A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
-
-Unless the **Output data type same as input** parameter is enabled, the
-output data type will be a function of the input type and the specified
-Gain data type.
-
-- If either input or gain types are floating-point (double, single, or
-  half), the output type will be floating-point. If both are
-  floating-point, the output type will be the larger of both. The
-  smaller type will be promoted to the larger before the operation.
-- Otherwise, if either of input or Gain data type are fixed-point, the
-  output type will be fixed-point with a bit width sufficient to hold
-  the full output result. The other type (input or Gain data type) will
-  be promoted to its equivalent fixed-point type.
-- Otherwise, the input and Gain data type are integers. The output type
-  will be the larger of either input or Gain data type, and will be a
-  signed integer if either one is signed.
-
 #### Output data type same as input
 
 This parameter specifies the way the output data type is determined.
@@ -120,11 +71,49 @@ at the limits of the output data type.
 
 Settings for the Saturate on integer overflow parameter are:
 
-##### Unchecked
-Wrap around
+Additional dialog notes:
 
-##### Checked
-Saturation
+double. double precision floating-point
+
+single. single precision floating-point
+
+int8. 8-bit signed integer
+
+uint8. 8-bit unsigned integer
+
+int16. 16-bit signed integer
+
+uint16. 16-bit unsigned integer
+
+int32. 32-bit signed integer
+
+uint32. 32-bit unsigned integer
+
+fixed. fixed-point
+
+half. half precision floating-point
+
+data type expression. A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
+
+Unless the **Output data type same as input** parameter is enabled, the
+output data type will be a function of the input type and the specified
+Gain data type.
+
+- If either input or gain types are floating-point (double, single, or
+  half), the output type will be floating-point. If both are
+  floating-point, the output type will be the larger of both. The
+  smaller type will be promoted to the larger before the operation.
+- Otherwise, if either of input or Gain data type are fixed-point, the
+  output type will be fixed-point with a bit width sufficient to hold
+  the full output result. The other type (input or Gain data type) will
+  be promoted to its equivalent fixed-point type.
+- Otherwise, the input and Gain data type are integers. The output type
+  will be the larger of either input or Gain data type, and will be a
+  signed integer if either one is signed.
+
+Unchecked. Wrap around
+
+Checked. Saturation
 
 When overflow is detected, the Diagnostic Viewer displays messages that
 depend on the diagnostic action you specify in the Simulink Editor. To
@@ -137,3 +126,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

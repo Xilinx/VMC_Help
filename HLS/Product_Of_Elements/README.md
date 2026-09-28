@@ -56,6 +56,13 @@ Multiply input over column dimension. Output is a column matrix.
 
 
 
+## Parameters
+
+#### Multiply over
+
+Dialog parameter.
+
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

@@ -63,21 +63,19 @@ Outputs
 
 ## Parameters
 
-#### Number of outputs  
+#### Number of outputs
+
 This parameter takes number of outputs in several ways. Depending upon
 the parameter value, the output ports are added/removed starting from
 the last port at the bottom right.
 
-##### 1
-###### 2
-The block icon is initially created with two output ports.
+Additional dialog notes:
+
+1. 2. The block icon is initially created with two output ports.
 
 The input signal width is equally divided between the two outputs. If the input signal width is an odd number, then any remainder of the width is assigned to the first port at the top right.
 
-
-##### 2
-###### P
-A finite integer value representing the number of output ports.
+2. P. A finite integer value representing the number of output ports.
 
 P must be greater than 0.
 
@@ -87,25 +85,17 @@ The width of the input is equally divided among the outputs. Any remainder of th
 
 For example, if N is 3, and the width of the input is 14, then the first output is assigned with the first 5 input elements, the second output is assigned with the next 5 input elements, and the third output is assigned with the last 4 input elements.
 
-##### 3
-###### [P]
-A finite positive integer in square brackets is treated just like option 2 above. Here, the number of outputs will be P.
+3. [P]. A finite positive integer in square brackets is treated just like option 2 above. Here, the number of outputs will be P.
 
-##### 4
-###### [-1 -1 -1]
-The block icon is redrawn with 3 output ports. Here -1 means that the width of the particular output port needs to be computed in the same way as it is explained in the option 2 above.
+4. [-1 -1 -1]. The block icon is redrawn with 3 output ports. Here -1 means that the width of the particular output port needs to be computed in the same way as it is explained in the option 2 above.
 
-##### 5
-###### [3 -1 -1]
-The block icon is redrawn with 3 output ports.
+5. [3 -1 -1]. The block icon is redrawn with 3 output ports.
 
 You specify the width of the first output, and Model Composer computes the widths of the second and the third outputs.
 
 For example, if width of the input is 8, and the first output width is 3, then the remaining width of 5 is divided between the second and the third outputs. This results in the widths of the second and the third outputs to be set to 3 and 2 respectively.
 
-##### 6
-###### 3 3 1
-The block icon is redrawn with 3 output ports.
+6. 3 3 1. The block icon is redrawn with 3 output ports.
 
 The width of each output port is already specified by the user. The sum of the width of the outputs is 7. The width of the input must be 7, otherwise, an error message appears.
 
@@ -114,3 +104,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

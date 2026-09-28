@@ -32,18 +32,18 @@ Data type support for the block is:
 ## Parameters
 
 #### Sum over
-##### All dimensions
-Add all elements of the input signal (output is scalar)
 
-##### Specified dimension
-This option shows an edit box, Dimension, where the specific dimension value can be entered.
+Dialog parameter.
 
-#### Dimension
-##### 1
-Add input over row dimension. Output is a row matrix.
+Additional dialog notes:
 
-##### 2 
-Add input over column dimension. Output is a column matrix.
+All dimensions. Add all elements of the input signal (output is scalar)
+
+Specified dimension. This option shows an edit box, Dimension, where the specific dimension value can be entered.
+
+Dimension. 1. Add input over row dimension. Output is a row matrix.
+
+2. Add input over column dimension. Output is a column matrix.
 
 
 --------------
@@ -51,3 +51,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

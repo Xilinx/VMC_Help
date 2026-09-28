@@ -41,6 +41,10 @@ Sets the number of inputs to be concatenated. The minimum number of
 inputs is 2, the maximum is 128. The sum of all input bit widths shall
 not exceed 1024 bits.
 
+#### Number of inputs
+
+Dialog parameter.
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

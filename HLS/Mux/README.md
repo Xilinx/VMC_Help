@@ -54,16 +54,17 @@ Outputs
 
 ## Parameters
 
-#### Number of inputs  
+#### Number of inputs
+
 The value for the parameter must be a finite positive integer. When the
 value of the parameter changes, the input ports are either added or
 removed starting from the last port at the bottom left.
 
-##### 2
-The block icon is initially created with two input ports.
+Additional dialog notes:
 
-##### N
-A finite positive integer value.
+2. The block icon is initially created with two input ports.
+
+N. A finite positive integer value.
 
 The block icon is redrawn with the specified number of input ports.
 
@@ -73,3 +74,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

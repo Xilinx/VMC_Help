@@ -41,7 +41,8 @@ Data type support for the Conditional block is:
 
 ## Parameters
 
-#### Criteria for passing first input  
+#### Criteria for passing first input
+
 This parameter is used to select the condition under which the block
 passes the first input (T). If the control input C meets the condition
 set in the Criteria for passing first input parameter, the block passes
@@ -56,13 +57,15 @@ Settings for the Criteria for passing first input parameter are:
 | C ~= 0          | Select input T if control input C is not equal to 0. Selecting C ~= 0 disables the Threshold parameter. |
 
 
-#### Threshold  
+#### Threshold
+
 This parameter assigns the switch threshold that determines which input
 the block passes to the output. Threshold parameter is rounded to the
 same data type as that of the C input.
 
-##### Settings  
-| Settings                             | Description                       |
+Additional dialog notes:
+
+Settings. | Settings                             | Description                       |
 |--------------------------------------|-----------------------------------|
 | 0                                    | default value                     |
 | `real number`, `vector`, or `matrix` | any real scalar, vector or matrix |
@@ -86,3 +89,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

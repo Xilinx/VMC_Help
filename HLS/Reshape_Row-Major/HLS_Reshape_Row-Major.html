@@ -58,53 +58,38 @@ data types.</li>
 <h4>Output dimensionality</h4>
 <p>This parameter specifies how the input should be reshaped. The
 settings for Output dimensionality are as follows:</p>
-<section id="1-d-array" class="level5">
-<h5>1-D array</h5>
-<p>Converts the input to a 1-D vector. For a matrix input, the output
-consists of input matrix elements in row-major order.</p>
-</section>
-<section id="column-vector" class="level5">
-<h5>Column vector</h5>
-<p>Converts the input to a M x 1 matrix, where M is the number of
-elements in the input signal. For a matrix input, the output consists of
-input matrix elements in row-major order.</p>
-</section>
-<section id="row-vector" class="level5">
-<h5>Row vector</h5>
-<p>Converts the input to a 1 x N matrix, where N is the number of
-elements in the input signal. For a matrix input, the output consists of
-input matrix elements in row-major order.</p>
-</section>
-<section id="custom" class="level5">
-<h5>Custom</h5>
-<p>Converts the input to an output which has dimensions specified by the
-user using the Output dimensions parameter. The conversion is done in
-row-major order. The value of the Output dimensions parameter must be a
-two-element vector. For example, a value of [M N] outputs an M x N
-matrix. The number of elements of the input must match the number of
-elements specified by the Output dimensions parameter.</p>
-</section>
-<section id="derive-from-reference-input-port" class="level5">
-<h5>Derive from reference input port</h5>
-<p>Creates a second input port on the block and derives the dimensions
-of the output from the dimensions of the second input port. Selecting
-this option disables the Output dimensions parameter. Both the inputs to
-the block must have the same number of elements.</p>
-</section>
 </section>
 <section id="output-dimensions" class="level4">
 <h4>Output dimensions</h4>
 <p>Specify Output dimensions when Output dimensionality is set to
 Custom. The settings for Output dimensions are as follows:</p>
-<section id="1-1" class="level5">
-<h5>[1, 1]</h5>
-<p>The value of the Output dimensions parameter must be a two-element
-vector.</p>
+<p>Additional dialog notes:</p>
+<p>1-D array. Converts the input to a 1-D vector. For a matrix input,
+the output consists of input matrix elements in row-major order.</p>
+<p>Column vector. Converts the input to a M x 1 matrix, where M is the
+number of elements in the input signal. For a matrix input, the output
+consists of input matrix elements in row-major order.</p>
+<p>Row vector. Converts the input to a 1 x N matrix, where N is the
+number of elements in the input signal. For a matrix input, the output
+consists of input matrix elements in row-major order.</p>
+<p>Custom. Converts the input to an output which has dimensions
+specified by the user using the Output dimensions parameter. The
+conversion is done in row-major order. The value of the Output
+dimensions parameter must be a two-element vector. For example, a value
+of [M N] outputs an M x N matrix. The number of elements of the input
+must match the number of elements specified by the Output dimensions
+parameter.</p>
+<p>Derive from reference input port. Creates a second input port on the
+block and derives the dimensions of the output from the dimensions of
+the second input port. Selecting this option disables the Output
+dimensions parameter. Both the inputs to the block must have the same
+number of elements.</p>
+<p>[1, 1]. The value of the Output dimensions parameter must be a
+two-element vector.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>

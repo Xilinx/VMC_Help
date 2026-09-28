@@ -85,40 +85,24 @@ are the same as those of input signal.</li>
 <h4>Sum input along</h4>
 <p>This parameter specifies the dimension along which sum elements are
 computed.</p>
-<section id="setting" class="level5">
-<h5>Setting</h5>
-<p>The block computes the cumulative sum of each column of the
+<p>Additional dialog notes:</p>
+<p>Setting. The block computes the cumulative sum of each column of the
 input.</p>
-</section>
-<section id="rows" class="level5">
-<h5>Rows</h5>
-<p>The block computes the cumulative sum of each row of the input.</p>
-</section>
-<section id="channels-running-sum" class="level5">
-<h5>Channels (running sum)</h5>
-<p>The block computes a running sum for each element of the input across
-time. When you select the Channels (running sum) option, you will also
-have to specify a Reset port parameter.</p>
-</section>
-</section>
-<section id="reset-port" class="level4">
-<h4>Reset port</h4>
-<p>This parameter applies only to running sum. The Reset port parameter
-appears if you select Channels (running sum) for the Sum input along
-parameter.</p>
-<section id="none" class="level5">
-<h5>None</h5>
-<p>Omits the Reset port.</p>
-</section>
-<section id="non-zero-sample" class="level5">
-<h5>Non-zero sample</h5>
-<p>Triggers a reset operation at each sample time that the Reset input
-is not zero.</p>
+<p>Rows. The block computes the cumulative sum of each row of the
+input.</p>
+<p>Channels (running sum). The block computes a running sum for each
+element of the input across time. When you select the Channels (running
+sum) option, you will also have to specify a Reset port parameter.</p>
+<p>Reset port. This parameter applies only to running sum. The Reset
+port parameter appears if you select Channels (running sum) for the Sum
+input along parameter.</p>
+<p>None. Omits the Reset port.</p>
+<p>Non-zero sample. Triggers a reset operation at each sample time that
+the Reset input is not zero.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>

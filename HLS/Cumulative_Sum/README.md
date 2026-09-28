@@ -55,26 +55,22 @@ Data type support is:
 
 This parameter specifies the dimension along which sum elements are
 computed.
-##### Setting
-The block computes the cumulative sum of each column of the input.
 
-##### Rows
-The block computes the cumulative sum of each row of the input.
+Additional dialog notes:
 
-##### Channels (running sum)
-The block computes a running sum for each element of the input across time. When you select the Channels (running sum) option, you will also have to specify a Reset port parameter.
+Setting. The block computes the cumulative sum of each column of the input.
 
-#### Reset port
+Rows. The block computes the cumulative sum of each row of the input.
 
-This parameter applies only to running sum. The Reset port parameter
+Channels (running sum). The block computes a running sum for each element of the input across time. When you select the Channels (running sum) option, you will also have to specify a Reset port parameter.
+
+Reset port. This parameter applies only to running sum. The Reset port parameter
 appears if you select Channels (running sum) for the Sum input along
 parameter.
 
-##### None
-Omits the Reset port.
+None. Omits the Reset port.
 
-##### Non-zero sample
-Triggers a reset operation at each sample time that the Reset input is not zero.
+Non-zero sample. Triggers a reset operation at each sample time that the Reset input is not zero.
 
 
 --------------
@@ -82,3 +78,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

@@ -60,25 +60,11 @@ type parameter.</p>
 the block.</p>
 <p>You can enter any expression that MATLAB® evaluates as a scalar or
 matrix.</p>
-<section id="10" class="level5">
-<h5>1.0</h5>
-<p>Constant Value</p>
-</section>
 </section>
 <section id="interpret-vector-parameters-as-1-d" class="level4">
 <h4>Interpret vector parameters as 1-D</h4>
 <p>Specifies whether the constant value should be interpreted as a 1-D
 array.</p>
-<section id="on" class="level5">
-<h5>On</h5>
-<p>If the specified constant value is a scalar, row matrix, or column
-matrix, then the output is a 1-D array. Otherwise, the output is a 2-D
-matrix.</p>
-</section>
-<section id="off" class="level5">
-<h5>Off</h5>
-<p>The output is a 2-D scalar or matrix.</p>
-</section>
 </section>
 <section id="sample-time" class="level4">
 <h4>Sample time</h4>
@@ -89,54 +75,6 @@ or updates its internal state.</p>
 numerical value. For example, to generate output at every two seconds,
 you can directly set the discrete sample time by specifying the
 numerical value of 2 as the Sample time parameter.</p>
-<section id="sample-time-type" class="level5">
-<h5>Sample Time Type</h5>
-<section id="discrete" class="level6">
-<h6>Discrete</h6>
-<p>Generates output at discrete samples Ts. Discrete sample time is
-supported with the initial time offset value fixed to 0. The initial
-offset value is not configurable.</p>
-<p>Sample Time Supported: T<sub>s</sub> , Supported: Yes</p>
-</section>
-<section id="continuous" class="level6">
-<h6>Continuous</h6>
-<p>Generate output continuously by dividing the sample hits into major
-time steps and minor time steps. The Simulink ODE solver you choose
-integrates all continuous states from the simulation start time to a
-given major or minor time step.</p>
-<p>Sample Time Supported: 0 , Supported: No</p>
-</section>
-</section>
-<section id="inherited" class="level5">
-<h5>Inherited</h5>
-<p>The sample time value is inherited from other sources. It is
-determined by applying a set of heuristics and based on the context of
-the block within the model by Simulink. Allowing a design to inherit
-sample time maximizes its reuse potential. For example, a design might
-fix the data types and dimensions of all its input and output signals.
-But you could reuse the design with different sample times (for example,
-discrete at 0.1 or discrete at 0.2, triggered, and so on).</p>
-<p>Sample Time Supported: -1, Supported: Yes</p>
-<section id="constant-1" class="level6">
-<h6>Constant</h6>
-<p>Constant sample time. Same as inherited sample time for HLS
-blocks.</p>
-<p>Sample Time Supported: inf, Supported: Yes</p>
-</section>
-<section id="variable" class="level6">
-<h6>Variable</h6>
-<p>Variable Sample time.</p>
-<p>Sample Time Supported: -2, Supported: No</p>
-</section>
-<section id="triggered" class="level6">
-<h6>Triggered</h6>
-<p>Execute the block upon some implicit condition when it is inside a
-subsystem like triggered, function call, or iterator subsystem.</p>
-<p>Sample Time Supported: -1 (implicit), Supported: Yes</p>
-<p>For additional details for simulating sample time, see <a href="https://in.mathworks.com/help/simulink/ug/types-of-sample-time.html">Types
-of Sample time</a> in the Simulink documentation.</p>
-</section>
-</section>
 </section>
 <section id="output-data-type" class="level4">
 <h4>Output data type</h4>
@@ -148,40 +86,59 @@ zero, the fractional part more than 0.5 is rounded away from zero.</p>
 <p>In case of a tie (fractional part is 0.5), the Constant value is
 rounded up, i.e. the negative Constant value, is rounded towards zero
 and the positive Constant value is rounded away from zero.</p>
-</section>
-<section id="settings" class="level4">
-<h4>Settings</h4>
-<p>The following data types are supported:</p>
-<section id="double-single-and-half" class="level5">
-<h5>double, single, and half</h5>
-<p>Floating point data types.</p>
-</section>
-<section id="int8-uint8-int16-uint16-int32-uint32" class="level5">
-<h5>int8, uint8, int16, uint16, int32, uint32</h5>
-<p>Signed and unsigned integer data types.</p>
-</section>
-<section id="logical" class="level5">
-<h5>Logical</h5>
-<p>Boolean data type.</p>
-</section>
-<section id="fixed-point-data-type" class="level5">
-<h5>Fixed point data type</h5>
+<p>Additional dialog notes:</p>
+<p>1.0. Constant Value</p>
+<p>On. If the specified constant value is a scalar, row matrix, or
+column matrix, then the output is a 1-D array. Otherwise, the output is
+a 2-D matrix.</p>
+<p>Off. The output is a 2-D scalar or matrix.</p>
+<p>Sample Time Type. Discrete. Generates output at discrete samples Ts.
+Discrete sample time is supported with the initial time offset value
+fixed to 0. The initial offset value is not configurable.</p>
+<p>Sample Time Supported: T<sub>s</sub> , Supported: Yes</p>
+<p>Continuous. Generate output continuously by dividing the sample hits
+into major time steps and minor time steps. The Simulink ODE solver you
+choose integrates all continuous states from the simulation start time
+to a given major or minor time step.</p>
+<p>Sample Time Supported: 0 , Supported: No</p>
+<p>Inherited. The sample time value is inherited from other sources. It
+is determined by applying a set of heuristics and based on the context
+of the block within the model by Simulink. Allowing a design to inherit
+sample time maximizes its reuse potential. For example, a design might
+fix the data types and dimensions of all its input and output signals.
+But you could reuse the design with different sample times (for example,
+discrete at 0.1 or discrete at 0.2, triggered, and so on).</p>
+<p>Sample Time Supported: -1, Supported: Yes</p>
+<p>Constant. Constant sample time. Same as inherited sample time for HLS
+blocks.</p>
+<p>Sample Time Supported: inf, Supported: Yes</p>
+<p>Variable. Variable Sample time.</p>
+<p>Sample Time Supported: -2, Supported: No</p>
+<p>Triggered. Execute the block upon some implicit condition when it is
+inside a subsystem like triggered, function call, or iterator
+subsystem.</p>
+<p>Sample Time Supported: -1 (implicit), Supported: Yes</p>
+<p>For additional details for simulating sample time, see <a href="https://in.mathworks.com/help/simulink/ug/types-of-sample-time.html">Types
+of Sample time</a> in the Simulink documentation.</p>
+<p>Settings. The following data types are supported:</p>
+<p>double, single, and half. Floating point data types.</p>
+<p>int8, uint8, int16, uint16, int32, uint32. Signed and unsigned
+integer data types.</p>
+<p>Logical. Boolean data type.</p>
+<p>Fixed point data type. * Fixed-point arithmetic data type with
+configurable output data type attributes like signedness, word length,
+fractional length.</p>
 <ul>
-<li>Fixed-point arithmetic data type with configurable output data type
-attributes like signedness, word length, fractional length.</li>
 <li>Constant value conversion attributes rounding and overflow for
 reading constant value parameter.</li>
 </ul>
-</section>
-<section id="data-type-expression" class="level5">
-<h5>Data type Expression</h5>
-<p>A string that specifies the output data type. See &quot;Working with Data
-Type Expression&quot; in the Vitis Model Composer User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?isLatest=true&amp;ft:locale=en-US&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>)</p>
+<p>Data type Expression. A string that specifies the output data type.
+See &quot;Working with Data Type Expression&quot; in the Vitis Model Composer User
+Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?isLatest=true&amp;ft:locale=en-US&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>

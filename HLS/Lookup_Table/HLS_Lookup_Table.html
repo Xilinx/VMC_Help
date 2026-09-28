@@ -64,7 +64,7 @@ for indexing must be real, but table data can be complex.</p>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
 <section id="table-data" class="level4">
-<h4>Table Data</h4>
+<h4>Table data</h4>
 <p>This parameter accepts a 1-D vector of table values. The size of the
 vector determines the valid index range for the input index. The data
 will be explicitly converted into the type specified in the Output data
@@ -83,77 +83,37 @@ the index input. This makes it possible to use negative indices and
 perform look up operation.</p>
 </section>
 <section id="when-input-is-out-of-range" class="level4">
-<h4>When input is out of range</h4>
+<h4>When input is out of range...</h4>
 <p>This parameter will guard the index value if it exceeds the valid
 table size range.</p>
-<section id="saturate-at-table-ends" class="level5">
-<h5>Saturate at table ends</h5>
-<p>If index value exceeds the valid table size range, then index value
-is saturated to either top or bottom of table size range, depending on
-the overflow direction.</p>
-</section>
-<section id="wrap-around" class="level5">
-<h5>Wrap around</h5>
-<p>If index value exceeds the valid table size range, then index value
-is wrapped into the valid table size range.</p>
-</section>
 </section>
 <section id="output-data-type" class="level4">
 <h4>Output data type</h4>
 <p>Specifies the output data type.</p>
-<section id="double" class="level5">
-<h5>double</h5>
-<p>double precision floating-point</p>
-</section>
-<section id="single" class="level5">
-<h5>single</h5>
-<p>single precision floating-point</p>
-</section>
-<section id="int8" class="level5">
-<h5>int8</h5>
-<p>8-bit signed integer</p>
-</section>
-<section id="uint8" class="level5">
-<h5>uint8</h5>
-<p>8-bit unsigned integer</p>
-</section>
-<section id="int16" class="level5">
-<h5>int16</h5>
-<p>16-bit signed integer</p>
-</section>
-<section id="uint16" class="level5">
-<h5>uint16</h5>
-<p>16-bit unsigned integer</p>
-</section>
-<section id="int32" class="level5">
-<h5>int32</h5>
-<p>32-bit signed integer</p>
-</section>
-<section id="uint32" class="level5">
-<h5>uint32</h5>
-<p>32-bit unsigned integer</p>
-</section>
-<section id="boolean" class="level5">
-<h5>boolean</h5>
-<p>boolean</p>
-</section>
-<section id="fixed" class="level5">
-<h5>fixed</h5>
-<p>fixed-point</p>
-</section>
-<section id="half" class="level5">
-<h5>half</h5>
-<p>half precision floating-point</p>
-</section>
-<section id="data-type-expression" class="level5">
-<h5>data type expression</h5>
-<p>A string that specifies the output data type. See &quot;Working with Data
-Type Expression&quot; in the Vitis Model Composer User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>).</p>
+<p>Additional dialog notes:</p>
+<p>Saturate at table ends. If index value exceeds the valid table size
+range, then index value is saturated to either top or bottom of table
+size range, depending on the overflow direction.</p>
+<p>Wrap around. If index value exceeds the valid table size range, then
+index value is wrapped into the valid table size range.</p>
+<p>double. double precision floating-point</p>
+<p>single. single precision floating-point</p>
+<p>int8. 8-bit signed integer</p>
+<p>uint8. 8-bit unsigned integer</p>
+<p>int16. 16-bit signed integer</p>
+<p>uint16. 16-bit unsigned integer</p>
+<p>int32. 32-bit signed integer</p>
+<p>uint32. 32-bit unsigned integer</p>
+<p>boolean. boolean</p>
+<p>fixed. fixed-point</p>
+<p>half. half precision floating-point</p>
+<p>data type expression. A string that specifies the output data type.
+See &quot;Working with Data Type Expression&quot; in the Vitis Model Composer User
+Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>).</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>
