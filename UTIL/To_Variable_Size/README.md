@@ -16,10 +16,12 @@ output, the output will be an empty variable size signal.
 
 ## Parameters
 
-#### Output Size  
+#### Output Size
+
 This specifies the size of the output port.
 
-#### Show Valid Input  
+#### Show Valid Input Port
+
 If this option is enabled, the block will only accept the input data
 when the valid port is true.
 
@@ -28,3 +30,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

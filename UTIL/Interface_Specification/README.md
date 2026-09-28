@@ -96,26 +96,14 @@ following groups.
 
 Parameters on the Function Protocol tab are as follows:
 
-#### Mode  
+#### Mode
+
 The Mode parameter specifies the block-level I/O protocol.
 
 Following are the settings for the Mode parameter.
 
-##### AXI4-Lite Slave
-Specifies AXI4-Lite Slave as the block-level I/O protocol.
+#### Bundle
 
-##### Handshake
-Specifies a handshake protocol as the block-level I/O protocol.
-
-##### No block-level I/O Protocol
-Specifies that there is no block-level I/O protocol.
-
-
-The default choice for the function protocol is 'AXI4-Lite Slave'.
-However, if the DUT does not have any scalar ports then Handshake is
-selected as default function protocol.
-
-#### Bundle  
 The Bundle parameter is used in conjunction with the AXI4-Lite Slave
 interface to indicate that multiple ports should be grouped into the
 same interface. Enter a legal identifier in the C language (cannot
@@ -129,44 +117,45 @@ contain spaces or special characters) for Bundle.
 
 Parameters on the Input ports and Output ports tabs are as follows.
 
-#### Mode  
-The Mode parameter specifies the I/O protocol for the input port or the
+Additional dialog notes:
+
+AXI4-Lite Slave. Specifies AXI4-Lite Slave as the block-level I/O protocol.
+
+Handshake. Specifies a handshake protocol as the block-level I/O protocol.
+
+No block-level I/O Protocol. Specifies that there is no block-level I/O protocol.
+
+
+The default choice for the function protocol is 'AXI4-Lite Slave'.
+However, if the DUT does not have any scalar ports then Handshake is
+selected as default function protocol.
+
+Mode. The Mode parameter specifies the I/O protocol for the input port or the
 output port.
 
 Settings for the Mode parameter are:
 
-##### Default
-Specifies to use AXI4-Lite Slave if port is scalar, and use AXI4-Stream if the port is non-scalar.
+Default. Specifies to use AXI4-Lite Slave if port is scalar, and use AXI4-Stream if the port is non-scalar.
 
-##### AXI4-Stream
-Specifies AXI4-Stream protocol.
+AXI4-Stream. Specifies AXI4-Stream protocol.
 
-##### AXI4-Stream (video)
-Specifies AXI4-Stream (video) protocol. Allows you to specify Bundle, Video Format, and Video Component parameters.
+AXI4-Stream (video). Specifies AXI4-Stream (video) protocol. Allows you to specify Bundle, Video Format, and Video Component parameters.
 
-##### AXI4-Lite Slave
-Specifies AXI4-Lite Slave protocol. Allows you to specify Bundle and Offset parameters.
+AXI4-Lite Slave. Specifies AXI4-Lite Slave protocol. Allows you to specify Bundle and Offset parameters.
 
-##### FIFO
-Specifies a protocol for arrays whose elements are accessed in a sequential manner.
+FIFO. Specifies a protocol for arrays whose elements are accessed in a sequential manner.
 
-##### Valid port
-Specifies a handshake protocol that only has a valid port. 
+Valid port. Specifies a handshake protocol that only has a valid port.
 
-##### Constant
-Specifies a mode in which no I/O protocol is added to the port. The mode is intended for configuration inputs which only change when the device is in reset mode.
+Constant. Specifies a mode in which no I/O protocol is added to the port. The mode is intended for configuration inputs which only change when the device is in reset mode.
 
 This mode only applies to Input ports.
 
-##### No protocol
-Specifies that no I/O protocol is added to the port.
+No protocol. Specifies that no I/O protocol is added to the port.
 
-##### Block RAM
-Specifies Block RAM interface protocol.
+Block RAM. Specifies Block RAM interface protocol.
 
-
-#### Bundle  
-The Bundle parameter applies to the input ports or output ports and it
+Bundle. The Bundle parameter applies to the input ports or output ports and it
 is used in conjunction with the AXI4-Stream (video) interfaces that have
 more than one color component. In this case there should be one port for
 each color component and these ports should specify the same name for
@@ -180,20 +169,17 @@ attribute will be grouped into the same AXI4-Lite Slave interface.
 Enter a legal identifier in the C language (cannot contain spaces or
 special characters) for Bundle.
 
-#### Offset  
-The Offset parameter applies to the input ports or output ports and it
+Offset. The Offset parameter applies to the input ports or output ports and it
 is used in conjunction with the AXI4-Lite Slave interface. The parameter
 allows you to specify the address offset for a port within the AXI4-Lite
 Slave address map.
 
-#### Video Format  
-The Video Format parameter applies to the input ports or output ports
+Video Format. The Video Format parameter applies to the input ports or output ports
 and it specifies the color format for a video signal. It applies only to
 AXI4-Stream (video) interfaces. Options are Mono, YUV 4:2:2, YUV 4:4:4,
 and RGB.
 
-#### Video Component  
-The VideoComponent parameter applies to the input ports or output ports
+Video Component. The VideoComponent parameter applies to the input ports or output ports
 and it specifies the color component for a video signal. It applies only
 to AXI4-Stream (video) interfaces that use a Video Format with more than
 one color component. Options are Mono, YUV 4:2:2, YUV 4:4:4, and RGB.
@@ -214,3 +200,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

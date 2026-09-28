@@ -23,6 +23,42 @@ This block can also be used to connect Simulink signals to an HDL block with an 
 
 Refer to [Gateway In](../../HDL/gatewayin/README.md) block help to learn more about the parameters.
 
+#### Output Data Type
+
+Dialog parameter.
+
+#### Arithmetic type
+
+Dialog parameter.
+
+#### Number of bits
+
+Dialog parameter.
+
+#### Binary point
+
+Dialog parameter.
+
+#### Exponent width
+
+Dialog parameter.
+
+#### Fraction width
+
+Dialog parameter.
+
+#### Quantization
+
+Dialog parameter.
+
+#### Overflow
+
+Dialog parameter.
+
+#### Sample Period
+
+Dialog parameter.
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

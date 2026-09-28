@@ -23,14 +23,21 @@ block that does not accept a variable size signal.
 
 ## Parameters
 
-#### Mode  
+#### Mode
+
 The block has two modes:
 
-##### Stop simulation when input variable-size signal is not full 
-In this mode, the block will stop the simulation and error out if the input variable-size signal is not full. The output signal size is set to the same size as the input signal.
+#### Output Size
 
-##### Produce a valid output signal 
-In this mode, the input will be buffered until the number of samples reaches the specified Output Size. The buffered samples will then be transferred to the output, and the valid port is set to true. When there are not enough samples buffered, the output will be a vector of zeros, and the valid port is set to zero.
+Specify the output size for the second mode. For the first mode, the output size is inherited from the input size.
+
+
+
+Additional dialog notes:
+
+Stop simulation when input variable-size signal is not full. In this mode, the block will stop the simulation and error out if the input variable-size signal is not full. The output signal size is set to the same size as the input signal.
+
+Produce a valid output signal. In this mode, the input will be buffered until the number of samples reaches the specified Output Size. The buffered samples will then be transferred to the output, and the valid port is set to true. When there are not enough samples buffered, the output will be a vector of zeros, and the valid port is set to zero.
 
 In the second mode, it is recommended that you monitor the Valid output to make sure
 you are not processing invalid outputs. For example you can connect the valid port to a scope or an assert block.
@@ -39,12 +46,6 @@ you are not processing invalid outputs. For example you can connect the valid po
 
 You can also connect the Valid output to the enable port of a Simulink enabled subsystem.
 ![](./Images/to_fixed_size_enabled_sub.png)
-
-
-#### Output Size
-Specify the output size for the second mode. For the first mode, the output size is inherited from the input size.
-
-
 
 ## Related blocks
 [To Variable Size](../To_Variable_Size/README.md)
