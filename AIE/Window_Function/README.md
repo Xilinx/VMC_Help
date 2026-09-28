@@ -35,17 +35,20 @@ Describes the type of individual coefficients of the filter taps. It
     Input/Output data type is a float type.
 
 #### Function coefficients
+
 Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
   where 'N' is a positive integer that represents the filter length and
   must be in the range 4 to 240 inclusive.
 
 #### FFT/IFFT point size
+
 Specifies the maximum FFT/IFFT size that is supported by the FFT block.
   You can perform different lengths of FFT/IFFT on different input data
   frames. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by this block is 65536.
 
 #### Use dynamic point size
+
 This option is primarily checked when the block is used with the [Dynamic point FFT block](../FFT_Dynamic_Point/README.md). When unchecked, each input frame will be of the size _Window size_ though the _Input size_ can be an integer multiple of the _Window size_ indicating the procesing of multiple frames together. When this option is checked, each window must be preceeded by a 256bit header to describe the run-time parameters of that window. Note that the _Window size_ parameter does not include this header. The format of the header is described in the table below. When checked, the _Windows size_ parameter describes the maximum window size which may be input.
 
 Field name	Location (TT_DATA sample)	Description
@@ -59,7 +62,7 @@ Note that for TT_DATA=cfloat, the values in the header are expected as cfloat an
 
 When this option is checked, the window will operate on frames of _Window size_ or (_Window size_)/2^N down to 16. Since the window values cannot be faithfully determined by sampling or interpolating from the provided parent array, it is necessary when in this mode to provide an array holding the window values for each window size. Since this is a full array of (_Window size_)*(1+ 1/2 + 1/4 + …) the overall table size provided must be (_Window size_) * 2. For example, for (_Window size_)=64, the values of the window coefficients for a window size of 64 will occupy array indices 0 to 63. The coefficients for window size of 32 will occupy indices 64 thru 95, and those for windows size of 16 will occupy 96 thru 111.
 
-#### Input frame size (Number of Samples)
+#### Input window size (Number of Samples)
 
 Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default
@@ -68,6 +71,14 @@ Specifies the number of samples in the input frame excluding the
 #### Scale output down by 2^
 
 Describes the power of 2 shift down applied before output.
+
+#### Rounding mode
+
+Dialog parameter.
+
+#### Saturation mode
+
+Dialog parameter.
 
 ## Examples 
 

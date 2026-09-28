@@ -120,6 +120,10 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
+</section>
 <section id="twiddle-mode" class="level4">
 <h4>Twiddle Mode</h4>
 <p>This parameter controls the amplitude of the twiddle factors. It
@@ -144,7 +148,7 @@ occur on its own AI Engine tiles. This will improve performance at the
 expense of additional tiles being used.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of Cascade Stages</h4>
+<h4>Number of cascade stages</h4>
 <p>This determines the number of kernels the FFT will be divided over in
 series to improve throughput. For int data types, and FFT size of 2^N,
 the maximum cascade length is N/2 when N is even and (N+1)/2 when N is

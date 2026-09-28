@@ -61,14 +61,18 @@ input/output data type is an integer type.</li>
 input/output data type is a float type.</li>
 </ul>
 </section>
-<section id="point-size-fft-size" class="level4">
-<h4>Point Size (FFT Size)</h4>
+<section id="dynamic-1-or-static-0-point-size" class="level4">
+<h4>Dynamic (1) or static (0) point size</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="fft-size" class="level4">
+<h4>FFT size</h4>
 <p>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 3 to 12
 inclusive.</p>
 </section>
 <section id="input-window-size-number-of-samples" class="level4">
-<h4>Input Window Size (Number of Samples)</h4>
+<h4>Input window size (Number of samples)</h4>
 <p>Describes the total number of samples used as an input to the Mixed
 Radix FFT block. This parameter should be an integer multiple of the
 <em>Point Size</em>, in which case multiple FFT iterations will be
@@ -77,8 +81,32 @@ kernel needs to be triggered and as a result the overhead incurred due
 to triggering the kernel is reduced and overall throughput increases.
 This parameter must be in the range of 2^4 and 2^12, inclusive.</p>
 </section>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages</h4>
+<p>This determines the number of kernels the Mixed Radix FFT will be
+divided over in series to improve throughput. For int data types, and
+FFT size of 2^N, the maximum cascade length is N/2 when N is even and
+(N+1)/2 when N is odd. For float data type, the maximum cascade length
+is N.</p>
+</section>
+</section>
+<section id="constraints" class="level3">
+<h3>Constraints</h3>
+<p>Click on the button given here to access the constraint manager and
+add or update constraints for each kernel. If you set the &quot;Number of
+cascade stages&quot; parameter to a value greater than one, multiple kernels
+will be used to process the input. You can use the constraint manager to
+optimize the performance of your design by setting specific constraints
+for each kernel (in this case, you need to first run your design).
+Adding constraints will not affect the functional simulation in
+Simulink. Constraints will only affect the generated graph code, cycle
+approximate AIE simulation (System C), and behavior in hardware.</p>
+<div class="noteBox">
+If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
+</div>
+
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output Down by 2^</h4>
+<h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 shift down applied before output. For
 <em>cfloat</em> data type, the value for this parameter must be
 zero.</p>
@@ -125,30 +153,6 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
-<section id="number-of-cascade-stages" class="level4">
-<h4>Number of Cascade Stages</h4>
-<p>This determines the number of kernels the Mixed Radix FFT will be
-divided over in series to improve throughput. For int data types, and
-FFT size of 2^N, the maximum cascade length is N/2 when N is even and
-(N+1)/2 when N is odd. For float data type, the maximum cascade length
-is N.</p>
-</section>
-</section>
-<section id="constraints" class="level3">
-<h3>Constraints</h3>
-<p>Click on the button given here to access the constraint manager and
-add or update constraints for each kernel. If you set the &quot;Number of
-cascade stages&quot; parameter to a value greater than one, multiple kernels
-will be used to process the input. You can use the constraint manager to
-optimize the performance of your design by setting specific constraints
-for each kernel (in this case, you need to first run your design).
-Adding constraints will not affect the functional simulation in
-Simulink. Constraints will only affect the generated graph code, cycle
-approximate AIE simulation (System C), and behavior in hardware.</p>
-<div class="noteBox">
-If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
-</div>
-
 </section>
 </section>
 <section id="examples" class="level2">

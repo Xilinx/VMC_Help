@@ -49,7 +49,7 @@ Engines.</p>
 function. It should be cint16, cint32, or cfloat.</p>
 </section>
 <section id="input-frame-size-number-of-samples" class="level4">
-<h4>Input Frame Size (Number of Samples)</h4>
+<h4>Input frame size (Number of Samples)</h4>
 <p>Specifies the number of samples in the input frame. The value must be
 in the range 8 to 1024 and the default value is 32.</p>
 </section>
@@ -72,45 +72,9 @@ second modulated signal. These two modulated signals are added together
 and written to the output window.</p></li>
 </ul>
 </section>
-<section id="number-of-parallel-inputoutput-ssr" class="level4">
-<h4>Number of parallel input/output (SSR):</h4>
-<p>This parameter specifies the number of input (and output) ports of
-the Mixer block. The number of AI Engine kernels used is equal to the
-value of SSR parameter.</p>
-</section>
-<section id="phase-increment" class="level4">
-<h4>Phase Increment</h4>
-<p>Specifies the phase increment between samples. The value must be in
-the range 0 to 2^31 and the default value is 0. Input value 2^31
-corresponds to Pi (i.e., 180). Phase increment is calculated using the
-formula (Fo*(2^N)) / Fs where:</p>
-<ul>
-<li>Fo = Output frequency.</li>
-<li>N = 32, which represents the accumulator width, and it is
-fixed.</li>
-<li>Fs = Sampling frequency.</li>
-</ul>
-</section>
-<section id="reload-phase-increment-via-input-port" class="level4">
-<h4>Reload phase increment via input port</h4>
-<p>Allows the phase increment to be reloaded during simulation via an
-input port.</p>
-</section>
-<section id="initial-phase-offset" class="level4">
-<h4>Initial Phase Offset</h4>
-<p>Specifies the initial phase offset. The default value is 0.</p>
-</section>
-<section id="reload-initial-phase-via-input-port" class="level4">
-<h4>Reload initial phase via input port</h4>
-<p>Allows the initial phase to be reloaded during simulation via an
-input port. By default the reload port is a Real-Time Parameter (RTP)
-port that is non-blocking (async).</p>
-</section>
-<section id="use-iobuffer-port-for-phase-offset-reload" class="level4">
-<h4>Use iobuffer port for phase offset reload</h4>
-<p>Reload the phase offset using an iobuffer port, instead of a
-Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync)
-port, whereas the RTP port is a non-blocking (async) port.</p>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
@@ -153,6 +117,42 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
+</section>
+<section id="initial-phase-offset" class="level4">
+<h4>Initial phase offset</h4>
+<p>Specifies the initial phase offset. The default value is 0.</p>
+</section>
+<section id="reload-initial-phase-via-input-port" class="level4">
+<h4>Reload initial phase via input port</h4>
+<p>Allows the initial phase to be reloaded during simulation via an
+input port. By default the reload port is a Real-Time Parameter (RTP)
+port that is non-blocking (async).</p>
+</section>
+<section id="phase-increment" class="level4">
+<h4>Phase increment</h4>
+<p>Specifies the phase increment between samples. The value must be in
+the range 0 to 2^31 and the default value is 0. Input value 2^31
+corresponds to Pi (i.e., 180). Phase increment is calculated using the
+formula (Fo*(2^N)) / Fs where:</p>
+<ul>
+<li>Fo = Output frequency.</li>
+<li>N = 32, which represents the accumulator width, and it is
+fixed.</li>
+<li>Fs = Sampling frequency.</li>
+</ul>
+</section>
+<section id="reload-phase-increment-via-input-port" class="level4">
+<h4>Reload phase increment via input port</h4>
+<p>Allows the phase increment to be reloaded during simulation via an
+input port.</p>
+<p>Additional dialog notes:</p>
+<p>Number of parallel input/output (SSR). This parameter specifies the
+number of input (and output) ports of the Mixer block. The number of AI
+Engine kernels used is equal to the value of SSR parameter.</p>
+<p>Use iobuffer port for phase offset reload. Reload the phase offset
+using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The
+iobuffer port is a blocking (sync) port, whereas the RTP port is a
+non-blocking (async) port.</p>
 </section>
 </section>
 </section>

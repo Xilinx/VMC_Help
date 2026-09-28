@@ -17,43 +17,49 @@ This block implements General Matrix-Vector Multiplication (GEMV), which perform
 ### Main
 
 #### A input data type
+
 Specifies the data type for the A input port. Supported types include `int16`, `int32`, `cint16`, `cint32`, `float`, and `cfloat`.
 
 #### B input data type
+
 Specifies the data type for the B input port (vector). Supported types include `int16`, `int32`, `cint16`, `cint32`, `float`, and `cfloat`.
 
 #### Provide matrix A via RTP
+
 When checked, matrix A is provided via Run-Time Parameterization (RTP) instead of through an input port. This allows the matrix to be updated dynamically at runtime without restarting the kernel.
 
 #### Rows in input A
+
 Specifies the number of rows (M dimension) in matrix A and the output vector.
 
 #### Columns in input A, Length of vector B
+
 Specifies the number of columns in matrix A and the length of vector B (K dimension). This is the reduction dimension in the GEMV operation.
 
 #### Number of frames
+
 Specifies the number of batches of input data that will be processed per iteration.
 
-#### SSR (Super Sample Rate)
-Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
+#### SSR
 
-**When SSR > 1:**
-- Input matrix A is split across SSR ports along the first dimension.
-- Input vector B is duplicated across SSR ports.
-- Outputs from SSR ports are concatenated to form output vector.
+Dialog parameter.
 
 #### Number of cascade stages
+
 Specifies the number of cascaded kernel instances to be used. Cascading improves performance by distributing the computation across multiple kernels.
 
 #### A input leading dimension
+
 Specifies the memory layout for matrix A. Options include:
 * **Row-major(0):** Elements are arranged in row-major order (rows are contiguous in memory).
 * **Column-major(1):** Elements are arranged in column-major order (columns are contiguous in memory).
 
 #### Scale output down by 2^
+
 Describes the power of 2 by which the output is scaled down (right-shifted) before output. For `float` and `cfloat` data types, this parameter must be zero.
 
 #### Rounding mode
+
 Describes the selection of rounding to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -69,6 +75,7 @@ The following modes are available:
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Saturation mode
+
 Describes the selection of saturation to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -82,6 +89,15 @@ Click on the button given here to access the constraint manager and add or updat
 <div class="noteBox">
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
+
+Additional dialog notes:
+
+SSR (Super Sample Rate). Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
+
+**When SSR > 1:**
+- Input matrix A is split across SSR ports along the first dimension.
+- Input vector B is duplicated across SSR ports.
+- Outputs from SSR ports are concatenated to form output vector.
 
 ## Examples
 

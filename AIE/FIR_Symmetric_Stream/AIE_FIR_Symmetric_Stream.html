@@ -161,17 +161,20 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
-<section id="number-of-parallel-inputoutput-ssr" class="level4">
-<h4>Number of parallel input/output (SSR)</h4>
-<p>This parameter specifies the number of input (or output) ports and
-must be of the form 2^N, where N is a non-negative integer.</p>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of cascade stages:</h4>
+<h4>Number of cascade stages</h4>
 <p>This determines the number of kernels the FIR will be divided over in
 series to improve throughput.</p>
 <p>The number of AI Engine tiles used is determined by
 <code>(SSR)^2 * (Number of cascade stages)</code>.</p>
+<p>Additional dialog notes:</p>
+<p>Number of parallel input/output (SSR). This parameter specifies the
+number of input (or output) ports and must be of the form 2^N, where N
+is a non-negative integer.</p>
 </section>
 </section>
 </section>

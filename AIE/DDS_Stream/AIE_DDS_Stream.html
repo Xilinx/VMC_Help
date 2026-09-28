@@ -69,7 +69,7 @@ columns equal to the SSR number.</p>
 Engine kernels used is equal to the value of SSR parameter.</p>
 </section>
 <section id="initial-phase-offset" class="level4">
-<h4>Initial Phase Offset</h4>
+<h4>Initial phase offset</h4>
 <p>Specifies the initial phase offset. The default value is 0.</p>
 </section>
 <section id="reload-initial-phase-via-input-port" class="level4">
@@ -78,14 +78,8 @@ Engine kernels used is equal to the value of SSR parameter.</p>
 input port. By default the reload port is a Real-Time Parameter (RTP)
 port that is non-blocking (async).</p>
 </section>
-<section id="use-iobuffer-port-for-phase-offset-reload" class="level4">
-<h4>Use iobuffer port for phase offset reload</h4>
-<p>Reload the phase offset using an iobuffer port, instead of a
-Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync)
-port, whereas the RTP port is a non-blocking (async) port.</p>
-</section>
 <section id="phase-increment" class="level4">
-<h4>Phase Increment</h4>
+<h4>Phase increment</h4>
 <p>Specifies the phase increment between samples. The value must be in
 the range 0 to 2^31 and the default value is 0. Phase increment is
 calculated using the formula <code>(Fo\*(2^N)) / Fs / SSR</code>
@@ -148,7 +142,7 @@ range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
 <section id="sample-time" class="level4">
-<h4>Sample Time</h4>
+<h4>Sample time</h4>
 <p>Specifies the sample time for the output signal.</p>
 <div class="noteBox">
 The propagated block sample time in Simulink is equal to &quot;Sample time&quot; multipled by &quot;Samples per frame&quot; divided by &quot;SSR&quot;.
@@ -171,6 +165,11 @@ approximate AIE simulation (System C), and behavior in hardware.</p>
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
+<p>Additional dialog notes:</p>
+<p>Use iobuffer port for phase offset reload. Reload the phase offset
+using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The
+iobuffer port is a blocking (sync) port, whereas the RTP port is a
+non-blocking (async) port.</p>
 </section>
 </section>
 <section id="examples" class="level2">

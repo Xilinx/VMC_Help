@@ -121,20 +121,20 @@ input/output data type is a float type.</li>
 </ul>
 </section>
 <section id="fft-maximum-size" class="level4">
-<h4>FFT Maximum Size</h4>
+<h4>FFT maximum size</h4>
 <p>Specifies the maximum FFT size that is supported by Dynamic point
 FFT. You can perform different lengths of FFT on different input data
 windows. It must be a power of 2 with a minimum value of 16. The maximum
 value supported by the library element is 65536.</p>
 </section>
-<section id="input-window-size" class="level4">
-<h4>Input Window Size</h4>
+<section id="input-window-size-number-of-samples-excluding-header" class="level4">
+<h4>Input window size (Number of samples excluding header)</h4>
 <p>Specifies the number of samples in the input window excluding the
 header. The value must be in the range 8 to 1024 and the default value
 is 64.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output down by 2^</h4>
+<h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 shift down applied to output. It must be in
 the range 0 to 61.</p>
 </section>
@@ -174,6 +174,14 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="twiddle-mode" class="level4">
+<h4>Twiddle Mode</h4>
+<p>Dialog parameter.</p>
+</section>
 <section id="use-widget-for-ssr-kernels" class="level4">
 <h4>Use Widget for SSR Kernels</h4>
 <p>This parameter is applicable to streaming and parallel (SSR&gt;1)
@@ -186,7 +194,7 @@ occur on its own AI Engine tiles. This will improve performance at the
 expense of additional tiles being used.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of Cascade Stages</h4>
+<h4>Number of cascade stages</h4>
 <p>This determines the number of kernels the FFT will be divided over in
 series to improve throughput. For int data types, and FFT size of 2^N,
 the maximum cascade length is N/2 when N is even and (N+1)/2 when N is

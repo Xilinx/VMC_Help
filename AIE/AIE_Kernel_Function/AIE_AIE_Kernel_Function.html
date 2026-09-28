@@ -51,6 +51,18 @@ AIE Class block to import the kernel.
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
+<section id="function-declaration" class="level4">
+<h4>Function declaration</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="function-template-parameters" class="level4">
+<h4>Function Template Parameters</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="port-attributes" class="level4">
+<h4>Port attributes</h4>
+<p>Dialog parameter.</p>
+</section>
 <section id="kernel-header-file" class="level4">
 <h4>Kernel header file</h4>
 <p>Mandatory string. Name of the header file that contains the kernel
@@ -104,6 +116,36 @@ specific preprocessor options.</p>
 multiple can be selected: -Dname and -Dname=definition separated by a
 comma. That is, the optional argument must begin with -D and if the
 option definition value is not provided, it is assumed to be 1.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
+<p>Additional dialog notes:</p>
+<p>SSR (Super Sample Rate). Specifies the number of replicated AI Engine
+kernel instances inside the mask subsystem. The default value is
+<strong>1</strong>, which preserves legacy single-kernel behavior.</p>
+<p>When SSR is greater than 1:</p>
+<ul>
+<li>The block accepts an <strong>M×SSR</strong> column matrix on each
+input port and produces an <strong>M×SSR</strong> matrix on each output
+port.</li>
+<li>Internal Splitter and Merger blocks (Simulink Selector and Matrix
+Concatenation) distribute and collect samples across the replicated
+kernels.</li>
+<li>Each kernel parameter can be specified as a scalar (same value for
+all kernels), a vector of length SSR, or a workspace variable holding
+either form.</li>
+<li>Set constraints for each replicated kernel independently in the
+Constraint Editor.</li>
+</ul>
+<p>Changing SSR requires clicking <strong>Apply</strong> or
+<strong>OK</strong> on the mask dialog to rebuild the subsystem. Use
+<strong>Import</strong> or <strong>Update</strong> to refresh kernel
+source after changes to the kernel header, source, or function.</p>
+<p>For design rule checks, interoperability with DSPLib SSR blocks, and
+subsystem boundary placement rules, see <a href="https://docs.amd.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/SSR-Support-for-AIE-Kernel-and-Graph-Blocks">SSR
+Support for AIE Kernel and Graph Blocks</a> in the Vitis Model Composer
+User Guide (UG1483).</p>
 </section>
 </section>
 <section id="examples" class="level2">

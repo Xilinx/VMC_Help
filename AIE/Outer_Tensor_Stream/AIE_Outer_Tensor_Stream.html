@@ -70,34 +70,15 @@ which uses column-major format.</p>
 <p>Specifies the number of frames (sets of input matrices) processed per
 window.</p>
 </section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
+</section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 by which the output is scaled down
 (right-shifted) before output. For <code>float</code> and
 <code>cfloat</code> data types, this parameter must be zero.</p>
-</section>
-<section id="ssr-super-sample-rate" class="level4">
-<h4>SSR (Super Sample Rate)</h4>
-<p>Specifies the number of parallel data paths processed by the block.
-Increasing SSR allows for higher throughput by processing multiple
-samples in parallel.</p>
-<p><strong>Splitting for SSR &gt; 1:</strong></p>
-<p>For SSR &gt; 1, input A is split into equal-length segments across
-the SSR input ports. Input B is duplicated to all SSR lanes (no
-splitting required for B). The output is arranged in row-major
-format.</p>
-<p><strong>Example (SSR = 2):</strong></p>
-<p>A = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-25 26 27 28 29 30 31 32]</p>
-<p>After splitting (SSR=2):</p>
-<ul>
-<li>inA[0] → [1 2 3 ... 16]</li>
-<li>inA[1] → [17 18 19 ... 32] Input B is not split; both SSR lanes
-receive the full B vector.</li>
-</ul>
-<p><strong>Note:</strong></p>
-<p>This block accepts vector inputs. The output is always arranged in
-row-major format, unlike Simulink, which uses column-major format.</p>
 </section>
 <section id="rounding-mode" class="level4">
 <h4>Rounding mode</h4>
@@ -155,6 +136,27 @@ approximate AIE simulation (System C), and behavior in hardware.</p>
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
+<p>Additional dialog notes:</p>
+<p>SSR (Super Sample Rate). Specifies the number of parallel data paths
+processed by the block. Increasing SSR allows for higher throughput by
+processing multiple samples in parallel.</p>
+<p><strong>Splitting for SSR &gt; 1:</strong></p>
+<p>For SSR &gt; 1, input A is split into equal-length segments across
+the SSR input ports. Input B is duplicated to all SSR lanes (no
+splitting required for B). The output is arranged in row-major
+format.</p>
+<p><strong>Example (SSR = 2):</strong></p>
+<p>A = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+25 26 27 28 29 30 31 32]</p>
+<p>After splitting (SSR=2):</p>
+<ul>
+<li>inA[0] → [1 2 3 ... 16]</li>
+<li>inA[1] → [17 18 19 ... 32] Input B is not split; both SSR lanes
+receive the full B vector.</li>
+</ul>
+<p><strong>Note:</strong></p>
+<p>This block accepts vector inputs. The output is always arranged in
+row-major format, unlike Simulink, which uses column-major format.</p>
 </section>
 </section>
 <section id="examples" class="level2">

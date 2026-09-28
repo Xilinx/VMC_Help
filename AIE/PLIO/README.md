@@ -39,6 +39,17 @@ Note that you can also use the "--pl-freq=_value_" AI Engine Compiler option in 
 You can specify location constraints for PLIO blocks. This will be reflected in the generated Graph code.
 
 
+## Parameters
+
+#### PLIO width (bits)
+
+Dialog parameter.
+
+#### Specify PLIO frequency
+
+Dialog parameter.
+
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

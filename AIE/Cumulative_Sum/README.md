@@ -17,6 +17,7 @@ AI Engines.
 ### Main  
 
 #### Input data type
+
 Describes the type of individual data samples of input to the function.
 
 This must be one of the following:
@@ -25,6 +26,7 @@ This must be one of the following:
 Type choice is restricted by AIE variant.
 
 #### Output data type
+
 Describes the type of individual data samples at the function output.
 
 This must be one of the following:
@@ -32,16 +34,20 @@ This must be one of the following:
 
 Type choice is restricted by AIE variant.
 
-#### Input dimensions A (rows)
+#### Input dimension A (rows)
+
 Defines the number of rows (A) in each input frame or matrix.
 
-#### Input dimensions B (columns)
+#### Input dimension B (columns)
+
 Defines the number of columns (B) in each input frame or matrix.
 
 #### Number of frames
+
 Describes the number of frames of input data samples that occur within each input window of data.
 
 #### Sum input along
+
 Describes the sum along.
 
 ***Dimension A***: Sum along rows (vertical direction)
@@ -49,9 +55,11 @@ Describes the sum along.
 ***Dimension B***: Sum along columns (horizontal direction)
 
 #### Scale output down by 2^
+
 Describes the number of bits to downshift the output values.
 
 #### Rounding mode
+
 Describes the selection of rounding to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -67,6 +75,7 @@ The following modes are available:
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Saturation mode
+
 Describes the selection of saturation to be applied during the shift down stage of processing.
 
 The following modes are available:

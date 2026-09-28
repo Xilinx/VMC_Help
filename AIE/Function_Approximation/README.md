@@ -15,7 +15,14 @@ The Function Approximation library element provides a vectorized linear approxim
 
 ### Main  
 
+#### Input/Output data type
+
+Describes the type of individual data samples input to the function. This must be one of the following:
+* `int16`, `int32`, and `float` for AIE
+* `int16`, `int32`, `float`, and `bfloat16` for AIE-ML and AIE-MLv2
+
 #### Function
+
 Select preconfigured LUT values for the common functions `sqrt`, `invSqrt`, `log`, `exp`, `inv`, or select `<Specify LUT values>` to provide your own LUT values in the **Specify LookUp Values** field.
 
 To achieve the expected results for a given function, data type, and input domain, it may be necessary to provide gain and bias to the Function Approximation block's input and output data. Refer to the table below. COARSE and FINE refer to the number of coarse and fine bits. Also refer to the [Examples](#examples).
@@ -36,7 +43,8 @@ To achieve the expected results for a given function, data type, and input domai
 | **All**                | Float         | 1 <= x < 4       | –                                 | –                                      | –                  | -                       |
 
 
-#### Specify LookUp Values
+#### Custom LookUp Values
+
 Provide LUT values as a MATLAB vector or workspace variable name. The default values in this field will produce a sinusoidal function.
 
 There will be `2^(Coarse bits)` locations in the lookup table. Each location will contain a slope value and an offset value which represent the linear approximation of the function at the corresponding location of the domain. Lookup tables for integer data types require the slope/offset values to be obtained using the point-slope form, whereas lookup tables for floating-point types require the slope-intercept form.
@@ -59,7 +67,8 @@ slope[0], offset[0], slope[1], offset[1], ... slope[2^(Coarse bits) - 1], offset
 A single lookup will require `sizeof(Data type) * 2 * 2^(Coarse bits)` bytes of memory. For performance reasons, a duplicate of the lookup is created by the func_approx graph. Configurations for **AIE-ML** or **AIE-MLv2** devices with a data type of `int16` or `bfloat16` will use the AI Engine API for improved parallel lookups. However, this requires an additional duplication within each lookup table. This duplication will be done within the graph but must be accounted for when calculating the memory required for the provided lookup tables. Users must provide the lookup table, without any duplication, in the **Specify LookUp Values** field.
 
 #### Specify LUT Values via input port
-When this option is enabled, the tool allows you to specify LUT values via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port. When multiple LUT ports are exposed, they should receive the same RTP values.
+
+When this option is enabled, the tool allows you to specify LUT values via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port. When multiple LUT ports are exposed, they should receive the same RTP values.
 
 For AIE-ML and AIE-MLv2 devices with a data type of `int16` or `bfloat16`, the LUT values must be repeated. For AIE-ML every 128 bits must be repeated; for AIE-MLv2 every 256 bits must be repeated.
 
@@ -71,18 +80,16 @@ In the case of AIE-ML for `int16` and `bfloat16` data types, both RTP port 1 and
 
 In the case of AIE-MLv2 for `int16` and `bfloat16` data types, both RTP port 1 and RTP port 2 should receive: `[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,..,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256]`.
 
-#### Input/Output data type
-Describes the type of individual data samples input to the function. This must be one of the following:
-* `int16`, `int32`, and `float` for AIE
-* `int16`, `int32`, `float`, and `bfloat16` for AIE-ML and AIE-MLv2
-
 #### Coarse bits
+
 Describes the number of bits in a sample of input data that will be used to address the provided lookup table. It determines the total number of locations in the lookup table.
 
 #### Fine bits
+
 Describes the number of bits in an input data sample used for fine interpolation.
 
 #### Input domain
+
 Specifies a mode for the input domain of the chosen function for approximation.
 
 There are three modes available:
@@ -92,12 +99,15 @@ There are three modes available:
 * **1 to 4:** Domain of input, x, is from 1 to 4
 
 #### Input window size
+
 Describes the number of samples to be processed in each call to this function.
 
 #### Scale output down by 2^
+
 Describes the number of bits to downshift the final output approximation.
 
 #### Rounding mode
+
 Describes the selection of rounding to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -113,6 +123,7 @@ The following modes are available:
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Saturation mode
+
 Describes the selection of saturation to be applied during the shift down stage of processing.
 
 The following modes are available:

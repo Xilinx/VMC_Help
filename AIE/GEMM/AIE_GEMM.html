@@ -84,14 +84,13 @@ number of columns in the output matrix C.</p>
 A and the number of rows in matrix B. This dimension must match for
 matrix multiplication to be valid.</p>
 </section>
-<section id="ssr-super-sample-rate" class="level4">
-<h4>SSR (Super Sample Rate)</h4>
-<p>Specifies the number of parallel data paths processed by the block.
-Increasing SSR allows for higher throughput by distributing the
-computation across multiple AI Engine tiles.</p>
-<p>When SSR &gt; 1, the input matrices and output are split across
-multiple ports. The specific data distribution depends on the memory
-layout (row-major or column-major).</p>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="number-of-cascade-stages" class="level4">
+<h4>Number of cascade stages</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="a-input-leading-dimension" class="level4">
 <h4>A input leading dimension</h4>
@@ -123,9 +122,8 @@ in memory</li>
 by column in memory</li>
 </ul>
 </section>
-<section id="add-tiling-to-input-a-add-tiling-to-input-b-add-detiling-to-output" class="level4">
-<h4>Add tiling to input A, Add tiling to input B, Add detiling to
-output</h4>
+<section id="add-tiling-to-input-a" class="level4">
+<h4>Add tiling to input A</h4>
 <p>These parameters control the inclusion of an additional
 pre-processing/post-processing kernel to perform the required data
 storage reordering. When used while selecting the input and/or output
@@ -135,6 +133,14 @@ kernel.</p>
 kernels assume incoming data is in the correct format, as specified in
 the <a href="https://docs.amd.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-matmul.html_6_0">function
 documentation</a>.</p>
+</section>
+<section id="add-tiling-to-input-b" class="level4">
+<h4>Add tiling to input B</h4>
+<p>Dialog parameter.</p>
+</section>
+<section id="add-detiling-to-output" class="level4">
+<h4>Add detiling to output</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
@@ -198,6 +204,13 @@ approximate AIE simulation (System C), and behavior in hardware.</p>
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
+<p>Additional dialog notes:</p>
+<p>SSR (Super Sample Rate). Specifies the number of parallel data paths
+processed by the block. Increasing SSR allows for higher throughput by
+distributing the computation across multiple AI Engine tiles.</p>
+<p>When SSR &gt; 1, the input matrices and output are split across
+multiple ports. The specific data distribution depends on the memory
+layout (row-major or column-major).</p>
 </section>
 </section>
 <section id="examples" class="level2">

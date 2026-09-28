@@ -13,11 +13,14 @@ filter targeted for AI Engines.
 
 ## Parameters
 
-### Main  
-#### Input/Output data type  
+### Main
+
+#### Input/Output data type
+
 The data type of individual samples input to and output from the filter function.
 
-#### Filter coefficients data type  
+#### Filter coefficients data type
+
 Set the filter coefficients data type. This parameter's setting may be restricted based on the Input/Output data type. In particular,
 
 * Complex types are only supported when the Input/Output data type is also complex.
@@ -26,30 +29,38 @@ Set the filter coefficients data type. This parameter's setting may be restricte
 * Filter coefficients data type must be a float type if the Input/Output data type is a float type.
 
 #### Specify filter coefficients via input port
-When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of input ports
+
 When this option is enabled, a second stream input can be connected to the FIR, increasing available throughput. When using a second stream input, the data should be organized in a 128-bit interleaved pattern. For example, for a cint16 input samples 0-3 should be sent over the first stream and samples 4-7 should be sent over the second stream.
 
 #### Provide second set of output ports
+
 When this option is enabled, a second stream output is added to the block. The two output data streams are interleaved in a 128-bit pattern. For example, for cint16 output data, samples 0-3 will be sent on the first output stream and samples 4-7 will be sent on the second output stream.
 
-#### Filter coefficients  
+#### Filter coefficients
+
 Specifies the filter coefficients as a vector.
 
 #### Filter length
+
 When using reloadable filter coefficients, use this parameter to specify the number of taps in the filter.
 
-#### Interpolation factor  
+#### Interpolation factor
+
 An unsigned integer which describes the interpolation factor of the
 filter. It must be in the range 1 to 16.
 
-#### Input frame size (Number of samples)  
+#### Input frame size (Number of samples)
+
 Describes the number of samples used as an input to the filter function.
 The number of values in the output window will be Input window size
 multiplied by interpolation factor.
 
-#### Scale output down by 2^  
+#### Scale output down by 2^
+
 Describes power of 2 shift down applied to the accumulation of FIR terms
 before output. It must be in range 0 to 61.
 
@@ -78,11 +89,12 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Number of parallel input/output (SSR)  
-This parameter specifies the number of input (or output) ports and must
-be of the form 2^N, where N is a non-negative integer. The input data must be split over multiple ports, where each successive sample is sent to a different input port in a round-robin fashion. See the example section.
+#### SSR
+
+Dialog parameter.
 
 #### Number of interpolator polyphases
+
 Specifies the number of interpolator polyphases over which the coefficients will be split to enable parallel computation of the outputs. The polyphases are executed in parallel; output data is produced by each polyphase directly. This parameter does not affect the number of input data paths; there will be `(SSR)` input phases irrespective of the value of this parameter.
 
 * An interpolator polyphase value equal to the interpolation factor will result in an interpolate factor of polyphases, where each kernel is a single rate filter.
@@ -90,7 +102,8 @@ Specifies the number of interpolator polyphases over which the coefficients will
 
 The number of AI Engine tiles used is given by `(Number of interpolator polyphases) * (SSR)^2 * (Number of cascade stages)`.
 
-#### Number of cascade stages:
+#### Number of cascade stages
+
 Determines the number of AI Engine processors to split the operation over. This allows AI Engine tiles to be traded for higher throughput. See the example below on how the number of cascade stages affect the throughput. The value must be in the range 1 to 9.
 
 ### Constraints
@@ -99,6 +112,11 @@ Click on the button given here to access the constraint manager and add or updat
 <div class="noteBox">
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
+
+Additional dialog notes:
+
+Number of parallel input/output (SSR). This parameter specifies the number of input (or output) ports and must
+be of the form 2^N, where N is a non-negative integer. The input data must be split over multiple ports, where each successive sample is sent to a different input port in a round-robin fashion. See the example section.
 
 ## Examples
 

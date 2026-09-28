@@ -152,13 +152,9 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
-<section id="number-of-parallel-inputoutput-ssr" class="level4">
-<h4>Number of parallel input/output (SSR)</h4>
-<p>This parameter specifies the number of input (or output) ports and
-must be of the form 2^N, where N is a non-negative integer. The input
-data must be split over multiple ports, where each successive sample is
-sent to a different input port in a round-robin fashion. See the example
-section.</p>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Dialog parameter.</p>
 </section>
 <section id="number-of-interpolator-polyphases" class="level4">
 <h4>Number of interpolator polyphases</h4>
@@ -180,7 +176,7 @@ interpolators.</li>
 <code>(Number of interpolator polyphases) * (SSR)^2 * (Number of cascade stages)</code>.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of cascade stages:</h4>
+<h4>Number of cascade stages</h4>
 <p>Determines the number of AI Engine processors to split the operation
 over. This allows AI Engine tiles to be traded for higher throughput.
 See the example below on how the number of cascade stages affect the
@@ -202,6 +198,12 @@ approximate AIE simulation (System C), and behavior in hardware.</p>
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
+<p>Additional dialog notes:</p>
+<p>Number of parallel input/output (SSR). This parameter specifies the
+number of input (or output) ports and must be of the form 2^N, where N
+is a non-negative integer. The input data must be split over multiple
+ports, where each successive sample is sent to a different input port in
+a round-robin fashion. See the example section.</p>
 </section>
 </section>
 <section id="examples" class="level2">

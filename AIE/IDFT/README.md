@@ -12,23 +12,29 @@ AI Engine/DSP/Buffer IO
  IDFT implementation targeted for AI Engines.
 ## Parameters
 
-### Main  
-#### Input/Output Data Type
+### Main
+
+#### Input/Output data type
+
 Set the input/output data type.
 
 #### Twiddle factor data type
+
 Describes the data type of the twiddle factors of the transform. It must be `cint16` or `cfloat` and must also satisfy the following rules:
 * 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
 #### IDFT size
+
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 7 inclusive.
 
-#### Number of input frames per window
+#### Number of frames per window
+
 Describes the total number of frames used as an input to the IDFT block per window.
- 
+
 #### Scale output down by 2^
+
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
 #### Rounding mode
@@ -47,6 +53,13 @@ The following modes are available:
 
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
+#### SSR
+
+This parameter is intended to improve performance by parallelizing the DFT processing. When this parameter is N>1, the block will have N input ports and N output ports.
+
+<div class="noteBox">The DFT/IDFT blocks' behavior in SSR mode differs from that of the FFT/IFFT blocks. Each input port of the DFT/IDFT should receive the same input samples. This differs from the FFT/IFFT blocks, which expect the input samples to be split across the input ports.</div>
+
+
 #### Saturation mode
 
 Describes the selection of saturation to be applied during the shift down stage of processing.
@@ -56,14 +69,8 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### SSR
+#### Number of cascade stages
 
-This parameter is intended to improve performance by parallelizing the DFT processing. When this parameter is N>1, the block will have N input ports and N output ports.
-
-<div class="noteBox">The DFT/IDFT blocks' behavior in SSR mode differs from that of the FFT/IFFT blocks. Each input port of the DFT/IDFT should receive the same input samples. This differs from the FFT/IFFT blocks, which expect the input samples to be split across the input ports.</div>
-
-
-####  Number of Cascade Stages
 This determines the number of kernels the DFT will be divided over in series to improve throughput. When cascaded, each kernel will operate on a subset of the input signal and pass a partial result to the next kernel. 
 
 Increasing the number of cascade stages will increase the number of inputs to the DFT block. The input signal should be distributed among the input ports in a round-robin fashion. 

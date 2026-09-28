@@ -72,20 +72,20 @@ input/output data type is a float type.</li>
 </ul>
 </section>
 <section id="ifft-size" class="level4">
-<h4>IFFT Size</h4>
+<h4>IFFT size</h4>
 <p>This is an unsigned integer which describes the point size of the
 transformation. This must be 2^N, where N is in the range 4 to 16
 inclusive.</p>
 </section>
 <section id="input-frame-size-number-of-samples" class="level4">
-<h4>Input Frame Size (Number of Samples)</h4>
+<h4>Input frame size (Number of Samples)</h4>
 <p>Specifies the number of samples for a particular frame. The value
 must be in the range 8 to 1024 and the default value is 64. The IFFT
 operation will not begin until this number of samples has been
 input.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale Output Down by 2^</h4>
+<h4>Scale output down by 2^</h4>
 <p>Describes the power of 2 shift down applied before output. The
 following table shows the range of valid values of this parameter for
 different data types.</p>
@@ -148,6 +148,17 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>This parameter is intended to improve performance and support IFFT
+sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
+(which must be of the form 2^N, where N is a positive integer), the IFFT
+operation is performed in parallel and the actual IFFT size is divided
+by &#39;n&#39;. For example, a 16384 point IFFT with SSR value of 8 creates 8
+stream inputs and there will be 8 subframe IFFTs each of point size
+2048. The specified IFFT size and SSR values should be such that (2 *
+IFFT size / SSR) is in the range of 16 and 4096.</p>
+</section>
 <section id="twiddle-mode" class="level4">
 <h4>Twiddle Mode</h4>
 <p>This parameter controls the amplitude of the twiddle factors. It
@@ -171,19 +182,8 @@ occur within the FFT kernels themselves.</p>
 occur on its own AI Engine tiles. This will improve performance at the
 expense of additional tiles being used.</p>
 </section>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>This parameter is intended to improve performance and support IFFT
-sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
-(which must be of the form 2^N, where N is a positive integer), the IFFT
-operation is performed in parallel and the actual IFFT size is divided
-by &#39;n&#39;. For example, a 16384 point IFFT with SSR value of 8 creates 8
-stream inputs and there will be 8 subframe IFFTs each of point size
-2048. The specified IFFT size and SSR values should be such that (2 *
-IFFT size / SSR) is in the range of 16 and 4096.</p>
-</section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of Cascade Stages</h4>
+<h4>Number of cascade stages</h4>
 <p>This determines the number of kernels the IFFT will be divided over
 in series to improve throughput. For int data types, and FFT size of
 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N

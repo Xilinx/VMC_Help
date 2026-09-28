@@ -45,14 +45,22 @@ FIR TDM output data will be formatted in the same way.
 
 ## Parameters
 
-### Main  
-#### Input data type  
+### Main
+
+#### Input data type
+
 Set the data type of the block input. The data type of the input signal to the block must match this setting. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Output data type
+
 Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
-#### Filter coefficients data type  
+#### Specify filter coefficients via input port
+
+Dialog parameter.
+
+#### Filter coefficients data type
+
 Set the filter coefficients data type. This parameter's setting may be restricted based on the Input/Output data type. In particular, 
 
 - Complex types are only supported when the Input/Output data type is
@@ -65,9 +73,11 @@ Set the filter coefficients data type. This parameter's setting may be restricte
   data type is a float type.
 
 #### Filter length
+
 This field describes the number of taps (coefficients) in the filter.
 
-#### Filter coefficients  
+#### Filter coefficients
+
 This field specifies the filter coefficients. 
 
 Specify the coefficients as an NxM matrix, where `N` is the filter length and `M` is the number of TDM channels. 
@@ -81,10 +91,12 @@ Where each element `Cnm` represents a 'n-th' coefficient for a 'm-th' TDM channe
 You could also define the coefficients as an array variable in the MATLAB workspace and specify the variable name in this field.
 </div>
 
-#### Scale output down by 2^  
+#### Scale output down by 2^
+
 Sets the power of 2 shift down applied to the accumulator of FIR before output. It must be in the range 0 to 61 inclusive.
 
 #### Rounding mode
+
 Describes the selection of rounding to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -99,17 +111,20 @@ The following modes are available:
 
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
-#### Input window size (Number of samples)  
+#### Input window size (Number of samples)
+
 Describes the total number of samples (across all channels) used as an input to the filter function.
 
 The number of input samples per channel is equal to this parameter, divided by the number of TDM channels.
 
-#### Number of TDM channels 
+#### Number of TDM channels
+
 Describes the number of Time-Division Multiplexed (TDM) channels processed by the FIR.
 
 Each kernel requires storage for all taps and all channels it is required to operate on.
 
 #### Saturation mode
+
 Describes the selection of saturation to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -117,12 +132,13 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Number of cascade stages  
+#### Number of cascade stages
 
 This determines the number of kernels the FIR will be divided over to improve throughput.
 For example, a 32 tap FIR split over 4 cascaded kernels will result in each operating on 8 taps.
 
-#### SSR 
+#### SSR
+
 This parameter specifies the number of input (or output) paths and must
 be of the form 2<sup>N</sup>, where N is a non-negative integer.
 When a Super Sample Rate operation is used, then the input data channel must be split over multiple ports where each successive input sample is sent to a different input port in a round-robin fashion.

@@ -44,7 +44,7 @@ vertical-align: middle;
 <section id="main" class="level3">
 <h3>Main</h3>
 <section id="inputoutput-data-type" class="level4">
-<h4>Input/Output Data Type</h4>
+<h4>Input/Output data type</h4>
 <p>Set the input/output data type.</p>
 </section>
 <section id="twiddle-factor-data-type" class="level4">
@@ -67,8 +67,8 @@ input/output data type is a float type.</li>
 transformation. This must be 2^N, where N is in the range 3 to 7
 inclusive.</p>
 </section>
-<section id="number-of-input-frames-per-window" class="level4">
-<h4>Number of input frames per window</h4>
+<section id="number-of-frames-per-window" class="level4">
+<h4>Number of frames per window</h4>
 <p>Describes the total number of frames used as an input to the IDFT
 block per window.</p>
 </section>
@@ -106,6 +106,14 @@ nearest odd number.</li>
 integer. They differ only in how they round for values that are exactly
 between two integers.</p>
 </section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>This parameter is intended to improve performance by parallelizing
+the DFT processing. When this parameter is N&gt;1, the block will have N
+input ports and N output ports.</p>
+<div class="noteBox">The DFT/IDFT blocks&#39; behavior in SSR mode differs from that of the FFT/IFFT blocks. Each input port of the DFT/IDFT should receive the same input samples. This differs from the FFT/IFFT blocks, which expect the input samples to be split across the input ports.</div>
+
+</section>
 <section id="saturation-mode" class="level4">
 <h4>Saturation mode</h4>
 <p>Describes the selection of saturation to be applied during the shift
@@ -120,16 +128,8 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>This parameter is intended to improve performance by parallelizing
-the DFT processing. When this parameter is N&gt;1, the block will have N
-input ports and N output ports.</p>
-<div class="noteBox">The DFT/IDFT blocks&#39; behavior in SSR mode differs from that of the FFT/IFFT blocks. Each input port of the DFT/IDFT should receive the same input samples. This differs from the FFT/IFFT blocks, which expect the input samples to be split across the input ports.</div>
-
-</section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of Cascade Stages</h4>
+<h4>Number of cascade stages</h4>
 <p>This determines the number of kernels the DFT will be divided over in
 series to improve throughput. When cascaded, each kernel will operate on
 a subset of the input signal and pass a partial result to the next

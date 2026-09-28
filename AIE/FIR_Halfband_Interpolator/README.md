@@ -14,12 +14,15 @@ Engines.
 
 ## Parameters
 
-### Main  
-#### Input/Output data type  
+### Main
+
+#### Input/Output data type
+
 Describes the type of individual data samples input to and output from
 the filter function. int16, cint16, int32, cint32, float, cfloat.
 
-#### Filter coefficients data type  
+#### Filter coefficients data type
+
 Describes the type of individual coefficients of the filter taps. It
 should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:
@@ -33,9 +36,10 @@ also satisfy the following rules:
   - Filter coefficients data type must be a float type if the Input/Output
   data type is a float type.
 
-#### Specify filter coefficients via input port  
+#### Specify filter coefficients via input port
+
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via the an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+filter coefficients via the an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 **AIE1 Devices:** Specify the filter coefficients as a vector of (N+1)/4+1 elements,
 where 'N' is the filter length.
@@ -48,24 +52,33 @@ where 'N' the filter length.
 Consider a half-band filter of length 7 with coefficients `[1 0 2 5 2 0 1]`. In this case, the coefficients vector should be set to `[1 2 2 1 5]`.
 
 #### Provide second set of input ports
+
 When this option is enabled, a second input port can be connected to the FIR, increasing available throughput. In Simulink, both input ports should be connected to the same signal.
 
 This setting is an implementation trade-off between performance and data bank resources. When this option is disabled, the FIR performance may be limited by load contention; when this option is enabled, two RAM banks are used for input, reducing load contention.
 
 #### Provide second set of output ports
+
 When this option is enabled, a second output port is added to the block producing the same data as the first output port.
 
-#### Filter coefficients  
+#### Filter coefficients
+
 Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where 'N' is a positive integer that represents the filter length and
 must be in the range 4 to 240 inclusive.
 
-#### Input window size (Number of samples)  
+#### Filter length
+
+Dialog parameter.
+
+#### Input window size (Number of samples)
+
 Describes the number of samples used as an input to the filter function.
 The number of values in the output window will be the Input window size
 multiplied by two by virtue of the halfband interpolation factor.
 
-#### Scale output down by 2^  
+#### Scale output down by 2^
+
 Describes the power of 2 shift down applied to the accumulation of FIR
 terms before output. It must be in the range 0 to 61.
 
@@ -109,7 +122,8 @@ The overall theoretical output data rate is `(SSR) * (Number of decimator polyph
 
 When SSR = 1, 1 or 2 interpolator polyphases can be used.
 
-#### Use center tap to upshift data  
+#### Use center tap to upshift data
+
 To upshift the data sample by the center tap coefficient (or its real
 part) position.
 
@@ -129,22 +143,8 @@ part) position.
     **Note**: When Upshift is enabled, the center tap value must be in the
     range 0 to 47.
 
-###### **Example 1**:
-A 7-tap FIR halfband interpolator has coefficients (1, 0, 2, 5, 2, 0,
-1). This would be input as taps[]= {1,2,5} because the context of
-halfband interpolation allows the remaining coefficients to be inferred.
+#### Number of cascade stages
 
-###### **Example 2**:
-A 7-tap FIR halfband interpolator has coefficients (1, 2, 2, 1, 2, 1,
-3). Here '3' is the center tap value.
-
-Now, if the input has a data stream of all ones (i.e., 1, 1, 1, etc.):
-- If the parameter is unset, the expected output will be: \[1, 3, 2,
-  3..\]
-- If the parameter is set, the expected output will be: \[1, 2^3, 2,
-  2^3...\]=\[1, 8, 2, 8..\]
-
-#### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
 
 ## Examples
@@ -157,6 +157,23 @@ This determines the number of kernels the FIR will be divided over in series to 
 
 ### References
 This block uses the Vitis DSP library implementation of a FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filtersAIE.html).
+
+### Example 1
+A 7-tap FIR halfband interpolator has coefficients (1, 0, 2, 5, 2, 0,
+1). This would be input as taps[]= {1,2,5} because the context of
+halfband interpolation allows the remaining coefficients to be inferred.
+
+### Example 2
+A 7-tap FIR halfband interpolator has coefficients (1, 2, 2, 1, 2, 1,
+3). Here '3' is the center tap value.
+
+Now, if the input has a data stream of all ones (i.e., 1, 1, 1, etc.):
+- If the parameter is unset, the expected output will be: \[1, 3, 2,
+  3..\]
+- If the parameter is set, the expected output will be: \[1, 2^3, 2,
+  2^3...\]=\[1, 8, 2, 8..\]
+
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
