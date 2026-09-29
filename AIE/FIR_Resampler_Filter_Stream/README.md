@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of input ports
 When this option is enabled, a second stream input can be connected to the FIR, increasing available throughput. When using a second stream input, the data should be organized in a 128-bit interleaved pattern. For example, for a cint16 input samples 0-3 should be sent over the first stream and samples 4-7 should be sent over the second stream.
@@ -57,6 +57,12 @@ filter. It must be in the range 3 to 16.
 #### Decimation factor  
 An unsigned integer which describes the decimation factor of the filter.
 It must be in the range 2 to 16.
+
+
+<!--
+#### Input frame size (Number of samples)
+Specifies the number of samples for a particular frame. The value must be in the range 16 to 4096 and the default value is 64. The IFFT operation will not begin until this number of samples has been input.
+-->
 
 #### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
@@ -94,7 +100,7 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Number of parallel input/output (SSR)  
+#### SSR
 This parameter specifies the number of input (or output) paths. SSR decomposition is currently unavailable for the FIR Resampler Filter Stream block. Please set this parameter to 1 and control Super Sample Rate operations by changing the number of interplator/decimator polyphases.
 
 #### Number of interpolator polyphases

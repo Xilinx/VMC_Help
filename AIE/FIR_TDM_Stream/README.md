@@ -52,6 +52,12 @@ Set the data type of the block input. The data type of the input signal to the b
 #### Output data type
 Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
+
+<!--
+#### Specify filter coefficients via input port
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+-->
+
 #### Filter coefficients data type  
 Set the filter coefficients data type. This parameter's setting may be restricted based on the Input/Output data type. In particular, 
 

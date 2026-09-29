@@ -36,6 +36,11 @@ To achieve the expected results for a given function, data type, and input domai
 | **All**                | Float         | 1 <= x < 4       | –                                 | –                                      | –                  | -                       |
 
 
+
+<!--
+#### Custom LookUp Values
+-->
+
 #### Specify LookUp Values
 Provide LUT values as a MATLAB vector or workspace variable name. The default values in this field will produce a sinusoidal function.
 
@@ -59,7 +64,7 @@ slope[0], offset[0], slope[1], offset[1], ... slope[2^(Coarse bits) - 1], offset
 A single lookup will require `sizeof(Data type) * 2 * 2^(Coarse bits)` bytes of memory. For performance reasons, a duplicate of the lookup is created by the func_approx graph. Configurations for **AIE-ML** or **AIE-MLv2** devices with a data type of `int16` or `bfloat16` will use the AI Engine API for improved parallel lookups. However, this requires an additional duplication within each lookup table. This duplication will be done within the graph but must be accounted for when calculating the memory required for the provided lookup tables. Users must provide the lookup table, without any duplication, in the **Specify LookUp Values** field.
 
 #### Specify LUT Values via input port
-When this option is enabled, the tool allows you to specify LUT values via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port. When multiple LUT ports are exposed, they should receive the same RTP values.
+When this option is enabled, the tool allows you to specify LUT values via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port. When multiple LUT ports are exposed, they should receive the same RTP values.
 
 For AIE-ML and AIE-MLv2 devices with a data type of `int16` or `bfloat16`, the LUT values must be repeated. For AIE-ML every 128 bits must be repeated; for AIE-MLv2 every 256 bits must be repeated.
 

@@ -19,6 +19,15 @@ This block does not support graph classes with 'input_plio' or 'output_plio' por
 
 ## Parameters
 
+
+<!--
+#### Class Variant
+-->
+
+<!--
+#### Graph header file(*.h)
+-->
+
 #### Graph Header file(\*.h)  
 This is a mandatory string that specifies the file (.h), where the
 application graph class is defined and the Adaptive Data Flow (ADF)
@@ -47,11 +56,11 @@ with the '-D' string and if the option `<definition>` value is not
 provided, it is assumed to be 1.
 
 ## Examples
-[Importing AIE-ML graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_ML_Graph_Import)
+[Importing AIE-ML graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Importing_AIE_blocks/AIE_ML_Graph_Import)
 
-[Importing AI Engine Graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Graph)
+[Importing AI Engine Graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Importing_AIE_blocks/AIE_Graph)
     
-[Importing DSP Library Function (Matrix Multiply) as a Graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/DSPlib/matrix_multiply)
+[Importing DSP Library Function (Matrix Multiply) as a Graph](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/DSPlib/matrix_multiply)
 
 
 

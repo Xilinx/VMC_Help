@@ -66,6 +66,12 @@ Set the filter coefficients data type. This parameter's setting may be restricte
 - Filter coefficients data type must be a float type if the Input/Output
   data type is a float type.
 
+
+<!--
+#### Specify filter coefficients via input port
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+-->
+
 #### Filter length
 This field describes the number of taps (coefficients) in the filter.
 

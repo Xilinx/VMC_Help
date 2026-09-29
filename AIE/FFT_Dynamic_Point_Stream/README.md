@@ -135,7 +135,7 @@ Specifies the maximum FFT size that is supported by Dynamic Point FFT.
   frames. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by the library element is 65536.
 
-#### Input Window Size
+#### Input frame size (Number of samples excluding header)
 
 Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default
@@ -185,6 +185,15 @@ This parameter is intended to improve performance and support FFT
   creates 8 stream inputs and there will be 8 subframe FFTs each of
   point size 2048. The specified FFT size and SSR values should be such
   that FFT size / SSR should not exceed 2048.
+
+
+#### Twiddle Mode
+
+This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
+
+Twiddle mode 0 means use max amplitude twiddles which saturate at `2^(N-1)-1`, where N is the number of bits in the type (e.g. `cint16` has 16 bits per component).
+
+Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e. `2^(N-1)`. This avoids saturation, but loses 1 bit of precision and so noise overall will be higher.
 
 ####  Number of Cascade Stages
 This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.

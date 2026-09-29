@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of input ports
 When this option is enabled, a second stream input can be connected to the FIR, increasing available throughput. When using a second stream input, the data should be organized in a 128-bit interleaved pattern. For example, for a cint16 input samples 0-3 should be sent over the first stream and samples 4-7 should be sent over the second stream.
@@ -46,6 +46,12 @@ When this option is enabled, a second stream output is added to the block. The t
 #### Filter coefficients  
 This field should be specified with the asymmetric filter coefficients
 and must be in the range 4 to 240 inclusive.
+
+
+<!--
+#### Filter length
+When using reloadable filter coefficients, use this parameter to specify the number of taps in the filter.
+-->
 
 #### Input frame size (Number of samples)  
 Describes the number of samples used as an input to the filter function.

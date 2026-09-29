@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify filter
-coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of input ports
 When this option is enabled, a second stream input can be connected to the FIR, increasing available throughput. When using a second stream input, the data should be organized in a 128-bit interleaved pattern. For example, for a cint16 input samples 0-3 should be sent over the first stream and samples 4-7 should be sent over the second stream.
@@ -47,6 +47,12 @@ When this option is enabled, a second stream output is added to the block. The t
 Specifies the asymmetric filter coefficients. The filter length must be
 in the range 4 to 240 and must be an integer multiple of the decimation
 factor.
+
+
+<!--
+#### Filter length
+When using reloadable filter coefficients, use this parameter to specify the number of taps in the filter.
+-->
 
 #### Decimation factor  
 An unsigned integer which describes the decimation factor of the filter.
@@ -88,7 +94,7 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Number of parallel input/output (SSR)  
+#### SSR
 This parameter specifies the number of input (or output) ports and must
 be of the form 2^N, where N is a non-negative integer.
 

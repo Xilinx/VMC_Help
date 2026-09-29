@@ -25,6 +25,12 @@ Describes the data type of the twiddle factors of the transform. It must be `cin
 #### IDFT size
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 7 inclusive.
 
+
+<!--
+#### Number of frames per window
+Describes the total number of frames used as an input to the DFT block per window.
+-->
+
 #### Number of input frames per window
 Describes the total number of frames used as an input to the IDFT block per window.
  

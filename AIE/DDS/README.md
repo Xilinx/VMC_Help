@@ -40,6 +40,12 @@ Allows the initial phase to be reloaded during simulation via an input port. By 
 #### Use iobuffer port for phase offset reload
 Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
 
+<!--
+#### Phase increment
+This specifies the phase increment between the samples. The value should be in the range 0 to 2^31.
+-->
+
+
 #### Initial phase increment  
 Specifies the phase increment between samples. The value must be in the
 range 0 to 2^31 and the default value is 0.

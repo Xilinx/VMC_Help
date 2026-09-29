@@ -32,6 +32,15 @@ This must be one of the following:
 
 Type choice is restricted by AIE variant.
 
+
+<!--
+#### Input dimension A (rows)
+-->
+
+<!--
+#### Input dimension B (columns)
+-->
+
 #### Input dimensions A (rows)
 Defines the number of rows (A) in each input frame or matrix.
 
