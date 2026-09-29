@@ -41,7 +41,7 @@ for indexing must be real, but table data can be complex.
 
 ## Parameters
 
-#### Table data
+#### Table Data
 
 This parameter accepts a 1-D vector of table values. The size of the
 vector determines the valid index range for the input index. The data
@@ -61,44 +61,57 @@ This parameter is an offset into the table data that will be added to
 the index input. This makes it possible to use negative indices and
 perform look up operation.
 
-#### When input is out of range...
+#### When input is out of range
 
 This parameter will guard the index value if it exceeds the valid table
 size range.
+##### Saturate at table ends
+If index value exceeds the valid table size range, then index value is saturated to either top or bottom of table size range, depending on the overflow direction.
+
+##### Wrap around
+If index value exceeds the valid table size range, then index value is wrapped into the valid table size range.
+
+
 
 #### Output data type
 
 Specifies the output data type.
 
-Additional dialog notes:
+##### double
+double precision floating-point
 
-Saturate at table ends. If index value exceeds the valid table size range, then index value is saturated to either top or bottom of table size range, depending on the overflow direction.
+##### single
+single precision floating-point
 
-Wrap around. If index value exceeds the valid table size range, then index value is wrapped into the valid table size range.
+##### int8
+8-bit signed integer
 
-double. double precision floating-point
+##### uint8
+8-bit unsigned integer
 
-single. single precision floating-point
+##### int16
+16-bit signed integer
 
-int8. 8-bit signed integer
+##### uint16
+16-bit unsigned integer
 
-uint8. 8-bit unsigned integer
+##### int32
+32-bit signed integer
 
-int16. 16-bit signed integer
+##### uint32
+32-bit unsigned integer
 
-uint16. 16-bit unsigned integer
+##### boolean
+boolean
 
-int32. 32-bit signed integer
+##### fixed
+fixed-point
 
-uint32. 32-bit unsigned integer
+##### half
+half precision floating-point
 
-boolean. boolean
-
-fixed. fixed-point
-
-half. half precision floating-point
-
-data type expression. A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)).
+##### data type expression
+A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)).
 
 
 
@@ -107,4 +120,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

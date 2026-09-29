@@ -71,11 +71,11 @@ output is integral (int8, int16, int32, uint8, uint16, uint32).
 
 Settings for the Saturate on integer overflow parameter are:
 
-Additional dialog notes:
+##### Not selected
+Integer overflow is handled by wrapping.
 
-Not selected. Integer overflow is handled by wrapping.
-
-Selected. Integer overflow is handled by saturation.
+##### Selected
+Integer overflow is handled by saturation.
 
 When overflow is detected, the Diagnostic Viewer displays messages that
 depend on the diagnostic action you specify in the Simulink Editor. To
@@ -88,4 +88,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

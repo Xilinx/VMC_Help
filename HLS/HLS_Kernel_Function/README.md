@@ -28,38 +28,33 @@ For a complete list of supported function arguments, see the table below.
 
 ## Parameters
 
+<!--
 #### Port Attributes
+-->
 
-Dialog parameter.
-
+<!--
 #### Specify argument directionality and interface in the following table column then click Build
+-->
 
-Dialog parameter.
-
+<!--
 #### Function Template Parameters
-
-Dialog parameter.
+-->
 
 #### Kernel header file
-
 The name of the HLS kernel header file that contains the function declaration. The string could be just the file name, a relative path to the file, or an absolute path of the file. Use the browse button to select the file.
 
 #### Kernel function
-
 The name of the kernel function in C/C++ for which the HLS Kernel block is to be created.
 
 #### Kernel source file
-
 The name of the source file that contains the kernel function implementation (definition). The string could be just the file name, a relative path to the file or the absolute path of the file.
 
 #### Kernel search paths
-
 If the kernel header file or the kernel source file is not found using the value provided through the 'Kernel header file' or 'Kernel source file' fields respectively, then the paths provided through 'Kernel search paths' are used to locate the files.
 
 This parameter allows use of environment variables while specifying paths for the kernel header file and the kernel source file. The environment variable can be used in either ${ENV} or $ENV format.
 
-#### Preprocessor options
-
+#### Preprocessor Options
 Optional preprocessor arguments for downstream compilation with specific preprocessor options. Express multiple preprocessor options as a cell array, e.g. `{'-DDEBUG', '-DARRAY_SIZE=16'}`.
 
 The following two preprocessor option formats will be accepted: `-Dname` and `-Dname=definition`. That is, the optional argument must begin with the -D string and if the option definition value is not provided, it is assumed to be 1.

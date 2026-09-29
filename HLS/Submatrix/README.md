@@ -39,87 +39,93 @@ type.
 
 ## Parameters
 
-#### Row span
-
+#### Row span  
 The range of input rows to be retained in the output. Options are All
 rows, One row, or Range of rows.
 
-#### Starting row
+#### Row  
+The input row to be used as the row of the output. Row is enabled when
+you select One row for Row span.
 
+#### Row index  
+The index of the input row to be used as the first row of the output.
+Row index is enabled when you select Index for Row.
+
+#### Row offset  
+The offset of the input row to be used as the first row of the output.
+Row offset is enabled when you select Offset from middle or Offset from
+last for Row.
+
+#### Starting row  
 The input row to be used as the first row of the output. Starting row is
 enabled when you select Range of rows for Row span.
 
-#### Ending row
+#### Starting row index  
+The index of the input row to be used as the first row of the output.
+Starting row index is enabled when you select Index for Starting row.
 
+#### Starting row offset  
+The offset of the input row to be used as the first row of the output.
+Starting row offset is enabled when you select Offset from middle or
+Offset from last for Starting row.
+
+#### Ending row  
 The input row to be used as the last row of the output. Ending row is
 enabled when you select Range of rows for Row span and you select any
 option but Last for Starting row.
 
-#### Column span
+#### Ending row index  
+The index of the input row to be used as the last row of the output.
+Ending row index is enabled when you select Index for Ending row.
 
+#### Ending row offset  
+The offset of the input row to be used as the last row of the output.
+Ending row offset is enabled when you select Offset from middle or
+Offset from last for Ending row.
+
+#### Column span  
 The range of input columns to be retained in the output. Options are All
 columns, One column, or Range of columns.
 
-#### Starting column
+#### Column  
+The input column to be used as the column of the output. Column is
+enabled when you select One column for Column span.
 
+#### Column index  
+The index of the input column to be used as the first column of the
+output. Column index is enabled when you select Index for Column.
+
+#### Column offset  
+The offset of the input column to be used as the first column of the
+output. Column offset is enabled when you select Offset from middle or
+Offset from last for Column.
+
+#### Starting column  
 The input column to be used as the first column of the output. Starting
 column is enabled when you select Range of columns for Column span.
 
-#### Ending column
+#### Starting column index  
+The index of the input column to be used as the first column of the
+output. Starting column index is enabled when you select Index for
+Starting column.
 
+#### Starting column offset  
+The offset of the input column to be used as the first column of the
+output. Starting column offset is enabled when you select Offset from
+middle or Offset from last for Starting column.
+
+#### Ending column  
 The input column to be used as the last column of the output. Ending
 column is enabled when you select Range of columns for Column span and
 you select any option but Last for Starting column.
 
-Additional dialog notes:
-
-Row. The input row to be used as the row of the output. Row is enabled when
-you select One row for Row span.
-
-Row index. The index of the input row to be used as the first row of the output.
-Row index is enabled when you select Index for Row.
-
-Row offset. The offset of the input row to be used as the first row of the output.
-Row offset is enabled when you select Offset from middle or Offset from
-last for Row.
-
-Starting row index. The index of the input row to be used as the first row of the output.
-Starting row index is enabled when you select Index for Starting row.
-
-Starting row offset. The offset of the input row to be used as the first row of the output.
-Starting row offset is enabled when you select Offset from middle or
-Offset from last for Starting row.
-
-Ending row index. The index of the input row to be used as the last row of the output.
-Ending row index is enabled when you select Index for Ending row.
-
-Ending row offset. The offset of the input row to be used as the last row of the output.
-Ending row offset is enabled when you select Offset from middle or
-Offset from last for Ending row.
-
-Column. The input column to be used as the column of the output. Column is
-enabled when you select One column for Column span.
-
-Column index. The index of the input column to be used as the first column of the
-output. Column index is enabled when you select Index for Column.
-
-Column offset. The offset of the input column to be used as the first column of the
-output. Column offset is enabled when you select Offset from middle or
-Offset from last for Column.
-
-Starting column index. The index of the input column to be used as the first column of the
-output. Starting column index is enabled when you select Index for
-Starting column.
-
-Starting column offset. The offset of the input column to be used as the first column of the
-output. Starting column offset is enabled when you select Offset from
-middle or Offset from last for Starting column.
-
-Ending column index. The index of the input column to be used as the last column of the
+#### Ending column index  
+The index of the input column to be used as the last column of the
 output. Ending column index is enabled when you select Index for Ending
 column.
 
-Ending column offset. The offset of the input column to be used as the last column of the
+#### Ending column offset  
+The offset of the input column to be used as the last column of the
 output. Ending column offset is enabled when you select Offset from
 middle or Offset from last for Ending column.
 
@@ -128,4 +134,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

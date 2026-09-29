@@ -57,13 +57,15 @@ This parameter specifies whether reduction takes place over all
 dimensions or over a specified dimension. If reduction is specified over
 all dimensions, the output signal is a scalar.
 
-Additional dialog notes:
+##### All dimensions
+Reduction takes place over all dimensions.
 
-All dimensions. Reduction takes place over all dimensions.
+##### Specified dimension
+Reduction takes place over the dimension specified by the Dimension parameter.
 
-Specified dimension. Reduction takes place over the dimension specified by the Dimension parameter.
+#### Dimension
 
-Dimension. If the Reduce over parameter is set to Specified dimension, the
+If the Reduce over parameter is set to Specified dimension, the
 Dimension parameter specifies over which dimension reduction takes
 place.
 
@@ -73,9 +75,11 @@ place.
   is 2, the output has dimensions M x 1.
 - If the input signal is scalar or 1 x 1, the output dimension is 1 x 1.
 
-1. Reduce over row dimension.
+##### 1
+Reduce over row dimension.
 
-2. Reduce over column dimension.
+##### 2
+Reduce over column dimension.
 
 **Note**: If the reduce Dimension is specified to be 2 the input signal must
 be two-dimensional.
@@ -85,4 +89,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

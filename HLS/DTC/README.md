@@ -57,68 +57,90 @@ signal.
 
 ## Parameters
 
-#### Output data type
-
+#### Output data type  
 This parameter specifies the data type of the output signal. If fixed
 is specified, more parameters are available.
 
-Additional dialog notes:
+##### double
+double precision floating point
 
-double. double precision floating point
+##### single
+single precision floating point
 
-single. single precision floating point
+##### int8
+8-bit signed integer
 
-int8. 8-bit signed integer
+##### uint8
+8-bit unsigned integer
 
-uint8. 8-bit unsigned integer
+##### int16
+16-bit signed integer
 
-int16. 16-bit signed integer
+##### uint16
+16-bit unsigned integer
 
-uint16. 16-bit unsigned integer
+##### int32
+32-bit signed integer
 
-int32. 32-bit signed integer
+##### uint32
+32-bit unsigned integer
 
-uint32. 32-bit unsigned integer
+##### logical
+boolean
 
-logical. boolean
+##### fixed
+Xilinx supported fixed-point
 
-fixed. Xilinx supported fixed-point
+##### half
+Xilinx supported half precision floating point
 
-half. Xilinx supported half precision floating point
+##### data type expression
+A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=ug1483-model-composer-sys-gen-user-guide))
 
-data type expression. A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=ug1483-model-composer-sys-gen-user-guide))
 
-Signedness. If the Output data type is set to fixed, the Signedness parameter
+#### Signedness  
+If the Output data type is set to fixed, the Signedness parameter
 specifies whether the output is a signed fixed-point or unsigned
 fixed-point data type.
+##### Signed
+The output type contains both positive and negative numbers.
 
-Signed. The output type contains both positive and negative numbers.
-
-Unsigned. The output type contains only non-negative numbers.
+##### Unsigned
+The output type contains only non-negative numbers.
 
 Settings for the Signedness parameter are as follows.
 
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-Word length. If the Output data type is set to fixed, the Word length parameter
+
+#### Word length  
+If the Output data type is set to fixed, the Word length parameter
 specifies the number of bits used to represent it.
 
-16. N. A positive integer
+##### 16
+
+##### N
+A positive integer
 
 
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-Fractional length. If the Output data type is set to fixed, the Fractional length
+#### Fractional length  
+If the Output data type is set to fixed, the Fractional length
 parameter specifies the number of bits to the right of the binary point.
 
-10. N. An integer
+##### 10
+
+##### N
+An integer
 
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-Round. If the Output data type is set to fixed, the Round parameter allows you
+#### Round  
+If the Output data type is set to fixed, the Round parameter allows you
 to select among five rounding and two truncation options.
 
 If one of the five rounding options is selected, the block always rounds
@@ -147,43 +169,61 @@ setting for the Output data type parameter.
 
 Settings for the Round parameter are:
 
-Round to plus infinity. Rounding to plus infinity
+##### Round to plus infinity
+Rounding to plus infinity
 
-Round to zero. Rounding to zero
+##### Round to zero
+Rounding to zero
 
-Round to minus infinity. Rounding to minus infinity
+##### Round to minus infinity
+Rounding to minus infinity
 
-Round to infinity. Rounding to infinity
+##### Round to infinity
+Rounding to infinity
 
-Convergent rounding. Convergent rounding
+##### Convergent rounding
+Convergent rounding
 
-Truncation to minus infinity. Truncation to minus infinity
+##### Truncation to minus infinity
+Truncation to minus infinity
 
-Truncation to zero. Truncation to zero
+##### Truncation to zero
+Truncation to zero
 
-Overflow. If the Output data type is set to `fixed`, the Overflow parameter
+
+#### Overflow  
+If the Output data type is set to `fixed`, the Overflow parameter
 specifies the overflow mode applied during conversion.
 
 This parameter is available only if fixed is selected as the setting for
 parameter Output data type.
 
-Saturation. Saturation
+##### Saturation
+Saturation
 
-Saturation to Zero. Saturation to zero
+##### Saturation to Zero
+Saturation to zero
 
-Symmetrical Saturation. Symmetrical saturation
+##### Symmetrical Saturation
+Symmetrical saturation
 
-Wrap around. Wrap around
+##### Wrap around
+Wrap around
 
-Sign-Magnitude Wrap Around. Sign magnitude wrap around
+##### Sign-Magnitude Wrap Around
+Sign magnitude wrap around
 
-Type Expression. If the Output data type is set to data type expression, the Type
+
+#### Type Expression  
+If the Output data type is set to data type expression, the Type
 Expression parameter specifies the output data type as a string.
 
 This parameter is available only if data type expression is selected as
 the setting for parameter Output data type.
 
-Saturate on integer overflow. This parameter specifies whether integer overflow is handled by wrapping
+
+#### Saturate on integer overflow  
+This parameter specifies whether integer overflow is handled by wrapping
 (default) or by saturating. This parameter is relevant only if the
 output is integral (int8, int16, int32, uint8, uint16, uint32).
 
@@ -195,9 +235,11 @@ on overflow.
 
 Settings for the Saturate on integer overflow parameter are:
 
-Not Selected. Integer overflow is handled by wrapping.
+##### Not Selected
+Integer overflow is handled by wrapping.
 
-Selected. Integer overflow is handled by saturation.
+##### Selected
+Integer overflow is handled by saturation.
 
 
 If the Output data type is set to fixed and overflow is detected, the
@@ -212,4 +254,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

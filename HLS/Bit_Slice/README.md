@@ -69,6 +69,14 @@ Following are the settings for the Specify range as parameter.
 | Top and bottom bit | The Top bit of the range specifies the offset of the most significant bit to be extracted. The bottom bit of the range gives the offset of the least significant bit to be extracted. The width of the extracted range is given implicitly. |
 
 
+#### Slice width
+
+Specifies the width of the bit range to be extracted. Slice width is
+only enabled if the Specify range as parameter is set to Top bit + width
+or Bottom bit + width.
+
+Enter a scalar positive integer value for Slice width.
+
 #### Bit position relative to
 
 Defines the basis for offset specifications in both Top of bit range and
@@ -83,7 +91,7 @@ Following are the settings for the Bit position relative to parameter.
 | Most Significant Bit  | Defines the offset parameter as counting from the MSB of the input value, with offset 0 denoting the MSB, offset -1 denoting the bit to the right of the MSB, etc. If the Most Significant Bit stetting is selected, the With offset parameter cannot specify a positive offset.                                                                             |
 
 
-#### with offset
+#### With offset
 
 Specifies the offset to be applied to the basis specified by the
 corresponding Bit position relative to parameter. The With offset
@@ -93,22 +101,6 @@ sections of the block dialog box.
 Negative offsets specify bit positions to the right of the anchor (zero
 offset basis). Positive offsets specify bit positions to the left of the
 anchor.
-
-#### Bit position relative to
-
-Dialog parameter.
-
-#### with offset
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Slice width. Specifies the width of the bit range to be extracted. Slice width is
-only enabled if the Specify range as parameter is set to Top bit + width
-or Bottom bit + width.
-
-Enter a scalar positive integer value for Slice width.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

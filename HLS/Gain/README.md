@@ -54,46 +54,38 @@ parameters are available.
 
 Settings for the Gain data type parameter are:
 
-#### Output data type same as input
+##### double
+double precision floating-point
 
-This parameter specifies the way the output data type is determined.
+##### single
+single precision floating-point
 
-If disabled (unchecked) the output type is computed via built-in type
-promotion rules. If enabled (checked), the output data type is the same
-as the input type.
+##### int8
+8-bit signed integer
 
-#### Saturate on integer overflow
+##### uint8
+8-bit unsigned integer
 
-This parameter specifies the behavior in case of integer overflow. By
-default the option is disabled and overflow would result in value wrap.
-With the option enabled, integer overflow gets mitigated by saturation
-at the limits of the output data type.
+##### int16
+16-bit signed integer
 
-Settings for the Saturate on integer overflow parameter are:
+##### uint16
+16-bit unsigned integer
 
-Additional dialog notes:
+##### int32
+32-bit signed integer
 
-double. double precision floating-point
+##### uint32
+32-bit unsigned integer
 
-single. single precision floating-point
+##### fixed
+fixed-point
 
-int8. 8-bit signed integer
+##### half
+half precision floating-point
 
-uint8. 8-bit unsigned integer
-
-int16. 16-bit signed integer
-
-uint16. 16-bit unsigned integer
-
-int32. 32-bit signed integer
-
-uint32. 32-bit unsigned integer
-
-fixed. fixed-point
-
-half. half precision floating-point
-
-data type expression. A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
+##### data type expression
+A string that specifies the output data type. See "Working with Data Type Expression" in the Vitis Model Composer User Guide ([UG1483](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug1483-model-composer-sys-gen-user-guide)). |
 
 Unless the **Output data type same as input** parameter is enabled, the
 output data type will be a function of the input type and the specified
@@ -111,9 +103,28 @@ Gain data type.
   will be the larger of either input or Gain data type, and will be a
   signed integer if either one is signed.
 
-Unchecked. Wrap around
+#### Output data type same as input
 
-Checked. Saturation
+This parameter specifies the way the output data type is determined.
+
+If disabled (unchecked) the output type is computed via built-in type
+promotion rules. If enabled (checked), the output data type is the same
+as the input type.
+
+#### Saturate on integer overflow
+
+This parameter specifies the behavior in case of integer overflow. By
+default the option is disabled and overflow would result in value wrap.
+With the option enabled, integer overflow gets mitigated by saturation
+at the limits of the output data type.
+
+Settings for the Saturate on integer overflow parameter are:
+
+##### Unchecked
+Wrap around
+
+##### Checked
+Saturation
 
 When overflow is detected, the Diagnostic Viewer displays messages that
 depend on the diagnostic action you specify in the Simulink Editor. To
@@ -126,4 +137,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

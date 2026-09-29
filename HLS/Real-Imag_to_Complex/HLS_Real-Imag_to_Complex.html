@@ -76,34 +76,52 @@ non-scalar, they must agree on dimensions.</li>
 <p>Input is a drop down menu parameter which specifies whether real,
 imaginary, or both of the parts of the output signal are specified as
 inputs.</p>
-<p>Additional dialog notes:</p>
-<p>Settings. Following are settings for the Input parameter.</p>
-<p>Real and imag. Real and imaginary parts of the output signal are
-specified using Re and Im inputs of the block, respectively.</p>
-<p>Real. The block has only Re input in this case. Real part of the
-output signal is specified using the Re input of the block, while its
-imaginary part is specified using the Imag part parameter.</p>
-<p>Imag. The block has only Im input in this case. Imaginary part of the
+<section id="settings" class="level5">
+<h5>Settings</h5>
+<p>Following are settings for the Input parameter.</p>
+<section id="real-and-imag" class="level6">
+<h6>Real and imag</h6>
+<p>Real and imaginary parts of the output signal are specified using Re
+and Im inputs of the block, respectively.</p>
+</section>
+<section id="real" class="level6">
+<h6>Real</h6>
+<p>The block has only Re input in this case. Real part of the output
+signal is specified using the Re input of the block, while its imaginary
+part is specified using the Imag part parameter.</p>
+</section>
+<section id="imag" class="level6">
+<h6>Imag</h6>
+<p>The block has only Im input in this case. Imaginary part of the
 output signal is specified using the Im input of the block, while its
 real part is specified using the Real part parameter.</p>
-<p>Real part. Specify the constant real part of the output signal when
-Input is set to Imag. This parameter is visible only when you set Input
-to Imag.</p>
-<ol start="0" type="1">
-<li>The value of the Real part parameter must be a numeric, real-valued
-scalar, vector, or matrix.</li>
-</ol>
-<p>Imag part. Specify the constant imaginary part of the output signal
-when Input is set to Real. This parameter is visible only when you set
-Input to Real.</p>
-<ol start="0" type="1">
-<li>The value of the Imag part parameter must be a numeric, real-valued
-scalar, vector, or matrix.</li>
-</ol>
+</section>
+</section>
+</section>
+<section id="real-part" class="level4">
+<h4>Real part</h4>
+<p>Specify the constant real part of the output signal when Input is set
+to Imag. This parameter is visible only when you set Input to Imag.</p>
+<section id="0" class="level5">
+<h5>0</h5>
+<p>The value of the Real part parameter must be a numeric, real-valued
+scalar, vector, or matrix.</p>
+</section>
+</section>
+<section id="imag-part" class="level4">
+<h4>Imag part</h4>
+<p>Specify the constant imaginary part of the output signal when Input
+is set to Real. This parameter is visible only when you set Input to
+Real.</p>
+<section id="0-1" class="level5">
+<h5>0</h5>
+<p>The value of the Imag part parameter must be a numeric, real-valued
+scalar, vector, or matrix.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
 </section>
 </section>
 </section>

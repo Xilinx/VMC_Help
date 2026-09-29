@@ -56,17 +56,19 @@ all dimensions, the output signal is a scalar.
 
 Following are the settings for the Reduce over parameter.
 
-Additional dialog notes:
+##### All dimensions
+The Reduce AND operator will be applied to all elements, producing a scalar output.
 
-All dimensions. The Reduce AND operator will be applied to all elements, producing a scalar output.
-
-Specified dimension. The Reduce AND operator will be applied along the specified dimension, producing a vector output along the opposite dimension. When Dimension 1 is specified, the Reduction AND is applied along columns, producing a row vector as output. When Dimension 2 is specified, the Reduction AND is applied along rows, producing a column vector as output.
+##### Specified dimension
+The Reduce AND operator will be applied along the specified dimension, producing a vector output along the opposite dimension. When Dimension 1 is specified, the Reduction AND is applied along columns, producing a row vector as output. When Dimension 2 is specified, the Reduction AND is applied along rows, producing a column vector as output.
 
 **Note**: The dimension specified will be the one that gets reduced to
 size 1. For example, a 2-D M x N input matrix specifying Dimension 1
 (number of rows M) will result in a 1 x N row vector.
 
-Dimension. If the Reduce over parameter is set to Specified dimension, the
+#### Dimension
+
+If the Reduce over parameter is set to Specified dimension, the
 Dimension parameter specifies over which dimension reduction takes
 place.
 
@@ -78,9 +80,11 @@ place.
 
 Following are the settings for the Dimension parameter.
 
-1. Reduce over row dimension.
+##### 1
+Reduce over row dimension.
 
-2. Reduce over column dimension.
+##### 2
+Reduce over column dimension.
 
 
 **Note**: If the reduce Dimension is specified to be 2 the input signal must
@@ -91,4 +95,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

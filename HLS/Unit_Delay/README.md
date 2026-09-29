@@ -30,8 +30,7 @@ Data type support is:
 
 ## Parameters
 
-#### Initial condition
-
+#### Initial Condition
 Specifies the initial value.
 
 The Initial Condition can be scalar, vector, or matrix, of real or
@@ -42,4 +41,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

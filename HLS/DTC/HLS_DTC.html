@@ -87,47 +87,106 @@ signal.</p>
 <h4>Output data type</h4>
 <p>This parameter specifies the data type of the output signal. If fixed
 is specified, more parameters are available.</p>
-<p>Additional dialog notes:</p>
-<p>double. double precision floating point</p>
-<p>single. single precision floating point</p>
-<p>int8. 8-bit signed integer</p>
-<p>uint8. 8-bit unsigned integer</p>
-<p>int16. 16-bit signed integer</p>
-<p>uint16. 16-bit unsigned integer</p>
-<p>int32. 32-bit signed integer</p>
-<p>uint32. 32-bit unsigned integer</p>
-<p>logical. boolean</p>
-<p>fixed. Xilinx supported fixed-point</p>
-<p>half. Xilinx supported half precision floating point</p>
-<p>data type expression. A string that specifies the output data type.
-See &quot;Working with Data Type Expression&quot; in the Vitis Model Composer User
-Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?isLatest=true&amp;ft:locale=en-US&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>)</p>
-<p>Signedness. If the Output data type is set to fixed, the Signedness
-parameter specifies whether the output is a signed fixed-point or
-unsigned fixed-point data type.</p>
-<p>Signed. The output type contains both positive and negative
-numbers.</p>
-<p>Unsigned. The output type contains only non-negative numbers.</p>
+<section id="double" class="level5">
+<h5>double</h5>
+<p>double precision floating point</p>
+</section>
+<section id="single" class="level5">
+<h5>single</h5>
+<p>single precision floating point</p>
+</section>
+<section id="int8" class="level5">
+<h5>int8</h5>
+<p>8-bit signed integer</p>
+</section>
+<section id="uint8" class="level5">
+<h5>uint8</h5>
+<p>8-bit unsigned integer</p>
+</section>
+<section id="int16" class="level5">
+<h5>int16</h5>
+<p>16-bit signed integer</p>
+</section>
+<section id="uint16" class="level5">
+<h5>uint16</h5>
+<p>16-bit unsigned integer</p>
+</section>
+<section id="int32" class="level5">
+<h5>int32</h5>
+<p>32-bit signed integer</p>
+</section>
+<section id="uint32" class="level5">
+<h5>uint32</h5>
+<p>32-bit unsigned integer</p>
+</section>
+<section id="logical" class="level5">
+<h5>logical</h5>
+<p>boolean</p>
+</section>
+<section id="fixed" class="level5">
+<h5>fixed</h5>
+<p>Xilinx supported fixed-point</p>
+</section>
+<section id="half" class="level5">
+<h5>half</h5>
+<p>Xilinx supported half precision floating point</p>
+</section>
+<section id="data-type-expression" class="level5">
+<h5>data type expression</h5>
+<p>A string that specifies the output data type. See &quot;Working with Data
+Type Expression&quot; in the Vitis Model Composer User Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?isLatest=true&amp;ft:locale=en-US&amp;url=ug1483-model-composer-sys-gen-user-guide">UG1483</a>)</p>
+</section>
+</section>
+<section id="signedness" class="level4">
+<h4>Signedness</h4>
+<p>If the Output data type is set to fixed, the Signedness parameter
+specifies whether the output is a signed fixed-point or unsigned
+fixed-point data type.</p>
+<section id="signed" class="level5">
+<h5>Signed</h5>
+<p>The output type contains both positive and negative numbers.</p>
+</section>
+<section id="unsigned" class="level5">
+<h5>Unsigned</h5>
+<p>The output type contains only non-negative numbers.</p>
 <p>Settings for the Signedness parameter are as follows.</p>
 <p>This parameter is available only if fixed is selected as the setting
 for parameter Output data type.</p>
-<p>Word length. If the Output data type is set to fixed, the Word length
-parameter specifies the number of bits used to represent it.</p>
-<ol start="16" type="1">
-<li>N. A positive integer</li>
-</ol>
+</section>
+</section>
+<section id="word-length" class="level4">
+<h4>Word length</h4>
+<p>If the Output data type is set to fixed, the Word length parameter
+specifies the number of bits used to represent it.</p>
+<section id="16" class="level5">
+<h5>16</h5>
+</section>
+<section id="n" class="level5">
+<h5>N</h5>
+<p>A positive integer</p>
 <p>This parameter is available only if fixed is selected as the setting
 for parameter Output data type.</p>
-<p>Fractional length. If the Output data type is set to fixed, the
-Fractional length parameter specifies the number of bits to the right of
-the binary point.</p>
-<ol start="10" type="1">
-<li>N. An integer</li>
-</ol>
+</section>
+</section>
+<section id="fractional-length" class="level4">
+<h4>Fractional length</h4>
+<p>If the Output data type is set to fixed, the Fractional length
+parameter specifies the number of bits to the right of the binary
+point.</p>
+<section id="10" class="level5">
+<h5>10</h5>
+</section>
+<section id="n-1" class="level5">
+<h5>N</h5>
+<p>An integer</p>
 <p>This parameter is available only if fixed is selected as the setting
 for parameter Output data type.</p>
-<p>Round. If the Output data type is set to fixed, the Round parameter
-allows you to select among five rounding and two truncation options.</p>
+</section>
+</section>
+<section id="round" class="level4">
+<h4>Round</h4>
+<p>If the Output data type is set to fixed, the Round parameter allows
+you to select among five rounding and two truncation options.</p>
 <p>If one of the five rounding options is selected, the block always
 rounds to the nearest supported precision. The five rounding choices are
 relevant only in case of a tie. For example, assume the output type is
@@ -148,40 +207,87 @@ requires the smallest hardware resources among all the options.</p>
 <p>The Round parameter is available only if fixed is selected as the
 setting for the Output data type parameter.</p>
 <p>Settings for the Round parameter are:</p>
-<p>Round to plus infinity. Rounding to plus infinity</p>
-<p>Round to zero. Rounding to zero</p>
-<p>Round to minus infinity. Rounding to minus infinity</p>
-<p>Round to infinity. Rounding to infinity</p>
-<p>Convergent rounding. Convergent rounding</p>
-<p>Truncation to minus infinity. Truncation to minus infinity</p>
-<p>Truncation to zero. Truncation to zero</p>
-<p>Overflow. If the Output data type is set to <code>fixed</code>, the
-Overflow parameter specifies the overflow mode applied during
-conversion.</p>
+<section id="round-to-plus-infinity" class="level5">
+<h5>Round to plus infinity</h5>
+<p>Rounding to plus infinity</p>
+</section>
+<section id="round-to-zero" class="level5">
+<h5>Round to zero</h5>
+<p>Rounding to zero</p>
+</section>
+<section id="round-to-minus-infinity" class="level5">
+<h5>Round to minus infinity</h5>
+<p>Rounding to minus infinity</p>
+</section>
+<section id="round-to-infinity" class="level5">
+<h5>Round to infinity</h5>
+<p>Rounding to infinity</p>
+</section>
+<section id="convergent-rounding" class="level5">
+<h5>Convergent rounding</h5>
+<p>Convergent rounding</p>
+</section>
+<section id="truncation-to-minus-infinity" class="level5">
+<h5>Truncation to minus infinity</h5>
+<p>Truncation to minus infinity</p>
+</section>
+<section id="truncation-to-zero" class="level5">
+<h5>Truncation to zero</h5>
+<p>Truncation to zero</p>
+</section>
+</section>
+<section id="overflow" class="level4">
+<h4>Overflow</h4>
+<p>If the Output data type is set to <code>fixed</code>, the Overflow
+parameter specifies the overflow mode applied during conversion.</p>
 <p>This parameter is available only if fixed is selected as the setting
 for parameter Output data type.</p>
-<p>Saturation. Saturation</p>
-<p>Saturation to Zero. Saturation to zero</p>
-<p>Symmetrical Saturation. Symmetrical saturation</p>
-<p>Wrap around. Wrap around</p>
-<p>Sign-Magnitude Wrap Around. Sign magnitude wrap around</p>
-<p>Type Expression. If the Output data type is set to data type
-expression, the Type Expression parameter specifies the output data type
-as a string.</p>
+<section id="saturation" class="level5">
+<h5>Saturation</h5>
+<p>Saturation</p>
+</section>
+<section id="saturation-to-zero" class="level5">
+<h5>Saturation to Zero</h5>
+<p>Saturation to zero</p>
+</section>
+<section id="symmetrical-saturation" class="level5">
+<h5>Symmetrical Saturation</h5>
+<p>Symmetrical saturation</p>
+</section>
+<section id="wrap-around" class="level5">
+<h5>Wrap around</h5>
+<p>Wrap around</p>
+</section>
+<section id="sign-magnitude-wrap-around" class="level5">
+<h5>Sign-Magnitude Wrap Around</h5>
+<p>Sign magnitude wrap around</p>
+</section>
+</section>
+<section id="type-expression" class="level4">
+<h4>Type Expression</h4>
+<p>If the Output data type is set to data type expression, the Type
+Expression parameter specifies the output data type as a string.</p>
 <p>This parameter is available only if data type expression is selected
 as the setting for parameter Output data type.</p>
-<p>Saturate on integer overflow. This parameter specifies whether
-integer overflow is handled by wrapping (default) or by saturating. This
-parameter is relevant only if the output is integral (int8, int16,
-int32, uint8, uint16, uint32).</p>
+</section>
+<section id="saturate-on-integer-overflow" class="level4">
+<h4>Saturate on integer overflow</h4>
+<p>This parameter specifies whether integer overflow is handled by
+wrapping (default) or by saturating. This parameter is relevant only if
+the output is integral (int8, int16, int32, uint8, uint16, uint32).</p>
 <p>When overflow is detected, the Diagnostic Viewer displays messages
 depending on the diagnostic action selected in the Configuration
 Parameters dialog box. To configure, in the Configuration
 Parameters → Diagnostics → Data Validity pane, set the Wrap or Saturate
 on overflow.</p>
 <p>Settings for the Saturate on integer overflow parameter are:</p>
-<p>Not Selected. Integer overflow is handled by wrapping.</p>
-<p>Selected. Integer overflow is handled by saturation.</p>
+<section id="not-selected" class="level5">
+<h5>Not Selected</h5>
+<p>Integer overflow is handled by wrapping.</p>
+</section>
+<section id="selected" class="level5">
+<h5>Selected</h5>
+<p>Integer overflow is handled by saturation.</p>
 <p>If the Output data type is set to fixed and overflow is detected, the
 Diagnostic Viewer displays messages that depend on the diagnostic action
 you specify in the Simulink Editor. To configure, select
@@ -192,6 +298,7 @@ overflow or Saturate on overflow parameter.</p>
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
 </section>
 </section>
 </section>
