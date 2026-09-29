@@ -10,40 +10,48 @@ AI Engine/Solver/Buffer IO
 
 ## Description
 
-This block computes the QR decomposition of an input matrix A, producing orthogonal matrix Q and upper triangular matrix R. The Modified Gram-Schmidt implementation is supported on AIE, AIE-ML, and AIE-ML v2 devices. A Householder variant may be available when supported by the underlying DSPLib delivery.
+This block computes the QR decomposition of an input matrix `A`, producing an orthogonal matrix `Q` and an upper triangular matrix `R` such that `A = Q × R`. It uses the Modified Gram-Schmidt method. This implementation is supported on AIE, AIE-ML, and AIE-ML v2 devices. 
 
-Input and output matrices are 2D signals whose dimensions are set by the block parameters. Leading-dimension parameters control whether each matrix is stored in row-major or column-major order. For matrix layout assumptions and supported parameter ranges, see *AI Engine Solver Blocks* in the Vitis Model Composer User Guide (UG1483).
+Input and output matrices are 2D signals. Use the matrix dimensions and leading-dimension settings to describe the input and output layouts. For matrix layout assumptions and supported parameter ranges, see *AI Engine Solver Blocks* in the Vitis Model Composer User Guide (UG1483).
 
 ## Parameters
 
 ### Main
 
 #### Input data type
-Type of individual data samples of the input matrix.
+Specifies the data type of the input matrix elements.
 
 #### Rows of matrix
-Number of rows in the input matrix.
+Specifies the number of rows in the input matrix `A`.
 
 #### Columns of matrix
-Number of columns in the input matrix.
+Specifies the number of columns in the input matrix `A`.
 
 #### Number of frames
-Number of matrices to decompose per call to the kernel.
+Specifies the number of input matrices to decompose per kernel call.
 
 #### Number of cascade stages
-Number of kernels used to split up and cascade the workload.
+Specifies the number of kernels used to divide and cascade the computation.
 
 #### A input leading dimension
-Describes which dimension of matrix A input data is contiguous in memory. **Row-major (1)** or **Column-major (0)**.
+Specifies the memory layout of input matrix `A`: **Column-major (0)** or **Row-major (1)**.
 
 #### Q output leading dimension
-Describes which dimension of matrix Q output data is contiguous in memory. **Row-major (1)** or **Column-major (0)**.
+Specifies the memory layout of output matrix `Q`: **Column-major (0)** or **Row-major (1)**.
 
 #### R output leading dimension
-Describes which dimension of matrix R output data is contiguous in memory. **Row-major (1)** or **Column-major (0)**.
+Specifies the memory layout of output matrix `R`: **Column-major (0)** or **Row-major (1)**.
 
 ### Constraints
-Click the constraint manager button to set per-kernel constraints. An asterisk (*) appears next to the button when non-default constraints are in use.
+Use the constraint manager to set per-kernel constraints. When **Number of cascade stages** is greater than one, constraints can be set for each kernel; run the design before configuring them. Constraints affect generated graph code, cycle-approximate AIE simulation (System C), and hardware behavior, but not functional simulation in Simulink.
+
+## QRD Block Examples
+
+The following examples demonstrate the AI Engine QRD block. Click an image to open its model.
+
+[![](./Images/QRD_Ex1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/QRD_Ex1)
+[![](./Images/QRD_Ex2.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/QRD_Ex2)
+[![](./Images/QRD_Ex3.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/AIE/QRD_Ex3)
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
