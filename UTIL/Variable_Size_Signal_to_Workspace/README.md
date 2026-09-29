@@ -28,8 +28,7 @@ Output object or as individual variables.
 
 ## Parameters
 
-#### Variable name
-
+#### Variable Name  
 Using this parameter, you can specify the name for workspace variable.
 
 
@@ -39,4 +38,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

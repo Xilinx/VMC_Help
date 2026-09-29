@@ -53,46 +53,55 @@ block with an AXI Stream input as shown below:</p>
 <h2>Parameters</h2>
 <p>Refer to <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;gatewayin&#39;,&#39;category&#39;,&#39;HDL&#39;))">Gateway
 In</a> block help to learn more about the parameters.</p>
-<section id="output-data-type" class="level4">
-<h4>Output Data Type</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="arithmetic-type" class="level4">
-<h4>Arithmetic type</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="number-of-bits" class="level4">
-<h4>Number of bits</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="exponent-width" class="level4">
-<h4>Exponent width</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="fraction-width" class="level4">
-<h4>Fraction width</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="quantization" class="level4">
-<h4>Quantization</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="overflow" class="level4">
-<h4>Overflow</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="sample-period" class="level4">
-<h4>Sample Period</h4>
-<p>Dialog parameter.</p>
+<!--
+#### Output Data Type
+Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
+-->
+
+<!--
+#### Arithmetic type
+In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
+-->
+
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
+<!--
+#### Exponent width
+Specify the exponent width.
+-->
+
+<!--
+#### Fraction width
+Specify the fraction width.
+-->
+
+<!--
+#### Quantization
+Quantization errors occur when the number of fractional bits is insufficient to represent the fractional portion of a value. The options are to Truncate (for example, to discard bits to the right of the least significant representable bit), or to Round(unbiased: +/- inf) or Round (unbiased: even values).
+-->
+
+<!--
+#### Overflow
+Overflow errors occur when a value lies outside the representable range. For overflow the options are to Saturate to the largest positive/smallest negative value, to Wrap (for example, to discard bits to the left of the most significant representable bit), or to Flag as error (an overflow as a Simulink error) during simulation. Flag as error is a simulation only feature. The hardware generated is the same as when Wrap is selected.
+-->
+
+<!--
+#### Sample Period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
+
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </body>

@@ -16,8 +16,13 @@ The following figure shows an example of how the block is used to connect HDL bl
 
 ## Parameters
 
-#### Sample period
 
+<!--
+#### Sample period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
+
+#### Sample Time  
 The sample time of the _tready_ signal leaving the block. In general, the value of this parameter should match the sample time of your HDL design.
 
 --------------
@@ -25,4 +30,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

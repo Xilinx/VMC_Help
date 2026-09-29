@@ -30,7 +30,7 @@ the [Connecting AI Engine and HDL Subsystems](https://github.com/Xilinx/Vitis_Mo
 
 Specify the data type of the `tdata` signal coming from the HDL subsystem.
 
-#### Output data type
+#### Output data type 
 
 Specify the data type of the `data` signal going to the AIE subsystem.
 
@@ -54,7 +54,7 @@ The following table shows the input data types that are needed to produce each o
 | cfloat           | uint64, ufix128           |
 | bfloat16         | uint32                    |
 
-#### Number of output samples
+#### Number of output samples  
 
 This determines the number of samples in the output frame. This value should be set to the number of samples expected at the input of the AI Engine kernel.
 
@@ -68,9 +68,10 @@ For example, if the HDL subsystem asserts `tvalid` every 4 HDL clock cycles, set
 
 If you do not do this, the HDL to AIE block will output a variable-size signal that is empty when there is no valid data. For analysis and viewing the signal on a scope, it is easier to work with variable-size signals that are full. For more information, see the [Variable-Size Signals Quick Guide](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/QuickGuides/Variable_Size_Signals).
 
-#### Manually specify output sample time (deprecated)
 
-Dialog parameter.
+<!--
+#### Manually specify output sample time (deprecated)
+-->
 
 ## Input and Output period
 This block is a multirate block. The input period and the output period can be different depending on the setting of the parameters. The diagram below shows an example of how the output period changes based on the different settings.

@@ -34,8 +34,7 @@ The output data type for this block is always double. Follow this block with a D
 
 ## Parameters
 
-#### RTP Value
-
+#### RTP Value  
 This represents the value which can be given as an input to an AI Engine
 block. This can be a scalar, vector, or a matrix and it accepts real or
 complex data.
@@ -49,23 +48,22 @@ If the 'RTP value' parameter is a
 matrix, each column represents an RTP vector at the output of the block. A NaN column will
 produce an empty variable size signal output.
 
-#### Sample Time
-
+#### Sample Time  
 Specifies the interval between the times that the RTP source block
 output can change during simulation.
 
-#### Form output after final data
-
+#### Form output after final data  
 Represents a method to determine block output after the final data
 point.
 
-Additional dialog notes:
+##### Empty  
+This option sets the RTP block output to empty after final data.
 
-Empty. This option sets the RTP block output to empty after final data.
+##### Holding Final value  
+When this option is selected, block holds the final value.
 
-Holding Final value. When this option is selected, block holds the final value.
-
-Cyclic repetition. This option repeats the RTP block data from first value.
+##### Cyclic repetition  
+This option repeats the RTP block data from first value.
 
 ## Related Examples
 [Design with scaler RTP input](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_scalar/README.md)

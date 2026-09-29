@@ -31,12 +31,10 @@ This block is needed only if the output of the HLS Kernel block does not match t
 ## Parameters
 
 #### Output Data Type
-
 Possible values are: `int8`, `int16`, `int32`, `int64`, `uint8`, `uint16`, `uint32`, `uint64`,
 `cint16`, `cint32`, `float`, `cfloat`, `bfloat16`, `cbfloat16`
 
-#### Output Size
-
+#### Output Size  
 The size of the output port. The output port is a variable-sized signal whose
 maximum size is specified by the Output Size parameter. The Output Size parameter has a
 lower bound, calculated based on the input data type, input size, and output data type. For
@@ -48,15 +46,13 @@ Allow Multiple-Rate Processing parameter.
 If not enough bits are present at the input to fill the output with the specified size and data type, the variable-sized output will have empty samples.
 </div>
 
-#### Allow Multiple-Rate Processing
-
+#### Allow Multiple-Rate Processing 
 When this property is enabled, the Output Size parameter
 has no lower bound. If the Output Size parameter is set to a value less than the original lower
 bound, the output sample rate is greater than the input sample rate.
 
-Additional dialog notes:
-
-Input Data Type. This parameter is only visible when Allow Multiple-Rate Processing is enabled.
+#### Input Data Type
+This parameter is only visible when Allow Multiple-Rate Processing is enabled.
 Possible values are: `cint16`, `int32`, `uint32`, `cint32`, `int64`, `uint64`, `sfix128`,
 `ufix128`, `float`, `cfloat`
 
@@ -70,4 +66,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-
