@@ -38,6 +38,11 @@ To the left of this tab, a list displays all subsystems in your design. Selectin
 
 ### Settings (HDL)
 
+
+<!--
+#### Subsystem name
+-->
+
 #### Target Language
 
 Specifies the HDL language to be used for compilation of the design. The possibilities are VHDL and Verilog.
@@ -176,6 +181,31 @@ Specifies the number of cycles for which AIE simulation is run. The default valu
 
 When enabled, this option allows profiling data to be collected for analysis.
 
+
+<!--
+#### Collect data for Vitis Analyzer
+-->
+
+<!--
+#### Plot AIE Simulation output and estimate throughput
+-->
+
+<!--
+#### Generate Hardware Image
+-->
+
+<!--
+#### Generate (libadf.a/.xo)
+-->
+
+<!--
+#### Generate Hardware Validation Code
+-->
+
+<!--
+#### Platform
+-->
+
 #### Collect trace data for Vitis Analyzer, viewing internal signals, and latency
 
 When enabled, this option collects trace data for signals within the AI Engine design to be viewed in Vitis Analyzer or the Simulation Data Inspector.
@@ -211,6 +241,19 @@ Choose between Baremetal or Linux hardware validation flow.
 #### Target
 
 Specify the target for hardware validation flow.
+
+
+<!--
+#### Compiler options
+-->
+
+<!--
+#### Create testbench
+-->
+
+<!--
+#### Run AIE Simulation
+-->
 
 #### Yocto Base Directory
 

@@ -44,6 +44,7 @@ from the Clock Enable Probe block. This is typically applied when the
 signal generated is used as separate timing signal that is not
 clock-enable related.
 
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

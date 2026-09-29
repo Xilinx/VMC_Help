@@ -23,6 +23,48 @@ This block can also be used to connect Simulink signals to an HDL block with an 
 
 Refer to [Gateway In](../../HDL/gatewayin/README.md) block help to learn more about the parameters.
 
+<!--
+#### Output Data Type
+Possible values are: `int8`, `int16`, `int32`, `int64`, `uint8`, `uint16`, `uint32`, `uint64`, `cint16`, `cint32`, `float`, `cfloat`, `bfloat16`, `cbfloat16`
+-->
+
+<!--
+#### Arithmetic type
+In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
+-->
+
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
+<!--
+#### Exponent width
+-->
+
+<!--
+#### Fraction width
+-->
+
+<!--
+#### Quantization
+-->
+
+<!--
+#### Overflow
+-->
+
+<!--
+#### Sample Period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
+
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

@@ -66,9 +66,9 @@ When this option is selected, block holds the final value.
 This option repeats the RTP block data from first value.
 
 ## Related Examples
-[Design with scaler RTP input](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE/Run_Time_Parameters/rtp_scalar/README.md)
+[Design with scaler RTP input](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_scalar/README.md)
 
-[Design with vector RTP input](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE/Run_Time_Parameters/rtp_vector/README.md)
+[Design with vector RTP input](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector/README.md)
 
 ## References
 To learn more about RTPs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/Runtime-Parameter-Specification).

@@ -19,6 +19,11 @@ output, the output will be an empty variable size signal.
 #### Output Size  
 This specifies the size of the output port.
 
+
+<!--
+#### Show Valid Input Port
+-->
+
 #### Show Valid Input  
 If this option is enabled, the block will only accept the input data
 when the valid port is true.

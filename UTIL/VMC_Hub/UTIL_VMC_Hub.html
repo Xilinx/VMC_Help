@@ -81,6 +81,10 @@ subsystem type based on its internal blocks.</p>
 </section>
 <section id="settings-hdl" class="level3">
 <h3>Settings (HDL)</h3>
+<!--
+#### Subsystem name
+-->
+
 <section id="target-language" class="level4">
 <h4>Target Language</h4>
 <p>Specifies the HDL language to be used for compilation of the design.
@@ -312,6 +316,30 @@ default value is 50000.</p>
 <h4>Collect profiling statistics and enable &#39;printf&#39; for debugging</h4>
 <p>When enabled, this option allows profiling data to be collected for
 analysis.</p>
+<!--
+#### Collect data for Vitis Analyzer
+-->
+
+<!--
+#### Plot AIE Simulation output and estimate throughput
+-->
+
+<!--
+#### Generate Hardware Image
+-->
+
+<!--
+#### Generate (libadf.a/.xo)
+-->
+
+<!--
+#### Generate Hardware Validation Code
+-->
+
+<!--
+#### Platform
+-->
+
 </section>
 <section id="collect-trace-data-for-vitis-analyzer-viewing-internal-signals-and-latency" class="level4">
 <h4>Collect trace data for Vitis Analyzer, viewing internal signals, and
@@ -360,22 +388,42 @@ tab.</p>
 <section id="target" class="level4">
 <h4>Target</h4>
 <p>Specify the target for hardware validation flow.</p>
+<!--
+#### Compiler options
+-->
+
+<!--
+#### Create testbench
+-->
+
+<!--
+#### Run AIE Simulation
+-->
+
 </section>
-<section id="common-sw-dir" class="level4">
-<h4>Common SW Dir</h4>
-<p>Provide the path to the folder containing the PetaLinux common
-images. This option is only enabled when a Linux HW System Type is
-selected.</p>
+<section id="yocto-base-directory" class="level4">
+<h4>Yocto Base Directory</h4>
+<p>Provide the path to the Yocto base directory for the selected
+platform. This field is required for both Baremetal and Linux hardware
+validation flows. Baremetal hardware emulation also uses the Yocto
+<code>runqemu</code> utility. If the path is missing or does not exist,
+the tool raises a design rule check when you start the validation
+run.</p>
 </section>
-<section id="target-sdk-dir" class="level4">
-<h4>Target SDK Dir</h4>
-<p>Provide the path to the folder containing the target SDK. This option
-is only enabled when a Linux HW System Type is selected.</p>
+<section id="xrt-directory" class="level4">
+<h4>XRT Directory</h4>
+<p>Provide the path to the XRT installation directory. This field is
+required when <strong>HW System Type</strong> is set to Linux. If the
+path is missing or does not exist, the tool raises a design rule check
+when you start the validation run.</p>
 </section>
 <section id="generate-bootbinsd-card-image-after-code-generation" class="level4">
 <h4>Generate (BOOT.BIN/SD card image) after code generation</h4>
-<p>When enabled, a BOOT.BIN (for baremetal HW system) or SD card image
-(for Linux HW system) will be generated after code generation.</p>
+<p>When enabled, the tool generates a hardware validation image after
+code generation. For a baremetal HW system, the flow packages a
+<code>.pdi</code> and related baremetal artifacts. For a Linux HW
+system, the flow stages a WIC disk image for deployment. The exact
+artifact names depend on the selected platform and HW System Type.</p>
 </section>
 </section>
 <section id="export" class="level3">
