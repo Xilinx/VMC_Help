@@ -1191,12 +1191,11 @@ Boxes](../../GEN/common-options/README.md).
 
 <!--
 #### Input
-Input is a drop down menu parameter which specifies whether real, imaginary, or both of the parts of the output signal are specified as inputs.
 -->
 
 <!--
 #### Output
-This parameter specifies the kind of output the block produces.
+This refers to the port on which the data type is specified.
 -->
 
 <!--

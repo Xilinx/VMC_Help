@@ -96,7 +96,6 @@ Specifies the pipeline method to be used; Automatic, By Tier, or Expert.
 
 <!--
 #### P
-A finite integer value representing the number of output ports.
 -->
 
 <!--

@@ -76,7 +76,6 @@ Specifies the frequency, either in Hertz or radians. The default is 1.
 
 <!--
 #### Mixer Mode
-This specifies the mixer operation modes. Two modes are supported by the Mixer function:
 -->
 
 <!--

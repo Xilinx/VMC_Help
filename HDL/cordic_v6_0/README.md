@@ -175,7 +175,6 @@ and dout_tdata_phase. The Output width range 8 to 48 bits.
 
 <!--
 #### Round
-If the Output data type is set to fixed, the Round parameter allows you to select among five rounding and two truncation options.
 -->
 
 #### Round mode  

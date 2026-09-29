@@ -194,7 +194,6 @@ and **Phase Factor Width**.
 
 <!--
 #### SSR (Super Sample Rate)
-Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
 -->
 
 #### Precision Options

@@ -112,7 +112,7 @@ output of the block.
 
 <!--
 #### SSR
-This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+Super Sample Rate, It should be a power of 2.
 -->
 
 #### Super Sample Rate (SSR)
