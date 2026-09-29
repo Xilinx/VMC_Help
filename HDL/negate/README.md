@@ -31,12 +31,6 @@ The output is a Signed (2’s complement) number.
 ##### Unsigned  
 The output is an Unsigned number.
 
-
-<!--
-#### Arithmetic type
-In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
--->
-
 #### Fixed-point Precision  
 ##### Number of bits  
 Specifies the bit location of the binary point of the output number,
@@ -54,12 +48,6 @@ Boxes](../../GEN/common-options/README.md).
 Refer to the section Overflow and Quantization in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
-
-
-<!--
-#### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
 
 #### Optional Port  
 Provide enable port

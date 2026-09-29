@@ -78,10 +78,6 @@ One of N = 2^((3..16)) = 8 - 65536.
 
 
 <!--
-#### Run Time Configurable Transform Length
--->
-
-<!--
 #### Native Floating Point Data Format
 Checkbox (`enable_ssr` in the mask). When enabled, input samples are interpreted as pairs of 32-bit IEEE-754 floats and phase factors as 24- or 25-bit fixed-point numbers. When disabled, samples are fixed-point with the precision controlled by the input signal types and **Phase Factor Width**.
 -->

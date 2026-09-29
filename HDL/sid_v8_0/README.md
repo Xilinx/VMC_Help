@@ -303,11 +303,6 @@ Which option is best depends on the other core parameters. You should
 try both options to determine the best results. This parameter has no
 effect on the block behavior.
 
-
-<!--
-#### Branch length descriptions for Forney SID
--->
-
 #### Configurations  
 ##### Number of configurations  
 If greater than 1, the block is generated with CONFIG_SEL and NEW_CONFIG

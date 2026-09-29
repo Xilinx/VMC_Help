@@ -150,10 +150,6 @@ One of N = 2^((3..16)) = 8 - 65536.
 #### Target Data Throughput (MSPS)
 -->
 
-<!--
-#### Run Time Configurable Transform Length
--->
-
 #### Architecture Configuration  
 ##### Target Clock Frequency(MHz)  
 Enter the target clock frequency.

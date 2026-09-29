@@ -138,10 +138,6 @@ Data streams are processed at a specific sample rate as they flow through Simuli
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 -->
 
-<!--
-#### Default Value
--->
-
 ### Implementation Tab  
 Parameters specific to the Implementation tab are as follows:
 

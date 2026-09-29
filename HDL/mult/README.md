@@ -58,12 +58,6 @@ Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md)
 topic.
 
-
-<!--
-#### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
-
 #### Optional Port  
 Provide enable port
 

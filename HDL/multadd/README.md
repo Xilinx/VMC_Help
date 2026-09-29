@@ -70,11 +70,6 @@ reduced number of total bits and/or fractional bits.
 
 
 <!--
-#### Arithmetic type
-In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
--->
-
-<!--
 #### Number of bits
 Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
 -->

@@ -288,12 +288,6 @@ Indicates whether the opmode port should be registered.
 Pipeline alumode  
 Indicates whether the alumode port should be registered.
 
-
-<!--
-#### Pipeline alumode
-Indicates whether the alumode port should be registered.
--->
-
 #### Pipeline carry in  
 Indicates whether the carry in port should be registered.
 
