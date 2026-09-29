@@ -69,30 +69,6 @@ indicating that the gateway will not be translated into an output port.
 
 
 
-<!--
-#### Number of rows
--->
-
-<!--
-#### Number of columns
--->
-
-<!--
-#### Drive DAC Input
--->
-
-<!--
-#### DAC Channel ID
--->
-
-<!--
-#### IOB pad locations (cell array {'MSB', ..., 'LSB'})
--->
-
-<!--
-#### IO Standards (specify as cell array {'MSB', ..., 'LSB'})
--->
-
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 

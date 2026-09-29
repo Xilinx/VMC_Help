@@ -28,10 +28,6 @@ Parameters specific to the Basic tab are as follows.
 
 
 <!--
-#### Initial value (vector of SSR size)
--->
-
-<!--
 #### Provide synchronous reset port
 Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
 -->

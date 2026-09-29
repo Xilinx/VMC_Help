@@ -54,10 +54,6 @@ equality check on the output of the adder/subtractor/logic unit.
 Enter a 58-bit value that is used in the pattern detector.
 
 
-<!--
-#### Pattern attribute RE
--->
-
 #### Mask Input RE  
 ##### Mask input from c_re port  
 When selected, the mask_re used in pattern detection is read from the
@@ -73,22 +69,6 @@ Selects rounding_mode 1 (C_RE-bar left shifted by 1).
 ##### MODE2  
 Selects rounding_mode 2 (C_RE-bar left shifted by 2).
 
-
-<!--
-#### Mask attribute RE
--->
-
-<!--
-#### RND_RE
--->
-
-<!--
-#### Pattern Input IM
--->
-
-<!--
-#### Pattern attribute IM
--->
 
 #### Pattern Detection on Imaginary Output  
 ##### Reset p_im register on pattern detection  
@@ -114,22 +94,6 @@ Selects rounding_mode 1 (C_IM-bar left shifted by 1).
 ##### MODE2  
 Selects rounding_mode 2 (C_IM-bar left shifted by 2).
 
-
-<!--
-#### Mask attribute IM
--->
-
-<!--
-#### RND_IM
--->
-
-<!--
-#### Consolidate control port (opmode, alumode, carry_in, carry_in_sel, conjugate)
--->
-
-<!--
-#### Provide carry out port
--->
 
 ### Optional Ports tab  
 Parameters specific to the Optional Ports tab are as follows:
@@ -328,122 +292,6 @@ Indicates to add a pipeline register to the Conjugate_A input.
 #### Pipeline Conjugate register B  
 Indicates to add a pipeline register to the Conjugate_B input.
 
-
-<!--
-#### Invert alumode Re
--->
-
-<!--
-#### Real bits to be invert
--->
-
-<!--
-#### Invert alumode Im
--->
-
-<!--
-#### Imaginary bits to be invert
--->
-
-<!--
-#### Invert carryin Re
--->
-
-<!--
-#### Invert carryin Im
--->
-
-<!--
-#### Invert conjugate A
--->
-
-<!--
-#### Invert conjugate B
--->
-
-<!--
-#### Invert opmode Re
--->
-
-<!--
-#### Invert opmode Im
--->
-
-<!--
-#### Invert rst for carryin Re
--->
-
-<!--
-#### Invert rst for carryin Im
--->
-
-<!--
-#### Invert rst for alumode Re
--->
-
-<!--
-#### Invert rst for alumode Im
--->
-
-<!--
-#### Invert rst for a Re
--->
-
-<!--
-#### Invert rst for a Im
--->
-
-<!--
-#### Invert rst for b Re
--->
-
-<!--
-#### Invert rst for b Im
--->
-
-<!--
-#### Invert rst for c Re
--->
-
-<!--
-#### Invert rst for c Im
--->
-
-<!--
-#### Invert rst for ad
--->
-
-<!--
-#### Invert rst for contorls Re
--->
-
-<!--
-#### Invert rst for contorls Im
--->
-
-<!--
-#### Invert rst for conjugate A
--->
-
-<!--
-#### Invert rst for conjugate B
--->
-
-<!--
-#### Invert rst for multiplier Re
--->
-
-<!--
-#### Invert rst for multiplier Im
--->
-
-<!--
-#### Invert rst for p Re
--->
-
-<!--
-#### Invert rst for p Im
--->
 
 ### Reset/Enable Ports tab  
 Parameters specific to the Reset/Enable tab are as follows:

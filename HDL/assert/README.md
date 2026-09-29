@@ -71,10 +71,6 @@ dialog box.
 
 
 
-<!--
-#### Sample rate
--->
-
 #### Provide output port  
 Specifies whether or not the block will feature an output port. The type
 and/or rate of the signal presented on the output port is the type

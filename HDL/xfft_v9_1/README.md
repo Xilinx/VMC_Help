@@ -82,10 +82,6 @@ One of N = 2^((3..16)) = 8 - 65536.
 Checkbox (`enable_ssr` in the mask). When enabled, input samples are interpreted as pairs of 32-bit IEEE-754 floats and phase factors as 24- or 25-bit fixed-point numbers. When disabled, samples are fixed-point with the precision controlled by the input signal types and **Phase Factor Width**.
 -->
 
-<!--
-#### Super Sample Rate
--->
-
 #### Architecture Configuration  
 ##### Target Clock Frequency(MHz)  
 Enter the target clock frequency.
@@ -177,10 +173,6 @@ constraints on when data must be provided and consumed.
 This mode has no such constraints, but the design might be larger and
 slower.
 
-
-<!--
-#### Optimize Block RAM Count Using Hybrid Memories
--->
 
 #### Optional Output Fields  
 ##### XK_INDEX  

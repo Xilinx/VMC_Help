@@ -86,10 +86,9 @@ is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.
 
 
-<!--
 #### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
 
 #### Optional Ports  
 Provide enable port activates an optional enable (en) pin on the block.
@@ -108,10 +107,9 @@ additional latency is usually implemented as a shift register on the
 output of the block.
 
 
-<!--
 #### Pipeline for maximum performance
+
 The LogiCORE™ can be internally pipelined to optimize for speed instead of area. Selecting this option puts all user defined latency into the core until the maximum allowable latency is reached. If the Pipeline for maximum performance option is not selected and latency is greater than zero, a single output register is put in the core and additional latency is added on the output of the core.
--->
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.

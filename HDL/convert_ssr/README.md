@@ -110,10 +110,9 @@ additional latency is usually implemented as a shift register on the
 output of the block.
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Super Sample Rate (SSR)
 This configurable GUI parameter is primarily
@@ -141,6 +140,11 @@ in the design.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
 
 ## LogiCORE™ Documentation
 

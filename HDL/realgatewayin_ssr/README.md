@@ -207,14 +207,6 @@ Checking this option allows IOB location constraints and I/O standards
 to be specified.
 
 
-<!--
-#### IOB pad locations (specify as cell array {'MSB', ..., 'LSB'})
--->
-
-<!--
-#### IO Standards (specify as cell array {'MSB', ..., 'LSB'})
--->
-
 #### IOB pad locations, e.g. {'MSB', ..., 'LSB'}  
 IOB pin locations can be specified as a cell array of strings in this
 edit box. The locations are package-specific.IO Standards, e.g. {'MSB',

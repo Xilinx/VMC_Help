@@ -72,11 +72,6 @@ sample periods are used to establish hardware clock periods.)
 
 
 
-<!--
-#### Sample period
-Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
--->
-
 ### DSP48 tab  
 #### DSP48 Instruction  
 The use of this block for DSP48 instructions is deprecated. Please use

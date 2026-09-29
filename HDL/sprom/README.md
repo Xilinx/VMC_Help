@@ -123,10 +123,6 @@ Boxes](../../GEN/common-options/README.md).
 Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
 -->
 
-<!--
-#### Use pre-defined core placement information
--->
-
 ## LogiCORE™ Documentation
 
 Distributed Memory Generator LogiCORE IP Product Guide

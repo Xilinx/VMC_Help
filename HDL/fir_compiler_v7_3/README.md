@@ -37,10 +37,6 @@ the previous set in the vector. It is possible to enter these
 coefficients using the [FDATool](../../UTIL/Xilinx_FDATool_Interface_Block/README.md) block as well.
 
 
-<!--
-#### Number of Coefficient Sets
--->
-
 #### Number of Coefficients Sets  
 The number of sets of filter coefficients to be implemented. The value
 specified must divide without remainder into the number of coefficients.
@@ -88,10 +84,6 @@ this field defines the down-sampling factor, or Q for Fixed Fractional
 Rate (P/Q) resampling filter implementations.
 
 
-
-<!--
-#### Zero Pack Factor
--->
 
 ### Channel Specification tab  
 Parameters specific to the Channel Specification tab are as follows.
@@ -167,10 +159,6 @@ coefficients. This can be set to one of the following:
 Specifies the number of bits used to represent the coefficients.
 
 
-<!--
-#### Best Precision Fraction Length
--->
-
 #### Best Precision Fractional Bits  
 When selected, the coefficient fractional width is automatically set to
 maximize the precision of the specified filter coefficients.
@@ -179,10 +167,6 @@ maximize the precision of the specified filter coefficients.
 Specifies the binary point location in the coefficients datapath
 options.
 
-
-<!--
-#### Coefficient Structure
--->
 
 #### Coefficients Structure  
 Specifies the coefficient structure. Depending on the coefficient
@@ -368,10 +352,6 @@ data channels. The FIFO requires additional FPGA logic resources.
 
 
 <!--
-#### Input
--->
-
-<!--
 #### Output
 This refers to the port on which the data type is specified.
 -->
@@ -436,10 +416,6 @@ the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
 the pulse is not in the cycle immediately following.
 
-
-<!--
-#### Reset Data Vector
--->
 
 #### Blank Output
 When enabled, forces the FIR output to blank during coefficient reload events to avoid transient artifacts.

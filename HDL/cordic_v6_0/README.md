@@ -173,10 +173,6 @@ Controls the width of the output ports dout_tdata_real, dout_tdata_imag,
 and dout_tdata_phase. The Output width range 8 to 48 bits.
 
 
-<!--
-#### Round
--->
-
 #### Round mode  
 ##### Truncate  
 The real, imag, and phase outputs are truncated.
@@ -227,14 +223,6 @@ to the full circle by rotating the input sample into the first quadrant
 and inverse rotating the output sample back into the appropriate
 quadrant.
 
-
-<!--
-#### Tlast behaviour
--->
-
-<!--
-#### AXI behaviour
--->
 
 #### Optional ports  
 ##### Standard  

@@ -9,21 +9,25 @@ complex input vectors.
 
 ## Parameters
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
 
-<!--
-#### Use Synthesizable model
-When selected, the DSP48E is implemented from an RTL description which might not map directly to the DSP48E hardware. This is useful if a design using the DSP48E block is targeted at device families that do not contain DSP48E hardware primitives.
--->
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Super Sample Rate (SSR) 
 This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This blocks enable 1-D vector support for the primary block
 operation.
+
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
 
 ## Data Type Support
 

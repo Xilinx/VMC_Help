@@ -152,11 +152,11 @@ model). Model Composer will not perform extensive pipelining unless you
 select the Pipeline for maximum performance option (described below);
 additional latency is usually implemented as a shift register on the
 output of the block.</p>
-<!--
-#### SSR
-Super Sample Rate, It should be a power of 2.
--->
-
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
 </section>
 <section id="super-sample-rate-ssr" class="level4">
 <h4>Super Sample Rate (SSR)</h4>
@@ -185,6 +185,13 @@ constraints in the design.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
+</section>
+<section id="provide-enable-port-1" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
 </section>
 </section>
 </section>

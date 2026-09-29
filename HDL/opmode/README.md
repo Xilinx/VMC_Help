@@ -27,38 +27,6 @@ To view the output of the Opmode block, connect the output directly to a Simulin
 ### Opmode tab  
 Parameters specific to the Opmode tab are as follows.
 
-<!--
-#### Conjugate A Input
--->
-
-<!--
-#### Conjugate B Input
--->
-
-<!--
-#### Multiplier Output
--->
-
-<!--
-#### PreAdder/Mult Function
--->
-
-<!--
-#### PreAdder/Mult Operation
--->
-
-<!--
-#### PREADDINSEL
--->
-
-<!--
-#### AMULTSEL
--->
-
-<!--
-#### BMULTSEL
--->
-
 #### Instruction  
 ##### Device  
 Specifies whether to generate an instruction for the DSP48E, DSP48E1, or

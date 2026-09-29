@@ -70,14 +70,6 @@ are all three pipeline stages used in the generated Multiplier IP.
 
 
 
-<!--
-#### Choose Optimization for float input
--->
-
-<!--
-#### DSP Slice Usage
--->
-
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 

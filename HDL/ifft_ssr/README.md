@@ -30,10 +30,6 @@ out_scale is used in if there is an internal overflow.
 
 
 <!--
-#### FFT Length
--->
-
-<!--
 #### Number of bits
 Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
 -->
@@ -58,26 +54,6 @@ limited by the DSP48 multiplier A port size.
 
 If it is selected, then the Vector IFFT output rounds to the nearest integer.
 
-
-<!--
-#### Input Reorder
--->
-
-<!--
-#### Output Reorder
--->
-
-<!--
-#### Block RAM Threshold
--->
-
-<!--
-#### Number of DSPs per Complex Multipication
--->
-
-<!--
-#### Use Corner Bender / Matrix Transposer
--->
 
 #### Bypass Reordering 
 

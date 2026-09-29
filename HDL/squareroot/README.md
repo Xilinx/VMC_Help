@@ -32,10 +32,6 @@ When NonBlocking mode is selected, the following optimization options are activa
 Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
 -->
 
-<!--
-#### Cycles/operation
--->
-
 ### Optional ports  
 #### Input Channel Ports  
 ##### Has TLAST  

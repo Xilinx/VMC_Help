@@ -82,10 +82,6 @@ an output port.
 Super Sample Rate, It should be a power of 2.
 -->
 
-<!--
-#### Interface
--->
-
 #### Super Sample Rate (SSR)
 This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
@@ -138,14 +134,6 @@ begin with a lowercase alphabetic character. axi4_lite1 is acceptable,
 Additional designer comments about this Vector Real Gateway Out that is
 captured in the interface documentation.
 
-
-<!--
-#### IOB pad locations (cell array {'MSB', ..., 'LSB'})
--->
-
-<!--
-#### IO Standards (specify as cell array {'MSB', ..., 'LSB'})
--->
 
 ### Constraints  
 ### IOB Timing Constraint  

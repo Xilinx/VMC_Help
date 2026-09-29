@@ -28,11 +28,6 @@ on another input channel.
 
  
 
-<!--
-#### Optimize Goal
-When NonBlocking mode is selected, the following optimization options are activated.
--->
-
 #### Algorithm Type  
 ##### Radix2
 This is non-restoring integer division using integer operands and allows
@@ -62,14 +57,9 @@ For Fixed-point division, this entry determines the number of bits in
 the fractional part of the output.
 
 
-<!--
 #### Latency
-Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
--->
 
-<!--
-#### Cycles/operation
--->
+The number of sample periods by which the block's output is delayed.
 
 ### Optional Ports  
 

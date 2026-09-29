@@ -1182,30 +1182,9 @@ Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
 <!--
-#### MATLAB function
--->
-
-<!--
-#### Specify explicit sample period
--->
-
-<!--
-#### Input
--->
-
-<!--
 #### Output
 This refers to the port on which the data type is specified.
 -->
-
-<!--
-#### Enable printing with disp
--->
-
-<!--
-#### Enable MATLAB debugging (slows simulation)
--->
-
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

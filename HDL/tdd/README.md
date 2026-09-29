@@ -37,10 +37,6 @@ valid port.
 Parameters specific to this block are as follows.
 
 
-<!--
-#### Frame sampling pattern (example: [1 0 1 0])
--->
-
 #### Frame sampling pattern  
 Specifies the size of the serial input data frame. The frame sampling
 pattern must be a MATLAB® vector containing only 1's and 0's.

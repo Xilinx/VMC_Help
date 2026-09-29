@@ -270,14 +270,6 @@ additional VHDL needed to allow multiple blocks to be combined into a
 single Questa simulation.
 
 
-<!--
-#### HDL co-simulator to use (specify helper block by name)
--->
-
-<!--
-#### Verbose
--->
-
 ## Data Type Translation for HDL Co-Simulation
 
 During co-simulation, ports in Model Composer drive ports in the HDL

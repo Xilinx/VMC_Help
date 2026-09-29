@@ -28,20 +28,8 @@ Parameters specific to the Filter Specification tab are as follows:
 
 
 <!--
-#### Number of Coefficient Sets
--->
-
-<!--
 #### SSR
 Super Sample Rate, It should be a power of 2.
--->
-
-<!--
-#### Best Precision Fraction Length
--->
-
-<!--
-#### Coefficient Structure
 -->
 
 #### Filter Coefficients  
@@ -185,10 +173,6 @@ The following two filter architectures are supported.
 <!--
 #### Column Configuration
 Specifies the individual column lengths in a comma delimited list. (See the data sheet for a more detailed explanation.)
--->
-
-<!--
-#### Reset Data Vector
 -->
 
 #### Optimization Options  

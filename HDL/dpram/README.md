@@ -180,18 +180,9 @@ port is available only when the latency of the block is greater than or
 equal to 1.
 
 
-<!--
 #### Latency
-Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
--->
 
-<!--
-#### Port A
--->
-
-<!--
-#### Port B
--->
+The number of sample periods by which the block's output is delayed.
 
 ### Advanced tab  
 Parameters specific to the Advanced tab are as follows.

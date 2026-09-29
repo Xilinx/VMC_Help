@@ -198,18 +198,6 @@ pin Clock Enable.
 Parameters specific to the Attributes 1 tab are as follows.
 
 
-<!--
-#### Symbols Per Block (n)
--->
-
-<!--
-#### Data Symbols (k)
--->
-
-<!--
-#### Output check symbols (Output all N symbols in block, including check symbols, or only K information symbols)
--->
-
 #### Code Block Specification  
 ##### Code specification  
 Specifies the type of RS Decoder desired. The choices are as follows.

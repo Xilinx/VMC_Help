@@ -70,10 +70,9 @@ mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Super Sample Rate (SSR)
 This configurable GUI parameter is primarily
@@ -90,3 +89,13 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+

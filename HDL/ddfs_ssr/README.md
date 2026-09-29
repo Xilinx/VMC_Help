@@ -30,10 +30,9 @@ output frequency signal.
 ## Parameters
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Super Sample Rate (SSR)  
 This configurable GUI parameter is primarily used to control the
@@ -50,11 +49,21 @@ Defines the depth of the Sin/Cos Table and should be an integer value.
 #### Sin/Cos Table Width  
 Defines the width of the Sin/Cos Table and should be an integer value.
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 ## Examples
 
 ***Click on the images below to open the model.***
 
-![](./Images/Vector_DDFS_Example1.png)
+[![](./Images/Vector_DDFS_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/HDL/Vector_DDFS_Ex1)
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

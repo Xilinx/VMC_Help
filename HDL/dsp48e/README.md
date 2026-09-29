@@ -66,14 +66,6 @@ rounding in the pattern detector. The choices are Select mask, Mode1,
 and Mode2.
 
 
-<!--
-#### Consolidate control port (opmode, alumode, carry_in, carry_in_sel)
--->
-
-<!--
-#### Provide carry out port
--->
-
 ### Optional Ports tab  
 #### Input Ports  
 ##### Consolidate control port  

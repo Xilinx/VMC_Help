@@ -74,10 +74,6 @@ enable signal is asserted again or the reset signal is asserted. Reset
 signal has precedence over the enable signal. The enable signal has to
 run at a multiple of the block &#39;s sample rate. The signal driving the
 enable port must be Boolean.</p>
-<!--
-#### Vectorize enable input
--->
-
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
@@ -88,11 +84,11 @@ Vector Delay block collapses to a wire during logic synthesis. If the
 latency is set to L=1, the block will generally be synthesized as a
 flip-flop (or multiple flip-flops if the data width is greater than
 1).</p>
-<!--
-#### SSR
-Super Sample Rate, It should be a power of 2.
--->
-
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
 </section>
 <section id="super-sample-rate-ssr" class="level4">
 <h4>Super Sample Rate (SSR)</h4>

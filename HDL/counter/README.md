@@ -103,18 +103,9 @@ block. The reset signal has to run at a multiple of the block's sample
 rate. The signal driving the reset port must be Boolean.
 
 
-<!--
 #### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
 
-<!--
-#### Sample period source
--->
-
-<!--
-#### Explicit period
--->
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
@@ -131,6 +122,11 @@ available in the target device. The default is Fabric.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
 
 ## LogiCORE™ Documentation
 

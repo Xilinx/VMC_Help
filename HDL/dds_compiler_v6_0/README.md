@@ -203,10 +203,6 @@ A floating-point data type is displayed using the format: XFloat_<exponent_bit_w
 Single precision data type is displayed using the string "XFloat_8_24"
 
 
-<!--
-#### Modulus
--->
-
 #### Parameter Selection  
 Select System_Parameters or Hardware_Parameters
 
@@ -276,14 +272,9 @@ Select between Minimal, or Maximal. When set to Maximal, XtremeDSP
 slices are used to achieve to maximum performance.
 
 
-<!--
-#### Resync
--->
-
-<!--
 #### Latency
-Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
--->
+
+The number of sample periods by which the block's output is delayed.
 
 #### Latency Options  
 ##### Auto  
@@ -315,10 +306,6 @@ immediately following.
 When checked, the DDS Compiler block uses the explicit sample period
 that is specified in the dialog entry box below.
 
-
-<!--
-#### Explicit Period
--->
 
 ### AXI Channel Options tab  
 
@@ -357,18 +344,6 @@ an input PHASE channel, its TREADY is also determined by this control,
 so that the datapath from input PHASE channel to output channels as a
 whole supports backpressure or not.
 
-
-<!--
-#### Input
--->
-
-<!--
-#### DATA Output
--->
-
-<!--
-#### Output Form
--->
 
 #### TUSER Options  
 Select one of the following options for the Input, DATA Output, and
@@ -422,70 +397,6 @@ Parameter Selection on the Basic tab is set to Hardware Parameters and
 Phase Increment Programmability field on the Phase Offset Angles tab is
 set to Fixed or Programmable.
 
-
-<!--
-#### Channel 1
--->
-
-<!--
-#### Channel 2
--->
-
-<!--
-#### Channel 3
--->
-
-<!--
-#### Channel 4
--->
-
-<!--
-#### Channel 5
--->
-
-<!--
-#### Channel 6
--->
-
-<!--
-#### Channel 7
--->
-
-<!--
-#### Channel 8
--->
-
-<!--
-#### Channel 9
--->
-
-<!--
-#### Channel 10
--->
-
-<!--
-#### Channel 11
--->
-
-<!--
-#### Channel 12
--->
-
-<!--
-#### Channel 13
--->
-
-<!--
-#### Channel 14
--->
-
-<!--
-#### Channel 15
--->
-
-<!--
-#### Channel 16
--->
 
 #### Output frequencies (MHz)  
 For each channel, an independent frequency can be entered into an array.

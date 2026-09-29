@@ -82,20 +82,15 @@ downstream blocks at the new rate.</p>
 <h3>Filter Specification tab</h3>
 <p>Parameters specific to the Filter Specification tab are as
 follows.</p>
-<!--
-#### Fixed or Initial Rate
--->
-
-<!--
-#### ARESETn
-Active-low synchronous clear input that always takes priority over ACLKEN. A minimum ARESETn active pulse of two cycles is required, since the signal is internally registered for performance. A pulse of one cycle resets the core, but the response to the pulse is not in the cycle immediately following.
--->
-
-<!--
-#### Display shortened port names
-AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
--->
-
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
+</section>
 <section id="filter-specification" class="level4">
 <h4>Filter Specification</h4>
 <section id="filter-type" class="level5">

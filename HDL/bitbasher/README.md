@@ -22,10 +22,6 @@ expressions (limited to a maximum of 4) can be specified using new line
 as a separator between expressions.
 
 
-<!--
-#### Display expression on the block icon
--->
-
 ### Output Type tab  
 #### Output  
 This refers to the port on which the data type is specified.

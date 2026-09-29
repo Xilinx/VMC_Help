@@ -96,15 +96,6 @@ Selects rounding_mode 2.
  
 
 
-<!--
-#### Mask attribute
-A 48-bit value used to mask out certain bits during a pattern detection. A value of 0 passes the bit, and a value of 1 masks out the bit.
--->
-
-<!--
-#### Consolidate control port (opmode, alumode, carry_in, carry_in_sel)
--->
-
 ### Optional Ports tab  
 Parameters specific to the Optional Ports tab are:
 
@@ -143,10 +134,6 @@ When selected, the multiplier sign cascade in port (multsigncascin) is
 exposed. This port can only be connected to a multiplier sign cascade
 out port of another DSP48E block.
 
-
-<!--
-#### Provide carry out port
--->
 
 #### Provide carryout port  
 When selected, the carryout output port is made available. When the

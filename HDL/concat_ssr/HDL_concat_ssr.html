@@ -55,11 +55,11 @@ significant bits of the output.</p>
 <h4>Number of Inputs</h4>
 <p>Specifies number of inputs, between 2 and 1024, inclusively, to
 concatenate together.</p>
-<!--
-#### SSR
-Super Sample Rate, It should be a power of 2.
--->
-
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
 </section>
 <section id="super-sample-rate-ssr" class="level4">
 <h4>Super Sample Rate (SSR)</h4>
@@ -73,6 +73,18 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
+</section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>The number of sample periods by which the block&#39;s output is
+delayed.</p>
 </section>
 </section>
 </section>

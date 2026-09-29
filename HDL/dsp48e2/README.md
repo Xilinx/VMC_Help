@@ -101,11 +101,6 @@ Value is used in pattern detection logic which is best described as an
 equality check on the output of the adder/subtractor/logic unit.
 
 
-<!--
-#### Pattern attribute
-A 48-bit value that is used in the pattern detector.
--->
-
 #### Pattern Attribute (48bit hex value)  
 Enter a 48-bit value that is used in the pattern detector.
 
@@ -125,15 +120,6 @@ Selects rounding_mode 1 (C-bar left shifted by 1).
 Selects rounding_mode 2 (C-bar left shifted by 2).
 
 
-<!--
-#### Mask attribute
-A 48-bit value used to mask out certain bits during a pattern detection. A value of 0 passes the bit, and a value of 1 masks out the bit.
--->
-
-<!--
-#### RND
--->
-
 ### Wide Xor tab  
 Parameters specific to the Wide Xor tab are as follows.
 
@@ -144,10 +130,6 @@ Provides the ability to perform a 96-bit wide XOR function.
 The XORSIMD attribute is used to select the width of the XOR function.
 Select either XOR12 (the default), XOR24, XOR48, or XOR96.
 
-
-<!--
-#### Consolidate control port (opmode, alumode, carry_in, carry_in_sel)
--->
 
 ### Optional Ports tab  
 Parameters specific to the Optional Ports tab are as follows.
@@ -187,10 +169,6 @@ exposed. This port can only be connected to a multiplier sign cascade
 out port of another DSP48E block.
 
 
-
-<!--
-#### Provide carry out port
--->
 
 #### Provide carryout port  
 When selected, the carryout output port is made available. When the
@@ -401,66 +379,6 @@ ad.
 #### Enable port for INMODE  
 When selected, an enable port is added for the INMODE register.
 
-
-<!--
-#### Invert alumode
--->
-
-<!--
-#### bits to be inverted
--->
-
-<!--
-#### Invert carryin
--->
-
-<!--
-#### Invert inmode
--->
-
-<!--
-#### Invert opmode
--->
-
-<!--
-#### Invert rst for carryin
--->
-
-<!--
-#### Invert rst for alumode
--->
-
-<!--
-#### Invert rst for a
--->
-
-<!--
-#### Invert rst for b
--->
-
-<!--
-#### Invert rst for c
--->
-
-<!--
-#### Invert rst for d
--->
-
-<!--
-#### Invert rst for controls
--->
-
-<!--
-#### Invert rst for inmode
--->
-
-<!--
-#### Invert rst for multiplier
--->
-
-<!--
-#### Invert rst for p
--->
 
 ### Inversion Options tab  
 When a checkbox is selected on this tab, the specified signal is

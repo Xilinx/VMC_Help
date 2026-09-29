@@ -245,54 +245,6 @@ When selected, an enable port  ce_fpinmode for the port fpinmode register is ma
 When selected, an enable port ce_d for the port d register is made available.
 
 
-<!--
-#### Invert fpinmode
--->
-
-<!--
-#### Invert fpopmode
--->
-
-<!--
-#### bits to be invert
--->
-
-<!--
-#### Invert rst for a
--->
-
-<!--
-#### Invert rst for b
--->
-
-<!--
-#### Invert rst for c
--->
-
-<!--
-#### Invert rst for d
--->
-
-<!--
-#### Invert rst for fpa
--->
-
-<!--
-#### Invert rst for fpinmode
--->
-
-<!--
-#### Invert rst for mpipe register
--->
-
-<!--
-#### Invert rst for fpm
--->
-
-<!--
-#### Invert rst for fpopmode
--->
-
 ### Inversion Options
 
 When a checkbox is selected on this tab, the specified signal is inverted.

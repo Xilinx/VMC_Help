@@ -24,10 +24,6 @@ FIFO is empty.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-<!--
-#### Use Embedded Registers(when possible)
--->
-
 #### FIFO Implementation  
 ##### Memory Type  
 This block implements FIFOs built from block RAM, distributed RAM, shift
@@ -99,22 +95,6 @@ unsigned output is always at the top of the word. Thus, if for example
 precision is set to one, the output can take two values: 0.0 and 0.5,
 the latter indicating the FIFO is at least 50% full.
 
-
-<!--
-#### Almost empty threshold
--->
-
-<!--
-#### Provide read reset busy port
--->
-
-<!--
-#### Provide write reset busy port
--->
-
-<!--
-#### Almost full threshold
--->
 
 #### Optional Ports  
 ##### Provide reset port  

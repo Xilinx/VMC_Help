@@ -31,34 +31,21 @@ The Vector Delay Delta block implements a fixed delay of L cycles.
 ## Parameters
 
 
-<!--
 #### Provide synchronous reset port
+
 Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
--->
 
-<!--
 #### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
 
-<!--
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
 #### Latency
-Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
--->
 
-<!--
-#### Delta Latency
--->
+The number of sample periods by which the block's output is delayed.
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
 
-<!--
-#### Implement using behavioral HDL
-Uses behavioral HDL as the implementation. This allows the downstream logic synthesis tool to choose the best implementation.
--->
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Super Sample Rate (SSR)
 This configurable GUI parameter is primarily

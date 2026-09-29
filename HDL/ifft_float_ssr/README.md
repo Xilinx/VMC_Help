@@ -31,16 +31,8 @@ The use of the Vector IFFT Float implementation is recommended in only Verilog d
 
 
 <!--
-#### FFT Length (2^K,K = 3-16)
--->
-
-<!--
 #### SSR
 Super Sample Rate, It should be a power of 2.
--->
-
-<!--
-#### Block RAM Threshold
 -->
 
 #### FFT length (N) 

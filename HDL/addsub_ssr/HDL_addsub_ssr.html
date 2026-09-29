@@ -65,11 +65,13 @@ carry-out port is available only when User defined precision is
 selected, the inputs and output are unsigned, and the number of output
 integer bits equals x, where x = max (integer bits a, integer bits
 b).</p>
-<!--
-#### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
-
+</section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
@@ -81,11 +83,11 @@ model). Model Composer does not perform extensive pipelining unless you
 select the Pipeline for maximum performance option (on the
 Implementation tab, described below); additional latency is usually
 implemented as a shift register on the output of the block.</p>
-<!--
-#### SSR
-Super Sample Rate, It should be a power of 2.
--->
-
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
 </section>
 </section>
 <section id="output-tab" class="level3">

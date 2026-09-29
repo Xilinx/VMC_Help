@@ -51,10 +51,6 @@ run at a multiple of the block 's sample rate. The signal driving the
 enable port must be Boolean.
 
 
-<!--
-#### Vectorize enable input
--->
-
 #### Latency  
 Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port check box is not checked. The
@@ -64,10 +60,9 @@ latency is set to L=1, the block will generally be synthesized as a
 flip-flop (or multiple flip-flops if the data width is greater than 1).
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Super Sample Rate (SSR)
 This configurable GUI parameter is primarily

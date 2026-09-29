@@ -62,14 +62,6 @@ If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
 
 
-<!--
-#### Number of rows
--->
-
-<!--
-#### Number of columns
--->
-
 #### Fixed-point Precision  
 ##### Number of bits  
 Specifies the total number of bits, including the binary point bit
@@ -131,30 +123,6 @@ as when Wrap is selected.
 <!--
 #### Sample period
 Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
--->
-
-<!--
-#### Use ADC Input
--->
-
-<!--
-#### ADC Channel ID
--->
-
-<!--
-#### Default Value
--->
-
-<!--
-#### IOB pad locations (specify as cell array {'MSB', ..., 'LSB'})
--->
-
-<!--
-#### IO Standards (specify as cell array {'MSB', ..., 'LSB'})
--->
-
-<!--
-#### Inherit from input
 -->
 
 ### Implementation tab  

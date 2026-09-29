@@ -275,10 +275,6 @@ Select Forney Convolutional or Rectangular Block.
 Select Interleaver or Deinterleaver
 
 
-<!--
-#### External Symbol Memory Latency
--->
-
 #### Symbol memory  
 Specifies whether or not the data symbols are stored in Internal FPGA
 RAM or in External RAM.

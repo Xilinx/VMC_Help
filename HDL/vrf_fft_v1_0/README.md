@@ -9,34 +9,6 @@ The Versal RF FFT block simulates the hardened FFT IP block from Versal RF devic
 
 ## Parameters
 
-<!--
-#### Super Sample Rate
--->
-
-<!--
-#### Maximum FFT Point Size
--->
-
-<!--
-#### Enable FFT Scaling
--->
-
-<!--
-#### Enable FFT Reordering
--->
-
-<!--
-#### Data Width In
--->
-
-<!--
-#### Data Width Out
--->
-
-<!--
-#### Enable Event Port
--->
-
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

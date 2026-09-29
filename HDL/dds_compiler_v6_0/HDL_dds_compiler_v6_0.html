@@ -238,10 +238,6 @@ XFloat_8_24 is displayed as output data type.</p>
 the format: XFloat_&lt;exponent_bit_width&gt; _
 &lt;fraction_bit_width&gt;. Single precision data type is displayed
 using the string &quot;XFloat_8_24&quot;</p>
-<!--
-#### Modulus
--->
-
 </section>
 </section>
 <section id="parameter-selection" class="level4">
@@ -333,15 +329,11 @@ Full_Range amplitude.</p>
 <h4>DSP48 Use</h4>
 <p>Select between Minimal, or Maximal. When set to Maximal, XtremeDSP
 slices are used to achieve to maximum performance.</p>
-<!--
-#### Resync
--->
-
-<!--
-#### Latency
-Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
--->
-
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>The number of sample periods by which the block&#39;s output is
+delayed.</p>
 </section>
 <section id="latency-options" class="level4">
 <h4>Latency Options</h4>
@@ -381,10 +373,6 @@ immediately following.</p>
 <h4>Use explicit period</h4>
 <p>When checked, the DDS Compiler block uses the explicit sample period
 that is specified in the dialog entry box below.</p>
-<!--
-#### Explicit Period
--->
-
 </section>
 </section>
 <section id="axi-channel-options-tab" class="level3">
@@ -428,18 +416,6 @@ support the full AXI handshake protocol with inherent back-pressure. If
 there is an input PHASE channel, its TREADY is also determined by this
 control, so that the datapath from input PHASE channel to output
 channels as a whole supports backpressure or not.</p>
-<!--
-#### Input
--->
-
-<!--
-#### DATA Output
--->
-
-<!--
-#### Output Form
--->
-
 </section>
 </section>
 <section id="tuser-options" class="level4">
@@ -503,70 +479,6 @@ Phase_Generator_and_SIN_COS_LUT is selected as the Configuration Options
 field on the Basic tab, the Parameter Selection on the Basic tab is set
 to Hardware Parameters and Phase Increment Programmability field on the
 Phase Offset Angles tab is set to Fixed or Programmable.</p>
-<!--
-#### Channel 1
--->
-
-<!--
-#### Channel 2
--->
-
-<!--
-#### Channel 3
--->
-
-<!--
-#### Channel 4
--->
-
-<!--
-#### Channel 5
--->
-
-<!--
-#### Channel 6
--->
-
-<!--
-#### Channel 7
--->
-
-<!--
-#### Channel 8
--->
-
-<!--
-#### Channel 9
--->
-
-<!--
-#### Channel 10
--->
-
-<!--
-#### Channel 11
--->
-
-<!--
-#### Channel 12
--->
-
-<!--
-#### Channel 13
--->
-
-<!--
-#### Channel 14
--->
-
-<!--
-#### Channel 15
--->
-
-<!--
-#### Channel 16
--->
-
 </section>
 <section id="output-frequencies-mhz" class="level4">
 <h4>Output frequencies (MHz)</h4>

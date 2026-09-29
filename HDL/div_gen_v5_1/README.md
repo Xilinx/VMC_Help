@@ -57,14 +57,6 @@ output). Choices are 1, 2, 4, and 8.
 
 
 
-<!--
-#### Detect Divide-by-Zero
--->
-
-<!--
-#### AXI behaviour
--->
-
 #### Detect divide by zero  
 Determines if the core shall have a division-by-zero indication output
 port.
@@ -147,18 +139,9 @@ Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
 
-<!--
 #### Display shortened port names
+
 AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
--->
-
-<!--
-#### Define FPGA area for resource estimation
--->
-
-<!--
-#### FPGA area [slices, FFs, BRAMs, LUTs, IOBs, emb. mults, TBUFs]
--->
 
 ## LogiCORE™ Documentation
 

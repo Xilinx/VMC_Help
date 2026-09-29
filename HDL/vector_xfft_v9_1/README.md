@@ -142,14 +142,6 @@ Parameters specific to the Basic tab are as follows.
 One of N = 2^((3..16)) = 8 - 65536.
 
 
-<!--
-#### Target Clock Frequency (MHz)
--->
-
-<!--
-#### Target Data Throughput (MSPS)
--->
-
 #### Architecture Configuration  
 ##### Target Clock Frequency(MHz)  
 Enter the target clock frequency.
@@ -191,10 +183,6 @@ interpreted as pairs of 32-bit IEEE-754 floats and phase factors as
 fixed-point with the precision controlled by the input signal types
 and **Phase Factor Width**.
 
-
-<!--
-#### SSR (Super Sample Rate)
--->
 
 #### Precision Options
 ##### Phase Factor Width
@@ -244,14 +232,6 @@ prefix length can be from 0 to 1023 samples, and a CP_LEN value of
 0010010110 produces a cyclic prefix consisting of the last 150 samples
 of the output data.
 
-
-<!--
-#### Throttle Scheme
--->
-
-<!--
-#### Optimize Block RAM Count Using Hybrid Memories
--->
 
 #### Throttle Schemes  
 Select the tradeoff between performance and data timing requirements.

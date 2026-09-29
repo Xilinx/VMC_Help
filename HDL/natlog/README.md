@@ -14,10 +14,6 @@ Parameters specific to the Basic tab are as follows.
 
 
 <!--
-#### Flow Control
--->
-
-<!--
 #### Optimize Goal
 When NonBlocking mode is selected, the following optimization options are activated.
 -->

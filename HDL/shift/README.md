@@ -27,10 +27,6 @@ Boxes](../../GEN/common-options/README.md).
 
 
 <!--
-#### Shift direction
--->
-
-<!--
 #### Number of bits
 Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
 -->

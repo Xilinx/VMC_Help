@@ -115,10 +115,6 @@ Adds a ctrl_user input port to the block.
 Specifies the bit width of the ctrl_tuser input port.
 
 
-<!--
-#### TLAST Behavior
--->
-
 #### Output TLAST Behavior  
 Determines the behavior of the dout_tlast output port.
 

@@ -123,15 +123,6 @@ Selects rounding_mode 1 (C-bar left shifted by 1).
 Selects rounding_mode 2 (C-bar left shifted by 2).
 
 
-<!--
-#### Mask attribute
-A 48-bit value used to mask out certain bits during a pattern detection. A value of 0 passes the bit, and a value of 1 masks out the bit.
--->
-
-<!--
-#### RND
--->
-
 ### Wide Xor tab  
 Parameters specific to the Wide Xor tab are as follows.
 
@@ -143,14 +134,6 @@ Use the XORSIMD attribute to select the width of the XOR function.
 Select either XOR12 (the default), XOR22, XOR24, XOR34, XOR58, or
 XOR116).
 
-
-<!--
-#### Consolidate control port (opmode, alumode, carry_in, carry_in_sel, negate)
--->
-
-<!--
-#### Provide carry out port
--->
 
 ### Optional Ports tab  
 #### Input Ports  
@@ -299,80 +282,6 @@ Indicates whether the carry in select port should be registered.
 ##### Pipeline INMODE register  
 Indicates to add a pipeline register to the INMODE input.
 
-
-<!--
-#### Reset port for d and ad
-When selected, a port rst_a and rst_ad is made available. This resets the pipeline register for ports when set to '1'.
--->
-
-<!--
-#### Reset port for INMODE
-When selected, a port rst_inmode is made available. This resets the pipeline register for the inmode port when set to '1'.
--->
-
-<!--
-#### Invert alumode
--->
-
-<!--
-#### bits to be inverted
--->
-
-<!--
-#### Invert carryin
--->
-
-<!--
-#### Invert inmode
--->
-
-<!--
-#### Invert negate
--->
-
-<!--
-#### Invert opmode
--->
-
-<!--
-#### Invert rst for carryin
--->
-
-<!--
-#### Invert rst for alumode
--->
-
-<!--
-#### Invert rst for a
--->
-
-<!--
-#### Invert rst for b
--->
-
-<!--
-#### Invert rst for c
--->
-
-<!--
-#### Invert rst for d
--->
-
-<!--
-#### Invert rst for controls
--->
-
-<!--
-#### Invert rst for inmode
--->
-
-<!--
-#### Invert rst for multiplier
--->
-
-<!--
-#### Invert rst for p
--->
 
 ### Reset/Enable Ports tab  
 #### Provide Reset Ports  
