@@ -25,7 +25,7 @@ Refer to [Gateway In](../../HDL/gatewayin/README.md) block help to learn more ab
 
 <!--
 #### Output Data Type
-Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
+Possible values are: `int8`, `int16`, `int32`, `int64`, `uint8`, `uint16`, `uint32`, `uint64`, `cint16`, `cint32`, `float`, `cfloat`, `bfloat16`, `cbfloat16`
 -->
 
 <!--
@@ -45,22 +45,18 @@ The binary point is the means by which fixed-point numbers are scaled. The Binar
 
 <!--
 #### Exponent width
-Specify the exponent width.
 -->
 
 <!--
 #### Fraction width
-Specify the fraction width.
 -->
 
 <!--
 #### Quantization
-Quantization errors occur when the number of fractional bits is insufficient to represent the fractional portion of a value. The options are to Truncate (for example, to discard bits to the right of the least significant representable bit), or to Round(unbiased: +/- inf) or Round (unbiased: even values).
 -->
 
 <!--
 #### Overflow
-Overflow errors occur when a value lies outside the representable range. For overflow the options are to Saturate to the largest positive/smallest negative value, to Wrap (for example, to discard bits to the left of the most significant representable bit), or to Flag as error (an overflow as a Simulink error) during simulation. Flag as error is a simulation only feature. The hardware generated is the same as when Wrap is selected.
 -->
 
 <!--
