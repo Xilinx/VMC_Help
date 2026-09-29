@@ -197,17 +197,74 @@ pin Clock Enable.
 ### Attributes 1 tab  
 Parameters specific to the Attributes 1 tab are as follows.
 
-#### Code Specification
 
+<!--
+#### Symbols Per Block (n)
+-->
+
+<!--
+#### Data Symbols (k)
+-->
+
+<!--
+#### Variable Number Of Check Symbols (r)
+False, true. When checked, the ctrl_tdata_r_in and ctrl_tdata_n_in pins become available on the block.
+-->
+
+<!--
+#### Output check symbols (Output all N symbols in block, including check symbols, or only K information symbols)
+-->
+
+#### Code Block Specification  
+##### Code specification  
 Specifies the type of RS Decoder desired. The choices are as follows.
 
-#### Symbol Width
+###### Custom  
+Allows you to set all the block parameters.
 
+###### DVB  
+Implements DVB (Digital Video Broadcasting) standard (204, 188)
+shortened RS code.
+
+###### ATSC  
+Implements ATSC (Advanced Television Systems Committee) standard
+(207, 187) shortened RS code.
+
+###### G.709  
+Implements G.709 Optical Transport Network standard.
+
+###### CCSDS  
+Implements CCSDS (Consultative Committee for Space Data Systems)
+standard (255, 223) full length RS code.
+
+###### IESS-308 (All)  
+Implements IESS-308 (INTELSAT Earth Station Standard) specification
+(all) shortened RS code.
+
+###### IESS-308 (126)  
+Implements IESS-308 (INTELSAT Earth Station Standard) specification
+(126, 112) shortened RS code.
+
+###### IESS-308 (194)  
+Implements IESS-308 specification (194, 178) shortened RS code.
+
+###### IESS-308 (208)  
+Implements IESS-308 specification (208, 192) shortened RS code.
+
+###### IESS-308 (219)  
+Implements IESS-308 specification (219, 201) shortened RS code.
+
+###### IESS-308 (225)  
+Implements IESS-308 specification (225, 205) shortened RS code.
+
+###### IEEE-802.16  
+Implements IEEE-802.16 specification (255, 239) full length RS code.
+
+###### Symbol width  
 Tells the width in bits for symbols in the code. The encoder support
 widths from 3 to 12 (default 8).
 
-#### Field Polynomial
-
+###### Field polynomial  
 Specifies the polynomial from which the symbol field is derived. It must
 be specified as a decimal number. This polynomial must be primitive. A
 value of zero indicates the default polynomial should be used. Default
@@ -227,15 +284,13 @@ polynomials are listed in the table below.
 | 12           | x¹² + x⁶ + x⁴ + x + 1 | 4179                 |
 
 
-#### Scaling Factor (h)
-
+###### Scaling Factor (h)  
 (represented in the previous formula as h) specifies the scaling factor
 for the code. Ordinarily, h is 1, but can be as large as 2^(S) - 1 where
 s is the symbol width. The value must be chosen so that α^(h) is
 primitive. That is, h must be relatively prime to 2^(S) - 1.
 
-#### Generator Start
-
+###### Generator Start  
 specifies the first root r of the generator polynomial. The generator
 polynomial g(x), is given by:
 
@@ -246,27 +301,22 @@ polynomial g(x), is given by:
 where α is a primitive element of the symbol field, and the scaling
 factor is described below.
 
-#### Variable Block Length
-
+###### Variable Block Length  
 When checked, the block is given a ctrl input channel.
 
-#### Symbols Per Block (n)
-
+###### Symbols Per Block(n)  
 Tells the number of symbols in the blocks the encoder produces.
 Acceptable numbers range from 3 to 2^(S) -1, where s denotes the symbol
 width.
 
-#### Data Symbols (k)
-
+###### Data Symbols(k)  
 Tells the number of information symbols each block contains. Acceptable
 values range from max(n - 256, 1) to n - 2.
 
-#### Variable Number Of Check Symbols (r)
-
+##### Variable Check Symbol Options  
 Variable Number of Check Symbols (r)  
 
-#### Define Supported R_IN Values
-
+###### Define Supported R_IN Values  
 If only a subset of the possible values that could be sampled on R_IN is
 actually required, then it is possible to reduce the size of the core
 slightly. For example, for the Intelsat standard, the R_IN input is 5
@@ -275,47 +325,41 @@ size can be slightly reduced by defining only these four values to be
 supported. If any other value is sampled on R_IN, the core will not
 decode the data correctly.
 
-#### Number of Supported R_IN Values
-
+###### Number of Supported R_IN Values  
 Specify the number of supported R_IN values.
 
-#### Supported R_IN Definition File
-
+###### Supported R_IN Definition File  
 This is a COE file that defines the R values to be supported. It has the
 following format: radix=10; legal_r_vector=14,16,18,20; The number of
 elements in the legal_r_vector must equal the specified Number of
 Supported R_IN Values.
 
 
-### Attributes 2 tab
-
-#### Self Recovering
-
+### Attributes 2 tab  
+#### Implementation  
+##### State Machine  
+###### Self Recovering  
 When checked, the block synchronously resets itself if it enters an
 illegal state.
 
-#### Memory Style
-
+##### Memory Style  
 Select between Distributed, Block and Automatic memory choices.
 
-#### Number Of Channels
-
+##### Number Of Channels  
 Specifies the number of separate time division multiplexed channels to
 be processed by the encoder. The encoder supports up to 128 channels.
 
-#### Output check symbols (Output all N symbols in block, including check symbols, or only K information symbols)
-
+##### Output check symbols  
 If selected, then the entire n symbols of each block are output on the
 output channel. If not selected, then only the k information symbols are
 output.
 
-#### Number of Puncture Patterns
-
+##### Puncture Options  
+###### Number of Puncture Patterns  
 Specifies how many puncture patterns the LogiCORE needs to handle. It is
 set to 0 if puncturing is not required.
 
-#### Puncture Definition File
-
+###### Puncture Definition File  
 Specifies the pathname of the puncture definition file that is used to
 define the puncture patterns.
 
@@ -324,92 +368,58 @@ working directory. For example, the syntax is \[cwd
 ‘/ieee802_16d_puncturing.coe’\].
 
 
-### Optional pins tab
-
-#### Clock Enable
-
+### Optional pins tab  
+#### Clock Enable  
 Adds a aclken pin to the block. This signal carries the clock enable and
 must be of type Bool.
 
-#### Info
-
+#### Info  
 Adds the output_tdata_info pin. Marks the last information symbol of a
 block on tdata_data_out.
 
-#### Synchronous Reset
-
+#### Synchronous Reset  
 Adds a aresetn pin to the block. This signal resets the block and must
 be of type Bool. The signal must be asserted for at least 2 clock
 cycles, however, it does not have to be asserted before the decoder can
 start decoding.
 
-#### Original Delayed Data
-
+#### Original Delayed Data  
 When checked, the block is given a tdata_data_del output. Indicates
 that a DAT_DEL field is in the output_tdata output.
 
-#### Erase
-
+#### Erase  
 When checked, the block is given an input_tdata_erase input pin.
 
-#### Error Statistics
-
+#### Error Statistics  
 adds the following error statistics outputs:
 
-#### Marker Bits
+##### bit_err_0_to_1  
+Number of bits received as 1 but corrected to 0.
 
+##### bit_err_1_to_0  
+Number of bits received as 0 but corrected to 1.
+
+#### Marker Bits  
 Adds the following pins to the block:
 
-#### Number Of Marker Bits
+##### input_tuser_mark_in  
+Carries marker bits for tagging data on input_tdata_ data_in.
 
+##### output_tuser_mark_out  
+Mark_in tagging bits delayed by the latency of the LogiCORE.
+
+#### Number of Marker Bits  
 Specifies the number of marker bits.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+
+<!--
 #### Display shortened port names
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Code Block Specification. Custom. Allows you to set all the block parameters.
-
-DVB. Implements DVB (Digital Video Broadcasting) standard (204, 188)
-shortened RS code.
-
-ATSC. Implements ATSC (Advanced Television Systems Committee) standard
-(207, 187) shortened RS code.
-
-G.709. Implements G.709 Optical Transport Network standard.
-
-CCSDS. Implements CCSDS (Consultative Committee for Space Data Systems)
-standard (255, 223) full length RS code.
-
-IESS-308 (All). Implements IESS-308 (INTELSAT Earth Station Standard) specification
-(all) shortened RS code.
-
-IESS-308 (126). Implements IESS-308 (INTELSAT Earth Station Standard) specification
-(126, 112) shortened RS code.
-
-IESS-308 (194). Implements IESS-308 specification (194, 178) shortened RS code.
-
-IESS-308 (208). Implements IESS-308 specification (208, 192) shortened RS code.
-
-IESS-308 (219). Implements IESS-308 specification (219, 201) shortened RS code.
-
-IESS-308 (225). Implements IESS-308 specification (225, 205) shortened RS code.
-
-IEEE-802.16. Implements IEEE-802.16 specification (255, 239) full length RS code.
-
-Implementation. State Machine. Puncture Options. bit_err_0_to_1. Number of bits received as 1 but corrected to 0.
-
-bit_err_1_to_0. Number of bits received as 0 but corrected to 1.
-
-input_tuser_mark_in. Carries marker bits for tagging data on input_tdata_ data_in.
-
-output_tuser_mark_out. Mark_in tagging bits delayed by the latency of the LogiCORE.
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+-->
 
 ## LogiCORE™ Documentation
 

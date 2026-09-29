@@ -31,28 +31,32 @@ The following figure shows the Block Parameters dialog box.
 ### page_0 tab  
 Parameters specific to the page_0 tab are as follows.
 
-#### Punctured
-
+#### Punctured  
 Determines whether the block is punctured.
 
-#### Dual output
-
+#### Dual Output  
 Specifies a dual-channel punctured block.
 
-#### Input rate
-
+#### Input Rate  
 Punctured: Only the input rate can be modified. Its value can range from
 2 to 12, resulting in a rate n/m encoder where n is the input rate and
 n\<m\<2n.
 
-#### Output rate
-
+#### Output Rate  
 Not Punctured: Only the output rate can be modified. Its value can be
 integer values from 2 to 7, resulting in a rate 1/2 or rate 1/7 encoder,
 respectively
 
-#### Puncture code0
 
+<!--
+#### Puncture code0
+-->
+
+<!--
+#### Puncture code1
+-->
+
+#### Puncture Code0 and Code1  
 The two puncture pattern codes are used to remove bits from the encoded
 data prior to output. The length of each puncture code must be equal to
 the puncture input rate, and the total number of bits set to 1 in the
@@ -61,22 +65,16 @@ valid. A 0 in any position indicates that the output bit from the
 encoder is not transmitted. See the associated LogiCORE™ data sheet for
 an example.
 
-#### Puncture code1
-
-Dialog parameter.
-
-#### Tready
-
+#### Optional Pins  
+##### Tready  
 Adds a tready pin to the block. Indicates that the slave can accept a
 transfer in the current cycle.
 
-#### Aclken
-
+##### Aclken  
 Adds a aclken pin to the block. This signal carries the clock enable and
 must be of type Bool.
 
-#### Aresetn
-
+##### Aresetn  
 Adds a aresetn pin to the block. This signal resets the block and must
 be of type `Bool`. The signal must be asserted for at least 2 clock
 cycles, however, it does not have to be asserted before the decoder can
@@ -86,17 +84,49 @@ pin to inactive (high) on the core.
 ### page_1 tab  
 Parameters specific to the page_1 tab are as follows.
 
-#### Convolution code radix
-
+#### Radix  
+##### Convolution code radix  
 Select Binary, Octal, or Decimal.
 
-#### Constraint length
-
+#### Constraint length  
 Equals n+1, where n is the length of the constraint register in the
 encoder.
 
-#### Convolution code0
 
+<!--
+#### Convolution code0
+-->
+
+<!--
+#### Convolution code1
+-->
+
+<!--
+#### Convolution code2
+-->
+
+<!--
+#### Convolution code3
+-->
+
+<!--
+#### Convolution code4
+-->
+
+<!--
+#### Convolution code5
+-->
+
+<!--
+#### Convolution code6
+-->
+
+<!--
+#### Display shortened port names
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+-->
+
+#### Convolution code  
 Array of binary convolution codes. Output rate is derived from the array
 length. Between 2 and 7 (inclusive) codes can be entered.
 
@@ -104,37 +134,7 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
-#### Convolution code1
-
-Dialog parameter.
-
-#### Convolution code2
-
-Dialog parameter.
-
-#### Convolution code3
-
-Dialog parameter.
-
-#### Convolution code4
-
-Dialog parameter.
-
-#### Convolution code5
-
-Dialog parameter.
-
-#### Convolution code6
-
-Dialog parameter.
-
-#### Display shortened port names
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Optional Pins. Radix. ## LogiCORE™ Documentation
+## LogiCORE™ Documentation
 
 Convolutional Encoder LogiCORE IP Product Guide
 ([PG026](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg026_convolution&ft:locale=en-US))

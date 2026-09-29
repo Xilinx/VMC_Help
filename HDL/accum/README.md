@@ -25,28 +25,36 @@ b(n) with subtraction.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-#### Operation
-
+#### Operation  
 This determines whether the block is adder- or subtractor-based.
 
-#### Number of bits
-
+#### Fixed-Point Output Precision  
+##### Number of bits  
 Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-#### Overflow
-
+##### Overflow  
 Refer to the section [Overflow and
 Quantization](matlab:helpview(vmcHelp('name','common-options'))).
 
-#### Feedback scaling
-
+#### Feedback scaling  
 Specifies the feedback scale factor to be one of the following:
 
   1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, or 1/256.
 
-#### Provide synchronous reset port
 
+<!--
+#### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
+
+<!--
+#### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
+
+#### Optional Ports  
+##### Provide synchronous reset port  
 Activates an optional reset (rst) pin on the block. When the reset
 signal is asserted, the block goes back to its initial state. However,
 when a floating point accumulator is used, the output will be NAN during
@@ -54,8 +62,8 @@ reset. The reset signal has precedence over the optional enable signal
 available on the block. The reset signal must run at a multiple of the
 block's sample rate. The signal driving the reset port must be Boolean.
 
-#### Reinitialize with input 'b'
-
+#### Bypass Option on Reset  
+##### Reinitialize with input 'b'  
 When selected, the output of the accumulator is reset to the data on
 input port b. When not selected, the output of the accumulator is
 reset to zero. This option is available only when the block has a reset
@@ -68,39 +76,27 @@ a function of the CE signal.
 ### Internal Precision tab  
 Parameters specific to the Internal Precision tab are as follows:
 
-#### Provide enable port
-
-Dialog parameter.
-
-#### Latency
-
-Dialog parameter.
-
-#### Input MSB Max
-
+#### Floating Point Precision  
+##### Input MSB Max  
 The Most Significant Bit of the largest number that can be accepted.
 
-#### Output MSB Max
-
+##### Output MSB Max  
 The MSB of the largest result. It can be up to 54 bits greater than the
 Input MSB.
 
-#### Output LSB Min
-
+##### Output LSB Min  
 The Least Significant Bit of the smallest number that can be accepted.
 It is also the LSB of the accumulated result.
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
 
-#### Use behavioral HDL (otherwise use core)
-
+#### Use behavioral HDL (otherwise use core)  
 The block is implemented using behavioral HDL. This gives the downstream
 logic synthesis tool maximum freedom to optimize for performance or
 area.
 
-#### Implement using
-
+#### Implement using  
 Core logic can be implemented in Fabric or in a DSP48, if a DSP48 is
 available in the target device. The default is Fabric.
 
@@ -110,9 +106,7 @@ Boxes](../../GEN/common-options/README.md).
 
 The Accumulator block always has a latency of 1.
 
-Additional dialog notes:
-
-Fixed-Point Output Precision. Optional Ports. Bypass Option on Reset. Floating Point Precision. ## LogiCORE™ Documentation
+## LogiCORE™ Documentation
 
 Accumulator LogiCORE IP Product Guide
 ([PG119](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg119-c-accum&ft:locale=en-US))

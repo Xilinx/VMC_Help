@@ -49,15 +49,12 @@ IP DDS Compiler v6.0" for code generation.
 
 Parameters specific to the block are as follows:
 
-### System Parameters
-
-#### Select the input format
-
+### System Parameters  
+#### Select the input format  
 Specifies whether the frequency and phase offset inputs are entered as a
 Frequency (Hz) or an angular velocity (Radians) value.
 
-#### Frequency
-
+#### Frequency  
 Specifies the frequency, either in Hertz or radians. The default is 1.
 
 <div class="noteBox">
@@ -68,25 +65,28 @@ In this case, the Frequency or Radians parameter should be set as follows:
 Frequency/Radians = (Desired Frequency/Radians) * (Block Sample Period/Simulink System Period)
 </div>
 
-#### Phase Offset
-
+#### Phase Offset  
 Specifies the phase shift, either in Hertz or radians. The default is 0.
 
-#### Output Selection
+#### Output Selection  
+##### Sine_and_Cosine  
+Places both a sine and cosine output port on the block.
 
-Dialog parameter.
+##### Sine  
+Places only a sine output port on the block.
 
-#### Spurious Free Dynamic Range (SFDR)
+##### Cosine  
+Places only a cosine output port on the block.
 
+#### Spurious Free Dynamic Range (SFDR)  
 Specifies the precision of the output produced by the Sine Wave block.
 This sets the output width as well as internal bus widths, and controls
 various implementation decisions.
 
-#### Explicit Sample Period
-
+#### Explicit Sample Period  
 If checked, the Sine Wave block uses the explicit sample time specified
 
-#### Sample period
+#### Sample Period  
 
 When "Explicit sample period" is disabled, the sample period of this block will be equal to the Simulink system period setting in the Vitis Model Composer Hub block.
 
@@ -95,14 +95,6 @@ When "Explicit sample period" is enabled, the formula to set the Frequency in Hz
 `Frequency(in Hz) = (Desired Frequency) * (Block Sample Period/Simulink System Period)`
 
 `Frequency(in Radians) = 2π * Desired Frequency * (Block Sample Period/Simulink System Period)`
-
-Additional dialog notes:
-
-Sine_and_Cosine. Places both a sine and cosine output port on the block.
-
-Sine. Places only a sine output port on the block.
-
-Cosine. Places only a cosine output port on the block.
 
 ## Examples
 ### Case 1:

@@ -29,34 +29,32 @@ output frequency signal.
 
 ## Parameters
 
+
+<!--
 #### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
 
-Dialog parameter.
+#### Super Sample Rate (SSR)  
+This configurable GUI parameter is primarily used to control the
+processing of multiple data samples on every sample period. This block
+enables 1-D vector support for the primary block operation.
 
-#### Frequency Resolution (bits)
-
+#### Frequency Resolution (bits)  
 Defines the smallest incremental step in frequency that the block can
 output. This should be an integer value.
 
-#### Sin/Cos Table Depth
-
+#### Sin/Cos Table Depth  
 Defines the depth of the Sin/Cos Table and should be an integer value.
 
-#### Sin/Cos Table Width
-
+#### Sin/Cos Table Width  
 Defines the width of the Sin/Cos Table and should be an integer value.
-
-Additional dialog notes:
-
-Super Sample Rate (SSR). This configurable GUI parameter is primarily used to control the
-processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation.
 
 ## Examples
 
 ***Click on the images below to open the model.***
 
-[![](./Images/Vector_DDFS_Example1.png)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/Block_Help/HDL/Vector_DDFS_Ex1)
+![](./Images/Vector_DDFS_Example1.png)
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

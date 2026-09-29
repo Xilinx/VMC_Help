@@ -42,11 +42,44 @@ prescaling.</p>
 <h3>Basic tab</h3>
 <section id="algorithm-type" class="level4">
 <h4>Algorithm Type</h4>
-<p>Dialog parameter.</p>
+<section id="radix-2" class="level5">
+<h5>Radix-2</h5>
+<p>Non-restoring integer division using integer operands, allows a
+remainder to be generated. This is recommended for operand widths less
+than around 16 bits. This option supports both unsigned and signed (2’s
+complement) divisor and dividend inputs.</p>
+</section>
+<section id="high_radix" class="level5">
+<h5>High_Radix</h5>
+<p>Division with prescaling. This is recommended for operand widths
+greater than 16 bits, though the implementation requires the use of
+DSP48 (or variant) primitives. This option only supports signed (2’s
+complement) divisor and dividend inputs.</p>
+</section>
+<section id="lutmult" class="level5">
+<h5>LutMult</h5>
+<p>A simple lookup estimate of the reciprocal of the divisor followed by
+a multiplier. Only the remainder output type is supported because of the
+bias required in the reciprocal estimate. This bias would introduce an
+offset (error) if used to create a fractional output. This is recommened
+for operand widths less than or equal to 12 bits. This implementation
+uses DSP slices, block RAM, and a small number of FPGA logic primitives
+(registers and LUTs). For operand widths where either Radix2 or the
+LUTMult options are possible, the LUTMult offers a solution using fewer
+FPGA logic resources because of the use of DSP and block RAM primitives.
+Supports unsigned or two&#39;s complement signed numbers.</p>
+</section>
 </section>
 <section id="remainder-type" class="level4">
-<h4>Remainder Type</h4>
-<p>Dialog parameter.</p>
+<h4>Remainder type</h4>
+<section id="remainder" class="level6">
+<h6>Remainder</h6>
+<p>Only supported for Radix 2.</p>
+</section>
+<section id="fractional" class="level6">
+<h6>Fractional</h6>
+<p>Determines the number of bits in the fractional port output.</p>
+</section>
 </section>
 <section id="fractional-width" class="level4">
 <h4>Fractional width</h4>
@@ -57,22 +90,47 @@ number of bits in the fractional port output.</p>
 <h4>Radix2 throughput</h4>
 <p>Determines the interval in clocks between new data being input (and
 output). Choices are 1, 2, 4, and 8.</p>
+<!--
+#### Detect Divide-by-Zero
+-->
+
+<!--
+#### AXI behaviour
+-->
+
 </section>
 <section id="detect-divide-by-zero" class="level4">
-<h4>Detect Divide-by-Zero</h4>
+<h4>Detect divide by zero</h4>
 <p>Determines if the core shall have a division-by-zero indication
 output port.</p>
 </section>
-<section id="axi-behaviour" class="level4">
-<h4>AXI behaviour</h4>
-<p>Dialog parameter.</p>
+<section id="axi-behavior" class="level4">
+<h4>AXI behavior</h4>
+<section id="nonblocking" class="level5">
+<h5>NonBlocking</h5>
+<p>Performs an action only when a control packet and a data packet are
+presented to the block at the same time.</p>
+</section>
+<section id="blocking" class="level5">
+<h5>Blocking</h5>
+<p>Preforms an action when a data packet is presented to the block. The
+block uses the previous control information.</p>
+</section>
 </section>
 <section id="axi-implementation-emphasis" class="level4">
-<h4>AXI implementation emphasis</h4>
-<p>Dialog parameter.</p>
+<h4>AXI Implementation emphasis</h4>
+<section id="resources" class="level5">
+<h5>Resources</h5>
+<p>Automatic (fully pipelined) or Manual (determined by following
+field).</p>
+</section>
+<section id="performance" class="level5">
+<h5>Performance</h5>
+<p>Implementation decisions target the highest speed.</p>
+</section>
 </section>
 <section id="latency-configuration" class="level4">
-<h4>Latency Configuration</h4>
+<h4>Latency configuration</h4>
 <p>Automatic (fully pipelined) or Manual (determined by following
 field).</p>
 </section>
@@ -84,21 +142,27 @@ of clock enabled clock cycles.</p>
 </section>
 <section id="optional-ports-tab" class="level3">
 <h3>Optional ports tab</h3>
-<section id="has-tuser" class="level4">
-<h4>Has TUSER</h4>
+<section id="divided-channel-ports" class="level4">
+<h4>Divided Channel Ports</h4>
+<section id="has-tuser" class="level5">
+<h5>Has TUSER</h5>
 <p>Adds a tuser input port to the dividend channel.</p>
 </section>
-<section id="has-tlast" class="level4">
-<h4>Has TLAST</h4>
+<section id="has-tlast" class="level5">
+<h5>Has TLAST</h5>
 <p>Adds a tlast output port to the dividend channel.</p>
 </section>
-<section id="has-tuser-1" class="level4">
-<h4>Has TUSER</h4>
+</section>
+<section id="divisor-channel-ports" class="level4">
+<h4>Divisor Channel Ports</h4>
+<section id="has-tuser-1" class="level5">
+<h5>Has TUSER</h5>
 <p>Adds a tuser input port to the divisor channel.</p>
 </section>
-<section id="has-tlast-1" class="level4">
-<h4>Has TLAST</h4>
+<section id="has-tlast-1" class="level5">
+<h5>Has TLAST</h5>
 <p>Adds a tlast output port to the divisor channel.</p>
+</section>
 </section>
 <section id="aclken" class="level4">
 <h4>ACLKEN</h4>
@@ -117,60 +181,43 @@ clear. A minimum ARESETn pulse of two cycles is required.</p>
 <section id="input-tlast-combination-for-output" class="level4">
 <h4>Input TLAST combination for output</h4>
 <p>Determines the behavior of the dout_tlast output port.</p>
+<section id="null" class="level5">
+<h5>Null</h5>
+<p>Output is null.</p>
 </section>
-<section id="display-shortened-port-names" class="level4">
-<h4>Display shortened port names</h4>
-<p>Dialog parameter.</p>
+<section id="pass_dividend_tlast" class="level5">
+<h5>Pass_Dividend_TLAST</h5>
+<p>Pass the value of the dividend_tlast input port to the dout_tlast
+output port.</p>
 </section>
-<section id="define-fpga-area-for-resource-estimation" class="level4">
-<h4>Define FPGA area for resource estimation</h4>
-<p>Dialog parameter.</p>
+<section id="pass-divisor_tlast" class="level5">
+<h5>Pass Divisor_TLAST</h5>
+<p>Pass the value of the divisor_tlast input port to the dout_tlast
+output port.</p>
 </section>
-<section id="fpga-area-slices-ffs-brams-luts-iobs-emb-mults-tbufs" class="level4">
-<h4>FPGA area [slices, FFs, BRAMs, LUTs, IOBs, emb. mults, TBUFs]</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Radix-2. Non-restoring integer division using integer operands,
-allows a remainder to be generated. This is recommended for operand
-widths less than around 16 bits. This option supports both unsigned and
-signed (2’s complement) divisor and dividend inputs.</p>
-<p>High_Radix. Division with prescaling. This is recommended for operand
-widths greater than 16 bits, though the implementation requires the use
-of DSP48 (or variant) primitives. This option only supports signed (2’s
-complement) divisor and dividend inputs.</p>
-<p>LutMult. A simple lookup estimate of the reciprocal of the divisor
-followed by a multiplier. Only the remainder output type is supported
-because of the bias required in the reciprocal estimate. This bias would
-introduce an offset (error) if used to create a fractional output. This
-is recommened for operand widths less than or equal to 12 bits. This
-implementation uses DSP slices, block RAM, and a small number of FPGA
-logic primitives (registers and LUTs). For operand widths where either
-Radix2 or the LUTMult options are possible, the LUTMult offers a
-solution using fewer FPGA logic resources because of the use of DSP and
-block RAM primitives. Supports unsigned or two&#39;s complement signed
-numbers.</p>
-<p>Remainder. Only supported for Radix 2.</p>
-<p>Fractional. Determines the number of bits in the fractional port
-output.</p>
-<p>NonBlocking. Performs an action only when a control packet and a data
-packet are presented to the block at the same time.</p>
-<p>Blocking. Preforms an action when a data packet is presented to the
-block. The block uses the previous control information.</p>
-<p>Resources. Automatic (fully pipelined) or Manual (determined by
-following field).</p>
-<p>Performance. Implementation decisions target the highest speed.</p>
-<p>Divided Channel Ports. Divisor Channel Ports. Null. Output is
-null.</p>
-<p>Pass_Dividend_TLAST. Pass the value of the dividend_tlast input port
-to the dout_tlast output port.</p>
-<p>Pass Divisor_TLAST. Pass the value of the divisor_tlast input port to
-the dout_tlast output port.</p>
-<p>OR_all_TLASTS. Pass the logical OR of all the present TLAST input
-ports.</p>
-<p>AND_all_TLASTS. Pass the logical AND of all the present TLAST input
-ports.</p>
+<section id="or_all_tlasts" class="level5">
+<h5>OR_all_TLASTS</h5>
+<p>Pass the logical OR of all the present TLAST input ports.</p>
+</section>
+<section id="and_all_tlasts" class="level5">
+<h5>AND_all_TLASTS</h5>
+<p>Pass the logical AND of all the present TLAST input ports.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+<!--
+#### Display shortened port names
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+-->
+
+<!--
+#### Define FPGA area for resource estimation
+-->
+
+<!--
+#### FPGA area [slices, FFs, BRAMs, LUTs, IOBs, emb. mults, TBUFs]
+-->
+
+</section>
 </section>
 </section>
 </section>

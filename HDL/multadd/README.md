@@ -17,16 +17,23 @@ points.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Operation
+#### Operation  
+##### Addition  
+Specifies that an addition will be performed after multiplication.
 
-Dialog parameter.
+##### Subtraction  
+Specifies that a subtraction will be performed after multiplication.
 
-#### Provide enable port
+##### Addition or subtraction  
+Adds a subtract port to the block, which controls whether the operation
+following multiplication is addition or subtraction (subtract High =
+subtraction, subtract Low = addition).
 
+#### Optional Ports  
+##### Provide enable port  
 Adds an active-High enable port to the block interface.
 
-#### Latency
-
+#### Latency  
 This defines the number of sample periods by which the block's output is
 delayed. The latency values you can set depend on whether you are
 performing fixed point or floating point arithmetic:
@@ -48,45 +55,43 @@ for details on latency in the block.
 ### Output tab  
 Parameters specific to the Output tab are as follows.
 
-#### Precision
-
+#### Precision  
 This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
 Full precision.
 
-#### Arithmetic type
-
-Dialog parameter.
-
-#### Number of bits
-
-Dialog parameter.
-
-#### Binary point
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Addition. Specifies that an addition will be performed after multiplication.
-
-Subtraction. Specifies that a subtraction will be performed after multiplication.
-
-Addition or subtraction. Adds a subtract port to the block, which controls whether the operation
-following multiplication is addition or subtraction (subtract High =
-subtraction, subtract Low = addition).
-
-Optional Ports. Full. The block uses sufficient precision to represent the result without
+##### Full  
+The block uses sufficient precision to represent the result without
 error.
 
-User Defined. If you do not need full precision, this option allows you to specify a
+##### User Defined  
+If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
 
-Fixed-point Output Type. Arithmetic type
 
-Signed (2’s comp). The output is a Signed (2’s complement) number.
+<!--
+#### Arithmetic type
+In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
+-->
 
-Unsigned. The output is an Unsigned number.
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
+#### Fixed-point Output Type  
+Arithmetic type
+
+##### Signed (2’s comp)  
+The output is a Signed (2’s complement) number.
+
+##### Unsigned  
+The output is an Unsigned number.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog

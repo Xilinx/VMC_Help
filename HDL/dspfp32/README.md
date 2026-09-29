@@ -24,22 +24,18 @@ Parameters specific to the Basic tab are as follows.
 
 
 
-#### A or ACIN input
-
+####  A or ACIN input
 Specifies if the A input should be taken directly from the a port or from the cascaded acin port. The acin port can only be connected to another DSPFP32 block.
 
 #### B or BCIN input
-
 Specifies if the B input should be taken directly from the b port or from the cascaded bcin port. The bcin port can only be connected to another DSPFP32 block.
 
 
 
 #### A_FPTYPE Selects Floating Point Type for A
-
 Selects floating-point data type for A. B16 is for binary16 (half-precision) and B32 is for binary32 (single-precision).
 
 #### B_D_FPTYPE Selects Floating Point Type for B and D
-
 Selects floating-point data type for B and D for multiplication. B16 is for binary16 (half-precision) and B32 is for binary32 (single-precision).
 
 **Note**: When set to B16, D cannot be sent directly to P1 for binary32 addition. It can be first multiplied by A = 1 and then sent to P0 as FPM for binary32 addition.
@@ -59,11 +55,11 @@ Selects the multiplier mode between dynamic or multiply.
 Parameters specific to the Optional Ports tab are as follows.
 
 
-#### Provide C port
+#### Provide c port
 
 When selected, the c port is made available. Otherwise, the c port is tied to '0'.
 
-#### Provide D Port
+#### Provide d port
 
 When selected, the d port is made available. Otherwise, the d port is tied to '0'.
 
@@ -79,23 +75,23 @@ When selected, the optional en port is made available. This port is connected to
 
 When selected, the pcin port is exposed. The pcin port must be connected to the pcout port of another DSPFP32 block.
 
-#### Provide FPA_INVALID Port
+#### Provide FPA_INVALID port
 
 When selected, the fpa_invalid port is provided. This port indicates when the Addition operation is invalid i.e., If Any operation with one or more signaling NaN inputs or Addition of  infinities with opposite signs.
 
-#### Provide FPA_OVERFLOW Port
+#### Provide FPA_OVERFLOW port
 
 When selected, the fpa_overflow output port is provided. This port indicates when the overflow condition is detected on Addition operation i.e., overflow can occur during the addition of two finite normal numbers when results exceed the maximum normalized value (32’h7F7FFFFF or 32’hFF7FFFFF).
 
-#### Provide FPA_UNDERFLOW Port
+#### Provide FPA_UNDERFLOW port
 
 When selected, the fpa_underflow output port is provided. This port indicates when the underflow condition is detected on Addition operation i.e., anything resulting in a non-zero number less than the minimum normalized value triggers an underflow.
 
-#### Provide FPM_INVALID Port
+#### Provide FPM_INVALID port
 
 When selected, the fpm_invalid port is provided. This port indicates when the Multiplication operation is invalid i.e., If Any operation with one or more signaling NaN inputs or Multiplication of zero and infinity.
 
-#### Provide FPM_OVERFLOW Port
+#### Provide FPM_OVERFLOW port
 
 When selected, the fpm_overflow output port is provided. This port indicates when the overflow condition is detected on Multiplication operation i.e., overflow can occur during the multiplication of two finite normal numbers when results exceed the maximum normalized value (32’h7F7FFFFF or 32’hFF7FFFFF).
 
@@ -203,7 +199,7 @@ When selected, a port rst_d is made available. This resets the pipeline register
 
 When selected, a port rst_fpinmode is made available. This resets the pipeline register for the fpinmode port when set to '1'.
 
-#### Reset Port for FPOPMODE
+#### Reset port for FPOPMODE
 
 When selected, a port rst_fpopmode is made available. This resets the pipeline register for the fpopmode port when set to '1'.
 
@@ -248,57 +244,58 @@ When selected, an enable port  ce_fpinmode for the port fpinmode register is ma
 
 When selected, an enable port ce_d for the port d register is made available.
 
+
+<!--
+#### Invert fpinmode
+-->
+
+<!--
+#### Invert fpopmode
+-->
+
+<!--
+#### bits to be invert
+-->
+
+<!--
+#### Invert rst for a
+-->
+
+<!--
+#### Invert rst for b
+-->
+
+<!--
+#### Invert rst for c
+-->
+
+<!--
+#### Invert rst for d
+-->
+
+<!--
+#### Invert rst for fpa
+-->
+
+<!--
+#### Invert rst for fpinmode
+-->
+
+<!--
+#### Invert rst for mpipe register
+-->
+
+<!--
+#### Invert rst for fpm
+-->
+
+<!--
+#### Invert rst for fpopmode
+-->
+
 ### Inversion Options
 
 When a checkbox is selected on this tab, the specified signal is inverted.
-
-#### Invert fpinmode
-
-Dialog parameter.
-
-#### Invert fpopmode
-
-Dialog parameter.
-
-#### bits to be invert
-
-Dialog parameter.
-
-#### Invert rst for a
-
-Dialog parameter.
-
-#### Invert rst for b
-
-Dialog parameter.
-
-#### Invert rst for c
-
-Dialog parameter.
-
-#### Invert rst for d
-
-Dialog parameter.
-
-#### Invert rst for fpa
-
-Dialog parameter.
-
-#### Invert rst for fpinmode
-
-Dialog parameter.
-
-#### Invert rst for mpipe register
-
-Dialog parameter.
-
-#### Invert rst for fpm
-
-Dialog parameter.
-
-#### Invert rst for fpopmode
-
-Dialog parameter.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

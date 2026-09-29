@@ -24,21 +24,17 @@ maximum data word width for a given block memory depth.
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
-
-#### Depth
-
+#### Depth  
 Specifies the number of words stored; must be a positive integer.
 
-#### Initial value vector
-
+#### Initial value vector  
 Specifies the initial value. When the vector is longer than the ROM
 depth, the vector's trailing elements are discarded. When the ROM is
 deeper than the vector length, the ROM's trailing words are set to zero.
 The initial value vector is saturated or rounded according to the data
 precision specified for the ROM.
 
-#### Memory Type
-
+#### Memory Type  
 Specifies whether the ROM will be implemented using Distributed ROM or
 Block ROM. Depending on your selection, the ROM will be inferred or
 implemented as follows when the design is compiled:
@@ -55,14 +51,24 @@ implemented as follows when the design is compiled:
   Guide
   ([UG974](https://docs.amd.com/r/en-US/ug974-vivado-ultrascale-libraries)).
 
-#### Provide reset port for output register
 
+<!--
+#### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
+
+<!--
+#### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
+
+#### Optional Ports  
+##### Provide reset port for output register  
 When selected, allows access to the reset port available on the output
 register of the Block ROM. The reset port is available only when the
 latency of the Block ROM is set to 1.
 
-#### Initial value for output register
-
+##### Initial value for output register  
 Specifies the initial value for output register. The initial value is
 saturated and rounded according to the data precision specified for the
 ROM.
@@ -71,68 +77,55 @@ ROM.
 ### Output tab  
 Parameters specific to the Output tab are as follows.
 
-#### Provide enable port
-
-Dialog parameter.
-
-#### Latency
-
-Dialog parameter.
-
-#### Output Type
-
+#### Output Type  
 Specify the data type of the output.
 
 - Boolean
 - Fixed-point
 - Floating-point
 
-#### Arithmetic type
-
+#### Arithmetic Type  
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
 
-#### Number of bits
-
+#### Fixed-point Precision  
+##### Number of bits  
 Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.
 
-#### Binary point
-
+##### Binary point  
 Position of the binary point. in the fixed-point output.
 
-#### Floating-point Precision
+#### Floating-point Precision  
+##### Single  
+Specifies single precision (32 bits).
 
-Dialog parameter.
+##### Double  
+Specifies double precision (64 bits).
 
-#### Exponent width
+##### Custom  
+Activates the field below so you can specify the Exponent width and the
+Fraction width.
 
+#### Exponent width  
 Specify the exponent width.
 
-#### Fraction width
-
+#### Fraction width  
 Specify the fraction width.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+
+<!--
 #### Optimize for
+Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
+-->
 
-Dialog parameter.
-
+<!--
 #### Use pre-defined core placement information
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Optional Ports. Fixed-point Precision. Single. Specifies single precision (32 bits).
-
-Double. Specifies double precision (64 bits).
-
-Custom. Activates the field below so you can specify the Exponent width and the
-Fraction width.
+-->
 
 ## LogiCORE™ Documentation
 

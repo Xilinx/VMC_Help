@@ -83,16 +83,14 @@ value of the frame.
 ### Basic tab  
 Basic tab parameters are as follows.
 
-#### Sampling rate (number of input samples per output sample)
-
+#### Sampling Rate (number of input samples per output sample)  
 Must be an integer greater or equal to 2. This is the ratio of the
 output sample period to the input, and is essentially a sample rate
 divider. For example, a ratio of 2 indicates a 2:1 division of the input
 sample rate. If a non-integer ratio is desired, the Vector Up Sample
 block can be used in combination with the Vector Down Sample block.
 
-#### Sample
-
+#### Sample  
 The Vector Down Sample block can sample either the first or last value
 of a frame. This parameter will determine which of these two values is
 sampled.
@@ -101,21 +99,26 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+
+<!--
 #### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
 
-Dialog parameter.
-
+<!--
 #### Provide synchronous reset port
+Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
+-->
 
-Dialog parameter.
-
+<!--
 #### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
 
-Dialog parameter.
-
+<!--
 #### SSR
-
-Dialog parameter.
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
 
 ## LogiCORE
 

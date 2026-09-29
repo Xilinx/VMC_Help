@@ -25,31 +25,38 @@ high with no gaps.
 
 ## Parameters
 
-#### FFT Length (2^K,K = 3-16)
 
+<!--
+#### FFT Length (2^K,K = 3-16)
+-->
+
+<!--
+#### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
+
+<!--
+#### Block RAM Threshold
+-->
+
+#### FFT length (N) 
 N is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. 
 
-#### SSR
-
-Dialog parameter.
-
-#### Block RAM Threshold
-
-Is an implementation parameter with no functional implications. It controls 
-the use of distributed RAM vs BRAM when implementing delay lines. It can 
-be used to trade utilization numbers between these two types of resources. 
-The higher the value, the more distributed RAM will be used instead of 
-BRAM. Typical values to try are 258, 514, and 1026.
-
-Additional dialog notes:
-
-SSR (R). R is the super sample rate, the
+#### SSR (R)
+R is the super sample rate, the
 number of samples processed in parallel every clock. Using a typical
 example with N=1024 and SSR=4, the core would compute one 1K FFT every
 256 clock cycles, processing 4 input samples/clock. 
 
 The SSR is limited to 2 and 4.
+
+#### Block RAM_THRESHOLD 
+Is an implementation parameter with no functional implications. It controls 
+the use of distributed RAM vs BRAM when implementing delay lines. It can 
+be used to trade utilization numbers between these two types of resources. 
+The higher the value, the more distributed RAM will be used instead of 
+BRAM. Typical values to try are 258, 514, and 1026.
 
 ## Examples
 

@@ -234,8 +234,7 @@ input.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Block configuration m-function
-
+#### Block Configuration M-Function  
 Specifies the name of the configuration M-function that is associated to
 the black box. Ordinarily the file containing the function is stored in
 the directory containing the model, but it can be stored anywhere on the
@@ -243,8 +242,7 @@ MATLAB path. Note that MATLAB limits all function names (including those
 for configuration M-functions) to 63 characters. Do not include the file
 extension (".m" or ".p") in the edit box.
 
-#### Simulation mode
-
+#### Simulation Mode  
 Tells the mode (Inactive, Vivado Simulator, or External co-simulator) to
 use for simulation. When the mode is Inactive, the black box ignores all
 input data and writes zeroes to its output ports. Usually for this mode
@@ -271,13 +269,14 @@ co-simulation block. Model Composer automatically generates and uses the
 additional VHDL needed to allow multiple blocks to be combined into a
 single Questa simulation.
 
+
+<!--
 #### HDL co-simulator to use (specify helper block by name)
+-->
 
-Dialog parameter.
-
+<!--
 #### Verbose
-
-Dialog parameter.
+-->
 
 ## Data Type Translation for HDL Co-Simulation
 

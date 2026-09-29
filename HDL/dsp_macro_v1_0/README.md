@@ -36,16 +36,81 @@ Product Guide (PG323) for details on all the parameters on this tab.
 The Pipeline Options tab is used to define the pipeline depth of the
 various input paths.
 
+
+<!--
 #### Show Filtered Instructions
+-->
 
-Dialog parameter.
-
-#### Pipeline Options
-
+#### Pipeline Options  
 Specifies the pipeline method to be used; Automatic, By Tier, or Expert.
 
-#### Tier 1
 
+<!--
+#### Tier 1
+-->
+
+<!--
+#### Tier 2
+-->
+
+<!--
+#### Tier 3
+-->
+
+<!--
+#### Tier 4
+-->
+
+<!--
+#### Tier 5
+-->
+
+<!--
+#### Tier 6
+-->
+
+<!--
+#### D
+-->
+
+<!--
+#### A
+-->
+
+<!--
+#### B
+-->
+
+<!--
+#### M
+-->
+
+<!--
+#### CONCAT
+`output_var = {bitbasher_expr1, bitbasher_expr2, bitbasher_expr3}`
+-->
+
+<!--
+#### C
+-->
+
+<!--
+#### P
+A finite integer value representing the number of output ports.
+-->
+
+<!--
+#### CARRYIN
+-->
+
+<!--
+#### CONTROL
+-->
+
+#### Custom Pipeline options  
+Used to specify the pipeline depth of the various input paths.
+
+#### Tier 1 to 6  
 When By Tier is selected for Pipeline Options these parameters are used
 to enable/disable the registers across all the input paths for a given
 pipeline stage. The following restrictions are enforced:
@@ -53,264 +118,8 @@ pipeline stage. The following restrictions are enforced:
 - When P has been specified in an expression tier, 6 will be forced as
   asynchronous feedback is not supported.
 
-#### Tier 2
-
-Dialog parameter.
-
-#### Tier 3
-
-Dialog parameter.
-
-#### Tier 4
-
-Dialog parameter.
-
-#### Tier 5
-
-Dialog parameter.
-
-#### Tier 6
-
-Dialog parameter.
-
-#### D
-
-Dialog parameter.
-
-#### D
-
-Dialog parameter.
-
-#### D
-
-Dialog parameter.
-
-#### A
-
-Dialog parameter.
-
-#### A
-
-Dialog parameter.
-
-#### A
-
-Dialog parameter.
-
-#### A
-
-Dialog parameter.
-
-#### B
-
-Dialog parameter.
-
-#### B
-
-Dialog parameter.
-
-#### B
-
-Dialog parameter.
-
-#### B
-
-Dialog parameter.
-
-#### M
-
-Dialog parameter.
-
-#### CONCAT
-
-Dialog parameter.
-
-#### CONCAT
-
-Dialog parameter.
-
-#### CONCAT
-
-Dialog parameter.
-
-#### C
-
-Dialog parameter.
-
-#### C
-
-Dialog parameter.
-
-#### C
-
-Dialog parameter.
-
-#### C
-
-Dialog parameter.
-
-#### C
-
-Dialog parameter.
-
-#### P
-
-Dialog parameter.
-
-#### CARRYIN
-
-Dialog parameter.
-
-#### CARRYIN
-
-Dialog parameter.
-
-#### CARRYIN
-
-Dialog parameter.
-
-#### CARRYIN
-
-Dialog parameter.
-
-#### CARRYIN
-
-Dialog parameter.
-
-#### CONTROL
-
-Refer to the topic Implementation Page of the DSP Macro LogiCORE IP
-Product Guide (PG323) for details on all the parameters on this tab.
-
-#### CONTROL
-
-Dialog parameter.
-
-#### CONTROL
-
-Dialog parameter.
-
-#### CONTROL
-
-Dialog parameter.
-
-#### CONTROL
-
-Dialog parameter.
-
-#### Output Port Properties
-
-Dialog parameter.
-
-#### Width
-
-Specifies the User Defined output width of the P output port
-
-#### Binary Point
-
-Specifies the placement of the binary point of the P output port.
-
-#### Use ACOUT
-
-Use the optional cascade A output port.
-
-#### Use BCOUT
-
-Use the optional cascade B output port.
-
-#### Use PCOUT
-
-Use the optional cascade P output port.
-
-#### Use CARRYOUT
-
-Use the optional carryout output port.
-
-#### Use CARRYCASCOUT
-
-Use the optional cascade carryout output port.
-
-#### Global
-
-Dialog parameter.
-
-#### D
-
-Dialog parameter.
-
-#### A
-
-Dialog parameter.
-
-#### B
-
-Dialog parameter.
-
-#### CONCAT
-
-Dialog parameter.
-
-#### C
-
-Dialog parameter.
-
-#### M
-
-Dialog parameter.
-
-#### P
-
-Dialog parameter.
-
-#### SEL/CARRYIN
-
-Dialog parameter.
-
-#### Global
-
-Dialog parameter.
-
-#### D
-
-Dialog parameter.
-
-#### A
-
-Dialog parameter.
-
-#### B
-
-Dialog parameter.
-
-#### CONCAT
-
-Dialog parameter.
-
-#### C
-
-Dialog parameter.
-
-#### M
-
-Dialog parameter.
-
-#### P
-
-Dialog parameter.
-
-#### SEL/CARRYIN
-
-Dialog parameter.
-
-#### Use XtremeDSP Slice
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Custom Pipeline options. Used to specify the pipeline depth of the various input paths.
-
-Individual registers. When you select Expert for the Pipeline Options, these parameters are
+#### Individual registers  
+When you select Expert for the Pipeline Options, these parameters are
 used to enable/disable individual register stages. The following
 restrictions are enforced:
 
@@ -324,15 +133,59 @@ this tab.
 ### Implementation tab  
 The Implementation tab is used to define implementation options.
 
-Precision. Specifies the precision of the P output port.
+#### Output Port Properties  
+##### Precision  
+Specifies the precision of the P output port.
 
-Full. The bit width of the output port P is set to the full XtremeDSP Slide
+###### Full  
+The bit width of the output port P is set to the full XtremeDSP Slide
 width of 48 bits.
 
-User_Defined. The output width of P can be set to any value up to 48 bits. When set to
+###### User_Defined  
+The output width of P can be set to any value up to 48 bits. When set to
 less than 48 bits, the output is truncated (LSBs removed).
 
-Additional ports. ## LogiCORE Documentation
+##### Width  
+Specifies the User Defined output width of the P output port
+
+##### Binary Point  
+Specifies the placement of the binary point of the P output port.
+
+
+<!--
+#### Global
+-->
+
+<!--
+#### SEL/CARRYIN
+-->
+
+<!--
+#### Use XtremeDSP Slice
+This field specifies that if possible, use the XtremeDSP slice (DSP48 type element) in the target device. Otherwise, CLB logic are used for the multipliers.
+-->
+
+#### Additional ports  
+##### Use ACOUT  
+Use the optional cascade A output port.
+
+##### Use CARRYOUT  
+Use the optional carryout output port.
+
+##### Use BCOUT  
+Use the optional cascade B output port.
+
+##### Use CARRYCASCOUT  
+Use the optional cascade carryout output port.
+
+##### Use PCOUT  
+Use the optional cascade P output port.
+
+#### Control ports  
+Refer to the topic Implementation Page of the DSP Macro LogiCORE IP
+Product Guide (PG323) for details on all the parameters on this tab.
+
+## LogiCORE Documentation
 
 DSP Macro LogiCORE IP Product Guide ([PG323](https://docs.xilinx.com/access/sources/dita/map?isLatest=true&ft:locale=en-US&url=pg323-dsp-macro))
 

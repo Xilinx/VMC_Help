@@ -53,26 +53,47 @@ the desired sequence.</p>
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows:</p>
 <section id="constant-value" class="level4">
-<h4>Constant value</h4>
+<h4>Constant Value</h4>
 <p>Specifies the value of the constant. When changed, the new value
 appears on the block icon. If the constant data type is specified as
 fixed-point and cannot be expressed exactly in the specified fixed-point
 type, its value is rounded and saturated as needed. A positive value is
 implemented as an unsigned number, a negative value as signed.</p>
 </section>
+<section id="output-type" class="level4">
+<h4>Output Type</h4>
+<p>Specifies the data type of the output. Can be Boolean, Fixed-point,
+or Floating-point.</p>
+</section>
 <section id="arithmetic-type" class="level4">
-<h4>Arithmetic type</h4>
+<h4>Arithmetic Type</h4>
 <p>If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp), Unsigned, or DSP48 instruction as the Arithmetic Type.</p>
-</section>
-<section id="number-of-bits" class="level4">
-<h4>Number of bits</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
 </section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
 <p>Position of the binary point in the fixed-point output.</p>
+</section>
+</section>
+<section id="floating-point-precision" class="level4">
+<h4>Floating-point Precision</h4>
+<section id="single" class="level6">
+<h6>Single</h6>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level6">
+<h6>Double</h6>
+<p>Specifies double precision (64 bits)</p>
+</section>
+<section id="custom" class="level6">
+<h6>Custom</h6>
+<p>Activates the field below so you can specify the Exponent width and
+the Fraction width.</p>
+</section>
 </section>
 <section id="exponent-width" class="level4">
 <h4>Exponent width</h4>
@@ -81,30 +102,26 @@ where bit zero is the least significant bit.</p>
 <section id="fraction-width" class="level4">
 <h4>Fraction width</h4>
 <p>Specifies the fraction width.</p>
-</section>
-<section id="sampled-constant" class="level4">
-<h4>Sampled constant</h4>
+<section id="sampled-constant" class="level6">
+<h6>Sampled Constant</h6>
 <p>Allows a sample period to be associated with the constant output and
 inherited by blocks that the constant block drives. (This is useful
 mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.)</p>
+<!--
+#### Sample period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
+
+</section>
 </section>
 </section>
 <section id="dsp48-tab" class="level3">
 <h3>DSP48 tab</h3>
-<section id="sample-period" class="level4">
-<h4>Sample period</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Output Type. Specifies the data type of the output. Can be Boolean,
-Fixed-point, or Floating-point.</p>
-<p>Floating-point Precision. Single. Specifies single precision (32
-bits).</p>
-<p>Double. Specifies double precision (64 bits)</p>
-<p>Custom. Activates the field below so you can specify the Exponent
-width and the Fraction width.</p>
-<p>DSP48 Instruction. The use of this block for DSP48 instructions is
-deprecated. Please use the Opmode block.</p>
+<section id="dsp48-instruction" class="level4">
+<h4>DSP48 Instruction</h4>
+<p>The use of this block for DSP48 instructions is deprecated. Please
+use the Opmode block.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />

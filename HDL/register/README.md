@@ -22,22 +22,22 @@ optional reset port and a user specifiable initial value.
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
-
-#### Initial value
-
+#### Initial value  
 specifies the initial value in the register.
 
+
+<!--
 #### Provide synchronous reset port
+Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
+-->
 
-Dialog parameter.
-
+<!--
 #### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
 
-Dialog parameter.
-
-Additional dialog notes:
-
-Optional Ports. Other parameters used by this block are explained in the topic [Common
+#### Optional Ports  
+Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 

@@ -82,47 +82,77 @@ downstream blocks at the new rate.</p>
 <h3>Filter Specification tab</h3>
 <p>Parameters specific to the Filter Specification tab are as
 follows.</p>
-<section id="filter-type" class="level4">
-<h4>Filter Type</h4>
+<!--
+#### Fixed or Initial Rate
+-->
+
+<!--
+#### ARESETn
+Active-low synchronous clear input that always takes priority over ACLKEN. A minimum ARESETn active pulse of two cycles is required, since the signal is internally registered for performance. A pulse of one cycle resets the core, but the response to the pulse is not in the cycle immediately following.
+-->
+
+<!--
+#### Display shortened port names
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+-->
+
+<section id="filter-specification" class="level4">
+<h4>Filter Specification</h4>
+<section id="filter-type" class="level5">
+<h5>Filter Type</h5>
 <p>The CIC core supports both interpolation and decimation
 architectures. When the filter type is selected as decimator the input
 sample stream is down-sampled by the factor R. When an interpolator is
 selected the input sample is up-sampled by R.</p>
 </section>
-<section id="number-of-stages" class="level4">
-<h4>Number of Stages</h4>
+<section id="number-of-stages" class="level5">
+<h5>Number of Stages</h5>
 <p>Number of integrator and comb stages. If N stages are specified,
 there are N integrators and N comb stages in the filter. The valid range
 for this parameter is 3 to 6.</p>
 </section>
-<section id="differential-delay" class="level4">
-<h4>Differential Delay</h4>
+<section id="differential-delay" class="level5">
+<h5>Differential Delay</h5>
 <p>Number of unit delays employed in each comb filter in the comb
 section of either a decimator or interpolator. The valid range of this
 parameter is 1 or 2.</p>
 </section>
-<section id="number-of-channels" class="level4">
-<h4>Number of Channels</h4>
+<section id="number-of-channels" class="level5">
+<h5>Number of Channels</h5>
 <p>Number of channels to support in implementation. The valid range of
 this parameter is 1 to 16.</p>
 </section>
-<section id="fixed-or-initial-rate" class="level4">
-<h4>Fixed or Initial Rate</h4>
+</section>
+<section id="sample-rate-change-specification" class="level4">
+<h4>Sample Rate Change Specification</h4>
+<section id="sample-rate-changes" class="level5">
+<h5>Sample Rate Changes</h5>
+<p>Option to select between Fixed or Programmable.</p>
+<p>When <strong>Programmable</strong> is selected, the
+<code>s_axis_data_tvalid</code> control port is available regardless of
+the <strong>Select format</strong> setting under Hardware Oversampling
+Specification.</p>
+</section>
+<section id="fixed-or-initial-rateir" class="level5">
+<h5>Fixed or Initial Rate(ir)</h5>
 <p>Specifies initial or fixed sample rate change value for the CIC. The
 valid range for this parameter is 4 to 8192.</p>
 </section>
-<section id="minimum-rate" class="level4">
-<h4>Minimum Rate</h4>
+<section id="minimum-rate" class="level5">
+<h5>Minimum Rate</h5>
 <p>The minimum rate change value for programmable rate change. The valid
 range for this parameter is 4 to fixed rate (ir).</p>
 </section>
-<section id="maximum-rate" class="level4">
-<h4>Maximum Rate</h4>
+<section id="maximum-rate" class="level5">
+<h5>Maximum Rate</h5>
 <p>The maximum rate change value for programmable rate change. The valid
 range for this parameter is fixed rate (ir) to 8192.</p>
 </section>
-<section id="select-format" class="level4">
-<h4>Select format</h4>
+</section>
+<section id="hardware-oversampling-specification" class="level4">
+<h4>Hardware Oversampling Specification</h4>
+<section id="select-format" class="level5">
+<h5>Select format</h5>
 <p>Choose Maximum_Possible, Sample_Period, or Hardware Oversampling
 Rate. Selects which method is used to specify the hardware oversampling
 rate. This value directly affects the level of parallelism of the block
@@ -137,78 +167,78 @@ Sample Period parameter also determines the hardware oversampling rate
 of the block. When “Sample Period” is selected, the block is forced to
 use the s_axis_data_tvalid control port.</p>
 </section>
-<section id="sample-period" class="level4">
-<h4>Sample period</h4>
+<section id="sample-period" class="level5">
+<h5>Sample period</h5>
 <p>Integer number of clock cycles between input samples. When the
 multiple channels have been specified, this value should be the integer
 number of clock cycles between the time division multiplexed input
 sample data stream.</p>
 </section>
-<section id="hardware-oversampling-rate" class="level4">
-<h4>Hardware Oversampling Rate</h4>
+<section id="hardware-oversampling-rate" class="level5">
+<h5>Hardware Oversampling Rate</h5>
 <p>Enter the hardware oversampling rate if you select
 Hardware_Oversampling_Rate as the format.</p>
 </section>
 </section>
+</section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
-<section id="quantization" class="level4">
-<h4>Quantization</h4>
+<section id="numerical-precision" class="level4">
+<h4>Numerical Precision</h4>
+<section id="quantization" class="level5">
+<h5>Quantization</h5>
 <p>Can be specified as Full_Precision or Truncation.</p>
 <p><strong>Note</strong>: Truncation occurs at the output stage
 only.</p>
 </section>
-<section id="output-data-width" class="level4">
-<h4>Output Data Width</h4>
+<section id="output-data-width" class="level5">
+<h5>Output Data Width</h5>
 <p>Can be specified up to 48 bits for the Truncation option above.</p>
 </section>
-<section id="use-xtreme-dsp-slice" class="level4">
-<h4>Use Xtreme DSP Slice</h4>
+</section>
+<section id="optional" class="level4">
+<h4>Optional</h4>
+<section id="use-xtreme-dsp-slice" class="level5">
+<h5>Use Xtreme DSP slice</h5>
 <p>This field specifies that if possible, use the XtremeDSP slice (DSP48
 type element) in the target device.</p>
 </section>
-<section id="use-streaming-interface" class="level4">
-<h4>Use Streaming Interface</h4>
+<section id="use-streaming-interface" class="level5">
+<h5>Use Streaming Interface</h5>
 <p>Specifies whether or not to use a streaming interface for multiple
 channel implementations.</p>
 </section>
-<section id="aclken" class="level4">
-<h4>ACLKEN</h4>
+</section>
+<section id="control-options" class="level4">
+<h4>Control Options</h4>
+<section id="aclken" class="level5">
+<h5>ACLKEN</h5>
 <p>Specifies if the block has a clock enable port (the equivalent of
 selecting the Has ACLKEN option in the CORE Generator GUI).</p>
 </section>
-<section id="aresetn" class="level4">
-<h4>ARESETn</h4>
+<section id="aresertn" class="level5">
+<h5>ARESERTn</h5>
 <p>Specifies that the block has a reset port. Active-Low synchronous
 clear. A minimum ARESETn pulse of two cycles is required.</p>
 </section>
-<section id="has-tready" class="level4">
-<h4>Has TREADY</h4>
+<section id="has-tready" class="level5">
+<h5>Has TREADY</h5>
 <p>Specifies if the block has a TREADY port for the Data Output Channel
 (the equivalent of selecting the Has_DOUT_TREADY option in the CORE
 Generator GUI).</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
-<section id="display-shortened-port-names" class="level4">
-<h4>Display shortened port names</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Filter Specification. Sample Rate Change Specification. Sample Rate
-Changes. Option to select between Fixed or Programmable.</p>
-<p>When <strong>Programmable</strong> is selected, the
-<code>s_axis_data_tvalid</code> control port is available regardless of
-the <strong>Select format</strong> setting under Hardware Oversampling
-Specification.</p>
-<p>Hardware Oversampling Specification. Numerical Precision. Optional.
-Control Options. ## LogiCORE™ Documentation</p>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>CIC Compiler LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg140-cic-compiler&amp;ft:locale=en-US">PG140</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
-</section>
 </section>
 </section>
 </body>

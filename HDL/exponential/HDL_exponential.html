@@ -40,73 +40,107 @@ input. Currently, only the floating-point data type is supported.</p>
 <section id="basic-tab" class="level3">
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows.</p>
-<section id="flow-control" class="level4">
-<h4>Flow Control</h4>
-<p>Dialog parameter.</p>
+<section id="axi-interface" class="level4">
+<h4>AXI Interface</h4>
+<section id="flow-control" class="level5">
+<h5>Flow Control</h5>
+<section id="blocking" class="level6">
+<h6>Blocking</h6>
+<p>Selects “Blocking” mode. In this mode, the lack of data on one input
+channel does block the execution of an operation if data is received on
+another input channel.</p>
 </section>
-<section id="optimize-goal" class="level4">
-<h4>Optimize Goal</h4>
+<section id="nonblocking" class="level6">
+<h6>NonBlocking</h6>
+<p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
+input channel does not block the execution of an operation if data is
+received on another input channel.</p>
+</section>
+</section>
+<section id="optimize-goal" class="level5">
+<h5>Optimize Goal</h5>
 <p>When NonBlocking mode is selected, the following optimization options
 are activated.</p>
+<section id="resources" class="level6">
+<h6>Resources</h6>
+<p>Block is configured for minimum resources.</p>
 </section>
-<section id="bmg-usage" class="level4">
-<h4>BMG Usage</h4>
-<p>Dialog parameter.</p>
+<section id="performance" class="level6">
+<h6>Performance</h6>
+<p>Block is configured for maximum performance.</p>
 </section>
-<section id="latency" class="level4">
-<h4>Latency</h4>
+</section>
+</section>
+<section id="block-memory-usage" class="level4">
+<h4>Block Memory Usage</h4>
+<section id="bmg-usage" class="level5">
+<h5>BMG Usage</h5>
+<section id="no-usage" class="level6">
+<h6>No Usage</h6>
+<p>Do not use Block Memory.</p>
+</section>
+<section id="full-usage" class="level6">
+<h6>Full Usage</h6>
+<p>Make full use of Block Memory.</p>
+</section>
+</section>
+</section>
+<section id="latency-specification" class="level4">
+<h4>Latency Specification</h4>
+<section id="latency" class="level5">
+<h5>Latency</h5>
 <p>This defines the number of sample periods by which the block&#39;s output
 is delayed.</p>
+</section>
 </section>
 </section>
 <section id="optional-ports-tab" class="level3">
 <h3>Optional Ports tab</h3>
 <p>Parameters specific to the Optional Ports tab are as follows.</p>
-<section id="has-tlast" class="level4">
-<h4>Has TLAST</h4>
+<section id="input-channel-ports" class="level4">
+<h4>Input Channel Ports</h4>
+<section id="has-tlast" class="level5">
+<h5>Has TLAST</h5>
 <p>Adds a tlast port to the input channel.</p>
 </section>
-<section id="has-tuser" class="level4">
-<h4>Has TUSER</h4>
+<section id="has-tuser" class="level5">
+<h5>Has TUSER</h5>
 <p>Adds a tuser port to the input channel.</p>
 </section>
-<section id="provide-enable-port" class="level4">
-<h4>Provide enable port</h4>
+</section>
+<section id="control-options" class="level4">
+<h4>Control Options</h4>
+<section id="provide-enable-port" class="level5">
+<h5>Provide enable port</h5>
 <p>Add an enable port to the block interface.</p>
 </section>
-<section id="has-result-tready" class="level4">
-<h4>Has Result TREADY</h4>
+<section id="has-result-tready" class="level5">
+<h5>Has Result TREADY</h5>
 <p>Add a TREADY port to the result channel.</p>
 </section>
-<section id="underflow" class="level4">
-<h4>UNDERFLOW</h4>
+</section>
+<section id="exception-signals" class="level4">
+<h4>Exception Signals</h4>
+<section id="underflow" class="level5">
+<h5>UNDERFLOW</h5>
 <p>Add an output port that serves as an underflow flag.</p>
 </section>
-<section id="overflow" class="level4">
-<h4>OVERFLOW</h4>
+<section id="overflow" class="level5">
+<h5>OVERFLOW</h5>
 <p>Add an output port that serves as an overflow flag.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Additional dialog notes:</p>
-<p>AXI Interface. Blocking. Selects “Blocking” mode. In this mode, the
-lack of data on one input channel does block the execution of an
-operation if data is received on another input channel.</p>
-<p>NonBlocking. Selects “Non-Blocking” mode. In this mode, the lack of
-data on one input channel does not block the execution of an operation
-if data is received on another input channel.</p>
-<p>Resources. Block is configured for minimum resources.</p>
-<p>Performance. Block is configured for maximum performance.</p>
-<p>Block Memory Usage. No Usage. Do not use Block Memory.</p>
-<p>Full Usage. Make full use of Block Memory.</p>
-<p>Latency Specification. Input Channel Ports. Control Options.
-Exception Signals. ## LogiCORE™ Documentation</p>
+</section>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™ Documentation</h2>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
-</section>
 </section>
 </section>
 </body>

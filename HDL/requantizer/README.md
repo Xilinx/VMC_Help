@@ -51,26 +51,20 @@ positive/smallest negative value.
 
 Parameters specific to the block are as follows.
 
-#### Scale factor s (scale output by 2^s)
-
+#### Scale factor s (scale output by 2^s)  
 The scale factor can be a positive or negative integer. The output of
 the block is `i*2^k`, where `i` is the input value and `k` is the scale
 factor. The effect of scaling is to move the binary point, which in
 hardware has no cost (a shift, on the other hand, might add logic).
 
-#### Number of bits
-
+#### Fixed-point Precision  
+##### Number of bits  
 Specifies the total number of bits, including the binary point bit
 width.
 
-#### Binary point
-
+##### Binary point  
 Specifies the bit location of the binary point. Bit zero is the Least
 Significant Bit.
-
-Additional dialog notes:
-
-Fixed-point Precision.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

@@ -158,30 +158,32 @@ than or equal to 1.</p>
 <p>When selected, allows access to the enable port for port B. The
 enable port is available only when the latency of the block is greater
 than or equal to 1.</p>
+<!--
+#### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
+
+<!--
+#### Port B
+-->
+
 </section>
 </section>
 <section id="advanced-tab" class="level3">
 <h3>Advanced tab</h3>
 <p>Parameters specific to the Advanced tab are as follows.</p>
-<section id="latency" class="level4">
-<h4>Latency</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="port-b" class="level4">
-<h4>Port B</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Write Mode. When the Simple Dual Port RAM block is implemented in
-block RAM, specifies memory behavior for port B when WE is asserted.
-Supported modes are: Read after write, Read before write, and No read on
-write. Read after write indicates the output value reflects the state of
-the memory after the write operation. Read before write indicates the
-output value reflects the state of the memory before the write
-operation. No read on write indicates that the output value remains
-unchanged irrespective of change of address or state of the memory.
-There are device specific restrictions on the applicability of these
-modes. Also refer to the Write Mode topic above for more
-information.</p>
+<section id="write-mode-1" class="level4">
+<h4>Write Mode</h4>
+<p>When the Simple Dual Port RAM block is implemented in block RAM,
+specifies memory behavior for port B when WE is asserted. Supported
+modes are: Read after write, Read before write, and No read on write.
+Read after write indicates the output value reflects the state of the
+memory after the write operation. Read before write indicates the output
+value reflects the state of the memory before the write operation. No
+read on write indicates that the output value remains unchanged
+irrespective of change of address or state of the memory. There are
+device specific restrictions on the applicability of these modes. Also
+refer to the Write Mode topic above for more information.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>

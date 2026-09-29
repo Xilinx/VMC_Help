@@ -57,7 +57,7 @@ bits. The following diagram illustrates how to extract all but the top
 <h2>Parameters</h2>
 <p>Parameters specific to the block are as follows.</p>
 <section id="width-of-slice-number-of-bits" class="level4">
-<h4>Width of slice (number of bits)</h4>
+<h4>Width of slice (Number of bits)</h4>
 <p>Specifies the number of bits to extract.</p>
 </section>
 <section id="boolean-output" class="level4">
@@ -76,28 +76,26 @@ be taken in the slice.</p>
 <p>Specifies the offset for the ending bit position from the LSB, MSBm.
 or binary point.</p>
 </section>
-<section id="relative-to" class="level4">
-<h4>Relative to</h4>
-<p>Specifies the bit slice position relative to the MSB, LSB, or binary
-point of the top or the bottom of the slice.</p>
-</section>
 <section id="offset-of-bottom-bit" class="level4">
 <h4>Offset of bottom bit</h4>
 <p>Specifies the offset for the ending bit position from the LSB, MSBm,
 or binary point.</p>
 </section>
-<section id="relative-to-1" class="level4">
+<section id="relative-to" class="level4">
 <h4>Relative to</h4>
-<p>Dialog parameter.</p>
+<p>Specifies the bit slice position relative to the MSB, LSB, or binary
+point of the top or the bottom of the slice.</p>
+<!--
+#### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
+
 </section>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Super Sample Rate (SSR). This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.</p>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This block
+enables 1-D vector support for the primary block operation.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />

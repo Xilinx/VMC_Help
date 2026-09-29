@@ -86,19 +86,26 @@ takes place when both tvalid and tready are asserted.</p>
 <p>A report field that indicates the actual FIFO depth. The actual depth
 of the FIFO depends on its implementation and the features that
 influence its implementation.</p>
+<!--
+#### aresetn
+Active-low synchronous clear input that always takes priority over ACLKEN. A minimum ARESETn active pulse of two cycles is required, since the signal is internally registered for performance. A pulse of one cycle resets the core, but the response to the pulse is not in the cycle immediately following.
+-->
+
 </section>
-<section id="tdata-2" class="level4">
-<h4>TDATA</h4>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<section id="tdata-2" class="level5">
+<h5>TDATA</h5>
 <p>The primary payload that is used to provide the data that is passing
 across the interface. The width of the data payload is an integer number
 of bytes.</p>
 </section>
-<section id="tdest" class="level4">
-<h4>TDEST</h4>
+<section id="tdest" class="level5">
+<h5>TDEST</h5>
 <p>Provides routing information for the data stream.</p>
 </section>
-<section id="tstrb" class="level4">
-<h4>TSTRB</h4>
+<section id="tstrb" class="level5">
+<h5>TSTRB</h5>
 <p>The byte qualifier that indicates whether the content of the
 associated byte of TDATA is processed as a data byte or a position byte.
 For a 64-bit DATA, bit 0 corresponds to the least significant byte on
@@ -109,23 +116,23 @@ example:</p>
 <li>STROBE[7] = 0b, DATA[63:56] is not valid</li>
 </ul>
 </section>
-<section id="tready-2" class="level4">
-<h4>TREADY</h4>
+<section id="tready-2" class="level5">
+<h5>TREADY</h5>
 <p>Indicates that the slave can accept a transfer in the current
 cycle.</p>
 </section>
-<section id="tid" class="level4">
-<h4>TID</h4>
+<section id="tid" class="level5">
+<h5>TID</h5>
 <p>The data stream identifier that indicates different streams of
 data.</p>
 </section>
-<section id="tuser" class="level4">
-<h4>TUSER</h4>
+<section id="tuser" class="level5">
+<h5>TUSER</h5>
 <p>The user-defined sideband information that can be transmitted
 alongside the data stream.</p>
 </section>
-<section id="tkeep" class="level4">
-<h4>TKEEP</h4>
+<section id="tkeep" class="level5">
+<h5>TKEEP</h5>
 <p>The byte qualifier that indicates whether the content of the
 associated byte of TDATA is processed as part of the data stream.
 Associated bytes that have the TKEEP byte qualifier de-asserted are null
@@ -137,16 +144,19 @@ to the most significant byte. For example:</p>
 <li>KEEP [7] = 0b, DATA[63:56] is not a NULL byte</li>
 </ul>
 </section>
-<section id="tlast" class="level4">
-<h4>TLAST</h4>
+<section id="tlast" class="level5">
+<h5>TLAST</h5>
 <p>Indicates the boundary of a packet.</p>
 </section>
-<section id="aresetn" class="level4">
-<h4>aresetn</h4>
+<section id="arestn" class="level5">
+<h5>arestn</h5>
 <p>Adds arestn (global reset) port to the block.</p>
 </section>
-<section id="provide-fifo-occupancy-data-counts" class="level4">
-<h4>Provide FIFO occupancy DATA counts</h4>
+</section>
+<section id="data-threshold-parameters" class="level4">
+<h4>Data Threshold Parameters</h4>
+<section id="provide-fifo-occupancy-data-counts" class="level5">
+<h5>Provide FIFO occupancy DATA counts</h5>
 <p>Adds data_count port to the block. This port indicates the number of
 words written into the FIFO. The count is guaranteed to never
 under-report the number of words in the FIFO, to ensure the user never
@@ -154,6 +164,7 @@ overflows the FIFO. The exception to this behavior is when a write
 operation occurs at the rising edge of write clock; that write operation
 will only be reflected on WR_DATA_COUNT at the next rising clock edge. D
 = log2(FIFO depth)+1</p>
+</section>
 </section>
 </section>
 <section id="implementation-tab" class="level3">
@@ -168,12 +179,11 @@ compiled. For information on the XPM_FIFO_AXIS Xilinx Parameterized
 Macro (XPM), refer to UltraScale Architecture Libraries Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug974-vivado-ultrascale-libraries">UG974</a>).</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-</section>
-<section id="display-shortened-port-names" class="level4">
-<h4>Display shortened port names</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Optional Ports. Data Threshold Parameters.</p>
+<!--
+#### Display shortened port names
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+-->
+
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>

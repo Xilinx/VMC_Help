@@ -78,31 +78,36 @@ is compiled. For information on the XPM_MEMORY_SPROM Xilinx
 Parameterized Macro (XPM), refer to UltraScale Architecture Libraries
 Guide (<a href="https://docs.amd.com/r/en-US/ug974-vivado-ultrascale-libraries">UG974</a>).</li>
 </ul>
+<!--
+#### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
+
+<!--
+#### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
+
 </section>
-<section id="provide-reset-port-for-output-register" class="level4">
-<h4>Provide reset port for output register</h4>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<section id="provide-reset-port-for-output-register" class="level5">
+<h5>Provide reset port for output register</h5>
 <p>When selected, allows access to the reset port available on the
 output register of the Block ROM. The reset port is available only when
 the latency of the Block ROM is set to 1.</p>
 </section>
-<section id="initial-value-for-output-register" class="level4">
-<h4>Initial value for output register</h4>
+<section id="initial-value-for-output-register" class="level5">
+<h5>Initial value for output register</h5>
 <p>Specifies the initial value for output register. The initial value is
 saturated and rounded according to the data precision specified for the
 ROM.</p>
 </section>
 </section>
+</section>
 <section id="output-tab" class="level3">
 <h3>Output tab</h3>
 <p>Parameters specific to the Output tab are as follows.</p>
-<section id="provide-enable-port" class="level4">
-<h4>Provide enable port</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="latency" class="level4">
-<h4>Latency</h4>
-<p>Dialog parameter.</p>
-</section>
 <section id="output-type" class="level4">
 <h4>Output Type</h4>
 <p>Specify the data type of the output.</p>
@@ -113,22 +118,37 @@ ROM.</p>
 </ul>
 </section>
 <section id="arithmetic-type" class="level4">
-<h4>Arithmetic type</h4>
+<h4>Arithmetic Type</h4>
 <p>If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.</p>
 </section>
-<section id="number-of-bits" class="level4">
-<h4>Number of bits</h4>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point Precision</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
 </section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
 <p>Position of the binary point. in the fixed-point output.</p>
+</section>
 </section>
 <section id="floating-point-precision" class="level4">
 <h4>Floating-point Precision</h4>
-<p>Dialog parameter.</p>
+<section id="single" class="level5">
+<h5>Single</h5>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level5">
+<h5>Double</h5>
+<p>Specifies double precision (64 bits).</p>
+</section>
+<section id="custom" class="level5">
+<h5>Custom</h5>
+<p>Activates the field below so you can specify the Exponent width and
+the Fraction width.</p>
+</section>
 </section>
 <section id="exponent-width" class="level4">
 <h4>Exponent width</h4>
@@ -139,20 +159,15 @@ where bit zero is the least significant bit.</p>
 <p>Specify the fraction width.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-</section>
-<section id="optimize-for" class="level4">
-<h4>Optimize for</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="use-pre-defined-core-placement-information" class="level4">
-<h4>Use pre-defined core placement information</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Optional Ports. Fixed-point Precision. Single. Specifies single
-precision (32 bits).</p>
-<p>Double. Specifies double precision (64 bits).</p>
-<p>Custom. Activates the field below so you can specify the Exponent
-width and the Fraction width.</p>
+<!--
+#### Optimize for
+Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
+-->
+
+<!--
+#### Use pre-defined core placement information
+-->
+
 </section>
 </section>
 </section>

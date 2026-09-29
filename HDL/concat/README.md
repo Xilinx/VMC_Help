@@ -23,8 +23,7 @@ the least significant bits of the output.
 
 Parameters specific to this block are as follows:
 
-#### Number of inputs
-
+#### Number of Inputs: 
 Specifies number of inputs, between 2 and 1024,
   inclusively, to concatenate together.
 
@@ -39,4 +38,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

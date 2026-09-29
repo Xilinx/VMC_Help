@@ -44,15 +44,24 @@ directly drive the inputs on HDL blocks.</p>
 <h3>Basic tab</h3>
 <p>Parameters specific to the Basic tab are as follows:</p>
 <section id="constant-value" class="level4">
-<h4>Constant value</h4>
+<h4>Constant Value</h4>
 <p>Specifies the value of the constant. When changed, the new value
 appears on the block icon. If the constant data type is specified as
 fixed-point and cannot be expressed exactly in the specified fixed-point
 type, its value is rounded and saturated as needed. A positive value is
 implemented as an unsigned number, a negative value as signed.</p>
 </section>
+<section id="output-type" class="level4">
+<h4>Output Type</h4>
+<p>Specifies the data type of the output.</p>
+<ul>
+<li>Boolean</li>
+<li>Fixed-point</li>
+<li>Floating-point</li>
+</ul>
+</section>
 <section id="arithmetic-type" class="level4">
-<h4>Arithmetic type</h4>
+<h4>Arithmetic Type</h4>
 <p>If the Output Type is specified as Fixed-point.</p>
 <ul>
 <li>Signed (2’s comp)</li>
@@ -60,14 +69,33 @@ implemented as an unsigned number, a negative value as signed.</p>
 <li>DSP48 instruction</li>
 </ul>
 </section>
-<section id="number-of-bits" class="level4">
-<h4>Number of bits</h4>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point Precision</h4>
+<section id="number-of-bits" class="level5">
+<h5>Number of bits</h5>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
 </section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
+<section id="binary-point" class="level5">
+<h5>Binary point</h5>
 <p>Position of the binary point. in the fixed-point output.</p>
+</section>
+</section>
+<section id="floating-point-precision" class="level4">
+<h4>Floating-point Precision</h4>
+<section id="single" class="level5">
+<h5>Single</h5>
+<p>Specifies single precision (32 bits).</p>
+</section>
+<section id="double" class="level5">
+<h5>Double</h5>
+<p>Specifies double precision (64 bits).</p>
+</section>
+<section id="custom" class="level5">
+<h5>Custom</h5>
+<p>Activates the field below so you can specify the Exponent width and
+the Fraction width.</p>
+</section>
 </section>
 <section id="exponent-width" class="level4">
 <h4>Exponent width</h4>
@@ -77,36 +105,26 @@ where bit zero is the least significant bit.</p>
 <h4>Fraction width</h4>
 <p>Specifies the fraction width.</p>
 </section>
-<section id="sampled-constant" class="level4">
-<h4>Sampled constant</h4>
+<section id="sample-period" class="level4">
+<h4>Sample Period</h4>
+<section id="sampled-constant" class="level5">
+<h5>Sampled Constant</h5>
 <p>Allows a sample period to be associated with the constant output and
 inherited by blocks that the Constant block drives. This is useful
 mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.</p>
+<!--
+#### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
+
 </section>
-<section id="sample-period" class="level4">
-<h4>Sample period</h4>
-<p>Dialog parameter.</p>
 </section>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Output Type. Specifies the data type of the output.</p>
-<ul>
-<li>Boolean</li>
-<li>Fixed-point</li>
-<li>Floating-point</li>
-</ul>
-<p>Fixed-point Precision. Floating-point Precision. Single. Specifies
-single precision (32 bits).</p>
-<p>Double. Specifies double precision (64 bits).</p>
-<p>Custom. Activates the field below so you can specify the Exponent
-width and the Fraction width.</p>
-<p>Super Sample Rate (SSR). This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector data support for the primary block
-operation.</p>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This block
+enables 1-D vector data support for the primary block operation.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />

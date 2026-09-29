@@ -13,30 +13,42 @@ signed (two's complement) or unsigned value.
 ### Basic tab  
 Parameters specific to the Basic Tab are as follows.
 
-#### Arithmetic type
+#### Output Type  
+Specify the output data type.
+  - Boolean
+  - Fixed-point
+  - Floating-point
 
+#### Arithmetic Type  
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned.
 
-#### Number of bits
-
+#### Fixed-point Precision
+##### Number of bits  
 Specifies the bit location of the binary point, where bit zero is the
 least significant bit.
 
-#### Binary point
-
+##### Binary point  
 Specifies the bit location of the binary point.
 
-#### Exponent width
+#### Floating-point Precision  
+##### Single  
+Specifies single precision (32 bits).
 
+##### Double  
+Specifies double precision (64 bits).
+
+##### Custom  
+Activates the field below so you can specify the Exponent width and the
+Fraction width.
+
+#### Exponent width  
 Specify the exponent width.
 
-#### Fraction width
-
+#### Fraction width  
 Specify the fraction width.
 
-#### Quantization
-
+#### Quantization  
 Quantization errors occur when the number of fractional bits is
 insufficient to represent the fractional portion of a value. The options
 are to Truncate (for example, to discard bits to the right of the least
@@ -64,8 +76,7 @@ exactly between 01.01 and 01.10 and the latter is even. To round 01.1010
 to a Fix_4_2, this yields 01.10, since 01.1010 is exactly between 01.10
 and 01.11 and the former is even.
 
-#### Overflow
-
+#### Overflow  
 Overflow errors occur when a value lies outside the representable range.
 For overflow the options are to Saturate to the largest
 positive/smallest negative value, to Wrap (for example, to discard bits
@@ -74,12 +85,19 @@ error (an overflow as a Simulink error) during simulation. Flag as error
 is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.
 
+
+<!--
 #### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
 
-Dialog parameter.
+#### Optional Ports  
+Provide enable port activates an optional enable (en) pin on the block.
+When the enable signal is not asserted the block holds its current state
+until the enable signal is asserted again or the reset signal is
+asserted.
 
-#### Latency
-
+#### Latency  
 The Latency value defines the number of sample periods by which the
 block's output is delayed. One sample period might correspond to
 multiple clock cycles in the corresponding FPGA implementation (for
@@ -89,33 +107,17 @@ select the Pipeline for maximum performance option (described below);
 additional latency is usually implemented as a shift register on the
 output of the block.
 
+
+<!--
+#### Pipeline for maximum performance
+The LogiCORE™ can be internally pipelined to optimize for speed instead of area. Selecting this option puts all user defined latency into the core until the maximum allowable latency is reached. If the Pipeline for maximum performance option is not selected and latency is greater than zero, a single output register is put in the core and additional latency is added on the output of the core.
+-->
+
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 
-#### Pipeline for maximum performance
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Output Type. Specify the output data type.
-  - Boolean
-  - Fixed-point
-  - Floating-point
-
-Fixed-point Precision. Floating-point Precision. Single. Specifies single precision (32 bits).
-
-Double. Specifies double precision (64 bits).
-
-Custom. Activates the field below so you can specify the Exponent width and the
-Fraction width.
-
-Optional Ports. Provide enable port activates an optional enable (en) pin on the block.
-When the enable signal is not asserted the block holds its current state
-until the enable signal is asserted again or the reset signal is
-asserted.
-
-Performance Parameters. Pipeline for maximum performance: The XILINX LogiCORE can be internally
+#### Performance Parameters  
+Pipeline for maximum performance: The XILINX LogiCORE can be internally
 pipelined to optimize for speed instead of area. Selecting this option
 puts all user defined latency into the core until the maximum allowable
 latency is reached. If the Pipeline for maximum performance option is

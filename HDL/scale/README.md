@@ -22,9 +22,11 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
-#### Scale factor s (scale output by 2^s)
 
-Dialog parameter.
+<!--
+#### Scale factor s (scale output by 2^s)
+The scale factor can be a positive or negative integer. The output of the block is `i*2^k`, where `i` is the input value and `k` is the scale factor. The effect of scaling is to move the binary point, which in hardware has no cost (a shift, on the other hand, might add logic).
+-->
 
 ## LogiCORE
 

@@ -11,28 +11,31 @@ The Vector Relational block implements comparator for vector inputs.
 Parameters specific to the Vector Relational block are:
 
 #### Comparison
-
 Specifies the comparison operation computed by the block.
 
+
+<!--
 #### Output Type
+Specifies the data type of the output. Can be Boolean, Fixed-point, or Floating-point.
+-->
 
-Dialog parameter.
-
+<!--
 #### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
 
-Dialog parameter.
-
+<!--
 #### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
 
-Dialog parameter.
-
+<!--
 #### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
 
-Dialog parameter.
-
-Additional dialog notes:
-
-Super Sample Rate (SSR). This configurable GUI parameter is primarily
+#### Super Sample Rate (SSR)
+This configurable GUI parameter is primarily
 used to control processing of multiple data samples on every sample
 period. This block enables 1-D vector data support for the primary block
 operation.

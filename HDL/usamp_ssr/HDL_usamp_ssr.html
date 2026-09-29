@@ -104,15 +104,17 @@ registers that are clock enabled at the input sample rate, on the input
 of the block. The behavior of a Vector Up Sample block with non-zero
 latency is similar to putting a delay block, with equivalent latency, at
 the input of an Vector Up Sample block with zero latency.</p>
+<!--
+#### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
+
 </section>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Super Sample Rate (SSR). This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.</p>
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This blocks
+enable 1-D vector support for the primary block operation.</p>
 <p>Parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 <hr />

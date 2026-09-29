@@ -46,19 +46,44 @@ port.</p>
 <p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point output always has Full
 precision.</p>
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
+error.</p>
 </section>
-<section id="arithmetic-type" class="level4">
-<h4>Arithmetic type</h4>
-<p>Dialog parameter.</p>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
+<!--
+#### Arithmetic type
+In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
+-->
+
 </section>
-<section id="number-of-bits" class="level4">
-<h4>Number of bits</h4>
+</section>
+<section id="fixed-point-output-type" class="level4">
+<h4>Fixed-point output type</h4>
+<section id="arithematic-type" class="level5">
+<h5>Arithematic Type</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned</h6>
+<p>The output is an Unsigned number.</p>
+</section>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
 <p>Specifies the bit location of the binary point of the output number,
 where bit zero is the least significant bit.</p>
 </section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
 <p>Position of the binary point in the fixed-point output.</p>
+</section>
+</section>
 </section>
 <section id="quantization" class="level4">
 <h4>Quantization</h4>
@@ -69,9 +94,14 @@ Options in Block Parameter Dialog Boxes</a> topic.</p>
 <h4>Overflow</h4>
 <p>Refer to the Overflow and Quantization section in the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
+<!--
+#### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
+
 </section>
-<section id="provide-enable-port" class="level4">
-<h4>Provide enable port</h4>
+<section id="optional-port" class="level4">
+<h4>Optional Port</h4>
 <p>Provide enable port</p>
 </section>
 <section id="latency" class="level4">
@@ -81,19 +111,19 @@ is delayed.</p>
 <p><strong>Note</strong>: Only when latency of the Mult block is set to
 4 in Model Composer, are all three pipeline stages used in the generated
 Multiplier IP.</p>
+<!--
+#### Choose Optimization for float input
+-->
+
+<!--
+#### DSP Slice Usage
+-->
+
 </section>
 </section>
 <section id="implementation-tab" class="level3">
 <h3>Implementation tab</h3>
 <p>Parameters specific to the Implementation tab are as follows.</p>
-<section id="choose-optimization-for-float-input" class="level4">
-<h4>Choose Optimization for float input</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="dsp-slice-usage" class="level4">
-<h4>DSP Slice Usage</h4>
-<p>Dialog parameter.</p>
-</section>
 <section id="use-behavioral-hdl-otherwise-use-core" class="level4">
 <h4>Use behavioral HDL (otherwise use core)</h4>
 <p>The block is implemented using behavioral HDL. This gives the
@@ -101,41 +131,42 @@ downstream logic synthesis tool maximum freedom to optimize for
 performance or area.</p>
 <p><strong>Note</strong>: For Floating-point operations, the block
 always uses the Floating-point Operator core.</p>
+<!--
+#### Optimize for
+Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
+-->
+
 </section>
-<section id="optimize-for" class="level4">
-<h4>Optimize for</h4>
+<section id="core-parameters" class="level4">
+<h4>Core Parameters</h4>
+<section id="optimize-for-speedarea" class="level5">
+<h5>Optimize for Speed|Area</h5>
 <p>Directs the block to be optimized for either Speed or Area.</p>
 </section>
-<section id="use-embedded-multipliers" class="level4">
-<h4>Use embedded multipliers</h4>
+<section id="use-embedded-multipliers" class="level5">
+<h5>Use embedded multipliers</h5>
 <p>This field specifies that if possible, use the XtremeDSP slice (DSP48
 type embedded multiplier) in the target device.</p>
 </section>
-<section id="test-for-optimum-pipelining" class="level4">
-<h4>Test for optimum pipelining</h4>
+<section id="test-for-optimum-pipelining" class="level5">
+<h5>Test for optimum pipelining</h5>
 <p>Checks if the Latency provided is at least equal to the optimum
 pipeline length. Latency values that pass this test imply that the core
 produced is optimized for speed.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Additional dialog notes:</p>
-<p>Full. The block uses sufficient precision to represent the result
-without error.</p>
-<p>User Defined. If you do not need full precision, this option allows
-you to specify a reduced number of total bits and/or fractional
-bits.</p>
-<p>Fixed-point output type. Signed (2’s comp). The output is a Signed
-(2’s complement) number.</p>
-<p>Unsigned. The output is an Unsigned number.</p>
-<p>Core Parameters. ## LogiCORE™™ Documentation</p>
+</section>
+</section>
+</section>
+</section>
+<section id="logicore-documentation" class="level2">
+<h2>LogiCORE™™ Documentation</h2>
 <p>Multiplier LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg108-mult-gen&amp;ft:locale=en-US">PG108</a>)</p>
 <p>Floating-Point Operator LogiCORE IP Product Guide (<a href="https://docs.xilinx.com/access/sources/ud/document?isLatest=true&amp;url=pg060-floating-point&amp;ft:locale=en-US">PG060</a>)</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
-</section>
 </section>
 </section>
 </body>

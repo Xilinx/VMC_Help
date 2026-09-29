@@ -27,28 +27,27 @@ of the input.
 
 Parameters specific to the block are as follows.
 
-#### Width of slice (number of bits)
-
+#### Width of slice (Number of bits)  
 Specifies the number of bits to extract.
 
-#### Boolean output
-
+#### Boolean output  
 Tells whether single bit slices should be type Boolean.
 
-#### Specify range as
-
+#### Specify range as  
 (Two bit locations \| Upper bit location + width \|Lower bit location +
 width). Allows you to specify either the bit locations of both
 end-points of the slice or one end-point along with number of bits to be
 taken in the slice.
 
-#### Offset of top bit
-
+#### Offset of top bit  
 Specifies the offset for the ending bit position from the LSB, MSB or
 binary point.
 
-#### Relative to
+#### Offset of bottom bit  
+Specifies the offset for the ending bit position from the LSB, MSB or
+binary point.
 
+#### Relative to  
 Specifies the bit slice position relative to the Most Significant Bit
 (MSB), Least Significant Bit (LSB), or Binary point of the top or the
 bottom of the slice.
@@ -56,15 +55,6 @@ bottom of the slice.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
-
-#### Offset of bottom bit
-
-Specifies the offset for the ending bit position from the LSB, MSB or
-binary point.
-
-#### Relative to
-
-Dialog parameter.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

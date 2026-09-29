@@ -63,8 +63,27 @@ starting on page 5 for an explanation of the bits in this field.</td>
 <h3>Filter Specification tab</h3>
 <p>Parameters specific to the Filter Specification tab are as
 follows:</p>
-<section id="coefficient-vector" class="level4">
-<h4>Coefficient Vector</h4>
+<!--
+#### Number of Coefficient Sets
+-->
+
+<!--
+#### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
+
+<!--
+#### Best Precision Fraction Length
+-->
+
+<!--
+#### Coefficient Structure
+-->
+
+<section id="filter-coefficients" class="level4">
+<h4>Filter Coefficients</h4>
+<section id="coefficient-vector" class="level5">
+<h5>Coefficient Vector</h5>
 <p>Specifies the coefficient vector as a single MATLAB row vector. The
 number of taps is inferred from the length of the MATLAB row vector. If
 multiple coefficient sets are specified, then each set is appended to
@@ -72,14 +91,14 @@ the previous set in the vector. It is possible to enter these
 coefficients using the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;Xilinx_FDATool_Interface_Block&#39;,&#39;category&#39;,&#39;UTIL&#39;))">FDATool</a>
 block as well.</p>
 </section>
-<section id="number-of-coefficient-sets" class="level4">
-<h4>Number of Coefficient Sets</h4>
+<section id="number-of-coefficients-sets" class="level5">
+<h5>Number of Coefficients Sets</h5>
 <p>The number of sets of filter coefficients to be implemented. The
 value specified must divide without remainder into the number of
 coefficients.</p>
 </section>
-<section id="use-reloadable-coefficients" class="level4">
-<h4>Use Reloadable Coefficients</h4>
+<section id="use-reloadable-coefficients" class="level5">
+<h5>Use Reloadable Coefficients</h5>
 <p>Check to add the coefficient reload ports to the block. The set of
 data loaded into the reload channel will not take action until triggered
 by a re-configuration synchronization event. Refer to the FIR Compiler
@@ -88,12 +107,46 @@ for a more detailed explanation of the RELOAD Channel interface timing.
 This block supports the xlGetReloadOrder function. See the Model
 Composer Utility function xlGetReloadOrder for details.</p>
 </section>
-<section id="filter-type" class="level4">
-<h4>Filter Type</h4>
-<p>Dialog parameter.</p>
 </section>
-<section id="rate-change-type" class="level4">
-<h4>Rate Change Type</h4>
+<section id="select-data-type" class="level4">
+<h4>Select Data Type</h4>
+<p>Specifies the filter data and coefficient type. Choose between
+<strong>Real</strong>, <strong>Complex</strong>, or
+<strong>Real_Float</strong>. Complex coefficients are supported only on
+Versal devices.</p>
+<p>When <strong>Complex</strong> is selected, the following constraints
+apply:</p>
+<ul>
+<li>Filter type must be <strong>Single_Rate</strong> or
+<strong>Interpolation</strong> with integer rate change only.</li>
+<li>Filter architecture must be
+<strong>Systolic_Multiply_Accumulate</strong>.</li>
+<li>Single channel and single path only.</li>
+<li>Decimation, coefficient reload, and SSR are not supported with
+complex data.</li>
+</ul>
+</section>
+<section id="filter-specification" class="level4">
+<h4>Filter Specification</h4>
+<section id="filter-type" class="level5">
+<h5>Filter Type</h5>
+<section id="single_rate" class="level6">
+<h6>Single_Rate</h6>
+<p>The data rate of the input and the output are the same.</p>
+</section>
+<section id="interpolation" class="level6">
+<h6>Interpolation</h6>
+<p>The data rate of the output is faster than the input by a factor
+specified by the Interpolation Rate value.</p>
+</section>
+<section id="decimation" class="level6">
+<h6>Decimation</h6>
+<p>The data rate of the output is slower than the input by a factor
+specified in the Decimation Rate Value.</p>
+</section>
+</section>
+<section id="rate-change-type" class="level5">
+<h5>Rate Change Type</h5>
 <p>This field is applicable to Interpolation and Decimation filter
 types. Used to specify an <strong>Integer</strong> or
 <strong>Fixed_Fractional</strong> rate change. Fractional rate with SSR
@@ -101,26 +154,43 @@ is supported for interpolation and decimation filter types subject to
 the constraints documented in the Vitis Model Composer User Guide
 (UG1483).</p>
 </section>
-<section id="interpolation-rate-value" class="level4">
-<h4>Interpolation Rate Value</h4>
+<section id="interpolation-rate-value" class="level5">
+<h5>Interpolation Rate Value</h5>
 <p>This field is applicable to all Interpolation filter types. The value
 provided in this field defines the up-sampling factor.</p>
 </section>
-<section id="decimation-rate-value" class="level4">
-<h4>Decimation Rate Value</h4>
+<section id="decimation-rate-value" class="level5">
+<h5>Decimation Rate Value</h5>
 <p>This field is applicable to all Decimation filter types. The value
 provided in this field defines the down-sampling factor.</p>
 </section>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>Dialog parameter.</p>
+<section id="super-sample-rate-ssr" class="level5">
+<h5>Super Sample Rate (SSR)</h5>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This block
+enables 1-D vector support for the primary block operation. Supported
+values for hybrid simulation are 2, 4, 8, 16, 32, and 64.</p>
+<ul>
+<li>If the filter type is Interpolation, the output vector size (SSR
+value on the output side) is equal to the SSR value on the input side
+multiplied by Interpolation Rate Value.</li>
+<li>If the filter type is Decimation, the output vector size is equal to
+the SSR value on the input side divided by Decimation Rate Value.</li>
+</ul>
 </section>
-<section id="coefficient-type" class="level4">
-<h4>Coefficient Type</h4>
+</section>
+</section>
+<section id="implementation-tab" class="level3">
+<h3>Implementation tab</h3>
+<p>Parameters specific to the Implementation tab are as follows:</p>
+<section id="coefficient-options" class="level4">
+<h4>Coefficient Options</h4>
+<section id="coefficient-type" class="level5">
+<h5>Coefficient Type</h5>
 <p>Specify Signed or Unsigned.</p>
 </section>
-<section id="quantization" class="level4">
-<h4>Quantization</h4>
+<section id="quantization" class="level5">
+<h5>Quantization</h5>
 <p>Specifies the quantization method to be used for quantizing the
 coefficients. This can be set to one of the following:</p>
 <ul>
@@ -130,22 +200,22 @@ coefficients. This can be set to one of the following:</p>
 <li>Normalize_to_Centre_Coefficient</li>
 </ul>
 </section>
-<section id="coefficient-width" class="level4">
-<h4>Coefficient Width</h4>
+<section id="coefficient-width" class="level5">
+<h5>Coefficient Width</h5>
 <p>Specifies the number of bits used to represent the coefficients.</p>
 </section>
-<section id="best-precision-fraction-length" class="level4">
-<h4>Best Precision Fraction Length</h4>
+<section id="best-precision-fractional-bits" class="level5">
+<h5>Best Precision Fractional Bits</h5>
 <p>When selected, the coefficient fractional width is automatically set
 to maximize the precision of the specified filter coefficients.</p>
 </section>
-<section id="coefficient-fractional-bits" class="level4">
-<h4>Coefficient Fractional Bits</h4>
+<section id="coefficient-fractional-bits" class="level5">
+<h5>Coefficient Fractional Bits</h5>
 <p>Specifies the binary point location in the coefficients datapath
 options</p>
 </section>
-<section id="coefficient-structure" class="level4">
-<h4>Coefficient Structure</h4>
+<section id="coefficients-structure" class="level5">
+<h5>Coefficients Structure</h5>
 <p>Specifies the coefficient structure. Depending on the coefficient
 structure, optimizations are made in the core to reduce the amount of
 hardware required to implement a particular filter configuration. The
@@ -159,8 +229,11 @@ selected structure can be any of the following:</p>
 specified unless Inferred from coefficients is selected in which case
 the structure is determined automatically from these coefficients.</p>
 </section>
-<section id="output-rounding-mode" class="level4">
-<h4>Output Rounding Mode</h4>
+</section>
+<section id="datapath-options" class="level4">
+<h4>Datapath Options</h4>
+<section id="output-rounding-mode" class="level5">
+<h5>Output Rounding Mode</h5>
 <p>Choose one of the following:</p>
 <ul>
 <li>Full_Precision</li>
@@ -173,10 +246,11 @@ the structure is determined automatically from these coefficients.</p>
 <li>Convergent_Rounding_to_Odd</li>
 </ul>
 </section>
-<section id="output-width" class="level4">
-<h4>Output Width</h4>
+<section id="output-width" class="level5">
+<h5>Output Width</h5>
 <p>Specify the output width. Edit box activated only if the Rounding
 mode is set to a value other than Full_Precision.</p>
+</section>
 </section>
 </section>
 <section id="detailed-implementation-tab" class="level3">
@@ -197,45 +271,129 @@ the Filter Specification tab is detected as symmetric, the FIR Compiler
 Multiply Accumulate.</p></li>
 <li><p>Multiple interleaved channels are not supported.</p></li>
 </ul>
+<!--
+#### Column Configuration
+Specifies the individual column lengths in a comma delimited list. (See the data sheet for a more detailed explanation.)
+-->
+
+<!--
+#### Reset Data Vector
+-->
+
 </section>
-<section id="goal" class="level4">
-<h4>Goal</h4>
+<section id="optimization-options" class="level4">
+<h4>Optimization Options</h4>
+<p>Specifies if the core is required to operate at maximum possible
+speed (“Speed” option) or minimum area (“Area” option). The “Area”
+option is the recommended default and will normally achieve the best
+speed and area for the design, however in certain configurations, the
+“Speed” setting might be required to improve performance at the expense
+of overall resource usage (this setting normally adds pipeline registers
+in critical paths).</p>
+<section id="goal" class="level5">
+<h5>Goal</h5>
 <ul>
 <li>Area</li>
 <li>Speed</li>
 <li>Custom</li>
 </ul>
 </section>
-<section id="list" class="level4">
-<h4>List</h4>
+<section id="list" class="level5">
+<h5>List</h5>
 <p>A comma delimited list that specifies which optimizations are
 implemented by the block. The optimizations are as follows.</p>
 </section>
-<section id="data-buffer-type" class="level4">
-<h4>Data Buffer Type</h4>
+<section id="data_path_fanout" class="level5">
+<h5>Data_Path_Fanout</h5>
+<p>Adds additional pipeline registers on the data memory outputs to
+minimize fan-out. Useful when implementing large data width filters
+requiring multiple DSP slices per multiply-add unit.</p>
+</section>
+<section id="pre-adder_pipeline" class="level5">
+<h5>Pre-Adder_Pipeline</h5>
+<p>Pipelines the pre-adder when implemented using fabric resources. This
+may occur when a large coefficient width is specified.</p>
+</section>
+<section id="coefficient_fanout" class="level5">
+<h5>Coefficient_Fanout</h5>
+<p>Adds additional pipeline registers on the coefficient memory outputs
+to minimize fan-out. Useful for Parallel channels or large coefficient
+width filters requiring multiple DSP slices per multiply-add unit.</p>
+</section>
+<section id="control_path_fanout" class="level5">
+<h5>Control_Path_Fanout</h5>
+<p>Adds additional pipeline registers to control logic when Parallel
+channels have been specified.</p>
+</section>
+<section id="control_column_fanout" class="level5">
+<h5>Control_Column_Fanout</h5>
+<p>Adds additional pipeline registers to control logic when multiple DSP
+columns are required to implement the filter.</p>
+</section>
+<section id="control_broadcast_fanout" class="level5">
+<h5>Control_Broadcast_Fanout</h5>
+<p>Adds additional pipeline registers to control logic for fully
+parallel (one clock cycle per channel per input sample) symmetric filter
+implementations.</p>
+</section>
+<section id="control_lut_pipeline" class="level5">
+<h5>Control_LUT_Pipeline</h5>
+<p>Pipelines the Look-up tables required to implement the control logic
+for Advanced Channel sequences.</p>
+</section>
+<section id="no_bram_read_first_mode" class="level5">
+<h5>No_BRAM_Read_First_Mode</h5>
+<p>Specifies that Block RAM READ-FIRST mode should not be used.</p>
+</section>
+<section id="increased-speed" class="level5">
+<h5>Increased speed</h5>
+<p>Multiple DSP slice columns are required for non-symmetric filter
+implementations.</p>
+</section>
+<section id="other" class="level5">
+<h5>Other</h5>
+<p>Miscellaneous optimizations.</p>
+<p><strong>Note</strong>: All optimizations may be specified but are
+only implemented when relevant to the core configuration.</p>
+</section>
+</section>
+<section id="memory-options" class="level4">
+<h4>Memory Options</h4>
+<p>The memory type for MAC implementations can either be user-selected
+or chosen automatically to suit the best implementation options. Note
+that a choice of “Distributed” might result in a shift register
+implementation where appropriate to the filter structure. Forcing the
+RAM selection to be either Block or Distributed should be used with
+caution, as inappropriate use can lead to inefficient resource usage -
+the default Automatic mode is recommended for most applications.</p>
+<section id="data-buffer-type" class="level5">
+<h5>Data Buffer Type</h5>
 <p>Specifies the type of memory used to store data samples.</p>
 </section>
-<section id="coefficient-buffer-type" class="level4">
-<h4>Coefficient Buffer Type</h4>
+<section id="coefficient-buffer-type" class="level5">
+<h5>Coefficient Buffer Type</h5>
 <p>Specifies the type of memory used to store the coefficients.</p>
 </section>
-<section id="input-buffer-type" class="level4">
-<h4>Input Buffer Type</h4>
+<section id="input-buffer-type" class="level5">
+<h5>Input Buffer Type</h5>
 <p>Specifies the type of memory to be used to implement the data input
 buffer, where present.</p>
 </section>
-<section id="output-buffer-type" class="level4">
-<h4>Output Buffer Type</h4>
+<section id="output-buffer-type" class="level5">
+<h5>Output Buffer type</h5>
 <p>Specifies the type of memory to be used to implement the data output
 buffer, where present.</p>
 </section>
-<section id="preference-for-other-storage" class="level4">
-<h4>Preference for other storage</h4>
+<section id="preference-for-other-storage" class="level5">
+<h5>Preference for other storage</h5>
 <p>Specifies the type of memory to be used to implement general storage
 in the datapath.</p>
 </section>
-<section id="multi-column-support" class="level4">
-<h4>Multi-Column Support</h4>
+</section>
+<section id="dsp-slice-column-options" class="level4">
+<h4>DSP Slice Column Options</h4>
+<section id="multi-column-support" class="level5">
+<h5>Multi-Column Support</h5>
 <p>For device families with DSP slices, implementations of large high
 speed filters might require chaining of DSP slice elements across
 multiple columns. Where applicable (the feature is only enabled for
@@ -244,133 +402,57 @@ structure across the multiple-columns, which can be Automatic (based on
 the selected device for the project) or Custom (you select the length of
 the first and subsequent columns).</p>
 </section>
-<section id="column-configuration" class="level4">
-<h4>Column Configuration</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="inter-column-pipe-length" class="level4">
-<h4>Inter-Column Pipe Length</h4>
+<section id="inter-column-pipe-length" class="level5">
+<h5>Inter-Column Pipe Length</h5>
 <p>Pipeline stages are required to connect between the columns, with the
 level of pipelining required being depending on the required system
 clock rate, the chosen device and other system-level parameters. The
 choice of this parameter is always left for you to specify.</p>
 </section>
 </section>
+</section>
 <section id="interface-tab" class="level3">
 <h3>Interface tab</h3>
-<section id="output-tready" class="level4">
-<h4>Output TREADY</h4>
+<section id="data-channel-options" class="level4">
+<h4>Data Channel Options</h4>
+<section id="output-tready" class="level5">
+<h5>Output TREADY</h5>
 <p>This field enables the data_tready port. With this port enabled, the
 block will support back-pressure. Without the port, back-pressure is not
 supported, but resources are saved and performance is likely to be
 higher.</p>
 </section>
-<section id="aclken" class="level4">
-<h4>ACLKEN</h4>
+</section>
+<section id="control-options" class="level4">
+<h4>Control Options</h4>
+<section id="aclken" class="level5">
+<h5>ACLKEN</h5>
 <p>Active-High clock enable. Available for MAC-based FIR
 implementations.</p>
 </section>
-<section id="aresetn-active-low" class="level4">
-<h4>ARESETn (active low)</h4>
+<section id="aresetn-active-low" class="level5">
+<h5>ARESETn (active low)</h5>
 <p>Active-low synchronous clear input that always takes priority over
 ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
 the pulse is not in the cycle immediately following.</p>
 </section>
-<section id="reset-data-vector" class="level4">
-<h4>Reset Data Vector</h4>
+</section>
+<section id="blank-output" class="level4">
+<h4>Blank Output</h4>
+<p>When enabled, forces the FIR output to blank during coefficient
+reload events to avoid transient artifacts.</p>
+<p><strong>Note</strong>: Blank Output can only be enabled when Reset
+Data Vector is disabled</p>
+</section>
+<section id="reset-coefficient-vector" class="level4">
+<h4>Reset Coefficient Vector</h4>
 <p>When enabled, the internal coefficient vector is reset during
 coefficient reload operations.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Additional dialog notes:</p>
-<p>Filter Coefficients. Select Data Type. Specifies the filter data and
-coefficient type. Choose between <strong>Real</strong>,
-<strong>Complex</strong>, or <strong>Real_Float</strong>. Complex
-coefficients are supported only on Versal devices.</p>
-<p>When <strong>Complex</strong> is selected, the following constraints
-apply:</p>
-<ul>
-<li>Filter type must be <strong>Single_Rate</strong> or
-<strong>Interpolation</strong> with integer rate change only.</li>
-<li>Filter architecture must be
-<strong>Systolic_Multiply_Accumulate</strong>.</li>
-<li>Single channel and single path only.</li>
-<li>Decimation, coefficient reload, and SSR are not supported with
-complex data.</li>
-</ul>
-<p>Filter Specification. Single_Rate. The data rate of the input and the
-output are the same.</p>
-<p>Interpolation. The data rate of the output is faster than the input
-by a factor specified by the Interpolation Rate value.</p>
-<p>Decimation. The data rate of the output is slower than the input by a
-factor specified in the Decimation Rate Value.</p>
-<p>Super Sample Rate (SSR). This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation. Supported values for hybrid simulation are 2, 4, 8, 16, 32,
-and 64.</p>
-<ul>
-<li>If the filter type is Interpolation, the output vector size (SSR
-value on the output side) is equal to the SSR value on the input side
-multiplied by Interpolation Rate Value.</li>
-<li>If the filter type is Decimation, the output vector size is equal to
-the SSR value on the input side divided by Decimation Rate Value.</li>
-</ul>
 </section>
-</section>
-<section id="implementation-tab" class="level3">
-<h3>Implementation tab</h3>
-<p>Parameters specific to the Implementation tab are as follows:</p>
-<p>Coefficient Options. Datapath Options. Optimization Options.
-Specifies if the core is required to operate at maximum possible speed
-(“Speed” option) or minimum area (“Area” option). The “Area” option is
-the recommended default and will normally achieve the best speed and
-area for the design, however in certain configurations, the “Speed”
-setting might be required to improve performance at the expense of
-overall resource usage (this setting normally adds pipeline registers in
-critical paths).</p>
-<p>Data_Path_Fanout. Adds additional pipeline registers on the data
-memory outputs to minimize fan-out. Useful when implementing large data
-width filters requiring multiple DSP slices per multiply-add unit.</p>
-<p>Pre-Adder_Pipeline. Pipelines the pre-adder when implemented using
-fabric resources. This may occur when a large coefficient width is
-specified.</p>
-<p>Coefficient_Fanout. Adds additional pipeline registers on the
-coefficient memory outputs to minimize fan-out. Useful for Parallel
-channels or large coefficient width filters requiring multiple DSP
-slices per multiply-add unit.</p>
-<p>Control_Path_Fanout. Adds additional pipeline registers to control
-logic when Parallel channels have been specified.</p>
-<p>Control_Column_Fanout. Adds additional pipeline registers to control
-logic when multiple DSP columns are required to implement the
-filter.</p>
-<p>Control_Broadcast_Fanout. Adds additional pipeline registers to
-control logic for fully parallel (one clock cycle per channel per input
-sample) symmetric filter implementations.</p>
-<p>Control_LUT_Pipeline. Pipelines the Look-up tables required to
-implement the control logic for Advanced Channel sequences.</p>
-<p>No_BRAM_Read_First_Mode. Specifies that Block RAM READ-FIRST mode
-should not be used.</p>
-<p>Increased speed. Multiple DSP slice columns are required for
-non-symmetric filter implementations.</p>
-<p>Other. Miscellaneous optimizations.</p>
-<p><strong>Note</strong>: All optimizations may be specified but are
-only implemented when relevant to the core configuration.</p>
-<p>Memory Options. The memory type for MAC implementations can either be
-user-selected or chosen automatically to suit the best implementation
-options. Note that a choice of “Distributed” might result in a shift
-register implementation where appropriate to the filter structure.
-Forcing the RAM selection to be either Block or Distributed should be
-used with caution, as inappropriate use can lead to inefficient resource
-usage - the default Automatic mode is recommended for most
-applications.</p>
-<p>DSP Slice Column Options. Data Channel Options. Control Options.
-Blank Output. When enabled, forces the FIR output to blank during
-coefficient reload events to avoid transient artifacts.</p>
-<p><strong>Note</strong>: Blank Output can only be enabled when Reset
-Data Vector is disabled</p>
 </section>
 </section>
 <section id="examples" class="level2">

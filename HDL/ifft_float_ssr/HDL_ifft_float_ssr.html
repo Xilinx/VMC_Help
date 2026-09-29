@@ -58,29 +58,40 @@ The use of the Vector IFFT Float implementation is recommended in only Verilog d
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<section id="fft-length-2kk--3-16" class="level4">
-<h4>FFT Length (2^K,K = 3-16)</h4>
+<!--
+#### FFT Length (2^K,K = 3-16)
+-->
+
+<!--
+#### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
+
+<!--
+#### Block RAM Threshold
+-->
+
+<section id="fft-length-n" class="level4">
+<h4>FFT length (N)</h4>
 <p>N is the size of the transformation, and should be powers of 2 in the
 range of 2^3 to 2^16.</p>
 </section>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>Dialog parameter.</p>
+<section id="ssr-r" class="level4">
+<h4>SSR (R)</h4>
+<p>R is the super sample rate, the number of samples processed in
+parallel every clock. Using a typical example with N=1024 and SSR=4, the
+core would compute one 1K IFFT every 256 clock cycles, processing 4
+input samples/clock.</p>
+<p>The SSR is limited to 2 and 4.</p>
 </section>
-<section id="block-ram-threshold" class="level4">
-<h4>Block RAM Threshold</h4>
+<section id="block-ram_threshold" class="level4">
+<h4>Block RAM_THRESHOLD</h4>
 <p>Is an implementation parameter with no functional implications. It
 controls the use of distributed RAM vs BRAM when implementing delay
 lines. It can be used to trade utilization numbers between these two
 types of resources. The higher the value, the more distributed RAM will
 be used instead of BRAM. Typical values to try are 258, 514, and
 1026.</p>
-<p>Additional dialog notes:</p>
-<p>SSR (R). R is the super sample rate, the number of samples processed
-in parallel every clock. Using a typical example with N=1024 and SSR=4,
-the core would compute one 1K IFFT every 256 clock cycles, processing 4
-input samples/clock.</p>
-<p>The SSR is limited to 2 and 4.</p>
 </section>
 </section>
 <section id="examples" class="level2">

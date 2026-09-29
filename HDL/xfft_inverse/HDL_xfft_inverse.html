@@ -57,12 +57,16 @@ IP Fast Fourier Transform v9.1</a> for details on this LogicCore IP.</p>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
 <p>Parameters specific to the Inverse FFT block are:</p>
-<section id="transform-length-2n-n-3-16" class="level4">
-<h4>Transform Length (2^N, N= 3-16)</h4>
+<!--
+#### Transform Length (2^N, N= 3-16)
+-->
+
+<section id="transform-length" class="level4">
+<h4>Transform Length</h4>
 <p>Select the desired point size ranging from 8 to 65536.</p>
 </section>
 <section id="scale-result-by-fft-length" class="level4">
-<h4>Scale result by FFT length</h4>
+<h4>Scale Result by FFT length</h4>
 <p>If selected, data is scaled between IFFT stages using a scaling
 schedule determined by the Transform Length setting. If not selected,
 data is unscaled, and all integer bit growth is carried to the
@@ -83,22 +87,26 @@ period is 8 times slower than the system sample period, the block
 implements Radix-2 Burst I/O architecture. Otherwise, Pipeline Streaming
 I/O architecture is used.</p>
 </section>
-<section id="provide-start-frame-port" class="level4">
-<h4>Provide start frame port</h4>
+<section id="optional-port" class="level4">
+<h4>Optional Port</h4>
+<section id="provide-start-frame-port" class="level5">
+<h5>Provide start frame port</h5>
 <p>Adds start_frame_in and start_frame_out ports to the block. The
 signals on these ports can be used to synchronize frames at the input
 and output of the Inverse FFT block. See <a href="#adding-start-frame-ports-to-synchronize-frames">Adding Start
 Frame Ports to Synchronize Frames</a> for a description of the operation
 of these two ports.</p>
-<p>Additional dialog notes:</p>
-<p>Optional Port. ## Context Based Pipeline vs. Radix Implementation</p>
+</section>
+</section>
+</section>
+<section id="context-based-pipeline-vs-radix-implementation" class="level2">
+<h2>Context Based Pipeline vs. Radix Implementation</h2>
 <p>Pipelined Streaming I/O and Radix-2 Burst I/O architectures are
 supported by the Inverse FFT block. Radix-4 Burst I/O architecture is
 implemented when the Optimize for: Resources block parameter is selected
 and the sample rate of the inputs is 8 times slower than the system
 rate. In all other configurations Pipelined Streaming I/O architecture
 is implemented by default.</p>
-</section>
 </section>
 <section id="input-data-type-support" class="level2">
 <h2>Input Data Type Support</h2>

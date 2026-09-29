@@ -20,36 +20,33 @@ design and specify the Vitis HLS Component directory as the target.
 ![](./Images/vtg1602064866443.png)
 
 #### Component
-
 The path to the Component directory containing RTL packaged for
 Vitis Model Composer. This path is usually the path to a directory contained
 in a Vitis® HLS project. The path must be included in single quotes and
 must evaluate to a string.
 
-#### Use C simulation model if available
+#### Browse  
+A standard directory browse button.
 
+#### Refresh  
+Updates the block ports to the latest package contained in the Component directory.
+
+#### Edit  
+Opens the Vitis HLS project associated with the component.
+
+#### Use C simulation model if available  
 Use the C simulation model if it is available in the Vitis HLS component.
 As shown below, the simulation model being used is shown on the Vitis
 HLS block. In this case, an RTL-model is used because a C simulation
 model is not available.
 
-#### Display signal types
-
+#### Display signal types  
 Signal types to be used to drive input ports and emanating from output
 ports are displayed on the block icon when checked.
 
-#### Output Sample Times
-
+#### Output Sample Times  
 Select either the Simulink system period or the GCD of the inputs
 period.
-
-Additional dialog notes:
-
-Browse. A standard directory browse button.
-
-Refresh. Updates the block ports to the latest package contained in the Component directory.
-
-Edit. Opens the Vitis HLS project associated with the component.
 
 ## Data Type Translation
 

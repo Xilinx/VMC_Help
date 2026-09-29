@@ -107,14 +107,12 @@ block parameters dialog box.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
-#### Depth
-
+#### Depth  
 Specifies the number of words in the memory for Port A, which must be a
 positive integer. The Port B depth is inferred from the form factor
 specified by the input data widths.
 
-#### Initial value vector
-
+#### Initial value vector  
 For distributed memory or block RAM, specifies the initial memory
 contents. The size and precision of the elements of the initial value
 vector are based on the data format specified for Port A. When the
@@ -127,8 +125,7 @@ according to the precision specified on the data port A of RAM.
 device reset. If implemented in UltraRAM, the Single Port RAM block
 cannot be initialized to user defined values.
 
-#### Memory Type
-
+#### Memory Type  
 Option to select whether the dual port RAM will be implemented in
 Distributed memory, Block RAM, or UltraRAM. The distributed dual port
 RAM is always set to use port A in Read Before Write mode and port B in
@@ -150,53 +147,56 @@ inferred or implemented in this way when the design is compiled:
   UltraScale Architecture Libraries Guide
   ([UG974](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug974-vivado-ultrascale-libraries)).
 
-#### Initial value for port A output register
-
+#### Initial value for port A output Register  
 Specifies the initial value for port A output register. The initial
 value is saturated and rounded according to the precision specified on
 the data port A of RAM.
 
-#### Initial value for port B output register
-
+#### Initial value for port B output register  
 Specifies the initial value for port B output register. The initial
 value is saturated and rounded according to the precision specified on
 the data port B of RAM.
 
-#### Provide synchronous reset port for port A output register
-
+#### Provide synchronous reset port for port A output register  
 When selected, allows access to the reset port available on the port A
 output register of the block RAM or UltraRAM. The reset port is
 available only when the latency of the Block RAM or UltraRAM is greater
 than or equal to 1.
 
-#### Provide synchronous reset port for port B output register
-
+#### Provide synchronous reset port for port B output register  
 When selected, allows access to the reset port available on the port B
 output register of the Block RAM or UltraRAM. The reset port is
 available only when the latency of the Block RAM or UltraRAM is greater
 than or equal to 1.
 
-#### Provide enable port for port A
-
+#### Provide enable port for port A  
 When selected, allows access to the enable port for port A. The enable
 port is available only when the latency of the block is greater than or
 equal to 1.
 
-#### Provide enable port for port B
-
+#### Provide enable port for port B  
 When selected, allows access to the enable port for port B. The enable
 port is available only when the latency of the block is greater than or
 equal to 1.
 
+
+<!--
+#### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
+
+<!--
+#### Port A
+-->
+
+<!--
+#### Port B
+-->
+
 ### Advanced tab  
 Parameters specific to the Advanced tab are as follows.
 
-#### Latency
-
-Dialog parameter.
-
-#### Port A
-
+#### Port A or Port B  
 When the Dual Port RAM block is implemented in block RAM, specifies
 memory behavior for port A or port B when WE is asserted. Supported
 modes are: Read after write, Read before write, and No read on write.
@@ -211,10 +211,6 @@ refer to the Write Mode topic above for more information.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
-
-#### Port B
-
-Dialog parameter.
 
 ## LogiCORE™ and XPM Documentation
 

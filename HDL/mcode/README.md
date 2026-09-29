@@ -1181,29 +1181,32 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+<!--
 #### MATLAB function
+-->
 
-Dialog parameter.
-
+<!--
 #### Specify explicit sample period
+-->
 
-Dialog parameter.
-
+<!--
 #### Input
+Input is a drop down menu parameter which specifies whether real, imaginary, or both of the parts of the output signal are specified as inputs.
+-->
 
-Dialog parameter.
-
+<!--
 #### Output
+This parameter specifies the kind of output the block produces.
+-->
 
-Dialog parameter.
-
+<!--
 #### Enable printing with disp
+-->
 
-Dialog parameter.
-
+<!--
 #### Enable MATLAB debugging (slows simulation)
+-->
 
-Dialog parameter.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

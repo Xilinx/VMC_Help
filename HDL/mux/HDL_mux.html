@@ -43,33 +43,63 @@ ranging from 2 to 32.</p>
 <section id="number-of-inputs" class="level4">
 <h4>Number of inputs</h4>
 <p>specify a number between 2 and 32.</p>
+<!--
+#### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
+
+<!--
+#### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
+
 </section>
-<section id="provide-enable-port" class="level4">
-<h4>Provide enable port</h4>
-<p>Dialog parameter.</p>
+<section id="optional-ports" class="level4">
+<h4>Optional Ports</h4>
+<p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
+Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
-<section id="latency" class="level4">
-<h4>Latency</h4>
-<p>Dialog parameter.</p>
 </section>
+<section id="output-tab" class="level3">
+<h3>Output tab</h3>
 <section id="precision" class="level4">
 <h4>Precision</h4>
 <p>This parameter allows you to specify the output precision for
 fixed-point arithmetic. Floating point arithmetic output will always be
 Full precision.</p>
+<section id="full" class="level5">
+<h5>Full</h5>
+<p>The block uses sufficient precision to represent the result without
+error.</p>
 </section>
-<section id="arithmetic-type" class="level4">
-<h4>Arithmetic type</h4>
-<p>Dialog parameter.</p>
+<section id="user-defined" class="level5">
+<h5>User Defined</h5>
+<p>If you do not need full precision, this option allows you to specify
+a reduced number of total bits and/or fractional bits.</p>
 </section>
-<section id="number-of-bits" class="level4">
-<h4>Number of bits</h4>
+</section>
+<section id="fixed-point-output-type" class="level4">
+<h4>Fixed-point output type</h4>
+<section id="arithmetic-type" class="level5">
+<h5>Arithmetic type</h5>
+<section id="signed-2s-comp" class="level6">
+<h6>Signed (2’s comp)</h6>
+<p>The output is a Signed (2’s complement) number.</p>
+</section>
+<section id="unsigned" class="level6">
+<h6>Unsigned</h6>
+<p>The output is an Unsigned number.</p>
+</section>
+<section id="number-of-bits" class="level6">
+<h6>Number of bits</h6>
 <p>Specifies the bit location of the binary point of the output number
 where bit zero is the least significant bit.</p>
 </section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
+<section id="binary-point" class="level6">
+<h6>Binary point</h6>
 <p>Position of the binary point. in the fixed-point output.</p>
+</section>
+</section>
 </section>
 <section id="quantization" class="level4">
 <h4>Quantization</h4>
@@ -82,22 +112,7 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 Options in Block Parameter Dialog Boxes</a>.</p>
 <p>Parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-<p>Additional dialog notes:</p>
-<p>Optional Ports. Other parameters used by this block are explained in
-the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
-Options in Block Parameter Dialog Boxes</a>.</p>
 </section>
-</section>
-<section id="output-tab" class="level3">
-<h3>Output tab</h3>
-<p>Full. The block uses sufficient precision to represent the result
-without error.</p>
-<p>User Defined. If you do not need full precision, this option allows
-you to specify a reduced number of total bits and/or fractional
-bits.</p>
-<p>Fixed-point output type. Signed (2’s comp). The output is a Signed
-(2’s complement) number.</p>
-<p>Unsigned. The output is an Unsigned number.</p>
 </section>
 </section>
 <section id="logicore-documentation" class="level2">

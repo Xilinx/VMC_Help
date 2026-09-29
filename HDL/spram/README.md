@@ -40,12 +40,10 @@ specified by the address line.
 
 Parameters specific to the Basic tab are as follows.
 
-#### Depth
-
+#### Depth  
 The number of words in the memory; must be a positive integer.
 
-#### Initial value vector
-
+#### Initial value vector  
 The Initial value vector stores the initial contents of the memory. When
 the vector length exceeds the memory depth, values with index higher
 than depth are ignored. When the depth exceeds the vector length, memory
@@ -57,8 +55,7 @@ UltraRAM memory is initialized to all 0's during power up or device
 reset. If implemented in UltraRAM, the Single Port RAM block cannot be
 initialized to user defined values.
 
-#### Memory Type
-
+#### Memory Type  
 Option to select whether the single-port RAM will be implemented using
 Distributed memory, Block RAM, or UltraRAM.
 
@@ -77,8 +74,7 @@ inferred or implemented as follows when the design is compiled:
   Architecture Libraries Guide
   ([UG974](https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&url=ug974-vivado-ultrascale-libraries)).
 
-#### Write Mode
-
+#### Write Mode  
 Specifies memory behavior when WE is asserted. Supported modes are: Read
 after write, Read before write, and No read On write. Read after write
 indicates the output value reflects the state of the memory after the
@@ -89,8 +85,7 @@ of address or state of the memory. There are device specific
 restrictions on the applicability of these modes. Also refer to the
 Write Modes and Hardware Notes topics below for more information.
 
-#### Provide reset port for output register
-
+#### Provide reset port for output register  
 For block RAM or UltraRAM, exposes a reset port controlling the output
 register of the RAM. This port does not reset the memory contents to the
 initialization value.
@@ -98,8 +93,7 @@ initialization value.
 **Note**: For Block RAM or UltraRAM, the reset port is available only when
 the latency of the Block RAM is greater than or equal to 1.
 
-#### Initial value for output register
-
+#### Initial value for output register  
 For Block RAM, the initial value for the output register. The initial
 value is saturated and rounded as necessary according to the precision
 specified on the data port of the Block RAM.
@@ -111,21 +105,25 @@ Other parameters used by this block are explained in the [Common Options
 in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
+
+<!--
 #### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
 
-Dialog parameter.
-
+<!--
 #### Optimize latency
+-->
 
-Dialog parameter.
-
+<!--
 #### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
 
-Dialog parameter.
-
+<!--
 #### Optimize for
-
-Dialog parameter.
+Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
+-->
 
 ## Write Modes
 

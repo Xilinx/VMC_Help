@@ -30,8 +30,7 @@ shaping.
 
 Parameters specific to the block are as follows:
 
-#### Puncture code
-
+#### Puncture Code  
 The puncture pattern represented as a bit vector, where a zero in
 position i indicates bit i is to be removed.
 
@@ -44,4 +43,3 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
-

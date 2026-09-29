@@ -20,56 +20,51 @@ as it facilitates logic collapsing in synthesis and mapping.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows:
 
-#### Logical function
-
+#### Logical function  
 Specifies one of the following bitwise logical operators: AND, NAND, OR,
 NOR, XOR, XNOR.
 
-#### Number of inputs
-
+#### Number of inputs  
 Specifies the number of inputs (1 - 1024).
 
+
+<!--
 #### Provide enable port
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
+-->
 
-Dialog parameter.
-
+<!--
 #### Latency
+Many elements in the Xilinx blockset have a latency option. This defines the number of sample periods by which the block's output is delayed. One sample period might correspond to multiple clock cycles in the corresponding FPGA implementation (for example, when the hardware is over-clocked with respect to the Simulink model). Model Composer does not perform extensive pipelining; additional latency is usually implemented as a shift register on the output of the block.
+-->
 
-Dialog parameter.
-
+<!--
 #### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
 
-Dialog parameter.
-
+<!--
 #### Precision
+The fundamental computational mode in the Xilinx blockset is arbitrary precision fixed-point arithmetic. Most blocks give you the option of choosing the precision, for example, the number of bits and binary point position.
+-->
 
-Dialog parameter.
-
+<!--
 #### Output Type
+Specifies the data type of the output. Can be Boolean, Fixed-point, or Floating-point.
+-->
 
-Dialog parameter.
-
+<!--
 #### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
 
-Dialog parameter.
-
+<!--
 #### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
 
-Dialog parameter.
-
-#### Align binary point
-
-Specifies that the block must align binary points
-  automatically. If not selected, all inputs must have the same binary
-  point position.
-
-Other parameters used by this block are explained in the topic [Common
-Options in Block Parameter Dialog
-Boxes](../../GEN/common-options/README.md).
-
-Additional dialog notes:
-
-Logical Reduction Operation. When the number of inputs is specified as 1, a unary logical reduction
+#### Logical Reduction Operation  
+When the number of inputs is specified as 1, a unary logical reduction
 operation performs a bit-wise operation on the single operand to produce
 a single bit result. The first step of the operation applies the logical
 operator between the least significant bit of the operand and the next
@@ -80,13 +75,23 @@ implements the same functionality as that of the logical reduction
 operation in HDLs. The output of the logical reduction operation is
 always Boolean.
 
-Super Sample Rate (SSR). This configurable GUI parameter is primarily
+#### Super Sample Rate (SSR)
+This configurable GUI parameter is primarily
 used to control the processing of multiple data samples on every sample
 period. This blocks enable 1-D vector data support for the primary block
 operation.
 
 ### Output Type tab  
 Parameters specific to the Output Type tab are as follows:
+
+#### Align binary point
+Specifies that the block must align binary points
+  automatically. If not selected, all inputs must have the same binary
+  point position.
+
+Other parameters used by this block are explained in the topic [Common
+Options in Block Parameter Dialog
+Boxes](../../GEN/common-options/README.md).
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

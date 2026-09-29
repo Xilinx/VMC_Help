@@ -37,18 +37,21 @@ complex input vectors.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<section id="ssr" class="level4">
-<h4>SSR</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="use-synthesizable-model" class="level4">
-<h4>Use Synthesizable model</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>Super Sample Rate (SSR). This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.</p>
+<!--
+#### SSR
+This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
+-->
+
+<!--
+#### Use Synthesizable model
+When selected, the DSP48E is implemented from an RTL description which might not map directly to the DSP48E hardware. This is useful if a design using the DSP48E block is targeted at device families that do not contain DSP48E hardware primitives.
+-->
+
+<section id="super-sample-rate-ssr" class="level4">
+<h4>Super Sample Rate (SSR)</h4>
+<p>This configurable GUI parameter is primarily used to control
+processing of multiple data samples on every sample period. This blocks
+enable 1-D vector support for the primary block operation.</p>
 </section>
 </section>
 <section id="data-type-support" class="level2">
@@ -66,8 +69,8 @@ to 18.</li>
 <h2>Output Data Type Interpretation</h2>
 <ul>
 <li>The output data type is always set to signed fixed-point with a word
-length of 44 bits and no fractional component (i.e., a fractional length
-of 0 bits).</li>
+length of 44 bits and and no fractional component (i.e., a fractional
+length of 0 bits).</li>
 <li>The user is responsible for correctly reinterpreting the output data
 type based on the input binary points.</li>
 <li>For example, if the input data types for Port A and Port B are

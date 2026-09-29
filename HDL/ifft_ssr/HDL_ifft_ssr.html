@@ -56,37 +56,68 @@ is used in if there is an internal overflow.</p>
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<section id="fft-length" class="level4">
-<h4>FFT Length</h4>
+<!--
+#### FFT Length
+-->
+
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
+<section id="ifft-length-n" class="level4">
+<h4>IFFT length (N)</h4>
 <p>Is the size of the transformation, and should be powers of 2 in the
 range of 2^3 to 2^16. SSR is the super sample rate, the number of
 samples processed in parallel every clock. Using a typical example with
 N=1024 and SSR=4, the core would compute one 1K IFFT for every 256 clock
 cycles, processing 4 input samples/clock.</p>
 </section>
-<section id="number-of-bits" class="level4">
-<h4>Number of bits</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="binary-point" class="level4">
-<h4>Binary point</h4>
-<p>Dialog parameter.</p>
+<section id="fixed-point-precision" class="level4">
+<h4>Fixed-point precision</h4>
+<p>Must be 27 bits or less, this is limited by the DSP48 multiplier A
+port size.</p>
 </section>
 <section id="enable-rounding" class="level4">
 <h4>Enable Rounding</h4>
 <p>If it is selected, then the Vector IFFT output rounds to the nearest
 integer.</p>
+<!--
+#### Input Reorder
+-->
+
+<!--
+#### Output Reorder
+-->
+
+<!--
+#### Block RAM Threshold
+-->
+
+<!--
+#### Number of DSPs per Complex Multipication
+-->
+
+<!--
+#### Use Corner Bender / Matrix Transposer
+-->
+
 </section>
-<section id="input-reorder" class="level4">
-<h4>Input Reorder</h4>
-<p>Dialog parameter.</p>
+<section id="bypass-reordering" class="level4">
+<h4>Bypass Reordering</h4>
+<p>If Input Reorder bypassing is enabled, then IFFT accepts natural
+input order.</p>
+<p>If Output Reorder bypassing is enabled, then the module takes N
+samples in natural transposed input order and outputs them in natural
+order.</p>
 </section>
-<section id="output-reorder" class="level4">
-<h4>Output Reorder</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="block-ram-threshold" class="level4">
-<h4>Block RAM Threshold</h4>
+<section id="block-ram_threshold" class="level4">
+<h4>Block RAM_THRESHOLD</h4>
 <p>Is an implementation parameter with no functional implications, it
 controls the use of distributed RAM vs BRAM when implementing delay
 lines. It can be used to trade utilization numbers between these two
@@ -94,26 +125,18 @@ types of resources. The higher the value, the more distributed RAM will
 be used instead of BRAM. Typical values to try are 258, 514, and
 1026.</p>
 </section>
-<section id="number-of-dsps-per-complex-multipication" class="level4">
-<h4>Number of DSPs per Complex Multipication</h4>
+<section id="number-of-dsps-per-complex-multiplication" class="level4">
+<h4>Number of DSPs per Complex Multiplication</h4>
 <p>User can select number of DSP slices (3 or 4) per complex
 multiplication.</p>
 </section>
-<section id="use-corner-bender--matrix-transposer" class="level4">
-<h4>Use Corner Bender / Matrix Transposer</h4>
+<section id="use-corner-bender-or-matrix-transposer" class="level4">
+<h4>Use Corner Bender Or Matrix Transposer</h4>
 <p>If it is enabled, it does matrix transpose on the output of IFFT.</p>
 </section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
 <p>Super Sample Rate.It should be a power of 2.</p>
-<p>Additional dialog notes:</p>
-<p>Fixed-point precision. Must be 27 bits or less, this is limited by
-the DSP48 multiplier A port size.</p>
-<p>Bypass Reordering. If Input Reorder bypassing is enabled, then IFFT
-accepts natural input order.</p>
-<p>If Output Reorder bypassing is enabled, then the module takes N
-samples in natural transposed input order and outputs them in natural
-order.</p>
 </section>
 </section>
 <section id="scaling-ports" class="level2">

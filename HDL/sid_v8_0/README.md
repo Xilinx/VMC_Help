@@ -259,62 +259,85 @@ the GUI.
 ### Basic tab  
 Parameters specific to the Basic Parameters tab are as follows.
 
-#### Memory style
-
+#### Memory Style  
 Select Distributed if all the Block Memories are required elsewhere in
 the design; select Block to use Block Memory where ever possible; select
 Automatic and let Model Composer use the most appropriate style of
 memory for each case, based on the required memory depth.
 
-#### Symbol Width
-
+#### Symbol Width  
 This is the number of bits in the symbols to be processed.
 
-#### Type
-
+#### Type  
 Select Forney Convolutional or Rectangular Block.
 
-#### Mode
-
+#### Mode  
 Select Interleaver or Deinterleaver
 
-#### External Symbol Memory Latency
 
+<!--
+#### External Symbol Memory Latency
+-->
+
+#### Symbol memory  
 Specifies whether or not the data symbols are stored in Internal FPGA
 RAM or in External RAM.
 
 ### Forney tab  
 Parameters specific to the Forney Parameters tab are as follows.
 
-#### Number of branches
-
+#### Dimensions  
+##### Number of branches  
 1 to 256 (inclusive)
 
-#### Architecture
+#### Architecture  
+##### ROM-based  
+Look-up table ROMs are used to compute some of the internal results in
+the block.
 
-Dialog parameter.
+##### Logic-based  
+Logic circuits are used to compute some of the internal results in the
+block.
 
-#### Number of configurations
+Which option is best depends on the other core parameters. You should
+try both options to determine the best results. This parameter has no
+effect on the block behavior.
 
+
+<!--
+#### Branch length descriptions for Forney SID
+-->
+
+#### Configurations  
+##### Number of configurations  
 If greater than 1, the block is generated with CONFIG_SEL and NEW_CONFIG
 inputs. The parameters for each configuration are defined in a COE file.
 The number of parameters defined must exactly match the number of
 configurations specified.
 
-#### Branch length descriptions for Forney SID
+#### Length of Branches  
+Branch length descriptions for Forney SID.
 
-Dialog parameter.
+##### constant_difference_between_consecutive_branches  
+Specified by the Value parameter.
 
-#### Value
+##### use_coe_file_to_define_branch_lengths  
+Location of file is specified by the COE File parameter.
 
+##### coe_file_defines_individual_branch_lengths_for_every_branch_in_each_configuration  
+Location of file is specified by the COE File parameter.
+
+##### coe_file_defines_branch_length_constant_for_each_configuration  
+Location of file is specified by the COE File parameter.
+
+##### Value  
 1 to MAX (inclusive). MAX depends on the number of branches and size of
 block input. Branch length must be an array of either length one or
 number of branches. If the array size is one, the value is used as a
 constant difference between consecutive branches. Otherwise, each branch
 has a unique length.
 
-#### COE File
-
+##### COE File  
 The branch lengths are specified from a file
 
 
@@ -322,19 +345,17 @@ The branch lengths are specified from a file
 Parameters specific to the Rectangular Parameters \#1 tab are as
 follows.
 
-#### Value
-
+#### Number of Rows  
+##### Value  
 This parameter is relevant only when the Constant row type is selected.
 The number of rows is fixed at this value.
 
-#### Row Port Width
-
+#### Row Port Width  
 This parameter is relevant only when the Variable row type is selected.
 It sets the width of the ROW input bus. The smallest possible value
 should be used to keep the underlying LogiCORE as small as possible.
 
-#### Minimum Number of Rows
-
+##### Minimum Number of Rows  
 This parameter is relevant only when the Variable row type is selected.
 In this case, the core has to potentially cope with a wide range of
 possible values for the number of rows. If the smallest value that will
@@ -342,27 +363,43 @@ actually occur is known, then the amount of logic in the LogiCORE can
 sometimes be reduced. The largest possible value should be used for this
 parameter to keep the core as small as possible.
 
-#### Number of Values
-
+##### Number of Values  
 This parameter is relevant only when you select the Selectable row type.
 This parameter defines how many valid selection values have been defined
 in the COE file. You should only add the number of select values you
 need.
 
-#### Value
+##### Row Type  
+###### Constant  
+The number of rows is always equal to the Row Constant Value parameter.
 
+###### Variable  
+The number of rows is sampled from the ROW input at the start of each
+new block. Row permutations are not supported for the variable row type.
+
+###### Selectable  
+ROW_SEL is sampled at the start of each new block. This value is then
+used to select from one of the possible values for the number of rows
+provided in the COE file.
+
+
+<!--
+#### ARESETn (Active Low)
+Active-low synchronous clear input that always takes priority over ACLKEN. A minimum ARESETn active pulse of two cycles is required, since the signal is internally registered for performance. A pulse of one cycle resets the control and datapath of the core, but the response to the pulse is not in the cycle immediately following.
+-->
+
+#### Number of Columns  
+##### Value  
 This parameter is relevant only when you select the Constant column type
 is selected. The number of columns is fixed at this value.
 
-#### COL Port Width
-
+##### COL Port Width  
 This parameter is relevant only when you select the Variable column
 type. It sets the width of the COL input bus. The smallest possible
 value should be used to keep the underlying LogiCORE™ as small as
 possible.
 
-#### Minimum Number of Columns
-
+##### Minimum Number of Columns  
 This parameter is relevant only when you select the Variable column type
 is selected. In this case, the core has to potentially cope with a wide
 range of possible values for the number of columns. If the smallest
@@ -370,149 +407,24 @@ value that will actually occur is known, then the amount of logic in the
 LogiCORE can sometimes be reduced. The largest possible value should be
 used for this parameter to keep the core as small as possible.
 
-#### Number of Values
-
+##### Number of Values  
 This parameter is relevant only when you select the Selectable column
 type. This parameter defines how many valid selection values have been
 defined in the COE file. You should only add the number of select values
 you need.
 
-#### Row Permutations
-
-Dialog parameter.
-
-#### Column Permutations
-
-Dialog parameter.
-
-#### COE File
-
-Specify the pathname to the `COE` file.
-
-#### Value
-
-This parameter is relevant only when you select the Constant block size
-type. The block size is fixed at this value.
-
-#### BLOCK_SIZE Port Width
-
-This parameter is relevant only if the Variable block size type is
-selected. It sets the width of the BLOCK_SIZE input bus. The smallest
-possible value should be used to keep the core as small as possible.
-
-#### ACLKEN
-
-When ACLKEN is de-asserted (Low), all the synchronous inputs are ignored
-and the block remains in its current state.
-
-#### ARESETn (Active Low).
-
-The Active-Low synchronous clear input always takes priority over
-ACLKEN.
-
-#### COL_VALID
-
-This optional output is available when a variable number of columns is
-selected. If an illegal value is sampled on the `s_axis_ctrl_tdata_col`
-input, `event_col_valid` will go Low a predefined number of clock cycles
-later.
-
-#### COL_SEL_VALID
-
-This optional output (`event_col_sel_valid`) is available when a
-selectable number of columns is chosen. The event pins are
-`event_col_valid`, `event_col_sel_valid`, `event_row_valid`,
-`event_row_sel_valid`, `event_block_size_valid` (in the same order as in
-the options on the GUI).
-
-#### ROW_VALID
-
-This optional output is available when a selectable number of rows is
-chosen.
-
-#### ROW_SEL_VALID
-
-This optional output is available when a selectable number of rows is
-chosen.
-
-#### BLOCK_SIZE_VALID
-
-This optional output is available when the block size is not constant,
-that is, if the block size type is either Variable or equal to Rows \*
-Columns.
-
-
-### Port Parameters \#2 tab  
-Parameters specific to the Port Parameters \#2 tab are as follows.
-
-#### TREADY
-
-TREADY for the Data Input Channel. Used by the Symbol
-Interleaver/De-interleaver to signal that it is ready to accept data.
-
-#### FDO
-
-Adds a data_tuser_fdo (First Data Out) output port.
-
-#### RDY
-
-Adds a data_tuser_rdy output port.
-
-#### BLOCK_START
-
-Adds a data_tuser_block_start output port.
-
-#### BLOCK_END
-
-Adds a data_tuser_block_end output port.
-
-#### Pipelining
-
-Dialog parameter.
-
-#### Display shortened port names
-
-Dialog parameter.
-
-Additional dialog notes:
-
-Dimensions. ROM-based. Look-up table ROMs are used to compute some of the internal results in
-the block.
-
-Logic-based. Logic circuits are used to compute some of the internal results in the
-block.
-
-Which option is best depends on the other core parameters. You should
-try both options to determine the best results. This parameter has no
-effect on the block behavior.
-
-Configurations. Length of Branches. Branch length descriptions for Forney SID.
-
-constant_difference_between_consecutive_branches. Specified by the Value parameter.
-
-use_coe_file_to_define_branch_lengths. Location of file is specified by the COE File parameter.
-
-coe_file_defines_individual_branch_lengths_for_every_branch_in_each_configuration. Location of file is specified by the COE File parameter.
-
-coe_file_defines_branch_length_constant_for_each_configuration. Location of file is specified by the COE File parameter.
-
-Number of Rows. Row Type. Constant. The number of rows is always equal to the Row Constant Value parameter.
-
-Variable. The number of rows is sampled from the ROW input at the start of each
-new block. Row permutations are not supported for the variable row type.
-
-Selectable. ROW_SEL is sampled at the start of each new block. This value is then
-used to select from one of the possible values for the number of rows
-provided in the COE file.
-
-Number of Columns. Column Type. Constant. The number of columns is always equal to the Column Constant Value
+##### Column Type  
+###### Constant  
+The number of columns is always equal to the Column Constant Value
 parameter.
 
-Variable. The number of columns is sampled from the `COL` input at the start of
+###### Variable  
+The number of columns is sampled from the `COL` input at the start of
 each new block. Column permutations are not supported for the variable
 column type.
 
-Selectable. COL_SEL is sampled at the start of each new block. This value is then
+###### Selectable  
+COL_SEL is sampled at the start of each new block. This value is then
 used to select from one of the possible values for the number of columns
 provided in the COE file.
 
@@ -520,26 +432,49 @@ provided in the COE file.
 Parameters specific to the Rectangular Parameters \#2 tab are as
 follows.
 
-Permutations Configuration. None. This tells Model Composer that row permutations are not to be performed.
+#### Permutations Configuration  
+##### Row permutations  
+###### None  
+This tells Model Composer that row permutations are not to be performed.
 
-Use COE file. This tells Model Composer that a row permute vector exists in the COE
+###### Use COE file  
+This tells Model Composer that a row permute vector exists in the COE
 file, and that row permutations are to be performed. Remember this is
 possible only for un-pruned interleaver/deinterleavers.
 
-None. This tells Model Composer that column permutations are not to be
+##### Column permutations  
+###### None  
+This tells Model Composer that column permutations are not to be
 performed
 
-Use COE file. This tells Model Composer that a column permute vector exists in the
+###### Use COE file  
+This tells Model Composer that a column permute vector exists in the
 `COE` file, and that column permutations are to be performed. Remember
 this is possible only for un-pruned interleaver/deinterleavers.
 
-Block Size. Block Size Type. Constant. The block size never changes. The block can be pruned (block size \< row
+##### COE File  
+Specify the pathname to the `COE` file.
+
+#### Block Size  
+##### Value  
+This parameter is relevant only when you select the Constant block size
+type. The block size is fixed at this value.
+
+##### BLOCK_SIZE Port Width  
+This parameter is relevant only if the Variable block size type is
+selected. It sets the width of the BLOCK_SIZE input bus. The smallest
+possible value should be used to keep the core as small as possible.
+
+##### Block Size Type  
+###### Constant  
+The block size never changes. The block can be pruned (block size \< row
 \* col). The block size must be chosen so that the last symbol is on the
 last row. An un-pruned interleaver will use a smaller quantity of FPGA
 resources than a pruned one, so pruning should be used only if
 necessary.
 
-Rows\*Columns. If the number of rows and columns is constant, selecting this option has
+###### Rows\*Columns  
+If the number of rows and columns is constant, selecting this option has
 the same effect as setting the block size type to constant and entering
 a value of rows \* columns for the block size.
 
@@ -548,7 +483,8 @@ means the core will calculate the block size automatically whenever a
 new row or column value is sampled. Pruning is impossible with this
 block size type.
 
-Variable. Block size is sampled from the BLOCK_SIZE input at the beginning of
+###### Variable  
+Block size is sampled from the BLOCK_SIZE input at the beginning of
 every block. The value sampled on BLOCK_SIZE must be such that the last
 symbol falls on the last row, as previously described.
 
@@ -560,12 +496,77 @@ for the Variable block size type.
 ### Port Parameters \#1 tab  
 Parameters specific to the Port Parameters tab are as follows.
 
-Control Signals. Status Signals. Data Output Channel Options. Pipelining. Pipelines the underlying LogiCORE for Minimum, Medium, or Maximum
+#### Control Signals  
+##### ACLKEN  
+When ACLKEN is de-asserted (Low), all the synchronous inputs are ignored
+and the block remains in its current state.
+
+##### ARESETn (Active-Low)  
+The Active-Low synchronous clear input always takes priority over
+ACLKEN.
+
+#### Status Signals  
+##### COL_VALID  
+This optional output is available when a variable number of columns is
+selected. If an illegal value is sampled on the `s_axis_ctrl_tdata_col`
+input, `event_col_valid` will go Low a predefined number of clock cycles
+later.
+
+##### COL_SEL_VALID  
+This optional output (`event_col_sel_valid`) is available when a
+selectable number of columns is chosen. The event pins are
+`event_col_valid`, `event_col_sel_valid`, `event_row_valid`,
+`event_row_sel_valid`, `event_block_size_valid` (in the same order as in
+the options on the GUI).
+
+##### ROW_VALID  
+This optional output is available when a selectable number of rows is
+chosen.
+
+##### ROW_SEL_VALID  
+This optional output is available when a selectable number of rows is
+chosen.
+
+##### BLOCK_SIZE_VALID  
+This optional output is available when the block size is not constant,
+that is, if the block size type is either Variable or equal to Rows \*
+Columns.
+
+
+### Port Parameters \#2 tab  
+Parameters specific to the Port Parameters \#2 tab are as follows.
+
+#### Data Output Channel Options  
+##### TREADY  
+TREADY for the Data Input Channel. Used by the Symbol
+Interleaver/De-interleaver to signal that it is ready to accept data.
+
+##### FDO  
+Adds a data_tuser_fdo (First Data Out) output port.
+
+##### RDY  
+Adds a data_tuser_rdy output port.
+
+##### BLOCK_START  
+Adds a data_tuser_block_start output port.
+
+##### BLOCK_END  
+Adds a data_tuser_block_end output port.
+
+#### Pipelining  
+##### Pipelining  
+Pipelines the underlying LogiCORE for Minimum, Medium, or Maximum
 performance.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+
+<!--
+#### Display shortened port names
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+-->
 
 ## LogiCORE™ Documentation
 
