@@ -12,29 +12,23 @@ AI Engine/DSP/Stream IO
 Stream-based IDFT implementation targeted for AI Engines.
 ## Parameters
 
-### Main
-
-#### Input/Output data type
-
+### Main  
+#### Input/Output Data Type
 Set the input/output data type.
 
 #### Twiddle factor data type
-
 Describes the data type of the twiddle factors of the transform. It must be `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
 * 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
 #### IDFT size
-
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 7 inclusive.
 
 #### Number of frames per window
-
 Describes the total number of frames used as an input to the IDFT block per window.
 
 #### Scale output down by 2^
-
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
 
 #### Rounding mode
@@ -68,8 +62,7 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Number of cascade stages
-
+####  Number of Cascade Stages
 This determines the number of kernels the DFT will be divided over in series to improve throughput. When cascaded, each kernel will operate on a subset of the input signal and pass a partial result to the next kernel. 
 
 Increasing the number of cascade stages will increase the number of inputs to the DFT block. The input signal should be distributed among the input ports in a round-robin fashion. 

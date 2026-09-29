@@ -19,9 +19,25 @@ combination of the two.
 
 ## Parameters
 
-#### FIFO depth (32-bit words)
-
+#### FIFO Depth (32-bit words)  
 Should be a positive integer value and the default value is 0.
+
+
+<!--
+#### FIFO type
+-->
+
+<!--
+#### TileType
+-->
+
+<!--
+#### Location(row)
+-->
+
+<!--
+#### Location(column)
+-->
 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update location contraints and choose between a DMA or Stram FIFO. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
@@ -29,22 +45,6 @@ Click on the button given here to access the constraint manager and add or updat
 <div class="noteBox">
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
-
-#### FIFO type
-
-Dialog parameter.
-
-#### TileType
-
-Dialog parameter.
-
-#### Location(row)
-
-Dialog parameter.
-
-#### Location(column)
-
-Dialog parameter.
 
 ## References
 To learn more about FIFO and different types of FIFOs click [here](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding/FIFO-Depth).

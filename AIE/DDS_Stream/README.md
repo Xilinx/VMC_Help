@@ -13,8 +13,7 @@ targeted for AI Engines and uses stream interface.
 
 ## Parameters
 
-### Main
-
+### Main  
 #### Output data type
 
 Sets the output data type.
@@ -28,22 +27,22 @@ Increasing the number of samples per frame increases the output throughput.
 </div>
 
 #### Support output columns based on SSR number
-
 When enabled, the block will output a matrix with the number of columns equal to the SSR number.
 
 #### SSR
 
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
-#### Initial phase offset
-
+#### Initial Phase Offset
 Specifies the initial phase offset. The default value is 0.
 
 #### Reload initial phase via input port
-
 Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
 
-#### Phase increment
+#### Use iobuffer port for phase offset reload
+Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
+
+#### Phase Increment
 
 Specifies the phase increment between samples. The value must be in
   the range 0 to 2^31 and the default value is 0. Phase increment is calculated
@@ -55,7 +54,6 @@ Specifies the phase increment between samples. The value must be in
 For example, for a sampling frequency of 1 Gsps, output frequency of 100 MHz, and SSR of 4, the _Phase Increment_ should be `2^30/10`.  
 
 #### Reload phase increment via input port
-
 Allows the phase increment to be reloaded during simulation via an input port.
 
 #### Rounding mode
@@ -83,7 +81,7 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Sample time
+#### Sample Time
 
 Specifies the sample time for the output signal.
 
@@ -97,10 +95,6 @@ Click on the button given here to access the constraint manager and add or updat
 <div class="noteBox">
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
-
-Additional dialog notes:
-
-Use iobuffer port for phase offset reload. Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port.
 
 ## Examples
 

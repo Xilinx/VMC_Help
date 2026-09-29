@@ -14,15 +14,12 @@ Decimation filter targeted for AI Engines.
 
 ## Parameters
 
-### Main
-
-#### Input/Output data type
-
+### Main  
+#### Input/Output data type  
 Describes the type of individual data samples input to and output from
 the filter function. int16, cint16, int32, cint32, float, cfloat.
 
-#### Filter coefficients data type
-
+#### Filter coefficients data type  
 Describes the type of individual coefficients of the filter taps. It
 should be one of int16, cint16, int32, cint32, float, cfloat and must
 also satisfy the following rules:
@@ -36,48 +33,45 @@ also satisfy the following rules:
   - Filter coefficients data type must be a float type if the Input/Output
   data type is a float type.
 
-#### Specify filter coefficients via input port
-
+#### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
 filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 #### Provide second set of input ports
-
 When this option is enabled, a second stream input can be connected to the FIR, increasing available throughput. When using a second stream input, the data should be organized in a 128-bit interleaved pattern. For example, for a cint16 input samples 0-3 should be sent over the first stream and samples 4-7 should be sent over the second stream.
 
 #### Provide second set of output ports
-
 When this option is enabled, a second stream output is added to the block. The two output data streams are interleaved in a 128-bit pattern. For example, for cint16 output data, samples 0-3 will be sent on the first output stream and samples 4-7 will be sent on the second output stream.
 
-#### Filter coefficients
-
+#### Filter coefficients  
 This field should be specified with the asymmetric filter coefficients
 and must be in the range 4 to 240 inclusive.
 
 #### Filter length
-
 When using reloadable filter coefficients, use this parameter to specify the number of taps in the filter.
 
-#### Interpolation factor
-
+#### Interpolation factor  
 An unsigned integer which describes the Interpolation factor of the
 filter. It must be in the range 3 to 16.
 
-#### Decimation factor
-
+#### Decimation factor  
 An unsigned integer which describes the decimation factor of the filter.
 It must be in the range 2 to 16.
 
-#### Input frame size (Number of samples)
 
+<!--
+#### Input frame size (Number of samples)
+Specifies the number of samples for a particular frame. The value must be in the range 16 to 4096 and the default value is 64. The IFFT operation will not begin until this number of samples has been input.
+-->
+
+#### Input window size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
 The number of values in the output window will be the input window size
 multipled by the Interpolation factor and divided by the decimation
 factor. In this instance it would result in a fraction number of output
 samples which would be rounded down.
 
-#### Scale output down by 2^
-
+#### Scale output down by 2^  
 Describes the power of 2 shift down applied to the accumulation of FIR
 terms before output. It must be in the range 0 to 61.
 
@@ -107,8 +101,7 @@ The following modes are available:
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 #### SSR
-
-Dialog parameter.
+This parameter specifies the number of input (or output) paths. SSR decomposition is currently unavailable for the FIR Resampler Filter Stream block. Please set this parameter to 1 and control Super Sample Rate operations by changing the number of interplator/decimator polyphases.
 
 #### Number of interpolator polyphases
 
@@ -129,13 +122,8 @@ Specifies the number of decimator polyphases that will be split up and executed 
 
 The number of AI Engine tiles used is given by `(Number of decimator polyphases) * (SSR)^2 * (Number of cascade stages)`.
 
-#### Number of cascade stages
-
+#### Number of cascade stages  
 This determines the number of kernels the FIR will be divided over in series to improve throughput.
-
-Additional dialog notes:
-
-Number of parallel input/output (SSR). This parameter specifies the number of input (or output) paths. SSR decomposition is currently unavailable for the FIR Resampler Filter Stream block. Please set this parameter to 1 and control Super Sample Rate operations by changing the number of interplator/decimator polyphases.
 
 ## Examples
 
@@ -147,7 +135,6 @@ Number of parallel input/output (SSR). This parameter specifies the number of in
 
 ### References
 This block uses the Vitis DSP library implementation of a FIR filter. For more details on this implementation please click [here](https://docs.xilinx.com/r/en-US/Vitis_Libraries/dsp/user_guide/L2/func-fir-filtersAIE.html).
-
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

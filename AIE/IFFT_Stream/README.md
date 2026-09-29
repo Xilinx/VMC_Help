@@ -16,36 +16,32 @@ a positive integer.
 
 ## Parameters
 
-### Main
-
-#### Input data type
-
+### Main  
+#### Input data type  
 Set the data type of the block input. The data type of the input signal to the block must match this setting. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Output data type
-
 Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Twiddle factor data type
-
 Describes the data type of the twiddle factors of the transform. It must be `cint16`, `cint32`, or `cfloat` and must also satisfy the following rules:
 * 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
-#### IFFT size
+#### IFFT Size
 
 This is an unsigned integer which describes the point size of the
   transformation. This must be 2^N, where N is in the range 4 to 16
   inclusive.
 
-#### Input frame size (Number of Samples)
+#### Input Frame Size (Number of Samples)
 
 Specifies the number of samples for a particular frame. The value must
   be in the range 8 to 1024 and the default value is 64. The IFFT
   operation will not begin until this number of samples has been input.
 
-#### Scale output down by 2^
+#### Scale Output Down by 2^
 
 Describes the power of 2 shift down applied before output. The
   following table shows the range of valid values of this parameter for
@@ -80,6 +76,20 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
+#### Twiddle Mode
+This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
+
+Twiddle mode 0 means use max amplitude twiddles which saturate at `2^(N-1)-1`, where N is the number of bits in the type (e.g. `cint16` has 16 bits per component).
+
+Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e. `2^(N-1)`. This avoids saturation, but loses 1 bit of precision and so noise overall will be higher.
+
+#### Use Widget for SSR Kernels
+This parameter is applicable to streaming and parallel (SSR>1) implementations of the FFT. These implementations require stream to window conversions on the hardware.
+
+When this parameter is disabled, stream to window conversion will occur within the FFT kernels themselves.
+
+When this parameter is enabled, stream to window conversion will occur on its own AI Engine tiles. This will improve performance at the expense of additional tiles being used.
+
 #### SSR
 
 This parameter is intended to improve performance and support IFFT
@@ -91,24 +101,7 @@ This parameter is intended to improve performance and support IFFT
   point size 2048. The specified IFFT size and SSR values should be such
   that (2 \* IFFT size / SSR) is in the range of 16 and 4096.
 
-#### Twiddle Mode
-
-This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
-
-Twiddle mode 0 means use max amplitude twiddles which saturate at `2^(N-1)-1`, where N is the number of bits in the type (e.g. `cint16` has 16 bits per component).
-
-Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e. `2^(N-1)`. This avoids saturation, but loses 1 bit of precision and so noise overall will be higher.
-
-#### Use Widget for SSR Kernels
-
-This parameter is applicable to streaming and parallel (SSR>1) implementations of the FFT. These implementations require stream to window conversions on the hardware.
-
-When this parameter is disabled, stream to window conversion will occur within the FFT kernels themselves.
-
-When this parameter is enabled, stream to window conversion will occur on its own AI Engine tiles. This will improve performance at the expense of additional tiles being used.
-
-#### Number of cascade stages
-
+####  Number of Cascade Stages
 This determines the number of kernels the IFFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
 ## Examples 

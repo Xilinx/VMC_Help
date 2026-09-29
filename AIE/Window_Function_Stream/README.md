@@ -25,7 +25,6 @@ Describes the type of individual data samples input/output of the
   FFT. It can be cint16, cint32, and cfloat types.
 
 #### Function coefficient data type
-
 Describes the type of individual coefficients of the filter taps. It
   should be one of int16, int32, or float and must also satisfy the
   following rules:
@@ -52,7 +51,6 @@ Specifies the maximum FFT/IFFT size that is supported by the FFT block.
   maximum value supported by the library element is 65536.
 
 #### Use dynamic point size
-
 Describes whether to support run time selectable point size for the
   frames of data within the AIE window to be processed.
 * For dynamic FFT, point size specifies the maximum point size and data
@@ -73,7 +71,7 @@ Specifies the number of samples in the input frame excluding the
   header. The value must be in the range 16 to 65536 and the default
   value is 64.
 
-#### Scale output down by 2^
+#### Scale Output down by 2^
 
 Describes the power of 2 shift down applied before output.
 
@@ -91,13 +89,31 @@ This parameter is intended to improve performance and support FFT
 The Windowing utility accepts only powers of 2 as the number of
   inputs/outputs.
 
+
 #### Rounding mode
 
-Dialog parameter.
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+These modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Saturation mode
 
-Dialog parameter.
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 ## Examples 
 

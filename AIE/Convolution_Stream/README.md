@@ -14,10 +14,8 @@ It supports both integer and floating-point data types and provides various conf
 
 ## Parameters
 
-### Main
-
+### Main  
 #### F input data type
-
 Describes the type of individual data samples of signal F to input to the function.
 
 This must be one of the following:
@@ -25,7 +23,6 @@ This must be one of the following:
 * `int8`, `int16`, `int32`, `cint16`, `cint32`, `float`, and `bfloat16`  for AIE-ML and AIE-MLv2
 
 #### G input data type
-
 Describes the type of individual data samples of signal G to input to the function.
 
 This must be one of the following:
@@ -33,7 +30,6 @@ This must be one of the following:
 * `int8`, `int16`, `int32`, `cint16`, `float`, and `bfloat16`  for AIE-ML and AIE-MLv2
 
 #### Output data type
-
 Describes the type of individual data samples output from the function.
 
 This must be one of the following:
@@ -55,20 +51,27 @@ Options include:
 
 
 #### F input length
-
 Specifies the length of the F input signal.
 
 #### G input length
-
 Specifies the length of the G input signal.
 
+<!--
+#### Specify G input length via input port
+When enabled, allows the G input length to be specified via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+
+The exposed RTP expects an `int32` vector of length 2. This vector contains values for the F length and G length. Currently the first element of the vector (`rtpVecLen[0]`) is ignored. The second element of the vector (`rtpVecLen[1]`) is used to specify the G length.
+
+The input length specified at runtime cannot exceed the input length specified in the block parameters. For example, if **G input length** is set to 32, you can set `rtpVecLen[1]` to 16 but not 64. This will not produce an error at runtime, but the block results will be incorrect.
+-->
+
+#### Number of frames
+Specifies the number of frames to be processed on each invocation of the block.
 
 #### Scale output down by 2^
-
 Describes the number of bits to downshift the output values.
 
 #### Rounding mode
-
 Describes the selection of rounding to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -84,7 +87,6 @@ The following modes are available:
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Saturation mode
-
 Describes the selection of saturation to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -92,28 +94,23 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
+
+<!--
+#### SSR
+Specify the number of parallel input/output data paths. The specified value should be in the form of 2^N.
+-->
+
+<!--
+#### Number of cascade stages
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
+-->
+
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
 
 <div class="noteBox">
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
-
-#### SSR
-
-Dialog parameter.
-
-#### Number of cascade stages
-
-Specifies the number of frames to be processed on each invocation of the block.
-
-Additional dialog notes:
-
-Specify G input length via input port. When enabled, allows the G input length to be specified via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
-
-The exposed RTP expects an `int32` vector of length 2. This vector contains values for the F length and G length. Currently the first element of the vector (`rtpVecLen[0]`) is ignored. The second element of the vector (`rtpVecLen[1]`) is used to specify the G length.
-
-The input length specified at runtime cannot exceed the input length specified in the block parameters. For example, if **G input length** is set to 32, you can set `rtpVecLen[1]` to 16 but not 64. This will not produce an error at runtime, but the block results will be incorrect.
 
 ## Examples
 

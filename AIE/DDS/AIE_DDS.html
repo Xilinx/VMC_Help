@@ -76,8 +76,19 @@ Engine kernels used is equal to the value of SSR parameter.</p>
 input port. By default the reload port is a Real-Time Parameter (RTP)
 port that is non-blocking (async).</p>
 </section>
-<section id="phase-increment" class="level4">
-<h4>Phase increment</h4>
+<section id="use-iobuffer-port-for-phase-offset-reload" class="level4">
+<h4>Use iobuffer port for phase offset reload</h4>
+<p>Reload the phase offset using an iobuffer port, instead of a
+Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync)
+port, whereas the RTP port is a non-blocking (async) port.</p>
+<!--
+#### Phase increment
+This specifies the phase increment between the samples. The value should be in the range 0 to 2^31.
+-->
+
+</section>
+<section id="initial-phase-increment" class="level4">
+<h4>Initial phase increment</h4>
 <p>Specifies the phase increment between samples. The value must be in
 the range 0 to 2^31 and the default value is 0.</p>
 <p>Phase increment is calculated using the formula
@@ -162,11 +173,6 @@ approximate AIE simulation (System C), and behavior in hardware.</p>
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-<p>Additional dialog notes:</p>
-<p>Use iobuffer port for phase offset reload. Reload the phase offset
-using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The
-iobuffer port is a blocking (sync) port, whereas the RTP port is a
-non-blocking (async) port.</p>
 </section>
 </section>
 <section id="examples" class="level2">

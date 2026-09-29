@@ -90,7 +90,16 @@ per iteration.</p>
 </section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
-<p>Dialog parameter.</p>
+<p>Specifies the number of parallel data paths processed by the block.
+Increasing SSR allows for higher throughput by processing multiple
+samples in parallel.</p>
+<p><strong>When SSR &gt; 1:</strong></p>
+<ul>
+<li>Input matrix A is split across SSR ports along the first
+dimension.</li>
+<li>Input vector B is duplicated across SSR ports.</li>
+<li>Outputs from SSR ports are concatenated to form output vector.</li>
+</ul>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of cascade stages</h4>
@@ -170,17 +179,6 @@ approximate AIE simulation (System C), and behavior in hardware.</p>
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-<p>Additional dialog notes:</p>
-<p>SSR (Super Sample Rate). Specifies the number of parallel data paths
-processed by the block. Increasing SSR allows for higher throughput by
-processing multiple samples in parallel.</p>
-<p><strong>When SSR &gt; 1:</strong></p>
-<ul>
-<li>Input matrix A is split across SSR ports along the first
-dimension.</li>
-<li>Input vector B is duplicated across SSR ports.</li>
-<li>Outputs from SSR ports are concatenated to form output vector.</li>
-</ul>
 </section>
 </section>
 <section id="examples" class="level2">

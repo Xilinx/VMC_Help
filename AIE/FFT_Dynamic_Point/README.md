@@ -40,37 +40,38 @@ is described below.
 
 ## Parameters
 
-### Main
-
-#### Input data type
-
+### Main  
+#### Input data type  
 Set the data type of the block input. The data type of the input signal to the block must match this setting. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Output data type
-
 Set the data type of the block output. Valid types are `cint16`, `cint32`, `cfloat`.
 
 #### Twiddle factor data type
-
 Describes the data type of the twiddle factors of the transform. It must be `cint16` or `cfloat` and must also satisfy the following rules:
 * 32-bit twiddle factors are only supported when the input/output data type is also 32-bit.
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
-#### FFT maximum size
+#### FFT Maximum Size
 
 Specifies the maximum FFT size that is supported by Dynamic point FFT.
   You can perform different lengths of FFT on different input data
   windows. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by the library element is 65536.
 
+
+<!--
 #### Input window size (Number of samples excluding header)
+-->
+
+#### Input Window Size
 
 Specifies the number of samples in the input window excluding the
   header. The value must be in the range 8 to 1024 and the default
   value is 64.
 
-#### Scale output down by 2^
+#### Scale Output down by 2^
 
 Describes the power of 2 shift down applied to output. It must be in the range 0 to 61.
 
@@ -97,24 +98,27 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
+
 #### SSR
 
-Dialog parameter.
+This parameter is intended to improve performance and support FFT sizes beyond the limitations of a single tile. For an SSR value of 'n' (which must be of the form 2^N, where N is a positive integer), the FFT operation is performed in parallel and the actual FFT size is divided by 'n'. For example, a 16384 point FFT with an SSR value of 8 creates 8 stream inputs and there will be 8 subframe FFTs each of point size 2048. The specified FFT size and SSR values should be such that FFT size / SSR should not exceed 2048.
 
 #### Twiddle Mode
 
-Dialog parameter.
+This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
+
+Twiddle mode 0 means use max amplitude twiddles which saturate at `2^(N-1)-1`, where N is the number of bits in the type (e.g. `cint16` has 16 bits per component).
+
+Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e. `2^(N-1)`. This avoids saturation, but loses 1 bit of precision and so noise overall will be higher.
 
 #### Use Widget for SSR Kernels
-
 This parameter is applicable to streaming and parallel (SSR>1) implementations of the FFT. These implementations require stream to window conversions on the hardware.
 
 When this parameter is disabled, stream to window conversion will occur within the FFT kernels themselves.
 
 When this parameter is enabled, stream to window conversion will occur on its own AI Engine tiles. This will improve performance at the expense of additional tiles being used.
 
-#### Number of cascade stages
-
+####  Number of Cascade Stages
 This determines the number of kernels the FFT will be divided over in series to improve throughput. For int data types, and FFT size of 2^N, the maximum cascade length is N/2 when N is even and (N+1)/2 when N is odd. For float data type, the maximum cascade length is N.
 
 ### Constraints

@@ -51,18 +51,18 @@ AIE Class block to import the kernel.
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<section id="function-declaration" class="level4">
-<h4>Function declaration</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="function-template-parameters" class="level4">
-<h4>Function Template Parameters</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="port-attributes" class="level4">
-<h4>Port attributes</h4>
-<p>Dialog parameter.</p>
-</section>
+<!--
+#### Function declaration
+-->
+
+<!--
+#### Function Template Parameters
+-->
+
+<!--
+#### Port attributes
+-->
+
 <section id="kernel-header-file" class="level4">
 <h4>Kernel header file</h4>
 <p>Mandatory string. Name of the header file that contains the kernel
@@ -119,11 +119,9 @@ option definition value is not provided, it is assumed to be 1.</p>
 </section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>SSR (Super Sample Rate). Specifies the number of replicated AI Engine
-kernel instances inside the mask subsystem. The default value is
-<strong>1</strong>, which preserves legacy single-kernel behavior.</p>
+<p>Specifies the number of replicated AI Engine kernel instances inside
+the mask subsystem. The default value is <strong>1</strong>, which
+preserves legacy single-kernel behavior.</p>
 <p>When SSR is greater than 1:</p>
 <ul>
 <li>The block accepts an <strong>M×SSR</strong> column matrix on each

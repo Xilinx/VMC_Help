@@ -12,14 +12,12 @@ This block implements the Mixer targeted for AI Engines.
 
 ## Parameters
 
-#### Output data type
-
+#### Output data type  
 Describes the types of individual data samples input to and output from
 the Mixer function. The supported data types are cint16, cint32, and
 cfloat.
 
-#### Mixer mode
-
+#### Mixer mode  
 This specifies the mixer operation modes. Two modes are supported by
 the Mixer function:
 
@@ -38,15 +36,12 @@ two modulated signals are added together and written to the output
 window.
 
 #### SFDR
-
 Specifies the Spurious Free Dynamic Range (in dB) of the output signal. The maximum theoretical SFDR is 96 dB for `cint16`, 180 dB for `cint32`, and 138 dB for `cfloat`.
 
 #### SSR
-
 This parameter specifies the number of output ports. The number of AI Engine kernels used is equal to the value of SSR parameter.
 
-#### Input frame size (Number of Samples)
-
+#### Input frame size (Number of samples)  
 Specifies the number of samples in the output frame. This must be a multiple of the number of samples output in each data loop, which varies based on the AIE architecture and data type:
 
 |        | AIE | AIE-ML |
@@ -56,15 +51,15 @@ Specifies the number of samples in the output frame. This must be a multiple of 
 | `cfloat` | 4   | N/A    |
 
 #### Initial phase offset
-
 Specifies the initial value of the phase accumulator.
 
 #### Reload initial phase via input port
-
 Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
 
-#### Phase increment
+#### Use iobuffer port for phase offset reload
+Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
 
+#### Phase increment  
 This specifies the phase increment between the samples. The value should
 be in the range 0 to 2^31.
 
@@ -76,11 +71,9 @@ Where:
   - Fs = Sampling frequency
 
 #### Reload phase increment via input port
-
 Allows the phase increment to be reloaded during simulation via an input port.
 
 #### Rounding mode
-
 Describes the selection of rounding to be applied during the shift down stage of processing.
 
 The following modes are available:
@@ -96,17 +89,12 @@ The following modes are available:
 No rounding is performed on the **Floor** or **Ceiling** modes. Other modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
 
 #### Saturation mode
-
 Describes the selection of saturation to be applied during the shift down stage of processing.
 
 The following modes are available:
 * **None:** No saturation is performed and the value is truncated on the MSB side.
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
-
-Additional dialog notes:
-
-Use iobuffer port for phase offset reload. Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port.
 
 ## Examples
 

@@ -22,32 +22,31 @@ To learn more about class kernels click [here](https://docs.xilinx.com/r/en-US/u
 
 ## Parameters
 
+
+<!--
 #### Port attributes
+-->
 
-Dialog parameter.
-
+<!--
 #### Kernel Class Variant
+-->
 
-Dialog parameter.
-
+<!--
 #### Kernel Class Template Parameters
+-->
 
-Dialog parameter.
-
+<!--
 #### Kernel Class Constructor
+-->
 
-Dialog parameter.
-
+<!--
 #### Kernel Class Constructor Parameters
-
-Dialog parameter.
+-->
 
 #### Kernel header file
-
 This mandatory string points to the header file (.h file) containing the class definition.
 
 #### Kernel class
-
 Mandatory string. Name of the kernel class which contains member variables and kernel member functions.
 
 <div class="noteBox">
@@ -55,33 +54,24 @@ Use the namespace if the class definition is at the namespace scope, like "mynam
 </div>
 
 #### Kernel function
-
 Mandatory string. Name of the kernel member function for which the block is to be created. This function should be registered using the registerKernelClass method in the kernel header file. 
 
 #### Kernel source file
-
 Mandatory string. Name of the source file that contains where the kernel member function definition and non-default constructor parameter values are specified.
 The string could be the file name, a relative path to the file or an absolute path of the file. 
 
 #### Kernel search paths
-
 Optional vector of strings. If the kernel header file or the kernel source file are not found using the value provided through the Kernel header file or Kernel source file fields respectively, then the paths provided through Kernel search paths are used to find the files. 
 
 This parameter allows use of environment variables while specifying paths for the kernel header file and the kernel source file. The environment variable can be used in either ${ENV} or $ENV format.
 
 #### Preprocessor options
-
 Optional preprocessor arguments for downstream compilation with specific preprocessor options.
 
 The following two preprocessor option formats are accepted and multiple can be selected: -D<name> and -D<name>=<definition> separated by a comma. That is, the optional argument must begin with -D and if the option <definition> value is not provided, it is assumed to be 1.
 
 #### SSR
-
-Dialog parameter.
-
-Additional dialog notes:
-
-SSR (Super Sample Rate). Specifies the number of replicated class-kernel instances inside the mask subsystem. Behavior matches the [AIE Kernel](../AIE_Kernel_Function/README.md) block SSR parameter: default **1** preserves legacy behavior; values greater than 1 use M×SSR column matrices, internal Splitter and Merger blocks, and per-kernel constraints. See UG1483 *SSR Support for AIE Kernel and Graph Blocks* for design rules and DSPLib interoperability.
+Specifies the number of replicated class-kernel instances inside the mask subsystem. Behavior matches the [AIE Kernel](../AIE_Kernel_Function/README.md) block SSR parameter: default **1** preserves legacy behavior; values greater than 1 use M×SSR column matrices, internal Splitter and Merger blocks, and per-kernel constraints. See UG1483 *SSR Support for AIE Kernel and Graph Blocks* for design rules and DSPLib interoperability.
 
 ## Related blocks
 Use [AIE Kernel](../AIE_Kernel_Function/README.md) block to import a non class based kernel.

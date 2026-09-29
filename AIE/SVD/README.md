@@ -19,35 +19,32 @@ Input matrices are 2D signals whose row and column dimensions are set by block p
 ### Main
 
 #### Input data type
-
 Type of individual data samples of the input matrix.
 
 #### Rows of matrix
-
 Number of rows in the input matrix.
 
 #### Columns of matrix
-
 Number of columns in the input matrix.
 
-#### Number of cascade stages
+#### Number of Jacobi sweep passes
+Number of Jacobi sweep passes to perform. More passes improve accuracy at the cost of additional cycles.
 
+
+<!--
+#### Number of Jacobi sweep passes ssr
+-->
+
+<!--
+#### Provide diagonal elements inverse
+When enabled, the block provides the inverse of diagonal elements. Disable when chaining with a substitution core that requires the standard Cholesky output form.
+-->
+
+#### Number of cascade stages
 Number of kernels the SVD is split over to support larger matrix sizes.
 
 ### Constraints
 Use the constraint manager to set per-kernel constraints.
-
-#### Number of Jacobi sweep passes
-
-Number of Jacobi sweep passes to perform. More passes improve accuracy at the cost of additional cycles.
-
-#### Number of Jacobi sweep passes ssr
-
-Dialog parameter.
-
-#### Provide diagonal elements inverse
-
-Dialog parameter.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

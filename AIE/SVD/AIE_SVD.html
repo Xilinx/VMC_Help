@@ -60,6 +60,20 @@ matrix layout assumptions.</p>
 <h4>Columns of matrix</h4>
 <p>Number of columns in the input matrix.</p>
 </section>
+<section id="number-of-jacobi-sweep-passes" class="level4">
+<h4>Number of Jacobi sweep passes</h4>
+<p>Number of Jacobi sweep passes to perform. More passes improve
+accuracy at the cost of additional cycles.</p>
+<!--
+#### Number of Jacobi sweep passes ssr
+-->
+
+<!--
+#### Provide diagonal elements inverse
+When enabled, the block provides the inverse of diagonal elements. Disable when chaining with a substitution core that requires the standard Cholesky output form.
+-->
+
+</section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of cascade stages</h4>
 <p>Number of kernels the SVD is split over to support larger matrix
@@ -69,23 +83,10 @@ sizes.</p>
 <section id="constraints" class="level3">
 <h3>Constraints</h3>
 <p>Use the constraint manager to set per-kernel constraints.</p>
-<section id="number-of-jacobi-sweep-passes" class="level4">
-<h4>Number of Jacobi sweep passes</h4>
-<p>Number of Jacobi sweep passes to perform. More passes improve
-accuracy at the cost of additional cycles.</p>
-</section>
-<section id="number-of-jacobi-sweep-passes-ssr" class="level4">
-<h4>Number of Jacobi sweep passes ssr</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="provide-diagonal-elements-inverse" class="level4">
-<h4>Provide diagonal elements inverse</h4>
-<p>Dialog parameter.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>
 <p>SPDX-License-Identifier: MIT</p>
-</section>
 </section>
 </section>
 </section>

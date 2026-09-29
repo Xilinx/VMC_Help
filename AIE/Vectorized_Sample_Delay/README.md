@@ -12,19 +12,21 @@ The delay block produces an output signal by delaying the input signal by the nu
 
 ## Parameters
 
-### Main
-
-#### Input/Output data type
-
+### Main  
+#### Input/Output data type  
 Set the input/output data type.
 
 
-#### Input window size (Number of samples)
 
+<!--
+#### Input window size (Number of samples)
+Describes the total number of samples used as an input to the Mixed Radix FFT block. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^12, inclusive.
+-->
+
+#### Input Window Size(Number of Samples)  
 Describes the number of samples used as an input to the Vectorized Sample Delay. This parameter must be in the range of 2^0 and 2^32-1, inclusive.
 
-#### Maximum sample delay
-
+#### Maximum Sample Delay  
 Describes the maximum number of sample delay can be applied to the input signal.This parameter must be in the range of 2^0 and 2^32-1, inclusive.  
 
 ## Examples

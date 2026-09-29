@@ -112,9 +112,15 @@ data type).</p></li>
 <section id="g-input-length" class="level4">
 <h4>G input length</h4>
 <p>Specifies the length of the G input signal.</p>
+<!--
+
+<!--
+#### Specify F and G input length via input port
+-->
+
 </section>
-<section id="specify-f-and-g-input-length-via-input-port" class="level4">
-<h4>Specify F and G input length via input port</h4>
+<section id="specify-g-input-length-via-input-port" class="level4">
+<h4>Specify G input length via input port</h4>
 <p>When enabled, allows the G input length to be specified via an <a href="matlab:XmcExampleApi.getExample(&#39;rtp_vector_async&#39;)">asynchronous
 Run Time Parameter (RTP)</a> input port.</p>
 <p>The exposed RTP expects an <code>int32</code> vector of length 2.
@@ -126,7 +132,12 @@ specify the G length.</p>
 specified in the block parameters. For example, if <strong>G input
 length</strong> is set to 32, you can set <code>rtpVecLen[1]</code> to
 16 but not 64. This will not produce an error at runtime, but the block
-results will be incorrect.</p>
+results will be incorrect. --&gt;</p>
+</section>
+<section id="number-of-frames" class="level4">
+<h4>Number of frames</h4>
+<p>Specifies the number of frames to be processed on each invocation of
+the block.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
 <h4>Scale output down by 2^</h4>
@@ -190,9 +201,6 @@ approximate AIE simulation (System C), and behavior in hardware.</p>
 If you are using non-default constraints for any of the kernels for the block, an asterisk (*) will be displayed next to the button.
 </div>
 
-<p>Additional dialog notes:</p>
-<p>Number of frames. Specifies the number of frames to be processed on
-each invocation of the block.</p>
 </section>
 </section>
 <section id="examples" class="level2">

@@ -146,7 +146,7 @@ input/output data type is a float type.</li>
 </ul>
 </section>
 <section id="fft-maximum-size" class="level4">
-<h4>FFT maximum size</h4>
+<h4>FFT Maximum Size</h4>
 <p>Specifies the maximum FFT size that is supported by Dynamic Point
 FFT. You can perform different lengths of FFT on different input data
 frames. It must be a power of 2 with a minimum value of 16. The maximum
@@ -154,10 +154,12 @@ value supported by the library element is 65536.</p>
 </section>
 <section id="input-frame-size-number-of-samples-excluding-header" class="level4">
 <h4>Input frame size (Number of samples excluding header)</h4>
-<p>Dialog parameter.</p>
+<p>Specifies the number of samples in the input frame excluding the
+header. The value must be in the range 16 to 65536 and the default value
+is 60.</p>
 </section>
 <section id="scale-output-down-by-2" class="level4">
-<h4>Scale output down by 2^</h4>
+<h4>Scale Output down by 2^</h4>
 <p>Describes the power of 2 shift down applied before output.</p>
 </section>
 <section id="rounding-mode" class="level4">
@@ -196,6 +198,17 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
+<section id="use-widget-for-ssr-kernels" class="level4">
+<h4>Use Widget for SSR Kernels</h4>
+<p>This parameter is applicable to streaming and parallel (SSR&gt;1)
+implementations of the FFT. These implementations require stream to
+window conversions on the hardware.</p>
+<p>When this parameter is disabled, stream to window conversion will
+occur within the FFT kernels themselves.</p>
+<p>When this parameter is enabled, stream to window conversion will
+occur on its own AI Engine tiles. This will improve performance at the
+expense of additional tiles being used.</p>
+</section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
 <p>This parameter is intended to improve performance and support FFT
@@ -209,29 +222,22 @@ should not exceed 2048.</p>
 </section>
 <section id="twiddle-mode" class="level4">
 <h4>Twiddle Mode</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="use-widget-for-ssr-kernels" class="level4">
-<h4>Use Widget for SSR Kernels</h4>
-<p>This parameter is applicable to streaming and parallel (SSR&gt;1)
-implementations of the FFT. These implementations require stream to
-window conversions on the hardware.</p>
-<p>When this parameter is disabled, stream to window conversion will
-occur within the FFT kernels themselves.</p>
-<p>When this parameter is enabled, stream to window conversion will
-occur on its own AI Engine tiles. This will improve performance at the
-expense of additional tiles being used.</p>
+<p>This parameter controls the amplitude of the twiddle factors. It
+applies to <code>cint16</code> and <code>cint32</code> twiddle factors
+only; it does not apply to <code>cfloat</code> twiddle factors.</p>
+<p>Twiddle mode 0 means use max amplitude twiddles which saturate at
+<code>2^(N-1)-1</code>, where N is the number of bits in the type (e.g.
+<code>cint16</code> has 16 bits per component).</p>
+<p>Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e.
+<code>2^(N-1)</code>. This avoids saturation, but loses 1 bit of
+precision and so noise overall will be higher.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
-<h4>Number of cascade stages</h4>
+<h4>Number of Cascade Stages</h4>
 <p>This determines the number of kernels the FFT will be divided over in
 series to improve throughput. For int data types, and FFT size of 2^N,
 the maximum cascade length is N/2 when N is even and (N+1)/2 when N is
 odd. For float data type, the maximum cascade length is N.</p>
-<p>Additional dialog notes:</p>
-<p>Input Window Size. Specifies the number of samples in the input frame
-excluding the header. The value must be in the range 16 to 65536 and the
-default value is 60.</p>
 </section>
 </section>
 </section>

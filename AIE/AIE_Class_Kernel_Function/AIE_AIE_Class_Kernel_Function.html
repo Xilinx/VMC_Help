@@ -57,26 +57,26 @@ Use class kernels if your kernel needs to preserve internal states.
 </section>
 <section id="parameters" class="level2">
 <h2>Parameters</h2>
-<section id="port-attributes" class="level4">
-<h4>Port attributes</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="kernel-class-variant" class="level4">
-<h4>Kernel Class Variant</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="kernel-class-template-parameters" class="level4">
-<h4>Kernel Class Template Parameters</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="kernel-class-constructor" class="level4">
-<h4>Kernel Class Constructor</h4>
-<p>Dialog parameter.</p>
-</section>
-<section id="kernel-class-constructor-parameters" class="level4">
-<h4>Kernel Class Constructor Parameters</h4>
-<p>Dialog parameter.</p>
-</section>
+<!--
+#### Port attributes
+-->
+
+<!--
+#### Kernel Class Variant
+-->
+
+<!--
+#### Kernel Class Template Parameters
+-->
+
+<!--
+#### Kernel Class Constructor
+-->
+
+<!--
+#### Kernel Class Constructor Parameters
+-->
+
 <section id="kernel-header-file" class="level4">
 <h4>Kernel header file</h4>
 <p>This mandatory string points to the header file (.h file) containing
@@ -125,11 +125,8 @@ option <definition> value is not provided, it is assumed to be 1.</p>
 </section>
 <section id="ssr" class="level4">
 <h4>SSR</h4>
-<p>Dialog parameter.</p>
-<p>Additional dialog notes:</p>
-<p>SSR (Super Sample Rate). Specifies the number of replicated
-class-kernel instances inside the mask subsystem. Behavior matches the
-<a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;AIE_Kernel_Function&#39;,&#39;category&#39;,&#39;AIE&#39;))">AIE
+<p>Specifies the number of replicated class-kernel instances inside the
+mask subsystem. Behavior matches the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;AIE_Kernel_Function&#39;,&#39;category&#39;,&#39;AIE&#39;))">AIE
 Kernel</a> block SSR parameter: default <strong>1</strong> preserves
 legacy behavior; values greater than 1 use M×SSR column matrices,
 internal Splitter and Merger blocks, and per-kernel constraints. See

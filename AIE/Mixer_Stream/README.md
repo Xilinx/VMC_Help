@@ -13,20 +13,16 @@ This block implements the stream-based Mixer targeted for AI Engines.
 
 ## Parameters
 
-### Main
-
+### Main  
 #### Input/Output data type
-
 Describes the type of individual data samples output of the DDS
   function. It should be cint16, cint32, or cfloat.
 
-#### Input frame size (Number of Samples)
-
+#### Input Frame Size (Number of Samples)
 Specifies the number of samples in the input frame. The value must be
   in the range 8 to 1024 and the default value is 32.
 
-#### Mixer mode
-
+#### Mixer mode  
 This specifies the mixer operation modes. Two modes are supported by
 the Mixer function:
 
@@ -45,8 +41,30 @@ two modulated signals are added together and written to the output
 window.
 
 #### SSR
+This parameter specifies the number of input (and output) ports of the Mixer block.
+The number of AI Engine kernels used is equal to the value of SSR parameter.
 
-Dialog parameter.
+#### Phase Increment
+Specifies the phase increment between samples. The value must be in
+  the range 0 to 2^31 and the default value is 0. Input value
+  2^31 corresponds to Pi (i.e., 180). Phase increment is calculated
+  using the formula (Fo\*(2^N)) / Fs where:
+  - Fo = Output frequency.
+  - N = 32, which represents the accumulator width, and it is fixed.
+  - Fs = Sampling frequency.
+
+#### Reload phase increment via input port
+Allows the phase increment to be reloaded during simulation via an input port.
+
+#### Initial Phase Offset
+Specifies the initial phase offset. The default value is 0.
+
+#### Reload initial phase via input port
+Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
+
+#### Use iobuffer port for phase offset reload
+Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port. 
+
 
 #### Rounding mode
 
@@ -72,35 +90,6 @@ The following modes are available:
 * **None:** No saturation is performed and the value is truncated on the MSB side.
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
-
-#### Initial phase offset
-
-Specifies the initial phase offset. The default value is 0.
-
-#### Reload initial phase via input port
-
-Allows the initial phase to be reloaded during simulation via an input port. By default the reload port is a Real-Time Parameter (RTP) port that is non-blocking (async).
-
-#### Phase increment
-
-Specifies the phase increment between samples. The value must be in
-  the range 0 to 2^31 and the default value is 0. Input value
-  2^31 corresponds to Pi (i.e., 180). Phase increment is calculated
-  using the formula (Fo\*(2^N)) / Fs where:
-  - Fo = Output frequency.
-  - N = 32, which represents the accumulator width, and it is fixed.
-  - Fs = Sampling frequency.
-
-#### Reload phase increment via input port
-
-Allows the phase increment to be reloaded during simulation via an input port.
-
-Additional dialog notes:
-
-Number of parallel input/output (SSR). This parameter specifies the number of input (and output) ports of the Mixer block.
-The number of AI Engine kernels used is equal to the value of SSR parameter.
-
-Use iobuffer port for phase offset reload. Reload the phase offset using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync) port, whereas the RTP port is a non-blocking (async) port.
 
 ## Examples
 

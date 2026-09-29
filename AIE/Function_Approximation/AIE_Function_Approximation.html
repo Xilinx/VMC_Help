@@ -45,17 +45,6 @@ the function.</p>
 <h2>Parameters</h2>
 <section id="main" class="level3">
 <h3>Main</h3>
-<section id="inputoutput-data-type" class="level4">
-<h4>Input/Output data type</h4>
-<p>Describes the type of individual data samples input to the function.
-This must be one of the following:</p>
-<ul>
-<li><code>int16</code>, <code>int32</code>, and <code>float</code> for
-AIE</li>
-<li><code>int16</code>, <code>int32</code>, <code>float</code>, and
-<code>bfloat16</code> for AIE-ML and AIE-MLv2</li>
-</ul>
-</section>
 <section id="function" class="level4">
 <h4>Function</h4>
 <p>Select preconfigured LUT values for the common functions
@@ -191,9 +180,13 @@ refer to the <a href="#examples">Examples</a>.</p>
 </tr>
 </tbody>
 </table>
+<!--
+#### Custom LookUp Values
+-->
+
 </section>
-<section id="custom-lookup-values" class="level4">
-<h4>Custom LookUp Values</h4>
+<section id="specify-lookup-values" class="level4">
+<h4>Specify LookUp Values</h4>
 <p>Provide LUT values as a MATLAB vector or workspace variable name. The
 default values in this field will produce a sinusoidal function.</p>
 <p>There will be <code>2^(Coarse bits)</code> locations in the lookup
@@ -246,6 +239,17 @@ receive:
 <code>bfloat16</code> data types, both RTP port 1 and RTP port 2 should
 receive:
 <code>[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,..,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256]</code>.</p>
+</section>
+<section id="inputoutput-data-type" class="level4">
+<h4>Input/Output data type</h4>
+<p>Describes the type of individual data samples input to the function.
+This must be one of the following:</p>
+<ul>
+<li><code>int16</code>, <code>int32</code>, and <code>float</code> for
+AIE</li>
+<li><code>int16</code>, <code>int32</code>, <code>float</code>, and
+<code>bfloat16</code> for AIE-ML and AIE-MLv2</li>
+</ul>
 </section>
 <section id="coarse-bits" class="level4">
 <h4>Coarse bits</h4>

@@ -118,6 +118,12 @@ based on the AIE architecture and data type:</p>
 input port. By default the reload port is a Real-Time Parameter (RTP)
 port that is non-blocking (async).</p>
 </section>
+<section id="use-iobuffer-port-for-phase-offset-reload" class="level4">
+<h4>Use iobuffer port for phase offset reload</h4>
+<p>Reload the phase offset using an iobuffer port, instead of a
+Real-Time Parameter (RTP) port. The iobuffer port is a blocking (sync)
+port, whereas the RTP port is a non-blocking (async) port.</p>
+</section>
 <section id="phase-increment" class="level4">
 <h4>Phase increment</h4>
 <p>This specifies the phase increment between the samples. The value
@@ -177,16 +183,6 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
-<p>Additional dialog notes:</p>
-<p>Use iobuffer port for phase offset reload. Reload the phase offset
-using an iobuffer port, instead of a Real-Time Parameter (RTP) port. The
-iobuffer port is a blocking (sync) port, whereas the RTP port is a
-non-blocking (async) port.</p>
-<p>Sample time. Specifies the sample time for the output signal.</p>
-<div class="noteBox">
-The propagated block sample time in Simulink is equal to &quot;Sample time&quot; multipled by &quot;Samples per frame&quot;.
-</div>
-
 </section>
 </section>
 <section id="examples" class="level2">
