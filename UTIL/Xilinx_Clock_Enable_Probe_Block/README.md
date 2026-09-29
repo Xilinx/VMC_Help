@@ -45,12 +45,6 @@ signal generated is used as separate timing signal that is not
 clock-enable related.
 
 
-## Parameters
-
-<!--
-#### Use clock enable signal without Multi-Cycle path constraints
--->
-
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
