@@ -244,6 +244,7 @@ When selected, an enable port  ce_fpinmode for the port fpinmode register is ma
 
 When selected, an enable port ce_d for the port d register is made available.
 
+
 ### Inversion Options
 
 When a checkbox is selected on this tab, the specified signal is inverted.

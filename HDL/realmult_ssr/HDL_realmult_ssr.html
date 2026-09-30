@@ -63,6 +63,11 @@ error.</p>
 <h5>User Defined</h5>
 <p>If you do not need full precision, this option allows you to specify
 a reduced number of total bits and/or fractional bits.</p>
+<!--
+#### Arithmetic type
+In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
+-->
+
 </section>
 </section>
 <section id="user-defined-precision" class="level4">
@@ -98,20 +103,22 @@ Options in Block Parameter Dialog Boxes</a> topic.</p>
 <p>Refer to the Overflow and Quantization section inthe <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a> topic.</p>
 </section>
-<section id="super-sample-rate-ssr" class="level4">
-<h4>Super Sample Rate (SSR)</h4>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation.</p>
-</section>
-<section id="optional-port" class="level4">
-<h4>Optional Port</h4>
-<p>Provide enable port.</p>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
 </section>
 <section id="latency" class="level4">
 <h4>Latency</h4>
 <p>This defines the number of sample periods by which the block&#39;s output
 is delayed.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
 </section>
 <section id="saturation-and-rounding-of-user-data-types-in-a-multiplier" class="level4">
 <h4>Saturation and Rounding of User Data Types in a Multiplier</h4>
@@ -138,6 +145,11 @@ downstream logic synthesis tool maximum freedom to optimize for
 performance or area.</p>
 <p><strong>Note</strong>: For Floating-point operations, the block
 always uses the Floating-point Operator core.</p>
+<!--
+#### Optimize for
+Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
+-->
+
 </section>
 <section id="core-parameters" class="level4">
 <h4>Core Parameters</h4>

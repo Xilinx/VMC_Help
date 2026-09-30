@@ -200,6 +200,15 @@ ACLKEN.</p>
 <section id="attributes" class="level3">
 <h3>Attributes</h3>
 <p>Parameters specific to the Attributes tab are as follows.</p>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
+</section>
 <section id="code-block-specification" class="level4">
 <h4>Code Block Specification</h4>
 <section id="code-specification" class="level5">

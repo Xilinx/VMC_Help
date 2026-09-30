@@ -57,6 +57,11 @@ downstream blocks at the new rate.
 ### Filter Specification tab  
 Parameters specific to the Filter Specification tab are as follows.
 
+
+#### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+
 #### Filter Specification  
 ##### Filter Type  
 The CIC core supports both interpolation and decimation architectures.

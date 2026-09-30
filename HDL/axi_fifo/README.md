@@ -45,6 +45,7 @@ A report field that indicates the actual FIFO depth. The actual depth of
 the FIFO depends on its implementation and the features that influence
 its implementation.
 
+
 #### Optional Ports  
 ##### TDATA  
 The primary payload that is used to provide the data that is passing
@@ -115,6 +116,11 @@ Macro (XPM), refer to UltraScale Architecture Libraries Guide
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+#### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

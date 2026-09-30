@@ -60,6 +60,16 @@ This field specifies the number of registers in the LFSR chain. As a
 result, this number specifies the size of the input and output when
 selected to be parallel.
 
+
+<!--
+#### Provide synchronous reset port
+Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
+-->
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
 #### Feedback polynomial  
 This field specifies the tap points of the feedback chain and the value
 must be entered in hex with single quotes. The lsb of this polynomial
@@ -96,6 +106,16 @@ or parallel).
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+<!--
+#### Output type
+Specifies the data type of the output. Can be Boolean, Fixed-point, or Floating-point.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

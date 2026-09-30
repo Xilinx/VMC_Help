@@ -121,6 +121,15 @@ Composer ties this pin to inactive (high) on the core.</p>
 <p>Equals n+1, where n is the length of the constraint register in the
 encoder.</p>
 </section>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
+</section>
 <section id="convolution-code" class="level4">
 <h4>Convolution code</h4>
 <p>Array of binary convolution codes. Output rate is derived from the

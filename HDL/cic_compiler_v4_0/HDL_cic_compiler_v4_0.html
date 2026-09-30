@@ -82,6 +82,15 @@ downstream blocks at the new rate.</p>
 <h3>Filter Specification tab</h3>
 <p>Parameters specific to the Filter Specification tab are as
 follows.</p>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
+</section>
 <section id="filter-specification" class="level4">
 <h4>Filter Specification</h4>
 <section id="filter-type" class="level5">
@@ -114,6 +123,10 @@ this parameter is 1 to 16.</p>
 <section id="sample-rate-changes" class="level5">
 <h5>Sample Rate Changes</h5>
 <p>Option to select between Fixed or Programmable.</p>
+<p>When <strong>Programmable</strong> is selected, the
+<code>s_axis_data_tvalid</code> control port is available regardless of
+the <strong>Select format</strong> setting under Hardware Oversampling
+Specification.</p>
 </section>
 <section id="fixed-or-initial-rateir" class="level5">
 <h5>Fixed or Initial Rate(ir)</h5>

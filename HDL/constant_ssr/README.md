@@ -69,11 +69,10 @@ inherited by blocks that the Constant block drives. This is useful
 mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector data support for the primary block
-operation.
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
@@ -84,3 +83,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

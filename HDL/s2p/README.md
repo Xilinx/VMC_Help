@@ -49,6 +49,19 @@ An error is reported when the number of output bits cannot be divided
 evenly by the number of input bits. The minimum latency for this block
 is zero.
 
+<!--
+#### Provide reset port
+Add a reset port to the block.
+-->
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.

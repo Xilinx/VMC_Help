@@ -76,11 +76,10 @@ of the design. In this case, the Vector Real Gateway Out block turns
 gray in color, indicating that the gateway will not be translated into
 an output port.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 ### Implementation Tab  
 Parameters specific to the Implementation tab are as follows.
@@ -127,6 +126,7 @@ begin with a lowercase alphabetic character. axi4_lite1 is acceptable,
 #### Description  
 Additional designer comments about this Vector Real Gateway Out that is
 captured in the interface documentation.
+
 
 ### Constraints  
 ### IOB Timing Constraint  

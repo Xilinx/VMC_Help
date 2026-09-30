@@ -94,12 +94,6 @@ expected results.</li>
 <h4>Output Type</h4>
 <p>Specifies the output data type. Can be Boolean, Fixed-point, or
 Floating-point.</p>
-<section id="super-sample-rate-ssr" class="level5">
-<h5>Super Sample Rate (SSR)</h5>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation.</p>
-</section>
 </section>
 <section id="arithmetic-type" class="level4">
 <h4>Arithmetic Type</h4>
@@ -168,6 +162,16 @@ to the left of the most significant representable bit), or to Flag as
 error (an overflow as a Simulink error) during simulation. Flag as error
 is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.</p>
+<!--
+#### Sample period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
+
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
 </section>
 </section>
 <section id="implementation-tab" class="level3">

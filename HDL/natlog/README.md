@@ -12,6 +12,16 @@ input.
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
 
+
+<!--
+#### Optimize Goal
+When NonBlocking mode is selected, the following optimization options are activated.
+-->
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 #### Flow Control Options  
 ##### Blocking  
 In this mode, the block waits for data on the input, as indicated by

@@ -76,6 +76,12 @@ Parameters specific to the Basic tab are as follows.
 ##### Transform_length  
 One of N = 2^((3..16)) = 8 - 65536.
 
+
+<!--
+#### Native Floating Point Data Format
+Checkbox (`enable_ssr` in the mask). When enabled, input samples are interpreted as pairs of 32-bit IEEE-754 floats and phase factors as 24- or 25-bit fixed-point numbers. When disabled, samples are fixed-point with the precision controlled by the input signal types and **Phase Factor Width**.
+-->
+
 #### Architecture Configuration  
 ##### Target Clock Frequency(MHz)  
 Enter the target clock frequency.
@@ -167,6 +173,7 @@ constraints on when data must be provided and consumed.
 This mode has no such constraints, but the design might be larger and
 slower.
 
+
 #### Optional Output Fields  
 ##### XK_INDEX  
 The XK_INDEX field (if present in the Data Output channel) gives the
@@ -186,10 +193,9 @@ than saturated, resulting in the transformed data becoming unusable for
 most applications
 
 #### Block Icon Display  
-##### Display shortened port names  
-On by default. When unchecked, data_tvalid, for example, becomes
-m_axis_data_tvalid.
+##### Display shortened port names
 
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.

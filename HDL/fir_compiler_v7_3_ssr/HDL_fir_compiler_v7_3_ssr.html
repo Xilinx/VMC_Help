@@ -63,6 +63,11 @@ starting on page 5 for an explanation of the bits in this field.</td>
 <h3>Filter Specification tab</h3>
 <p>Parameters specific to the Filter Specification tab are as
 follows:</p>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
+</section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter Coefficients</h4>
 <section id="coefficient-vector" class="level5">
@@ -91,6 +96,24 @@ This block supports the xlGetReloadOrder function. See the Model
 Composer Utility function xlGetReloadOrder for details.</p>
 </section>
 </section>
+<section id="select-data-type" class="level4">
+<h4>Select Data Type</h4>
+<p>Specifies the filter data and coefficient type. Choose between
+<strong>Real</strong>, <strong>Complex</strong>, or
+<strong>Real_Float</strong>. Complex coefficients are supported only on
+Versal devices.</p>
+<p>When <strong>Complex</strong> is selected, the following constraints
+apply:</p>
+<ul>
+<li>Filter type must be <strong>Single_Rate</strong> or
+<strong>Interpolation</strong> with integer rate change only.</li>
+<li>Filter architecture must be
+<strong>Systolic_Multiply_Accumulate</strong>.</li>
+<li>Single channel and single path only.</li>
+<li>Decimation, coefficient reload, and SSR are not supported with
+complex data.</li>
+</ul>
+</section>
 <section id="filter-specification" class="level4">
 <h4>Filter Specification</h4>
 <section id="filter-type" class="level5">
@@ -113,7 +136,11 @@ specified in the Decimation Rate Value.</p>
 <section id="rate-change-type" class="level5">
 <h5>Rate Change Type</h5>
 <p>This field is applicable to Interpolation and Decimation filter
-types. For Vector FIRs, only an Integer rate change is supported.</p>
+types. Used to specify an <strong>Integer</strong> or
+<strong>Fixed_Fractional</strong> rate change. Fractional rate with SSR
+is supported for interpolation and decimation filter types subject to
+the constraints documented in the Vitis Model Composer User Guide
+(UG1483).</p>
 </section>
 <section id="interpolation-rate-value" class="level5">
 <h5>Interpolation Rate Value</h5>
@@ -124,19 +151,6 @@ provided in this field defines the up-sampling factor.</p>
 <h5>Decimation Rate Value</h5>
 <p>This field is applicable to all Decimation filter types. The value
 provided in this field defines the down-sampling factor.</p>
-</section>
-<section id="super-sample-rate-ssr" class="level5">
-<h5>Super Sample Rate (SSR)</h5>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This blocks
-enable 1-D vector support for the primary block operation.</p>
-<ul>
-<li>If the filter type is Interpolation, the output vector size (SSR
-value on the output side) is equal to the SSR value on the input side
-multiplied by Interpolation Rate Value.</li>
-<li>If the filter type is Decimation, the output vector size is equal to
-the SSR value on the input side divided by Decimation Rate Value.</li>
-</ul>
 </section>
 </section>
 </section>
@@ -231,6 +245,11 @@ the Filter Specification tab is detected as symmetric, the FIR Compiler
 Multiply Accumulate.</p></li>
 <li><p>Multiple interleaved channels are not supported.</p></li>
 </ul>
+<!--
+#### Column Configuration
+Specifies the individual column lengths in a comma delimited list. (See the data sheet for a more detailed explanation.)
+-->
+
 </section>
 <section id="optimization-options" class="level4">
 <h4>Optimization Options</h4>
@@ -388,9 +407,21 @@ ACLKEN. A minimum ARESETn active pulse of two cycles is required, since
 the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
 the pulse is not in the cycle immediately following.</p>
+</section>
+</section>
+<section id="blank-output" class="level4">
+<h4>Blank Output</h4>
+<p>When enabled, forces the FIR output to blank during coefficient
+reload events to avoid transient artifacts.</p>
+<p><strong>Note</strong>: Blank Output can only be enabled when Reset
+Data Vector is disabled</p>
+</section>
+<section id="reset-coefficient-vector" class="level4">
+<h4>Reset Coefficient Vector</h4>
+<p>When enabled, the internal coefficient vector is reset during
+coefficient reload operations.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
-</section>
 </section>
 </section>
 </section>

@@ -68,6 +68,7 @@ design. In this case, the Gateway Out block will turn gray in color,
 indicating that the gateway will not be translated into an output port.
 
 
+
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 

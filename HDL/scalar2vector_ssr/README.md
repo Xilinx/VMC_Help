@@ -32,11 +32,11 @@ Width = Input data width (bits)/SSR
 
 This formula must be satisfied when setting up the block parameters.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control the processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

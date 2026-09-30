@@ -75,6 +75,23 @@ Options in Block Parameter Dialog Boxes</a>.</p>
 <p>An error is reported when the number of output bits cannot be divided
 evenly by the number of input bits. The minimum latency for this block
 is zero.</p>
+<!--
+#### Provide reset port
+Add a reset port to the block.
+-->
+
+</section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>The number of sample periods by which the block&#39;s output is
+delayed.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>

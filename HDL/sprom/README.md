@@ -51,6 +51,15 @@ implemented as follows when the design is compiled:
   Guide
   ([UG974](https://docs.amd.com/r/en-US/ug974-vivado-ultrascale-libraries)).
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 #### Optional Ports  
 ##### Provide reset port for output register  
 When selected, allows access to the reset port available on the output
@@ -105,6 +114,12 @@ Specify the fraction width.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+
+<!--
+#### Optimize for
+Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
+-->
 
 ## LogiCORE™ Documentation
 

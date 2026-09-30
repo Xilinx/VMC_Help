@@ -79,15 +79,11 @@ of the block. The behavior of a Vector Up Sample block with non-zero
 latency is similar to putting a delay block, with equivalent latency, at
 the input of an Vector Up Sample block with zero latency.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.
 
-Parameters used by this block are explained in the topic [Common Options
-in Block Parameter Dialog
-Boxes](../../GEN/common-options/README.md).
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

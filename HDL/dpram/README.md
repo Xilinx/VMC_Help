@@ -179,6 +179,11 @@ When selected, allows access to the enable port for port B. The enable
 port is available only when the latency of the block is greater than or
 equal to 1.
 
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 ### Advanced tab  
 Parameters specific to the Advanced tab are as follows.
 

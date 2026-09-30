@@ -27,6 +27,39 @@ NOR, XOR, XNOR.
 #### Number of inputs  
 Specifies the number of inputs (1 - 1024).
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
+<!--
+#### Precision
+The fundamental computational mode in the Xilinx blockset is arbitrary precision fixed-point arithmetic. Most blocks give you the option of choosing the precision, for example, the number of bits and binary point position.
+-->
+
+<!--
+#### Output Type
+Specifies the data type of the output. Can be Boolean, Fixed-point, or Floating-point.
+-->
+
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
 #### Logical Reduction Operation  
 When the number of inputs is specified as 1, a unary logical reduction
 operation performs a bit-wise operation on the single operand to produce
@@ -38,12 +71,6 @@ operand using the same logical operator. The logical reduction operator
 implements the same functionality as that of the logical reduction
 operation in HDLs. The output of the logical reduction operation is
 always Boolean.
-
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control the processing of multiple data samples on every sample
-period. This blocks enable 1-D vector data support for the primary block
-operation.
 
 ### Output Type tab  
 Parameters specific to the Output Type tab are as follows:

@@ -95,6 +95,7 @@ Selects rounding_mode 1.
 Selects rounding_mode 2.
  
 
+
 ### Optional Ports tab  
 Parameters specific to the Optional Ports tab are:
 
@@ -132,6 +133,7 @@ be connected to a carry cascade out port on another DSP48E block.
 When selected, the multiplier sign cascade in port (multsigncascin) is
 exposed. This port can only be connected to a multiplier sign cascade
 out port of another DSP48E block.
+
 
 #### Provide carryout port  
 When selected, the carryout output port is made available. When the

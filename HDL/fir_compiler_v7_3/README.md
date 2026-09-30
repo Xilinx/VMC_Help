@@ -36,6 +36,7 @@ multiple coefficient sets are specified, then each set is appended to
 the previous set in the vector. It is possible to enter these
 coefficients using the [FDATool](../../UTIL/Xilinx_FDATool_Interface_Block/README.md) block as well.
 
+
 #### Number of Coefficients Sets  
 The number of sets of filter coefficients to be implemented. The value
 specified must divide without remainder into the number of coefficients.
@@ -83,6 +84,7 @@ this field defines the down-sampling factor, or Q for Fixed Fractional
 Rate (P/Q) resampling filter implementations.
 
 
+
 ### Channel Specification tab  
 Parameters specific to the Channel Specification tab are as follows.
  
@@ -126,6 +128,17 @@ for an n-bit input signal produces a fully serial implementation for a
 non-symmetric (resp., symmetric) impulse response. Intermediate values
 produce implementations with intermediate levels of parallelism.
 
+
+<!--
+#### Sample period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
+
+<!--
+#### Hardware Oversampling Rate
+Enter the hardware oversampling rate if you select Hardware_Oversampling_Rate as the format.
+-->
+
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 
@@ -145,6 +158,7 @@ coefficients. This can be set to one of the following:
 #### Coefficient Width  
 Specifies the number of bits used to represent the coefficients.
 
+
 #### Best Precision Fractional Bits  
 When selected, the coefficient fractional width is automatically set to
 maximize the precision of the specified filter coefficients.
@@ -152,6 +166,7 @@ maximize the precision of the specified filter coefficients.
 #### Coefficient Fractional Bits  
 Specifies the binary point location in the coefficients datapath
 options.
+
 
 #### Coefficients Structure  
 Specifies the coefficient structure. Depending on the coefficient
@@ -335,6 +350,12 @@ been selected, data can be transferred in a continuous burst up to the
 size of the FIFO (default 16) or, if greater, the number of interleaved
 data channels. The FIFO requires additional FPGA logic resources.
 
+
+<!--
+#### Output
+This refers to the port on which the data type is specified.
+-->
+
 #### Input/Output
 Select one of the following options for the Input and the Output.
 ##### Not_Required  
@@ -395,6 +416,7 @@ the signal is internally registered for performance. A pulse of one
 cycle resets the control and datapath of the core, but the response to
 the pulse is not in the cycle immediately following.
 
+
 #### Blank Output
 When enabled, forces the FIR output to blank during coefficient reload events to avoid transient artifacts.
 
@@ -405,9 +427,10 @@ When enabled, the internal coefficient vector is reset during coefficient reload
 
 ### Advanced tab  
 #### Block Icon Display  
-##### Display shortened port names  
-On by default. When unchecked, data_tvalid, for example, becomes
-m_axis_data_tvalid.
+##### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog

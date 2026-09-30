@@ -13,11 +13,23 @@ Parameters specific to the Vector Relational block are:
 #### Comparison
 Specifies the comparison operation computed by the block.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector data support for the primary block
-operation.
+
+<!--
+#### Output Type
+Specifies the data type of the output. Can be Boolean, Fixed-point, or Floating-point.
+-->
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog

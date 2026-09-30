@@ -100,6 +100,7 @@ port.
 Value is used in pattern detection logic which is best described as an
 equality check on the output of the adder/subtractor/logic unit.
 
+
 #### Pattern Attribute (48bit hex value)  
 Enter a 48-bit value that is used in the pattern detector.
 
@@ -118,6 +119,7 @@ Selects rounding_mode 1 (C-bar left shifted by 1).
 ##### MODE2  
 Selects rounding_mode 2 (C-bar left shifted by 2).
 
+
 ### Wide Xor tab  
 Parameters specific to the Wide Xor tab are as follows.
 
@@ -127,6 +129,7 @@ Provides the ability to perform a 96-bit wide XOR function.
 #### XORSIMD Select Wide XOR SIMD  
 The XORSIMD attribute is used to select the width of the XOR function.
 Select either XOR12 (the default), XOR24, XOR48, or XOR96.
+
 
 ### Optional Ports tab  
 Parameters specific to the Optional Ports tab are as follows.
@@ -164,6 +167,7 @@ be connected to a carry cascade out port on another DSP48E block.
 When selected, the multiplier sign cascade in port (multsigncascin) is
 exposed. This port can only be connected to a multiplier sign cascade
 out port of another DSP48E block.
+
 
 
 #### Provide carryout port  
@@ -374,6 +378,7 @@ ad.
 
 #### Enable port for INMODE  
 When selected, an enable port is added for the INMODE register.
+
 
 ### Inversion Options tab  
 When a checkbox is selected on this tab, the specified signal is

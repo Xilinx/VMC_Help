@@ -37,6 +37,11 @@ selected, the inputs and output are unsigned, and the number of output
 integer bits equals x, where x = max (integer bits a, integer bits
 b).
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
 #### Latency  
 The Latency value defines the number of sample periods by which the
 block's output is delayed. One sample period might correspond to
@@ -47,6 +52,11 @@ select the Pipeline for maximum performance option (on the
 Implementation tab, described below); additional latency is usually
 implemented as a shift register on the output of the block.
 
+
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 ### Output tab  
 #### Precision  

@@ -202,6 +202,7 @@ When floating-point is selected for SIN COS Output type, then XFloat_8_24 is dis
 A floating-point data type is displayed using the format: XFloat_<exponent_bit_width> _ <fraction_bit_width>. 
 Single precision data type is displayed using the string "XFloat_8_24"
 
+
 #### Parameter Selection  
 Select System_Parameters or Hardware_Parameters
 
@@ -270,6 +271,11 @@ Select between Auto, Area, or Speed.
 Select between Minimal, or Maximal. When set to Maximal, XtremeDSP
 slices are used to achieve to maximum performance.
 
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 #### Latency Options  
 ##### Auto  
 The DDS is fully pipelined for optimal performance.
@@ -299,6 +305,7 @@ immediately following.
 #### Use explicit period  
 When checked, the DDS Compiler block uses the explicit sample period
 that is specified in the dialog entry box below.
+
 
 ### AXI Channel Options tab  
 
@@ -336,6 +343,7 @@ the full AXI handshake protocol with inherent back-pressure. If there is
 an input PHASE channel, its TREADY is also determined by this control,
 so that the datapath from input PHASE channel to output channels as a
 whole supports backpressure or not.
+
 
 #### TUSER Options  
 Select one of the following options for the Input, DATA Output, and
@@ -389,6 +397,7 @@ Parameter Selection on the Basic tab is set to Hardware Parameters and
 Phase Increment Programmability field on the Phase Offset Angles tab is
 set to Fixed or Programmable.
 
+
 #### Output frequencies (MHz)  
 For each channel, an independent frequency can be entered into an array.
 This field is activated when Parameter Selection on the Basic tab is set
@@ -427,14 +436,14 @@ and Phase Increment Programmability is Fixed or Programmable.
 
 #### Block Icon Display
 
-##### Display shortened port names  
-This option is ON by default. When unselected, the full AXI name of each
-port is displayed on the block.
+##### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
+
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
-
 
 ## Examples
 

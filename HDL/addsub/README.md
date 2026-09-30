@@ -28,6 +28,11 @@ port is available only when User defined precision is selected, the
 inputs and output are unsigned, and the number of output integer bits
 equals x, where x = max (integer bits a, integer bits b).
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
 #### Latency  
 The Latency value defines the number of sample periods by which the
 block's output is delayed. One sample period might correspond to

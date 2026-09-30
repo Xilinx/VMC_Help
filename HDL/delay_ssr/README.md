@@ -50,6 +50,7 @@ signal has precedence over the enable signal. The enable signal has to
 run at a multiple of the block 's sample rate. The signal driving the
 enable port must be Boolean.
 
+
 #### Latency  
 Latency is the number of cycles of delay. The latency can be zero,
 provided that the Provide enable port check box is not checked. The
@@ -58,11 +59,10 @@ Vector Delay block collapses to a wire during logic synthesis. If the
 latency is set to L=1, the block will generally be synthesized as a
 flip-flop (or multiple flip-flops if the data width is greater than 1).
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
