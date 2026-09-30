@@ -77,16 +77,9 @@ gray in color, indicating that the gateway will not be translated into
 an output port.
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.
+Use this parameter to control processing of multiple data samples on every sample period.
 
 ### Implementation Tab  
 Parameters specific to the Implementation tab are as follows.

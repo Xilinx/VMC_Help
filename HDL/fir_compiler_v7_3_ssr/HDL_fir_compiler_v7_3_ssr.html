@@ -63,11 +63,11 @@ starting on page 5 for an explanation of the bits in this field.</td>
 <h3>Filter Specification tab</h3>
 <p>Parameters specific to the Filter Specification tab are as
 follows:</p>
-<!--
-#### SSR
-Super Sample Rate, It should be a power of 2.
--->
-
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
+</section>
 <section id="filter-coefficients" class="level4">
 <h4>Filter Coefficients</h4>
 <section id="coefficient-vector" class="level5">
@@ -151,20 +151,6 @@ provided in this field defines the up-sampling factor.</p>
 <h5>Decimation Rate Value</h5>
 <p>This field is applicable to all Decimation filter types. The value
 provided in this field defines the down-sampling factor.</p>
-</section>
-<section id="super-sample-rate-ssr" class="level5">
-<h5>Super Sample Rate (SSR)</h5>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation. Supported
-values for hybrid simulation are 2, 4, 8, 16, 32, and 64.</p>
-<ul>
-<li>If the filter type is Interpolation, the output vector size (SSR
-value on the output side) is equal to the SSR value on the input side
-multiplied by Interpolation Rate Value.</li>
-<li>If the filter type is Decimation, the output vector size is equal to
-the SSR value on the input side divided by Decimation Rate Value.</li>
-</ul>
 </section>
 </section>
 </section>

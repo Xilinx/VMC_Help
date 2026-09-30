@@ -100,12 +100,3 @@ All rights reserved.
 
 SPDX-License-Identifier: MIT
 
-#### Provide enable port
-
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
-
-
-#### Latency
-
-The number of sample periods by which the block's output is delayed.
-

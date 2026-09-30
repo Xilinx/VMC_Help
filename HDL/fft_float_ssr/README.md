@@ -26,10 +26,9 @@ high with no gaps.
 ## Parameters
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### FFT length (N) 
 N is the size of the transformation, and should be powers

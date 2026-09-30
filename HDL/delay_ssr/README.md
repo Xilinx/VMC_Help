@@ -64,12 +64,6 @@ flip-flop (or multiple flip-flops if the data width is greater than 1).
 
 Use this parameter to control processing of multiple data samples on every sample period.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
-
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
 

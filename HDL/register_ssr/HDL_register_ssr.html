@@ -57,16 +57,18 @@ value.</p>
 Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
 -->
 
-<!--
-#### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
-
-<!--
-#### SSR
-Super Sample Rate, It should be a power of 2.
--->
-
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
+</section>
 <section id="initial-value" class="level4">
 <h4>Initial value</h4>
 <p>Specifies the initial value in the register.</p>
@@ -77,12 +79,6 @@ Super Sample Rate, It should be a power of 2.
 <li>Provide synchronous reset port.</li>
 <li>Provide enable port.</li>
 </ul>
-</section>
-<section id="super-sample-rate-ssr" class="level4">
-<h4>Super Sample Rate (SSR)</h4>
-<p>This configurable GUI parameter is primarily used to control
-processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>

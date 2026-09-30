@@ -66,12 +66,6 @@ Parameters specific to the Basic tab are as follows:
 Specifies the output data type. Can be Boolean, Fixed-point, or
 Floating-point.
 
-##### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
-
 #### Arithmetic Type  
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
@@ -133,10 +127,9 @@ Wrap is selected.
 Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
 -->
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 ### Implementation Tab  
 Parameters specific to the Implementation tab are as follows:

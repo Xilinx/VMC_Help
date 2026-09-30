@@ -83,10 +83,9 @@ supplied value must be an integer between zero and the number of bits in
 the input (inclusive).
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 ## LogiCORE™ Documentation
 

@@ -93,11 +93,6 @@ Parameters specific to this block are as follows:
 You can choose to optimize for Resource (minimum area) or for Speed
 (maximum performance).
 
-
-#### Latency
-
-The number of sample periods by which the block's output is delayed.
-
 ## LogiCORE Documentation
 
 RAM-Based Shift Register LogiCORE IP Product Guide

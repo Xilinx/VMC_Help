@@ -166,9 +166,9 @@ immediately following.
 ### Advanced tab  
 Block Icon Display
 
-#### Display shortened port names  
-On by default. For example, when unchecked, dout_tvalid becomes
-m_axis_dout_tvalid.
+#### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 ## LogiCORE™ Documentation
 

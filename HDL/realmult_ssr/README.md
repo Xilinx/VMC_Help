@@ -69,24 +69,18 @@ Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md)
 topic.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
+#### Provide enable port
 
-#### Optional Port  
-Provide enable port.
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
 
 #### Latency  
 This defines the number of sample periods by which the block's output is
 delayed.
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Saturation and Rounding of User Data Types in a Multiplier  
 When saturation or rounding is selected on the user data type of a

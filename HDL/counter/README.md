@@ -123,11 +123,6 @@ Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
 
-
-#### Latency
-
-The number of sample periods by which the block's output is delayed.
-
 ## LogiCORE™ Documentation
 
 Binary Counter LogiCORE IP Product Guide

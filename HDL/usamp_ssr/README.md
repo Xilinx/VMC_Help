@@ -80,20 +80,10 @@ latency is similar to putting a delay block, with equivalent latency, at
 the input of an Vector Up Sample block with zero latency.
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector support for the primary block
-operation.
+Use this parameter to control processing of multiple data samples on every sample period.
 
-Parameters used by this block are explained in the topic [Common Options
-in Block Parameter Dialog
-Boxes](../../GEN/common-options/README.md).
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

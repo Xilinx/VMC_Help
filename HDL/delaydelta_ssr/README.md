@@ -47,14 +47,6 @@ The number of sample periods by which the block's output is delayed.
 
 Use this parameter to control processing of multiple data samples on every sample period.
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This blocks enable 1-D vector and/or complex data support for
-the primary block operation.
-
-See the [Vector Delay](../../HDL/delay_ssr/README.md) block for further
-information on using this block.
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

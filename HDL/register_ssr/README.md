@@ -32,15 +32,13 @@ Parameters specific to the Basic tab are as follows.
 Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
 -->
 
-<!--
 #### Provide enable port
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted. Reset signal has precedence over the enable signal. The enable signal has to run at a multiple of the block 's sample rate. The signal driving the enable port must be Boolean.
--->
 
-<!--
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 #### Initial value  
 Specifies the initial value in the register.
@@ -48,13 +46,6 @@ Specifies the initial value in the register.
 #### Optional Ports  
 - Provide synchronous reset port.
 - Provide enable port.
-
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
-
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog

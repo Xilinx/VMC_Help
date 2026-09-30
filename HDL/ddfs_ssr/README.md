@@ -34,11 +34,6 @@ output frequency signal.
 
 Use this parameter to control processing of multiple data samples on every sample period.
 
-#### Super Sample Rate (SSR)  
-This configurable GUI parameter is primarily used to control the
-processing of multiple data samples on every sample period. This block
-enables 1-D vector support for the primary block operation.
-
 #### Frequency Resolution (bits)  
 Defines the smallest incremental step in frequency that the block can
 output. This should be an integer value.
@@ -48,16 +43,6 @@ Defines the depth of the Sin/Cos Table and should be an integer value.
 
 #### Sin/Cos Table Width  
 Defines the width of the Sin/Cos Table and should be an integer value.
-
-
-#### Provide enable port
-
-Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
-
-
-#### Latency
-
-The number of sample periods by which the block's output is delayed.
 
 ## Examples
 

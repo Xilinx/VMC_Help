@@ -60,17 +60,9 @@ Specifies the bit slice position relative to the MSB, LSB, or binary
 point of the top or the bottom of the slice.
 
 
-<!--
 #### SSR
-Super Sample Rate, It should be a power of 2.
--->
 
-#### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
-
+Use this parameter to control processing of multiple data samples on every sample period.
 
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog

@@ -278,10 +278,9 @@ See Table 1 in the associated LogiCORE™ Product Specification for the
 Signed Magnitude and Offset-Binary data format for Soft Width 3.
 
 
-<!--
 #### Display shortened port names
+
 AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
--->
 
 ### Page3 tab  
 #### Convolution 0  
