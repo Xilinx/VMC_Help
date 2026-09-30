@@ -10,7 +10,7 @@ AI Engine/Solver/Buffer IO
 
 ## Description
 
-This block computes the singular value decomposition of an input matrix `A`, expressing it as `A = U × diag(S) × V^T`. Here, `U` and `V` are orthogonal matrices, and `S` is a vector containing the singular values; `diag(S)` is the diagonal matrix formed from that vector. The implementation uses Jacobi sweep passes; increasing the number of passes can improve accuracy at the cost of additional processing cycles.
+This block computes the singular value decomposition of an input matrix `A`, expressing it as `A = U × diag(S) × V^H`, where `V^H` is the conjugate transpose of `V`. `U` and `V` are orthonormal (orthogonal for real data). `S` is a vector of singular values, and `diag(S)` is the diagonal matrix formed from that vector. The implementation uses Jacobi sweep passes; increasing the number of passes can improve accuracy at the cost of additional processing cycles.
 
 Input matrices are 2D signals. Set the matrix dimensions and Jacobi sweep parameters to match the input and the desired decomposition accuracy. For matrix layout assumptions and supported parameter ranges, see *AI Engine Solver Blocks* in the Vitis Model Composer User Guide (UG1483).
 
@@ -19,7 +19,7 @@ Input matrices are 2D signals. Set the matrix dimensions and Jacobi sweep parame
 ### Main
 
 #### Input data type
-Specifies the data type of the input matrix elements.
+Specifies the data type of the input matrix elements. The legal values are `float` and `cfloat`.
 
 #### Rows of matrix
 Specifies the number of rows in the input matrix `A`.
@@ -34,7 +34,7 @@ Specifies the number of kernels used to divide and cascade the computation.
 Specifies the number of Jacobi sweep passes to perform. More passes can improve accuracy but require additional processing cycles.
 
 #### Number of Jacobi sweep passes ssr
-Specifies the number of Jacobi sweep passes used for the SSR portion of the computation.
+Specifies the number of pass-pipeline stages (`TP_PASSES_SSR`). For a value from 1 through **Number of Jacobi sweep passes**, that pass count must be evenly divisible by this value, and each stage performs (passes / stages) Jacobi sweeps. A value of one more than **Number of Jacobi sweep passes** is also legal: the first stages each perform one Jacobi sweep, and the last stage performs no sweep. That last stage extracts the singular values, normalizes `U`, sorts `U`, `S`, and `V`, and compacts `V`.
 
 #### Provide diagonal elements inverse
 When enabled, the block provides the inverse of the singular values in `S`. Disable this option when the downstream design requires the standard singular values.

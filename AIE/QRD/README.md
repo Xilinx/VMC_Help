@@ -19,7 +19,7 @@ Input and output matrices are 2D signals. Use the matrix dimensions and leading-
 ### Main
 
 #### Input data type
-Specifies the data type of the input matrix elements.
+Specifies the data type of the input matrix elements. The legal values are `float` and `cfloat`.
 
 #### Rows of matrix
 Specifies the number of rows in the input matrix `A`.
