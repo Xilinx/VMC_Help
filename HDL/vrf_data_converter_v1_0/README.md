@@ -7,8 +7,6 @@ The Versal RF Data Converter block simulates the hardened Data Converter IP bloc
 **This block is provided as Early Access functionality in 2026.1 for the purpose of gathering customer feedback. For more information, refer to the [Versal RF Series Tools Early Access Secure Site](https://account.amd.com/en/member/versal-rf-tools-ea.html).**
 
 
-## Parameters
-
 <!--
 #### Frequency
 Specifies the frequency, either in Hertz or radians. The default is 1.
