@@ -102,6 +102,11 @@ signal has precedence over the optional enable signal available on the
 block. The reset signal has to run at a multiple of the block's sample
 rate. The signal driving the reset port must be Boolean.
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.
 

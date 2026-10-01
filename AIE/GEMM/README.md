@@ -36,10 +36,16 @@ Specifies the number of columns (N) in matrix B. This determines the number of c
 #### Columns in input A, Rows in input B
 Specifies the common dimension (K) - the number of columns in matrix A and the number of rows in matrix B. This dimension must match for matrix multiplication to be valid.
 
-#### SSR (Super Sample Rate)
+#### SSR
 Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by distributing the computation across multiple AI Engine tiles.
 
 When SSR > 1, the input matrices and output are split across multiple ports. The specific data distribution depends on the memory layout (row-major or column-major).
+
+
+<!--
+#### Number of cascade stages
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
+-->
 
 #### A input leading dimension
 Specifies the memory layout for input matrix A:
@@ -55,6 +61,19 @@ Specifies the memory layout for input matrix B:
 Specifies the memory layout for the output matrix:
 * **Row-major(0):** Matrix elements are stored row by row in memory
 * **Column-major(1):** Matrix elements are stored column by column in memory
+
+
+<!--
+#### Add tiling to input A
+-->
+
+<!--
+#### Add tiling to input B
+-->
+
+<!--
+#### Add detiling to output
+-->
 
 #### Add tiling to input A, Add tiling to input B, Add detiling to output
 These parameters control the inclusion of an additional pre-processing/post-processing kernel to perform the required data storage reordering. When used while selecting the input and/or output leading dimension, the matrix is also transposed in the tiling kernel.

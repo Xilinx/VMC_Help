@@ -53,6 +53,18 @@ an optional reset port and a user specifiable initial value.</p>
 <section id="initial-value" class="level4">
 <h4>Initial value</h4>
 <p>specifies the initial value in the register.</p>
+<!--
+#### Provide synchronous reset port
+Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
+-->
+
+</section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
 </section>
 <section id="optional-ports" class="level4">
 <h4>Optional Ports</h4>

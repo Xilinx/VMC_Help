@@ -25,6 +25,12 @@ error.
 If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
 
+
+<!--
+#### Arithmetic type
+In the Arithmetic Type field of the Block Parameters dialog box, you can choose unsigned or signed (two's complement) as the data type of the output signal.
+-->
+
 #### Fixed-point output type  
 ##### Arithematic Type  
 ###### Signed (2’s comp)  
@@ -52,8 +58,9 @@ Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md)
 topic.
 
-#### Optional Port  
-Provide enable port
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
 
 #### Latency  
 This defines the number of sample periods by which the block's output is
@@ -61,6 +68,7 @@ delayed.
 
 **Note**: Only when latency of the Mult block is set to 4 in Model Composer,
 are all three pipeline stages used in the generated Multiplier IP.
+
 
 
 ### Implementation tab  
@@ -73,6 +81,12 @@ area.
 
 **Note**: For Floating-point operations, the block always uses the
 Floating-point Operator core.
+
+
+<!--
+#### Optimize for
+Directs the block to be optimized for either speed (Performance) or area (Resources) in the generated hardware.
+-->
 
 #### Core Parameters  
 ##### Optimize for Speed\|Area  

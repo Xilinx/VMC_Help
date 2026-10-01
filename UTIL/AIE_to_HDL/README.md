@@ -22,7 +22,7 @@ The AXI4-Stream interface is required to interface the AI Engine with an HDL sub
 For more information, see [How AXI4-Stream Works](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/How-AXI4-Stream-Works).
 
 **Note:** For more information on setting this block and examples, refer to
-the [Connecting AI Engine and HDL Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Tutorials/AIE-PL/AIE_HDL_tutorial) tutorial.
+the [Connecting AI Engine and HDL Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Tutorials/AIE-PL/AIE_HDL_tutorial) tutorial.
 
 <div class="noteBox">
 If the tready signal is FALSE (0), the block buffers the input data

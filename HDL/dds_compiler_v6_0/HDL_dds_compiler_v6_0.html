@@ -330,6 +330,11 @@ Full_Range amplitude.</p>
 <p>Select between Minimal, or Maximal. When set to Maximal, XtremeDSP
 slices are used to achieve to maximum performance.</p>
 </section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>The number of sample periods by which the block&#39;s output is
+delayed.</p>
+</section>
 <section id="latency-options" class="level4">
 <h4>Latency Options</h4>
 <section id="auto" class="level5">
@@ -522,8 +527,12 @@ and Phase Increment Programmability is Fixed or Programmable.</p>
 <h4>Block Icon Display</h4>
 <section id="display-shortened-port-names" class="level5">
 <h5>Display shortened port names</h5>
-<p>This option is ON by default. When unselected, the full AXI name of
-each port is displayed on the block.</p>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
 </section>

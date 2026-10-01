@@ -116,6 +116,11 @@ another input channel.</p>
 <p>Selects “Non-Blocking” mode. In this mode, the lack of data on one
 input channel does not block the execution of an operation if data is
 received on another input channel.</p>
+<!--
+#### Output Width
+Specify the output width. Edit box activated only if the Rounding mode is set to a value other than Full_Precision.
+-->
+
 </section>
 </section>
 </section>
@@ -237,8 +242,12 @@ immediately following.</p>
 <p>Block Icon Display</p>
 <section id="display-shortened-port-names" class="level4">
 <h4>Display shortened port names</h4>
-<p>On by default. For example, when unchecked, dout_tvalid becomes
-m_axis_dout_tvalid.</p>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
 </section>
 </section>
 </section>

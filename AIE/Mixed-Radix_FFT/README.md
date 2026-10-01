@@ -23,6 +23,16 @@ Describes the data type of the twiddle factors of the transform. It must be one 
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
+
+<!--
+#### Dynamic (1) or static (0) point size
+-->
+
+<!--
+#### FFT size
+This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 4 to 12 inclusive.
+-->
+
 #### Point Size (FFT Size)
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 12 inclusive.
 

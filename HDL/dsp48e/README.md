@@ -65,6 +65,7 @@ Selects special masks that can be used for symmetric or convergent
 rounding in the pattern detector. The choices are Select mask, Mode1,
 and Mode2.
 
+
 ### Optional Ports tab  
 #### Input Ports  
 ##### Consolidate control port  

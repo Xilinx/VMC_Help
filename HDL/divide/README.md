@@ -27,6 +27,7 @@ channel does not block the execution of an operation if data is received
 on another input channel.
 
  
+
 #### Algorithm Type  
 ##### Radix2
 This is non-restoring integer division using integer operands and allows
@@ -54,6 +55,11 @@ primitives. Supports unsigned or two's complement signed numbers.
 ##### Output Fractional width  
 For Fixed-point division, this entry determines the number of bits in
 the fractional part of the output.
+
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
 
 ### Optional Ports  
 

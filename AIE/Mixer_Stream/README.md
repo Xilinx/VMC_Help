@@ -40,7 +40,7 @@ direction) of the DDS sample to create a second modulated signal. These
 two modulated signals are added together and written to the output
 window.
 
-#### Number of parallel input/output (SSR):
+#### SSR
 This parameter specifies the number of input (and output) ports of the Mixer block.
 The number of AI Engine kernels used is equal to the value of SSR parameter.
 

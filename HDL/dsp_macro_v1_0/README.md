@@ -36,8 +36,10 @@ Product Guide (PG323) for details on all the parameters on this tab.
 The Pipeline Options tab is used to define the pipeline depth of the
 various input paths.
 
+
 #### Pipeline Options  
 Specifies the pipeline method to be used; Automatic, By Tier, or Expert.
+
 
 #### Custom Pipeline options  
 Used to specify the pipeline depth of the various input paths.
@@ -82,6 +84,7 @@ Specifies the User Defined output width of the P output port
 
 ##### Binary Point  
 Specifies the placement of the binary point of the P output port.
+
 
 #### Additional ports  
 ##### Use ACOUT  

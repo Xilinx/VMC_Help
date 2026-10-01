@@ -22,7 +22,7 @@ The AXI4-Stream interface is required to interface an HDL subsystem with the AI 
 For more information, see [How AXI4-Stream Works](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/How-AXI4-Stream-Works).
 
 **Note:** For more information on setting this block and examples, refer to
-the [Connecting AI Engine and HDL Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Tutorials/AIE-PL/AIE_HDL_tutorial) tutorial.
+the [Connecting AI Engine and HDL Subsystems](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Tutorials/AIE-PL/AIE_HDL_tutorial) tutorial.
 
 ## Parameters
 
@@ -67,6 +67,11 @@ If the HDL subsystem does not produce valid data on every clock cycle, the AI En
 For example, if the HDL subsystem asserts `tvalid` every 4 HDL clock cycles, set the **Reduce output sample rate by a factor of** parameter to 4.
 
 If you do not do this, the HDL to AIE block will output a variable-size signal that is empty when there is no valid data. For analysis and viewing the signal on a scope, it is easier to work with variable-size signals that are full. For more information, see the [Variable-Size Signals Quick Guide](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/QuickGuides/Variable_Size_Signals).
+
+
+<!--
+#### Manually specify output sample time (deprecated)
+-->
 
 ## Input and Output period
 This block is a multirate block. The input period and the output period can be different depending on the setting of the parameters. The diagram below shows an example of how the output period changes based on the different settings.

@@ -65,6 +65,7 @@ for details on this LogicCore IP.
 
 Parameters specific to the Xilinx FFT block are as follows.
 
+
 #### Transform Length  
 Select the desired point size ranging from 8 to 65536.
 

@@ -53,6 +53,31 @@ design rule check messages if parameters are inconsistent.</p>
 <h3>Main</h3>
 <p>Parameters match the <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;GEMV&#39;,&#39;category&#39;,&#39;AIE&#39;))">GEMV</a>
 block unless noted below.</p>
+<!--
+#### A input data type
+Specifies the data type for the A input port. Supported types include `int16`, `int32`, `cint16`, `cint32`, `float`, and `cfloat`.
+-->
+
+<!--
+#### B input data type
+Specifies the data type for the B input port. Supported types include `int16`, `int32`, `cint16`, `cint32`, `float`, and `cfloat`.
+-->
+
+<!--
+#### Rows in input A
+Specifies the number of rows in matrix A.
+-->
+
+<!--
+#### Columns in input A, Length of vector B
+Specifies the number of columns in matrix A and the length of vector B (K dimension). This is the reduction dimension in the GEMV operation.
+-->
+
+<!--
+#### Number of frames
+Specifies the number of frames (sets of input matrices) processed per window.
+-->
+
 <section id="provide-matrix-a-via-rtp" class="level4">
 <h4>Provide matrix A via RTP</h4>
 <p>When checked, matrix A is provided via RTP instead of an input
@@ -68,8 +93,8 @@ stream.</p>
 <h4>Rows in input A / Columns in input A, Length of vector B</h4>
 <p>Define matrix and vector dimensions for the GEMV operation.</p>
 </section>
-<section id="ssr-super-sample-rate" class="level4">
-<h4>SSR (Super Sample Rate)</h4>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
 <p>Number of parallel stream lanes. When SSR &gt; 1, matrix A is split
 across lanes along the first dimension, vector B is duplicated, and
 outputs are concatenated.</p>
@@ -98,6 +123,21 @@ on the first output stream and samples 4-7 on the second output
 stream.</p>
 <p>This option is supported only on AIE devices with stream IO (not
 AIE-ML or AIE-ML V2).</p>
+<!--
+#### Scale output down by 2^
+Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero.
+-->
+
+<!--
+#### Rounding mode
+Describes the selection of rounding to be applied during the shift down stage of processing.
+-->
+
+<!--
+#### Saturation mode
+Describes the selection of saturation to be applied during the shift down stage of processing.
+-->
+
 </section>
 <section id="a-input-leading-dimension" class="level4">
 <h4>A input leading dimension</h4>

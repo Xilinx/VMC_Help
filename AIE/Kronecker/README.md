@@ -41,7 +41,7 @@ Specifies the number of frames (sets of input matrices) processed per window.
 Describes the power of 2 by which the output is scaled down (right-shifted) before output. For `float` and `cfloat` data types, this parameter must be zero.
 
 
-#### SSR (Super Sample Rate)
+#### SSR
 Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
 
 **Column Distribution When SSR > 1:**

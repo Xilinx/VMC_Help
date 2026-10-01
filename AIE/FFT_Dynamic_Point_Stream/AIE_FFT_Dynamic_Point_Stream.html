@@ -152,8 +152,8 @@ FFT. You can perform different lengths of FFT on different input data
 frames. It must be a power of 2 with a minimum value of 16. The maximum
 value supported by the library element is 65536.</p>
 </section>
-<section id="input-window-size" class="level4">
-<h4>Input Window Size</h4>
+<section id="input-frame-size-number-of-samples-excluding-header" class="level4">
+<h4>Input frame size (Number of samples excluding header)</h4>
 <p>Specifies the number of samples in the input frame excluding the
 header. The value must be in the range 16 to 65536 and the default value
 is 60.</p>
@@ -219,6 +219,18 @@ operation is performed in parallel and the actual FFT size is divided by
 stream inputs and there will be 8 subframe FFTs each of point size 2048.
 The specified FFT size and SSR values should be such that FFT size / SSR
 should not exceed 2048.</p>
+</section>
+<section id="twiddle-mode" class="level4">
+<h4>Twiddle Mode</h4>
+<p>This parameter controls the amplitude of the twiddle factors. It
+applies to <code>cint16</code> and <code>cint32</code> twiddle factors
+only; it does not apply to <code>cfloat</code> twiddle factors.</p>
+<p>Twiddle mode 0 means use max amplitude twiddles which saturate at
+<code>2^(N-1)-1</code>, where N is the number of bits in the type (e.g.
+<code>cint16</code> has 16 bits per component).</p>
+<p>Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e.
+<code>2^(N-1)</code>. This avoids saturation, but loses 1 bit of
+precision and so noise overall will be higher.</p>
 </section>
 <section id="number-of-cascade-stages" class="level4">
 <h4>Number of Cascade Stages</h4>

@@ -60,6 +60,11 @@ Specifies the maximum FFT size that is supported by Dynamic point FFT.
   windows. It must be a power of 2 with a minimum value of 16. The
   maximum value supported by the library element is 65536.
 
+
+<!--
+#### Input window size (Number of samples excluding header)
+-->
+
 #### Input Window Size
 
 Specifies the number of samples in the input window excluding the
@@ -92,6 +97,19 @@ The following modes are available:
 * **None:** No saturation is performed and the value is truncated on the MSB side.
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
+
+
+#### SSR
+
+This parameter is intended to improve performance and support FFT sizes beyond the limitations of a single tile. For an SSR value of 'n' (which must be of the form 2^N, where N is a positive integer), the FFT operation is performed in parallel and the actual FFT size is divided by 'n'. For example, a 16384 point FFT with an SSR value of 8 creates 8 stream inputs and there will be 8 subframe FFTs each of point size 2048. The specified FFT size and SSR values should be such that FFT size / SSR should not exceed 2048.
+
+#### Twiddle Mode
+
+This parameter controls the amplitude of the twiddle factors. It applies to `cint16` and `cint32` twiddle factors only; it does not apply to `cfloat` twiddle factors.
+
+Twiddle mode 0 means use max amplitude twiddles which saturate at `2^(N-1)-1`, where N is the number of bits in the type (e.g. `cint16` has 16 bits per component).
+
+Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e. `2^(N-1)`. This avoids saturation, but loses 1 bit of precision and so noise overall will be higher.
 
 #### Use Widget for SSR Kernels
 This parameter is applicable to streaming and parallel (SSR>1) implementations of the FFT. These implementations require stream to window conversions on the hardware.

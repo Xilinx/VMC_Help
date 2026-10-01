@@ -70,6 +70,12 @@ Selects “Non-Blocking” mode. In this mode, the lack of data on one input
 channel does not block the execution of an operation if data is received
 on another input channel.
 
+
+<!--
+#### Output Width
+Specify the output width. Edit box activated only if the Rounding mode is set to a value other than Full_Precision.
+-->
+
 ### Page 2 tab  
 #### Output Product Range  
 Select the output bit width. The values are automatically set to provide
@@ -107,6 +113,7 @@ Adds a ctrl_user input port to the block.
 
 #### TUSER Width  
 Specifies the bit width of the ctrl_tuser input port.
+
 
 #### Output TLAST Behavior  
 Determines the behavior of the dout_tlast output port.
@@ -159,9 +166,9 @@ immediately following.
 ### Advanced tab  
 Block Icon Display
 
-#### Display shortened port names  
-On by default. For example, when unchecked, dout_tvalid becomes
-m_axis_dout_tvalid.
+#### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 ## LogiCORE™ Documentation
 

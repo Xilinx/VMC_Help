@@ -89,6 +89,32 @@ This parameter is intended to improve performance and support FFT
 The Windowing utility accepts only powers of 2 as the number of
   inputs/outputs.
 
+
+#### Rounding mode
+
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+These modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
+
 ## Examples 
 
 ***Click on the images below to open each model.***

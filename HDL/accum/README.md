@@ -42,6 +42,15 @@ Specifies the feedback scale factor to be one of the following:
 
   1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, or 1/256.
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 #### Optional Ports  
 ##### Provide synchronous reset port  
 Activates an optional reset (rst) pin on the block. When the reset

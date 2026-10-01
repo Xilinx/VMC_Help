@@ -23,6 +23,7 @@ FIFO is empty.
 
 ### Basic tab  
 Parameters specific to the Basic tab are as follows.
+
 #### FIFO Implementation  
 ##### Memory Type  
 This block implements FIFOs built from block RAM, distributed RAM, shift
@@ -93,6 +94,7 @@ Specifies the bit width of the %full port. The binary point for this
 unsigned output is always at the top of the word. Thus, if for example
 precision is set to one, the output can take two values: 0.0 and 0.5,
 the latter indicating the FIFO is at least 50% full.
+
 
 #### Optional Ports  
 ##### Provide reset port  

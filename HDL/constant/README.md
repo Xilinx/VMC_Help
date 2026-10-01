@@ -71,6 +71,7 @@ mainly because the blocks eventually target hardware and the Simulink
 sample periods are used to establish hardware clock periods.)
 
 
+
 ### DSP48 tab  
 #### DSP48 Instruction  
 The use of this block for DSP48 instructions is deprecated. Please use

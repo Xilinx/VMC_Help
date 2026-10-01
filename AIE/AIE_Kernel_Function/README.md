@@ -18,6 +18,19 @@ AIE Class block to import the kernel.
 </div>
 
 ## Parameters
+
+<!--
+#### Function declaration
+-->
+
+<!--
+#### Function Template Parameters
+-->
+
+<!--
+#### Port attributes
+-->
+
 #### Kernel header file
 Mandatory string. Name of the header file that contains the kernel function declaration. The string could be just the file name, a relative path to the file or an absolute path of the file. Use the browse button to choose the file.
 
@@ -51,7 +64,7 @@ Optional preprocessor arguments for downstream compilation with specific preproc
 
 The following two preprocessor option formats are accepted and multiple can be selected: -Dname and -Dname=definition separated by a comma. That is, the optional argument must begin with -D and if the option definition value is not provided, it is assumed to be 1.
 
-#### SSR (Super Sample Rate)
+#### SSR
 Specifies the number of replicated AI Engine kernel instances inside the mask subsystem. The default value is **1**, which preserves legacy single-kernel behavior.
 
 When SSR is greater than 1:

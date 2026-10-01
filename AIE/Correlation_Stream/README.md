@@ -57,7 +57,7 @@ Specifies the length of the G input signal.
 
 <!--
 #### Specify G input length via input port
-When enabled, allows the G input length to be specified via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+When enabled, allows the G input length to be specified via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 The exposed RTP expects an `int32` vector of length 2. This vector contains values for the F length and G length. Currently the first element of the vector (`rtpVecLen[0]`) is ignored. The second element of the vector (`rtpVecLen[1]`) is used to specify the G length.
 
@@ -92,6 +92,17 @@ The following modes are available:
 * **None:** No saturation is performed and the value is truncated on the MSB side.
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
+
+
+<!--
+#### SSR
+Specify the number of parallel input/output data paths. The specified value should be in the form of 2^N.
+-->
+
+<!--
+#### Number of cascade stages
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
+-->
 
 ### Constraints
 Click on the button given here to access the constraint manager and add or update constraints for each kernel. If you set the "Number of cascade stages" parameter to a value greater than one, multiple kernels will be used to process the input. You can use the constraint manager to optimize the performance of your design by setting specific constraints for each kernel (in this case, you need to first run your design). Adding constraints will not affect the functional simulation in Simulink. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.

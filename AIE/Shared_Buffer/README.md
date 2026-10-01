@@ -41,6 +41,15 @@ The number of physical input ports that are used to write to the shared buffer. 
 
 The number of physical output ports that will be used to read from this buffer. There are six ports that can be shared among all buffers located in a memory tile.
 
+
+<!--
+#### Input 0 tiling
+-->
+
+<!--
+#### Output 0 tiling
+-->
+
 #### Input tiling
 
 A MATLAB structure containing the tiling parameters for each input port. See [Tiling Parameters](#tiling-parameters). You can define the tiling parameters as variables in the MATLAB workspace and specify the variable name in this field.

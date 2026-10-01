@@ -59,6 +59,12 @@ Note that for TT_DATA=cfloat, the values in the header are expected as cfloat an
 
 When this option is checked, the window will operate on frames of _Window size_ or (_Window size_)/2^N down to 16. Since the window values cannot be faithfully determined by sampling or interpolating from the provided parent array, it is necessary when in this mode to provide an array holding the window values for each window size. Since this is a full array of (_Window size_)*(1+ 1/2 + 1/4 + …) the overall table size provided must be (_Window size_) * 2. For example, for (_Window size_)=64, the values of the window coefficients for a window size of 64 will occupy array indices 0 to 63. The coefficients for window size of 32 will occupy indices 64 thru 95, and those for windows size of 16 will occupy 96 thru 111.
 
+
+<!--
+#### Input window size (Number of Samples)
+
+-->
+
 #### Input frame size (Number of Samples)
 
 Specifies the number of samples in the input frame excluding the
@@ -68,6 +74,32 @@ Specifies the number of samples in the input frame excluding the
 #### Scale output down by 2^
 
 Describes the power of 2 shift down applied before output.
+
+
+#### Rounding mode
+
+Describes the selection of rounding to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **Floor:** Truncate LSB, always round down (towards negative infinity).
+* **Ceiling:** Always round up (towards positive infinity).
+* **Round to positive infinity:** Round halfway towards positive infinity.
+* **Round to negative infinity:** Round halfway towards negative infinity.
+* **Round symmetrical to infinity:** Round halfway towards infinity (away from zero).
+* **Round symmetrical to zero:** Round halfway towards zero (away from infinity).
+* **Round convergent to even:** Round halfway towards nearest even number.
+* **Round convergent to odd:** Round halfway towards nearest odd number.
+
+These modes round to the nearest integer. They differ only in how they round for values that are exactly between two integers.
+
+#### Saturation mode
+
+Describes the selection of saturation to be applied during the shift down stage of processing.
+
+The following modes are available:
+* **None:** No saturation is performed and the value is truncated on the MSB side.
+* **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
+* **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
 ## Examples 
 

@@ -47,6 +47,7 @@ Not Punctured: Only the output rate can be modified. Its value can be
 integer values from 2 to 7, resulting in a rate 1/2 or rate 1/7 encoder,
 respectively
 
+
 #### Puncture Code0 and Code1  
 The two puncture pattern codes are used to remove bits from the encoded
 data prior to output. The length of each puncture code must be equal to
@@ -82,6 +83,11 @@ Select Binary, Octal, or Decimal.
 #### Constraint length  
 Equals n+1, where n is the length of the constraint register in the
 encoder.
+
+
+#### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 #### Convolution code  
 Array of binary convolution codes. Output rate is derived from the array

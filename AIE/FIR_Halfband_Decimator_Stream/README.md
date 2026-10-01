@@ -35,7 +35,7 @@ also satisfy the following rules:
 
 #### Specify filter coefficients via input port  
 When this option is enabled, the tool allows you to specify reloadable
-filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 
 **AIE1 Devices:** Specify the filter coefficients as a vector of (N+1)/4+1 elements,
 where 'N' is the filter length.
@@ -57,6 +57,12 @@ When this option is enabled, a second stream output is added to the block. The t
 Specifies the filter coefficients as a vector of (N+1)/4+1 elements,
 where 'N' is a positive integer that represents the filter length and
 must be in the range 4 to 240 inclusive.
+
+
+<!--
+#### Filter length
+When using reloadable filter coefficients, use this parameter to specify the number of taps in the filter.
+-->
 
 #### Input frame size (Number of samples)  
 Describes the number of samples used as an input to the filter function.
@@ -92,7 +98,7 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Number of parallel input/output (SSR)  
+#### SSR
 This parameter specifies the number of input (or output) ports and must
 be of the form 2^N, where N is a non-negative integer.
 

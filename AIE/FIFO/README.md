@@ -22,6 +22,23 @@ combination of the two.
 #### FIFO Depth (32-bit words)  
 Should be a positive integer value and the default value is 0.
 
+
+<!--
+#### FIFO type
+-->
+
+<!--
+#### TileType
+-->
+
+<!--
+#### Location(row)
+-->
+
+<!--
+#### Location(column)
+-->
+
 ### Constraints
 Click on the button given here to access the constraint manager and add or update location contraints and choose between a DMA or Stram FIFO. Constraints will only affect the generated graph code, cycle approximate AIE simulation (System C), and behavior in hardware.
 

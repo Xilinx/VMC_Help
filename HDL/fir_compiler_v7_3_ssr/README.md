@@ -26,6 +26,11 @@ Configuration Channel Input Signals:
 ### Filter Specification tab  
 Parameters specific to the Filter Specification tab are as follows:
 
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
 #### Filter Coefficients  
 ##### Coefficient Vector  
 Specifies the coefficient vector as a single MATLAB row vector. The
@@ -80,17 +85,6 @@ value provided in this field defines the up-sampling factor.
 This field is applicable to all Decimation filter
 types. The value provided in this field defines the down-sampling factor.
 
-
-##### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation. Supported values for hybrid simulation are 2, 4, 8, 16, 32, and 64.
-- If the filter type is Interpolation, the output vector size (SSR value
-  on the output side) is equal to the SSR value on the input side
-  multiplied by Interpolation Rate Value.
-- If the filter type is Decimation, the output vector size is equal to
-  the SSR value on the input side divided by Decimation Rate Value.
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows:
@@ -162,6 +156,12 @@ The following two filter architectures are supported.
     Compiler 7.3 block parameters dialog box will not allow you to
     select Transpose Multiply Accumulate.
 - Multiple interleaved channels are not supported.
+
+
+<!--
+#### Column Configuration
+Specifies the individual column lengths in a comma delimited list. (See the data sheet for a more detailed explanation.)
+-->
 
 #### Optimization Options  
 Specifies if the core is required to operate at maximum possible speed

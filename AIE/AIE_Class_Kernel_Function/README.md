@@ -22,7 +22,28 @@ To learn more about class kernels click [here](https://docs.xilinx.com/r/en-US/u
 
 ## Parameters
 
-#### Kernel hearder file
+
+<!--
+#### Port attributes
+-->
+
+<!--
+#### Kernel Class Variant
+-->
+
+<!--
+#### Kernel Class Template Parameters
+-->
+
+<!--
+#### Kernel Class Constructor
+-->
+
+<!--
+#### Kernel Class Constructor Parameters
+-->
+
+#### Kernel header file
 This mandatory string points to the header file (.h file) containing the class definition.
 
 #### Kernel class
@@ -49,7 +70,7 @@ Optional preprocessor arguments for downstream compilation with specific preproc
 
 The following two preprocessor option formats are accepted and multiple can be selected: -D<name> and -D<name>=<definition> separated by a comma. That is, the optional argument must begin with -D and if the option <definition> value is not provided, it is assumed to be 1.
 
-#### SSR (Super Sample Rate)
+#### SSR
 Specifies the number of replicated class-kernel instances inside the mask subsystem. Behavior matches the [AIE Kernel](../AIE_Kernel_Function/README.md) block SSR parameter: default **1** preserves legacy behavior; values greater than 1 use M×SSR column matrices, internal Splitter and Merger blocks, and per-kernel constraints. See UG1483 *SSR Support for AIE Kernel and Graph Blocks* for design rules and DSPLib interoperability.
 
 ## Related blocks
@@ -58,7 +79,7 @@ Use [AIE Kernel](../AIE_Kernel_Function/README.md) block to import a non class b
 Use [AIE Graph](../AIE_Graph_Function/README.md) block to import an AI Engine graph.
 
 ## Examples
-[Importing a templatized class kernel as a block](https://github.com/Xilinx/Vitis_Model_Composer/tree/HEAD/Examples/AIENGINE/Importing_AIE_blocks/AIE_Class_Kernel_FIR)
+[Importing a templatized class kernel as a block](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Importing_AIE_blocks/AIE_Class_Kernel_FIR)
 
   
 

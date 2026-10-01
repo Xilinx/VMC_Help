@@ -18,6 +18,19 @@ ranging from 2 to 1024.
 #### Number of inputs  
 Specify a number between 2 and 32.
 
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
 #### Optional Ports  
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
@@ -62,12 +75,6 @@ Boxes](../../GEN/common-options/README.md).
 Refer to the section Overflow and Quantization in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
-
-##### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
 
 Parameters used by this block are explained in the topic [Common Options
 in Block Parameter Dialog

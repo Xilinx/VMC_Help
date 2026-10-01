@@ -21,6 +21,16 @@ channel does not block the execution of an operation if data is received
 on another input channel.
 
 
+
+<!--
+#### Optimize Goal
+When NonBlocking mode is selected, the following optimization options are activated.
+-->
+
+#### Latency
+
+The number of sample periods by which the block's output is delayed.
+
 ### Optional ports  
 #### Input Channel Ports  
 ##### Has TLAST  

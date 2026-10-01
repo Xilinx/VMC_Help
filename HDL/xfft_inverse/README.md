@@ -39,6 +39,7 @@ for details on this LogicCore IP.
 
 Parameters specific to the Inverse FFT block are:
 
+
 #### Transform Length  
 Select the desired point size ranging from 8 to 65536.
 

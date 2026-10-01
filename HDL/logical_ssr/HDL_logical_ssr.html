@@ -56,6 +56,43 @@ OR, NOR, XOR, XNOR.</p>
 <h4>Number of inputs</h4>
 <p>Specifies the number of inputs (1 - 1024).</p>
 </section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
+</section>
+<section id="latency" class="level4">
+<h4>Latency</h4>
+<p>The number of sample periods by which the block&#39;s output is
+delayed.</p>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>Use this parameter to control processing of multiple data samples on
+every sample period.</p>
+<!--
+#### Precision
+The fundamental computational mode in the Xilinx blockset is arbitrary precision fixed-point arithmetic. Most blocks give you the option of choosing the precision, for example, the number of bits and binary point position.
+-->
+
+<!--
+#### Output Type
+Specifies the data type of the output. Can be Boolean, Fixed-point, or Floating-point.
+-->
+
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
+</section>
 <section id="logical-reduction-operation" class="level4">
 <h4>Logical Reduction Operation</h4>
 <p>When the number of inputs is specified as 1, a unary logical
@@ -68,12 +105,6 @@ bit of the operand using the same logical operator. The logical
 reduction operator implements the same functionality as that of the
 logical reduction operation in HDLs. The output of the logical reduction
 operation is always Boolean.</p>
-</section>
-<section id="super-sample-rate-ssr" class="level4">
-<h4>Super Sample Rate (SSR)</h4>
-<p>This configurable GUI parameter is primarily used to control the
-processing of multiple data samples on every sample period. This blocks
-enable 1-D vector data support for the primary block operation.</p>
 </section>
 </section>
 <section id="output-type-tab" class="level3">

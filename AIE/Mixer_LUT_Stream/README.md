@@ -98,13 +98,6 @@ The following modes are available:
 * **Asymmetric:** Rounds an n-bit signed value in the range `-2^(n-1)` to `2^(n-1)-1`.
 * **Symmetric:** Rounds an n-bit signed value in the range `-2^(n-1)-1` to `2^(n-1)-1`.
 
-#### Sample time
-Specifies the sample time for the output signal.
-
-<div class="noteBox">
-The propagated block sample time in Simulink is equal to "Sample time" multipled by "Samples per frame".
-</div>
-
 ## Examples
 
 ***Click on the images below to open each model.***

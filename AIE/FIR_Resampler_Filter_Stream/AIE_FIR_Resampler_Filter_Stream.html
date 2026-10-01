@@ -106,6 +106,11 @@ filter. It must be in the range 3 to 16.</p>
 <h4>Decimation factor</h4>
 <p>An unsigned integer which describes the decimation factor of the
 filter. It must be in the range 2 to 16.</p>
+<!--
+#### Input frame size (Number of samples)
+Specifies the number of samples for a particular frame. The value must be in the range 16 to 4096 and the default value is 64. The IFFT operation will not begin until this number of samples has been input.
+-->
+
 </section>
 <section id="input-window-size-number-of-samples" class="level4">
 <h4>Input window size (Number of samples)</h4>
@@ -162,8 +167,8 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
 </section>
-<section id="number-of-parallel-inputoutput-ssr" class="level4">
-<h4>Number of parallel input/output (SSR)</h4>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
 <p>This parameter specifies the number of input (or output) paths. SSR
 decomposition is currently unavailable for the FIR Resampler Filter
 Stream block. Please set this parameter to 1 and control Super Sample

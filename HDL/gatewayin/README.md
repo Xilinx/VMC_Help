@@ -61,6 +61,7 @@ Floating-point.
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
 
+
 #### Fixed-point Precision  
 ##### Number of bits  
 Specifies the total number of bits, including the binary point bit
@@ -117,6 +118,12 @@ to the left of the most significant representable bit), or to Flag as
 error (an overflow as a Simulink® error) during simulation. Flag as
 error is a simulation only feature. The hardware generated is the same
 as when Wrap is selected.
+
+
+<!--
+#### Sample period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.

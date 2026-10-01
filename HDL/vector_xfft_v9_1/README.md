@@ -141,6 +141,7 @@ Parameters specific to the Basic tab are as follows.
 ##### Transform_length  
 One of N = 2^((3..16)) = 8 - 65536.
 
+
 #### Architecture Configuration  
 ##### Target Clock Frequency(MHz)  
 Enter the target clock frequency.
@@ -181,6 +182,7 @@ interpreted as pairs of 32-bit IEEE-754 floats and phase factors as
 24- or 25-bit fixed-point numbers. When disabled, samples are
 fixed-point with the precision controlled by the input signal types
 and **Phase Factor Width**.
+
 
 #### Precision Options
 ##### Phase Factor Width
@@ -230,6 +232,7 @@ prefix length can be from 0 to 1023 samples, and a CP_LEN value of
 0010010110 produces a cyclic prefix consisting of the last 150 samples
 of the output data.
 
+
 #### Throttle Schemes  
 Select the tradeoff between performance and data timing requirements.
 
@@ -260,10 +263,9 @@ than saturated, resulting in the transformed data becoming unusable for
 most applications
 
 #### Block Icon Display  
-##### Display shortened port names  
-On by default. When unchecked, data_tvalid, for example, becomes
-m_axis_data_tvalid.
+##### Display shortened port names
 
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 ### Implementation tab  
 Parameters specific to the Implementation tab are as follows.

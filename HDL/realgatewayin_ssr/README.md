@@ -66,12 +66,6 @@ Parameters specific to the Basic tab are as follows:
 Specifies the output data type. Can be Boolean, Fixed-point, or
 Floating-point.
 
-##### Super Sample Rate (SSR)
-This configurable GUI parameter is primarily
-used to control processing of multiple data samples on every sample
-period. This block enables 1-D vector support for the primary block
-operation.
-
 #### Arithmetic Type  
 If the Output Type is specified as Fixed-point, you can select Signed
 (2’s comp) or Unsigned as the Arithmetic Type.
@@ -126,6 +120,16 @@ to the left of the most significant representable bit), or to Flag as
 error (an overflow as a Simulink error) during simulation. Flag as error
 is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.
+
+
+<!--
+#### Sample period
+Data streams are processed at a specific sample rate as they flow through Simulink. Typically, each block detects the input sample rate and produces the correct sample rate on its output. Xilinx blocks Up Sample and Down Sample provide a means to increase or decrease sample rates.
+-->
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
 
 ### Implementation Tab  
 Parameters specific to the Implementation tab are as follows:
@@ -194,6 +198,7 @@ Attribute.
 #### Specify IOB location constraints  
 Checking this option allows IOB location constraints and I/O standards
 to be specified.
+
 
 #### IOB pad locations, e.g. {'MSB', ..., 'LSB'}  
 IOB pin locations can be specified as a cell array of strings in this

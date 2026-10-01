@@ -25,6 +25,16 @@ Parameters specific to the Basic tab are as follows.
 #### Initial value  
 specifies the initial value in the register.
 
+
+<!--
+#### Provide synchronous reset port
+Selecting the Provide Synchronous Reset Port option activates an optional reset (rst) pin on the block.
+-->
+
+#### Provide enable port
+
+Selecting the Provide Enable Port option activates an optional enable (en) pin on the block. When the enable signal is not asserted the block holds its current state until the enable signal is asserted again or the reset signal is asserted.
+
 #### Optional Ports  
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog

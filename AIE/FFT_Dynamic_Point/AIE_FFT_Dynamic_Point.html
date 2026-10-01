@@ -126,6 +126,10 @@ input/output data type is a float type.</li>
 FFT. You can perform different lengths of FFT on different input data
 windows. It must be a power of 2 with a minimum value of 16. The maximum
 value supported by the library element is 65536.</p>
+<!--
+#### Input window size (Number of samples excluding header)
+-->
+
 </section>
 <section id="input-window-size" class="level4">
 <h4>Input Window Size</h4>
@@ -173,6 +177,29 @@ range <code>-2^(n-1)</code> to <code>2^(n-1)-1</code>.</li>
 <li><strong>Symmetric:</strong> Rounds an n-bit signed value in the
 range <code>-2^(n-1)-1</code> to <code>2^(n-1)-1</code>.</li>
 </ul>
+</section>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
+<p>This parameter is intended to improve performance and support FFT
+sizes beyond the limitations of a single tile. For an SSR value of &#39;n&#39;
+(which must be of the form 2^N, where N is a positive integer), the FFT
+operation is performed in parallel and the actual FFT size is divided by
+&#39;n&#39;. For example, a 16384 point FFT with an SSR value of 8 creates 8
+stream inputs and there will be 8 subframe FFTs each of point size 2048.
+The specified FFT size and SSR values should be such that FFT size / SSR
+should not exceed 2048.</p>
+</section>
+<section id="twiddle-mode" class="level4">
+<h4>Twiddle Mode</h4>
+<p>This parameter controls the amplitude of the twiddle factors. It
+applies to <code>cint16</code> and <code>cint32</code> twiddle factors
+only; it does not apply to <code>cfloat</code> twiddle factors.</p>
+<p>Twiddle mode 0 means use max amplitude twiddles which saturate at
+<code>2^(N-1)-1</code>, where N is the number of bits in the type (e.g.
+<code>cint16</code> has 16 bits per component).</p>
+<p>Twiddle mode 1 means use 1/2 max magnitude twiddles, i.e.
+<code>2^(N-1)</code>. This avoids saturation, but loses 1 bit of
+precision and so noise overall will be higher.</p>
 </section>
 <section id="use-widget-for-ssr-kernels" class="level4">
 <h4>Use Widget for SSR Kernels</h4>

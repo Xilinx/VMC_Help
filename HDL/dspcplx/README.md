@@ -53,6 +53,7 @@ equality check on the output of the adder/subtractor/logic unit.
 ##### Using Pattern Attribute RE (58-bit hex value)  
 Enter a 58-bit value that is used in the pattern detector.
 
+
 #### Mask Input RE  
 ##### Mask input from c_re port  
 When selected, the mask_re used in pattern detection is read from the
@@ -67,6 +68,7 @@ Selects rounding_mode 1 (C_RE-bar left shifted by 1).
 
 ##### MODE2  
 Selects rounding_mode 2 (C_RE-bar left shifted by 2).
+
 
 #### Pattern Detection on Imaginary Output  
 ##### Reset p_im register on pattern detection  
@@ -91,6 +93,7 @@ Selects rounding_mode 1 (C_IM-bar left shifted by 1).
 
 ##### MODE2  
 Selects rounding_mode 2 (C_IM-bar left shifted by 2).
+
 
 ### Optional Ports tab  
 Parameters specific to the Optional Ports tab are as follows:
@@ -288,6 +291,7 @@ Indicates to add a pipeline register to the Conjugate_A input.
 
 #### Pipeline Conjugate register B  
 Indicates to add a pipeline register to the Conjugate_B input.
+
 
 ### Reset/Enable Ports tab  
 Parameters specific to the Reset/Enable tab are as follows:

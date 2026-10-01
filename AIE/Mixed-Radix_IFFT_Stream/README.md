@@ -24,6 +24,21 @@ Describes the data type of the twiddle factors of the transform. It must be one 
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
+
+<!--
+#### IFFT size
+This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 4 to 16 inclusive.
+-->
+
+<!--
+#### Input window size (Number of samples)
+Describes the total number of samples used as an input to the Mixed Radix FFT block. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^12, inclusive.
+-->
+
+<!--
+#### Dynamic (1) or static (0) point size
+-->
+
 #### Point Size (IFFT Size)
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 3 to 12 inclusive.
 

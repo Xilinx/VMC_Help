@@ -174,6 +174,15 @@ compiled. For information on the XPM_FIFO_AXIS Xilinx Parameterized
 Macro (XPM), refer to UltraScale Architecture Libraries Guide (<a href="https://docs.xilinx.com/access/sources/dita/map?Doc_Version=2022.2%20English&amp;url=ug974-vivado-ultrascale-libraries">UG974</a>).</p>
 <p>Other parameters used by this block are explained in the topic <a href="matlab:helpview(vmcHelp(&#39;name&#39;,&#39;common-options&#39;,&#39;category&#39;,&#39;GEN&#39;))">Common
 Options in Block Parameter Dialog Boxes</a>.</p>
+</section>
+<section id="display-shortened-port-names" class="level4">
+<h4>Display shortened port names</h4>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
 <hr />
 <p>Copyright (C) 2026 Advanced Micro Devices, Inc. All rights
 reserved.</p>

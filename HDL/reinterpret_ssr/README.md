@@ -82,6 +82,11 @@ The position to which the output's binary point is to be forced. The
 supplied value must be an integer between zero and the number of bits in
 the input (inclusive).
 
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
 ## LogiCORE™ Documentation
 
 LogiCORE IP Floating-Point Operator

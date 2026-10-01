@@ -84,14 +84,19 @@ number of columns in the output matrix C.</p>
 A and the number of rows in matrix B. This dimension must match for
 matrix multiplication to be valid.</p>
 </section>
-<section id="ssr-super-sample-rate" class="level4">
-<h4>SSR (Super Sample Rate)</h4>
+<section id="ssr" class="level4">
+<h4>SSR</h4>
 <p>Specifies the number of parallel data paths processed by the block.
 Increasing SSR allows for higher throughput by distributing the
 computation across multiple AI Engine tiles.</p>
 <p>When SSR &gt; 1, the input matrices and output are split across
 multiple ports. The specific data distribution depends on the memory
 layout (row-major or column-major).</p>
+<!--
+#### Number of cascade stages
+This determines the number of kernels the FIR will be divided over in series to improve throughput.
+-->
+
 </section>
 <section id="a-input-leading-dimension" class="level4">
 <h4>A input leading dimension</h4>
@@ -122,6 +127,18 @@ in memory</li>
 <li><strong>Column-major(1):</strong> Matrix elements are stored column
 by column in memory</li>
 </ul>
+<!--
+#### Add tiling to input A
+-->
+
+<!--
+#### Add tiling to input B
+-->
+
+<!--
+#### Add detiling to output
+-->
+
 </section>
 <section id="add-tiling-to-input-a-add-tiling-to-input-b-add-detiling-to-output" class="level4">
 <h4>Add tiling to input A, Add tiling to input B, Add detiling to

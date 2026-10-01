@@ -17,6 +17,12 @@ This stream-based delay block produces an output signal by delaying the input si
 Set the input/output data type.
 
 
+
+<!--
+#### Input window size (Number of samples)
+Describes the total number of samples used as an input to the Mixed Radix FFT block. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^12, inclusive.
+-->
+
 #### Input Window Size(Number of Samples)  
 Describes the number of samples used as an input to the Vectorized Sample Delay Stream. This parameter must be in the range of 2^0 and 2^32-1, inclusive.
 

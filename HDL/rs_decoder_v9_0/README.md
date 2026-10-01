@@ -197,6 +197,7 @@ pin Clock Enable.
 ### Attributes 1 tab  
 Parameters specific to the Attributes 1 tab are as follows.
 
+
 #### Code Block Specification  
 ##### Code specification  
 Specifies the type of RS Decoder desired. The choices are as follows.
@@ -396,6 +397,11 @@ Specifies the number of marker bits.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+
+#### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 ## LogiCORE™ Documentation
 

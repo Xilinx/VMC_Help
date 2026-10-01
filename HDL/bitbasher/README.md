@@ -21,6 +21,7 @@ Bitwise manipulation expression based on Verilog Syntax. Multiple
 expressions (limited to a maximum of 4) can be specified using new line
 as a separator between expressions.
 
+
 ### Output Type tab  
 #### Output  
 This refers to the port on which the data type is specified.

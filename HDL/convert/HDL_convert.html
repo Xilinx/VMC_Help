@@ -128,6 +128,13 @@ error (an overflow as a Simulink error) during simulation. Flag as error
 is a simulation only feature. The hardware generated is the same as when
 Wrap is selected.</p>
 </section>
+<section id="provide-enable-port" class="level4">
+<h4>Provide enable port</h4>
+<p>Selecting the Provide Enable Port option activates an optional enable
+(en) pin on the block. When the enable signal is not asserted the block
+holds its current state until the enable signal is asserted again or the
+reset signal is asserted.</p>
+</section>
 <section id="optional-ports" class="level4">
 <h4>Optional Ports</h4>
 <p>Provide enable port activates an optional enable (en) pin on the
@@ -145,6 +152,15 @@ model). Model Composer will not perform extensive pipelining unless you
 select the Pipeline for maximum performance option (described below);
 additional latency is usually implemented as a shift register on the
 output of the block.</p>
+</section>
+<section id="pipeline-for-maximum-performance" class="level4">
+<h4>Pipeline for maximum performance</h4>
+<p>The LogiCORE™ can be internally pipelined to optimize for speed
+instead of area. Selecting this option puts all user defined latency
+into the core until the maximum allowable latency is reached. If the
+Pipeline for maximum performance option is not selected and latency is
+greater than zero, a single output register is put in the core and
+additional latency is added on the output of the core.</p>
 </section>
 </section>
 <section id="implementation-tab" class="level3">

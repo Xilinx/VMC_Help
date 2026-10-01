@@ -68,6 +68,17 @@ error.
 If you do not need full precision, this option allows you to specify a
 reduced number of total bits and/or fractional bits.
 
+
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
 #### Fixed-point Output Type  
 Arithmetic type
 

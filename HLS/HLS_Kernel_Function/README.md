@@ -27,6 +27,19 @@ void func(hls::stream<unsigned int> &in, const ap_uint<8> (&param_in)[32], hls::
 For a complete list of supported function arguments, see the table below.
 
 ## Parameters
+
+<!--
+#### Port Attributes
+-->
+
+<!--
+#### Specify argument directionality and interface in the following table column then click Build
+-->
+
+<!--
+#### Function Template Parameters
+-->
+
 #### Kernel header file
 The name of the HLS kernel header file that contains the function declaration. The string could be just the file name, a relative path to the file, or an absolute path of the file. Use the browse button to select the file.
 
@@ -65,7 +78,7 @@ Please see the following table for a detailed list of supported data types for i
 | **Template**	| Any template that is deducted into above supported scalar/vector/stream types | `ap_uint<BITS>`, `std::complex<DATA_TYPE>`, `ap_axiu<BITS, 0, 0, 0>`, `hls::axis<ap_int<BITS>, 0, 0, 0> (&arg)[20]`, `hls::stream<ap_int<BITS>>`, `hls::stream<ap_uint<BITS>>`, `hls::stream<ap_axis<BITS, 0, 0, 0>>`, `hls::stream<ap_axiu<BITS, 0, 0, 0>>` |
 
 ## Examples
-[2d FFT with both AI Engines and HLS Kernel blocks](https://github.com/Xilinx/Vitis_Model_Composer/blob/HEAD/Examples/AIENGINE_plus_PL/AIE_HLS/FFT2D)
+[2d FFT with both AI Engines and HLS Kernel blocks](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE_plus_PL/AIE_HDL/FFT2D)
 
 
 

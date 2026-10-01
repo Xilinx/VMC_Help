@@ -132,6 +132,11 @@ for an explanation of the bits in this field.</td>
 <section id="transform_length" class="level5">
 <h5>Transform_length</h5>
 <p>One of N = 2^((3..16)) = 8 - 65536.</p>
+<!--
+#### Native Floating Point Data Format
+Checkbox (`enable_ssr` in the mask). When enabled, input samples are interpreted as pairs of 32-bit IEEE-754 floats and phase factors as 24- or 25-bit fixed-point numbers. When disabled, samples are fixed-point with the precision controlled by the input signal types and **Phase Factor Width**.
+-->
+
 </section>
 </section>
 <section id="architecture-configuration" class="level4">
@@ -278,8 +283,12 @@ most applications</p>
 <h4>Block Icon Display</h4>
 <section id="display-shortened-port-names" class="level5">
 <h5>Display shortened port names</h5>
-<p>On by default. When unchecked, data_tvalid, for example, becomes
-m_axis_data_tvalid.</p>
+<p>AXI4-Stream signal names have been shortened (by default) to improve
+readability on the block. Name shortening is purely cosmetic and when
+netlisting occurs, the AXI4-Stream name is used. For example, a
+shortened master signal on an AXI4-Stream interface might be
+data_tvalid. When you uncheck Display shortened port names, the name
+becomes m_axis_data_tvalid.</p>
 </section>
 </section>
 </section>

@@ -28,6 +28,17 @@ out_scale is used in if there is an internal overflow.
 
 ## Parameters
 
+
+<!--
+#### Number of bits
+Fixed-point numbers are stored in data types characterized by their word size as specified by Number of bits, Binary point, and Arithmetic type parameters. The maximum number of bits supported is 4096.
+-->
+
+<!--
+#### Binary point
+The binary point is the means by which fixed-point numbers are scaled. The Binary point parameter indicates the number of bits to the right of the binary point (for example, the size of the fraction) for the output port. The binary point position must be between zero and the specified number of bits.
+-->
+
 #### IFFT length (N) 
 Is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. SSR is the super sample rate, the
@@ -42,6 +53,7 @@ limited by the DSP48 multiplier A port size.
 #### Enable Rounding
 
 If it is selected, then the Vector IFFT output rounds to the nearest integer.
+
 
 #### Bypass Reordering 
 

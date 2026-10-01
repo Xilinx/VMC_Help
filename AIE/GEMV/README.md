@@ -34,7 +34,7 @@ Specifies the number of columns in matrix A and the length of vector B (K dimens
 #### Number of frames
 Specifies the number of batches of input data that will be processed per iteration.
 
-#### SSR (Super Sample Rate)
+#### SSR
 Specifies the number of parallel data paths processed by the block. Increasing SSR allows for higher throughput by processing multiple samples in parallel.
 
 **When SSR > 1:**

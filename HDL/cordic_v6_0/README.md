@@ -172,6 +172,7 @@ cartesian_tdata_imag, and phase_tdata_phase. The Input width range 8 to
 Controls the width of the output ports dout_tdata_real, dout_tdata_imag,
 and dout_tdata_phase. The Output width range 8 to 48 bits.
 
+
 #### Round mode  
 ##### Truncate  
 The real, imag, and phase outputs are truncated.
@@ -221,6 +222,7 @@ the first quadrant. Coarse Rotation extends the CORDIC operational range
 to the full circle by rotating the input sample into the first quadrant
 and inverse rotating the output sample back into the appropriate
 quadrant.
+
 
 #### Optional ports  
 ##### Standard  
@@ -298,9 +300,9 @@ Core is configured for maximum performance.
 
 ### Implementation tab  
 #### Block Icon Display  
-##### Display shortened port names  
-This option is ON by default. When unselected, the full AXI name of each
-port is displayed on the block icon.
+##### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 ## LogiCORE™ Documentation
 

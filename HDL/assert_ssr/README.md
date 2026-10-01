@@ -72,6 +72,11 @@ specified Explicitly from the Sample rate parameter in the Assert block
 dialog box.
 
 
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
 ### Provide output port  
 Specifies whether or not the block will feature an output port. The type
 and/or rate of the signal presented on the output port is the type
@@ -94,3 +99,4 @@ Copyright (C) 2026 Advanced Micro Devices, Inc.
 All rights reserved.
 
 SPDX-License-Identifier: MIT
+

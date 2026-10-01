@@ -29,6 +29,11 @@ The use of the Vector IFFT Float implementation is recommended in only Verilog d
 
 ## Parameters
 
+
+#### SSR
+
+Use this parameter to control processing of multiple data samples on every sample period.
+
 #### FFT length (N) 
 N is the size of the transformation, and should be powers
 of 2 in the range of 2^3 to 2^16. 

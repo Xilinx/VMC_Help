@@ -274,6 +274,7 @@ Select Forney Convolutional or Rectangular Block.
 #### Mode  
 Select Interleaver or Deinterleaver
 
+
 #### Symbol memory  
 Specifies whether or not the data symbols are stored in Internal FPGA
 RAM or in External RAM.
@@ -371,6 +372,12 @@ new block. Row permutations are not supported for the variable row type.
 ROW_SEL is sampled at the start of each new block. This value is then
 used to select from one of the possible values for the number of rows
 provided in the COE file.
+
+
+<!--
+#### ARESETn (Active Low)
+Active-low synchronous clear input that always takes priority over ACLKEN. A minimum ARESETn active pulse of two cycles is required, since the signal is internally registered for performance. A pulse of one cycle resets the control and datapath of the core, but the response to the pulse is not in the cycle immediately following.
+-->
 
 #### Number of Columns  
 ##### Value  
@@ -545,6 +552,11 @@ performance.
 Other parameters used by this block are explained in the topic [Common
 Options in Block Parameter Dialog
 Boxes](../../GEN/common-options/README.md).
+
+
+#### Display shortened port names
+
+AXI4-Stream signal names have been shortened (by default) to improve readability on the block. Name shortening is purely cosmetic and when netlisting occurs, the AXI4-Stream name is used. For example, a shortened master signal on an AXI4-Stream interface might be data_tvalid. When you uncheck Display shortened port names, the name becomes m_axis_data_tvalid.
 
 ## LogiCORE™ Documentation
 

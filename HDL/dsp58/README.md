@@ -122,6 +122,7 @@ Selects rounding_mode 1 (C-bar left shifted by 1).
 ##### MODE2  
 Selects rounding_mode 2 (C-bar left shifted by 2).
 
+
 ### Wide Xor tab  
 Parameters specific to the Wide Xor tab are as follows.
 
@@ -132,6 +133,7 @@ Use this is feature to perfom a 116 bit XOR function.
 Use the XORSIMD attribute to select the width of the XOR function.
 Select either XOR12 (the default), XOR22, XOR24, XOR34, XOR58, or
 XOR116).
+
 
 ### Optional Ports tab  
 #### Input Ports  
@@ -279,6 +281,7 @@ Indicates whether the carry in select port should be registered.
 
 ##### Pipeline INMODE register  
 Indicates to add a pipeline register to the INMODE input.
+
 
 ### Reset/Enable Ports tab  
 #### Provide Reset Ports  

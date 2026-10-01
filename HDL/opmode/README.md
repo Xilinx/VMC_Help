@@ -26,6 +26,7 @@ To view the output of the Opmode block, connect the output directly to a Simulin
 
 ### Opmode tab  
 Parameters specific to the Opmode tab are as follows.
+
 #### Instruction  
 ##### Device  
 Specifies whether to generate an instruction for the DSP48E, DSP48E1, or
