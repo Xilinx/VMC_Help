@@ -27,16 +27,6 @@ Specifies the number of rows in the input matrix `A`.
 #### Columns of matrix
 Specifies the number of columns in the input matrix `A`.
 
-
-<!--
-#### Number of Jacobi sweep passes ssr
--->
-
-<!--
-#### Provide diagonal elements inverse
-When enabled, the block provides the inverse of diagonal elements. Disable when chaining with a substitution core that requires the standard Cholesky output form.
--->
-
 #### Number of cascade stages
 Specifies the number of kernels used to divide and cascade the computation.
 
