@@ -12,42 +12,57 @@ AI Engine/Tools; HLS/Tools; Utilities/Code Generation.
 
 The Vitis Model Composer Hub block controls the behavior of the Vitis Model Composer tool.
 
-You can specify the targeted design flow for the generated output, the directory path for the output, and the desired device and design clock frequency using the following tabs.
+You can specify the targeted design flow for the generated output, the directory path for the output, and the desired device and design clock frequency using the following panes.
 
-- The **Hardware Selection** pane helps with device or board selection.
-- The **Code Generation** pane provides tabs to take the design through an elaboration workflow of analysis, validation on hardware, and export out of Vitis Model Composer. Different options will be displayed depending on if the subsystem is targeting HDL, HLS, or AIE.
+- The **Hardware Selection** pane helps with device, board, or platform selection.
+- The **Code Generation** pane provides tabs to take the design through an elaboration workflow of analysis, validation on hardware, and export out of Vitis Model Composer. Different tabs and options are displayed depending on whether the selected subsystem targets HDL, HLS, or AIE.
 - The **Design Settings** pane provides miscellaneous settings for the design.
+
+The **Refresh** button at the bottom of the dialog box rebuilds the subsystem list after you change the design. **OK**, **Apply**, **Cancel**, and **Help** apply or discard your changes, or open this page.
 
 ## Data Type Support
 Data type support is not applicable to the Vitis Model Composer Hub block.
 
 ## Parameters
 
-The following section describes the configurable options available in each pane of the Vitis Model Composer Hub block.
+The following section describes the configurable options available in each pane of the Vitis Model Composer Hub block, in the order in which they appear in the dialog box.
 
 ### Hardware Selection
-Clicking the browse button (…) displays the Device Chooser dialog box.
-This allows you to select a part, board, or platform to which your
-design is targeted. Vitis Model Composer obtains board and device data
-from the Vivado database.
+
+#### Select Hardware
+
+Shows the selected part, board, or platform. Clicking the browse button (...) displays the Device Chooser dialog box. This allows you to select a part, board, or platform to which your design is targeted. Vitis Model Composer obtains board and device data from the Vivado database.
+
+Vitis Model Composer uses your current Vivado license tier to determine which devices, boards, platforms, and flows are available. If your license changes, run `xmcHubReloadDeviceInfo` to refresh the Device Chooser.
+
+The **Selected Device Info**, **Selected Board Info**, or **Selected Platform Info** area below the field summarizes the current selection.
 
 <img src="./Images/hardware_selection.png" width="600">
 
-### Code Generation 
-To the left of this tab, a list displays all subsystems in your design. Selecting a subsystem reveals specific settings based on its type (HDL, HLS, or AI Engine). The tool automatically detects the subsystem type based on its internal blocks.
+### Code Generation
+To the left of this pane, a list displays all subsystems in your design. Subsystems marked with a green check mark are ready for code generation. Select a subsystem to display its settings. The tool automatically detects the subsystem type (HDL, HLS, HLS Kernel, or AI Engine) based on its internal blocks, and shows the following tabs:
+
+| Subsystem type | Tabs |
+|---|---|
+| HDL | Settings, Analyze, Validate On Hardware, Export |
+| HLS | Settings, Analyze, Export |
+| HLS Kernel | Settings, Analyze, Validate On Hardware, Export |
+| AI Engine | Settings, Analyze, Validate On Hardware, Export |
+| Heterogeneous design (DUT) | Validate On Hardware, Export |
+
+When a design contains AI Engine and PL subsystems, the list shows a DUT entry. Code for the whole design is validated or exported from the DUT entry; the individual subsystems keep their own Settings and Analyze tabs.
 
 ### Settings (HDL)
 
-
-<!--
-#### Subsystem name
--->
+These settings are common to all design steps for the subsystem.
 
 #### Target Language
 
 Specifies the HDL language to be used for compilation of the design. The possibilities are VHDL and Verilog.
-* **VHDL library:** Specifies the name of VHDL work library for code generation. The default name is xil_defaultlib.
-* **Use STD_LOGIC type for Boolean or 1 bit wide gateways:** If your design's Hardware Description Language (HDL) is VHDL, selecting this option will declare a Boolean or 1-bit port (Gateway In or Gateway Out) as a STD-LOGIC type. If this option is not selected, Vitis Model Composer will interpret Boolean or 1-bit ports as vectors.
+
+Clicking the browse button (...) next to **Target Language** opens the **Setting of generated VHDL Library** dialog box:
+* **VHDL Library:** Specifies the name of VHDL work library for code generation. The default name is xil_defaultlib.
+* **Use std_logic for boolean type or 1 bit wide gateways:** If your design's Hardware Description Language (HDL) is VHDL, selecting this option will declare a Boolean or 1-bit port (Gateway In or Gateway Out) as a STD_LOGIC type. If this option is not selected, Vitis Model Composer will interpret Boolean or 1-bit ports as vectors.
 <div class="noteBox">
 When you enable this option and try to run Generate code and Run behavioral simulation in Vivado, you might see a failure during the elaboration phase.
 </div>
@@ -66,7 +81,7 @@ Must be enabled when the design has multiple clocks. This indicates to the code 
 
 #### Number of clocks
 
-Defines the number of clocks in the design. The number of clock tabs that appear will be equivalent to the number of clocks. In each clock tab, you must select the subsystem and configure the clock settings of that subsystem.
+Visible only when **Enable multiple clocks** is selected. Defines the number of clocks in the design. The number of clock tabs (**Clock1**, **Clock2**, and so on) that appear will be equivalent to the number of clocks. In each clock tab, you must select the **Subsystem** and configure the **FPGA clock period (ns)**, **Simulink system period (sec)**, **Clock pin location**, and **Provide clock enable clear pin** settings of that subsystem.
 
 #### FPGA clock period (ns)
 
@@ -74,7 +89,7 @@ Defines the period in nanoseconds of the system clock. The value need not be an 
 
 #### Simulink system period (sec)
 
-Defines the Simulink System Period, in units of seconds. 
+Defines the Simulink System Period, in units of seconds.
 
 This parameter, in conjunction with the FPGA clock period, determines how the timing of the Simulink model maps to the timing of the design running in hardware.
 
@@ -93,7 +108,17 @@ Defines the pin location for the hardware clock. This information is passed to t
 
 This instructs Vitis Model Composer to provide a ce_clr port on the top-level clock wrapper. The ce_clr signal is used to reset the clock enable generation logic. The ability to reset clock enable generation logic allows designs to have dynamic control for specifying the beginning of data path sampling. This signal is important for modules that will be implemented in a DFX platform.
 
+#### Remote IP Cache
+
+When enabled, Vivado IP generated for the HDL subsystem is stored in the Vitis Model Composer IP cache so that later compilations can reuse it instead of regenerating it.
+
+#### Clear Cache
+
+Click to delete the Vitis Model Composer IP cache directory.
+
 ### Settings (AIE)
+
+These settings are common to all design steps for the subsystem.
 
 #### AIE Compiler Options
 
@@ -101,13 +126,19 @@ Provides the ability to pass additional command line options (debug options, exe
 
 ### Settings (HLS)
 
-#### FPGA clock frequency
+These settings are common to all design steps for the subsystem or kernel.
+
+#### FPGA clock frequency (MHz)
 
 Specifies the clock frequency in MHz for the targeted device. This frequency is passed to the downstream tool flow.
 
+#### Throughput Factor
+
+Visible for HLS subsystems only (not for HLS Kernel subsystems). Specifies the throughput factor for computer vision blocks in the subsystem. For details, refer to <a href="https://docs.amd.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/Setting-Throughput-Factor-from-the-Hub-Block">Setting Throughput Factor from the Hub Block</a> in the Vitis Model Composer User Guide.
+
 #### Testbench stack size (MBytes)
 
-This parameter prompts you to enter a larger stack size. When Create and run testbench is enabled, the Testbench stack size option specifies the size of the testbench stack frame during C simulation (CSIM). Occasionally, the default stack frame size of 10 MB allocate for execution of the testbench may be insufficient to run the test, due to large arrays allocated on the stack and/or deep nesting of subsystems. Typically when this happens, the test would fail with a segmentation fault and an associated error message. In such a case you can increase the size of the stack frame and rerun the test.
+This parameter prompts you to enter a larger stack size. When **Generate testbench** is enabled, the Testbench stack size option specifies the size of the testbench stack frame during C simulation (CSIM). Occasionally, the default stack frame size of 10 MB allocate for execution of the testbench may be insufficient to run the test, due to large arrays allocated on the stack and/or deep nesting of subsystems. Typically when this happens, the test would fail with a segmentation fault and an associated error message. In such a case you can increase the size of the stack frame and rerun the test.
 
 ### Analyze (HDL)
 
@@ -115,13 +146,15 @@ This parameter prompts you to enter a larger stack size. When Create and run tes
 For more information about the tasks available on this tab, refer to <a href="https://docs.amd.com/r/en-US/ug1483-model-composer-sys-gen-user-guide/Performing-Analysis-in-Vitis-Model-Composer">Performing Analysis in Vitis Model Composer</a> in the Vitis Model Composer User Guide.
 </div>
 
+Click **Analyze** to analyze post-synthesis and post-implementation timing and resource utilization.
+
 #### Target Directory
 
 Specifies the work directory for performing the actions on this tab.
 
 #### Perform Analysis
 
-Specifies whether an analysis (timing or resource) will or will not be performed on the Vitis Model Composer design when it is compiled. If None is selected, no timing analysis or resource analysis will be performed. If Post Synthesis is selected, the analysis will be performed after the design has been synthesized in the Vivado toolset. If Post Implementation is selected, the analysis will be performed after the design is implemented in the Vivado toolset.
+Specifies when the timing or resource analysis is performed on the Vitis Model Composer design. If Post Synthesis is selected, the analysis will be performed after the design has been synthesized in the Vivado toolset. If Post Implementation is selected, the analysis will be performed after the design is implemented in the Vivado toolset.
 
 #### Analysis Type
 
@@ -134,7 +167,7 @@ Specifies the type of information to be displayed on each block icon in the mode
 
 ![](./Images/kgl1663681704579.png)
 
-* **Normalized Sample Periods:** Displays the normalized sample periods for all the input and output ports on each block. For example, if the Simulink System Period is set to 4 and the sample period propagated to a block port is 4, then the normalized period that is displayed for the block port is 1; and if the period propagated to the block port is 8 then the sample period displayed would be 2 (a larger number indicates a slower rate).
+* **Normalized sample periods:** Displays the normalized sample periods for all the input and output ports on each block. For example, if the Simulink System Period is set to 4 and the sample period propagated to a block port is 4, then the normalized period that is displayed for the block port is 1; and if the period propagated to the block port is 8 then the sample period displayed would be 2 (a larger number indicates a slower rate).
 
 ![](./Images/izx1663681740141.png)
 
@@ -157,6 +190,8 @@ When this check box is selected and the Generate button is activated for netlist
 
 ### Analyze (AIE)
 
+Click **Analyze** to run System-C simulation, verify the output against Simulink, and analyze throughput and latency.
+
 #### Target Directory
 
 Specifies the work directory for performing the actions on this tab.
@@ -165,48 +200,21 @@ Specifies the work directory for performing the actions on this tab.
 
 Provides the ability to pass additional command line options to the AIE Simulator.
 
-#### Specify Simulation timeout (cycles) 
-
-When enabled, it specifies the number of cycles for which AIE simulation runs. This option is useful as a safety mechanism when the amount of input data is finite. If simulation timeout is not enabled, AI Engine simulation can continue indefinitely. The default value is 50000.
-
-#### Specify number of Graph Iterations 
-
-When enabled, it specifies the number of complete executions of the AI Engine graph to simulate. This option is useful when verifying functional correctness in cases where the number of cycles required to complete graph execution is not known in advance.
-
 #### Simulation timeout (cycles)
 
-Specifies the number of cycles for which AIE simulation is run. The default value is 50000.
+When selected, the value in the adjacent field specifies the number of cycles for which AIE simulation runs. This option is useful as a safety mechanism when the amount of input data is finite. If simulation timeout is not enabled, AI Engine simulation can continue indefinitely. This option is selected by default, and the default value is 50000.
+
+#### Number of graph iterations
+
+When selected, the value in the adjacent field specifies the number of complete executions of the AI Engine graph to simulate. This option is useful when verifying functional correctness in cases where the number of cycles required to complete graph execution is not known in advance.
+
+When both **Simulation timeout (cycles)** and **Number of graph iterations** are selected, AI Engine simulation stops when the first condition is met.
 
 #### Collect profiling statistics and enable 'printf' for debugging
 
 When enabled, this option allows profiling data to be collected for analysis.
 
-
-<!--
-#### Collect data for Vitis Analyzer
--->
-
-<!--
-#### Plot AIE Simulation output and estimate throughput
--->
-
-<!--
-#### Generate Hardware Image
--->
-
-<!--
-#### Generate (libadf.a/.xo)
--->
-
-<!--
-#### Generate Hardware Validation Code
--->
-
-<!--
-#### Platform
--->
-
-#### Collect trace data for Vitis Analyzer, viewing internal signals, and latency
+#### Collect trace data for Vitis Analyzer, view internal signals, and latency
 
 When enabled, this option collects trace data for signals within the AI Engine design to be viewed in Vitis Analyzer or the Simulation Data Inspector.
 
@@ -216,9 +224,11 @@ Opens the Simulation Data Inspector to plot the outputs of the AI Engine subsyst
 
 #### Open Vitis Analyzer
 
-Click to invoke the Vitis Analyzer tool. This option is only enabled after AI Engine Simulation has been ran at least once after enabling.
+Click to invoke the Vitis Analyzer tool. This option is only enabled after AI Engine Simulation has been run at least once after enabling.
 
 ### Analyze (HLS)
+
+Click **Analyze** to run RTL co-simulation and verify the output against Simulink.
 
 #### Target Directory
 
@@ -226,9 +236,11 @@ Specifies the work directory for performing the actions on this tab.
 
 #### Open Vitis IDE
 
-Click to invoke the Vitis IDE tool to view additional information about the generated HLS component. This option is only available after running Analyze on the HLS Kernel.
+Click to invoke the Vitis IDE tool to analyze the generated HLS component for insights including latency, resource utilization, and performance optimization opportunities. This option is only available after running Analyze.
 
-### Validate on Hardware
+### Validate On Hardware
+
+This tab is available for HDL, HLS Kernel, and AI Engine subsystems, and for the DUT of a heterogeneous design. It is not available for HLS subsystems. Click **Validate** to generate a hardware image to validate the design in hardware or hardware emulation.
 
 #### Target Directory
 
@@ -240,34 +252,27 @@ Choose between Baremetal or Linux hardware validation flow.
 
 #### Target
 
-Specify the target for hardware validation flow.
-
-
-<!--
-#### Compiler options
--->
-
-<!--
-#### Create testbench
--->
-
-<!--
-#### Run AIE Simulation
--->
+Choose `hw` to validate the design on hardware or `hw_emu` to run hardware emulation.
 
 #### Yocto Base Directory
 
 Provide the path to the Yocto base directory for the selected platform. This field is required for both Baremetal and Linux hardware validation flows. Baremetal hardware emulation also uses the Yocto `runqemu` utility. If the path is missing or does not exist, the tool raises a design rule check when you start the validation run.
 
-#### XRT Directory
+#### Generate BOOT.BIN after code generation
 
-Provide the path to the XRT installation directory. This field is required when **HW System Type** is set to Linux. If the path is missing or does not exist, the tool raises a design rule check when you start the validation run.
+When enabled, the tool generates a hardware image after code generation. The label of this check box depends on the **HW System Type** and **Target** selections:
 
-#### Generate (BOOT.BIN/SD card image) after code generation
+| HW System Type | Target | Check box label |
+|---|---|---|
+| Baremetal | hw | Generate BOOT.BIN after code generation |
+| Linux | hw | Generate SD card image after code generation |
+| Baremetal or Linux | hw_emu | Run hardware emulation after code generation |
 
-When enabled, the tool generates a hardware validation image after code generation. For a baremetal HW system, the flow packages a `.pdi` and related baremetal artifacts. For a Linux HW system, the flow stages a WIC disk image for deployment. The exact artifact names depend on the selected platform and HW System Type.
+For a baremetal HW system, the flow packages a `.pdi` and related baremetal artifacts. For a Linux HW system, the flow stages a WIC disk image for deployment. With `hw_emu`, the tool launches hardware emulation when image creation finishes. The exact artifact names depend on the selected platform and HW System Type. The corresponding Hub API parameter is `GenerateHwImage`.
 
 ### Export
+
+Click **Export** to export the subsystem or design for system integration.
 
 #### Export Directory
 
@@ -275,13 +280,36 @@ Specifies the directory where the export products will be created.
 
 #### Export Type
 
-* **IP Catalog:** Export HDL or HLS subsystem as a Vivado IP. When IP Catalog is selected, the Settings (...) button brings up a dialog box that allows you to add a description of the IP that will be placed in the IP catalog.
+The available export types depend on the subsystem type:
+
+| Subsystem type | Export types |
+|---|---|
+| HDL | IP Catalog, Hardware Co-Simulation (JTAG), Synthesized Checkpoint, HDL Netlist, Vitis Subsystem |
+| HLS | HLS C++ code, IP Catalog |
+| HLS Kernel | IP Catalog, Vitis HLS, Vitis Subsystem |
+| AI Engine | Graph Code, Vitis Subsystem |
+| Heterogeneous design (DUT) | Vitis Subsystem, Generate source code |
+
+* **IP Catalog:** Export HDL, HLS, or HLS Kernel subsystem as a Vivado IP. When IP Catalog is selected, the Settings (...) button brings up a dialog box that allows you to add a description of the IP that will be placed in the IP catalog.
+* **Hardware Co-Simulation (JTAG):** Export HDL subsystem as a JTAG hardware co-simulation block. This option is listed only for boards that support hardware co-simulation. The Settings (...) button opens the hardware co-simulation settings.
 * **Synthesized Checkpoint:** Export HDL subsystem as a Synthesized Checkpoint for use in Vivado.
 * **HDL Netlist:** Export HDL subsystem as HDL code and netlist for use in Vivado.
-* **Vitis HLS:** Export HLS subsystem as HLS C/C++ code.
-* **Vitis Hardware Kernel (.xo):** Export AIE or HLS subsystem as a compiled Vitis Hardware Kernel (.xo).
+* **HLS C++ code** and **Vitis HLS:** Export HLS subsystem or HLS Kernel as HLS C/C++ code.
 * **Graph Code:** Export AIE subsystem as AI Engine graph code.
-* **Compiled AI Engine Graph Application (libadf.a):** Export AIE subsystem as a compiled AI Engine graph.
+* **Vitis Subsystem:** Export HDL, HLS Kernel, AIE, or heterogeneous design as a Vitis Subsystem (VSS). A VSS is a platform-independent reusable design component that integrates into a larger system through the Vitis tools.
+* **Generate source code:** Generate the source code for each subsystem of the heterogeneous design without packaging a Vitis Subsystem.
+
+#### AIE array configuration
+
+Available for AI Engine subsystems and heterogeneous designs when **Export Type** is Vitis Subsystem. Choose **Use entire AIE array** or **Enable array partition**.
+
+#### Start Column
+
+Available when **AIE array configuration** is Enable array partition. Specifies the first AI Engine array column of the partition.
+
+#### Number of Columns
+
+Available when **AIE array configuration** is Enable array partition. Specifies the number of AI Engine array columns in the partition.
 
 #### Generate testbench
 
