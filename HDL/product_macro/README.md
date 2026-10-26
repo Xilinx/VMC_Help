@@ -23,7 +23,7 @@ IP Complex Multiplier" (if you have configured the Product block for
 complex multiplication) or “LogiCORE IP Multiplier” (if you have
 configured the Product block for scalar multiplication) for code
 generation. Refer to the [LogiCORE IP Complex Multiplier v6.0 Product
-Guide](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)
+Guide](https://docs.amd.com/r/en-US/pg104-cmpy)
 or the [LogiCORE IP Multiplier v12.0 Product
 Guide](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)
 for details about these LogiCORE IP.
@@ -49,7 +49,7 @@ Simulink model.
 ## LogiCORE™ Documentation
 
 LogiCORE IP Complex Multiplier
-v6.0 [(PG104)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)
+v6.0 [(PG104)](https://docs.amd.com/r/en-US/pg104-cmpy)
 
 LogiCORE IP Multiplier
 v12.0 [(PG108)](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg108-mult-gen&ft:locale=en-US)

@@ -87,7 +87,7 @@ BPortWidth + 1). When the Output Width is set to be less than this, the
 most significant bits of the result are those output; the remaining bits
 will either be truncated or rounded according to Output Rounding option
 selected. That is to say, the output MSB is now fixed at (APortWidth +
-BPortWidth). For details please refer to the document Complex Multiplier LogiCORE IP Product Guide ([PG104](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)).
+BPortWidth). For details please refer to the document Complex Multiplier LogiCORE IP Product Guide ([PG104](https://docs.amd.com/r/en-US/pg104-cmpy)).
 
 #### Output Rounding  
 If rounding is required, the Output LSB must be greater than zero.
@@ -100,7 +100,7 @@ When this option is selected, a ctrl_tvalid and ctrl_tdata input port is
 added to the block. Bit 0 of ctrl_tdata input determines the particular
 type if rounding for the operation. For details, refer to the Rounding
 section of the Complex Multiplier LogiCORE IP Product Guide
-([PG104](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US)).
+([PG104](https://docs.amd.com/r/en-US/pg104-cmpy)).
 
 #### Channel CTRL Options  
 The following options are activated when Random Rounding is selected.
@@ -173,7 +173,7 @@ AXI4-Stream signal names have been shortened (by default) to improve readability
 ## LogiCORE™ Documentation
 
 Complex Multiplier LogiCORE IP Product Guide
-([PG104](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg104-cmpy&ft:locale=en-US))
+([PG104](https://docs.amd.com/r/en-US/pg104-cmpy))
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.
