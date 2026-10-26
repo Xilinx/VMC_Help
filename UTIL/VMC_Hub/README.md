@@ -6,7 +6,7 @@ Control implementation of the model.
 
 ## Library
 
-AI Engine/Tools; HLS/Tools; Utilities/Code Generation.
+AI Engine/Tools; HDL/Tools; Utilities/Code Generation.
 
 ## Overview
 

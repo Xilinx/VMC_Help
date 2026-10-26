@@ -18,7 +18,7 @@ Configuration Channel Input Signals:
 
 | Input Signal | Description |
 |--------|-------------|
-| config_tdata_fsel     | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) for an explanation of the bits in this field. |
+| config_tdata_fsel     | A sub-field port that represents the fsel field in the Configuration Channel vector. fsel is used to select the active filter set. This port is exposed when the number of coefficient sets is greater than one. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.amd.com/r/en-US/pg149-fir-compiler)) for an explanation of the bits in this field. |
 
 
 ## Parameters
@@ -44,7 +44,7 @@ specified must divide without remainder into the number of coefficients.
 #### Use Reloadable Coefficients  
 Check to add the coefficient reload ports to the block. The set of data
 loaded into the reload channel will not take action until triggered by a
-re-configuration synchronization event. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
+re-configuration synchronization event. Refer to the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.amd.com/r/en-US/pg149-fir-compiler))
 for a more detailed explanation of the RELOAD Channel interface timing.
 This block supports the xlGetReOrderedCoeff function; see Appendix A of the Vitis Model Composer User Guide (UG1483) for examples of how to use this function.
 
@@ -89,7 +89,7 @@ Rate (P/Q) resampling filter implementations.
 Parameters specific to the Channel Specification tab are as follows.
  
 #### Channel Sequence  
-Select Basic or Advanced. See the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler)) 
+Select Basic or Advanced. See the FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.amd.com/r/en-US/pg149-fir-compiler)) 
 for an explanation of the advanced channel specification feature.
 
 #### Number of Channels  
@@ -451,7 +451,7 @@ Boxes](../../GEN/common-options/README.md).
 ## LogiCORE™ Documentation
 
 FIR Compiler LogiCORE IP Product Guide
-([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
+([PG149](https://docs.amd.com/r/en-US/pg149-fir-compiler))
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

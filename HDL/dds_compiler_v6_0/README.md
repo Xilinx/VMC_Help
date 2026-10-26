@@ -187,7 +187,7 @@ fraction of the system clock (output frequency = system frequency \*
 N/M, where 0 \< N \< M). Values of M from 9 to 16384 are supported.
 
 **Note**: Refer to the document DDS Compiler LogiCORE IP Product Guide
-([PG141](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US))
+([PG141](https://docs.amd.com/r/en-US/pg141-dds-compiler))
 for a detailed explanation of these modes.
 
 #### SIN COS Output Type
@@ -460,7 +460,7 @@ DDS Compiler examples with integer and floating point output datatype are shown 
 ## LogiCORE™ Documentation
 
 DDS Compiler LogiCORE IP Product Guide
-([PG141](https://docs.xilinx.com/access/sources/ud/document?isLatest=true&url=pg141-dds-compiler&ft:locale=en-US))
+([PG141](https://docs.amd.com/r/en-US/pg141-dds-compiler))
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

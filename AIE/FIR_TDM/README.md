@@ -69,7 +69,7 @@ Set the filter coefficients data type. This parameter's setting may be restricte
 
 <!--
 #### Specify filter coefficients via input port
-When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/blob/2026.1/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
+When this option is enabled, the tool allows you to specify reloadable filter coefficients via an [asynchronous Run Time Parameter (RTP)](https://github.com/Xilinx/Vitis_Model_Composer/tree/2026.2/Examples/AIENGINE/Run_Time_Parameters/rtp_vector_async) input port.
 -->
 
 #### Filter length

@@ -31,7 +31,7 @@ block in your design instead of the Inverse FFT block.
 In the Vivado® design flow, the Inverse FFT block is inferred as
 "LogiCORE™ IP Fast Fourier Transform v9.1" for code generation. Refer to
 the document [LogiCORE IP Fast Fourier Transform
-v9.1](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)
+v9.1](https://docs.amd.com/r/en-US/pg109-xfft)
 for details on this LogicCore IP.
 
 ## Parameters
@@ -159,7 +159,7 @@ users are advised to drive the input data accordingly.
 ## LogiCORE™ Documentation
 
 LogiCORE IP Fast Fourier Transform
-v9.1 [(PG109)](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg109-xfft)
+v9.1 [(PG109)](https://docs.amd.com/r/en-US/pg109-xfft)
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

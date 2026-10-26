@@ -29,7 +29,7 @@ Filter block.
 
 In the Vivado® design flow, the Digital FIR filter block is inferred as
 "LogiCORE™ IP FIR Compiler v7.3" for code generation. Refer to the
-document FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
+document FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.amd.com/r/en-US/pg149-fir-compiler))
 for details on this LogicCore IP.
 
 ## Parameters
@@ -127,7 +127,7 @@ usage and better filter response.
 ![](./Images/lfs1647631719145.png)
 
 ## LogiCORE™ Documentation
-FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.xilinx.com/access/sources/framemaker/map?isLatest=true&ft:locale=en-US&url=pg149-fir-compiler))
+FIR Compiler LogiCORE IP Product Guide ([PG149](https://docs.amd.com/r/en-US/pg149-fir-compiler))
 
 --------------
 Copyright (C) 2026 Advanced Micro Devices, Inc.

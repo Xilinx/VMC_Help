@@ -5,7 +5,7 @@
 
 ## Library
 
-AIE Engine/DSP/Buffer IO
+AI Engine/DSP/Buffer IO
 
 ## Description
 
