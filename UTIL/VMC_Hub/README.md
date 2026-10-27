@@ -258,14 +258,13 @@ Choose `hw` to validate the design on hardware or `hw_emu` to run hardware emula
 
 Provide the path to the Yocto base directory for the selected platform. This field is required for both Baremetal and Linux hardware validation flows. Baremetal hardware emulation also uses the Yocto `runqemu` utility. If the path is missing or does not exist, the tool raises a design rule check when you start the validation run.
 
-#### Generate BOOT.BIN after code generation
+#### Generate PDI after code generation
 
-When enabled, the tool generates a hardware image after code generation. The label of this check box depends on the **HW System Type** and **Target** selections:
+When enabled, the tool generates a hardware image after code generation. The label of this check box depends on the **Target** selection:
 
 | HW System Type | Target | Check box label |
 |---|---|---|
-| Baremetal | hw | Generate BOOT.BIN after code generation |
-| Linux | hw | Generate SD card image after code generation |
+| Baremetal or Linux | hw | Generate PDI after code generation |
 | Baremetal or Linux | hw_emu | Run hardware emulation after code generation |
 
 For a baremetal HW system, the flow packages a `.pdi` and related baremetal artifacts. For a Linux HW system, the flow stages a WIC disk image for deployment. With `hw_emu`, the tool launches hardware emulation when image creation finishes. The exact artifact names depend on the selected platform and HW System Type. The corresponding Hub API parameter is `GenerateHwImage`.

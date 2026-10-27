@@ -461,11 +461,11 @@ validation flows. Baremetal hardware emulation also uses the Yocto
 the tool raises a design rule check when you start the validation
 run.</p>
 </section>
-<section id="generate-bootbin-after-code-generation" class="level4">
-<h4>Generate BOOT.BIN after code generation</h4>
+<section id="generate-pdi-after-code-generation" class="level4">
+<h4>Generate PDI after code generation</h4>
 <p>When enabled, the tool generates a hardware image after code
-generation. The label of this check box depends on the <strong>HW System
-Type</strong> and <strong>Target</strong> selections:</p>
+generation. The label of this check box depends on the
+<strong>Target</strong> selection:</p>
 <table>
 <thead>
 <tr>
@@ -476,14 +476,9 @@ Type</strong> and <strong>Target</strong> selections:</p>
 </thead>
 <tbody>
 <tr>
-<td>Baremetal</td>
+<td>Baremetal or Linux</td>
 <td>hw</td>
-<td>Generate BOOT.BIN after code generation</td>
-</tr>
-<tr>
-<td>Linux</td>
-<td>hw</td>
-<td>Generate SD card image after code generation</td>
+<td>Generate PDI after code generation</td>
 </tr>
 <tr>
 <td>Baremetal or Linux</td>
